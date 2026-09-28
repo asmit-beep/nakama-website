@@ -3,3 +3,57 @@
 .hero-landing .hero-glow-mesh{background:radial-gradient(ellipse 70% 42% at 50% 108%,#ef5a0070 0%,#d4920a40 28%,#ef5a0010 52%,transparent 72%)}
 @media(max-width:600px){.hero-giga.hero-landing .hero-pane{min-height:560px}}
 @media(prefers-reduced-motion:reduce){.hero-landing .hero-logo-track{animation:none!important}.hero-landing .hero-copy{min-height:0}}
+
+/* Keep the section fade behind the company ribbon. */
+.home-cinema .hero-runtime.hero-landing::after{display:none}
+.hero-landing .hero-pane::after{
+  content:"";
+  position:absolute;
+  left:0;
+  right:0;
+  bottom:-1px;
+  height:96px;
+  z-index:4;
+  pointer-events:none;
+  background:linear-gradient(180deg,transparent 0%,#0a0908aa 42%,#050505 100%);
+}
+.hero-landing .hero-logo-bar{
+  z-index:5;
+  padding-inline:0;
+  padding-block:6px;
+  overflow:hidden;
+}
+.hero-landing .hero-logo-track{animation-duration:56s}
+.hero-landing .hero-logo-group{
+  /* One cycle exceeds the viewport plus the widest company lockup.
+     This prevents even partial duplicates at opposite screen edges. */
+  width:max(1680px,calc(100vw + 224px));
+  flex:0 0 auto;
+  justify-content:space-around;
+  gap:0;
+  padding-right:0;
+}
+.hero-landing .hero-logo-item{
+  flex-shrink:0;
+  gap:12px;
+  color:#f5f1e9;
+  opacity:.94;
+  font-size:15px;
+  font-weight:600;
+  filter:none;
+}
+.hero-landing .hero-logo-item:hover{opacity:1}
+.hero-landing .hero-logo-mark{opacity:1;filter:none}
+.hero-landing .hero-logo-mark--icon{height:26px;max-width:58px}
+.hero-landing .hero-logo-mark--wordmark{height:17px;max-width:80px}
+.hero-landing .hero-logo-mark--lockup{height:26px;max-width:140px}
+@media(max-width:600px){
+  .hero-landing .hero-logo-item{font-size:14px}
+  .hero-landing .hero-logo-mark--icon{height:24px}
+  .hero-landing .hero-logo-mark--wordmark{height:16px;max-width:76px}
+  .hero-landing .hero-logo-mark--lockup{height:24px;max-width:128px}
+}
+@media(prefers-reduced-motion:reduce){
+  .hero-landing .hero-logo-bar{overflow-x:auto;scrollbar-width:none}
+  .hero-landing .hero-logo-bar::-webkit-scrollbar{display:none}
+}
