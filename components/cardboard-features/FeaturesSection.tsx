@@ -38,6 +38,7 @@ export function FeaturesSection() {
   const jumpTo = (index: number) => {
     const el = sectionRef.current;
     if (!el) return;
+    if (reduceMotion) setActiveIndex(index);
     const t = (index + 0.5) / FEATURES.length;
     window.scrollTo({ top: el.getBoundingClientRect().top + window.scrollY + t * Math.max(0,el.offsetHeight - window.innerHeight), behavior: reduceMotion ? "instant" : "smooth" });
   };
