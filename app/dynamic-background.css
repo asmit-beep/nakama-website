@@ -1,0 +1,27 @@
+.colour-atmosphere .colour-atmosphere-layer{
+  position:absolute;
+  inset:0;
+  pointer-events:none;
+  opacity:0;
+}
+.colour-atmosphere .atmosphere-ember{
+  opacity:1;
+  background:
+    radial-gradient(ellipse 85% 70% at 80% 12%,#a651243d,transparent 72%),
+    radial-gradient(ellipse 70% 65% at 12% 88%,#75402029,transparent 75%);
+}
+.colour-atmosphere .atmosphere-jade{
+  background:
+    radial-gradient(ellipse 85% 75% at 18% 32%,#24695342,transparent 74%),
+    radial-gradient(ellipse 70% 60% at 85% 82%,#b1752426,transparent 75%);
+}
+.colour-atmosphere .atmosphere-indigo{
+  background:
+    radial-gradient(ellipse 90% 75% at 76% 35%,#594b9145,transparent 74%),
+    radial-gradient(ellipse 75% 65% at 8% 86%,#29546730,transparent 75%);
+}
+.colour-atmosphere .atmosphere-copper{
+  background:
+    radial-gradient(ellipse 85% 75% at 22% 30%,#91452b40,transparent 74%),
+    radial-gradient(ellipse 70% 70% at 85% 86%,#77592e30,transparent 75%);
+}

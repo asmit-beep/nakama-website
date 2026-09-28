@@ -1,0 +1,397 @@
+/*
+ * Prompt director — cardboard.ai "Direct Your Edit With Prompts" section,
+ * restyled for Nakama. Layout, marquee, chip hover, connector U, send-burst
+ * squares and input flash are ported from cardboard's marketing page.
+ */
+
+[data-prompt-director] {
+  --pd-ember: #f07c32;
+  --pd-matcha: #37b795;
+  --pd-ease: cubic-bezier(0.215, 0.61, 0.355, 1);
+  --logoloop-gap: 12px;
+  --logoloop-logoHeight: 40px;
+  -webkit-font-smoothing: antialiased;
+  /* Full-bleed rows and the 1421px rail SVG both overrun the viewport. `clip`
+   * contains them without making this a scroll container. */
+  overflow-x: clip;
+}
+
+[data-prompt-director] *,
+[data-prompt-director] *::before,
+[data-prompt-director] *::after {
+  box-sizing: border-box;
+}
+
+.pd-sr {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+.pd-reveal {
+  opacity: 0;
+  transform: translateY(8px);
+  filter: blur(8px);
+  transition:
+    opacity 0.7s var(--pd-ease),
+    transform 0.7s var(--pd-ease),
+    filter 0.7s var(--pd-ease);
+}
+
+.pd-reveal.is-in {
+  opacity: 1;
+  transform: none;
+  filter: none;
+}
+
+.pd-reveal--copy {
+  filter: none;
+  transition-delay: 0.1s;
+}
+
+.pd-reveal--rows {
+  transform: translateY(12px);
+  filter: none;
+  transition-duration: 0.9s;
+  transition-delay: 0.25s;
+}
+
+.pd-reveal--box {
+  transform: translateY(14px) scale(0.94);
+  filter: none;
+  transition:
+    opacity 0.55s cubic-bezier(0.22, 1, 0.36, 1) 0.15s,
+    transform 0.55s cubic-bezier(0.22, 1, 0.36, 1) 0.15s;
+}
+
+.pd-reveal--box.is-in {
+  transform: none;
+}
+
+.pd-reveal--send {
+  opacity: 0;
+  transform: scale(0.5);
+  transition:
+    opacity 0.45s cubic-bezier(0.22, 1, 0.36, 1) 0.45s,
+    transform 0.45s cubic-bezier(0.34, 1.4, 0.64, 1) 0.45s;
+}
+
+.pd-reveal--send.is-in {
+  opacity: 1;
+  transform: none;
+}
+
+.pd-reveal--rails {
+  opacity: 0;
+  transform: none;
+  filter: none;
+  transition: opacity 0.6s var(--pd-ease) 0.55s;
+}
+
+/* ----- logoloop (cardboard LogoLoop) ----- */
+
+.logoloop {
+  position: relative;
+  overflow-x: hidden;
+}
+
+.logoloop__track {
+  will-change: transform;
+  user-select: none;
+  z-index: 0;
+  width: max-content;
+  display: flex;
+  position: relative;
+}
+
+.logoloop__list {
+  align-items: center;
+  display: flex;
+}
+
+.logoloop__item {
+  margin-right: var(--logoloop-gap);
+  font-size: var(--logoloop-logoHeight);
+  flex: none;
+  line-height: 1;
+}
+
+.logoloop__item:last-child {
+  margin-right: var(--logoloop-gap);
+}
+
+.logoloop__node {
+  align-items: center;
+  display: inline-flex;
+}
+
+.logoloop--fade {
+  -webkit-mask-image: linear-gradient(90deg, #0000 0%, #000 10% 90%, #0000 100%);
+  mask-image: linear-gradient(90deg, #0000 0%, #000 10% 90%, #0000 100%);
+}
+
+/* ----- chips ----- */
+
+.pd-chip {
+  display: flex;
+  height: 40px;
+  flex-shrink: 0;
+  cursor: pointer;
+  align-items: center;
+  gap: 6px;
+  border: 0;
+  border-radius: 14px;
+  padding: 0 14px 0 11px;
+  color: inherit;
+  background: radial-gradient(circle at 50% 3%, #131319 0%, #0d0d12 100%);
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.07),
+    inset 0 0 0 1px rgba(255, 255, 255, 0.04),
+    0 3px 8px 0 rgba(0, 0, 0, 0.24);
+  transition: transform 200ms ease-out, box-shadow 200ms ease-out;
+}
+
+.pd-chip:hover {
+  transform: translateY(-1px);
+  box-shadow:
+    inset 0 0 0 1px rgba(255, 255, 255, 0.1),
+    0 4px 12px rgba(0, 0, 0, 0.32);
+}
+
+.pd-chip:active {
+  transform: translateY(0) scale(0.97);
+}
+
+.pd-chip svg {
+  width: 18px;
+  height: 18px;
+  flex-shrink: 0;
+  color: rgba(255, 255, 255, 0.85);
+  transition: color 200ms;
+}
+
+.pd-chip:hover svg,
+.pd-chip:hover .pd-chip-label {
+  color: #fff;
+}
+
+.pd-chip-label {
+  font-size: 14px;
+  line-height: 1;
+  white-space: nowrap;
+  color: rgba(255, 255, 255, 0.85);
+  transition: color 200ms;
+}
+
+/* ----- input ----- */
+
+.pd-box {
+  position: relative;
+  z-index: 10;
+  margin: 0 auto;
+  height: 165px;
+  width: 100%;
+  max-width: 534px;
+  overflow: hidden;
+  border-radius: 27px;
+  background:
+    linear-gradient(180deg, rgba(40, 40, 46, 0.75) 0%, rgba(20, 20, 25, 0.65) 100%),
+    #000;
+  box-shadow:
+    inset 0 0 0 1px rgba(255, 255, 255, 0.05),
+    inset 0 1px 0 rgba(255, 255, 255, 0.08),
+    0 12px 32px -8px rgba(0, 0, 0, 0.45);
+}
+
+.pd-box:focus-within {
+  box-shadow:
+    inset 0 0 0 1px rgba(240, 124, 50, 0.28),
+    inset 0 1px 0 rgba(255, 255, 255, 0.1),
+    0 12px 32px -8px rgba(0, 0, 0, 0.45),
+    0 0 0 1px rgba(55, 183, 149, 0.12);
+}
+
+.pd-box-inset {
+  pointer-events: none;
+  position: absolute;
+  inset: 16px;
+  border-radius: 17px;
+  background: rgba(255, 255, 255, 0.03);
+}
+
+.pd-flash {
+  pointer-events: none;
+  position: absolute;
+  inset: 0;
+  border-radius: 27px;
+  box-shadow:
+    inset 0 0 0 1.5px rgba(240, 124, 50, 0.75),
+    inset 0 0 22px 2px rgba(55, 183, 149, 0.22);
+  animation: pd-flash 0.75s ease-out forwards;
+}
+
+@keyframes pd-flash {
+  from {
+    opacity: 0.95;
+  }
+  to {
+    opacity: 0;
+  }
+}
+
+.pd-textarea {
+  position: absolute;
+  top: 32px;
+  right: 38px;
+  bottom: 67px;
+  left: 32px;
+  resize: none;
+  border: 0;
+  background: transparent;
+  font-family: inherit;
+  font-size: 16px;
+  line-height: 1.4;
+  color: #fff;
+  caret-color: #fff;
+  outline: none;
+}
+
+.pd-textarea::placeholder {
+  color: rgba(255, 255, 255, 0.6);
+}
+
+/* On send the typed prompt lifts out before the field resets. */
+.pd-textarea.is-clearing {
+  opacity: 0;
+  transform: translateY(-6px);
+  transition:
+    opacity 0.45s ease-in 0.55s,
+    transform 0.45s ease-in 0.55s;
+}
+
+.pd-textarea.is-restoring {
+  transition:
+    opacity 0.3s ease-out,
+    transform 0.3s ease-out;
+}
+
+.pd-send {
+  display: flex;
+  width: 42px;
+  height: 42px;
+  cursor: pointer;
+  align-items: center;
+  justify-content: center;
+  border: 0;
+  border-radius: 10px;
+  background: #fff;
+  color: #191919;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.35), 0 10px 22px rgba(0, 0, 0, 0.18);
+  transition: transform 200ms ease-out, background 200ms ease-out;
+}
+
+.pd-send:hover {
+  transform: scale(1.04);
+  background: #f5f5f5;
+}
+
+.pd-send:active {
+  transform: scale(0.96);
+  background: #e5e5e5;
+}
+
+/* Positioned with `left` rather than a centring transform: the reveal rules
+ * below set `transform` and would otherwise win on specificity. */
+.pd-rails-mask {
+  pointer-events: none;
+  position: absolute;
+  left: 0;
+  display: none;
+  height: 177px;
+  width: 100%;
+  z-index: -1;
+  top: -56px;
+  mask-image: linear-gradient(to right, transparent 0%, black 8%, black 92%, transparent 100%);
+  -webkit-mask-image: linear-gradient(to right, transparent 0%, black 8%, black 92%, transparent 100%);
+}
+
+@media (min-width: 768px) {
+  .pd-rails-mask {
+    display: block;
+  }
+}
+
+.pd-node {
+  transform-box: fill-box;
+  transform-origin: center;
+}
+
+/* The squares rest on the rail and only run when a prompt is sent. */
+.pd-node.is-burst {
+  animation: pd-burst 1.4s ease-in-out both;
+}
+
+.pd-node.is-burst.pd-node--0 { animation-delay: 0s; }
+.pd-node.is-burst.pd-node--1 { animation-delay: 0.05s; }
+.pd-node.is-burst.pd-node--2 { animation-delay: 0.1s; }
+.pd-node.is-burst.pd-node--3 { animation-delay: 0.15s; }
+.pd-node.is-burst.pd-node--4 { animation-delay: 0.2s; }
+.pd-node.is-burst.pd-node--5 { animation-delay: 0.25s; }
+
+@keyframes pd-burst {
+  0% {
+    transform: translate(0, 0);
+    opacity: 1;
+  }
+  42% {
+    transform: translate(var(--dx), 0);
+    opacity: 0.75;
+  }
+  74% {
+    transform: translate(var(--dx), -130px);
+    opacity: 0;
+  }
+  82% {
+    transform: translate(0, 0);
+    opacity: 0;
+  }
+  100% {
+    transform: translate(0, 0);
+    opacity: 1;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .pd-reveal,
+  .pd-reveal--send,
+  .pd-reveal--box,
+  .pd-reveal--rows,
+  .pd-reveal--rails {
+    opacity: 1 !important;
+    transform: none !important;
+    filter: none !important;
+    transition: none !important;
+  }
+
+  .logoloop__track {
+    transform: translate(0, 0) !important;
+  }
+
+  .pd-node.is-burst,
+  .pd-flash {
+    animation: none !important;
+  }
+
+  .pd-textarea.is-clearing,
+  .pd-textarea.is-restoring {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+}

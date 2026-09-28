@@ -1,0 +1,5 @@
+.hero-runtime.hero-giga.hero-landing{height:auto!important;--copy-opacity:1;--logo-opacity:1;--copy-y:0px;--fold-blur:0px}
+.hero-giga.hero-landing .hero-pane{position:relative;height:100svh;min-height:590px;background:transparent!important}
+.hero-landing .hero-glow-mesh{background:radial-gradient(ellipse 70% 42% at 50% 108%,#ef5a0070 0%,#d4920a40 28%,#ef5a0010 52%,transparent 72%)}
+@media(max-width:600px){.hero-giga.hero-landing .hero-pane{min-height:560px}}
+@media(prefers-reduced-motion:reduce){.hero-landing .hero-logo-track{animation:none!important}.hero-landing .hero-copy{min-height:0}}
