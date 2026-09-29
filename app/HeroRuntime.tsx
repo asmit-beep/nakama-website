@@ -1,5 +1,5 @@
 "use client";
-import {ArrowUpRight} from 'lucide-react';
+import {ArrowUpRight,ArrowRight} from 'lucide-react';
 import './hero-landing.css';
 
 /* every file is trimmed to its own ink, so the CSS height for a kind is the optical height */
@@ -24,7 +24,7 @@ export function HeroRuntime({booking}:{booking:string}){
         <div className="hero-signature" aria-label="Nakama. In it together."><span className="hero-signature-seal" lang="ja" aria-hidden="true">仲間</span><span className="hero-signature-copy"><span>Nakama</span><strong>In it together.</strong></span></div>
         <h1 className="hero-serif-title"><span>Be the brand</span><span className="hero-title-accent">they already know.</span></h1>
         <h2 className="hero-subhead">We earn visibility across AI answers, search, communities, and video so your product shows up where decisions already happen.</h2>
-        <div className="hero-ctas"><a className="hero-cta-white" href={booking} target="_blank" rel="noopener noreferrer">Start a conversation<ArrowUpRight size={17}/></a><a className="hero-cta-quiet" href="/process">See our approach<ArrowUpRight size={17}/></a></div>
+        <div className="hero-ctas"><a className="hero-cta-white" href={booking} target="_blank" rel="noopener noreferrer">Start a conversation<span className="hero-cta-icon" aria-hidden="true"><ArrowUpRight size={16}/></span></a><a className="hero-cta-quiet" href="/process"><span>See our approach</span><ArrowRight size={16} aria-hidden="true"/></a></div>
       </div>
 
       {/* Bottom floating white company logos on amber glow */}

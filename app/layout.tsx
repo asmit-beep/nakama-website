@@ -3,6 +3,7 @@ import "./fonts.css";
 import "./globals.css";
 import "./midnight.css";
 import "./editorial.css";
+import "./navigation-glass.css";
 import { SiteTheme } from "./theme";
 export const metadata: Metadata = {
  title: "Nakama Growth — Be the brand they already know.",
