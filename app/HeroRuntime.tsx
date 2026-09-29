@@ -1,5 +1,4 @@
 "use client";
-import {type ReactNode} from 'react';
 import {ArrowUpRight} from 'lucide-react';
 import './hero-landing.css';
 
@@ -15,15 +14,17 @@ const FLOAT_COS = [
   {name:'Brosix',src:'/clients/white/brosix.svg',kind:'lockup',w:980,h:197},
 ];
 
-export function HeroRuntime({logo,booking}:{logo:ReactNode,booking:string}){
+export function HeroRuntime({booking}:{booking:string}){
   return <section className="hero-runtime hero-giga hero-landing" aria-label="Nakama Growth">
     <div className="hero-pane">
       <div className="hero-glow-mesh" aria-hidden="true"/>
+      <div className="hero-colour-halo" aria-hidden="true"/>
+      <div className="hero-edge-light" aria-hidden="true"/>
       <div className="hero-copy hero-copy-giga">
-        <div className="companion-capsule" aria-label="Not vendor. Not agency. Nakama."><span className="capsule-mark">{logo}</span><span className="capsule-copy"><span className="capsule-en">Not vendor. Not agency. Nakama.</span><span className="capsule-ja" lang="ja" aria-hidden="true">ともに成長する仲間</span></span><span className="capsule-plus" aria-hidden="true">+</span></div>
-        <h1 className="hero-serif-title">Be the brand they already know.</h1>
+        <div className="hero-signature" aria-label="Nakama. In it together."><span className="hero-signature-seal" lang="ja" aria-hidden="true">仲間</span><span className="hero-signature-copy"><span>Nakama</span><strong>In it together.</strong></span></div>
+        <h1 className="hero-serif-title"><span>Be the brand</span><span className="hero-title-accent">they already know.</span></h1>
         <h2 className="hero-subhead">We earn visibility across AI answers, search, communities, and video so your product shows up where decisions already happen.</h2>
-        <div className="hero-ctas"><a className="hero-cta-white" href={booking} target="_blank" rel="noopener noreferrer">Start a conversation</a><a className="hero-cta-quiet" href="/process">See our approach<ArrowUpRight size={15}/></a></div>
+        <div className="hero-ctas"><a className="hero-cta-white" href={booking} target="_blank" rel="noopener noreferrer">Start a conversation<ArrowUpRight size={17}/></a><a className="hero-cta-quiet" href="/process">See our approach<ArrowUpRight size={17}/></a></div>
       </div>
 
       {/* Bottom floating white company logos on amber glow */}

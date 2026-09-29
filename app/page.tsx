@@ -1,5 +1,5 @@
 import type {Metadata} from 'next';
-import {Shell,Logo,BOOKING} from './site';
+import {Shell,BOOKING} from './site';
 import {HeroRuntime} from './HeroRuntime';
 import {FeaturesSection} from '@/components/cardboard-features/FeaturesSection';
 import {Presence,HomeProof,HomeFaqLite,HomeContact} from './HomeSections';
@@ -14,7 +14,7 @@ export const metadata:Metadata={
 export default function Home(){
  return (
   <Shell className="home-page home-cinema">
-   <HeroRuntime logo={<Logo/>} booking={BOOKING}/>
+   <HeroRuntime booking={BOOKING}/>
    <FeaturesSection/>
    <Presence/>
    <PromptDirector/>
