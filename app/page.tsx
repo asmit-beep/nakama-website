@@ -1,8 +1,8 @@
 import type {Metadata} from 'next';
-import {Shell,Logo,BOOKING,NextChapter} from './site';
+import {Shell,Logo,BOOKING} from './site';
 import {HeroRuntime} from './HeroRuntime';
 import {FeaturesSection} from '@/components/cardboard-features/FeaturesSection';
-import {Presence,HomeProof,HomeFaqLite} from './HomeSections';
+import {Presence,HomeProof,HomeFaqLite,HomeContact} from './HomeSections';
 import {PromptDirector} from '@/components/prompt-director';
 import {SequenceShowcase} from '@/components/sequence';
 
@@ -21,7 +21,7 @@ export default function Home(){
    <SequenceShowcase/>
    <HomeProof/>
    <HomeFaqLite/>
-   <NextChapter title="Let’s build your next chapter." text="A shared ambition. A good conversation. A place to start."/>
+   <HomeContact/>
   </Shell>
  );
 }

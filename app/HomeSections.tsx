@@ -1,8 +1,9 @@
 "use client";
-import {useEffect,useRef,useState,type CSSProperties,type ReactNode} from 'react';
+import {useState,type ReactNode} from 'react';
 import Link from 'next/link';
-import {ArrowUpRight,Sparkles,Check,ThumbsUp,MessageSquare,Share2,Play,Eye,ChevronUp} from 'lucide-react';
-import {Logo,Reveal} from './site';
+import {ArrowUpRight,Sparkles,Check,ThumbsUp,MessageSquare,Share2,Play,Eye,ChevronUp,Search,Globe,Plus} from 'lucide-react';
+import {Reveal} from './site';
+import './presence-polish.css';
 import {proofClients} from './proof-data';
 
 const clients=[
@@ -203,131 +204,55 @@ function GoogleOverviewChip(){
  );
 }
 
-/** Sticky pile → spread: platform cards fan from center; real-platform chrome. */
+/** In-flow cards keep their alignment at every scroll position and text size. */
 export function Presence(){
- const ref=useRef<HTMLElement>(null);
  const [active,setActive]=useState(0);
- const [visible,setVisible]=useState(false);
- const [engaged,setEngaged]=useState(false);
- const [reduced,setReduced]=useState(false);
-
- useEffect(()=>{
-  const q=matchMedia('(prefers-reduced-motion: reduce)');
-  const update=()=>setReduced(q.matches);
-  update();q.addEventListener('change',update);
-  return()=>q.removeEventListener('change',update);
- },[]);
-
- useEffect(()=>{
-  const el=ref.current;if(!el)return;
-  const observer=new IntersectionObserver(([e])=>setVisible(e.isIntersecting),{threshold:.08});
-  observer.observe(el);
-  let frame=0;
-  const draw=()=>{
-   frame=0;
-   const r=el.getBoundingClientRect();
-   const travel=Math.max(1,r.height-innerHeight*0.55);
-   const raw=reduced?1:Math.max(0,Math.min(1,(-r.top+innerHeight*0.12)/travel));
-   const spread=raw<.12?0:raw>.82?1:((raw-.12)/.7);
-   const eased=spread*spread*(3-2*spread);
-   el.style.setProperty('--presence-open',String(eased));
-   el.style.setProperty('--presence-pulse',String(raw));
-  };
-  const schedule=()=>{if(!frame)frame=requestAnimationFrame(draw)};
-  draw();
-  addEventListener('scroll',schedule,{passive:true});
-  addEventListener('resize',schedule);
-  return()=>{observer.disconnect();cancelAnimationFrame(frame);removeEventListener('scroll',schedule);removeEventListener('resize',schedule)};
- },[reduced]);
-
- useEffect(()=>{
-  if(!visible||engaged||reduced)return;
-  const timer=setInterval(()=>setActive(i=>(i+1)%platforms.length),4600);
-  return()=>clearInterval(timer);
- },[visible,engaged,reduced]);
-
-
  return (
-  <section className="presence-section presence-spread presence-platforms page-width" ref={ref} aria-labelledby="presence-title" style={{'--presence-open':reduced?1:0} as CSSProperties}>
-   <div className="presence-track">
-    <div className="presence-pin">
-     <Reveal className="presence-heading">
-      <div>
-       <span className="eyebrow"><span className="tiny-cross"/>A connected presence</span>
-       <h2 id="presence-title">One brand.<br/><span>Everywhere it matters.</span></h2>
-      </div>
-      <p className="presence-lede">Different moments of discovery.<br/>{' '}One unmistakable point of view.</p>
-     </Reveal>
-
-     <div
-      className="presence-stage"
-      onMouseEnter={()=>setEngaged(true)}
-      onMouseLeave={()=>setEngaged(false)}
-      onFocus={()=>setEngaged(true)}
-      onBlur={e=>{if(!e.currentTarget.contains(e.relatedTarget))setEngaged(false)}}
-     >
-      <div className="presence-void" aria-hidden="true"/>
-      <svg className="presence-wires" viewBox="0 0 1000 520" preserveAspectRatio="none" aria-hidden="true">
-       <defs>
-        <linearGradient id="wire-gradient">
-         <stop stopColor="#9c6f4d" stopOpacity=".2"/>
-         <stop offset=".5" stopColor="#f07c32"/>
-         <stop offset="1" stopColor="#9c6f4d" stopOpacity=".2"/>
-        </linearGradient>
-       </defs>
-       {['M260 80 H340 Q400 80 400 150 V180 Q400 230 460 230 H500','M740 80 H660 Q600 80 600 150 V180 Q600 230 540 230 H500','M260 440 H340 Q400 440 400 370 V340 Q400 290 460 290 H500','M740 440 H660 Q600 440 600 370 V340 Q600 290 540 290 H500'].map((d,i)=>(
-        <g key={d} className={i===active?'wire-active':''}>
-         <path d={d} className="wire-base" pathLength="1"/>
-         <path d={d} className="wire-travel" pathLength="1"/>
-        </g>
-       ))}
-      </svg>
-
-      <div className="presence-hub" aria-hidden="true">
-       <span className="hub-orbit"/><span className="hub-orbit inner"/>
-       <div className="hub-core">
-        <Logo/>
-        <span>Your brand</span>
-       </div>
-       <div className="ai-answer-card ai-answer-live">
-        <div className="ai-answer-head">
-         <span className="ai-answer-label"><Sparkles size={11}/> AI answer</span>
-         <span className="ai-cited-badge"><Check size={11}/> Cited</span>
-        </div>
-        <p className="ai-answer-body">A few names come up consistently for B2B earned visibility. <mark>Nakama</mark> is often cited for community-led presence across AI answers, search, and peer threads — without leaning on paid ads.</p>
-        <div className="ai-answer-sources"><span>reddit.com</span><span>linkedin.com</span><span>nakama.in</span></div>
-        <div className="ai-answer-foot"><span className="cite-dot"/>Cited <strong>47</strong> times this week</div>
-       </div>
-      </div>
-
-      <NakamaSiteCard/>
-      <GoogleOverviewChip/>
-
-      {platforms.map((c,i)=>(
-       <button
-        className={`presence-node node-${i} plat-node plat-${c.id} ${active===i?'node-active':''}`}
-        key={c.id}
-        onClick={()=>setActive(i)}
-        onMouseEnter={()=>setActive(i)}
-        onFocus={()=>setActive(i)}
-        aria-pressed={active===i}
-        aria-label={`${c.name}: ${c.title}`}
-        style={{'--enter-x':c.x,'--enter-y':c.y,'--stack-rot':`${c.rot}deg`} as CSSProperties}
-       >
-        <PlatformFace id={c.id} active={active===i}/>
-       </button>
-      ))}
-     </div>
-
-     <div className="presence-caption">
-      <div key={active}>
-       <span className="caption-dot"/>
-       <span>{platforms[active].tag}</span>
-       <p>{platforms[active].caption}</p>
-      </div>
-      <Link href={platforms[active].href}>Explore<ArrowUpRight size={16}/></Link>
-     </div>
+  <section className="presence-section presence-aligned page-width" aria-labelledby="presence-title">
+   <Reveal className="presence-heading">
+    <div>
+     <span className="eyebrow"><span className="tiny-cross"/>A connected presence</span>
+     <h2 id="presence-title">One brand.<br/><span>Everywhere it matters.</span></h2>
     </div>
+    <p className="presence-lede">Different moments of discovery.<br/>{' '}One unmistakable point of view.</p>
+   </Reveal>
+   <Reveal className="presence-aligned-reveal">
+    <div className="presence-aligned-board">
+     <div className="presence-brand-column" aria-hidden="true">
+      <GoogleOverviewChip/>
+      <div className="presence-answer">
+       <div className="ai-answer-head">
+        <span className="ai-answer-label"><Sparkles size={13}/> AI answer</span>
+        <span className="ai-cited-badge"><Check size={12}/> Cited</span>
+       </div>
+       <p className="ai-answer-body">A few names come up consistently for B2B earned visibility. <mark>Nakama</mark> is often cited for community-led presence across AI answers, search, and peer threads — without leaning on paid ads.</p>
+       <div className="ai-answer-sources"><span>reddit.com</span><span>linkedin.com</span><span>nakama.in</span></div>
+       <div className="ai-answer-foot"><span className="cite-dot"/>Cited <strong>47</strong> times this week</div>
+      </div>
+      <NakamaSiteCard/>
+     </div>
+     {platforms.map((c,i)=>(
+      <button
+       className={`presence-platform-card presence-platform-${i}${active===i?' is-selected':''}`}
+       key={c.id}
+       onClick={()=>setActive(i)}
+       onMouseEnter={()=>setActive(i)}
+       onFocus={()=>setActive(i)}
+       aria-pressed={active===i}
+       aria-label={`${c.name}: ${c.title}`}
+      >
+       <PlatformFace id={c.id} active={active===i}/>
+      </button>
+     ))}
+    </div>
+   </Reveal>
+   <div className="presence-caption">
+    <div>
+     <span className="caption-dot"/>
+     <span>{platforms[active].tag}</span>
+     <p>{platforms[active].caption}</p>
+    </div>
+    <Link href={platforms[active].href}>Explore<ArrowUpRight size={16}/></Link>
    </div>
   </section>
  );
@@ -362,77 +287,55 @@ const platformTone=(platform:string)=>{
  return 'ai';
 };
 
-/** Documented presence — static evidence observatory. NO scroll pile/spread. */
+/** A client gallery with evenly aligned, readable source records. */
 export function HomeProof(){
  const [client,setClient]=useState(proofClients[0].name);
  const active=proofClients.find(c=>c.name===client)??proofClients[0];
- const entries=active.entries.slice(0,3);
-
  return (
-  <section className="home-proof home-proof-observatory page-width" id="proof">
-   <Reveal className="obs-head">
+  <section className="home-proof proof-gallery page-width" id="proof" aria-labelledby="proof-title">
+   <Reveal className="proof-gallery-heading">
     <div>
      <span className="eyebrow"><span className="tiny-cross"/>Documented presence</span>
-     <h2>Work that shows up<br/><span>where buyers look.</span></h2>
+     <h2 id="proof-title">Work that shows up<br/><span>where buyers look.</span></h2>
     </div>
     <p>Illustrative portfolio entries — historical citations and placements, not live rankings.</p>
    </Reveal>
-
-   <div className="obs-stage" aria-label="Documented evidence">
-    <div className="obs-glow" aria-hidden="true"/>
-    <div className="obs-grid" aria-hidden="true"/>
-
-    <aside className="obs-rail" aria-label="Select a client">
-     <span className="obs-rail-label">Casefile</span>
-     <div className="obs-clients" role="tablist">
-      {proofClients.slice(0,6).map(c=>(
-       <button
-        key={c.name}
-        role="tab"
-        aria-selected={client===c.name}
-        className={client===c.name?'active':''}
-        onClick={()=>setClient(c.name)}
-       >
-        {c.name}
-       </button>
-      ))}
+   <div className="proof-client-selector" aria-label="Select a client">
+    {proofClients.map(c=>(
+     <button key={c.name} type="button" aria-pressed={client===c.name} aria-controls="proof-client-record" onClick={()=>setClient(c.name)}>
+      <span className="proof-client-dot" aria-hidden="true"/>{c.name}
+     </button>
+    ))}
+   </div>
+   <div className="proof-client-record" id="proof-client-record">
+    <header className="proof-record-heading">
+     <div>
+      <span className="proof-record-label">Casefile / {String(proofClients.indexOf(active)+1).padStart(2,'0')}</span>
+      <h3>{active.name}</h3>
+      <p>{active.description}</p>
      </div>
-     <p className="obs-blurb">{active.description}</p>
-     <Link className="text-link" href={`/work?client=${encodeURIComponent(active.name)}`}>
-      Full client record<ArrowUpRight size={17}/>
-     </Link>
-    </aside>
-
-    <div className="obs-board" key={active.name}>
-     <div className="obs-center" aria-hidden="true">
-      <span className="obs-pulse"/>
-      <span className="obs-kanji" lang="ja">証</span>
-      <em>{active.name}</em>
-     </div>
-     {entries.map((e,i)=>(
-      <article
-       key={`${active.name}-${i}`}
-       className={`obs-card obs-slot-${i} tone-${platformTone(e.platform)}`}
-       style={{'--i':i} as CSSProperties}
-      >
-       <header>
-        <span className="obs-plat">{e.platform}</span>
-        <span className="obs-ref">REF · {String(i+1).padStart(2,'0')}</span>
-       </header>
-       <h3>{e.query}</h3>
-       <p>{e.description}</p>
-       <div className="obs-snip" aria-hidden="true">
-        <span className="obs-snip-bar"/><span className="obs-snip-bar short"/><span className="obs-snip-cite"/>
-       </div>
-      </article>
-     ))}
+     <Link className="proof-record-link" href={`/work?client=${encodeURIComponent(active.name)}`}>Full client record<ArrowUpRight size={18}/></Link>
+    </header>
+    <div className="proof-record-grid" key={active.name}>
+     {active.entries.map((e,i)=>{
+      const tone=platformTone(e.platform);
+      const Icon=tone==='yt'?Play:e.platform.includes('AI')?Sparkles:e.platform.includes('Search')?Search:Globe;
+      return (
+       <article className={`proof-record-card tone-${tone}`} key={`${active.name}-${i}`}>
+        <header><span className="proof-source-icon" aria-hidden="true"><Icon size={22} strokeWidth={1.5}/></span><span className="proof-record-number">{String(i+1).padStart(2,'0')}</span></header>
+        <span className="proof-source-name">{e.platform}</span>
+        <h4>{e.query}</h4>
+        <p>{e.description}</p>
+       </article>
+      );
+     })}
     </div>
    </div>
   </section>
  );
 }
 
-/** Clarity plates — always-open manifesto board, never accordion. */
+/** Native disclosures keep the FAQ accessible without animation or layout offsets. */
 export function HomeFaqLite(){
  const items=[
   {
@@ -458,28 +361,44 @@ export function HomeFaqLite(){
   },
  ];
  return (
-  <section className="home-faq home-faq-plates page-width">
-   <Reveal className="faq-plates-head">
-    <div className="faq-plates-title">
-     <span className="eyebrow"><span className="tiny-cross"/>A little more clarity</span>
-     <h2>Good questions.<br/><span>Straight answers.</span></h2>
-    </div>
-    <p className="faq-plates-lede">No accordion theatre. Three straight answers — always on the table.</p>
+  <section className="home-faq faq-editorial page-width" id="faq" aria-labelledby="faq-title">
+   <Reveal className="faq-editorial-intro">
+    <span className="eyebrow"><span className="tiny-cross"/>A little more clarity</span>
+    <h2 id="faq-title">Good questions.<br/><span>Straight answers.</span></h2>
+    <Link className="text-link" href="/services">More on how we work<ArrowUpRight size={17}/></Link>
    </Reveal>
-
-   <div className="faq-plate-board">
-    <div className="faq-plate-orbit" aria-hidden="true"/>
+   <div className="faq-editorial-list">
     {items.map((item,i)=>(
-     <Reveal className={`faq-plate plate-${i} accent-${item.accent}`} key={item.ask}>
-      <span className="faq-plate-glyph" aria-hidden="true">{item.glyph}</span>
-      <span className="faq-plate-tag">{item.tag}</span>
-      <h3>{item.ask}</h3>
+     <details className="faq-editorial-item" key={item.ask} open={i===0}>
+      <summary>
+       <span className="faq-editorial-number" aria-hidden="true">{item.glyph}</span>
+       <span className="faq-editorial-question"><span className="faq-editorial-tag">{item.tag}</span><span>{item.ask}</span></span>
+       <span className="faq-editorial-toggle" aria-hidden="true"><Plus size={18}/></span>
+      </summary>
       <p>{item.answer}</p>
-      <span className="faq-plate-rule" aria-hidden="true"/>
-     </Reveal>
+     </details>
     ))}
    </div>
-   <Link className="text-link" href="/services">More on how we work<ArrowUpRight size={17}/></Link>
+  </section>
+ );
+}
+
+/** Homepage-only contact panel; supporting pages keep their existing layout. */
+export function HomeContact(){
+ return (
+  <section className="home-contact-panel" aria-labelledby="home-contact-title">
+   <div className="home-contact-orbits" aria-hidden="true"><i/><i/><i/><span>仲間</span></div>
+   <div className="home-contact-inner">
+    <div className="home-contact-top"><span className="eyebrow"><span className="tiny-cross"/>The next move</span><span className="home-contact-wordmark" aria-hidden="true">nakama</span></div>
+    <h2 id="home-contact-title">Let’s build your<br/><span>next chapter.</span></h2>
+    <div className="home-contact-bottom">
+     <p>A shared ambition. A good conversation.<br/>A place to start.</p>
+     <div className="home-contact-actions">
+      <Link href="/work" className="home-contact-work">See the work<ArrowUpRight size={17}/></Link>
+      <Link href="/contact" className="home-contact-link">Contact<span><ArrowUpRight size={23}/></span></Link>
+     </div>
+    </div>
+   </div>
   </section>
  );
 }
