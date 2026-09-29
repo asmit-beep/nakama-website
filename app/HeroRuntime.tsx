@@ -22,7 +22,7 @@ export function HeroRuntime({booking}:{booking:string}){
       <div className="hero-edge-light" aria-hidden="true"/>
       <div className="hero-copy hero-copy-giga">
         <div className="hero-signature" aria-label="Nakama. In it together."><span className="hero-signature-seal" lang="ja" aria-hidden="true">仲間</span><span className="hero-signature-copy"><span>Nakama</span><strong>In it together.</strong></span></div>
-        <h1 className="hero-serif-title"><span>Be the brand</span><span className="hero-title-accent">they already know.</span></h1>
+        <h1 className="hero-serif-title" aria-label="Be the brand they already know."><span aria-hidden="true">Be the brand</span><span className="hero-title-rotation" aria-hidden="true"><span className="hero-title-accent hero-rotating-line">they already know.</span><span className="hero-title-accent hero-rotating-line">they search for.</span><span className="hero-title-accent hero-rotating-line">they choose.</span></span></h1>
         <h2 className="hero-subhead">We earn visibility across AI answers, search, communities, and video so your product shows up where decisions already happen.</h2>
         <div className="hero-ctas"><a className="hero-cta-white" href={booking} target="_blank" rel="noopener noreferrer">Start a conversation<span className="hero-cta-icon" aria-hidden="true"><ArrowUpRight size={16}/></span></a><a className="hero-cta-quiet" href="/process"><span>See our approach</span><ArrowRight size={16} aria-hidden="true"/></a></div>
       </div>
