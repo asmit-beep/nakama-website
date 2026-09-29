@@ -1,35 +1,41 @@
-/* Only the navigation capsules carry a surface. The header itself stays open. */
+/* One continuous frosted ribbon; individual controls gain capsules on interaction. */
 .site-frame .site-nav,
 .site-frame .site-nav.is-scrolled {
   position:fixed;
-  top:18px;left:4%;right:4%;
-  width:auto;height:54px;
-  margin:0;padding:0;
+  top:14px;left:4%;right:4%;
+  width:auto;height:68px;
+  margin:0;padding:7px 12px;
   display:grid;grid-template-columns:1fr auto 1fr;
   align-items:center;gap:16px;
-  background:none!important;
-  border:0!important;box-shadow:none!important;
-  backdrop-filter:none!important;-webkit-backdrop-filter:none!important;
-  pointer-events:none;
+  background:linear-gradient(155deg,#454d59db,#252d36eb 72%)!important;
+  border:1px solid #ffffff26!important;
+  border-top-color:#ffffff47!important;
+  border-radius:22px;
+  box-shadow:inset 0 1px 0 #ffffff17,inset 0 -1px 0 #0002,0 8px 30px #0002!important;
+  backdrop-filter:blur(28px) saturate(1.35)!important;
+  -webkit-backdrop-filter:blur(28px) saturate(1.35)!important;
+  transition:background .25s,box-shadow .25s;
+}
+.site-frame .site-nav.is-scrolled {
+  background:linear-gradient(155deg,#454d59ed,#29313bf2 72%)!important;
+  box-shadow:inset 0 1px 0 #ffffff20,inset 0 -1px 0 #0003,0 8px 28px #0003!important;
 }
 .site-frame .site-nav::before,.site-frame .site-nav::after {content:none!important}
-.site-frame .site-nav>* {pointer-events:auto}
 .site-frame .site-nav :is(.brand,.desktop-nav,.nav-contact,.menu-button) {
-  border:1px solid #ffffff2b!important;
-  border-top-color:#ffffff4a!important;
-  background:linear-gradient(155deg,#4a505be0,#252b32ed 68%)!important;
-  box-shadow:inset 0 1px 0 #fff2,inset 0 -1px 0 #0003,0 5px 20px #0002!important;
-  backdrop-filter:blur(24px) saturate(1.35);
-  -webkit-backdrop-filter:blur(24px) saturate(1.35);
+  border:0!important;
+  background:transparent!important;
+  box-shadow:none!important;
+  backdrop-filter:none!important;
+  -webkit-backdrop-filter:none!important;
   border-radius:999px;
   color:#f0ede7!important;
-  transition:background .25s,border-color .25s,box-shadow .25s;
+  transition:background .2s,box-shadow .2s,color .2s;
 }
-.site-frame .site-nav.is-scrolled :is(.brand,.desktop-nav,.nav-contact,.menu-button) {
-  background:linear-gradient(155deg,#484f5af2,#292f36f5 68%)!important;
-  border-color:#ffffff38!important;
-  border-top-color:#ffffff59!important;
-  box-shadow:inset 0 1px 0 #ffffff26,inset 0 -1px 0 #0004,0 8px 24px #0003!important;
+.site-frame .site-nav :is(.brand,.nav-contact,.menu-button):is(:hover,:focus-visible),
+.site-frame .site-nav .desktop-nav>a:is(:hover,:focus-visible) {
+  background:linear-gradient(155deg,#ffffff21,#ffffff0b)!important;
+  box-shadow:inset 0 1px 0 #ffffff40,inset 0 0 0 1px #ffffff18,0 3px 10px #0001!important;
+  color:#fff!important;
 }
 .site-frame .site-nav .brand {justify-self:start;display:flex;align-items:center;gap:8px;height:54px;padding:8px 16px 8px 12px}
 .site-frame .site-nav .brand>svg {width:28px;height:30px;flex:none}
@@ -38,18 +44,19 @@
 .site-frame .site-nav .desktop-nav {display:flex;align-items:center;gap:2px;min-height:54px;padding:5px}
 .site-frame .site-nav .desktop-nav>a {font-size:13px;line-height:20px;padding:10px 15px;color:#d4d5d8;border-radius:99px}
 .site-frame .site-nav .desktop-nav>a::before,.site-frame .site-nav .desktop-nav>a::after {content:none}
-.site-frame .site-nav .desktop-nav>a:is(:hover,:focus-visible,[aria-current="page"]) {background:#ffffff12;color:#fff;box-shadow:inset 0 1px 0 #ffffff19}
+.site-frame .site-nav .desktop-nav>a {background:transparent!important;box-shadow:none;color:#d4d5d8}
+.site-frame .site-nav .desktop-nav>a[aria-current="page"] {color:#fff}
 .site-frame .site-nav .nav-actions {display:flex;align-items:center;justify-self:end;gap:8px}
 .site-frame .site-nav .nav-contact {height:48px;min-height:48px;padding:0 18px;gap:14px;font-size:13px;transform:none}
-.site-frame .site-nav .nav-contact:hover {background:linear-gradient(155deg,#5a616de8,#353c45f2)!important;transform:none}
+.site-frame .site-nav .nav-contact:hover {transform:none}
 .site-frame .site-nav :is(a,button):focus-visible {outline:2px solid #e8c59d;outline-offset:4px}
 .site-frame .site-nav .menu-button {width:44px;height:44px;padding:0}
 @media(max-width:960px) {
-  .site-frame .site-nav {left:24px;right:24px;gap:12px}
+  .site-frame .site-nav,.site-frame .site-nav.is-scrolled {left:24px;right:24px;gap:12px}
   .site-frame .site-nav .desktop-nav>a {padding:10px 11px}
 }
 @media(max-width:800px) {
-  .site-frame .site-nav,.site-frame .site-nav.is-scrolled {top:14px;left:16px;right:16px;height:46px;grid-template-columns:1fr auto;gap:8px}
+  .site-frame .site-nav,.site-frame .site-nav.is-scrolled {top:12px;left:16px;right:16px;height:58px;padding:5px 6px;border-radius:18px;grid-template-columns:1fr auto;gap:8px}
   .site-frame .site-nav .desktop-nav {display:none}
   .site-frame .site-nav .brand {height:46px;padding:7px 13px 7px 10px}
   .site-frame .site-nav .brand>svg {width:24px;height:28px}
@@ -58,7 +65,7 @@
   .site-frame .site-nav .menu-button {display:flex}
 }
 @media(max-width:420px) {
-  .site-frame .site-nav,.site-frame .site-nav.is-scrolled {left:12px;right:12px;gap:6px}
+  .site-frame .site-nav,.site-frame .site-nav.is-scrolled {left:10px;right:10px;gap:4px;padding-inline:4px}
   .site-frame .site-nav .brand {gap:6px;padding:6px 10px 6px 8px}
   .site-frame .site-nav .brand>span {font-size:16px}
   .site-frame .site-nav .nav-actions {gap:6px}
