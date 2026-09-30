@@ -4,6 +4,7 @@ import Link from 'next/link';
 import {ArrowUpRight,Sparkles,Check,ThumbsUp,MessageSquare,Share2,Play,Eye,ChevronUp,Search,Globe,Plus} from 'lucide-react';
 import {Reveal} from './site';
 import './presence-polish.css';
+import {moveLight,resetLight} from './pointer-light';
 import {proofClients} from './proof-data';
 
 const clients=[
@@ -370,7 +371,7 @@ export function HomeFaqLite(){
 /** Homepage-only contact panel; supporting pages keep their existing layout. */
 export function HomeContact(){
  return (
-  <section className="home-contact-panel" aria-labelledby="home-contact-title">
+  <section className="home-contact-panel" aria-labelledby="home-contact-title" onPointerMove={moveLight} onPointerLeave={resetLight}>
    <div className="home-contact-orbits" aria-hidden="true"><i/><i/><i/><span>仲間</span></div>
    <div className="home-contact-inner">
     <div className="home-contact-top"><span className="eyebrow"><span className="tiny-cross"/>The next move</span><span className="home-contact-wordmark" aria-hidden="true">nakama</span></div>

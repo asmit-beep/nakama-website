@@ -294,3 +294,18 @@
   .hero-landing .hero-rotating-line {animation:none;opacity:0;transform:none;filter:none}
   .hero-landing .hero-rotating-line:first-child {opacity:1}
 }
+
+/* A luminous orbital horizon, slowly drifting behind the centered headline. */
+.hero-runtime.hero-giga.hero-landing .hero-pane {
+ background:radial-gradient(ellipse at 50% 110%,#3d3440 0%,#1d232c 40%,#11191f 78%)!important;
+}
+.hero-landing .hero-glow-mesh {background:radial-gradient(ellipse at 12% 40%,#548b8c35,transparent 55%),radial-gradient(ellipse at 90% 65%,#b3796033,transparent 60%)}
+.hero-orbital {position:absolute;inset:0;pointer-events:none;overflow:hidden;z-index:0;transform:translate(var(--drift-x,0px),var(--drift-y,0px));transition:transform 1.2s ease-out}
+.hero-orbital i {position:absolute;left:50%;top:61%;width:115%;height:86%;border-radius:50%;border:1px solid #e7c6a45c;transform:translateX(-50%) rotate(-12deg);box-shadow:0 -2px 25px #e0ac7c20,inset 0 3px 35px #c6926520;animation:orbital-drift 16s ease-in-out infinite alternate}
+.hero-orbital i:nth-child(2) {top:65%;width:127%;height:96%;border-color:#81c1c44a;transform:translateX(-50%) rotate(9deg);animation-delay:-7s;box-shadow:0 -2px 38px #7babb51a}
+.hero-orbital i:nth-child(3) {top:70%;width:138%;border-color:#ffffff12;animation-delay:-11s}
+.hero-cursor-light {position:absolute;inset:0;pointer-events:none;z-index:0;opacity:var(--light-on,0);background:radial-gradient(450px circle at var(--light-x,50%) var(--light-y,40%),#c5a6ff12,transparent 75%);transition:opacity .6s}
+.hero-landing .hero-copy {z-index:2}
+@keyframes orbital-drift {from{margin-top:-12px;opacity:.45}to{margin-top:20px;opacity:1}}
+@media(max-width:760px){.hero-orbital i{top:68%;width:180%;height:65%}.hero-orbital i:nth-child(2){top:73%;width:205%}.hero-orbital i:nth-child(3){top:78%;width:220%}}
+@media(prefers-reduced-motion:reduce){.hero-orbital{transform:none;transition:none}.hero-orbital i{animation:none}.hero-cursor-light{display:none}}

@@ -77,16 +77,30 @@
   .site-frame .site-nav :is(.brand,.desktop-nav,.nav-contact,.menu-button) {transition:none}
 }
 
-/* A thin reflected edge adds depth without an opaque face over the backdrop. */
-.site-frame .site-nav::before {
-  content:""!important;position:absolute;inset:0;border-radius:inherit;
-  pointer-events:none;
-  background:linear-gradient(110deg,#ffffff24,transparent 22%,transparent 74%,#ffffff12);
-  padding:1px;
-  mask:linear-gradient(#fff 0 0) content-box,linear-gradient(#fff 0 0);
-  mask-composite:exclude;
-  -webkit-mask-composite:xor;
+/* Glass belongs only to the navigation capsule. */
+.site-frame .site-nav,.site-frame .site-nav.is-scrolled {
+ background:transparent!important;border:0!important;box-shadow:none!important;
+ backdrop-filter:none!important;-webkit-backdrop-filter:none!important;
+ pointer-events:none;
 }
-@supports not ((backdrop-filter:blur(1px)) or (-webkit-backdrop-filter:blur(1px))) {
-  .site-frame .site-nav,.site-frame .site-nav.is-scrolled {background:#252c38ed!important}
+.site-frame .site-nav::before,.site-frame .site-nav::after {content:none!important}
+.site-frame .site-nav :is(.brand,.desktop-nav,.nav-actions) {pointer-events:auto}
+.site-frame .site-nav .desktop-nav {
+ background:linear-gradient(160deg,#ffffff22,#29313b75 55%,#ffffff0a)!important;
+ border:1px solid #ffffff29!important;border-top-color:#ffffff55!important;
+ box-shadow:inset 0 1px 2px #ffffff25,inset 0 -1px 2px #0003,0 8px 32px #0003!important;
+ backdrop-filter:blur(22px) saturate(1.5)!important;
+ -webkit-backdrop-filter:blur(22px) saturate(1.5)!important;
+}
+.site-frame .site-nav .brand:is(:hover,:focus-visible) {background:transparent!important;box-shadow:none!important}
+.site-frame .site-nav .nav-contact,
+.site-frame .site-nav .nav-contact:is(:hover,:focus-visible) {
+ background:linear-gradient(135deg,#f1e4ce,#d3b58f)!important;color:#25221e!important;
+ border:1px solid #fff4dd75!important;box-shadow:inset 0 1px 0 #fff9,0 5px 18px #0002!important;
+ border-radius:14px;text-shadow:none;transition:transform .25s,box-shadow .25s;
+}
+.site-frame .site-nav .nav-contact:hover {transform:translateY(-2px);box-shadow:0 7px 25px #d9b58130!important}
+.site-frame .site-nav .menu-button {background:#252a32!important;border:1px solid #ffffff25!important}
+@supports not ((backdrop-filter:blur(1px)) or (-webkit-backdrop-filter:blur(1px))){
+ .site-frame .site-nav .desktop-nav {background:#303640f5!important}
 }

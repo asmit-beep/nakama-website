@@ -264,3 +264,14 @@
  .home-contact-panel h2 {font-size:36px;margin:0}
  .home-contact-actions {gap:18px}
 }
+
+/* Cursor-led light travels across a compact metallic invitation. */
+.home-contact-panel {background:radial-gradient(ellipse at 100% 100%,#67503e66,transparent 65%),linear-gradient(120deg,#172326,#24212a 55%,#30241f);transition:border-color .4s,box-shadow .4s}
+.home-contact-panel::after {content:'';position:absolute;inset:0;pointer-events:none;z-index:0;opacity:var(--light-on,0);background:radial-gradient(450px circle at var(--light-x,50%) var(--light-y,50%),#f0c79738,transparent 72%);transition:opacity .5s}
+.home-contact-panel:hover,.home-contact-panel:focus-within {border-color:#e8c49b80;box-shadow:0 15px 55px #0003,inset 0 1px 0 #ffdfb52a}
+.home-contact-orbits {transform:translate(var(--drift-x,0px),var(--drift-y,0px));transition:transform .8s ease-out,opacity .6s}
+.home-contact-panel:hover .home-contact-orbits {opacity:.7}
+.home-contact-panel h2>span {background:linear-gradient(100deg,#d0ac8b,#f0dabb,#9ac3c8);background-clip:text;-webkit-background-clip:text;color:transparent}
+.home-contact-link {transition:transform .3s,box-shadow .3s,background .3s}
+.home-contact-link:hover {transform:translateY(-3px);box-shadow:0 7px 28px #e0b97b30}
+@media(prefers-reduced-motion:reduce){.home-contact-orbits,.home-contact-link:hover{transform:none}.home-contact-panel::after{display:none}}
