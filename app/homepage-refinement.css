@@ -105,9 +105,10 @@
 
 /* One continuous canvas avoids hard background seams between sections. */
 .site-frame.home-cinema {background:#0c0b0d!important}
-.site-frame.home-cinema main.home-cinema {
+.site-frame.home-cinema {
  background:radial-gradient(ellipse 95% 900px at 85% 180px,#d94e163d,transparent 75%),radial-gradient(ellipse 90% 1300px at 0% 28%,#a1382540,transparent 75%),radial-gradient(ellipse 90% 1500px at 100% 52%,#6650b735,transparent 76%),radial-gradient(ellipse 90% 1300px at 0% 76%,#127d7030,transparent 76%),radial-gradient(ellipse 90% 1000px at 100% 100%,#df5d283d,transparent 80%),#0c0b0d!important;
 }
+.site-frame.home-cinema main.home-cinema {background:transparent!important}
 .home-cinema .colour-atmosphere {display:none!important}
 .home-cinema main>section:not(.home-contact-panel),.home-cinema .cardboard-features .features-pin,.home-cinema .visibility-how,.home-cinema #prompts {background:transparent!important;border-top:0!important;border-bottom:0!important}
 .home-cinema .hero-runtime.hero-giga.hero-landing {background:transparent!important}
@@ -139,5 +140,5 @@
 .home-cinema .home-contact-panel h2 {justify-self:start;text-align:left;margin:0!important}
 .home-cinema .home-contact-panel h2>span {background:linear-gradient(100deg,#ffe5c7,#ffbb81,#f78f73);background-clip:text;-webkit-background-clip:text}
 .home-cinema .home-contact-panel::after {background-image:linear-gradient(115deg,#ff8e42,#ffe0a2,#dd9cce,#ff8e42)}
-.home-cinema .site-footer {background:linear-gradient(#0c0b0d,#17100d)!important;border-top:0!important}
+.home-cinema .site-footer {background:linear-gradient(transparent,#17100d)!important;border-top:0!important}
 @media(max-width:640px){.home-cinema .home-contact-inner{width:calc(100% - 40px)}}
