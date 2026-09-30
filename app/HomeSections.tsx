@@ -206,56 +206,27 @@ function GoogleOverviewChip(){
 
 /** In-flow cards keep their alignment at every scroll position and text size. */
 export function Presence(){
- const [active,setActive]=useState(0);
- return (
-  <section className="presence-section presence-aligned page-width" aria-labelledby="presence-title">
-   <Reveal className="presence-heading">
-    <div>
-     <span className="eyebrow"><span className="tiny-cross"/>A connected presence</span>
-     <h2 id="presence-title">One brand.<br/><span>Everywhere it matters.</span></h2>
-    </div>
-    <p className="presence-lede">Different moments of discovery.<br/>{' '}One unmistakable point of view.</p>
-   </Reveal>
-   <Reveal className="presence-aligned-reveal">
-    <div className="presence-aligned-board">
-     <div className="presence-brand-column" aria-hidden="true">
-      <GoogleOverviewChip/>
-      <div className="presence-answer">
-       <div className="ai-answer-head">
-        <span className="ai-answer-label"><Sparkles size={13}/> AI answer</span>
-        <span className="ai-cited-badge"><Check size={12}/> Cited</span>
-       </div>
-       <p className="ai-answer-body">A few names come up consistently for B2B earned visibility. <mark>Nakama</mark> is often cited for community-led presence across AI answers, search, and peer threads — without leaning on paid ads.</p>
-       <div className="ai-answer-sources"><span>reddit.com</span><span>linkedin.com</span><span>nakama.in</span></div>
-       <div className="ai-answer-foot"><span className="cite-dot"/>Cited <strong>47</strong> times this week</div>
-      </div>
-      <NakamaSiteCard/>
-     </div>
-     {platforms.map((c,i)=>(
-      <button
-       className={`presence-platform-card presence-platform-${i}${active===i?' is-selected':''}`}
-       key={c.id}
-       onClick={()=>setActive(i)}
-       onMouseEnter={()=>setActive(i)}
-       onFocus={()=>setActive(i)}
-       aria-pressed={active===i}
-       aria-label={`${c.name}: ${c.title}`}
-      >
-       <PlatformFace id={c.id} active={active===i}/>
-      </button>
-     ))}
-    </div>
-   </Reveal>
-   <div className="presence-caption">
-    <div>
-     <span className="caption-dot"/>
-     <span>{platforms[active].tag}</span>
-     <p>{platforms[active].caption}</p>
-    </div>
-    <Link href={platforms[active].href}>Explore<ArrowUpRight size={16}/></Link>
-   </div>
-  </section>
- );
+ const [active,setActive]=useState<string|null>(null);
+ const channels=[
+  {id:'reddit',name:'Reddit',label:'Join the conversation',text:'Useful contributions in the communities where buyers compare tools and share experience.',detail:'Community research · Helpful participation',href:'/services#community'},
+  {id:'linkedin',name:'LinkedIn',label:'Publish your perspective',text:'Expert articles, comparisons and practical insights that make your product easier to understand.',detail:'Thought leadership · Buyer guides',href:'/services#editorial'},
+  {id:'youtube',name:'YouTube',label:'Show how it works',text:'Searchable walkthroughs and comparison videos that help buyers see the difference.',detail:'Video creation · YouTube discovery',href:'/services#video'},
+  {id:'quora',name:'Quora',label:'Answer the real question',text:'Clear, relevant answers that bring your expertise into the questions buyers already ask.',detail:'Question research · Useful answers',href:'/services#community'},
+ ];
+ return <section className="presence-network page-width" aria-labelledby="presence-title">
+  <div className="network-heading"><div><span className="eyebrow"><span className="tiny-cross"/>A connected presence</span><h2 id="presence-title">One brand.<span>More ways to be found.</span></h2></div><p>We turn your expertise into a consistent presence across the places your buyers already trust.</p></div>
+  <div className="network-map" data-active={active??'none'}>
+   <svg className="network-wires" viewBox="0 0 1000 400" preserveAspectRatio="none" aria-hidden="true">
+    {['M500 200 H405 Q375 200 375 170 V110 Q375 90 350 90 H290','M500 200 H595 Q625 200 625 170 V110 Q625 90 650 90 H710','M500 200 H405 Q375 200 375 230 V290 Q375 310 350 310 H290','M500 200 H595 Q625 200 625 230 V290 Q625 310 650 310 H710'].map((path,i)=><g key={channels[i].id} className={active===channels[i].id?'is-active':''}><path d={path}/><path className="wire-signal" d={path}/></g>)}
+   </svg>
+   <div className="network-hub"><span className="network-hub-orbit" aria-hidden="true"/><span className="network-hub-seal" lang="ja">仲間</span><strong>nakama</strong><span>Your visibility partner</span></div>
+   {channels.map((c,i)=><Link key={c.id} href={c.href} className={`network-card network-card-${i}`} onMouseEnter={()=>setActive(c.id)} onMouseLeave={()=>setActive(null)} onFocus={()=>setActive(c.id)} onBlur={()=>setActive(null)}>
+    <div className="network-card-top"><span className="network-logo"><img src={`/platforms/${c.id}.svg`} alt="" width="26" height="26"/></span><span>{c.name}</span><ArrowUpRight size={16}/></div>
+    <h3>{c.label}</h3><p>{c.text}</p><span className="network-card-detail">{c.detail}</span>
+   </Link>)}
+  </div>
+  <div className="network-note"><span>One strategy. Platform-native execution.</span><Link href="/services">Explore our services <ArrowUpRight size={15}/></Link></div>
+ </section>;
 }
 
 export function NakamaStory(){
