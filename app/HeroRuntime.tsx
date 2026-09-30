@@ -17,8 +17,8 @@ const FLOAT_COS = [
 export function HeroRuntime({booking}:{booking:string}){
   return <section className="hero-runtime hero-giga hero-landing" aria-label="Nakama Growth">
     <div className="hero-pane">
-      <div className="hero-glow-mesh" aria-hidden="true"/>
-      <div className="hero-colour-halo" aria-hidden="true"/><div className="hero-orbital" aria-hidden="true"><i/><i/><i/></div>
+      <div className="hero-artwork" aria-hidden="true"><img src="/art/nakama-connection.webp" alt="" width="1536" height="1024" fetchPriority="high"/><div className="hero-art-light"/></div>
+      
       <div className="hero-edge-light" aria-hidden="true"/>
       <div className="hero-copy hero-copy-giga">
 

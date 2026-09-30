@@ -1,5 +1,5 @@
 "use client";
-import {useState,type ReactNode} from 'react';
+import {useState,useEffect,useRef,type ReactNode,type CSSProperties} from 'react';
 import Link from 'next/link';
 import {ArrowUpRight,Sparkles,Check,ThumbsUp,MessageSquare,Share2,Play,Eye,ChevronUp,Search,Globe,Plus} from 'lucide-react';
 import {Reveal} from './site';
@@ -182,6 +182,7 @@ function NakamaSiteCard(){
     <span className="nk-url">nakama.in</span>
    </div>
    <div className="nk-body">
+    <img className="nk-art" src="/art/nakama-connection.webp" alt="" width="1536" height="1024" loading="lazy"/>
     <span className="nk-kicker">仲間 · nakama</span>
     <p className="nk-h">Be the brand<br/>they already know.</p>
     <p className="nk-p">Earned visibility across AI answers, search, communities &amp; video.</p>
@@ -207,19 +208,49 @@ function GoogleOverviewChip(){
 /** In-flow cards keep their alignment at every scroll position and text size. */
 export function Presence(){
  const [active,setActive]=useState<string|null>(null);
+ const sectionRef=useRef<HTMLElement>(null);
+ useEffect(()=>{
+  const section=sectionRef.current;
+  if(!section)return;
+  const map=section.querySelector<HTMLElement>('.network-map')!;
+  const cards=Array.from(map.querySelectorAll<HTMLElement>('.network-card'));
+  const motion=matchMedia('(prefers-reduced-motion: reduce)');
+  const narrow=matchMedia('(max-width: 640px)');
+  let frame=0;
+  const update=()=>{
+   frame=0;
+   if(motion.matches||narrow.matches){map.style.setProperty('--fold','0');return;}
+   const top=section.getBoundingClientRect().top;
+   const p=Math.max(0,Math.min(1,(innerHeight*.85-top)/(innerHeight*.65)));
+   map.style.setProperty('--fold',String(1-(1-Math.pow(1-p,3))));
+  };
+  const schedule=()=>{if(!frame)frame=requestAnimationFrame(update)};
+  const measure=()=>{
+   cards.forEach((card,i)=>{
+    card.style.setProperty('--fold-x',`${map.clientWidth/2-card.offsetLeft-card.offsetWidth/2}px`);
+    card.style.setProperty('--fold-y',`${map.clientHeight/2-card.offsetTop-card.offsetHeight/2+(i-1.5)*9}px`);
+    card.style.setProperty('--fold-angle',`${(i-1.5)*7}deg`);
+   });schedule();
+  };
+  const observer=new ResizeObserver(measure);observer.observe(map);
+  window.addEventListener('scroll',schedule,{passive:true});
+  motion.addEventListener('change',schedule);narrow.addEventListener('change',measure);
+  measure();
+  return()=>{observer.disconnect();window.removeEventListener('scroll',schedule);motion.removeEventListener('change',schedule);narrow.removeEventListener('change',measure);cancelAnimationFrame(frame)};
+ },[]);
  const channels=[
   {id:'reddit',name:'Reddit',label:'Join the conversation',text:'Useful contributions in the communities where buyers compare tools and share experience.',detail:'Community research · Helpful participation',href:'/services#community'},
   {id:'linkedin',name:'LinkedIn',label:'Publish your perspective',text:'Expert articles, comparisons and practical insights that make your product easier to understand.',detail:'Thought leadership · Buyer guides',href:'/services#editorial'},
   {id:'youtube',name:'YouTube',label:'Show how it works',text:'Searchable walkthroughs and comparison videos that help buyers see the difference.',detail:'Video creation · YouTube discovery',href:'/services#video'},
   {id:'quora',name:'Quora',label:'Answer the real question',text:'Clear, relevant answers that bring your expertise into the questions buyers already ask.',detail:'Question research · Useful answers',href:'/services#community'},
  ];
- return <section className="presence-network page-width" aria-labelledby="presence-title">
+ return <section ref={sectionRef} className="presence-network page-width" id="presence" aria-labelledby="presence-title">
   <div className="network-heading"><div><span className="eyebrow"><span className="tiny-cross"/>A connected presence</span><h2 id="presence-title">One brand.<span>More ways to be found.</span></h2></div><p>We turn your expertise into a consistent presence across the places your buyers already trust.</p></div>
   <div className="network-map" data-active={active??'none'}>
    <svg className="network-wires" viewBox="0 0 1000 400" preserveAspectRatio="none" aria-hidden="true">
     {['M500 200 H405 Q375 200 375 170 V110 Q375 90 350 90 H290','M500 200 H595 Q625 200 625 170 V110 Q625 90 650 90 H710','M500 200 H405 Q375 200 375 230 V290 Q375 310 350 310 H290','M500 200 H595 Q625 200 625 230 V290 Q625 310 650 310 H710'].map((path,i)=><g key={channels[i].id} className={active===channels[i].id?'is-active':''}><path d={path}/><path className="wire-signal" d={path}/></g>)}
    </svg>
-   <div className="network-hub"><span className="network-hub-orbit" aria-hidden="true"/><span className="network-hub-seal" lang="ja">仲間</span><strong>nakama</strong><span>Your visibility partner</span></div>
+   <div className="network-hub network-hub-illustrated"><NakamaSiteCard/><span className="network-hub-caption">One brand. Connected everywhere.</span></div>
    {channels.map((c,i)=><Link key={c.id} href={c.href} className={`network-card network-card-${i}`} onMouseEnter={()=>setActive(c.id)} onMouseLeave={()=>setActive(null)} onFocus={()=>setActive(c.id)} onBlur={()=>setActive(null)}>
     <div className="network-card-top"><span className="network-logo"><img src={`/platforms/${c.id}.svg`} alt="" width="26" height="26"/></span><span>{c.name}</span><ArrowUpRight size={16}/></div>
     <h3>{c.label}</h3><p>{c.text}</p><span className="network-card-detail">{c.detail}</span>
@@ -258,6 +289,32 @@ const platformTone=(platform:string)=>{
  return 'ai';
 };
 
+const clientMarks:Record<string,{src:string;color:string}>={
+ 'Synup':{src:'/clients/synup.svg',color:'#ff6a3d'},
+ 'Inventive AI':{src:'/clients/inventive.jpeg',color:'#ff9800'},
+ 'HubEngage':{src:'/clients/hubengage.jpeg',color:'#c8db18'},
+ 'StarAgile':{src:'/clients/staragile.png',color:'#fb753d'},
+ 'BacklinkOS':{src:'/clients/backlinkos.jpeg',color:'#878bff'},
+ 'SERPsGrowth':{src:'/clients/serps.jpeg',color:'#caff29'},
+ 'Inbound Blogging':{src:'/clients/inbound.jpeg',color:'#5fbce1'},
+};
+function ProofCard({entry,index}:{entry:{platform:string;query:string;description:string};index:number}){
+ const [open,setOpen]=useState(false);
+ const tone=platformTone(entry.platform);
+ const Icon=tone==='yt'?Play:entry.platform.includes('AI')?Sparkles:entry.platform.includes('Search')?Search:Globe;
+ return <button type="button" className={`proof-record-card proof-reveal-card tone-${tone}`} aria-expanded={open} aria-label={`${entry.query}: ${open?'hide':'show'} details`} data-open={open} onMouseEnter={()=>setOpen(true)} onMouseLeave={()=>setOpen(false)} onFocus={e=>{if(e.currentTarget.matches(':focus-visible'))setOpen(true)}} onBlur={()=>setOpen(false)} onClick={()=>setOpen(v=>!v)}>
+  <span className="proof-card-face proof-card-front" aria-hidden={open}>
+   <span className="proof-card-meta"><span className="proof-source-icon"><Icon size={22}/></span><span className="proof-record-number">{String(index+1).padStart(2,'0')}</span></span>
+   <span className="proof-source-name">{entry.platform}</span><span className="proof-card-title">{entry.query}</span>
+   <span className="proof-card-prompt">Explore this record <Plus size={16}/></span>
+  </span>
+  <span className="proof-card-face proof-card-back" aria-hidden={!open}>
+   <span className="proof-source-name">Behind the presence</span><span className="proof-card-description">{entry.description}</span>
+   <span className="proof-card-foot"><span>{entry.platform}</span><ArrowUpRight size={18}/></span>
+  </span>
+ </button>;
+}
+
 /** A client gallery with evenly aligned, readable source records. */
 export function HomeProof(){
  const [client,setClient]=useState(proofClients[0].name);
@@ -273,8 +330,8 @@ export function HomeProof(){
    </Reveal>
    <div className="proof-client-selector" aria-label="Select a client">
     {proofClients.map(c=>(
-     <button key={c.name} type="button" aria-pressed={client===c.name} aria-controls="proof-client-record" onClick={()=>setClient(c.name)}>
-      <span className="proof-client-dot" aria-hidden="true"/>{c.name}
+     <button key={c.name} style={{"--brand-color":clientMarks[c.name].color} as CSSProperties} type="button" aria-pressed={client===c.name} aria-controls="proof-client-record" onClick={()=>setClient(c.name)}>
+      <img className={`proof-brand-logo ${c.name==='Synup'?'is-wordmark':''}`} src={clientMarks[c.name].src} alt="" width="28" height="28" loading="lazy"/>{c.name}
      </button>
     ))}
    </div>
@@ -288,18 +345,7 @@ export function HomeProof(){
      <Link className="proof-record-link" href={`/work?client=${encodeURIComponent(active.name)}`}>Full client record<ArrowUpRight size={18}/></Link>
     </header>
     <div className="proof-record-grid" key={active.name}>
-     {active.entries.map((e,i)=>{
-      const tone=platformTone(e.platform);
-      const Icon=tone==='yt'?Play:e.platform.includes('AI')?Sparkles:e.platform.includes('Search')?Search:Globe;
-      return (
-       <article className={`proof-record-card tone-${tone}`} key={`${active.name}-${i}`}>
-        <header><span className="proof-source-icon" aria-hidden="true"><Icon size={22} strokeWidth={1.5}/></span><span className="proof-record-number">{String(i+1).padStart(2,'0')}</span></header>
-        <span className="proof-source-name">{e.platform}</span>
-        <h4>{e.query}</h4>
-        <p>{e.description}</p>
-       </article>
-      );
-     })}
+     {active.entries.map((e,i)=><ProofCard key={`${active.name}-${i}`} entry={e} index={i}/>)}
     </div>
    </div>
   </section>
