@@ -1,5 +1,4 @@
 "use client";
-import {moveLight,resetLight} from './pointer-light';
 import {ArrowUpRight,ArrowRight} from 'lucide-react';
 import './hero-landing.css';
 
@@ -16,10 +15,10 @@ const FLOAT_COS = [
 ];
 
 export function HeroRuntime({booking}:{booking:string}){
-  return <section className="hero-runtime hero-giga hero-landing" aria-label="Nakama Growth" onPointerMove={moveLight} onPointerLeave={resetLight}>
+  return <section className="hero-runtime hero-giga hero-landing" aria-label="Nakama Growth">
     <div className="hero-pane">
       <div className="hero-glow-mesh" aria-hidden="true"/>
-      <div className="hero-colour-halo" aria-hidden="true"/><div className="hero-orbital" aria-hidden="true"><i/><i/><i/></div><div className="hero-cursor-light" aria-hidden="true"/>
+      <div className="hero-colour-halo" aria-hidden="true"/><div className="hero-orbital" aria-hidden="true"><i/><i/><i/></div>
       <div className="hero-edge-light" aria-hidden="true"/>
       <div className="hero-copy hero-copy-giga">
         <div className="hero-signature" aria-label="Nakama. In it together."><span className="hero-signature-seal" lang="ja" aria-hidden="true">仲間</span><span className="hero-signature-copy"><span>Nakama</span><strong>In it together.</strong></span></div>

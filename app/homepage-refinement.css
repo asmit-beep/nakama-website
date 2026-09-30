@@ -1,0 +1,54 @@
+/* Mineral tones and a broad aurora veil, independent of pointer position. */
+.home-cinema .hero-runtime.hero-giga.hero-landing .hero-pane {
+ background:radial-gradient(ellipse at 12% 15%,#344949 0%,transparent 49%),radial-gradient(ellipse at 90% 65%,#4b3e43 0%,transparent 53%),linear-gradient(160deg,#172329,#222c35 50%,#1d242b)!important;
+}
+.home-cinema .hero-colour-halo {inset:-25%;background:conic-gradient(from 220deg at 50% 70%,transparent 0deg,#b5c6ac19 36deg,transparent 75deg,#a8b3d11a 140deg,transparent 200deg,#d6b4951c 285deg,transparent 330deg);filter:blur(45px);animation:mineral-drift 18s ease-in-out infinite alternate}
+.home-cinema .hero-orbital {transform:none}
+.home-cinema .hero-orbital i {border-color:#b8c9bf35;box-shadow:0 -3px 45px #b4c8bd15,inset 0 8px 55px #b6c9c512}
+.home-cinema .hero-orbital i:nth-child(2){border-color:#ccafa332;box-shadow:0 -5px 45px #d6b6a51a}
+.hero-cursor-light {display:none!important}
+@keyframes mineral-drift {from{transform:rotate(-9deg) scale(1)}to{transform:rotate(9deg) scale(1.08)}}
+/* Border-only interaction: no spotlight on the card's surface. */
+.home-cinema .home-contact-panel {overflow:hidden;transition:border-color .5s,box-shadow .5s;background:linear-gradient(115deg,#192626,#27272d 60%,#342b28)}
+.home-cinema .home-contact-panel::after {content:'';position:absolute;inset:0;padding:1.5px;border-radius:inherit;pointer-events:none;background:linear-gradient(115deg,#a8c8bb,#d8c6ae,#a2b2d1,#a8c8bb);background-size:300% 100%;mask:linear-gradient(#fff 0 0) content-box,linear-gradient(#fff 0 0);mask-composite:exclude;-webkit-mask-composite:xor;opacity:0;transition:opacity .45s;animation:border-tide 6s linear infinite;animation-play-state:paused}
+.home-cinema .home-contact-panel:is(:hover,:focus-within)::after {opacity:1;animation-play-state:running}
+.home-cinema .home-contact-panel:is(:hover,:focus-within){border-color:#bbc9b973;box-shadow:0 0 22px #aac3b514,0 14px 42px #0003}
+.home-cinema .home-contact-orbits {transform:none!important;opacity:.3!important}
+@keyframes border-tide{to{background-position:300% 50%}}
+/* Entire casefile in ordinary document flow, compact enough for desktop. */
+.home-cinema .proof-gallery {height:auto!important;min-height:0!important;overflow:visible!important;padding-block:45px!important;scroll-margin-top:92px}
+.home-cinema .proof-gallery-heading {margin-bottom:22px;gap:24px}
+.home-cinema .proof-gallery-heading h2 {font-size:clamp(30px,3.1vw,43px);line-height:1.12}
+.home-cinema .proof-gallery-heading .eyebrow {margin-bottom:14px}
+.home-cinema .proof-client-selector {margin-bottom:16px;gap:7px}
+.home-cinema .proof-client-selector button {padding:8px 13px;font-size:11px}
+.home-cinema .proof-client-record {padding:22px;background:radial-gradient(ellipse at top left,#758f8724,transparent 60%),linear-gradient(135deg,#171f22,#201d22);border-color:#b7c7c02d;box-shadow:inset 0 1px 0 #ffffff0d}
+.home-cinema .proof-record-heading {padding-bottom:16px;margin-bottom:16px;gap:20px}
+.home-cinema .proof-record-heading h3 {font-size:26px;margin:5px 0}
+.home-cinema .proof-record-heading p {line-height:1.5;font-size:12px}
+.home-cinema .proof-record-card {padding:18px;background:linear-gradient(140deg,#ffffff07,#ffffff02);border-top:1px solid #c4d7cb55;transition:border-color .3s,background .3s}
+.home-cinema .proof-record-card:hover {border-color:#b8cabc60;background:#ffffff08}
+.home-cinema .proof-record-card header {margin-bottom:14px}
+.home-cinema .proof-source-icon {width:32px;height:32px;border-radius:10px}
+.home-cinema .proof-source-icon svg {width:17px;height:17px}
+.home-cinema .proof-record-card h4 {font-size:19px;min-height:2.7em;margin:10px 0 12px}
+.home-cinema .proof-record-card>p {font-size:12px;line-height:1.65}
+@media(max-width:760px){
+ .home-cinema .proof-gallery {padding-block:45px!important}
+ .home-cinema .proof-gallery-heading {align-items:flex-start}
+ .home-cinema .proof-gallery-heading>p {max-width:100%}
+ .home-cinema .proof-record-grid {grid-template-columns:1fr}
+ .home-cinema .proof-record-card h4 {min-height:0}
+ .home-cinema .proof-record-heading {align-items:flex-start;flex-direction:column}
+}
+/* Heavy, translucent wordmark; the complete word dissolves into Japanese. */
+.site-footer .footer-wordmark.footer-wordmark-bold {position:relative;display:grid;place-items:center;width:100%;max-width:none;padding:12px 3vw;margin:30px 0 24px;overflow:hidden;line-height:1;font-family:Arial,Helvetica,sans-serif;font-weight:900;font-size:clamp(80px,20.7vw,340px);letter-spacing:-.075em;min-height:0;cursor:default;outline-offset:-6px}
+.footer-wordmark-bold>span {grid-area:1/1;display:block;width:100%;text-align:center;background:linear-gradient(120deg,#97b2a744,#c1c2d43d 48%,#c29e7f40);background-clip:text;-webkit-background-clip:text;color:transparent;-webkit-text-fill-color:transparent;transition:opacity .8s,transform 1s cubic-bezier(.2,.7,.2,1),filter .8s}
+.footer-wordmark-bold .footer-kana-full {font-family:Arial,'Noto Sans JP',sans-serif;font-weight:900;font-size:.67em;letter-spacing:.16em;opacity:0;transform:translateY(22%) scale(.94);filter:blur(8px)}
+.footer-wordmark-bold:is(:hover,:focus-visible) .footer-latin-full {opacity:0;transform:translateY(-18%) scale(1.035);filter:blur(9px)}
+.footer-wordmark-bold:is(:hover,:focus-visible) .footer-kana-full {opacity:1;transform:translateY(0) scale(1);filter:blur(0)}
+.footer-wordmark-bold:focus-visible {outline:1px solid #a8bbae55}
+@media(prefers-reduced-motion:reduce){
+ .home-cinema .hero-colour-halo,.home-cinema .home-contact-panel::after{animation:none}
+ .footer-wordmark-bold>span{transition:none!important;transform:none!important;filter:none!important}
+}
