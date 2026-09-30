@@ -344,7 +344,7 @@ export function HomeContact(){
   <section className="home-contact-panel" aria-labelledby="home-contact-title">
    <div className="home-contact-orbits" aria-hidden="true"><i/><i/><i/><span>仲間</span></div>
    <div className="home-contact-inner">
-    <div className="home-contact-top"><span className="eyebrow"><span className="tiny-cross"/>The next move</span><span className="home-contact-wordmark" aria-hidden="true">nakama</span></div>
+    <div className="home-contact-top"><span className="eyebrow"><span className="tiny-cross"/>The next move</span></div>
     <h2 id="home-contact-title">Let’s build your<br/><span>next chapter.</span></h2>
     <div className="home-contact-bottom">
      <p>A shared ambition. A good conversation.<br/>A place to start.</p>
