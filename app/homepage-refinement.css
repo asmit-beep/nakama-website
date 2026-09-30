@@ -52,3 +52,5 @@
  .home-cinema .hero-colour-halo,.home-cinema .home-contact-panel::after{animation:none}
  .footer-wordmark-bold>span{transition:none!important;transform:none!important;filter:none!important}
 }
+.site-frame .site-footer .footer-wordmark.footer-wordmark-bold {font-family:Arial,Helvetica,sans-serif!important;font-weight:900!important;font-size:clamp(80px,20.7vw,340px)!important;letter-spacing:-.075em!important;line-height:1!important;margin:30px 0 24px!important;padding:12px 3vw!important;overflow:hidden!important}
+.site-frame.home-cinema .site-nav,.site-frame.home-cinema .site-nav.is-scrolled,.site-frame.shell-cinema .site-nav,.site-frame.shell-cinema .site-nav.is-scrolled {background:transparent!important;backdrop-filter:none!important;-webkit-backdrop-filter:none!important;border:0!important;box-shadow:none!important}
