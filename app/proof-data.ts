@@ -1,6 +1,10 @@
 // Historical portfolio entries transcribed from Nakama's published client selector.
 // Source: https://nakama.in/ inspected 7 September 2026. Not live ranking data.
 export const proofClients = [
+ {name:'Synup',description:'Content and video work focused on local listings, reputation management and multi-location operations.',entries:[
+ {platform:'Editorial · Client work',query:'Local listings management',description:'Practical guides and software comparisons addressing listing accuracy, directory updates and the needs of multi-location teams.'},
+ {platform:'Content · Buyer education',query:'From local visibility to business operations',description:'Content exploring listings budgets, platform selection, access ownership and the connection between location data and revenue operations.'},
+ {platform:'YouTube · Video content',query:'Local SEO, explained clearly',description:'Educational video scripts and supporting content that translate local SEO and listings workflows into practical guidance.'}]},
  {name:'Inventive AI',description:'Editorial and video presence across the RFP software research journey.',entries:[
  {platform:'Google · AI Overview',query:'Top RFP Software in 2026',description:'Nakama documented an AI Overview citing its LinkedIn comparison beneath the Inventive AI recommendation.'},
  {platform:'Google · Search videos',query:'Best AI RFP Tools in 2026?',description:'The portfolio records the video “Which RFP Response Software Should You Use?” appearing in Google’s video results.'},

@@ -7,12 +7,13 @@ import {Faq} from '../ContentSections';
 export const metadata:Metadata={title:'Services — Nakama Growth',description:'Connected strategy, editorial, community, video and measurement for SaaS brands that want to be discovered.'};
 
 const capabilities=[
- {id:'ai-search',icon:Sparkles,name:'AI discovery & search',lead:'Be part of the answer.',description:'We map how buyers research your category, identify the questions and sources that matter, and shape a focused plan for earning visibility.',items:['Buyer-question and source research','Search-led content strategy','Competitive visibility gaps'],span:'wide'},
- {id:'editorial',icon:FileText,name:'Editorial & authority',lead:'Put your expertise to work.',description:'Product knowledge becomes original articles, buyer guides and comparisons that help people understand their options and make informed decisions.',items:['Expert-led articles and perspectives','Comparisons and buyer guides','Content refreshes and editorial outreach'],span:'tall'},
- {id:'community',icon:MessageCircle,name:'Community & distribution',lead:'Earn a place in the conversation.',description:'We find the places your buyers exchange ideas, listen to the context, and contribute in ways that are useful, relevant and appropriate to each community.',items:['Community and conversation research','Platform-native publishing','Helpful, transparent participation'],span:'base'},
- {id:'video',icon:Play,name:'Video & discovery',lead:'Make the difference easy to see.',description:'Clear explanations, product walkthroughs and thoughtful comparisons turn buyer questions into videos people can find, learn from and share.',items:['Strategy, scripts and production','Titles, thumbnails and chapters','Publishing and short-form adaptations'],span:'base'},
- {id:'publishing',icon:Share2,name:'Publishing & digital PR',lead:'Give good ideas more places to go.',description:'Strong work deserves thoughtful distribution. We adapt the story for relevant platforms and pursue editorial opportunities that fit the audience.',items:['Editorial and digital PR outreach','Platform-specific content adaptations','Relevance-first authority building'],span:'base'},
- {id:'measurement',icon:ChartNoAxesCombined,name:'Measurement & reporting',lead:'Keep the evidence in view.',description:'A useful report shows what appeared, where it appeared and what to do next. We keep the context around citations, mentions and discovery observations.',items:['Citation and source-presence monitoring','Search and video visibility tracking','Evidence, gaps and next priorities'],span:'wide'},
+ {id:'ai-search',icon:Sparkles,name:'AEO · Answer engine optimization',lead:'Be part of the answer.',description:'We turn buyer questions into clear, useful answers that search and answer engines can understand and retrieve.',items:['Buyer-question and answer-gap research','Answer-first content and FAQ structure','Source, citation and visibility tracking'],span:'base'},
+ {id:'geo',icon:Sparkles,name:'GEO · Generative engine optimization',lead:'Build a brand AI can understand.',description:'We strengthen the content, context and third-party sources that help generative engines understand your product and its place in the market.',items:['AI answer and competitor audits','Consistent product and category context','Citation-ready content and source strategy'],span:'base'},
+ {id:'community',icon:MessageCircle,name:'Reddit & community',lead:'Earn a place in the conversation.',description:'We research relevant communities and contribute useful, transparent perspectives that respect each community’s rules and audience.',items:['Subreddit and conversation research','Helpful answers and discussion-led content','Disclosed participation and mention monitoring'],span:'base'},
+ {id:'editorial',icon:FileText,name:'Content writing',lead:'Make your expertise useful.',description:'Original articles, comparisons and buyer guides turn product knowledge into content that helps people understand their options.',items:['Expert-led articles and thought leadership','Comparison pages and buyer guides','Editorial research, fact-checking and refreshes'],span:'base'},
+ {id:'publishing',icon:Share2,name:'Link building & digital PR',lead:'Connect your work to credible sources.',description:'We pursue relevant editorial opportunities and relationships that bring useful content to the right audiences.',items:['Relevant publisher and partner research','Editorial outreach and linkable assets','Placement reporting and source-quality review'],span:'base'},
+ {id:'video',icon:Play,name:'YouTube & video creation',lead:'Turn questions into videos worth watching.',description:'From the first idea to the published video, we create clear explanations, product walkthroughs and comparisons built around your buyers.',items:['YouTube strategy, research and scripting','Video creation, editing and short-form cuts','Thumbnails, titles, chapters and publishing'],span:'base'},
+ {id:'measurement',icon:ChartNoAxesCombined,name:'Measurement & reporting',lead:'Keep the evidence in view.',description:'We report what appeared, where it appeared and what to do next, with context around citations, mentions and discovery.',items:['Citation and source-presence monitoring','Search and YouTube visibility tracking','Evidence, gaps and next priorities'],span:'wide'},
 ] as const;
 
 export default function Services(){
@@ -29,7 +30,7 @@ export default function Services(){
      </div>
     </Reveal>
     <div className="atlas-hero-rail" aria-hidden="true">
-     <span>01</span><span>02</span><span>03</span><span>04</span><span>05</span><span>06</span>
+     {capabilities.map((c,i)=><span key={c.id}>{String(i+1).padStart(2,'0')}</span>)}
     </div>
    </section>
 

@@ -246,3 +246,21 @@
 @media(prefers-reduced-motion:reduce) {
   .presence-aligned *, .proof-gallery *, .faq-editorial *, .home-contact-panel * { animation: none!important; transition: none!important; }
 }
+
+/* Compact closing invitation, with the same generous horizontal reach. */
+.home-contact-panel {margin-bottom:48px;border-radius:24px}
+.home-contact-inner {padding-block:26px 30px;display:grid;grid-template-columns:1fr 1fr;gap:22px 40px;align-items:center}
+.home-contact-top {grid-column:1/-1;padding-bottom:18px}
+.home-contact-panel h2 {font-size:clamp(32px,3.8vw,52px);line-height:1.1;margin:0;max-width:580px}
+.home-contact-bottom {flex-direction:column;align-items:flex-end;gap:18px}
+.home-contact-bottom>p {text-align:right;font-size:13px;line-height:1.6}
+.home-contact-link {min-height:50px;padding:7px 7px 7px 20px;gap:26px;font-size:14px}
+.home-contact-link>span {width:34px;height:34px}
+.home-contact-orbits {width:430px;height:430px;top:-110px;opacity:.25}
+@media(max-width:760px){
+ .home-contact-inner {width:calc(100% - 40px);grid-template-columns:1fr;gap:22px;padding-block:22px 26px}
+ .home-contact-bottom {align-items:flex-start;gap:18px}
+ .home-contact-bottom>p {text-align:left}
+ .home-contact-panel h2 {font-size:36px;margin:0}
+ .home-contact-actions {gap:18px}
+}

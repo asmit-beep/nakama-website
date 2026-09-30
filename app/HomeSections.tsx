@@ -298,7 +298,7 @@ export function HomeProof(){
      <span className="eyebrow"><span className="tiny-cross"/>Documented presence</span>
      <h2 id="proof-title">Work that shows up<br/><span>where buyers look.</span></h2>
     </div>
-    <p>Illustrative portfolio entries — historical citations and placements, not live rankings.</p>
+    <p>Selected client work and historical discovery examples. Rankings and citations change over time.</p>
    </Reveal>
    <div className="proof-client-selector" aria-label="Select a client">
     {proofClients.map(c=>(
@@ -338,27 +338,11 @@ export function HomeProof(){
 /** Native disclosures keep the FAQ accessible without animation or layout offsets. */
 export function HomeFaqLite(){
  const items=[
-  {
-   ask:'What does earned visibility mean?',
-   answer:'Building a credible presence through useful content, relevant participation and sources buyers can discover — across search, AI research, communities, editorial and video.',
-   tag:'Definition',
-   glyph:'01',
-   accent:'copper',
-  },
-  {
-   ask:'Who is Nakama a good fit for?',
-   answer:'SaaS and software businesses with a clear product and audience, ready to invest consistently in how buyers discover them.',
-   tag:'Fit',
-   glyph:'02',
-   accent:'cream',
-  },
-  {
-   ask:'Can you guarantee rankings or AI citations?',
-   answer:'No. Platforms decide what they show. We focus on useful work, credible distribution and observable evidence.',
-   tag:'Honesty',
-   glyph:'03',
-   accent:'ember',
-  },
+  {ask:'How do AEO and GEO fit into our SEO strategy?',answer:'They build on a strong search foundation. AEO focuses on clear answers to buyer questions; GEO also considers how generative platforms understand your brand and retrieve supporting sources. We connect both with useful content, technical clarity and relevant distribution.',tag:'Strategy',glyph:'01'},
+  {ask:'Can we start with one service?',answer:'Yes. We can begin with a focused content, Reddit, link-building or YouTube project, then expand when the work and your priorities justify it. We agree on the deliverables, responsibilities and reporting before starting.',tag:'Scope',glyph:'02'},
+  {ask:'Do you handle YouTube videos from idea to publishing?',answer:'We support topic research, scripts, video creation and editing, thumbnails, titles, chapters and publishing. We agree on the format, production requirements and review process with your team before work begins.',tag:'Video',glyph:'03'},
+  {ask:'How will we know whether the work is helping?',answer:'We track the signals relevant to your scope: published assets, relevant mentions, search and video visibility, and observed AI citations. Where analytics access is available, we also review traffic and conversion signals, keeping those separate from claims of direct attribution.',tag:'Measurement',glyph:'04'},
+  {ask:'Can you guarantee rankings or AI recommendations?',answer:'No. Search engines, communities and AI platforms control what they show. We commit to an agreed scope, careful execution and transparent reporting, and use the evidence to refine the next steps.',tag:'Expectations',glyph:'05'},
  ];
  return (
   <section className="home-faq faq-editorial page-width" id="faq" aria-labelledby="faq-title">
