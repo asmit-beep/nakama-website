@@ -208,3 +208,26 @@
 /* Keep the complete hero headline, including rotating phrases, at Semibold. */
 .home-cinema .hero-runtime.hero-landing .hero-copy h1.hero-serif-title,
 .home-cinema .hero-runtime.hero-landing .hero-copy h1.hero-serif-title span{font-weight:600!important}
+/* A pinned stage holds the matching stack, then releases after the fan-out. */
+.home-cinema .presence-network{height:230svh;padding-block:0;overflow:visible}
+.network-pin{position:sticky;top:88px;height:calc(100svh - 88px);min-height:600px;display:flex;flex-direction:column;justify-content:center;padding-block:24px}
+.home-cinema .network-map{width:100%;grid-template-columns:minmax(0,1fr) 300px minmax(0,1fr);gap:18px 35px;min-height:410px;--card-reveal:1}
+.home-cinema .network-card{transform:translate3d(calc(var(--fold-x,0px) * var(--fold)),calc(var(--fold-y,0px) * var(--fold)),0) scale(var(--scale-x,1),var(--scale-y,1));border-radius:18px;overflow:hidden}
+.home-cinema .network-card>*{opacity:var(--card-reveal,1)}
+.home-cinema .network-map:focus-within .network-card{transform:none}.home-cinema .network-map:focus-within .network-card>*{opacity:1}
+.home-cinema .network-hub-illustrated{width:300px;height:280px;margin:0;animation:none}
+.network-answer-card{position:relative;width:300px;height:280px;border:1px solid #ed955b80;border-radius:18px;background:linear-gradient(140deg,#272b2b,#1d2021);padding:24px 20px 14px;box-shadow:0 18px 50px #0006,inset 0 1px 0 #fff1;display:flex;flex-direction:column;color:#e6e2da;text-align:left}
+.network-cited{position:absolute;right:15px;top:-14px;display:flex;align-items:center;gap:5px;padding:7px 12px;border-radius:99px;background:#f47c32;color:#fff;font-size:10px;font-weight:700;text-transform:uppercase;box-shadow:0 5px 20px #f47c3226}
+.network-answer-label{display:flex;align-items:center;gap:8px;font-size:10px;text-transform:uppercase;letter-spacing:.1em;color:#a9b0b1}
+.network-answer-card>p{font-size:13px;line-height:1.65;margin:15px 0;color:#e0ded8}
+.network-answer-card mark{background:#ffb98130;color:#ffca9d;border-radius:3px;padding:0 3px;font-weight:600}
+.network-answer-sources{display:flex;gap:5px;align-items:center;white-space:nowrap;font-size:8px;color:#b2b5b5;margin-top:auto}
+.network-answer-sources>span:not(:first-child){border:1px solid #fff2;border-radius:99px;padding:3px 6px}
+.network-answer-count{display:flex;align-items:center;gap:4px;border-top:1px solid #fff1;padding-top:12px;margin-top:12px;font-size:10px;color:#b8bcbb}
+.network-answer-count i{width:6px;height:6px;background:#f47c32;border-radius:50%;box-shadow:0 0 0 3px #f47c3222;margin-right:3px}
+.network-answer-card>small{font-size:8px;color:#939998;margin-top:8px}
+@media(min-width:641px) and (max-height:780px){.network-pin{min-height:0;padding-block:12px}.home-cinema .network-map{min-height:350px}.network-heading h2{font-size:30px}.network-heading{margin-bottom:16px}.home-cinema .network-card{padding:14px}.network-card p{font-size:11px;margin-bottom:8px}.network-card h3{font-size:17px}.network-note{margin-top:14px;padding-top:12px}}
+@media(max-width:960px) and (min-width:641px){.home-cinema .network-map{gap:14px;grid-template-columns:minmax(0,1fr) 300px minmax(0,1fr)}.network-card h3{font-size:16px}.network-card p{font-size:11px}.network-card-detail{font-size:8px}}
+@media(max-width:640px),(max-height:620px){.home-cinema .presence-network{height:auto;padding-block:42px}.network-pin{position:relative;top:auto;height:auto;min-height:0;padding:0}.home-cinema .network-card{transform:none!important}.home-cinema .network-card>*{opacity:1}.home-cinema .network-wires{opacity:1}}
+@media(max-width:640px){.home-cinema .network-map{grid-template-columns:1fr 1fr;min-height:0;gap:14px}.home-cinema .network-hub-illustrated{grid-column:1/3;height:280px;width:300px;margin:18px 0 24px}.network-map::before{top:285px}}
+@media(prefers-reduced-motion:reduce){.home-cinema .presence-network{height:auto;padding-block:42px}.network-pin{position:relative;top:auto;height:auto;min-height:0}.home-cinema .network-card>*{opacity:1}.home-cinema .network-wires{opacity:1}}

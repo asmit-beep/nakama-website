@@ -175,21 +175,14 @@ function PlatformFace({id,active}:{id:PlatformId;active:boolean}){
 }
 
 function NakamaSiteCard(){
- return (
-  <aside className="nakama-site-card" aria-hidden="true">
-   <div className="nk-chrome">
-    <span className="nk-dots"><i/><i/><i/></span>
-    <span className="nk-url">nakama.in</span>
-   </div>
-   <div className="nk-body">
-    <img className="nk-art" src="/art/nakama-connection.webp" alt="" width="1536" height="1024" loading="lazy"/>
-    <span className="nk-kicker">仲間 · nakama</span>
-    <p className="nk-h">Be the brand<br/>they already know.</p>
-    <p className="nk-p">Earned visibility across AI answers, search, communities &amp; video.</p>
-    <span className="nk-cta">Build your presence</span>
-   </div>
-  </aside>
- );
+ return <aside className="network-answer-card" aria-label="Illustrative AI answer, not live citation data">
+  <span className="network-cited"><Check size={12}/> Cited</span>
+  <div className="network-answer-label"><Sparkles size={15}/> AI answer</div>
+  <p>A few names come up consistently in this space. <mark>Nakama</mark> is often cited for earned, community-led visibility, particularly for B2B teams that don’t want to lean on paid ads.</p>
+  <div className="network-answer-sources"><span>Sources:</span><span>reddit.com</span><span>linkedin.com</span><span>nakama.in</span></div>
+  <div className="network-answer-count"><i/>Cited <strong>47</strong> times this week</div>
+  <small>Illustrative example · not live citation data</small>
+ </aside>;
 }
 
 function GoogleOverviewChip(){
@@ -221,15 +214,19 @@ export function Presence(){
    frame=0;
    if(motion.matches||narrow.matches){map.style.setProperty('--fold','0');return;}
    const top=section.getBoundingClientRect().top;
-   const p=Math.max(0,Math.min(1,(innerHeight*.85-top)/(innerHeight*.65)));
-   map.style.setProperty('--fold',String(1-(1-Math.pow(1-p,3))));
+   const travel=section.offsetHeight-innerHeight;
+   const p=Math.max(0,Math.min(1,(-top+88)/Math.max(1,travel)*1.35-.12));
+   const eased=p*p*(3-2*p);
+   map.style.setProperty('--fold',String(1-eased));
+   map.style.setProperty('--card-reveal',String(Math.max(0,(eased-.55)/.45)));
+   cards.forEach(card=>{card.style.setProperty('--scale-x',String(1+(300/card.offsetWidth-1)*(1-eased)));card.style.setProperty('--scale-y',String(1+(280/card.offsetHeight-1)*(1-eased)))});
   };
   const schedule=()=>{if(!frame)frame=requestAnimationFrame(update)};
   const measure=()=>{
    cards.forEach((card,i)=>{
     card.style.setProperty('--fold-x',`${map.clientWidth/2-card.offsetLeft-card.offsetWidth/2}px`);
-    card.style.setProperty('--fold-y',`${map.clientHeight/2-card.offsetTop-card.offsetHeight/2+(i-1.5)*9}px`);
-    card.style.setProperty('--fold-angle',`${(i-1.5)*7}deg`);
+    card.style.setProperty('--fold-y',`${map.clientHeight/2-card.offsetTop-card.offsetHeight/2-(i+1)*5}px`);
+    card.style.setProperty('--fold-angle',`0deg`);
    });schedule();
   };
   const observer=new ResizeObserver(measure);observer.observe(map);
@@ -245,18 +242,20 @@ export function Presence(){
   {id:'quora',name:'Quora',label:'Answer the real question',text:'Clear, relevant answers that bring your expertise into the questions buyers already ask.',detail:'Question research · Useful answers',href:'/services#community'},
  ];
  return <section ref={sectionRef} className="presence-network page-width" id="presence" aria-labelledby="presence-title">
+ <div className="network-pin">
   <div className="network-heading"><div><span className="eyebrow"><span className="tiny-cross"/>A connected presence</span><h2 id="presence-title">One brand.<span>More ways to be found.</span></h2></div><p>We turn your expertise into a consistent presence across the places your buyers already trust.</p></div>
   <div className="network-map" data-active={active??'none'}>
    <svg className="network-wires" viewBox="0 0 1000 400" preserveAspectRatio="none" aria-hidden="true">
     {['M500 200 H405 Q375 200 375 170 V110 Q375 90 350 90 H290','M500 200 H595 Q625 200 625 170 V110 Q625 90 650 90 H710','M500 200 H405 Q375 200 375 230 V290 Q375 310 350 310 H290','M500 200 H595 Q625 200 625 230 V290 Q625 310 650 310 H710'].map((path,i)=><g key={channels[i].id} className={active===channels[i].id?'is-active':''}><path d={path}/><path className="wire-signal" d={path}/></g>)}
    </svg>
-   <div className="network-hub network-hub-illustrated"><NakamaSiteCard/><span className="network-hub-caption">One brand. Connected everywhere.</span></div>
+   <div className="network-hub network-hub-illustrated"><NakamaSiteCard/></div>
    {channels.map((c,i)=><Link key={c.id} href={c.href} className={`network-card network-card-${i}`} onMouseEnter={()=>setActive(c.id)} onMouseLeave={()=>setActive(null)} onFocus={()=>setActive(c.id)} onBlur={()=>setActive(null)}>
     <div className="network-card-top"><span className="network-logo"><img src={`/platforms/${c.id}.svg`} alt="" width="26" height="26"/></span><span>{c.name}</span><ArrowUpRight size={16}/></div>
     <h3>{c.label}</h3><p>{c.text}</p><span className="network-card-detail">{c.detail}</span>
    </Link>)}
   </div>
   <div className="network-note"><span>One strategy. Platform-native execution.</span><Link href="/services">Explore our services <ArrowUpRight size={15}/></Link></div>
+ </div>
  </section>;
 }
 
