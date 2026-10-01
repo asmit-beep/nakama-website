@@ -205,6 +205,6 @@
 .home-cinema .hero-restored-atmosphere{position:absolute;inset:0;z-index:0;pointer-events:none;background:radial-gradient(ellipse 78% 90% at 0% 12%,#25414460,transparent 76%),radial-gradient(ellipse 60% 70% at 100% 83%,#72503945,transparent 80%),linear-gradient(130deg,#141b1e,#181a1d 55%,#211b18);mask-image:linear-gradient(#000 76%,transparent 100%)}
 .home-cinema .hero-runtime.hero-landing .hero-copy h1.hero-serif-title{font-size:clamp(44px,calc(5.1vw + 2px),78px)!important}
 @media(max-width:640px){.home-cinema .hero-runtime.hero-landing .hero-copy h1.hero-serif-title{font-size:clamp(34px,calc(8.1vw + 2px),50px)!important}}
-/* Keep the complete hero headline, including rotating phrases, at Medium. */
+/* Keep the complete hero headline, including rotating phrases, at Semibold. */
 .home-cinema .hero-runtime.hero-landing .hero-copy h1.hero-serif-title,
-.home-cinema .hero-runtime.hero-landing .hero-copy h1.hero-serif-title span{font-weight:500!important}
+.home-cinema .hero-runtime.hero-landing .hero-copy h1.hero-serif-title span{font-weight:600!important}
