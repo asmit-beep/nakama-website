@@ -2,24 +2,24 @@ export const ASSETS = "https://assets.usecardboard.com/marketing";
 
 export const FEATURES = [
   {
-    title: "Know Every Clip",
+    title: "Asked in ChatGPT",
     description:
-      "Cardboard watches your footage for you, finding the best moments so you spend less time digging and more time making videos.",
+      "A buyer asks AI for a shortlist. We earn the sources it reads, so your name is in the answer instead of only your competitor's.",
   },
   {
-    title: "Reframe In Seconds",
+    title: "Checked on Reddit",
     description:
-      "Turn one video into vertical, square, and landscape versions instantly. Cardboard keeps the important action in frame, so every version looks like it was edited by hand.",
+      "Next they look for honest opinions. Real practitioners, clearly disclosed and genuinely useful, back you up in the threads they find.",
   },
   {
-    title: "Find Any Moment",
+    title: "Compared on YouTube",
     description:
-      "Find quotes, reactions, people, emotions, and scenes across hours of footage without digging through timelines.",
+      "Then they search 'X vs Y' right before the demo. Your side-by-side is the video that ranks and the one they finish.",
   },
   {
-    title: "Edit Together",
+    title: "Confirmed on Quora",
     description:
-      "Share a project, leave comments at exact timecodes, and let your team cut alongside you in real time. No exports, no version sprawl.",
+      "One last gut check. A detailed answer from someone who's used you closes the doubt, and AI engines quote it back.",
   },
 ] as const;
 

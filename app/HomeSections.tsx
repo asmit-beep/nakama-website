@@ -5,6 +5,7 @@ import {ArrowUpRight,Sparkles,Check,ThumbsUp,MessageSquare,Share2,Play,Eye,Chevr
 import {Reveal} from './site';
 import './presence-polish.css';
 import {proofClients} from './proof-data';
+import {engineMarks,sourceMarks} from './hero-marks';
 
 const clients=[
  {name:'SERPsGrowth',src:'serps.jpeg'},
@@ -238,10 +239,10 @@ export function Presence(){
   return()=>{observer.disconnect();window.removeEventListener('scroll',schedule);motion.removeEventListener('change',schedule);narrow.removeEventListener('change',measure);cancelAnimationFrame(frame)};
  },[]);
  const channels=[
-  {id:'reddit',name:'Reddit',label:'Join the conversation',text:'Useful contributions in the communities where buyers compare tools and share experience.',detail:'Community research · Helpful participation',href:'/services#community'},
-  {id:'linkedin',name:'LinkedIn',label:'Publish your perspective',text:'Expert articles, comparisons and practical insights that make your product easier to understand.',detail:'Thought leadership · Buyer guides',href:'/services#editorial'},
-  {id:'youtube',name:'YouTube',label:'Show how it works',text:'Searchable walkthroughs and comparison videos that help buyers see the difference.',detail:'Video creation · YouTube discovery',href:'/services#video'},
-  {id:'quora',name:'Quora',label:'Answer the real question',text:'Clear, relevant answers that bring your expertise into the questions buyers already ask.',detail:'Question research · Useful answers',href:'/services#community'},
+  {id:'reddit',name:'Reddit',label:'Join the conversation',text:'Useful contributions in the communities where buyers compare tools and share experience.',detail:'Community research · Helpful participation',href:'/services#community',brand:'#FF4500',stat:'▲ 284',statLabel:'r/SaaS · top comment'},
+  {id:'linkedin',name:'LinkedIn',label:'Publish your perspective',text:'Expert articles, comparisons and practical insights that make your product easier to understand.',detail:'Thought leadership · Buyer guides',href:'/services#editorial',brand:'#0A66C2',stat:'1.2k',statLabel:'reactions on a buyer guide'},
+  {id:'youtube',name:'YouTube',label:'Show how it works',text:'Searchable walkthroughs and comparison videos that help buyers see the difference.',detail:'Video creation · YouTube discovery',href:'/services#video',brand:'#FF0000',stat:'48K',statLabel:'views on one comparison'},
+  {id:'quora',name:'Quora',label:'Answer the real question',text:'Clear, relevant answers that bring your expertise into the questions buyers already ask.',detail:'Question research · Useful answers',href:'/services#community',brand:'#B92B27',stat:'▲ 56',statLabel:'upvotes · 1.4k views'},
  ];
  return <section ref={sectionRef} className="presence-network page-width" id="presence" aria-labelledby="presence-title">
  <div className="network-pin">
@@ -251,9 +252,9 @@ export function Presence(){
     {['M500 200 H405 Q375 200 375 170 V110 Q375 90 350 90 H290','M500 200 H595 Q625 200 625 170 V110 Q625 90 650 90 H710','M500 200 H405 Q375 200 375 230 V290 Q375 310 350 310 H290','M500 200 H595 Q625 200 625 230 V290 Q625 310 650 310 H710'].map((path,i)=><g key={channels[i].id} className={active===channels[i].id?'is-active':''}><path d={path}/><path className="wire-signal" d={path}/></g>)}
    </svg>
    <div className="network-hub network-hub-illustrated"><NakamaSiteCard/></div>
-   {channels.map((c,i)=><Link key={c.id} href={c.href} className={`network-card network-card-${i}`} onMouseEnter={()=>setActive(c.id)} onMouseLeave={()=>setActive(null)} onFocus={()=>setActive(c.id)} onBlur={()=>setActive(null)}>
+   {channels.map((c,i)=><Link key={c.id} href={c.href} style={{'--brand':c.brand} as CSSProperties} className={`network-card network-card-${i}`} onMouseEnter={()=>setActive(c.id)} onMouseLeave={()=>setActive(null)} onFocus={()=>setActive(c.id)} onBlur={()=>setActive(null)}>
     <div className="network-card-top"><span className="network-logo"><img src={`/platforms/${c.id}.svg`} alt="" width="26" height="26"/></span><span>{c.name}</span><ArrowUpRight size={16}/></div>
-    <h3>{c.label}</h3><p>{c.text}</p><span className="network-card-detail">{c.detail}</span>
+    <h3>{c.label}</h3><p>{c.text}</p><span className="network-card-stat"><b>{c.stat}</b>{c.statLabel}</span><span className="network-card-detail">{c.detail}</span><i className="network-card-glow" aria-hidden="true"/>
    </Link>)}
   </div>
   <div className="network-note"><span>One strategy. Platform-native execution.</span><Link href="/services">Explore our services <ArrowUpRight size={15}/></Link></div>
@@ -299,54 +300,90 @@ const clientMarks:Record<string,{src:string;color:string}>={
  'SERPsGrowth':{src:'/clients/serps.jpeg',color:'#caff29'},
  'Inbound Blogging':{src:'/clients/inbound.jpeg',color:'#5fbce1'},
 };
-function ProofCard({entry,index}:{entry:{platform:string;query:string;description:string};index:number}){
- const [open,setOpen]=useState(false);
+
+const sourceLogo=(platform:string)=>{
+ const p=platform.toLowerCase();
+ if(p.includes('youtube'))return sourceMarks.YouTube;
+ if(p.includes('perplexity'))return engineMarks.perplexity;
+ if(p.includes('chatgpt'))return engineMarks.chatgpt;
+ if(p.includes('google'))return engineMarks.google;
+ if(p.includes('linkedin'))return sourceMarks.LinkedIn;
+ return null;
+};
+
+function useTyped(text:string){
+ const [n,setN]=useState(text.length);
+ useEffect(()=>{
+  if(matchMedia('(prefers-reduced-motion: reduce)').matches){setN(text.length);return;}
+  setN(0);let i=0;
+  const t=window.setInterval(()=>{i+=1;setN(i);if(i>=text.length)clearInterval(t);},28);
+  return()=>clearInterval(t);
+ },[text]);
+ return text.slice(0,n);
+}
+
+function ProofPreview({entry,brand}:{entry:{platform:string;query:string};brand:string}){
  const tone=platformTone(entry.platform);
- const Icon=tone==='yt'?Play:entry.platform.includes('AI')?Sparkles:entry.platform.includes('Search')?Search:Globe;
- return <button type="button" className={`proof-record-card proof-reveal-card tone-${tone}`} aria-expanded={open} aria-label={`${entry.query}: ${open?'hide':'show'} details`} data-open={open} onMouseEnter={()=>setOpen(true)} onMouseLeave={()=>setOpen(false)} onFocus={e=>{if(e.currentTarget.matches(':focus-visible'))setOpen(true)}} onBlur={()=>setOpen(false)} onClick={()=>setOpen(v=>!v)}>
-  <span className="proof-card-face proof-card-front" aria-hidden={open}>
-   <span className="proof-card-meta"><span className="proof-source-icon"><Icon size={22}/></span><span className="proof-record-number">{String(index+1).padStart(2,'0')}</span></span>
-   <span className="proof-source-name">{entry.platform}</span><span className="proof-card-title">{entry.query}</span>
-   <span className="proof-card-prompt">Explore this record <Plus size={16}/></span>
-  </span>
-  <span className="proof-card-face proof-card-back" aria-hidden={!open}>
-   <span className="proof-source-name">Behind the presence</span><span className="proof-card-description">{entry.description}</span>
-   <span className="proof-card-foot"><span>{entry.platform}</span><ArrowUpRight size={18}/></span>
-  </span>
+ if(tone==='yt')return <span className="pv pv-yt"><span className="pv-thumb"><i>vs</i><b>{brand}</b><em>12:47</em></span><span className="pv-lines"><i/><i/><i className="s"/></span></span>;
+ if(tone==='serp'||entry.platform.includes('videos'))return <span className="pv pv-serp"><span className="pv-row"><i className="fav"/><span className="pv-lines"><i/><i className="s"/></span></span><span className="pv-row hit"><i className="fav"/><span className="pv-lines"><b>{brand}</b><i className="s"/></span></span></span>;
+ return <span className="pv pv-ai"><span className="pv-ai-head">✦ {tone==='px'?'Sources':tone==='gpt'?'ChatGPT':'AI Overview'}</span><span className="pv-lines"><i/><span className="pv-hit"><b>{brand}</b><i/></span><i className="s"/></span><span className="pv-cite">Cited</span></span>;
+}
+
+function EvidenceCard({entry,index,brand,active,onPick}:{entry:{platform:string;query:string;description:string};index:number;brand:string;active:boolean;onPick:()=>void}){
+ const tone=platformTone(entry.platform);
+ return <button type="button" className={`evidence-card tone-${tone}`} aria-pressed={active} onClick={onPick} onMouseEnter={onPick} onFocus={onPick}>
+  <span className="evidence-border" aria-hidden="true"/>
+  <span className="evidence-top"><span className="evidence-logo">{sourceLogo(entry.platform)??<Globe size={14}/>}</span><span className="evidence-platform">{entry.platform}</span><span className="evidence-no">№ {String(index+1).padStart(2,'0')}</span></span>
+  <ProofPreview entry={entry} brand={brand}/>
+  <span className="evidence-query">“{entry.query}”</span>
+  <span className="evidence-desc">{entry.description}</span>
  </button>;
 }
 
-/** A client gallery with evenly aligned, readable source records. */
+/** Documented presence: pick a client, watch the query run, see where they were cited. */
 export function HomeProof(){
  const [client,setClient]=useState(proofClients[0].name);
+ const [pick,setPick]=useState(0);
+ const [copied,setCopied]=useState(false);
  const active=proofClients.find(c=>c.name===client)??proofClients[0];
+ const entry=active.entries[Math.min(pick,active.entries.length-1)];
+ const typed=useTyped(entry.query);
+ const color=clientMarks[active.name].color;
+ const copy=()=>{navigator.clipboard?.writeText(entry.query).then(()=>{setCopied(true);setTimeout(()=>setCopied(false),1600)}).catch(()=>{})};
  return (
-  <section className="home-proof proof-gallery page-width" id="proof" aria-labelledby="proof-title">
-   <Reveal className="proof-gallery-heading">
+  <section className="evidence-room page-width" id="proof" aria-labelledby="proof-title" style={{'--client':color} as CSSProperties}>
+   <span className="evidence-kanji" aria-hidden="true">証</span>
+   <Reveal className="evidence-heading">
     <div>
-     <span className="eyebrow"><span className="tiny-cross"/>Documented presence</span>
+     <span className="eyebrow">Documented presence</span>
      <h2 id="proof-title">Work that shows up<br/><span>where buyers look.</span></h2>
     </div>
-    <p>Selected client work and historical discovery examples. Rankings and citations change over time.</p>
+    <p>Real placements for real clients. Copy any query and run it yourself. Rankings and citations change over time.</p>
    </Reveal>
-   <div className="proof-client-selector" aria-label="Select a client">
-    {proofClients.map(c=>(
-     <button key={c.name} style={{"--brand-color":clientMarks[c.name].color} as CSSProperties} type="button" aria-pressed={client===c.name} aria-controls="proof-client-record" onClick={()=>setClient(c.name)}>
-      <img className={`proof-brand-logo ${c.name==='Synup'?'is-wordmark':''}`} src={clientMarks[c.name].src} alt="" width="28" height="28" loading="lazy"/>{c.name}
-     </button>
-    ))}
-   </div>
-   <div className="proof-client-record" id="proof-client-record">
-    <header className="proof-record-heading">
-     <div>
-      <span className="proof-record-label">Casefile / {String(proofClients.indexOf(active)+1).padStart(2,'0')}</span>
-      <h3>{active.name}</h3>
-      <p>{active.description}</p>
+   <div className="evidence-shell">
+    <div className="evidence-rail" role="tablist" aria-label="Select a client">
+     {proofClients.map((c,i)=>(
+      <button key={c.name} role="tab" aria-selected={client===c.name} aria-controls="proof-client-record" style={{'--brand-color':clientMarks[c.name].color} as CSSProperties} type="button" onClick={()=>{setClient(c.name);setPick(0);}}>
+       <span className="evidence-rail-no">{String(i+1).padStart(2,'0')}</span>
+       <span className={`evidence-rail-logo ${c.name==='Synup'?'is-wordmark':''}`}><img src={clientMarks[c.name].src} alt="" width="28" height="28" loading="lazy"/></span>
+       <span className="evidence-rail-name">{c.name}</span>
+       <span className="evidence-rail-count">{c.entries.length}</span>
+      </button>
+     ))}
+    </div>
+    <div className="evidence-stage" id="proof-client-record">
+     <div className="evidence-search">
+      <span className="evidence-search-logo">{sourceLogo(entry.platform)??<Search size={16}/>}</span>
+      <span className="evidence-search-text">{typed}<i className="caret"/></span>
+      <button type="button" className="evidence-copy" onClick={copy}>{copied?<><Check size={14}/>Copied</>:<>Copy query</>}</button>
      </div>
-     <Link className="proof-record-link" href={`/work?client=${encodeURIComponent(active.name)}`}>Full client record<ArrowUpRight size={18}/></Link>
-    </header>
-    <div className="proof-record-grid" key={active.name}>
-     {active.entries.map((e,i)=><ProofCard key={`${active.name}-${i}`} entry={e} index={i}/>)}
+     <header className="evidence-case">
+      <div><span className="evidence-case-label">Casefile {String(proofClients.indexOf(active)+1).padStart(2,'0')} · {entry.platform}</span><h3>{active.name}</h3><p>{active.description}</p></div>
+      <Link className="evidence-case-link" href={`/work?client=${encodeURIComponent(active.name)}`}>Full client record<ArrowUpRight size={17}/></Link>
+     </header>
+     <div className="evidence-grid" key={active.name}>
+      {active.entries.map((e,i)=><EvidenceCard key={`${active.name}-${i}`} entry={e} index={i} brand={active.name} active={i===pick} onPick={()=>setPick(i)}/>)}
+     </div>
     </div>
    </div>
   </section>
@@ -385,20 +422,31 @@ export function HomeFaqLite(){
  );
 }
 
-/** Homepage-only contact panel; supporting pages keep their existing layout. */
+/** Homepage-only contact panel with a live, travelling ember border. */
 export function HomeContact(){
  return (
-  <section className="home-contact-panel" aria-labelledby="home-contact-title">
-   <div className="home-contact-orbits" aria-hidden="true"><i/><i/><i/><span>仲間</span></div>
-   <div className="home-contact-inner">
-    <div className="home-contact-top"><span className="eyebrow"><span className="tiny-cross"/>The next move</span></div>
-    <h2 id="home-contact-title">Let’s build your<br/><span>next chapter.</span></h2>
-    <div className="home-contact-bottom">
-     <p>A shared ambition. A good conversation.<br/>A place to start.</p>
-     <div className="home-contact-actions">
-      <Link href="/work" className="home-contact-work">See the work<ArrowUpRight size={17}/></Link>
-      <Link href="/contact" className="home-contact-link">Contact<span><ArrowUpRight size={23}/></span></Link>
+  <section className="contact-flare" aria-labelledby="home-contact-title">
+   <span className="contact-flare-border" aria-hidden="true"/>
+   <span className="contact-flare-glow" aria-hidden="true"/>
+   <div className="contact-flare-inner">
+    <div className="contact-flare-orbits" aria-hidden="true"><i/><i/><i/><b/></div>
+    <span className="contact-flare-kanji" aria-hidden="true">仲間</span>
+    <div className="contact-flare-copy">
+     <span className="eyebrow">The next move</span>
+     <h2 id="home-contact-title">Get your brand<br/><span>into the answer.</span></h2>
+     <p>Start with a focused conversation about where your brand shows up in AI answers today, and where we can build next.</p>
+    </div>
+    <div className="contact-flare-side">
+     <ul className="contact-flare-points">
+      <li><Check size={15}/>Where you show up today, mapped</li>
+      <li><Check size={15}/>Reply within one business day</li>
+      <li><Check size={15}/>Start with a single service</li>
+     </ul>
+     <div className="contact-flare-actions">
+      <Link href="/contact" className="contact-flare-cta"><span>Book a call</span><i><ArrowUpRight size={20}/></i></Link>
+      <Link href="/work" className="contact-flare-work">See the work<ArrowUpRight size={16}/></Link>
      </div>
+     <a className="contact-flare-mail" href="mailto:contact@nakama.in">contact@nakama.in</a>
     </div>
    </div>
   </section>

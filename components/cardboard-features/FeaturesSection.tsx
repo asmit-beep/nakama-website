@@ -11,13 +11,13 @@ import {
 } from "framer-motion";
 import { useRef, useState } from "react";
 import dynamic from "next/dynamic";
-const AppMock=dynamic(()=>import("./AppMock").then(module=>module.AppMock),{ssr:false});
+const SurfaceMock=dynamic(()=>import("./SurfaceMock").then(module=>module.SurfaceMock),{ssr:false});
 import { cn } from "./cn";
-import { EASE_OUT, FEATURES, mobileFit } from "./data";
+import { EASE_OUT, FEATURES } from "./data";
 import "./features.css";
 
 /**
- * "From footage to final cut" — a 400vh scroll runway on desktop. The layout
+ * "From first prompt to final pick" — a 400vh scroll runway on desktop. The layout
  * is sticky for the full height; scroll progress through the runway selects
  * one of four features, which drives the left accordion and the product mock.
  * Below `lg` the four features stack with their own static mock each.
@@ -61,13 +61,13 @@ export function FeaturesSection() {
               transition={{ duration: 0.7, ease: EASE_OUT }}
               className="features-heading font-display text-[42px] leading-[1.05] font-thin tracking-[-0.01em] text-white lg:text-[52px]"
             >
-              From footage to
+              From first prompt
               <br />
               <span className="relative inline-block">
-                final cut
+                to final pick
                 <span
                   aria-hidden="true"
-                  className="pointer-events-none absolute -bottom-2 left-0 h-3 w-full bg-[url('/cardboard/images/hero-underline.svg')] bg-no-repeat"
+                  className="pointer-events-none absolute -bottom-2 left-0 h-3 w-full bg-[url('/brand/underline-ember.svg')] bg-no-repeat"
                   style={{ backgroundSize: "100% 100%", transform: "translateZ(0)" }}
                 />
               </span>
@@ -79,7 +79,7 @@ export function FeaturesSection() {
               transition={{ duration: 0.7, delay: 0.1, ease: EASE_OUT }}
               className="features-description font-marketing-sans mt-5 max-w-[420px] text-[16px] leading-[1.4] text-[#9B9B9B]"
             >
-              Everything you need to go from footage to final cut.
+              Buyers make up their minds across four tabs before they ever book a demo. We make sure every tab says your name.
             </motion.p>
 
             {/* Desktop accordion */}
@@ -151,13 +151,9 @@ export function FeaturesSection() {
                   <div className="relative mt-7">
                     <div
                       aria-hidden="true"
-                      className="pointer-events-none absolute top-1/2 left-1/2 -z-10 h-[55%] w-[80%] -translate-x-1/2 -translate-y-1/2 rounded-full bg-[#0A90F8]/12 blur-[60px]"
+                      className="pointer-events-none absolute top-1/2 left-1/2 -z-10 h-[55%] w-[80%] -translate-x-1/2 -translate-y-1/2 rounded-full bg-[#F07C32]/12 blur-[60px]"
                     />
-                    <div className="[container-type:inline-size]">
-                      <div className="overflow-hidden" style={{ borderRadius: `calc(18px * 100cqw / ${mobileFit(i).fitWidth})` }}>
-                        <DeferredMock activeIndex={i} onNavigate={() => {}} panBoost={i === 3 ? 230 : 0} mobile />
-                      </div>
-                    </div>
+                    <DeferredMock activeIndex={i} onNavigate={() => {}} mobile />
                   </div>
                 </div>
               ))}
@@ -175,11 +171,11 @@ export function FeaturesSection() {
             >
               <div
                 aria-hidden="true"
-                className="pointer-events-none absolute top-[40%] left-1/2 -z-10 h-[40%] w-[70%] -translate-x-1/2 rounded-full bg-[#0A90F8]/15 blur-[70px]"
+                className="pointer-events-none absolute top-[40%] left-1/2 -z-10 h-[40%] w-[70%] -translate-x-1/2 rounded-full bg-[#F07C32]/14 blur-[70px]"
               />
               <div
                 aria-hidden="true"
-                className="pointer-events-none absolute top-1/2 -left-[30%] -z-10 h-[90%] w-[90%] -translate-y-1/2 rounded-full bg-[#7AB5E8]/20 blur-[120px]"
+                className="pointer-events-none absolute top-1/2 -left-[30%] -z-10 h-[90%] w-[90%] -translate-y-1/2 rounded-full bg-[#B0573A]/14 blur-[120px]"
               />
               <DeferredMock activeIndex={activeIndex} onNavigate={jumpTo} />
             </motion.div>
@@ -190,11 +186,10 @@ export function FeaturesSection() {
   );
 }
 
-function DeferredMock(props: {activeIndex:number;onNavigate:(index:number)=>void;panBoost?:number;mobile?:boolean}){
+function DeferredMock(props: {activeIndex:number;onNavigate:(index:number)=>void;mobile?:boolean}){
   const ref=useRef<HTMLDivElement>(null);
   const visible=useInView(ref,{margin:"200px 0px"});
-  const fit=mobileFit(props.activeIndex);
-  return <div ref={ref} style={{aspectRatio:props.mobile?`${fit.fitWidth}/${fit.viewH}`:"775/615"}}>
-    {visible?<AppMock {...props}/>:null}
+  return <div ref={ref} style={{aspectRatio:"775/615"}}>
+    {visible?<SurfaceMock {...props}/>:null}
   </div>;
 }

@@ -171,9 +171,9 @@ export function PromptDirector() {
           <h2
             className={`pd-reveal max-w-[520px] font-[family-name:var(--font-display)] text-[36px] leading-[1.05] font-normal tracking-[-0.01em] text-white md:text-[40px] ${shown ? "is-in" : ""}`}
           >
-            Direct Your Visibility With{" "}
+            Direct your visibility with{" "}
             <span className="relative inline-block">
-              Prompts
+              prompts
               <Underline />
             </span>
           </h2>
