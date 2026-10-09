@@ -1,0 +1,655 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>Nakama | We put your brand inside the AI answer.</title>
+<!-- Favicons: Gate mark (assets/). SVG first, PNG fallback, iOS home-screen icon. -->
+<link rel="icon" type="image/svg+xml" href="/brand/nakama-favicon.svg">
+<link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32.png?v=arch">
+<link rel="apple-touch-icon" sizes="180x180" href="assets/apple-touch-icon-180.png?v=arch">
+<!-- Fonts: the live site already loads Manrope (body) and DM Serif Display (headings).
+     Logo: Gate lockup (assets/nakama-lockup-dark.svg), an outlined SVG, so it needs no font.
+     The engine UIs inside the card use system font stacks only (no extra downloads). -->
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Manrope:wght@400;500;600;700&family=Space+Grotesk:wght@600&display=swap">
+<style>
+/* =====================================================================
+   NAKAMA HERO v3  ·  "Into the Answer"
+   Centred header (headline, one subline, Book a call), then ONE rotating
+   example card that takes on each AI engine's own interface (engine tabs
+   live in the card's top bar), inside a quiet corridor of 4 neutral glass
+   source cards. The card runs down to the client strip and fades out.
+   Site tokens are lifted from the live site (nakama-website.vercel.app).
+   Motion: transforms + opacity only. Reveal easing from the references:
+   expo-out cubic-bezier(.16,1,.3,1). Reduced motion = static, paused.
+   ===================================================================== */
+:root{
+  --base:#0c0b0d; --title:#f5f1e9; --ink:#f3f1ed; --sub:#b8b8b6;
+  --ember:#f07c32;
+  --cta-a:#f2e9db; --cta-b:#ddd0bd; --cta-ink:#29261f; --tile:#252d29;
+  --card-answer:linear-gradient(140deg,#272b2b,#1d2021); --card-border:#ed955b80;
+  --serif:"DM Serif Display",Georgia,serif; --display:"Space Grotesk","Manrope",sans-serif; --sans:"Manrope",system-ui,Arial,sans-serif;
+  --ease-out:cubic-bezier(.16,1,.3,1); --ease-io:cubic-bezier(.87,0,.13,1);
+  --grain:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='140' height='140'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='140' height='140' filter='url(%23n)'/%3E%3C/svg%3E");
+  /* engine UI font stacks (system fonts, no brand fonts) */
+  --f-google:Arial,"Arimo","Roboto",Helvetica,sans-serif;
+  --f-chat:ui-sans-serif,-apple-system,"Segoe UI","Inter","Roboto",Helvetica,Arial,sans-serif;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html,body{background:var(--base);color:var(--ink);font-family:var(--sans);-webkit-font-smoothing:antialiased;overflow-x:hidden}
+a{color:inherit;text-decoration:none} button{font:inherit;color:inherit;background:none;border:0;cursor:pointer}
+svg{display:block}
+:focus-visible{outline:2px solid var(--ember);outline-offset:3px;border-radius:6px}
+
+/* ---------- canvas: live .hero-pane gradient + teal/mauve glows ---------- */
+.hero{position:relative;display:flex;flex-direction:column;min-height:100vh;min-height:100svh;overflow:hidden;isolation:isolate;
+  background:radial-gradient(at 12% 12%,#344949 0%,#0000 46%),radial-gradient(at 92% 58%,#4b3e43 0%,#0000 50%),linear-gradient(160deg,#172329,#222c35 50%,#1d242b)}
+.halo{position:absolute;inset:-25%;z-index:-1;pointer-events:none;filter:blur(45px);
+  background:conic-gradient(from 230deg at 55% 70%,#0000 0deg,#fb8d3026 35deg,#0000 90deg,#b7493514 140deg,#0000 215deg,#ffb66c1a 280deg,#0000 325deg);
+  animation:drift 22s ease-in-out infinite alternate}
+@keyframes drift{from{transform:rotate(-8deg) scale(1)}to{transform:rotate(8deg) scale(1.08)}}
+.grain{position:absolute;inset:0;z-index:30;pointer-events:none;opacity:.05;mix-blend-mode:screen;background-image:var(--grain)}
+.floor{position:absolute;left:0;right:0;bottom:0;height:160px;z-index:6;pointer-events:none;background:linear-gradient(#0c0b0d00,#0c0b0dcc 60%,var(--base))}
+
+/* ---------- glass nav (live .site-nav), visible immediately ---------- */
+.nav{position:relative;z-index:40;display:flex;align-items:center;justify-content:space-between;padding:24px clamp(20px,4.9vw,70px) 0}
+.nav .brand{display:flex;align-items:center;height:54px}
+.nav .brand img{height:34px;width:auto;margin-left:-6px}  /* lockup SVG has 28/159.75 built-in clear space each side: 34px box = ~22.5px visible mark; -6px puts the gate's left stem on the nav gutter */
+.nav .links{display:flex;align-items:center;gap:2px;min-height:54px;padding:5px;border-radius:999px;
+  background:linear-gradient(160deg,#fff2,#29313b75 55%,#ffffff0a);border:1px solid #ffffff29;border-top-color:#fff5;
+  box-shadow:inset 0 1px 2px #ffffff25,inset 0 -1px 2px #0003,0 8px 32px #0003;-webkit-backdrop-filter:blur(20px) saturate(1.5);backdrop-filter:blur(20px) saturate(1.5)}
+.nav .links a{font-size:13px;font-weight:500;line-height:20px;color:#d4d5d8;padding:10px 15px;border-radius:99px;transition:background .3s,color .3s}
+.nav .links a:hover{background:#ffffff12;color:#fff}
+.nav .contact{display:inline-flex;align-items:center;gap:14px;height:48px;padding:0 18px;font-size:13px;font-weight:500;border-radius:14px;color:var(--cta-ink);
+  background:linear-gradient(135deg,var(--cta-a),var(--cta-b));border:1px solid #fff4dd75;box-shadow:inset 0 1px #fff9,0 5px 18px #0002}
+.nav .menu{display:none}
+
+/* ---------- header: headline, one subline, one button ---------- */
+.head{position:relative;z-index:20;flex:none;width:100%;max-width:1140px;margin:0 auto;padding:clamp(40px,7vh,72px) 24px 0;text-align:center}
+h1{font-family:var(--serif);font-weight:400;font-size:clamp(36px,5vw,76px);line-height:1.02;letter-spacing:-.018em;color:var(--title);text-wrap:balance}
+h1 .hl{display:block}
+h1[data-len=short]{font-size:clamp(40px,6.2vw,92px)}
+h1[data-len=long]{font-size:clamp(32px,4.3vw,64px);line-height:1.06;max-width:1080px;margin-left:auto;margin-right:auto}
+/* each word rises out of a mask (details.co.jp line reveal, per word so it works at any wrap) */
+h1 .w{display:inline-block;overflow:hidden;vertical-align:top;padding:.04em .02em .14em;margin:-.04em -.02em -.14em}
+h1 .w>span{display:inline-block}
+h1 .acc>span{background:linear-gradient(100deg,var(--g1),var(--g2));-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent}
+.sub{max-width:48ch;margin:22px auto 0;font:400 17px/1.55 var(--sans);letter-spacing:-.012em;color:var(--sub);text-wrap:balance}
+.ctas{display:flex;align-items:center;justify-content:center;gap:26px;margin-top:32px;flex-wrap:wrap}
+.btn{display:inline-flex;align-items:center;gap:16px;height:52px;padding:0 8px 0 22px;border-radius:14px;font:600 14.5px/1 var(--sans);color:var(--cta-ink);
+  background:linear-gradient(135deg,var(--cta-a),var(--cta-b));border:1px solid #fff4dd75;box-shadow:inset 0 1px #fff9,0 5px 18px #0002,0 10px 40px #ddd0bd22;
+  transition:transform .6s var(--ease-out)}
+.btn i{display:grid;place-items:center;width:36px;height:36px;border-radius:10px;background:var(--tile);color:var(--cta-a);font-style:normal;overflow:hidden}
+.btn i svg{width:15px;height:15px;transition:transform .6s var(--ease-out)}
+.btn:hover{transform:translateY(-2px)} .btn:hover i svg{transform:translate(2px,-2px)}
+/* very quiet secondary link */
+.ghost{font:500 13px/1 var(--sans);color:#9fa3a1;padding:6px 0;border-bottom:1px solid #ffffff00;transition:color .4s,border-color .4s}
+.ghost:hover{color:#e6e2da;border-color:#ffffff50}
+
+/* ---------- stage: corridor + card ---------- */
+.stage{position:relative;z-index:10;flex:1 0 auto;display:flex;flex-direction:column;margin-top:clamp(36px,6vh,60px);padding:0 20px;--vy:50%;--sy:1}
+.core{position:absolute;left:50%;top:var(--vy);width:820px;height:520px;transform:translate(-50%,-50%);border-radius:50%;filter:blur(70px);pointer-events:none;z-index:0;
+  background:radial-gradient(closest-side,rgba(242,233,219,.10),rgba(52,73,73,.14) 55%,transparent)}
+/* 3D corridor: each plane carries its own placement; no shared preserve-3d world, so the card is never clipped */
+.corridor{position:absolute;left:50%;top:var(--vy);width:0;height:0;z-index:1;pointer-events:none}
+.cwrap{position:absolute;left:-1200px;top:-700px;width:2400px;height:1400px;perspective:1100px;perspective-origin:50% 50%}
+/* plane size and position scale with the viewport so all 4 fit beside the card from 1200px up:
+   --pw   plane width: 176px at 1200, up to 232px
+   --gap  distance from the card edge (the card is 700px wide, half = 350)
+   --edge plane centre: never closer than the card edge + gap, never past the viewport edge */
+.plane{--pw:clamp(176px,15.4vw,232px);--gap:clamp(30px,4vw,64px);
+  --edge:min(calc(50vw - var(--pw)/2 - 26px),calc(350px + var(--gap) + var(--pw)/2));
+  position:absolute;left:50%;top:50%;width:var(--pw);padding:clamp(11px,1vw,14px) clamp(12px,1.1vw,16px) clamp(12px,1.1vw,16px);border-radius:16px;
+  transform:translate(-50%,-50%) translate3d(var(--x),var(--y),var(--z)) rotateY(var(--ry));
+  background:linear-gradient(150deg,#ffffff14,#ffffff06 60%,#ffffff0a);border:1px solid #ffffff1f;border-top-color:#ffffff33;
+  box-shadow:0 24px 50px #0005,inset 0 1px #ffffff14;color:#e4e3de;backface-visibility:hidden;
+  -webkit-backdrop-filter:blur(14px) saturate(1.2);backdrop-filter:blur(14px) saturate(1.2);
+  animation:float var(--fd,24s) ease-in-out var(--fdel,0s) infinite alternate}
+@keyframes float{from{translate:0 0 0}to{translate:0 -8px 30px}}
+.pt{display:flex;align-items:center;gap:8px;font-size:12px;font-weight:600;color:#e9e7e1}
+.pt .glyph{display:grid;place-items:center;width:22px;height:22px;border-radius:7px;background:#ffffff1a;border:1px solid #ffffff24;color:#efede8;font:700 11px/1 var(--sans)}
+.pt em{margin-left:auto;font-style:normal;font-size:11px;font-weight:500;color:#a9aca8}
+.plane .snip{margin-top:9px;font-size:clamp(12.5px,1.05vw,15px);font-weight:500;line-height:1.35;color:#f0eee9;letter-spacing:-.015em}
+/* upper planes sit beside the card's top half, lower planes beside its bottom half and slightly deeper
+   (the extra x on deeper planes cancels the perspective pull toward the centre) */
+.p1{--x:calc(-1*var(--edge));--y:calc(-88px*var(--sy));--z:0px;--ry:12deg;--fd:26s}
+.p2{--x:calc(-1*var(--edge) - 24px);--y:calc(96px*var(--sy));--z:-90px;--ry:12deg;--fd:22s;--fdel:-7s}
+.p4{--x:var(--edge);--y:calc(-104px*var(--sy));--z:-40px;--ry:-12deg;--fd:24s;--fdel:-3s}
+.p5{--x:calc(var(--edge) + 28px);--y:calc(84px*var(--sy));--z:-110px;--ry:-12deg;--fd:28s;--fdel:-10s}
+
+/* ---------- the card frame (site style, consistent across engines) ---------- */
+.card-wrap{position:relative;z-index:5;flex:1 0 auto;display:flex;flex-direction:column;width:100%;max-width:700px;margin:0 auto}
+/* the card stretches down toward the client strip and dissolves into the page: a long eased mask (cosine curve,
+   12 stops, no slope at either end so there is no edge or band) over the bottom (100% - --fs) of the card.
+   --fs is tuned per viewport so the YourBrand answer line is always fully opaque. */
+.answer{position:relative;flex:1 0 auto;display:flex;flex-direction:column;text-align:left;color:#e6e2da;background:var(--card-answer);
+  border:1px solid var(--card-border);border-bottom:0;border-radius:18px 18px 0 0;padding:10px 12px 0;
+  box-shadow:inset 0 1px #ffffff1a;
+  --fs:60%;-webkit-mask-image:var(--card-mask);mask-image:var(--card-mask);
+  --card-mask:linear-gradient(180deg,#000 0,#000 var(--fs),rgba(0,0,0,0.983) calc(var(--fs) + (100% - var(--fs))*0.0833),rgba(0,0,0,0.933) calc(var(--fs) + (100% - var(--fs))*0.1667),rgba(0,0,0,0.854) calc(var(--fs) + (100% - var(--fs))*0.2500),rgba(0,0,0,0.750) calc(var(--fs) + (100% - var(--fs))*0.3333),rgba(0,0,0,0.629) calc(var(--fs) + (100% - var(--fs))*0.4167),rgba(0,0,0,0.500) calc(var(--fs) + (100% - var(--fs))*0.5000),rgba(0,0,0,0.371) calc(var(--fs) + (100% - var(--fs))*0.5833),rgba(0,0,0,0.250) calc(var(--fs) + (100% - var(--fs))*0.6667),rgba(0,0,0,0.146) calc(var(--fs) + (100% - var(--fs))*0.7500),rgba(0,0,0,0.067) calc(var(--fs) + (100% - var(--fs))*0.8333),rgba(0,0,0,0.017) calc(var(--fs) + (100% - var(--fs))*0.9167),rgba(0,0,0,0.000) calc(var(--fs) + (100% - var(--fs))*1.0000))}
+/* soft glow behind the card (outside the mask), fading with it */
+.card-wrap:before{content:"";position:absolute;inset:30px 40px 60px;border-radius:30px;box-shadow:0 40px 100px #0009,0 0 120px #f07c3224;pointer-events:none;
+  -webkit-mask-image:linear-gradient(#000 60%,#0000);mask-image:linear-gradient(#000 60%,#0000)}
+/* top bar: engine tabs (left) + pause/play (right) */
+.a-top{display:flex;align-items:center;gap:14px;height:34px;padding:0 2px 0 6px}
+.tabs{position:relative;display:flex;align-items:center;gap:clamp(14px,2vw,22px);flex:1;min-width:0;height:100%;overflow-x:auto;scrollbar-width:none;-webkit-overflow-scrolling:touch}
+.tabs::-webkit-scrollbar{display:none}
+.tabs.scrolls{-webkit-mask-image:linear-gradient(90deg,#000 calc(100% - 28px),#0000);mask-image:linear-gradient(90deg,#000 calc(100% - 28px),#0000)}
+.tabs.scrolls.mid{-webkit-mask-image:linear-gradient(90deg,#0000,#000 22px calc(100% - 28px),#0000);mask-image:linear-gradient(90deg,#0000,#000 22px calc(100% - 28px),#0000)}
+.tabs.scrolls.end{-webkit-mask-image:linear-gradient(90deg,#0000,#000 22px);mask-image:linear-gradient(90deg,#0000,#000 22px)}
+.tab{position:relative;flex-shrink:0;display:inline-flex;align-items:center;gap:7px;height:100%;padding:0 1px;font:500 12px/1 var(--sans);letter-spacing:.005em;color:#878c8b;white-space:nowrap;border-radius:6px;transition:color .5s var(--ease-out)}
+.tab:hover{color:#d8d3ca}
+.tab[aria-selected="true"]{color:#ece6db;font-weight:600}
+.tab b{width:5px;height:5px;border-radius:50%;background:var(--ember);box-shadow:0 0 8px #f07c32aa;opacity:0;transform:scale(.4);transition:opacity .4s,transform .6s var(--ease-out)}
+.tab[aria-selected="true"] b{opacity:1;transform:none}
+.tab .short{display:none}
+.tab:focus-visible{outline-offset:-2px}
+/* subtle progress: a 1px line under the active tab */
+.tab i{position:absolute;left:12px;right:1px;bottom:3px;height:1px;background:#ffffff14;overflow:hidden;opacity:0;transition:opacity .4s}
+.tab[aria-selected="true"] i{opacity:1}
+.tab i:after{content:"";position:absolute;inset:0;background:#cfc6b6b3;transform-origin:0 50%;transform:scaleX(var(--p,0))}
+.screen{flex:1 1 auto;min-height:0;display:flex;margin-top:6px;border-radius:12px;overflow:hidden;background:#151617;box-shadow:inset 0 0 0 1px #ffffff12}
+/* the disclaimer sits in the top bar (desktop) or just under it (mobile), well above the fade */
+.a-foot{flex-shrink:0;font-size:11px;line-height:14px;color:#959a99;letter-spacing:.005em;white-space:nowrap}
+
+/* all engine UIs share one grid cell: the card is always as tall as the tallest UI, so there is no layout jump */
+.state>*{flex-shrink:0}
+.states{flex:1;display:grid;grid-template-rows:minmax(0,1fr);min-width:0}
+.state{grid-area:1/1;display:flex;flex-direction:column;min-height:0;overflow:hidden;visibility:hidden;opacity:0;transition:opacity .55s var(--ease-out),visibility 0s .6s}
+.state.on{visibility:visible;opacity:1;transition:opacity .6s var(--ease-out) .12s,visibility 0s}
+.state.out{visibility:visible;opacity:0;transition:opacity .45s linear}
+.state.pre{opacity:0;transition:none}
+/* staggered rise of each element inside a UI */
+.r{transition:transform .9s var(--ease-out),opacity .7s var(--ease-out)}
+.state.pre .r{transform:translateY(10px);opacity:0;transition:none}
+/* YourBrand: bold in every engine; each engine highlights it its own way, swept in with scaleX */
+.yb{position:relative;font-weight:700;white-space:nowrap;padding:0 3px;z-index:0}
+.yb:before{content:"";position:absolute;inset:-1px 0;border-radius:4px;z-index:-1;transform-origin:0 50%;transform:scaleX(1);transition:transform .9s var(--ease-out)}
+.state.pre .yb:before,.state.unlit .yb:before{transform:scaleX(0);transition:none}
+
+/* ===== Google AI Overviews: light results page ===== */
+.ui-google{background:#fff;color:#1f1f1f;font-family:var(--f-google);padding:16px 18px 0}
+.g-search{display:flex;align-items:center;gap:12px;height:40px;padding:0 16px;border-radius:24px;border:1px solid #dfe1e5;box-shadow:0 1px 6px #20212424;font-size:14px;color:#202124}
+.g-search .mag{position:relative;width:13px;height:13px;border:2px solid #9aa0a6;border-radius:50%;flex-shrink:0}
+.g-search .mag:after{content:"";position:absolute;right:-5px;bottom:-4px;width:6px;height:2px;background:#9aa0a6;transform:rotate(45deg)}
+.g-search .x{margin-left:auto;color:#70757a;font-size:16px;line-height:1}
+.g-tabs{display:flex;gap:18px;padding:10px 6px 0;font-size:12px;color:#5f6368;border-bottom:1px solid #ebebeb}
+.g-tabs span{padding-bottom:8px}.g-tabs .on{color:#1f1f1f;border-bottom:3px solid #1f1f1f;font-weight:700}
+.g-aio{margin-top:12px;padding:12px 14px 12px;border-radius:14px;background:#f0f4f9}
+.g-aio-h{display:flex;align-items:center;gap:8px;font-size:13.5px;font-weight:700;color:#1f1f1f}
+.spark{width:14px;height:14px;flex-shrink:0;clip-path:polygon(50% 0,61% 39%,100% 50%,61% 61%,50% 100%,39% 61%,0 50%,39% 39%);background:linear-gradient(135deg,#4285f4,#9b72cb 60%,#d96570)}
+.g-aio p{margin-top:8px;font-size:14px;line-height:1.55;color:#1f1f1f}
+.ui-google .yb{color:#1f1f1f}.ui-google .yb:before{background:#d3e3fd}
+.g-chips{display:flex;gap:8px;margin-top:10px;flex-wrap:wrap}
+.g-chips span{display:inline-flex;align-items:center;gap:6px;height:26px;padding:0 10px;border-radius:8px;background:#fff;border:1px solid #dadce0;font-size:11.5px;color:#3c4043}
+.g-chips i{width:12px;height:12px;border-radius:50%;background:#e8eaed;display:grid;place-items:center;font:700 8px/1 var(--f-google);color:#5f6368;font-style:normal}
+.g-org{margin-top:12px;padding:0 4px 14px;-webkit-mask-image:linear-gradient(#000 40%,#0000);mask-image:linear-gradient(#000 40%,#0000)}
+.g-org small{display:block;font-size:11.5px;color:#4d5156}
+.g-org b{display:block;margin-top:3px;font-size:16px;font-weight:400;color:#1a0dab}
+.g-org i{display:block;margin-top:6px;height:7px;width:86%;border-radius:4px;background:#ececec}
+/* a second organic result only fills spare height on tall screens (adds nothing to the card's natural height) */
+.ui-google .g-more{flex:1 1 0;min-height:0;overflow:hidden;margin-top:4px;padding-bottom:0;-webkit-mask-image:linear-gradient(#000,#0000 85%);mask-image:linear-gradient(#000,#0000 85%)}
+.ui-google .g-org:not(.g-more){-webkit-mask-image:none;mask-image:none;padding-bottom:10px}
+
+/* ===== ChatGPT: dark chat with a composer ===== */
+.ui-chat{background:#212121;color:#ececec;font-family:var(--f-chat);padding:16px 18px 14px}
+.c-user{align-self:flex-end;max-width:78%;padding:9px 15px;border-radius:18px;background:#303030;font-size:14px;line-height:1.45;color:#ececec}
+.c-reply{margin-top:16px;font-size:14.5px;line-height:1.6;color:#ececec}
+.ui-chat .yb:before{background:#ffffff1f}
+.c-pill{display:inline-flex;align-items:center;height:20px;padding:0 8px;margin-left:4px;border-radius:99px;background:#303030;color:#b4b4b4;font-size:11px;vertical-align:1px}
+.c-composer{margin-top:0;display:flex;align-items:center;gap:10px;height:44px;padding:0 6px 0 12px;border-radius:24px;background:#303030;border:1px solid #ffffff12;font-size:13.5px;color:#9b9b9b}
+.c-composer .plus{width:20px;height:20px;border-radius:50%;display:grid;place-items:center;color:#cfcfcf;font-size:17px;line-height:1}
+.c-composer .send{margin-left:auto;width:32px;height:32px;border-radius:50%;background:#ececec;color:#212121;display:grid;place-items:center;font:700 15px/1 var(--f-chat)}
+.c-gap{flex:none;height:18px}  /* composer sits right under the reply so it stays above the card fade */
+
+/* ===== Perplexity: answer with numbered source cards and citation pills ===== */
+.ui-pplx{background:#191a1a;color:#e8e8e6;font-family:var(--f-chat);padding:16px 18px 16px}
+.p-q{font-size:17px;font-weight:500;letter-spacing:-.01em;color:#e8e8e6}
+.p-lbl{display:flex;align-items:center;gap:7px;margin-top:12px;font-size:12px;font-weight:600;color:#e8e8e6}
+.p-lbl i{width:12px;height:12px;border-radius:3px;border:1.5px solid #20b8cd;font-style:normal}
+.p-lbl i.ans{border-radius:50%;background:radial-gradient(circle,#20b8cd 35%,#0000 40%)}
+.p-src{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin-top:8px}
+.p-src div{padding:8px 10px;border-radius:8px;background:#232525;font-size:11.5px;line-height:1.35;color:#d8d8d6;min-width:0}
+.p-src div b{display:block;font-weight:500;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.p-src div small{display:flex;align-items:center;gap:5px;margin-top:5px;font-size:11px;color:#8d9191}
+.p-src div small em{font-style:normal;color:#20b8cd}
+.p-ans{margin-top:8px;font-size:14.5px;line-height:1.6;color:#e8e8e6}
+.ui-pplx .yb{color:#e8e8e6}.ui-pplx .yb:before{background:#20b8cd2e;box-shadow:inset 0 -2px #20b8cd}
+.cite{display:inline-grid;place-items:center;min-width:18px;height:17px;padding:0 5px;margin-left:3px;border-radius:5px;background:#2d3030;color:#a3abab;font-size:11px;font-weight:600;vertical-align:1px}
+
+/* ===== Gemini: soft rounded dark layout with a gradient sparkle ===== */
+.ui-gem{background:#131314;color:#e3e3e3;font-family:var(--f-google);padding:16px 18px 14px}
+.m-user{align-self:flex-end;max-width:78%;padding:10px 16px;border-radius:20px 4px 20px 20px;background:#1e1f20;font-size:14px;line-height:1.45;color:#e3e3e3}
+.m-reply{display:flex;gap:12px;margin-top:16px}
+.m-reply .spark{width:22px;height:22px;margin-top:1px;background:linear-gradient(135deg,#4796e3,#9177c7 55%,#ca6673)}
+.m-reply p{font-size:14.5px;line-height:1.6;color:#e3e3e3}
+.ui-gem .yb{background:linear-gradient(90deg,#6ea8fe,#b38cf0);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent}
+.ui-gem .yb:before{inset:auto 0 -2px;height:2px;border-radius:2px;background:linear-gradient(90deg,#4796e3,#9177c7)}
+.m-chips{display:flex;gap:8px;margin:10px 0 0 34px;flex-wrap:wrap}
+.m-chips span{height:24px;display:inline-flex;align-items:center;padding:0 10px;border-radius:99px;background:#1e1f20;font-size:11px;color:#b9bcc1}
+.m-composer{margin-top:0;display:flex;align-items:center;height:46px;padding:0 16px;border-radius:28px;background:#1e1f20;font-size:13.5px;color:#9aa0a6;
+  box-shadow:inset 0 0 0 1px #ffffff0d}
+.m-composer:after{content:"";margin-left:auto;width:16px;height:16px;border-radius:50%;background:conic-gradient(#4796e3,#9177c7,#ca6673,#4796e3);opacity:.7}
+
+/* ---------- pause/play (in the card's top bar) ---------- */
+.pp{flex-shrink:0;display:grid;place-items:center;width:24px;height:24px;border-radius:99px;border:1px solid #ffffff1c;color:#a7a59f;transition:background .3s,border-color .3s}
+.pp:hover{background:#ffffff10;border-color:#ffffff38}
+.pp svg{width:10px;height:10px}
+.pp .i-play{display:none}.pp[aria-pressed="true"] .i-play{display:block}.pp[aria-pressed="true"] .i-pause{display:none}
+/* ---------- client strip (live site's .hero-logo-bar, same type, sizes and 56s marquee) ---------- */
+.clients{position:relative;z-index:12;flex-shrink:0;margin:0 0 18px;padding:16px 0;min-height:58px;overflow:hidden;
+  -webkit-mask-image:linear-gradient(90deg,#0000,#000 6% 94%,#0000);mask-image:linear-gradient(90deg,#0000,#000 6% 94%,#0000)}
+.c-track{display:flex;width:max-content;animation:clients 56s linear infinite}
+@keyframes clients{from{transform:translateX(0)}to{transform:translateX(-33.333%)}}
+.clients:hover .c-track,.clients:focus-within .c-track,.hero.still .c-track{animation-play-state:paused}  /* .still = tab hidden or hero off-screen (not the pause button) */
+.c-group{flex:none;display:flex;align-items:center;justify-content:space-around;width:max(1680px,100vw + 224px);margin:0;padding:0;list-style:none}
+.c-item{flex-shrink:0;display:inline-flex;align-items:center;gap:12px;font:600 15px/1 var(--display);letter-spacing:-.02em;color:#e5e4df;opacity:.94;white-space:nowrap;transition:opacity .2s}
+.c-item:hover{opacity:1}
+.c-item img{display:block;flex-shrink:0;width:auto;max-width:58px;height:26px;object-fit:contain}
+.c-item img.c-wordmark{max-width:80px;height:17px}
+.c-item img.c-lockup{max-width:140px;height:26px}
+
+/* ---------- intro choreography (CSS, staggered, expo-out) ----------
+   Nav is static. 0.10 corridor dollies in (2.2s expo-in-out) · 0.20-0.45 headline words rise
+   0.70 subline · 0.85 button · 1.00 card rises · 1.45 Google UI elements rise in · 2.0 YourBrand highlight */
+.js .rv{opacity:0}
+.js.go .rv{animation:rv 1.2s var(--ease-out) var(--d,0s) both}
+@keyframes rv{from{opacity:0;transform:translateY(14px)}to{opacity:1;transform:none}}
+.js h1 .w>span{transform:translateY(110%)}
+.js.go h1 .w>span{animation:up 1.2s var(--ease-out) var(--d,0s) both}
+@keyframes up{from{transform:translateY(110%)}to{transform:none}}
+.js .cwrap{opacity:0}
+.js.go .cwrap{animation:dolly 2.2s var(--ease-io) .1s both}
+@keyframes dolly{from{opacity:0;scale:1.12}35%{opacity:.4}to{opacity:1;scale:1}}
+.js .card-wrap{opacity:0}
+.js.go .card-wrap{animation:rise 1.4s var(--ease-out) 1s both}
+.js .clients{opacity:0}
+.js.go .clients{animation:fadein 1.6s ease-out 1.6s both}
+@keyframes fadein{to{opacity:1}}
+@keyframes rise{from{opacity:0;transform:perspective(1200px) translateY(46px) rotateX(10deg) scale(.97)}to{opacity:1;transform:none}}
+.js .core{opacity:0}
+.js.go .core{animation:glow 3s ease-out .4s both}
+@keyframes glow{to{opacity:1}}
+.hero.paused .plane,.hero.paused .halo{animation-play-state:paused}
+
+/* ---------- responsive ---------- */
+@media (max-width:1199px){
+  .corridor{display:none}
+}
+/* desktop/tablet: the hero is exactly one screen tall, so the card always runs to the client strip.
+   If the screen is short, the bottom of the engine UI is cropped (the answer line always stays visible). */
+@media (min-width:761px){
+  /* hero is one screen + --below, so the client strip sits at the fold with only the top ~40% of its logos showing */
+  .hero{--below:48px;height:calc(100vh + var(--below));height:calc(100svh + var(--below));min-height:640px}
+  .stage,.card-wrap,.answer{flex:1 1 0;min-height:0}
+}
+@media (max-width:760px){
+  .nav{padding:16px 18px 0}
+  .nav .links,.nav .contact{display:none}
+  .nav .brand img{height:30px;margin-left:-5px}
+  .nav .menu{display:grid;place-items:center;width:44px;height:44px;border-radius:14px;background:linear-gradient(160deg,#fff2,#29313b75 55%,#ffffff0a);border:1px solid #ffffff29;-webkit-backdrop-filter:blur(20px);backdrop-filter:blur(20px)}
+  .nav .menu span{display:block;width:16px;height:1.5px;background:var(--ink);box-shadow:0 5px 0 var(--ink)}
+  .head{padding-top:48px}
+  h1{font-size:clamp(32px,9.6vw,42px);line-height:1.06}
+  .sub{font-size:15.5px;margin-top:16px;max-width:30ch}
+  .ctas{flex-direction:column;gap:14px;margin-top:26px}
+  .stage{margin-top:44px;padding:0 14px}
+  .answer{--fs:70%;padding:8px 10px 0;border-radius:16px 16px 0 0}
+  .state:after{content:"";flex:none;height:84px}  /* page continues under the fade instead of ending in an edge */
+  .a-top{flex-wrap:wrap;height:auto;row-gap:0;padding:0 2px 0 4px}.tabs{height:34px}
+  .a-foot{order:3;flex-basis:100%;padding:0 0 6px 1px;font-size:10.5px}
+  .screen{margin-top:2px}
+  .tab{font-size:11.5px}.tab .full{display:none}.tab .short{display:inline}.tab b{display:none}.tab i{left:1px}
+  .tabs{gap:14px}
+  .c-item{font-size:14px}.c-item img{height:24px}.c-item img.c-wordmark{max-width:76px;height:16px}.c-item img.c-lockup{max-width:128px;height:24px}
+  .stage{flex-grow:0}
+  .clients{margin-top:2px}
+  .ui-google,.ui-chat,.ui-pplx,.ui-gem{padding-left:14px;padding-right:14px}
+  .g-tabs{gap:14px}
+  .g-org b{font-size:15px}
+  .c-user,.m-user{max-width:88%}
+  .p-src{grid-template-columns:repeat(2,1fr)} .p-src div:nth-child(3){display:none}
+}
+@media (max-width:360px){ h1{font-size:30px} .tab{font-size:11px} .tabs{gap:12px} .g-tabs span:nth-child(n+4){display:none} }
+
+/* mid-height desktop (e.g. 1440x900): headline, button, card and client strip in the fold */
+@media (min-width:761px) and (min-height:801px) and (max-height:960px){
+  .head{padding-top:36px}
+  .stage{margin-top:34px}
+}
+/* short desktop viewports (e.g. 1280x720): tighter vertical rhythm so the whole card shows */
+@media (min-width:761px) and (max-height:800px){
+  .nav{padding-top:14px} .nav .brand,.nav .links{height:50px;min-height:50px} .nav .contact{height:44px}
+  .head{padding-top:24px}
+  h1{font-size:min(5vw,8.3vh)}
+  .sub{margin-top:12px;font-size:16px}
+  .ctas{margin-top:18px} .btn{height:46px}
+  .stage{margin-top:24px;--sy:.68}
+  .answer{--fs:64%;padding-top:6px} .a-top{height:30px}
+  .p-q{font-size:15.5px}
+  .clients{padding:12px 0;min-height:50px;margin-bottom:12px}
+  .hero{--below:38px}
+  .ui-pplx{padding-top:12px} .p-lbl{margin-top:9px} .p-src div{padding:6px 9px} .p-ans{margin-top:6px}
+}
+
+/* reduced motion: static, finished state; rotation starts paused */
+@media (prefers-reduced-motion:reduce){
+  *,*:before,*:after{animation:none!important;transition:none!important}
+  .js .rv,.js .cwrap,.js .card-wrap,.js .core,.js .clients{opacity:1!important}
+  /* client strip: static and scrollable, one copy of the logos (as on the live site) */
+  .clients{overflow-x:auto;scrollbar-width:none}.clients::-webkit-scrollbar{display:none}
+  .c-group[aria-hidden=true]{display:none}
+  .js h1 .w>span{transform:none!important}
+}
+</style>
+</head>
+<body>
+<section class="hero" id="hero" aria-labelledby="hero-title">
+  <div class="halo" aria-hidden="true"></div>
+  <div class="grain" aria-hidden="true"></div>
+
+  <header class="nav">
+    <!-- LOGO: the ONE place the nav logo path lives (final Gate dark lockup). To change it, edit the src on the next line only. -->
+    <a class="brand" href="/" aria-label="Nakama home"><img src="/brand/nakama-lockup-dark.svg" alt="Nakama" width="148" height="34"></a>
+    <nav class="links" aria-label="Primary"><a href="#services">Services</a><a href="#process">Process</a><a href="#work">Work</a><a href="#journal">Journal</a><a href="#about">About</a></nav>
+    <a class="contact" href="/contact">Contact us <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 7h10v10"/><path d="M7 17 17 7"/></svg></a>
+    <button class="menu" aria-label="Open menu"><span></span></button>
+  </header>
+
+  <div class="head">
+    <!-- =================== HEADLINE + SUBLINE (swap here) ===================
+         Option 1: set data-headline to a key in HEADLINES (top of the script);
+                   if SUBLINES has the same key, the subline swaps with it.
+         Option 2: edit the <h1> text and set data-headline="custom".
+         Syntax in HEADLINES: " / " = deliberate line break, *...* = ember gradient.
+         Punctuation is plain text and takes the colour of its word (no ember full stop).
+           R4-2  (current)              We put your brand / inside the AI answer.
+           R4-1  (copywriter's lead)    We get your brand named / and cited in AI answers.
+           A     (round 1 placeholder)  When your buyers ask AI, Nakama makes sure your brand is in the answer.
+           others: R4-3 to R4-6, R2-1 to R2-8, B, C, D
+         Subline alternates (12 words max) are listed in SUBLINE_ALTS in the script.
+         Console: NakamaHero.setHeadline('R4-1')
+         ======================================================================== -->
+    <h1 id="hero-title" data-headline="R4-2"><span class="hl">We put your brand</span> <span class="hl">inside the AI answer.</span></h1>
+    <p class="sub rv" id="hero-sub" style="--d:.7s">We get B2B and SaaS brands named in AI answers. All off-site.</p>
+    <div class="ctas rv" style="--d:.85s">
+      <a class="btn" href="/contact">Book a call <i><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 7h10v10"/><path d="M7 17 17 7"/></svg></i></a>
+      <a class="ghost" href="#process">See how it works</a>
+    </div>
+  </div>
+
+  <div class="stage" id="stage">
+    <div class="core" aria-hidden="true"></div>
+    <!-- Corridor: 4 neutral glass planes = the places AI engines read. Plain thread titles only (no testimonials,
+         no YourBrand), generic letter glyphs, not platform logos. Visible from 1200px; replaced by text chips below. -->
+    <div class="corridor" aria-hidden="true"><div class="cwrap" id="cwrap">
+      <div class="plane p1"><div class="pt"><span class="glyph">r</span>Reddit<em>Thread</em></div><p class="snip">Anyone switched proposal tools this year?</p></div>
+      <div class="plane p2"><div class="pt"><span class="glyph">▶</span>YouTube<em>Video</em></div><p class="snip">Proposal software compared: a full walkthrough</p></div>
+      <div class="plane p4"><div class="pt"><span class="glyph">in</span>LinkedIn<em>Post</em></div><p class="snip">How B2B teams pick proposal software</p></div>
+      <div class="plane p5"><div class="pt"><span class="glyph">Q</span>Quora<em>Question</em></div><p class="snip">What’s the best tool for answering RFPs?</p></div>
+    </div></div>
+
+    <div class="card-wrap">
+      <!-- =========================================================
+           MICRO-INTERACTION HOOK
+           The card is <article data-answer-card>. Its live attributes:
+             data-engine="google|chatgpt|perplexity|gemini"  current state
+             data-index="0..3"
+             data-hover / data-focus  present while a pointer or focus is on it
+           Events (bubble, dispatched on the card):
+             "nakama:enginechange"  detail {index,id,name,reason}
+             "nakama:cardinteract"  detail {type:'enter'|'leave'|'focus'|'blur'|'click', engine, event}
+           API on window.NakamaHero:
+             goTo(indexOrId), next(), prev(), pause(), resume(), card,
+             onCardInteract(fn) -> returns an unsubscribe function.
+           pause()/resume() drive the same visible pause/play button (#pp); it pauses the card rotation only.
+           Engine tabs (role=tab, #tab-<id>) sit in the card's top bar; enginechange reason is 'tab', 'key', 'auto' or 'api'.
+           Rotation pauses while the card is hovered or focused, so a
+           future interaction can attach without fighting the timer.
+           Each engine UI is a .state (.ui-google, .ui-chat, .ui-pplx, .ui-gem);
+           elements with class .r rise in, staggered, when a state enters.
+           ========================================================= -->
+      <article class="answer" id="answer" data-answer-card data-engine="google" data-index="0" tabindex="0" aria-roledescription="rotating example" aria-label="Example AI answer naming YourBrand, shown in Google AI Overviews">
+        <div class="a-top">
+          <!-- engine tabs are built from the states below (ENGINE_ORDER sets the order); short names show on mobile -->
+          <div class="tabs" id="rail" role="tablist" aria-label="Example answers by AI engine"></div>
+          <p class="a-foot">Example only. Not live AI results.</p>
+          <button type="button" class="pp" id="pp" aria-pressed="false" aria-label="Pause rotation"><svg class="i-pause" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><rect x="6" y="5" width="4" height="14" rx="1"/><rect x="14" y="5" width="4" height="14" rx="1"/></svg><svg class="i-play" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M7 5v14l12-7z"/></svg></button>
+        </div>
+        <div class="screen" id="panel" role="tabpanel"><div class="states" id="states">
+
+          <div class="state ui-google on" data-id="google" data-name="Google AI Overviews" data-short="AI Overviews">
+            <div class="g-search r"><span class="mag"></span>best proposal software for a B2B sales team<span class="x">×</span></div>
+            <div class="g-tabs r"><span class="on">All</span><span>Images</span><span>Videos</span><span>News</span><span>Shopping</span></div>
+            <div class="g-aio r">
+              <div class="g-aio-h"><span class="spark"></span>AI Overview</div>
+              <p><b class="yb">YourBrand</b> is often recommended for B2B sales teams, with fast first drafts and simple approvals.</p>
+              <div class="g-chips"><span><i>Y</i>youtube.com</span><span><i>R</i>reddit.com</span></div>
+            </div>
+            <div class="g-org r"><small>example.com › proposal-software</small><b>Best proposal software for B2B teams</b><i></i></div>
+            <div class="g-org g-more r" aria-hidden="true"><small>example.org › guides</small><b>How to choose proposal software</b><i></i></div>
+          </div>
+
+          <div class="state ui-chat" data-id="chatgpt" data-name="ChatGPT">
+            <div class="c-user r">Best proposal software for a B2B sales team?</div>
+            <p class="c-reply r"><b class="yb">YourBrand</b> is a strong pick for B2B sales teams. It drafts from past answers and keeps one shared library.<span class="c-pill">reddit</span></p>
+            <div class="c-gap"></div>
+            <div class="c-composer r"><span class="plus">+</span>Ask anything<span class="send">↑</span></div>
+          </div>
+
+          <div class="state ui-pplx" data-id="perplexity" data-name="Perplexity">
+            <p class="p-q r">Best proposal software for a B2B sales team?</p>
+            <div class="p-lbl r"><i></i>Sources</div>
+            <div class="p-src r">
+              <div><b>Anyone switched proposal tools?</b><small><em>1</em>reddit.com</small></div>
+              <div><b>Proposal tools, compared</b><small><em>2</em>youtube.com</small></div>
+              <div><b>How B2B teams pick tools</b><small><em>3</em>linkedin.com</small></div>
+            </div>
+            <div class="p-lbl r"><i class="ans"></i>Answer</div>
+            <p class="p-ans r"><b class="yb">YourBrand</b> is often named a top proposal tool for B2B sales teams<span class="cite">1</span>, with a clear review flow<span class="cite">2</span>.</p>
+          </div>
+
+          <div class="state ui-gem" data-id="gemini" data-name="Gemini">
+            <div class="m-user r">Best proposal software for a B2B sales team?</div>
+            <div class="m-reply r"><span class="spark"></span><p><b class="yb">YourBrand</b> stands out for teams that want drafts from approved answers and a clear review step.</p></div>
+            <div class="m-chips r"><span>quora.com</span><span>linkedin.com</span></div>
+            <div class="c-gap"></div>
+            <div class="m-composer r">Ask Gemini</div>
+          </div>
+
+        </div></div>
+      </article>
+    </div>
+  </div>
+
+  <!-- CLIENT STRIP: same logos, type and 56s marquee as the live site (logos copied to /clients/white/).
+       Same order as the live site. JS clones the list twice (aria-hidden) for the loop. Pauses on hover/focus,
+       when the tab is hidden or the hero is off-screen; static and scrollable with reduced motion. -->
+  <div class="clients" id="clients" role="region" aria-label="Companies we've worked with">
+    <div class="c-track"><ul class="c-group" role="list">
+      <li class="c-item" aria-label="SERPsGrowth"><img src="/clients/white/serps.png" alt="" width="200" height="200"><span aria-hidden="true">SERPsGrowth</span></li>
+      <li class="c-item" aria-label="Inventive AI"><img src="/clients/white/inventive.png" alt="" width="158" height="157"><span aria-hidden="true">Inventive AI</span></li>
+      <li class="c-item" aria-label="StarAgile"><img src="/clients/white/staragile.png" alt="" width="244" height="150"><span aria-hidden="true">StarAgile</span></li>
+      <li class="c-item" aria-label="Synup"><img class="c-wordmark" src="/clients/white/synup.svg" alt="" width="557" height="151"></li>
+      <li class="c-item" aria-label="HubEngage"><img src="/clients/white/hubengage.png" alt="" width="160" height="160"><span aria-hidden="true">HubEngage</span></li>
+      <li class="c-item" aria-label="BacklinkOS"><img src="/clients/white/backlinkos.png" alt="" width="84" height="79"><span aria-hidden="true">BacklinkOS</span></li>
+      <li class="c-item" aria-label="Inbound Blogging"><img src="/clients/white/inbound.png" alt="" width="127" height="182"><span aria-hidden="true">Inbound Blogging</span></li>
+      <li class="c-item" aria-label="Brosix"><img class="c-lockup" src="/clients/white/brosix.svg" alt="" width="980" height="197"></li>
+    </ul></div>
+  </div>
+  <div class="floor" aria-hidden="true"></div>
+</section>
+
+<script>
+(()=>{
+  /* ---------- config ---------- */
+  /* ms each engine stays on screen: 8.5s on desktop, 11s on small screens */
+  const SMALL=matchMedia('(max-width:760px)');
+  const dwell=()=>SMALL.matches?11000:8500;
+  /* Headline options (from /workspace/nakama/copy/hero-copy.md). " / " = line break, *...* = ember gradient. */
+  const HEADLINES={
+    'R4-2':'We put your brand / *inside the AI answer.*',
+    'R4-1':'We get your brand named / *and cited in AI answers.*',
+    'R4-3':'We get your brand named / *by ChatGPT and Google AI.*',
+    'R4-4':'AI answers your buyers. / *We make sure it names you.*',
+    'R4-5':'Named in AI answers. / *Cited from the sources AI trusts.*',
+    'R4-6':'We get your brand named in AI answers. / *Your website stays untouched.*',
+    'A':'When your buyers ask AI, Nakama makes sure your brand *is in the answer.*',
+    'R2-2':'Your buyer asked ChatGPT. / *Did it say your name?*',
+    'B':'Your buyers are asking AI. / *Make sure it names you.*',
+    'C':'Ranking is not enough. / *Be named in the answer.*',
+    'D':'Be the brand AI recommends / *when buyers ask.*',
+    'R2-1':'Google ranks you. / *AI decides if you\u2019re mentioned.*',
+    'R2-3':'The shortlist is written by AI now. / *Get on it.*',
+    'R2-4':'Page one is not the answer. / *Being in it is.*',
+    'R2-5':'Don\u2019t just rank. / *Get named.*',
+    'R2-6':'If AI doesn\u2019t say your name, / *your buyer won\u2019t either.*',
+    'R2-7':'Be the brand / *AI answers with.*',
+    'R2-8':'Buyers stopped searching. / *They started asking.*'};
+  /* Subline per headline key (12 words max for the hero). */
+  const SUBLINES={
+    'R4-2':'We get B2B and SaaS brands named in AI answers. All off-site.',
+    'R4-1':'Founder-led AI visibility for B2B and SaaS. All off-site.',
+    'A':'Founder-led AI visibility for B2B and SaaS. All off-site.'};
+  /* Alternates for the copywriter (not used unless swapped into SUBLINES). */
+  const SUBLINE_ALTS=[
+    'Founder-led AI visibility for B2B and SaaS. All off-site.',
+    'For B2B and SaaS brands. All off-site, no dev work.',
+    'Founder-led GEO for B2B and SaaS. Your website stays untouched.',
+    'We get B2B and SaaS brands cited by AI. All off-site.'];
+  /* Card rotation order: Google AI Overviews first, then ChatGPT, Perplexity, Gemini, loop. */
+  const ENGINE_ORDER=['google','chatgpt','perplexity','gemini'];
+
+  const reduce=matchMedia('(prefers-reduced-motion: reduce)').matches;
+  const root=document.documentElement, hero=document.getElementById('hero');
+  const card=document.getElementById('answer'), statesEl=document.getElementById('states');
+  ENGINE_ORDER.forEach(id=>{const el=statesEl.querySelector(`[data-id="${id}"]`); if(el) statesEl.appendChild(el);});
+  const states=[...statesEl.children];
+  states.forEach((s,i)=>s.classList.toggle('on',i===0));
+  const rail=document.getElementById('rail'), pp=document.getElementById('pp');
+  const cwrap=document.getElementById('cwrap'), h1=document.getElementById('hero-title');
+  root.classList.add('js');
+
+  /* ---------- headline: split into masked words (staggered rise) ---------- */
+  const grad=['#ffe4c4','#ffc895','#ffae68','#ff9257','#ff7544'];
+  function setHeadline(key){
+    if(key==='custom'&&!h1.dataset.src) h1.dataset.src=h1.textContent.trim();
+    const src=key==='custom'?h1.dataset.src:(HEADLINES[key]||HEADLINES['R4-2']); h1.dataset.headline=key;
+    const subEl=document.getElementById('hero-sub'); if(subEl&&SUBLINES[key]) subEl.textContent=SUBLINES[key];
+    const len=src.replace(/[*\/]/g,'').trim().length; h1.dataset.len=len<36?'short':len>64?'long':'medium';
+    h1.setAttribute('aria-label',src.replace(/[*]/g,'').replace(/ \/ /g,' '));
+    const lines=src.split(' / '); let wi=0;
+    const accWords=src.replace(/^[^*]*\*/,'').replace(/\*.*$/,'').split(' ').filter(Boolean).length;
+    let ai=0;
+    h1.innerHTML=lines.map(line=>{
+      let acc=false;
+      const html=line.split(' ').map(raw=>{
+        if(raw.startsWith('*')){acc=true;raw=raw.slice(1);}
+        let end=false; if(raw.endsWith('*')){end=true;raw=raw.slice(0,-1);}
+        const isAcc=acc; if(end) acc=false;
+        const d=(.2+(wi++)*.05).toFixed(3);
+        let word=raw;
+        let st=`--d:${d}s`;
+        if(isAcc){const t=accWords>1?ai/(accWords-1):1, k=Math.round(t*3); st+=`;--g1:${grad[k]};--g2:${grad[Math.min(k+1,4)]}`; ai++;}
+        return `<span class="w${isAcc?' acc':''}" aria-hidden="true"><span style="${st}">${word}</span></span>`;
+      }).join(' ');
+      return lines.length>1?`<span class="hl">${html}</span>`:html;
+    }).join(' ');
+  }
+  setHeadline(h1.dataset.headline||'R4-2');
+
+  /* ---------- engine tabs in the card's top bar (role=tablist, arrow keys / Home / End) ---------- */
+  const panel=document.getElementById('panel');
+  states.forEach((s,i)=>{const b=document.createElement('button');b.type='button';b.className='tab';b.id='tab-'+s.dataset.id;
+    b.setAttribute('role','tab');b.setAttribute('aria-selected',i===0);b.setAttribute('aria-controls','panel');b.tabIndex=i===0?0:-1;
+    b.setAttribute('aria-label',s.dataset.name);
+    b.innerHTML=`<b aria-hidden="true"></b><span class="full">${s.dataset.name}</span><span class="short">${s.dataset.short||s.dataset.name}</span><i aria-hidden="true"></i>`;
+    b.addEventListener('click',()=>{goTo(i,'tab');}); rail.appendChild(b);});
+  const btns=[...rail.querySelectorAll('.tab')];
+  panel.setAttribute('aria-labelledby',btns[0].id);
+  rail.addEventListener('keydown',e=>{const k={ArrowRight:1,ArrowLeft:-1,Home:'h',End:'e'}[e.key]; if(!k) return; e.preventDefault(); e.stopPropagation();
+    const n=k==='h'?0:k==='e'?states.length-1:(idx+k+states.length)%states.length; goTo(n,'key'); btns[n].focus();});
+  /* on narrow screens the tab bar scrolls sideways; fade the edge(s) that have more tabs */
+  function edges(){const o=rail.scrollWidth>rail.clientWidth+1; rail.classList.toggle('scrolls',o);
+    rail.classList.toggle('mid',o&&rail.scrollLeft>2&&rail.scrollLeft<rail.scrollWidth-rail.clientWidth-2);
+    rail.classList.toggle('end',o&&rail.scrollLeft>=rail.scrollWidth-rail.clientWidth-2);}
+  rail.addEventListener('scroll',edges,{passive:true}); addEventListener('resize',edges);
+  function revealTab(b){ if(rail.scrollWidth<=rail.clientWidth+1) return; const l=b.offsetLeft-rail.offsetLeft, rr=l+b.offsetWidth;
+    if(l<rail.scrollLeft+16||rr>rail.scrollLeft+rail.clientWidth-24) rail.scrollTo({left:Math.max(0,l-24),behavior:reduce?'auto':'smooth'}); }
+
+  /* ---------- rotation ---------- */
+  let idx=0, timer=0, t0=0, dur=dwell(), remaining=dur, running=false, holds=new Set(), raf=0;
+  function stagger(s,base){[...s.querySelectorAll('.r')].forEach((el,k)=>el.style.transitionDelay=(base+k*.09)+'s');}
+  function show(i,reason){
+    const prev=states[idx], next=states[i]; if(prev===next&&reason!=='init') return;
+    if(prev!==next){ prev.classList.remove('on'); prev.classList.add('out'); setTimeout(()=>{ if(prev!==states[idx]) prev.classList.remove('out'); },reduce?0:500); }
+    next.classList.remove('out'); next.classList.add('pre','unlit'); void next.offsetWidth;
+    const delay=reduce?0:(prev!==next?.25:0);
+    stagger(next,delay);
+    requestAnimationFrame(()=>{ next.classList.add('on'); next.classList.remove('pre'); });
+    setTimeout(()=>next.classList.remove('unlit'),reduce?0:(delay*1000+700));
+    idx=i;
+    card.dataset.engine=next.dataset.id; card.dataset.index=i;
+    card.setAttribute('aria-label',`Example AI answer naming YourBrand, shown in ${next.dataset.name}`);
+    btns.forEach((b,k)=>{b.setAttribute('aria-selected',k===i); b.tabIndex=k===i?0:-1; b.style.setProperty('--p',0);});
+    panel.setAttribute('aria-labelledby',btns[i].id); revealTab(btns[i]); edges();
+    card.dispatchEvent(new CustomEvent('nakama:enginechange',{bubbles:true,detail:{index:i,id:next.dataset.id,name:next.dataset.name,reason}}));
+  }
+  function goTo(i,reason='api'){ if(typeof i==='string') i=states.findIndex(s=>s.dataset.id===i); if(i<0) return;
+    i=(i+states.length)%states.length; show(i,reason); dur=remaining=dwell(); schedule(); }
+  function tick(){ if(running){const p=1-Math.max(0,remaining-(performance.now()-t0))/dur; btns[idx].style.setProperty('--p',Math.min(1,p).toFixed(4));}
+    raf=requestAnimationFrame(tick); }
+  function schedule(){ clearTimeout(timer); running=false; if(holds.size) return;
+    running=true; t0=performance.now(); timer=setTimeout(()=>{goTo(idx+1,'auto');},remaining); }
+  function hold(reason){ if(holds.has(reason)) return; if(running){remaining=Math.max(800,remaining-(performance.now()-t0));} holds.add(reason); clearTimeout(timer); running=false; hero.classList.add('paused'); }
+  function release(reason){ holds.delete(reason); if(!holds.size){hero.classList.remove('paused'); schedule();} }
+
+  /* visible pause/play control (WCAG 2.2.2): pauses the answer-card rotation only (the client strip pauses on hover/focus).
+     aria-pressed="true" = paused. Reduced motion starts paused. */
+  const still=new Set();
+  function setStill(reason,on){ on?still.add(reason):still.delete(reason); hero.classList.toggle('still',still.size>0); }
+  function setUserPause(on){ pp.setAttribute('aria-pressed',on); pp.setAttribute('aria-label',on?'Play rotation':'Pause rotation'); on?hold('user'):release('user'); }
+  pp.addEventListener('click',()=>setUserPause(pp.getAttribute('aria-pressed')!=='true'));
+  /* pause when the tab is hidden or the hero is off-screen */
+  document.addEventListener('visibilitychange',()=>{setStill('hidden',document.hidden); document.hidden?hold('hidden'):release('hidden');});
+  if('IntersectionObserver' in window){ new IntersectionObserver(([e])=>{setStill('offscreen',!e.isIntersecting); e.isIntersecting?release('offscreen'):hold('offscreen');},{threshold:.05}).observe(hero); }
+
+  /* client strip: clone the list twice for a seamless loop (clones hidden from assistive tech); not with reduced motion */
+  const cTrack=document.querySelector('#clients .c-track');
+  if(cTrack&&!reduce){ const g=cTrack.firstElementChild; for(let k=0;k<2;k++){ const c=g.cloneNode(true); c.setAttribute('aria-hidden','true'); c.removeAttribute('role'); c.querySelectorAll('[aria-label]').forEach(x=>x.removeAttribute('aria-label')); cTrack.appendChild(c);} }
+
+  /* ---------- micro-interaction hook ---------- */
+  const listeners=new Set();
+  function emit(type,ev){ const detail={type,engine:card.dataset.engine,event:ev};
+    card.dispatchEvent(new CustomEvent('nakama:cardinteract',{bubbles:true,detail})); listeners.forEach(fn=>fn(detail)); }
+  card.addEventListener('pointerenter',e=>{card.dataset.hover='';hold('hover');emit('enter',e);});
+  card.addEventListener('pointerleave',e=>{delete card.dataset.hover;release('hover');emit('leave',e);});
+  card.addEventListener('focus',e=>{card.dataset.focus='';hold('focus');emit('focus',e);});
+  card.addEventListener('blur',e=>{delete card.dataset.focus;release('focus');emit('blur',e);});
+  card.addEventListener('click',e=>emit('click',e));
+  card.addEventListener('keydown',e=>{if(e.target.closest('[role=tablist]')) return; if(e.key==='ArrowRight'){goTo(idx+1,'key');} if(e.key==='ArrowLeft'){goTo(idx-1,'key');}});
+
+  /* gentle pointer parallax on the corridor (~10px, eased) */
+  if(!reduce&&matchMedia('(pointer:fine)').matches){
+    let tx=0,ty=0,cx=0,cy=0,on=false;
+    hero.addEventListener('pointermove',e=>{const r=hero.getBoundingClientRect();tx=((e.clientX-r.left)/r.width-.5)*-16;ty=((e.clientY-r.top)/r.height-.5)*-8;if(!on){on=true;requestAnimationFrame(loop);}});
+    function loop(){cx+=(tx-cx)*.06;cy+=(ty-cy)*.06;cwrap.style.translate=`${cx.toFixed(2)}px ${cy.toFixed(2)}px`;if(Math.abs(tx-cx)+Math.abs(ty-cy)>.05&&!holds.has('hidden'))requestAnimationFrame(loop);else on=false;}
+  }
+
+  window.NakamaHero={card,goTo,next:()=>goTo(idx+1),prev:()=>goTo(idx-1),pause:()=>setUserPause(true),resume:()=>setUserPause(false),
+    onCardInteract(fn){listeners.add(fn);return()=>listeners.delete(fn);},setHeadline,engines:states.map(s=>s.dataset.id),sublineAlternates:SUBLINE_ALTS};
+
+  /* ---------- start ---------- */
+  if(reduce){ show(0,'init'); setUserPause(true); raf=requestAnimationFrame(tick); return; }
+  states[0].classList.add('pre','unlit');
+  const go=()=>{ root.classList.add('go');
+    setTimeout(()=>{ stagger(states[0],0); states[0].classList.remove('pre'); },1450);
+    setTimeout(()=>states[0].classList.remove('unlit'),2050);
+    setTimeout(()=>{ dur=remaining=dwell(); schedule(); raf=requestAnimationFrame(tick); },1450);
+  };
+  (document.fonts&&document.fonts.ready?Promise.race([document.fonts.ready,new Promise(r=>setTimeout(r,900))]):Promise.resolve()).then(()=>requestAnimationFrame(go));
+})();
+</script>
+</body>
+</html>

@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="64" height="64" role="img" aria-labelledby="nakama-favicon-title">
+  <title id="nakama-favicon-title">Nakama icon</title>
+  <rect id="tile" width="64" height="64" rx="14" fill="#000000"/>
+  <g id="mark">
+    <path id="gate" d="M10 56V30A22 22 0 0 1 54 30V56H42.5V30A10.5 10.5 0 0 0 21.5 30V56Z" fill="#f3f1ed"/>
+    <circle id="sun" cx="32" cy="30" r="5.2" fill="#f07c32"/>
+  </g>
+</svg>
