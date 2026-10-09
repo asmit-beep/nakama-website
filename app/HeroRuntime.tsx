@@ -3,6 +3,7 @@ import {useEffect,useRef,useState,type CSSProperties,type KeyboardEvent} from 'r
 import {ArrowUpRight,Pause,Play} from 'lucide-react';
 import {heroPanels} from './hero-panels';
 import {heroClients} from './hero-clients';
+import {engineMarks,sourceMarks} from './hero-marks';
 
 const sources = [
  {name:'Reddit',kind:'Thread',glyph:'r',text:'Anyone switched proposal tools this year?',position:'p1'},
@@ -17,43 +18,36 @@ export function HeroRuntime({booking}:{booking:string}){
  const tabs=useRef<(HTMLButtonElement|null)[]>([]);
  const [active,setActive]=useState(0);
  const [paused,setPaused]=useState(false);
- const [hovered,setHovered]=useState(false);
- const [focused,setFocused]=useState(false);
  const [hidden,setHidden]=useState(false);
  const [offscreen,setOffscreen]=useState(false);
  const [reduced,setReduced]=useState(false);
- const [dwell,setDwell]=useState(8500);
- const remaining=useRef(8500);
- const previous=useRef(0);
- const held=paused||hovered||focused||hidden||offscreen;
+ const dwell=5000;
+ const held=paused||hidden||offscreen;
  useEffect(()=>{
   const motion=matchMedia('(prefers-reduced-motion: reduce)');
-  const small=matchMedia('(max-width:760px)');
-  const sync=()=>{setReduced(motion.matches);setPaused(motion.matches);setDwell(small.matches?11000:8500);remaining.current=small.matches?11000:8500;};
+  const sync=()=>{setReduced(motion.matches);setPaused(motion.matches);};
   const visibility=()=>setHidden(document.hidden);
   sync();visibility();
-  motion.addEventListener('change',sync);small.addEventListener('change',sync);
+  motion.addEventListener('change',sync);
   document.addEventListener('visibilitychange',visibility);
   const observer=new IntersectionObserver(([entry])=>setOffscreen(!entry.isIntersecting),{threshold:.05});
   if(hero.current)observer.observe(hero.current);
-  return()=>{observer.disconnect();motion.removeEventListener('change',sync);small.removeEventListener('change',sync);document.removeEventListener('visibilitychange',visibility);};
+  return()=>{observer.disconnect();motion.removeEventListener('change',sync);document.removeEventListener('visibilitychange',visibility);};
  },[]);
+ /* every engine shows for exactly 5 s, then the next one opens; choosing a tab restarts the 5 s */
  useEffect(()=>{
-  if(previous.current!==active){remaining.current=dwell;previous.current=active;}
   if(held)return;
-  let fired=false;
-  const started=performance.now();
-  const timer=window.setTimeout(()=>{fired=true;remaining.current=dwell;setActive(i=>(i+1)%heroPanels.length);},remaining.current);
-  return()=>{clearTimeout(timer);if(!fired)remaining.current=Math.max(0,remaining.current-(performance.now()-started));};
+  const timer=window.setTimeout(()=>setActive(i=>(i+1)%heroPanels.length),dwell);
+  return()=>clearTimeout(timer);
  },[active,held,dwell]);
- function choose(index:number){remaining.current=dwell;setActive(index);}
+ function choose(index:number){setActive(index);}
  function onKeys(event:KeyboardEvent<HTMLDivElement>){
   const keys=['ArrowRight','ArrowLeft','Home','End'];if(!keys.includes(event.key))return;
   event.preventDefault();
   const index=event.key==='Home'?0:event.key==='End'?3:(active+(event.key==='ArrowRight'?1:-1)+4)%4;
   choose(index);tabs.current[index]?.focus();
  }
- return <section ref={hero} className={`answer-hero${held?' paused':''}${paused||hidden||offscreen||reduced?' still':''}`} aria-labelledby="answer-hero-title" style={{'--dwell':`${dwell}ms`} as CSSProperties}>
+ return <section ref={hero} className={`answer-hero${held?' paused':''}${paused||hidden||offscreen||reduced?' still':''}`} aria-labelledby="answer-hero-title">
   <div className="halo" aria-hidden="true"/><div className="grain" aria-hidden="true"/>
   <div className="head">
    <h1 id="answer-hero-title" aria-label="We put your brand inside the AI answer.">
@@ -65,13 +59,13 @@ export function HeroRuntime({booking}:{booking:string}){
   <div className="stage">
    <div className="core" aria-hidden="true"/>
    <div className="corridor" aria-label="The sources AI engines read"><div className="cwrap">
-    {sources.map(source=><div className={`plane ${source.position}`} key={source.name}><div className="pt"><span className="glyph" aria-hidden="true">{source.glyph}</span>{source.name}<em>{source.kind}</em></div><p className="snip">{source.text}</p></div>)}
+    {sources.map(source=><div className={`plane ${source.position}`} key={source.name}><div className="pt"><span className="glyph" aria-hidden="true">{sourceMarks[source.name]}</span>{source.name}<em>{source.kind}</em></div><p className="snip">{source.text}</p></div>)}
    </div></div>
    <div className="card-wrap">
-    <article className="answer" aria-label="Illustrative AI answers" onPointerEnter={()=>setHovered(true)} onPointerLeave={()=>setHovered(false)} onFocusCapture={()=>setFocused(true)} onBlurCapture={event=>{if(!event.currentTarget.contains(event.relatedTarget))setFocused(false);}}>
+    <article className="answer" aria-label="Illustrative AI answers">
      <div className="a-top">
       <div className="tabs" role="tablist" aria-label="Example answers by AI engine" onKeyDown={onKeys}>
-       {heroPanels.map((panel,i)=><button key={panel.id} ref={el=>{tabs.current[i]=el;}} type="button" role="tab" className="tab" id={`hero-tab-${panel.id}`} aria-controls={`hero-panel-${panel.id}`} aria-selected={active===i} tabIndex={active===i?0:-1} onClick={()=>choose(i)}><b aria-hidden="true"/><span className="full">{panel.name}</span><span className="short">{i===0?'AI Overviews':panel.name}</span><i key={`${active}-${panel.id}`} aria-hidden="true"/></button>)}
+       {heroPanels.map((panel,i)=><button key={panel.id} ref={el=>{tabs.current[i]=el;}} type="button" role="tab" className="tab" title={panel.name} aria-label={panel.name} id={`hero-tab-${panel.id}`} aria-controls={`hero-panel-${panel.id}`} aria-selected={active===i} tabIndex={active===i?0:-1} onClick={()=>choose(i)}><span className="mark">{engineMarks[panel.id]}</span><span className="sr-only">{panel.name}</span></button>)}
       </div>
       <p className="a-foot">Example only. Not live AI results.</p>
       <button type="button" className="pp" aria-label={paused?'Play rotation':'Pause rotation'} aria-pressed={paused} onClick={()=>setPaused(p=>!p)}>{paused?<Play size={12}/>:<Pause size={12}/>}</button>
@@ -83,7 +77,7 @@ export function HeroRuntime({booking}:{booking:string}){
    </div>
   </div>
   <div className="clients" role="region" aria-label="Companies we've worked with" tabIndex={0}>
-   <div className="c-track">{[0,1,2].map(copy=><ul className="c-group" key={copy} aria-hidden={copy?true:undefined}>{heroClients.map(client=><li className="c-item" key={client.name} aria-label={client.name}><img src={client.src} alt="" width={client.w} height={client.h} className={client.kind==='icon'?'':client.kind==='wordmark'?'c-wordmark':'c-lockup'} loading={copy?'lazy':'eager'}/>{client.kind==='icon'&&<span aria-hidden="true">{client.name}</span>}</li>)}</ul>)}</div>
+   <div className="c-track">{[0,1,2].map(copy=><ul className="c-group" key={copy} aria-hidden={copy?true:undefined}>{heroClients.map(client=><li className="c-item" key={client.name} aria-label={client.name} style={{'--brand':client.tint} as CSSProperties}><span className={`c-logo ${client.kind==='icon'?'':client.kind==='wordmark'?'c-wordmark':'c-lockup'}`}><img src={client.src} alt="" width={client.w} height={client.h} loading={copy?'lazy':'eager'}/><img className="c-colour" src={client.colour} alt="" width={client.w} height={client.h} loading="lazy"/></span>{client.kind==='icon'&&<span aria-hidden="true">{client.name}</span>}</li>)}</ul>)}</div>
   </div>
   <div className="floor" aria-hidden="true"/>
  </section>;
