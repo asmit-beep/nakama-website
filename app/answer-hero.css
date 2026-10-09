@@ -1,0 +1,394 @@
+/* Sukriti’s Into the Answer hero, scoped to this section. */
+
+/* =====================================================================
+   NAKAMA HERO v3  ·  "Into the Answer"
+   Centred header (headline, one subline, Book a call), then ONE rotating
+   example card that takes on each AI engine's own interface (engine tabs
+   live in the card's top bar), inside a quiet corridor of 4 neutral glass
+   source cards. The card runs down to the client strip and fades out.
+   Site tokens are lifted from the live site (nakama-website.vercel.app).
+   Motion: transforms + opacity only. Reveal easing from the references:
+   expo-out cubic-bezier(.16,1,.3,1). Reduced motion = static, paused.
+   ===================================================================== */
+.answer-hero.answer-hero{
+  --base:#0c0b0d; --title:#f5f1e9; --ink:#f3f1ed; --sub:#b8b8b6;
+  --ember:#f07c32;
+  --cta-a:#f2e9db; --cta-b:#ddd0bd; --cta-ink:#29261f; --tile:#252d29;
+  --card-answer:linear-gradient(140deg,#272b2b,#1d2021); --card-border:#ed955b80;
+  --serif:"DM Serif Display",Georgia,serif; --display:"Space Grotesk","Manrope",sans-serif; --sans:"Manrope",system-ui,Arial,sans-serif;
+  --ease-out:cubic-bezier(.16,1,.3,1); --ease-io:cubic-bezier(.87,0,.13,1);
+  --grain:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='140' height='140'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='140' height='140' filter='url(%23n)'/%3E%3C/svg%3E");
+  /* engine UI font stacks (system fonts, no brand fonts) */
+  --f-google:Arial,"Arimo","Roboto",Helvetica,sans-serif;
+  --f-chat:ui-sans-serif,-apple-system,"Segoe UI","Inter","Roboto",Helvetica,Arial,sans-serif;
+}
+.answer-hero.answer-hero *{box-sizing:border-box;margin:0;padding:0}
+.answer-hero.answer-hero,.answer-hero.answer-hero{background:var(--base);color:var(--ink);font-family:var(--sans);-webkit-font-smoothing:antialiased;overflow-x:hidden}
+.answer-hero.answer-hero a{color:inherit;text-decoration:none} .answer-hero.answer-hero button{font:inherit;color:inherit;background:none;border:0;cursor:pointer}
+.answer-hero.answer-hero svg{display:block}
+.answer-hero.answer-hero :focus-visible{outline:2px solid var(--ember);outline-offset:3px;border-radius:6px}
+
+/* ---------- canvas: live .hero-pane gradient + teal/mauve glows ---------- */
+.answer-hero.answer-hero{position:relative;display:flex;flex-direction:column;min-height:100vh;min-height:100svh;overflow:hidden;isolation:isolate;
+  background:radial-gradient(at 12% 12%,#344949 0%,#0000 46%),radial-gradient(at 92% 58%,#4b3e43 0%,#0000 50%),linear-gradient(160deg,#172329,#222c35 50%,#1d242b)}
+.answer-hero.answer-hero .halo{position:absolute;inset:-25%;z-index:-1;pointer-events:none;filter:blur(45px);
+  background:conic-gradient(from 230deg at 55% 70%,#0000 0deg,#fb8d3026 35deg,#0000 90deg,#b7493514 140deg,#0000 215deg,#ffb66c1a 280deg,#0000 325deg);
+  animation:answer-drift 22s ease-in-out infinite alternate}
+@keyframes answer-drift{from{transform:rotate(-8deg) scale(1)}to{transform:rotate(8deg) scale(1.08)}}
+.answer-hero.answer-hero .grain{position:absolute;inset:0;z-index:30;pointer-events:none;opacity:.05;mix-blend-mode:screen;background-image:var(--grain)}
+.answer-hero.answer-hero .floor{position:absolute;left:0;right:0;bottom:0;height:160px;z-index:6;pointer-events:none;background:linear-gradient(#0c0b0d00,#0c0b0dcc 60%,var(--base))}
+
+/* ---------- glass nav (live .site-nav), visible immediately ---------- */  /* lockup SVG has 28/159.75 built-in clear space each side: 34px box = ~22.5px visible mark; -6px puts the gate's left stem on the nav gutter */
+
+/* ---------- header: headline, one subline, one button ---------- */
+.answer-hero.answer-hero .head{position:relative;z-index:20;flex:none;width:100%;max-width:1140px;margin:0 auto;padding:clamp(40px,7vh,72px) 24px 0;text-align:center}
+.answer-hero.answer-hero h1{font-family:var(--serif);font-weight:400;font-size:clamp(36px,5vw,76px);line-height:1.02;letter-spacing:-.018em;color:var(--title);text-wrap:balance}
+.answer-hero.answer-hero h1 .hl{display:block}
+.answer-hero.answer-hero h1[data-len=short]{font-size:clamp(40px,6.2vw,92px)}
+.answer-hero.answer-hero h1[data-len=long]{font-size:clamp(32px,4.3vw,64px);line-height:1.06;max-width:1080px;margin-left:auto;margin-right:auto}
+/* each word rises out of a mask (details.co.jp line reveal, per word so it works at any wrap) */
+.answer-hero.answer-hero h1 .w{display:inline-block;overflow:hidden;vertical-align:top;padding:.04em .02em .14em;margin:-.04em -.02em -.14em}
+.answer-hero.answer-hero h1 .w>span{display:inline-block}
+.answer-hero.answer-hero h1 .acc>span{background:linear-gradient(100deg,var(--g1),var(--g2));-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent}
+.answer-hero.answer-hero .sub{max-width:48ch;margin:22px auto 0;font:400 17px/1.55 var(--sans);letter-spacing:-.012em;color:var(--sub);text-wrap:balance}
+.answer-hero.answer-hero .ctas{display:flex;align-items:center;justify-content:center;gap:26px;margin-top:32px;flex-wrap:wrap}
+.answer-hero.answer-hero .btn{display:inline-flex;align-items:center;gap:16px;height:52px;padding:0 8px 0 22px;border-radius:14px;font:600 14.5px/1 var(--sans);color:var(--cta-ink);
+  background:linear-gradient(135deg,var(--cta-a),var(--cta-b));border:1px solid #fff4dd75;box-shadow:inset 0 1px #fff9,0 5px 18px #0002,0 10px 40px #ddd0bd22;
+  transition:transform .6s var(--ease-out)}
+.answer-hero.answer-hero .btn i{display:grid;place-items:center;width:36px;height:36px;border-radius:10px;background:var(--tile);color:var(--cta-a);font-style:normal;overflow:hidden}
+.answer-hero.answer-hero .btn i svg{width:15px;height:15px;transition:transform .6s var(--ease-out)}
+.answer-hero.answer-hero .btn:hover{transform:translateY(-2px)} .answer-hero.answer-hero .btn:hover i svg{transform:translate(2px,-2px)}
+/* very quiet secondary link */
+.answer-hero.answer-hero .ghost{font:500 13px/1 var(--sans);color:#9fa3a1;padding:6px 0;border-bottom:1px solid #ffffff00;transition:color .4s,border-color .4s}
+.answer-hero.answer-hero .ghost:hover{color:#e6e2da;border-color:#ffffff50}
+
+/* ---------- stage: corridor + card ---------- */
+.answer-hero.answer-hero .stage{position:relative;z-index:10;flex:1 0 auto;display:flex;flex-direction:column;margin-top:clamp(36px,6vh,60px);padding:0 20px;--vy:50%;--sy:1}
+.answer-hero.answer-hero .core{position:absolute;left:50%;top:var(--vy);width:820px;height:520px;transform:translate(-50%,-50%);border-radius:50%;filter:blur(70px);pointer-events:none;z-index:0;
+  background:radial-gradient(closest-side,rgba(242,233,219,.10),rgba(52,73,73,.14) 55%,transparent)}
+/* 3D corridor: each plane carries its own placement; no shared preserve-3d world, so the card is never clipped */
+.answer-hero.answer-hero .corridor{position:absolute;left:50%;top:var(--vy);width:0;height:0;z-index:1;pointer-events:none}
+.answer-hero.answer-hero .cwrap{position:absolute;left:-1200px;top:-700px;width:2400px;height:1400px;perspective:1100px;perspective-origin:50% 50%}
+/* plane size and position scale with the viewport so all 4 fit beside the card from 1200px up:
+   --pw   plane width: 176px at 1200, up to 232px
+   --gap  distance from the card edge (the card is 700px wide, half = 350)
+   --edge plane centre: never closer than the card edge + gap, never past the viewport edge */
+.answer-hero.answer-hero .plane{--pw:clamp(176px,15.4vw,232px);--gap:clamp(30px,4vw,64px);
+  --edge:min(calc(50vw - var(--pw)/2 - 26px),calc(350px + var(--gap) + var(--pw)/2));
+  position:absolute;left:50%;top:50%;width:var(--pw);padding:clamp(11px,1vw,14px) clamp(12px,1.1vw,16px) clamp(12px,1.1vw,16px);border-radius:16px;
+  transform:translate(-50%,-50%) translate3d(var(--x),var(--y),var(--z)) rotateY(var(--ry));
+  background:linear-gradient(150deg,#ffffff14,#ffffff06 60%,#ffffff0a);border:1px solid #ffffff1f;border-top-color:#ffffff33;
+  box-shadow:0 24px 50px #0005,inset 0 1px #ffffff14;color:#e4e3de;backface-visibility:hidden;
+  -webkit-backdrop-filter:blur(14px) saturate(1.2);backdrop-filter:blur(14px) saturate(1.2);
+  animation:answer-float var(--fd,24s) ease-in-out var(--fdel,0s) infinite alternate}
+@keyframes answer-float{from{translate:0 0 0}to{translate:0 -8px 30px}}
+.answer-hero.answer-hero .pt{display:flex;align-items:center;gap:8px;font-size:12px;font-weight:600;color:#e9e7e1}
+.answer-hero.answer-hero .pt .glyph{display:grid;place-items:center;width:22px;height:22px;border-radius:7px;background:#ffffff1a;border:1px solid #ffffff24;color:#efede8;font:700 11px/1 var(--sans)}
+.answer-hero.answer-hero .pt em{margin-left:auto;font-style:normal;font-size:11px;font-weight:500;color:#a9aca8}
+.answer-hero.answer-hero .plane .snip{margin-top:9px;font-size:clamp(12.5px,1.05vw,15px);font-weight:500;line-height:1.35;color:#f0eee9;letter-spacing:-.015em}
+/* upper planes sit beside the card's top half, lower planes beside its bottom half and slightly deeper
+   (the extra x on deeper planes cancels the perspective pull toward the centre) */
+.answer-hero.answer-hero .p1{--x:calc(-1*var(--edge));--y:calc(-88px*var(--sy));--z:0px;--ry:12deg;--fd:26s}
+.answer-hero.answer-hero .p2{--x:calc(-1*var(--edge) - 24px);--y:calc(96px*var(--sy));--z:-90px;--ry:12deg;--fd:22s;--fdel:-7s}
+.answer-hero.answer-hero .p4{--x:var(--edge);--y:calc(-104px*var(--sy));--z:-40px;--ry:-12deg;--fd:24s;--fdel:-3s}
+.answer-hero.answer-hero .p5{--x:calc(var(--edge) + 28px);--y:calc(84px*var(--sy));--z:-110px;--ry:-12deg;--fd:28s;--fdel:-10s}
+
+/* ---------- the card frame (site style, consistent across engines) ---------- */
+.answer-hero.answer-hero .card-wrap{position:relative;z-index:5;flex:1 0 auto;display:flex;flex-direction:column;width:100%;max-width:700px;margin:0 auto}
+/* the card stretches down toward the client strip and dissolves into the page: a long eased mask (cosine curve,
+   12 stops, no slope at either end so there is no edge or band) over the bottom (100% - --fs) of the card.
+   --fs is tuned per viewport so the YourBrand answer line is always fully opaque. */
+.answer-hero.answer-hero .answer{position:relative;flex:1 0 auto;display:flex;flex-direction:column;text-align:left;color:#e6e2da;background:var(--card-answer);
+  border:1px solid var(--card-border);border-bottom:0;border-radius:18px 18px 0 0;padding:10px 12px 0;
+  box-shadow:inset 0 1px #ffffff1a;
+  --fs:60%;-webkit-mask-image:var(--card-mask);mask-image:var(--card-mask);
+  --card-mask:linear-gradient(180deg,#000 0,#000 var(--fs),rgba(0,0,0,0.983) calc(var(--fs) + (100% - var(--fs))*0.0833),rgba(0,0,0,0.933) calc(var(--fs) + (100% - var(--fs))*0.1667),rgba(0,0,0,0.854) calc(var(--fs) + (100% - var(--fs))*0.2500),rgba(0,0,0,0.750) calc(var(--fs) + (100% - var(--fs))*0.3333),rgba(0,0,0,0.629) calc(var(--fs) + (100% - var(--fs))*0.4167),rgba(0,0,0,0.500) calc(var(--fs) + (100% - var(--fs))*0.5000),rgba(0,0,0,0.371) calc(var(--fs) + (100% - var(--fs))*0.5833),rgba(0,0,0,0.250) calc(var(--fs) + (100% - var(--fs))*0.6667),rgba(0,0,0,0.146) calc(var(--fs) + (100% - var(--fs))*0.7500),rgba(0,0,0,0.067) calc(var(--fs) + (100% - var(--fs))*0.8333),rgba(0,0,0,0.017) calc(var(--fs) + (100% - var(--fs))*0.9167),rgba(0,0,0,0.000) calc(var(--fs) + (100% - var(--fs))*1.0000))}
+/* soft glow behind the card (outside the mask), fading with it */
+.answer-hero.answer-hero .card-wrap:before{content:"";position:absolute;inset:30px 40px 60px;border-radius:30px;box-shadow:0 40px 100px #0009,0 0 120px #f07c3224;pointer-events:none;
+  -webkit-mask-image:linear-gradient(#000 60%,#0000);mask-image:linear-gradient(#000 60%,#0000)}
+/* top bar: engine tabs (left) + pause/play (right) */
+.answer-hero.answer-hero .a-top{display:flex;align-items:center;gap:14px;height:34px;padding:0 2px 0 6px}
+.answer-hero.answer-hero .tabs{position:relative;display:flex;align-items:center;gap:clamp(14px,2vw,22px);flex:1;min-width:0;height:100%;overflow-x:auto;scrollbar-width:none;-webkit-overflow-scrolling:touch}
+.answer-hero.answer-hero .tabs::-webkit-scrollbar{display:none}
+.answer-hero.answer-hero .tabs.scrolls{-webkit-mask-image:linear-gradient(90deg,#000 calc(100% - 28px),#0000);mask-image:linear-gradient(90deg,#000 calc(100% - 28px),#0000)}
+.answer-hero.answer-hero .tabs.scrolls.mid{-webkit-mask-image:linear-gradient(90deg,#0000,#000 22px calc(100% - 28px),#0000);mask-image:linear-gradient(90deg,#0000,#000 22px calc(100% - 28px),#0000)}
+.answer-hero.answer-hero .tabs.scrolls.end{-webkit-mask-image:linear-gradient(90deg,#0000,#000 22px);mask-image:linear-gradient(90deg,#0000,#000 22px)}
+.answer-hero.answer-hero .tab{position:relative;flex-shrink:0;display:inline-flex;align-items:center;gap:7px;height:100%;padding:0 1px;font:500 12px/1 var(--sans);letter-spacing:.005em;color:#878c8b;white-space:nowrap;border-radius:6px;transition:color .5s var(--ease-out)}
+.answer-hero.answer-hero .tab:hover{color:#d8d3ca}
+.answer-hero.answer-hero .tab[aria-selected="true"]{color:#ece6db;font-weight:600}
+.answer-hero.answer-hero .tab b{width:5px;height:5px;border-radius:50%;background:var(--ember);box-shadow:0 0 8px #f07c32aa;opacity:0;transform:scale(.4);transition:opacity .4s,transform .6s var(--ease-out)}
+.answer-hero.answer-hero .tab[aria-selected="true"] b{opacity:1;transform:none}
+.answer-hero.answer-hero .tab .short{display:none}
+.answer-hero.answer-hero .tab:focus-visible{outline-offset:-2px}
+/* subtle progress: a 1px line under the active tab */
+.answer-hero.answer-hero .tab i{position:absolute;left:12px;right:1px;bottom:3px;height:1px;background:#ffffff14;overflow:hidden;opacity:0;transition:opacity .4s}
+.answer-hero.answer-hero .tab[aria-selected="true"] i{opacity:1}
+.answer-hero.answer-hero .tab i:after{content:"";position:absolute;inset:0;background:#cfc6b6b3;transform-origin:0 50%;transform:scaleX(var(--p,0))}
+.answer-hero.answer-hero .screen{flex:1 1 auto;min-height:0;display:flex;margin-top:6px;border-radius:12px;overflow:hidden;background:#151617;box-shadow:inset 0 0 0 1px #ffffff12}
+/* the disclaimer sits in the top bar (desktop) or just under it (mobile), well above the fade */
+.answer-hero.answer-hero .a-foot{flex-shrink:0;font-size:11px;line-height:14px;color:#959a99;letter-spacing:.005em;white-space:nowrap}
+
+/* all engine UIs share one grid cell: the card is always as tall as the tallest UI, so there is no layout jump */
+.answer-hero.answer-hero .state>*{flex-shrink:0}
+.answer-hero.answer-hero .states{flex:1;display:grid;grid-template-rows:minmax(0,1fr);min-width:0}
+.answer-hero.answer-hero .state{grid-area:1/1;display:flex;flex-direction:column;min-height:0;overflow:hidden;visibility:hidden;opacity:0;transition:opacity .55s var(--ease-out),visibility 0s .6s}
+.answer-hero.answer-hero .state.on{visibility:visible;opacity:1;transition:opacity .6s var(--ease-out) .12s,visibility 0s}
+.answer-hero.answer-hero .state.out{visibility:visible;opacity:0;transition:opacity .45s linear}
+.answer-hero.answer-hero .state.pre{opacity:0;transition:none}
+/* staggered rise of each element inside a UI */
+.answer-hero.answer-hero .r{transition:transform .9s var(--ease-out),opacity .7s var(--ease-out)}
+.answer-hero.answer-hero .state.pre .r{transform:translateY(10px);opacity:0;transition:none}
+/* YourBrand: bold in every engine; each engine highlights it its own way, swept in with scaleX */
+.answer-hero.answer-hero .yb{position:relative;font-weight:700;white-space:nowrap;padding:0 3px;z-index:0}
+.answer-hero.answer-hero .yb:before{content:"";position:absolute;inset:-1px 0;border-radius:4px;z-index:-1;transform-origin:0 50%;transform:scaleX(1);transition:transform .9s var(--ease-out)}
+.answer-hero.answer-hero .state.pre .yb:before,.answer-hero.answer-hero .state.unlit .yb:before{transform:scaleX(0);transition:none}
+
+/* ===== Google AI Overviews: light results page ===== */
+.answer-hero.answer-hero .ui-google{background:#fff;color:#1f1f1f;font-family:var(--f-google);padding:16px 18px 0}
+.answer-hero.answer-hero .g-search{display:flex;align-items:center;gap:12px;height:40px;padding:0 16px;border-radius:24px;border:1px solid #dfe1e5;box-shadow:0 1px 6px #20212424;font-size:14px;color:#202124}
+.answer-hero.answer-hero .g-search .mag{position:relative;width:13px;height:13px;border:2px solid #9aa0a6;border-radius:50%;flex-shrink:0}
+.answer-hero.answer-hero .g-search .mag:after{content:"";position:absolute;right:-5px;bottom:-4px;width:6px;height:2px;background:#9aa0a6;transform:rotate(45deg)}
+.answer-hero.answer-hero .g-search .x{margin-left:auto;color:#70757a;font-size:16px;line-height:1}
+.answer-hero.answer-hero .g-tabs{display:flex;gap:18px;padding:10px 6px 0;font-size:12px;color:#5f6368;border-bottom:1px solid #ebebeb}
+.answer-hero.answer-hero .g-tabs span{padding-bottom:8px}.answer-hero.answer-hero .g-tabs .on{color:#1f1f1f;border-bottom:3px solid #1f1f1f;font-weight:700}
+.answer-hero.answer-hero .g-aio{margin-top:12px;padding:12px 14px 12px;border-radius:14px;background:#f0f4f9}
+.answer-hero.answer-hero .g-aio-h{display:flex;align-items:center;gap:8px;font-size:13.5px;font-weight:700;color:#1f1f1f}
+.answer-hero.answer-hero .spark{width:14px;height:14px;flex-shrink:0;clip-path:polygon(50% 0,61% 39%,100% 50%,61% 61%,50% 100%,39% 61%,0 50%,39% 39%);background:linear-gradient(135deg,#4285f4,#9b72cb 60%,#d96570)}
+.answer-hero.answer-hero .g-aio p{margin-top:8px;font-size:14px;line-height:1.55;color:#1f1f1f}
+.answer-hero.answer-hero .ui-google .yb{color:#1f1f1f}.answer-hero.answer-hero .ui-google .yb:before{background:#d3e3fd}
+.answer-hero.answer-hero .g-chips{display:flex;gap:8px;margin-top:10px;flex-wrap:wrap}
+.answer-hero.answer-hero .g-chips span{display:inline-flex;align-items:center;gap:6px;height:26px;padding:0 10px;border-radius:8px;background:#fff;border:1px solid #dadce0;font-size:11.5px;color:#3c4043}
+.answer-hero.answer-hero .g-chips i{width:12px;height:12px;border-radius:50%;background:#e8eaed;display:grid;place-items:center;font:700 8px/1 var(--f-google);color:#5f6368;font-style:normal}
+.answer-hero.answer-hero .g-org{margin-top:12px;padding:0 4px 14px;-webkit-mask-image:linear-gradient(#000 40%,#0000);mask-image:linear-gradient(#000 40%,#0000)}
+.answer-hero.answer-hero .g-org small{display:block;font-size:11.5px;color:#4d5156}
+.answer-hero.answer-hero .g-org b{display:block;margin-top:3px;font-size:16px;font-weight:400;color:#1a0dab}
+.answer-hero.answer-hero .g-org i{display:block;margin-top:6px;height:7px;width:86%;border-radius:4px;background:#ececec}
+/* a second organic result only fills spare height on tall screens (adds nothing to the card's natural height) */
+.answer-hero.answer-hero .ui-google .g-more{flex:1 1 0;min-height:0;overflow:hidden;margin-top:4px;padding-bottom:0;-webkit-mask-image:linear-gradient(#000,#0000 85%);mask-image:linear-gradient(#000,#0000 85%)}
+.answer-hero.answer-hero .ui-google .g-org:not(.g-more){-webkit-mask-image:none;mask-image:none;padding-bottom:10px}
+
+/* ===== ChatGPT: dark chat with a composer ===== */
+.answer-hero.answer-hero .ui-chat{background:#212121;color:#ececec;font-family:var(--f-chat);padding:16px 18px 14px}
+.answer-hero.answer-hero .c-user{align-self:flex-end;max-width:78%;padding:9px 15px;border-radius:18px;background:#303030;font-size:14px;line-height:1.45;color:#ececec}
+.answer-hero.answer-hero .c-reply{margin-top:16px;font-size:14.5px;line-height:1.6;color:#ececec}
+.answer-hero.answer-hero .ui-chat .yb:before{background:#ffffff1f}
+.answer-hero.answer-hero .c-pill{display:inline-flex;align-items:center;height:20px;padding:0 8px;margin-left:4px;border-radius:99px;background:#303030;color:#b4b4b4;font-size:11px;vertical-align:1px}
+.answer-hero.answer-hero .c-composer{margin-top:0;display:flex;align-items:center;gap:10px;height:44px;padding:0 6px 0 12px;border-radius:24px;background:#303030;border:1px solid #ffffff12;font-size:13.5px;color:#9b9b9b}
+.answer-hero.answer-hero .c-composer .plus{width:20px;height:20px;border-radius:50%;display:grid;place-items:center;color:#cfcfcf;font-size:17px;line-height:1}
+.answer-hero.answer-hero .c-composer .send{margin-left:auto;width:32px;height:32px;border-radius:50%;background:#ececec;color:#212121;display:grid;place-items:center;font:700 15px/1 var(--f-chat)}
+.answer-hero.answer-hero .c-gap{flex:none;height:18px}  /* composer sits right under the reply so it stays above the card fade */
+
+/* ===== Perplexity: answer with numbered source cards and citation pills ===== */
+.answer-hero.answer-hero .ui-pplx{background:#191a1a;color:#e8e8e6;font-family:var(--f-chat);padding:16px 18px 16px}
+.answer-hero.answer-hero .p-q{font-size:17px;font-weight:500;letter-spacing:-.01em;color:#e8e8e6}
+.answer-hero.answer-hero .p-lbl{display:flex;align-items:center;gap:7px;margin-top:12px;font-size:12px;font-weight:600;color:#e8e8e6}
+.answer-hero.answer-hero .p-lbl i{width:12px;height:12px;border-radius:3px;border:1.5px solid #20b8cd;font-style:normal}
+.answer-hero.answer-hero .p-lbl i.ans{border-radius:50%;background:radial-gradient(circle,#20b8cd 35%,#0000 40%)}
+.answer-hero.answer-hero .p-src{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin-top:8px}
+.answer-hero.answer-hero .p-src div{padding:8px 10px;border-radius:8px;background:#232525;font-size:11.5px;line-height:1.35;color:#d8d8d6;min-width:0}
+.answer-hero.answer-hero .p-src div b{display:block;font-weight:500;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.answer-hero.answer-hero .p-src div small{display:flex;align-items:center;gap:5px;margin-top:5px;font-size:11px;color:#8d9191}
+.answer-hero.answer-hero .p-src div small em{font-style:normal;color:#20b8cd}
+.answer-hero.answer-hero .p-ans{margin-top:8px;font-size:14.5px;line-height:1.6;color:#e8e8e6}
+.answer-hero.answer-hero .ui-pplx .yb{color:#e8e8e6}.answer-hero.answer-hero .ui-pplx .yb:before{background:#20b8cd2e;box-shadow:inset 0 -2px #20b8cd}
+.answer-hero.answer-hero .cite{display:inline-grid;place-items:center;min-width:18px;height:17px;padding:0 5px;margin-left:3px;border-radius:5px;background:#2d3030;color:#a3abab;font-size:11px;font-weight:600;vertical-align:1px}
+
+/* ===== Gemini: soft rounded dark layout with a gradient sparkle ===== */
+.answer-hero.answer-hero .ui-gem{background:#131314;color:#e3e3e3;font-family:var(--f-google);padding:16px 18px 14px}
+.answer-hero.answer-hero .m-user{align-self:flex-end;max-width:78%;padding:10px 16px;border-radius:20px 4px 20px 20px;background:#1e1f20;font-size:14px;line-height:1.45;color:#e3e3e3}
+.answer-hero.answer-hero .m-reply{display:flex;gap:12px;margin-top:16px}
+.answer-hero.answer-hero .m-reply .spark{width:22px;height:22px;margin-top:1px;background:linear-gradient(135deg,#4796e3,#9177c7 55%,#ca6673)}
+.answer-hero.answer-hero .m-reply p{font-size:14.5px;line-height:1.6;color:#e3e3e3}
+.answer-hero.answer-hero .ui-gem .yb{background:linear-gradient(90deg,#6ea8fe,#b38cf0);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent}
+.answer-hero.answer-hero .ui-gem .yb:before{inset:auto 0 -2px;height:2px;border-radius:2px;background:linear-gradient(90deg,#4796e3,#9177c7)}
+.answer-hero.answer-hero .m-chips{display:flex;gap:8px;margin:10px 0 0 34px;flex-wrap:wrap}
+.answer-hero.answer-hero .m-chips span{height:24px;display:inline-flex;align-items:center;padding:0 10px;border-radius:99px;background:#1e1f20;font-size:11px;color:#b9bcc1}
+.answer-hero.answer-hero .m-composer{margin-top:0;display:flex;align-items:center;height:46px;padding:0 16px;border-radius:28px;background:#1e1f20;font-size:13.5px;color:#9aa0a6;
+  box-shadow:inset 0 0 0 1px #ffffff0d}
+.answer-hero.answer-hero .m-composer:after{content:"";margin-left:auto;width:16px;height:16px;border-radius:50%;background:conic-gradient(#4796e3,#9177c7,#ca6673,#4796e3);opacity:.7}
+
+/* ---------- pause/play (in the card's top bar) ---------- */
+.answer-hero.answer-hero .pp{flex-shrink:0;display:grid;place-items:center;width:24px;height:24px;border-radius:99px;border:1px solid #ffffff1c;color:#a7a59f;transition:background .3s,border-color .3s}
+.answer-hero.answer-hero .pp:hover{background:#ffffff10;border-color:#ffffff38}
+.answer-hero.answer-hero .pp svg{width:10px;height:10px}
+.answer-hero.answer-hero .pp .i-play{display:none}.answer-hero.answer-hero .pp[aria-pressed="true"] .i-play{display:block}.answer-hero.answer-hero .pp[aria-pressed="true"] .i-pause{display:none}
+/* ---------- client strip (live site's .hero-logo-bar, same type, sizes and 56s marquee) ---------- */
+.answer-hero.answer-hero .clients{position:relative;z-index:12;flex-shrink:0;margin:0 0 18px;padding:16px 0;min-height:58px;overflow:hidden;
+  -webkit-mask-image:linear-gradient(90deg,#0000,#000 6% 94%,#0000);mask-image:linear-gradient(90deg,#0000,#000 6% 94%,#0000)}
+.answer-hero.answer-hero .c-track{display:flex;width:max-content;animation:answer-clients 56s linear infinite}
+@keyframes answer-clients{from{transform:translateX(0)}to{transform:translateX(-33.333%)}}
+.answer-hero.answer-hero .clients:hover .c-track,.answer-hero.answer-hero .clients:focus-within .c-track,.answer-hero.answer-hero.still .c-track{animation-play-state:paused}  /* .still = tab hidden or hero off-screen (not the pause button) */
+.answer-hero.answer-hero .c-group{flex:none;display:flex;align-items:center;justify-content:space-around;width:max(1680px,100vw + 224px);margin:0;padding:0;list-style:none}
+.answer-hero.answer-hero .c-item{flex-shrink:0;display:inline-flex;align-items:center;gap:12px;font:600 15px/1 var(--display);letter-spacing:-.02em;color:#e5e4df;opacity:.94;white-space:nowrap;transition:opacity .2s}
+.answer-hero.answer-hero .c-item:hover{opacity:1}
+.answer-hero.answer-hero .c-item img{display:block;flex-shrink:0;width:auto;max-width:58px;height:26px;object-fit:contain}
+.answer-hero.answer-hero .c-item img.c-wordmark{max-width:80px;height:17px}
+.answer-hero.answer-hero .c-item img.c-lockup{max-width:140px;height:26px}
+
+/* ---------- intro choreography (CSS, staggered, expo-out) ----------
+   Nav is static. 0.10 corridor dollies in (2.2s expo-in-out) · 0.20-0.45 headline words rise
+   0.70 subline · 0.85 button · 1.00 card rises · 1.45 Google UI elements rise in · 2.0 YourBrand highlight */
+.answer-hero.answer-hero .rv{opacity:0}
+.answer-hero.answer-hero .rv{animation:answer-rv 1.2s var(--ease-out) var(--d,0s) both}
+@keyframes answer-rv{from{opacity:0;transform:translateY(14px)}to{opacity:1;transform:none}}
+.answer-hero.answer-hero h1 .w>span{transform:translateY(110%)}
+.answer-hero.answer-hero h1 .w>span{animation:answer-up 1.2s var(--ease-out) var(--d,0s) both}
+@keyframes answer-up{from{transform:translateY(110%)}to{transform:none}}
+.answer-hero.answer-hero .cwrap{opacity:0}
+.answer-hero.answer-hero .cwrap{animation:answer-dolly 2.2s var(--ease-io) .1s both}
+@keyframes answer-dolly{from{opacity:0;scale:1.12}35%{opacity:.4}to{opacity:1;scale:1}}
+.answer-hero.answer-hero .card-wrap{opacity:0}
+.answer-hero.answer-hero .card-wrap{animation:answer-rise 1.4s var(--ease-out) 1s both}
+.answer-hero.answer-hero .clients{opacity:0}
+.answer-hero.answer-hero .clients{animation:answer-fadein 1.6s ease-out 1.6s both}
+@keyframes answer-fadein{to{opacity:1}}
+@keyframes answer-rise{from{opacity:0;transform:perspective(1200px) translateY(46px) rotateX(10deg) scale(.97)}to{opacity:1;transform:none}}
+.answer-hero.answer-hero .core{opacity:0}
+.answer-hero.answer-hero .core{animation:answer-glow 3s ease-out .4s both}
+@keyframes answer-glow{to{opacity:1}}
+.answer-hero.answer-hero.paused .plane,.answer-hero.answer-hero.paused .halo{animation-play-state:paused}
+
+/* ---------- responsive ---------- */
+@media (max-width:1199px){
+  .answer-hero.answer-hero .corridor{display:none}
+}
+/* desktop/tablet: the hero is exactly one screen tall, so the card always runs to the client strip.
+   If the screen is short, the bottom of the engine UI is cropped (the answer line always stays visible). */
+@media (min-width:761px){
+  /* hero is one screen + --below, so the client strip sits at the fold with only the top ~40% of its logos showing */
+  .answer-hero.answer-hero{--below:48px;height:calc(100vh + var(--below));height:calc(100svh + var(--below));min-height:640px}
+  .answer-hero.answer-hero .stage,.answer-hero.answer-hero .card-wrap,.answer-hero.answer-hero .answer{flex:1 1 0;min-height:0}
+}
+@media (max-width:760px){
+  .answer-hero.answer-hero .head{padding-top:48px}
+  .answer-hero.answer-hero h1{font-size:clamp(32px,9.6vw,42px);line-height:1.06}
+  .answer-hero.answer-hero .sub{font-size:15.5px;margin-top:16px;max-width:30ch}
+  .answer-hero.answer-hero .ctas{flex-direction:column;gap:14px;margin-top:26px}
+  .answer-hero.answer-hero .stage{margin-top:44px;padding:0 14px}
+  .answer-hero.answer-hero .answer{--fs:70%;padding:8px 10px 0;border-radius:16px 16px 0 0}
+  .answer-hero.answer-hero .state:after{content:"";flex:none;height:84px}  /* page continues under the fade instead of ending in an edge */
+  .answer-hero.answer-hero .a-top{flex-wrap:wrap;height:auto;row-gap:0;padding:0 2px 0 4px}.answer-hero.answer-hero .tabs{height:34px}
+  .answer-hero.answer-hero .a-foot{order:3;flex-basis:100%;padding:0 0 6px 1px;font-size:10.5px}
+  .answer-hero.answer-hero .screen{margin-top:2px}
+  .answer-hero.answer-hero .tab{font-size:11.5px}.answer-hero.answer-hero .tab .full{display:none}.answer-hero.answer-hero .tab .short{display:inline}.answer-hero.answer-hero .tab b{display:none}.answer-hero.answer-hero .tab i{left:1px}
+  .answer-hero.answer-hero .tabs{gap:14px}
+  .answer-hero.answer-hero .c-item{font-size:14px}.answer-hero.answer-hero .c-item img{height:24px}.answer-hero.answer-hero .c-item img.c-wordmark{max-width:76px;height:16px}.answer-hero.answer-hero .c-item img.c-lockup{max-width:128px;height:24px}
+  .answer-hero.answer-hero .stage{flex-grow:0}
+  .answer-hero.answer-hero .clients{margin-top:2px}
+  .answer-hero.answer-hero .ui-google,.answer-hero.answer-hero .ui-chat,.answer-hero.answer-hero .ui-pplx,.answer-hero.answer-hero .ui-gem{padding-left:14px;padding-right:14px}
+  .answer-hero.answer-hero .g-tabs{gap:14px}
+  .answer-hero.answer-hero .g-org b{font-size:15px}
+  .answer-hero.answer-hero .c-user,.answer-hero.answer-hero .m-user{max-width:88%}
+  .answer-hero.answer-hero .p-src{grid-template-columns:repeat(2,1fr)} .answer-hero.answer-hero .p-src div:nth-child(3){display:none}
+}
+@media (max-width:360px){ .answer-hero.answer-hero h1{font-size:30px} .answer-hero.answer-hero .tab{font-size:11px} .answer-hero.answer-hero .tabs{gap:12px} .answer-hero.answer-hero .g-tabs span:nth-child(n+4){display:none} }
+
+/* mid-height desktop (e.g. 1440x900): headline, button, card and client strip in the fold */
+@media (min-width:761px) and (min-height:801px) and (max-height:960px){
+  .answer-hero.answer-hero .head{padding-top:36px}
+  .answer-hero.answer-hero .stage{margin-top:34px}
+}
+/* short desktop viewports (e.g. 1280x720): tighter vertical rhythm so the whole card shows */
+@media (min-width:761px) and (max-height:800px){
+  .answer-hero.answer-hero .head{padding-top:24px}
+  .answer-hero.answer-hero h1{font-size:min(5vw,8.3vh)}
+  .answer-hero.answer-hero .sub{margin-top:12px;font-size:16px}
+  .answer-hero.answer-hero .ctas{margin-top:18px} .answer-hero.answer-hero .btn{height:46px}
+  .answer-hero.answer-hero .stage{margin-top:24px;--sy:.68}
+  .answer-hero.answer-hero .answer{--fs:64%;padding-top:6px} .answer-hero.answer-hero .a-top{height:30px}
+  .answer-hero.answer-hero .p-q{font-size:15.5px}
+  .answer-hero.answer-hero .clients{padding:12px 0;min-height:50px;margin-bottom:12px}
+  .answer-hero.answer-hero{--below:38px}
+  .answer-hero.answer-hero .ui-pplx{padding-top:12px} .answer-hero.answer-hero .p-lbl{margin-top:9px} .answer-hero.answer-hero .p-src div{padding:6px 9px} .answer-hero.answer-hero .p-ans{margin-top:6px}
+}
+
+/* reduced motion: static, finished state; rotation starts paused */
+@media (prefers-reduced-motion:reduce){
+  .answer-hero.answer-hero *,.answer-hero.answer-hero *:before,.answer-hero.answer-hero *:after{animation:none!important;transition:none!important}
+  .answer-hero.answer-hero .rv,.answer-hero.answer-hero .cwrap,.answer-hero.answer-hero .card-wrap,.answer-hero.answer-hero .core,.answer-hero.answer-hero .clients{opacity:1!important}
+  /* client strip: static and scrollable, one copy of the logos (as on the live site) */
+  .answer-hero.answer-hero .clients{overflow-x:auto;scrollbar-width:none}.answer-hero.answer-hero .clients::-webkit-scrollbar{display:none}
+  .answer-hero.answer-hero .c-group[aria-hidden=true]{display:none}
+  .answer-hero.answer-hero h1 .w>span{transform:none!important}
+}
+
+/* Integration: keep the complete client strip within the first desktop screen. */
+.answer-hero.answer-hero {height:100svh;min-height:700px;padding-top:88px;margin:0;width:100%;font-family:var(--sans);color:var(--ink)}
+.answer-hero.answer-hero h1 {font-family:var(--serif);font-weight:400;font-size:clamp(38px,5vw,76px);line-height:1.04;letter-spacing:-.018em;text-transform:none;margin:0}
+.answer-hero.answer-hero .head {padding-top:clamp(22px,4vh,44px)}
+.answer-hero.answer-hero .accent-line {color:#ffad70}
+.answer-hero.answer-hero .accent-line .w:nth-child(1){color:#ffe4c4}
+.answer-hero.answer-hero .accent-line .w:nth-child(2){color:#ffc895}
+.answer-hero.answer-hero .accent-line .w:nth-child(3){color:#ffae68}
+.answer-hero.answer-hero .accent-line .w:nth-child(4){color:#ff8351}
+.answer-hero.answer-hero .stage {margin-top:30px;min-height:300px}
+.answer-hero.answer-hero .clients {margin:8px 0 18px;min-height:60px;opacity:1;animation:none}
+.answer-hero.answer-hero .answer {--fs:68%;min-height:300px}
+.answer-hero.answer-hero .a-top {flex-wrap:wrap;height:auto;min-height:44px;gap:8px}
+.answer-hero.answer-hero .a-foot {order:3;flex-basis:100%;font-size:10px;padding-bottom:6px}
+.answer-hero.answer-hero .tabs {height:30px;gap:18px}
+.answer-hero.answer-hero .pp {width:28px;height:28px}
+.answer-hero.answer-hero .pp svg {display:block;width:12px;height:12px}
+.answer-hero.answer-hero .tab i:after {transform:scaleX(0);animation:answer-progress var(--dwell) linear forwards}
+.answer-hero.answer-hero.paused .tab i:after {animation-play-state:paused}
+@keyframes answer-progress {to{transform:scaleX(1)}}
+.answer-hero.answer-hero .state.on .r {animation:answer-element .8s var(--ease-out) both}
+.answer-hero.answer-hero .state.on .r:nth-child(2){animation-delay:.06s}
+.answer-hero.answer-hero .state.on .r:nth-child(3){animation-delay:.12s}
+.answer-hero.answer-hero .state.on .r:nth-child(4){animation-delay:.18s}
+@keyframes answer-element {from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:none}}
+.answer-hero.answer-hero .state.on .yb:before {animation:answer-highlight .85s var(--ease-out) .35s both}
+@keyframes answer-highlight {from{transform:scaleX(0)}to{transform:scaleX(1)}}
+.answer-hero.answer-hero .corridor {display:block}
+.answer-hero.answer-hero .plane {min-height:106px}
+.answer-hero.answer-hero.still .plane,.answer-hero.answer-hero.still .halo {animation-play-state:paused}
+.site-frame .site-nav .brand {padding:0;background:transparent!important;box-shadow:none!important}
+.site-frame .site-nav .brand .nakama-gate-lockup {width:184px;height:auto;max-width:none;display:block}
+@media(min-width:761px) and (max-width:1199px){
+ .answer-hero.answer-hero .card-wrap{max-width:56vw}
+ .answer-hero.answer-hero .plane{--pw:18vw;--edge:calc(39vw);padding:14px 12px}
+ .answer-hero.answer-hero .plane .snip{font-size:12px}
+ .answer-hero.answer-hero .plane .pt{font-size:11px;gap:6px}
+ .answer-hero.answer-hero .pt em{display:none}
+ .answer-hero.answer-hero .tab .full{display:none}
+ .answer-hero.answer-hero .tab .short{display:inline}
+ .answer-hero.answer-hero .tabs{gap:12px}
+ .answer-hero.answer-hero .tab{font-size:11px}
+ .answer-hero.answer-hero .tab b{display:none}
+}
+@media(min-width:761px) and (max-height:800px){
+ .answer-hero.answer-hero{min-height:690px;padding-top:84px}
+ .answer-hero.answer-hero .head{padding-top:16px}
+ .answer-hero.answer-hero h1{font-size:clamp(38px,4.6vw,60px)}
+ .answer-hero.answer-hero .sub{margin-top:14px}
+ .answer-hero.answer-hero .ctas{margin-top:20px}
+ .answer-hero.answer-hero .stage{margin-top:22px;min-height:285px}
+ .answer-hero.answer-hero .answer{min-height:285px}
+ .answer-hero.answer-hero .clients{min-height:50px;margin:4px 0 10px;padding:12px 0}
+}
+@media(max-width:760px){
+ .answer-hero.answer-hero{height:auto;min-height:100svh;padding-top:86px}
+ .answer-hero.answer-hero .head{padding:28px 20px 0}
+ .answer-hero.answer-hero h1{font-size:clamp(32px,8.5vw,48px);line-height:1.08}
+ .answer-hero.answer-hero .sub{font-size:15px;line-height:1.6}
+ .answer-hero.answer-hero .ctas{flex-direction:row;gap:20px;margin-top:24px}
+ .answer-hero.answer-hero .stage{display:flex;flex-direction:column;margin-top:30px;padding:0 16px}
+ .answer-hero.answer-hero .card-wrap{order:0;max-width:560px;flex:none}
+ .answer-hero.answer-hero .answer{min-height:330px;--fs:78%}
+ .answer-hero.answer-hero .state:after{height:32px}
+ .answer-hero.answer-hero .corridor{order:1;position:relative;inset:auto;width:100%;height:auto;margin:0 auto 12px;max-width:560px}
+ .answer-hero.answer-hero .cwrap{position:relative;inset:auto;width:100%;height:auto;display:grid;grid-template-columns:1fr 1fr;gap:10px;perspective:none;animation:none;opacity:1}
+ .answer-hero.answer-hero .plane{position:relative;inset:auto;width:auto;transform:none;animation:none;padding:14px;min-height:105px}
+ .answer-hero.answer-hero .pt{font-size:11px;gap:6px}
+ .answer-hero.answer-hero .pt em{font-size:9px}
+ .answer-hero.answer-hero .plane .snip{font-size:12px;line-height:1.45}
+ .answer-hero.answer-hero .tabs{gap:13px}
+ .answer-hero.answer-hero .tab{font-size:10.5px}
+ .answer-hero.answer-hero .tab b{display:none}
+ .answer-hero.answer-hero .clients{margin-bottom:12px}
+ .site-frame .site-nav .brand .nakama-gate-lockup{width:142px}
+}
+@media(prefers-reduced-motion:reduce){
+ .answer-hero.answer-hero *,.answer-hero.answer-hero *:before,.answer-hero.answer-hero *:after{animation:none!important;transition:none!important}
+ .answer-hero.answer-hero .w>span,.answer-hero.answer-hero .rv,.answer-hero.answer-hero .card-wrap,.answer-hero.answer-hero .cwrap,.answer-hero.answer-hero .core{opacity:1;transform:none}
+}

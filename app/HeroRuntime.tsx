@@ -1,49 +1,90 @@
 "use client";
-import {ArrowUpRight,ArrowRight} from 'lucide-react';
-import './hero-landing.css';
+import {useEffect,useRef,useState,type CSSProperties,type KeyboardEvent} from 'react';
+import {ArrowUpRight,Pause,Play} from 'lucide-react';
+import {heroPanels} from './hero-panels';
+import {heroClients} from './hero-clients';
 
-/* every file is trimmed to its own ink, so the CSS height for a kind is the optical height */
-const FLOAT_COS = [
-  {name:'SERPsGrowth',src:'/clients/white/serps.png',kind:'icon',w:200,h:200},
-  {name:'Inventive AI',src:'/clients/white/inventive.png',kind:'icon',w:158,h:157},
-  {name:'StarAgile',src:'/clients/white/staragile.png',kind:'icon',w:250,h:150},
-  {name:'Synup',src:'/clients/white/synup.svg',kind:'wordmark',w:557,h:151},
-  {name:'HubEngage',src:'/clients/white/hubengage.png',kind:'icon',w:160,h:160},
-  {name:'BacklinkOS',src:'/clients/white/backlinkos.png',kind:'icon',w:84,h:79},
-  {name:'Inbound Blogging',src:'/clients/white/inbound.png',kind:'icon',w:127,h:182},
-  {name:'Brosix',src:'/clients/white/brosix.svg',kind:'lockup',w:980,h:197},
+const sources = [
+ {name:'Reddit',kind:'Thread',glyph:'r',text:'Anyone switched proposal tools this year?',position:'p1'},
+ {name:'YouTube',kind:'Video',glyph:'▶',text:'Proposal software compared: a full walkthrough',position:'p2'},
+ {name:'LinkedIn',kind:'Post',glyph:'in',text:'How B2B teams pick proposal software',position:'p4'},
+ {name:'Quora',kind:'Question',glyph:'Q',text:'What’s the best tool for answering RFPs?',position:'p5'},
 ];
 
+/** Sukriti’s “Into the Answer” direction, with React-owned, accessible controls. */
 export function HeroRuntime({booking}:{booking:string}){
-  return <section className="hero-runtime hero-giga hero-landing" aria-label="Nakama Growth">
-    <div className="hero-pane">
-      <div className="hero-restored-atmosphere" aria-hidden="true"/>
-      
-      <div className="hero-edge-light" aria-hidden="true"/>
-      <div className="hero-copy hero-copy-giga">
-
-        <h1 className="hero-serif-title" aria-label="Be the brand they already know."><span aria-hidden="true">Be the brand</span><span className="hero-title-rotation" aria-hidden="true"><span className="hero-title-accent hero-rotating-line">they already know.</span><span className="hero-title-accent hero-rotating-line">they search for.</span><span className="hero-title-accent hero-rotating-line">they choose.</span></span></h1>
-        <h2 className="hero-subhead">We earn visibility across AI answers, search, communities, and video so your product shows up where decisions already happen.</h2>
-        <div className="hero-ctas"><a className="hero-cta-white" href={booking} target="_blank" rel="noopener noreferrer">Start a conversation<span className="hero-cta-icon" aria-hidden="true"><ArrowUpRight size={16}/></span></a><a className="hero-cta-quiet" href="/process"><span>See our approach</span><ArrowRight size={16} aria-hidden="true"/></a></div>
+ const hero=useRef<HTMLElement>(null);
+ const tabs=useRef<(HTMLButtonElement|null)[]>([]);
+ const [active,setActive]=useState(0);
+ const [paused,setPaused]=useState(false);
+ const [hovered,setHovered]=useState(false);
+ const [focused,setFocused]=useState(false);
+ const [hidden,setHidden]=useState(false);
+ const [offscreen,setOffscreen]=useState(false);
+ const [reduced,setReduced]=useState(false);
+ const [dwell,setDwell]=useState(8500);
+ const remaining=useRef(8500);
+ const previous=useRef(0);
+ const held=paused||hovered||focused||hidden||offscreen;
+ useEffect(()=>{
+  const motion=matchMedia('(prefers-reduced-motion: reduce)');
+  const small=matchMedia('(max-width:760px)');
+  const sync=()=>{setReduced(motion.matches);setPaused(motion.matches);setDwell(small.matches?11000:8500);remaining.current=small.matches?11000:8500;};
+  const visibility=()=>setHidden(document.hidden);
+  sync();visibility();
+  motion.addEventListener('change',sync);small.addEventListener('change',sync);
+  document.addEventListener('visibilitychange',visibility);
+  const observer=new IntersectionObserver(([entry])=>setOffscreen(!entry.isIntersecting),{threshold:.05});
+  if(hero.current)observer.observe(hero.current);
+  return()=>{observer.disconnect();motion.removeEventListener('change',sync);small.removeEventListener('change',sync);document.removeEventListener('visibilitychange',visibility);};
+ },[]);
+ useEffect(()=>{
+  if(previous.current!==active){remaining.current=dwell;previous.current=active;}
+  if(held)return;
+  let fired=false;
+  const started=performance.now();
+  const timer=window.setTimeout(()=>{fired=true;remaining.current=dwell;setActive(i=>(i+1)%heroPanels.length);},remaining.current);
+  return()=>{clearTimeout(timer);if(!fired)remaining.current=Math.max(0,remaining.current-(performance.now()-started));};
+ },[active,held,dwell]);
+ function choose(index:number){remaining.current=dwell;setActive(index);}
+ function onKeys(event:KeyboardEvent<HTMLDivElement>){
+  const keys=['ArrowRight','ArrowLeft','Home','End'];if(!keys.includes(event.key))return;
+  event.preventDefault();
+  const index=event.key==='Home'?0:event.key==='End'?3:(active+(event.key==='ArrowRight'?1:-1)+4)%4;
+  choose(index);tabs.current[index]?.focus();
+ }
+ return <section ref={hero} className={`answer-hero${held?' paused':''}${paused||hidden||offscreen||reduced?' still':''}`} aria-labelledby="answer-hero-title" style={{'--dwell':`${dwell}ms`} as CSSProperties}>
+  <div className="halo" aria-hidden="true"/><div className="grain" aria-hidden="true"/>
+  <div className="head">
+   <h1 id="answer-hero-title" aria-label="We put your brand inside the AI answer.">
+    {['We put your brand','inside the AI answer.'].map((line,row)=><span className={`hl ${row?'accent-line':''}`} key={line} aria-hidden="true">{line.split(' ').map((word,i)=><span className="w" key={word}><span style={{'--d':`${.2+(row*4+i)*.05}s`} as CSSProperties}>{word}</span>{' '}</span>)}</span>)}
+   </h1>
+   <p className="sub rv" style={{'--d':'.7s'} as CSSProperties}>We get B2B and SaaS brands named in AI answers. All off-site.</p>
+   <div className="ctas rv" style={{'--d':'.85s'} as CSSProperties}><a className="btn" href={booking} target="_blank" rel="noopener noreferrer">Book a call<i aria-hidden="true"><ArrowUpRight/></i></a><a className="ghost" href="/process">See how it works</a></div>
+  </div>
+  <div className="stage">
+   <div className="core" aria-hidden="true"/>
+   <div className="corridor" aria-label="The sources AI engines read"><div className="cwrap">
+    {sources.map(source=><div className={`plane ${source.position}`} key={source.name}><div className="pt"><span className="glyph" aria-hidden="true">{source.glyph}</span>{source.name}<em>{source.kind}</em></div><p className="snip">{source.text}</p></div>)}
+   </div></div>
+   <div className="card-wrap">
+    <article className="answer" aria-label="Illustrative AI answers" onPointerEnter={()=>setHovered(true)} onPointerLeave={()=>setHovered(false)} onFocusCapture={()=>setFocused(true)} onBlurCapture={event=>{if(!event.currentTarget.contains(event.relatedTarget))setFocused(false);}}>
+     <div className="a-top">
+      <div className="tabs" role="tablist" aria-label="Example answers by AI engine" onKeyDown={onKeys}>
+       {heroPanels.map((panel,i)=><button key={panel.id} ref={el=>{tabs.current[i]=el;}} type="button" role="tab" className="tab" id={`hero-tab-${panel.id}`} aria-controls={`hero-panel-${panel.id}`} aria-selected={active===i} tabIndex={active===i?0:-1} onClick={()=>choose(i)}><b aria-hidden="true"/><span className="full">{panel.name}</span><span className="short">{i===0?'AI Overviews':panel.name}</span><i key={`${active}-${panel.id}`} aria-hidden="true"/></button>)}
       </div>
-
-      {/* Bottom floating white company logos on amber glow */}
-      <div className="hero-logo-bar" aria-label="Companies we've worked with">
-        <div className="hero-logo-track">
-          {[0,1,2].map(copy=>(
-            <div className="hero-logo-group" key={copy} aria-hidden={copy===0?undefined:true}>
-              {FLOAT_COS.map(c=>(
-                <span className="hero-logo-item" key={`${copy}-${c.name}`}>
-                  <img className={`hero-logo-mark hero-logo-mark--${c.kind}`} src={c.src} alt={c.name} width={c.w} height={c.h} loading={copy? 'lazy':'eager'}/>
-                  {c.kind==='icon'&&<span>{c.name}</span>}
-                </span>
-              ))}
-            </div>
-          ))}
-        </div>
-      </div>
-
-    </div>
-    <div id="hero-end"/>
-  </section>;
+      <p className="a-foot">Example only. Not live AI results.</p>
+      <button type="button" className="pp" aria-label={paused?'Play rotation':'Pause rotation'} aria-pressed={paused} onClick={()=>setPaused(p=>!p)}>{paused?<Play size={12}/>:<Pause size={12}/>}</button>
+     </div>
+     <div className="screen"><div className="states">
+      {heroPanels.map((panel,i)=><div key={panel.id} id={`hero-panel-${panel.id}`} role="tabpanel" aria-labelledby={`hero-tab-${panel.id}`} aria-hidden={active!==i} className={`state ${panel.ui}${active===i?' on':''}`} dangerouslySetInnerHTML={{__html:panel.html}}/>)}
+     </div></div>
+    </article>
+   </div>
+  </div>
+  <div className="clients" role="region" aria-label="Companies we've worked with" tabIndex={0}>
+   <div className="c-track">{[0,1,2].map(copy=><ul className="c-group" key={copy} aria-hidden={copy?true:undefined}>{heroClients.map(client=><li className="c-item" key={client.name} aria-label={client.name}><img src={client.src} alt="" width={client.w} height={client.h} className={client.kind==='icon'?'':client.kind==='wordmark'?'c-wordmark':'c-lockup'} loading={copy?'lazy':'eager'}/>{client.kind==='icon'&&<span aria-hidden="true">{client.name}</span>}</li>)}</ul>)}</div>
+  </div>
+  <div className="floor" aria-hidden="true"/>
+ </section>;
 }
