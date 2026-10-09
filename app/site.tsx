@@ -6,7 +6,7 @@ import {ArrowUpRight,ArrowRight,Menu,Plus} from 'lucide-react';
 import {Sheet,SheetTrigger,SheetContent,SheetTitle,SheetDescription,SheetClose} from '@/components/ui/sheet';
 export const BOOKING='https://app.cal.com/snehil-srivastava-4jm7sq';
 export const navigationLinks=[['Services','/services'],['Process','/process'],['Work','/work'],['Journal','/journal'],['About','/about']] as const;
-export function Logo({className=''}:{className?:string}){return <svg className={className} viewBox="0 0 100 100" aria-hidden="true"><path d="M10,90 Q46,46 86,10" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round"/><circle cx="27" cy="70" r="5.5" fill="currentColor"/><circle cx="48" cy="50" r="8.5" fill="currentColor"/><circle cx="72" cy="29" r="13" fill="#f07c32"/></svg>}
+export function Logo({className=''}:{className?:string}){return <svg className={className} viewBox="0 0 64 64" aria-hidden="true"><path d="M9 57V30A23 23 0 0 1 55 30V57H42V30A10 10 0 0 0 22 30V57Z" fill="#f3f1ed"/><circle cx="32" cy="30" r="5.6" fill="#f07c32"/></svg>}
 export function Booking({children='Book a conversation',className=''}:{children?:ReactNode,className?:string}){return <a className={`button ${className}`} href={BOOKING} target="_blank" rel="noopener noreferrer">{children}<ArrowUpRight size={17}/></a>}
 export function Header(){
   const path=usePathname();
@@ -19,7 +19,7 @@ export function Header(){
     return()=>removeEventListener('scroll',update);
   },[]);
   return <header className={`site-nav${scrolled?' is-scrolled':''}`}>
-    <Link className="brand" href="/" aria-label="Nakama Growth home"><Logo/><span>Nakama<small>Growth</small></span></Link>
+    <Link className="brand" href="/" aria-label="Nakama Growth home"><img className="nakama-gate-lockup" src="/brand/nakama-lockup-dark.svg" alt="Nakama" width="220" height="50"/></Link>
     <nav className="desktop-nav" aria-label="Main navigation">{navigationLinks.map(([label,href])=><Link key={href} href={href} aria-current={path===href||path.startsWith(href+'/')?'page':undefined}>{label}</Link>)}</nav>
     <div className="nav-actions">
       <Link className="nav-contact" href="/contact">Contact us<ArrowUpRight size={16}/></Link>

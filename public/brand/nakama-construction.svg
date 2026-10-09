@@ -1,0 +1,32 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="512" height="512" role="img" aria-labelledby="nakama-construction-title">
+  <title id="nakama-construction-title">Nakama mark construction</title>
+  <rect width="512" height="512" fill="#f3f1ed"/>
+  <g id="mark">
+    <path id="gate" d="M108.8 396V223.2A147.2 147.2 0 0 1 403.2 223.2V396H320V223.2A64 64 0 0 0 192 223.2V396Z" fill="#17110c"/>
+    <circle id="sun" cx="256" cy="223.2" r="35.84" fill="#ef5a00"/>
+  </g>
+  <line x1="0" x2="512" y1="76" y2="76" stroke="#8a8278" stroke-width="1" stroke-dasharray="4 4"/>
+  <text x="8" y="71.0" text-anchor="start" font-family="Manrope" font-size="11" fill="#6f675d">crown</text>
+  <line x1="0" x2="512" y1="223.2" y2="223.2" stroke="#8a8278" stroke-width="1" stroke-dasharray="4 4"/>
+  <text x="504" y="237.2" text-anchor="end" font-family="Manrope" font-size="11" fill="#6f675d">arc centre</text>
+  <line x1="0" x2="512" y1="396" y2="396" stroke="#8a8278" stroke-width="1" stroke-dasharray="4 4"/>
+  <text x="8" y="391.0" text-anchor="start" font-family="Manrope" font-size="11" fill="#6f675d">baseline</text>
+  <circle cx="256" cy="223.2" r="147.2" stroke="#ef5a00" stroke-width="1.5" fill="none" stroke-dasharray="6 5"/>
+  <circle cx="256" cy="223.2" r="64" stroke="#ef5a00" stroke-width="1.5" fill="none" stroke-dasharray="6 5"/>
+  <line x1="256" x2="256" y1="56.8" y2="415.2" stroke="#8a8278" stroke-width="1" stroke-dasharray="4 4"/>
+  <line x1="108.8" x2="192" y1="416.48" y2="416.48" stroke="#17110c" stroke-width="1.2"/>
+  <line x1="108.8" x2="108.8" y1="411.48" y2="421.48" stroke="#17110c" stroke-width="1.2"/>
+  <line x1="192" x2="192" y1="411.48" y2="421.48" stroke="#17110c" stroke-width="1.2"/>
+  <text x="150.4" y="434.48" text-anchor="middle" font-family="Manrope" font-size="12" font-weight="600" fill="#17110c">13</text>
+  <line x1="192" x2="320" y1="416.48" y2="416.48" stroke="#17110c" stroke-width="1.2"/>
+  <line x1="192" x2="192" y1="411.48" y2="421.48" stroke="#17110c" stroke-width="1.2"/>
+  <line x1="320" x2="320" y1="411.48" y2="421.48" stroke="#17110c" stroke-width="1.2"/>
+  <text x="256.0" y="434.48" text-anchor="middle" font-family="Manrope" font-size="12" font-weight="600" fill="#17110c">20</text>
+  <line x1="320" x2="403.2" y1="416.48" y2="416.48" stroke="#17110c" stroke-width="1.2"/>
+  <line x1="320" x2="320" y1="411.48" y2="421.48" stroke="#17110c" stroke-width="1.2"/>
+  <line x1="403.2" x2="403.2" y1="411.48" y2="421.48" stroke="#17110c" stroke-width="1.2"/>
+  <text x="361.6" y="434.48" text-anchor="middle" font-family="Manrope" font-size="12" font-weight="600" fill="#17110c">13</text>
+  <text x="367.984" y="117.216" font-family="Manrope" font-size="11" fill="#ef5a00">R 23</text>
+  <text x="256.0" y="303.2" text-anchor="middle" font-family="Manrope" font-size="11" fill="#ef5a00">r 10 · dot Ø 11.2</text>
+  <text x="8" y="500" font-family="Manrope" font-size="11" fill="#6f675d">64-unit grid · mark 46 × 50</text>
+</svg>
