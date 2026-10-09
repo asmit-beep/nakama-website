@@ -1,5 +1,6 @@
 .surface-mock{position:relative;width:100%;aspect-ratio:775/615;font-family:'Manrope',system-ui,sans-serif}
-.surface-mock .sm-stage{position:absolute;left:0;top:0;width:775px;height:615px;transform:scale(var(--k));transform-origin:0 0}
+.surface-mock{perspective:1600px}
+.surface-mock .sm-stage{position:absolute;left:0;top:0;width:775px;height:615px;transform:scale(var(--k)) rotateX(var(--rx,0deg)) rotateY(var(--ry,0deg));transform-origin:0 0;transition:transform .5s cubic-bezier(.2,.8,.2,1);transform-style:preserve-3d}
 .sm-window{position:absolute;inset:0 0 22px;border-radius:18px;overflow:hidden;background:#151416;border:1px solid #ffffff1c;box-shadow:0 40px 90px -30px #000c,0 0 0 1px #00000080,inset 0 1px #ffffff14}
 .sm-note{position:absolute;right:4px;bottom:0;font-size:10.5px;letter-spacing:.02em;color:#ffffff59}
 
@@ -119,3 +120,22 @@
 .sm-qa-related{margin:0 40px;background:#fff;border:1px solid #dee0e1;border-radius:6px;padding:12px 20px;display:flex;flex-direction:column;gap:7px;font-size:12.5px}
 .sm-qa-related b{font-size:13px}.sm-qa-related span{color:#2e69ff}
 .sm-panel.on .sm-gpt-tail{animation-delay:1.3s!important}.sm-panel.on .sm-gpt-acts{animation-delay:1.45s!important}
+
+/* life */
+.sm-tab-prog{position:absolute;left:10px;right:10px;bottom:0;height:2px;border-radius:2px;background:linear-gradient(90deg,#f07c32,#ffd2ae);transform-origin:left;transform:scaleX(var(--tab-p,0));box-shadow:0 0 8px #f07c32}
+.sm-gpt-logo svg{width:22px;height:22px;shape-rendering:geometricPrecision}
+.sm-panel.on .sm-brand{animation:sm-glow 2.4s ease-in-out 1.2s infinite}
+@keyframes sm-glow{50%{box-shadow:inset 0 0 0 1px #f07c32cc,0 0 16px #f07c3288;background:#f07c3244}}
+@property --n{syntax:'<integer>';inherits:false;initial-value:0}
+.sm-count{--n:0;counter-reset:n var(--n);transition:--n 1.4s cubic-bezier(.2,.8,.2,1) .5s}
+.sm-count:after{content:counter(n)}
+.sm-panel.on .sm-count{--n:var(--to)}
+.sm-badge{position:absolute;z-index:3;display:flex;align-items:center;gap:10px;padding:10px 16px 10px 10px;border-radius:16px;background:linear-gradient(180deg,#2a1a12f0,#1a120ef0);border:1px solid #f07c3277;box-shadow:0 20px 50px -14px #000,0 0 40px -10px #f07c32aa;color:#fff;opacity:0;transform:translate(16px,10px) scale(.94);transition:opacity .5s,transform .7s cubic-bezier(.2,.8,.2,1);pointer-events:none;backdrop-filter:blur(10px);transform-style:preserve-3d}
+.sm-badge.on{opacity:1;transform:translateZ(40px);transition-delay:1.25s}
+.sm-badge-ic{display:grid;place-items:center;width:34px;height:34px;border-radius:11px;background:linear-gradient(135deg,#f07c32,#ffb27a);color:#1a0f08;font-size:15px;font-weight:900}
+.sm-badge b{display:block;font-size:14px;font-weight:700;letter-spacing:-.01em}
+.sm-badge small{display:block;font-size:11px;color:#f2cdb0}
+.is-mobile .sm-badge{display:none}
+@media(prefers-reduced-motion:reduce){.sm-count{transition:none}.sm-panel.on .sm-brand{animation:none}}
+
+.sm-gpt-side .sm-gpt-logo{padding:0!important;overflow:visible!important;width:26px;height:26px;margin:2px 0 12px 8px}

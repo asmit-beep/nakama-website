@@ -5,8 +5,7 @@
 .tiny-cross,.client-strip-plus{display:none!important}
 .eyebrow{gap:0!important}
 
-/* hero subline: a touch larger and brighter */
-.answer-hero.answer-hero .sub,.answer-hero.answer-hero h1+p{color:#e9e1d8!important;font-size:clamp(16px,1.25vw,19px)!important}
+
 
 /* Map / Earn / Compound: steps sit right under the copy instead of the floor */
 .visibility-rail{justify-content:flex-start!important;gap:clamp(36px,6vh,64px)}
@@ -156,3 +155,38 @@
 @media(max-width:1100px){.evidence-shell{grid-template-columns:minmax(0,1fr)}}
 @media(max-width:860px){.evidence-search-text{font-size:14px}.evidence-heading h2{font-size:38px}.evidence-room{padding-top:70px}}
 .contact-flare-cta span,.contact-flare-cta i{position:relative;z-index:1}
+
+/* Hero client logos: barely there on purpose (Sukriti), so the answer cards stay the focus */
+.answer-hero .clients .c-item{opacity:.22!important;transition:opacity .4s}
+.answer-hero .clients .c-item:hover{opacity:1!important}
+.answer-hero .clients .c-track{animation-duration:110s!important}
+
+/* ===== Edge-to-edge layout: everything lines up with the nav, nothing boxed ===== */
+:root,html[data-theme="dark"]{--gutter:clamp(20px,5vw,72px);--page-width:100000px}
+.cardboard-features .features-layout{max-width:none!important;padding-left:var(--gutter)!important;padding-right:var(--gutter)!important;column-gap:clamp(40px,5vw,96px)!important}
+[data-prompt-director]>div.mx-auto{max-width:none!important;padding-left:var(--gutter)!important;padding-right:var(--gutter)!important}
+.visibility-layout{max-width:none!important;padding-left:var(--gutter)!important;padding-right:var(--gutter)!important}
+
+/* Evidence room, opened up */
+.evidence-room{padding:120px 0 100px}
+.evidence-room:before{inset:40px calc(var(--gutter)*-1) 0}
+.evidence-heading{margin-bottom:40px}
+.evidence-heading>p{max-width:380px}
+.evidence-shell{grid-template-columns:minmax(0,1fr)!important;gap:28px}
+.evidence-rail{position:static!important;flex-direction:row!important;flex-wrap:wrap;gap:8px!important;padding:6px;border-radius:999px;background:#ffffff05;border:1px solid #ffffff10;width:100%;justify-content:space-between}
+.evidence-rail button{grid-template-columns:30px auto!important;gap:10px!important;padding:8px 18px 8px 8px!important;border-radius:999px!important;flex:1 1 auto;justify-content:center}
+.evidence-rail button[aria-selected="true"]:before{display:none}
+.evidence-rail button[aria-selected="true"]{box-shadow:inset 0 0 0 1px color-mix(in srgb,var(--brand-color) 55%,transparent)}
+.evidence-rail-logo{width:30px!important;height:30px!important;border-radius:50%!important}
+.evidence-stage{padding:0!important;background:none!important;border:0!important;box-shadow:none!important;border-radius:0!important}
+.evidence-search{height:68px}
+.evidence-case{padding:34px 0 26px!important}
+.evidence-grid{gap:20px!important}
+.evidence-card{padding:20px!important;gap:14px!important}
+.pv{height:110px}
+@media(max-width:1100px){.evidence-rail{flex-wrap:nowrap;overflow-x:auto;border-radius:18px;justify-content:flex-start}.evidence-rail button{flex:0 0 auto}}
+
+/* Contact, full bleed within the gutters */
+.contact-flare{width:calc(100% - var(--gutter)*2)!important;max-width:none!important}
+
+.visibility-copy h2{font-family:'Manrope',Arial,sans-serif!important;font-weight:600!important;letter-spacing:-.035em!important}
