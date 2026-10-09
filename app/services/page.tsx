@@ -1,7 +1,7 @@
 import type {Metadata} from 'next';
 import {Sparkles,Bot,FileText,MessageCircle,Play,Share2,ChartNoAxesCombined,Check} from 'lucide-react';
 import {Shell,Reveal} from '../site';
-import {IpAtmos,IpHero,IpHead,IpSection,BookBtn,LinkBtn,FitSplit,IpFaq,IpCta} from '../inner/kit';
+import {IpAtmos,IpHero,IpHead,IpSection,BookBtn,LinkBtn,IpFaq,IpCta} from '../inner/kit';
 
 export const metadata:Metadata={title:'Services — Nakama Growth',description:'AI visibility, community, content, video, digital PR and measurement for SaaS and software brands that want to be found and chosen.'};
 
@@ -83,7 +83,6 @@ export default function Services(){
     </Reveal>
    </IpSection>
 
-   <FitSplit/>
    <IpFaq items={faq}/>
    <IpCta/>
   </Shell>

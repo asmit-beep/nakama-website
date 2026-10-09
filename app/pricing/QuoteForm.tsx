@@ -1,6 +1,6 @@
 "use client";
 import {useState,type FormEvent} from 'react';
-import {ArrowUpRight,CalendarCheck} from 'lucide-react';
+import {ArrowUpRight,CalendarCheck,ChevronDown} from 'lucide-react';
 import {openBookCall} from '@/components/booking/BookCall';
 
 const SERVICES=['AI visibility (AEO / GEO)','Community & Reddit','Editorial content','YouTube & video','Digital PR & links','White-label'];
@@ -40,17 +40,17 @@ export function QuoteForm(){
   <div className="ip-field"><label htmlFor="q-email">Work email</label><input className="ip-input" id="q-email" name="email" type="email" autoComplete="email" placeholder="you@company.com" required/></div>
   <div className="ip-field"><label htmlFor="q-company">Company</label><input className="ip-input" id="q-company" name="company" autoComplete="organization" placeholder="Company or brand" required/></div>
   <div className="ip-field"><label htmlFor="q-site">Website<small>Optional</small></label><input className="ip-input" id="q-site" name="website" inputMode="url" placeholder="company.com"/></div>
-  <fieldset className="ip-field full"><legend>What do you need help with?<small>Pick any</small></legend>
+  <fieldset className="ip-field full"><legend>What do you need help with?<small>Choose any</small></legend>
    <div className="ip-chips">{SERVICES.map(s=><label className="ip-chip" key={s}><input type="checkbox" checked={picked.includes(s)} onChange={()=>toggle(s)}/><span>{s}</span></label>)}</div>
   </fieldset>
-  <div className="ip-field"><label htmlFor="q-budget">Monthly budget</label><select className="ip-input" id="q-budget" name="budget" defaultValue={BUDGETS[0]}>{BUDGETS.map(b=><option key={b}>{b}</option>)}</select></div>
-  <div className="ip-field"><label htmlFor="q-time">Timeline</label><select className="ip-input" id="q-time" name="timeline" defaultValue={TIMELINES[1]}>{TIMELINES.map(b=><option key={b}>{b}</option>)}</select></div>
-  <div className="ip-field full"><label htmlFor="q-goals">What would success look like?<small>Optional</small></label><textarea className="ip-input" id="q-goals" name="goals" placeholder="e.g. Get named in ChatGPT and Perplexity for ‘best RFP software’ within two quarters."/></div>
+  <div className="ip-field"><label htmlFor="q-budget">Monthly budget</label><div className="ip-select"><select className="ip-input" id="q-budget" name="budget" defaultValue={BUDGETS[0]}>{BUDGETS.map(b=><option key={b}>{b}</option>)}</select><ChevronDown size={16} aria-hidden="true"/></div></div>
+  <div className="ip-field"><label htmlFor="q-time">Timeline</label><div className="ip-select"><select className="ip-input" id="q-time" name="timeline" defaultValue={TIMELINES[1]}>{TIMELINES.map(b=><option key={b}>{b}</option>)}</select><ChevronDown size={16} aria-hidden="true"/></div></div>
+  <div className="ip-field full"><label htmlFor="q-goals">What would success look like?<small>Optional</small></label><textarea className="ip-input" id="q-goals" name="goals" rows={3} placeholder="For example: appear in ChatGPT and Perplexity answers for our core category within two quarters."/></div>
   {error&&<p className="ip-err full" role="alert" style={{gridColumn:'1/-1'}}>{error}</p>}
   {sent&&<div className="ip-form-ok" role="status"><CalendarCheck size={20}/><div>Thanks, {sent.name.split(' ')[0]}. Your answers are attached to the booking. Pick a time for your 15-minute pricing call. <button type="button" onClick={()=>openBookCall({len:'15min',...sent})}>Open the calendar again</button></div></div>}
   <div className="ip-form-foot">
-   <p>Your answers go straight into the call notes. No mailing list, no spam.</p>
-   <button className="ip-btn" type="submit"><span>Get my quote</span><i aria-hidden="true"><ArrowUpRight size={16}/></i></button>
+   <button className="ip-btn" type="submit"><span>Continue to the 15-min call</span><i aria-hidden="true"><ArrowUpRight size={16}/></i></button>
+   <p>Your answers are attached to the booking as call notes.</p>
   </div>
  </form>;
 }

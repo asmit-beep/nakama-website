@@ -1,7 +1,7 @@
 import type {Metadata} from 'next';
 import {CalendarDays,Receipt,Mail} from 'lucide-react';
 import {Shell,Reveal} from '../site';
-import {IpAtmos,IpHero,IpHead,IpSection,BookBtn,LinkBtn,FitSplit} from '../inner/kit';
+import {IpAtmos,IpHero,IpHead,IpSection,BookBtn,LinkBtn} from '../inner/kit';
 export const metadata:Metadata={title:'Contact — Nakama Growth',description:'Book a call, get a custom quote or email hello@nakama.in. We reply within one business day.'};
 export default function ContactPage(){
  return <Shell className="contact-page shell-cinema ip-page">
@@ -20,6 +20,5 @@ export default function ContactPage(){
     {[['We look first','Before the call we check how your brand appears for a few of your buyers’ questions.'],['We talk it through','You share goals and context, we share what we found and where we would start.'],['You get a clear next step','An audit, a proposal or an honest “not a fit”. Whatever is most useful.']].map(([t,p])=><Reveal className="ip-card" key={t}><h3>{t}</h3><p>{p}</p></Reveal>)}
    </div>
   </IpSection>
-  <FitSplit/>
  </Shell>;
 }

@@ -4,12 +4,13 @@ import {ArrowUpRight,Check,X} from 'lucide-react';
 import {Reveal} from '../site';
 import {BookCallButton} from '@/components/booking/BookCall';
 import './inner.css';
+import {Fx} from './Fx';
 
 type Tone='teal'|'ember'|'indigo'|'rose';
 
 /** Atmosphere that sits behind a whole inner page: soft aurora glows that drift, never hard edges. */
 export function IpAtmos({tone='teal'}:{tone?:Tone}){
- return <div className={`ip-atmos ip-tone-${tone}`} aria-hidden="true"><i className="a1"/><i className="a2"/><i className="a3"/><div className="ip-grid"/></div>;
+ return <><Fx/><div className={`ip-atmos ip-tone-${tone}`} aria-hidden="true"><i className="a1"/><i className="a2"/><i className="a3"/><div className="ip-grid"/></div></>;
 }
 
 export function IpHero({eyebrow,title,accent,lead,children,aside,tone='teal'}:{eyebrow:string;title:ReactNode;accent:ReactNode;lead:ReactNode;children?:ReactNode;aside?:ReactNode;tone?:Tone}){
@@ -47,7 +48,7 @@ export function LinkBtn({href,children,ghost=false}:{href:string;children:ReactN
 }
 
 export const GOOD_FIT=['SaaS and software companies','Brands in researched or competitive categories','Teams with a clear product and customer','Companies willing to invest consistently','Agencies seeking a specialist partner'];
-export const NOT_FIT=['Teams seeking overnight results','Brands asking for fake reviews or hidden endorsements','Companies expecting guaranteed rankings','Businesses seeking high-volume filler content','Teams unwilling to provide product or customer context'];
+export const NOT_FIT=['Teams seeking overnight results','Brands seeking undisclosed endorsements','Companies expecting guaranteed rankings','Businesses seeking high-volume filler content','Teams unwilling to provide product or customer context'];
 
 export function FitSplit({eyebrow='Who we work with',title=<>Built for teams playing<br/><em>the long game.</em></>,lead='We take on a small number of partners at a time, so we are honest about fit before anyone signs anything.'}:{eyebrow?:string;title?:ReactNode;lead?:string}){
  return <IpSection className="ip-fit">
@@ -58,7 +59,7 @@ export function FitSplit({eyebrow='Who we work with',title=<>Built for teams pla
     <ul>{GOOD_FIT.map(t=><li key={t}><span className="ip-fit-ico"><Check size={14}/></span>{t}</li>)}</ul>
    </Reveal>
    <Reveal className="ip-fit-card bad">
-    <span className="ip-fit-tag"><i/>Probably not a fit</span>
+    <span className="ip-fit-tag"><i/>Not a fit</span>
     <ul>{NOT_FIT.map(t=><li key={t}><span className="ip-fit-ico"><X size={13}/></span>{t}</li>)}</ul>
    </Reveal>
   </div>
