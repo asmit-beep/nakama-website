@@ -322,16 +322,28 @@ function useTyped(text:string){
  return text.slice(0,n);
 }
 
-function ProofPreview({entry,brand}:{entry:{platform:string;query:string};brand:string}){
+const sourceOf=(d:string)=>{
+ const t=d.toLowerCase();
+ if(t.includes('reddit'))return 'Reddit post';
+ if(t.includes('linkedin'))return 'LinkedIn article';
+ if(t.includes('video'))return 'YouTube video';
+ return 'Nakama article';
+};
+
+function ProofPreview({entry,brand}:{entry:{platform:string;query:string;description:string};brand:string}){
  const tone=platformTone(entry.platform);
- if(tone==='yt')return <span className="pv pv-yt"><span className="pv-thumb"><i>vs</i><b>{brand}</b><em>12:47</em></span><span className="pv-lines"><i/><i/><i className="s"/></span></span>;
- if(tone==='serp'||entry.platform.includes('videos'))return <span className="pv pv-serp"><span className="pv-row"><i className="fav"/><span className="pv-lines"><i/><i className="s"/></span></span><span className="pv-row hit"><i className="fav"/><span className="pv-lines"><b>{brand}</b><i className="s"/></span></span></span>;
- return <span className="pv pv-ai"><span className="pv-ai-head">✦ {tone==='px'?'Sources':tone==='gpt'?'ChatGPT':'AI Overview'}</span><span className="pv-lines"><i/><span className="pv-hit"><b>{brand}</b><i/></span><i className="s"/></span><span className="pv-cite">Cited</span></span>;
+ const engine=entry.platform.split('·')[0].trim();
+ const kind=entry.platform.split('·')[1]?.trim()??'';
+ const src=sourceOf(entry.description);
+ const q=<span className="pv-q"><i/>{entry.query}</span>;
+ if(tone==='yt')return <span className="pv pv-yt2">{q}<span className="pv-vid"><span className="pv-thumb"><i>vs</i><b>{brand}</b><em>12:47</em></span><span className="pv-vid-t"><b>{entry.query}</b><small>{brand} · comparison</small></span></span></span>;
+ if(tone==='serp'||!['ai','px','gpt'].includes(tone))return <span className="pv pv-res">{q}<span className="pv-res-row hit"><span className="fav">{brand.slice(0,1)}</span><span><b>{brand}</b><small>{kind||engine} · {src}</small></span><em>Featured</em></span><span className="pv-res-row"><span className="fav"/><span><i/><i className="s"/></span></span></span>;
+ return <span className="pv pv-ans">{q}<span className="pv-ans-h">✦ {kind==='Sources'?`${engine} sources`:engine==='Google'?kind:engine}</span><span className="pv-ans-row"><span className="pv-brand">{brand}</span><span className="pv-src">via {src}</span><span className="pv-cite">Cited</span></span></span>;
 }
 
 function EvidenceCard({entry,index,brand,active,onPick}:{entry:{platform:string;query:string;description:string};index:number;brand:string;active:boolean;onPick:()=>void}){
  const tone=platformTone(entry.platform);
- return <button type="button" className={`evidence-card tone-${tone}`} aria-pressed={active} onClick={onPick} onMouseEnter={onPick} onFocus={onPick}>
+ return <button type="button" className={`evidence-card tone-${tone}`} style={{'--brand-color':clientMarks[brand as keyof typeof clientMarks]?.color} as CSSProperties} aria-pressed={active} onClick={onPick} onMouseEnter={onPick} onFocus={onPick}>
   <span className="evidence-border" aria-hidden="true"/>
   <span className="evidence-top"><span className="evidence-logo">{sourceLogo(entry.platform)??<Globe size={14}/>}</span><span className="evidence-platform">{entry.platform}</span><span className="evidence-no">№ {String(index+1).padStart(2,'0')}</span></span>
   <ProofPreview entry={entry} brand={brand}/>

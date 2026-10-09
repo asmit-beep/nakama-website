@@ -36,6 +36,12 @@ const PROMPTS: {q: string; tag: string; v: Verdict[]; who: string}[] = [
 ];
 const SOV: Record<string, number[]> = {chatgpt: [22, 41, 27, 10], perplexity: [14, 38, 36, 12], gemini: [26, 33, 29, 12], google: [18, 44, 25, 13]};
 const BRANDS = ["YourBrand", "NorthPeak", "Quillbase", "Others"];
+const TYPES = [
+  {name: "Category prompts", k: 1.2, l: 1.1},
+  {name: "Comparisons", k: 0.6, l: 1.3},
+  {name: "Alternatives", k: 0.4, l: 1.4},
+  {name: "Use cases", k: 1.6, l: 0.8},
+];
 const GAPS = [
   {src: "reddit.com/r/sales", share: 34, status: "Missing", plan: "Two genuinely useful replies from a practitioner, disclosed, in the threads answers already cite."},
   {src: "youtube.com · 'vs' videos", share: 27, status: "Competitor", plan: "One side-by-side comparison built around the exact 'NorthPeak vs Quillbase' query."},
@@ -79,12 +85,26 @@ export function MapDash({step}: {step: number}) {
               </div>
             ))}
           </div>
+          <div className="dx-types">
+            {TYPES.map((t, i) => {
+              const you = Math.max(4, Math.round(SOV[ENG[eng].id][0] * t.k));
+              const lead = Math.min(78, Math.round(SOV[ENG[eng].id][1] * t.l));
+              return (
+                <div key={t.name} style={{"--d": `${i * 70}ms`} as CSSProperties}>
+                  <small>{t.name}</small>
+                  <div className="dx-types-v"><b>{you}%</b><span>vs {lead}% leader</span></div>
+                  <i><em style={{width: `${you}%`}} /><u style={{left: `${lead}%`}} /></i>
+                </div>
+              );
+            })}
+          </div>
           <div className="dx-insight"><span className="dx-spark">✦</span>On {ENG[eng].name}, NorthPeak owns {SOV[ENG[eng].id][1]}% of recommendations. Closing half that gap is the first goal.</div>
         </div>
       )}
       {step === 2 && (
         <div className="dx-body dx-in" key="m2">
-          <div className="dx-sub">Sources the answers lean on</div>
+          <div className="dx-head"><div><small>Sources mapped</small><strong>126</strong></div><div><small>Domains AI cites</small><strong>38</strong></div><div><small>Start with</small><strong className="mid sm">r/sales</strong></div></div>
+          <div className="dx-sub">Sources the answers lean on · tap one for the plan</div>
           <div className="dx-gaps">
             {GAPS.map((g, i) => (
               <button type="button" key={g.src} className={`dx-gap${gap === i ? " on" : ""}`} onClick={() => setGap(i)} style={{"--d": `${i * 70}ms`} as CSSProperties}>
@@ -143,6 +163,12 @@ export function EarnDash({step}: {step: number}) {
               ))}
             </ul>
             <span className="dx-hint">Tap to tick. Every box makes it easier for AI to quote.</span>
+          </div>
+          <div className="dx-ships">
+            <small>Ships as</small>
+            {[["Reddit", "Reply"], ["LinkedIn", "Article"], ["Quora", "Answer"], ["YouTube", "Video"]].map(([k, v]) => (
+              <span key={k}>{sourceMarks[k as keyof typeof sourceMarks]}<b>{k}</b><em>{v}</em></span>
+            ))}
           </div>
         </div>
       )}
@@ -227,6 +253,7 @@ export function CompoundDash({step}: {step: number}) {
       )}
       {step === 1 && (
         <div className="dx-body dx-in" key="c1">
+          <div className="dx-head"><div><small>AI-referred visits</small><strong>2,310<em className="up">↑ 212%</em></strong></div><div><small>Demo rate</small><strong>1.8%</strong></div><div><small>Pipeline touched</small><strong className="ok">$184K</strong></div></div>
           <div className="dx-sub">From an AI answer to a real conversation</div>
           <div className="dx-funnel">
             {[["Buyers who saw you in an answer", "18,400", 100], ["Visited from an AI engine", "2,310", 74], ["Read pricing or a comparison", "690", 50], ["Booked a demo", "41", 28]].map(([l, v, w], i) => (
@@ -250,6 +277,10 @@ export function CompoundDash({step}: {step: number}) {
                 <em>{a.k}</em><b>{a.t}</b><small>{a.m}</small><i>{queued[i] ? "Queued ✓" : "Queue"}</i>
               </button>
             ))}
+            <div className="dx-moved">
+              <small>Last cycle moved</small>
+              <div><span><b>+14</b>prompts now naming you</span><span><b>+9</b>new citations</span><span><b>3</b>gaps closed</span></div>
+            </div>
           </div>
         </div>
       )}
