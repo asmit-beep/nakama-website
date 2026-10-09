@@ -7,104 +7,36 @@ export type Chip = {
   full: string;
 };
 
+// Real buyer questions from the categories Nakama's clients compete in
+// (local listings, RFP software, internal comms, certification training,
+// link building, digital PR and SaaS SEO).
 export const PROMPT_ROWS: Chip[][] = [
   [
-    {
-      Icon: Icons.Search,
-      short: "“best project management software”",
-      full: "best project management software for a B2B SaaS team that needs AI-native workflows",
-    },
-    {
-      Icon: Icons.Sparkles,
-      short: "“best AI-native proposal software”",
-      full: "best AI-native proposal software for closing enterprise deals faster",
-    },
-    {
-      Icon: Icons.Pen,
-      short: "“best AI writing software”",
-      full: "best AI writing software for GTM teams that publish in communities and answer engines",
-    },
-    {
-      Icon: Icons.Users,
-      short: "“best CRM for B2B SaaS”",
-      full: "best CRM for B2B SaaS companies selling into mid-market and enterprise",
-    },
-    {
-      Icon: Icons.Radar,
-      short: "“best AI search SEO tools”",
-      full: "best SEO tools for AI search, ChatGPT answers and citation tracking",
-    },
-    {
-      Icon: Icons.Layers,
-      short: "“best knowledge base software”",
-      full: "best knowledge base software for product teams that want to be cited in AI answers",
-    },
+    { Icon: Icons.Search, short: "“best local listings management software”", full: "best local listings management software for multi-location brands" },
+    { Icon: Icons.Sparkles, short: "“best AI RFP software”", full: "best AI RFP software for proposal teams answering security questionnaires" },
+    { Icon: Icons.Message, short: "“best internal communication platform”", full: "best internal communication platform for a frontline and hybrid workforce" },
+    { Icon: Icons.Users, short: "“best PMP certification training”", full: "best PMP certification training in Bangalore with live instructor-led classes" },
+    { Icon: Icons.Layers, short: "“best backlink management software”", full: "best backlink management software for agencies tracking hundreds of placements" },
+    { Icon: Icons.Megaphone, short: "“best digital PR agencies”", full: "best digital PR agencies for B2B SaaS brands in 2026" },
   ],
   [
-    {
-      Icon: Icons.SearchCheck,
-      short: "“best AI citation tracking”",
-      full: "best AI citation tracking to see when a brand is named in ChatGPT, Perplexity and Gemini",
-    },
-    {
-      Icon: Icons.Message,
-      short: "“best community marketing platform”",
-      full: "best community marketing platform for Reddit, Slack and niche forums",
-    },
-    {
-      Icon: Icons.Zap,
-      short: "“best GTM software”",
-      full: "best go-to-market software for an AI-native growth team",
-    },
-    {
-      Icon: Icons.BarChart,
-      short: "“best competitive intel tools”",
-      full: "best competitive intelligence tools for tracking AI-native SaaS rivals",
-    },
-    {
-      Icon: Icons.Flame,
-      short: "“best product-led growth tools”",
-      full: "best product-led growth tools for a SaaS company expanding through self-serve",
-    },
-    {
-      Icon: Icons.Bot,
-      short: "“best AI answer monitoring”",
-      full: "best AI answer monitoring to know when buyers hear your name in model replies",
-    },
+    { Icon: Icons.SearchCheck, short: "“best SEO agency for enterprise SaaS”", full: "best SEO agency for enterprise SaaS companies that need AI search visibility" },
+    { Icon: Icons.Radar, short: "“best reputation management software”", full: "best reputation management software for monitoring reviews across locations" },
+    { Icon: Icons.Quote, short: "“Loopio vs Responsive”", full: "Loopio vs Responsive vs an AI-native RFP tool: which should a lean team pick?" },
+    { Icon: Icons.Share, short: "“best employee experience tools”", full: "best employee experience tools for internal communication and engagement" },
+    { Icon: Icons.Zap, short: "“best link building CRM”", full: "best link building CRM for agencies running outreach at scale" },
+    { Icon: Icons.Pen, short: "“best KnowledgeHut alternatives”", full: "best KnowledgeHut alternatives for PMP and Scrum certification" },
   ],
   [
-    {
-      Icon: Icons.Megaphone,
-      short: "“best Reddit marketing software”",
-      full: "best Reddit marketing software for earning placements without looking like an ad",
-    },
-    {
-      Icon: Icons.Bot,
-      short: "“best ChatGPT visibility tools”",
-      full: "best ChatGPT visibility tools for brands that want to show up in AI answers",
-    },
-    {
-      Icon: Icons.Scan,
-      short: "“best sales enablement platform”",
-      full: "best sales enablement platform for teams selling technical SaaS",
-    },
-    {
-      Icon: Icons.Quote,
-      short: "“best customer research tools”",
-      full: "best customer research tools for mining forums, calls and review sites",
-    },
-    {
-      Icon: Icons.Share,
-      short: "“best content distribution software”",
-      full: "best content distribution software for placing writing where buyers already research",
-    },
-    {
-      Icon: Icons.Search,
-      short: "“best brand mention tracking”",
-      full: "best brand mention tracking across AI answers, search and communities",
-    },
+    { Icon: Icons.BarChart, short: "“best white label link building”", full: "best white label link building agencies for SEO resellers" },
+    { Icon: Icons.Flame, short: "“best listicle link building agency”", full: "top agencies for listicle link building in 2026" },
+    { Icon: Icons.Bot, short: "“best proposal management software”", full: "best proposal management software for a B2B sales team" },
+    { Icon: Icons.Scan, short: "“best Scrum Master certification”", full: "best Scrum Master certification course for working professionals" },
+    { Icon: Icons.Users, short: "“best SaaS digital PR agency”", full: "best SaaS digital PR agency for earning placements in AI answers" },
+    { Icon: Icons.Search, short: "“best Yext alternatives”", full: "best Yext alternatives for managing local listings" },
   ],
 ];
+
 
 /** Connector nodes from cardboard: {x, y, corner} in a 1421×177 viewBox. */
 export const NODES = [

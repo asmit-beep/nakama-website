@@ -4,12 +4,25 @@ import {ArrowUpRight,Pause,Play} from 'lucide-react';
 import {heroPanels} from './hero-panels';
 import {heroClients} from './hero-clients';
 import {engineMarks,sourceMarks} from './hero-marks';
+import {BookCallButton,CONTACT_EMAIL} from '@/components/booking/BookCall';
 
-const sources = [
- {name:'Reddit',kind:'Thread',glyph:'r',text:'Anyone switched proposal tools this year?',position:'p1'},
- {name:'YouTube',kind:'Video',glyph:'▶',text:'Proposal software compared: a full walkthrough',position:'p2'},
- {name:'LinkedIn',kind:'Post',glyph:'in',text:'How B2B teams pick proposal software',position:'p4'},
- {name:'Quora',kind:'Question',glyph:'Q',text:'What’s the best tool for answering RFPs?',position:'p5'},
+const sourceSlots = [
+ {position:'p1',items:[
+  {name:'Reddit',kind:'Thread',text:'Anyone switched proposal tools this year?'},
+  {name:'Medium',kind:'Article',text:'Why we replaced our RFP library with AI'},
+  {name:'X',kind:'Thread',text:'5 proposal mistakes we keep seeing'}]},
+ {position:'p2',items:[
+  {name:'YouTube',kind:'Video',text:'Proposal software compared: a full walkthrough'},
+  {name:'Instagram',kind:'Reel',text:'A 60-second RFP workflow teardown'},
+  {name:'Product Hunt',kind:'Launch',text:'AI proposal tools launching this month'}]},
+ {position:'p4',items:[
+  {name:'LinkedIn',kind:'Post',text:'How B2B teams pick proposal software'},
+  {name:'Substack',kind:'Newsletter',text:'RFP Ops Weekly: tools we’d buy again'},
+  {name:'Facebook',kind:'Group',text:'Proposal managers: which tool are you on?'}]},
+ {position:'p5',items:[
+  {name:'Quora',kind:'Question',text:'What’s the best tool for answering RFPs?'},
+  {name:'G2',kind:'Reviews',text:'Top-rated proposal software by verified users'},
+  {name:'Discord',kind:'Community',text:'Sales ops crew: your RFP tool stack?'}]},
 ];
 
 /** Sukriti’s “Into the Answer” direction, with React-owned, accessible controls. */
@@ -22,7 +35,9 @@ export function HeroRuntime({booking}:{booking:string}){
  const [offscreen,setOffscreen]=useState(false);
  const [reduced,setReduced]=useState(false);
  const dwell=5000;
+ const [srcTick,setSrcTick]=useState(0);
  const held=paused||hidden||offscreen;
+ useEffect(()=>{if(held)return;const t=window.setInterval(()=>setSrcTick(n=>n+1),2600);return()=>clearInterval(t);},[held]);
  useEffect(()=>{
   const motion=matchMedia('(prefers-reduced-motion: reduce)');
   const sync=()=>{setReduced(motion.matches);setPaused(motion.matches);};
@@ -54,12 +69,13 @@ export function HeroRuntime({booking}:{booking:string}){
     {['We put your brand','inside the AI answer.'].map((line,row)=><span className={`hl ${row?'accent-line':''}`} key={line} aria-hidden="true">{line.split(' ').map((word,i)=><span className="w" key={word}><span style={{'--d':`${.2+(row*4+i)*.05}s`} as CSSProperties}>{word}</span>{' '}</span>)}</span>)}
    </h1>
    <p className="sub rv" style={{'--d':'.7s'} as CSSProperties}>AI does its homework. We write the notes it copies.</p>
-   <div className="ctas rv" style={{'--d':'.85s'} as CSSProperties}><a className="btn" href={booking} target="_blank" rel="noopener noreferrer">Book a call<i aria-hidden="true"><ArrowUpRight/></i></a><a className="ghost" href="/process">See how it works</a></div>
+   <div className="ctas rv" style={{'--d':'.85s'} as CSSProperties}><BookCallButton className="btn">Book a call<i aria-hidden="true"><ArrowUpRight/></i></BookCallButton><a className="ghost" href="/process">See how it works</a></div>
+   <div className="hero-mail-row rv" style={{'--d':'.95s'} as CSSProperties}><a className="hero-mail" href={`mailto:${CONTACT_EMAIL}`}>or write to <b>{CONTACT_EMAIL}</b></a></div>
   </div>
   <div className="stage">
    <div className="core" aria-hidden="true"/>
    <div className="corridor" aria-label="The sources AI engines read"><div className="cwrap">
-    {sources.map(source=><div className={`plane ${source.position}`} key={source.name}><div className="pt"><span className="glyph" aria-hidden="true">{sourceMarks[source.name]}</span>{source.name}<em>{source.kind}</em></div><p className="snip">{source.text}</p></div>)}
+    {sourceSlots.map((slot,i)=>{const turn=Math.floor((srcTick+(4-i))/4);const source=slot.items[turn%slot.items.length];return <div className={`plane ${slot.position}`} key={slot.position}><div className="src-swap" key={source.name}><div className="pt"><span className="glyph" aria-hidden="true">{sourceMarks[source.name]}</span>{source.name}<em>{source.kind}</em></div><p className="snip">{source.text}</p></div></div>;})}
    </div></div>
    <div className="card-wrap">
     <article className="answer" aria-label="Illustrative AI answers">

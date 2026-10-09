@@ -43,10 +43,11 @@ const TYPES = [
   {name: "Use cases", k: 1.6, l: 0.8},
 ];
 const GAPS = [
-  {src: "reddit.com/r/sales", share: 34, status: "Missing", plan: "Two genuinely useful replies from a practitioner, disclosed, in the threads answers already cite."},
-  {src: "youtube.com · 'vs' videos", share: 27, status: "Competitor", plan: "One side-by-side comparison built around the exact 'NorthPeak vs Quillbase' query."},
-  {src: "Listicles · 'best RFP tools'", share: 21, status: "Opportunity", plan: "Pitch inclusion to the 6 listicles that show up most in AI sources."},
-  {src: "quora.com", share: 11, status: "Weak", plan: "Detailed answers to the 4 questions engines quote for this category."},
+  {src: "reddit.com/r/sales", share: 29, status: "Missing", plan: "Two genuinely useful replies from a practitioner, disclosed, in the threads answers already cite."},
+  {src: "youtube.com · 'vs' videos", share: 22, status: "Competitor", plan: "One side-by-side comparison built around the exact 'NorthPeak vs Quillbase' query."},
+  {src: "g2.com · category grid", share: 17, status: "Weak", plan: "A review drive with recent customers so the G2 category page reflects current ratings."},
+  {src: "Listicles · 'best RFP tools'", share: 15, status: "Opportunity", plan: "Pitch inclusion to the 6 listicles that show up most in AI sources."},
+  {src: "Medium + Substack essays", share: 9, status: "Opportunity", plan: "A founder essay on Medium and a guest issue in an RFP ops newsletter."},
 ];
 
 export function MapDash({step}: {step: number}) {
@@ -103,7 +104,6 @@ export function MapDash({step}: {step: number}) {
       )}
       {step === 2 && (
         <div className="dx-body dx-in" key="m2">
-          <div className="dx-head"><div><small>Sources mapped</small><strong>126</strong></div><div><small>Domains AI cites</small><strong>38</strong></div><div><small>Start with</small><strong className="mid sm">r/sales</strong></div></div>
           <div className="dx-sub">Sources the answers lean on · tap one for the plan</div>
           <div className="dx-gaps">
             {GAPS.map((g, i) => (
@@ -124,24 +124,31 @@ export function MapDash({step}: {step: number}) {
 /* ---------------- EARN ---------------- */
 const CHECKS = ["Answers the question in the first line", "Names the category plainly", "Backs claims with a real number", "Links to a source anyone can open"];
 type Col = 0 | 1 | 2;
-const CARDS: {id: string; plat: keyof typeof sourceMarks | "Listicle"; title: string}[] = [
+const CARDS: {id: string; plat: string; title: string}[] = [
   {id: "a", plat: "Reddit", title: "Reply: 'What's working for RFPs?'"},
   {id: "b", plat: "YouTube", title: "NorthPeak vs Quillbase vs YourBrand"},
   {id: "c", plat: "LinkedIn", title: "How lean teams answer 40 RFPs a quarter"},
   {id: "d", plat: "Quora", title: "Is AI good enough for security questionnaires?"},
   {id: "e", plat: "Listicle", title: "Inclusion: 'Best RFP software 2026'"},
+  {id: "f", plat: "Medium", title: "Why we stopped copy-pasting RFP answers"},
+  {id: "g", plat: "Substack", title: "Guest issue: RFP Ops Weekly"},
+  {id: "h", plat: "G2", title: "Review drive: 12 verified customer reviews"},
+  {id: "i", plat: "X", title: "Thread: 5 proposal mistakes we keep seeing"},
 ];
 const NODES = [
-  {name: "Reddit", x: 14, y: 20, says: "“the one that drafts security questionnaires fast”"},
-  {name: "YouTube", x: 80, y: 16, says: "“best for lean proposal teams”"},
-  {name: "LinkedIn", x: 86, y: 74, says: "“AI-native RFP software for small teams”"},
-  {name: "Quora", x: 10, y: 76, says: "“fast first drafts, built-in approvals”"},
-  {name: "Listicles", x: 48, y: 90, says: "“AI-native RFP software, best for small teams”"},
+  {name: "Reddit", x: 16, y: 16, says: "“the one that drafts security questionnaires fast”"},
+  {name: "YouTube", x: 50, y: 8, says: "“best for lean proposal teams”"},
+  {name: "LinkedIn", x: 84, y: 16, says: "“AI-native RFP software for small teams”"},
+  {name: "G2", x: 92, y: 50, says: "“fastest setup in the category”"},
+  {name: "Substack", x: 84, y: 84, says: "“the RFP tool small teams actually finish setting up”"},
+  {name: "Listicles", x: 50, y: 92, says: "“AI-native RFP software, best for small teams”"},
+  {name: "Medium", x: 16, y: 84, says: "“drafts from your own approved answers”"},
+  {name: "Quora", x: 8, y: 50, says: "“fast first drafts, built-in approvals”"},
 ];
 
 export function EarnDash({step}: {step: number}) {
   const [done, setDone] = useState([true, true, false, false]);
-  const [cols, setCols] = useState<Record<string, Col>>({a: 2, b: 1, c: 0, d: 1, e: 0});
+  const [cols, setCols] = useState<Record<string, Col>>({a: 2, b: 1, c: 0, d: 1, e: 0, f: 0, g: 1, h: 2, i: 2});
   const [node, setNode] = useState(0);
   const score = 52 + done.filter(Boolean).length * 12;
   return (
@@ -166,8 +173,8 @@ export function EarnDash({step}: {step: number}) {
           </div>
           <div className="dx-ships">
             <small>Ships as</small>
-            {[["Reddit", "Reply"], ["LinkedIn", "Article"], ["Quora", "Answer"], ["YouTube", "Video"]].map(([k, v]) => (
-              <span key={k}>{sourceMarks[k as keyof typeof sourceMarks]}<b>{k}</b><em>{v}</em></span>
+            {["Reddit", "Medium", "Substack", "Instagram", "G2", "X"].map(k => (
+              <span key={k}>{sourceMarks[k]}<b>{k}</b></span>
             ))}
           </div>
         </div>
@@ -199,7 +206,7 @@ export function EarnDash({step}: {step: number}) {
             </svg>
             <span className="dx-core"><b>YourBrand</b><small>AI-native RFP software for small teams</small></span>
             {NODES.map((n, i) => (
-              <button type="button" key={n.name} className={`dx-node${node === i ? " on" : ""}`} style={{left: `${n.x}%`, top: `${n.y}%`}} onMouseEnter={() => setNode(i)} onFocus={() => setNode(i)} onClick={() => setNode(i)}>{n.name}</button>
+              <button type="button" key={n.name} className={`dx-node${node === i ? " on" : ""}`} style={{left: `${n.x}%`, top: `${n.y}%`}} onMouseEnter={() => setNode(i)} onFocus={() => setNode(i)} onClick={() => setNode(i)}>{n.name === "Listicles" ? <i className="dx-list-ic">≡</i> : sourceMarks[n.name]}{n.name}</button>
             ))}
           </div>
           <div className="dx-insight" key={node}><span className="dx-spark">✓</span><b>{NODES[node].name}</b>&nbsp;describes you as {NODES[node].says}. Same story, every source.</div>
@@ -218,7 +225,7 @@ const SERIES: Record<string, number[]> = {
 const ACTIONS = [
   {k: "Refresh", t: "Update the comparison video with 2026 pricing", m: "+6 citations last cycle"},
   {k: "Expand", t: "Add 12 enterprise prompts to the radar", m: "New prompt cluster"},
-  {k: "Place", t: "Answer 3 new r/sales threads", m: "Threads AI cites this week"},
+  {k: "Place", t: "Pitch a guest issue to 2 RFP newsletters", m: "Substack sources rising in Perplexity"},
 ];
 
 export function CompoundDash({step}: {step: number}) {

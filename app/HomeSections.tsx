@@ -3,6 +3,7 @@ import {useState,useEffect,useRef,type ReactNode,type CSSProperties} from 'react
 import Link from 'next/link';
 import {ArrowUpRight,Sparkles,Check,ThumbsUp,MessageSquare,Share2,Play,Eye,ChevronUp,Search,Globe,Plus} from 'lucide-react';
 import {Reveal} from './site';
+import {BookCallButton} from '@/components/booking/BookCall';
 import './presence-polish.css';
 import {proofClients} from './proof-data';
 import {engineMarks,sourceMarks} from './hero-marks';
@@ -452,10 +453,10 @@ export function HomeContact(){
       <li><Check size={15}/>Start with a single service</li>
      </ul>
      <div className="contact-flare-actions">
-      <Link href="/contact" className="contact-flare-cta"><span>Book a call</span><i><ArrowUpRight size={20}/></i></Link>
+      <BookCallButton className="contact-flare-cta"><span>Book a call</span><i><ArrowUpRight size={20}/></i></BookCallButton>
       <Link href="/work" className="contact-flare-work">See the work<ArrowUpRight size={16}/></Link>
      </div>
-     <a className="contact-flare-mail" href="mailto:contact@nakama.in">contact@nakama.in</a>
+     <a className="contact-flare-mail" href="mailto:hello@nakama.in">hello@nakama.in</a>
     </div>
    </div>
   </section>

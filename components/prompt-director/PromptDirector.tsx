@@ -159,7 +159,7 @@ export function PromptDirector() {
         className="pointer-events-none absolute top-[calc(8%+80px)] left-1/2 -z-10 h-[60%] w-full -translate-x-1/2 rounded-[50%] blur-[160px]"
         style={{
           background:
-            "radial-gradient(circle, rgba(240,124,50,0.18) 0%, rgba(55,183,149,0.12) 42%, rgba(13,12,24,0) 72%)",
+            "radial-gradient(circle, rgba(120,160,255,0.10) 0%, rgba(95,208,201,0.07) 45%, rgba(13,12,24,0) 72%)",
         }}
       />
 
