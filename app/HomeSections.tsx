@@ -2,7 +2,7 @@
 import {useState,useEffect,useRef,type ReactNode,type CSSProperties} from 'react';
 import Link from 'next/link';
 import {ArrowUpRight,Sparkles,Check,ThumbsUp,MessageSquare,Share2,Play,Eye,ChevronUp,Search,Globe,Plus} from 'lucide-react';
-import {Reveal} from './site';
+import {Reveal,Logo} from './site';
 import {BookCallButton} from '@/components/booking/BookCall';
 import './presence-polish.css';
 import {proofClients} from './proof-data';
@@ -23,7 +23,6 @@ export function ClientStrip(){
  return (
   <section className="client-strip client-void" aria-label="Client logos">
    <div className="client-void-frame" aria-hidden="true">
-    <span className="client-void-ghost">仲間</span>
     <i className="client-void-rule"/><i className="client-void-rule right"/>
    </div>
    <div className="client-strip-heading">
@@ -267,7 +266,7 @@ export function NakamaStory(){
  return (
   <section className="nakama-story page-width" id="nakama">
    <Reveal className="story-symbol">
-    <span className="story-kanji" lang="ja">仲間</span>
+    <span className="story-kanji story-logo" aria-hidden="true"><Logo/></span>
     <span className="story-pronunciation">na · ka · ma</span>
     <span className="story-definition">A companion for the journey.</span>
    </Reveal>
@@ -440,7 +439,6 @@ export function HomeContact(){
    <span className="contact-flare-glow" aria-hidden="true"/>
    <div className="contact-flare-inner">
     <div className="contact-flare-orbits" aria-hidden="true"><i/><i/><i/><b/></div>
-    <span className="contact-flare-kanji" aria-hidden="true">仲間</span>
     <div className="contact-flare-copy">
      <span className="eyebrow">The next move</span>
      <h2 id="home-contact-title">Get your brand<br/><span>into the answer.</span></h2>

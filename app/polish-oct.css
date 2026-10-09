@@ -267,3 +267,16 @@ button.btn,button.contact-flare-cta,button.button{font:inherit;border:0;cursor:p
 /* keep each source card on its own compositor layer so swaps never repaint the dashboard */
 .answer-hero .plane{will-change:transform;contain:layout paint}
 .answer-hero .card-wrap{isolation:isolate}
+
+/* Footer wordmark: letters flip away in a quick stagger, the Nakama mark springs up in their place */
+.fw-morph{perspective:900px}
+.footer-wordmark-bold>span.fw-word{background:none!important;-webkit-text-fill-color:initial!important;color:inherit!important;display:flex!important;justify-content:center;transform:none!important}
+.fw-word>b{display:inline-block;font-weight:900;background:linear-gradient(120deg,#97b2a74a,#c1c2d444 48%,#c29e7f48);background-size:600% 100%;background-position:calc(var(--i)*20%) 0;-webkit-background-clip:text;background-clip:text;color:transparent;-webkit-text-fill-color:transparent;transform-origin:50% 100%;transition:transform .42s cubic-bezier(.6,0,.25,1),opacity .32s ease;transition-delay:calc(var(--i)*32ms)}
+.fw-morph:is(:hover,:focus-visible) .fw-word>b{transform:translateY(-38%) rotateX(80deg);opacity:0}
+.footer-wordmark-bold>span.fw-mark{position:absolute!important;left:50%!important;top:.04em!important;width:.82em!important;height:.82em;background:none!important;transform:translate(-50%,45%) scale(.55) rotate(-10deg)!important;opacity:0;transition:transform .55s cubic-bezier(.34,1.45,.55,1) .16s,opacity .25s ease .16s!important;filter:drop-shadow(0 18px 40px #f07c3233)!important}
+.fw-mark svg{width:100%;height:100%;display:block;opacity:.55}
+.fw-morph:is(:hover,:focus-visible)>span.fw-mark{transform:translate(-50%,0) scale(1) rotate(0)!important;opacity:1}
+.fw-morph:not(:hover):not(:focus-visible)>span.fw-mark{transition:transform .35s cubic-bezier(.6,0,.4,1),opacity .2s ease!important}
+.fw-morph:not(:hover):not(:focus-visible) .fw-word>b{transition-delay:calc(.12s + var(--i)*28ms)}
+.story-logo svg{width:1em;height:1em;display:block}
+@media (prefers-reduced-motion:reduce){.fw-word>b,.footer-wordmark-bold>span.fw-mark{transition:none!important}}
