@@ -95,7 +95,7 @@ function RedditFace({active}:{active:boolean}){
  return (
   <div className={`plat-face plat-reddit${active?' is-lit':''}`}>
    <header className="plat-head">
-    <span className="plat-logo reddit-logo" aria-hidden="true">●</span>
+    <span className="plat-logo plat-mark" aria-hidden="true">{sourceMarks.Reddit}</span>
     <span className="plat-meta"><strong>r/saas</strong><em>· 14h</em></span>
    </header>
    <p className="plat-copy">Honestly, we tried a bunch, but the one that actually stuck was <Mark>Nakama</Mark>. Their approach to earned visibility is unreal.</p>
@@ -113,7 +113,7 @@ function LinkedInFace({active}:{active:boolean}){
  return (
   <div className={`plat-face plat-linkedin${active?' is-lit':''}`}>
    <header className="plat-head">
-    <span className="plat-logo li-logo" aria-hidden="true">in</span>
+    <span className="plat-logo plat-mark sq" aria-hidden="true">{sourceMarks.LinkedIn}</span>
     <span className="plat-meta li-meta">
      <span className="li-av" aria-hidden="true">AR</span>
      <span><strong>Ananya R.</strong><em>Founder · 2d</em></span>
@@ -134,7 +134,7 @@ function YouTubeFace({active}:{active:boolean}){
  return (
   <div className={`plat-face plat-youtube${active?' is-lit':''}`}>
    <header className="plat-head">
-    <span className="plat-logo yt-logo" aria-hidden="true"><Play size={10} fill="currentColor"/></span>
+    <span className="plat-logo plat-mark sq" aria-hidden="true">{sourceMarks.YouTube}</span>
     <span className="plat-meta"><strong>YouTube</strong><em>· Video</em></span>
    </header>
    <div className="yt-thumb" aria-hidden="true">
@@ -155,7 +155,7 @@ function QuoraFace({active}:{active:boolean}){
  return (
   <div className={`plat-face plat-quora${active?' is-lit':''}`}>
    <header className="plat-head">
-    <span className="plat-logo quora-logo" aria-hidden="true">Q</span>
+    <span className="plat-logo plat-mark sq" aria-hidden="true">{sourceMarks.Quora}</span>
     <span className="plat-meta"><strong>Quora</strong><em>· Answered</em></span>
    </header>
    <p className="plat-copy">Most agencies chase rankings. <Mark>Nakama</Mark> chases actual mentions — which is honestly the smarter bet long-term.</p>
@@ -190,7 +190,7 @@ function GoogleOverviewChip(){
  return (
   <aside className="g-overview-chip" aria-hidden="true">
    <header className="plat-head">
-    <span className="plat-logo g-logo" aria-hidden="true">G</span>
+    <span className="plat-logo plat-mark" aria-hidden="true">{engineMarks.google}</span>
     <span className="plat-meta"><strong>Google</strong><em>· AI Overview</em></span>
    </header>
    <p>Boutique agencies like <Mark>Nakama</Mark> focus on organic mentions across communities and AI search — not paid channels.</p>
@@ -337,7 +337,7 @@ function ProofPreview({entry,brand}:{entry:{platform:string;query:string;descrip
  const src=sourceOf(entry.description);
  const q=<span className="pv-q"><i/>{entry.query}</span>;
  if(tone==='yt')return <span className="pv pv-yt2">{q}<span className="pv-vid"><span className="pv-thumb"><i>vs</i><b>{brand}</b><em>12:47</em></span><span className="pv-vid-t"><b>{entry.query}</b><small>{brand} · comparison</small></span></span></span>;
- if(tone==='serp'||!['ai','px','gpt'].includes(tone))return <span className="pv pv-res">{q}<span className="pv-res-row hit"><span className="fav">{brand.slice(0,1)}</span><span><b>{brand}</b><small>{kind||engine} · {src}</small></span><em>Featured</em></span><span className="pv-res-row"><span className="fav"/><span><i/><i className="s"/></span></span></span>;
+ if(tone==='serp'||!['ai','px','gpt'].includes(tone))return <span className="pv pv-res">{q}<span className="pv-res-row hit"><span className="fav fav-img">{clientMarks[brand]?<img src={clientMarks[brand].src} alt=""/>:null}</span><span><b>{brand}</b><small>{kind||engine} · {src}</small></span><em>Featured</em></span><span className="pv-res-row"><span className="fav"/><span><i/><i className="s"/></span></span></span>;
  return <span className="pv pv-ans">{q}<span className="pv-ans-h">✦ {kind==='Sources'?`${engine} sources`:engine==='Google'?kind:engine}</span><span className="pv-ans-row"><span className="pv-brand">{brand}</span><span className="pv-src">via {src}</span><span className="pv-cite">Cited</span></span></span>;
 }
 

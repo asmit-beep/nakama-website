@@ -410,20 +410,6 @@ fieldset.ip-field{border:0;margin:0;padding:0;min-width:0}
 /* =====================================================================
    v3 — interaction layer, work board, process stepper, quote form
    ===================================================================== */
-@property --spot{syntax:'<number>';inherits:false;initial-value:0}
-
-/* pointer light on every surface */
-.ip-card,.ip-fit-card,.ip-quote,.ip-cta,.ip-agency,.wb-row,.wb-client,.ps-panel,.ip-factor,.ip-faq-item{
- --mx:50%;--my:50%;transition:--spot .45s ease,border-color .35s ease,transform .45s cubic-bezier(.2,.8,.2,1),background-color .35s;
-}
-.ip-card,.ip-fit-card,.wb-row,.wb-client,.ps-panel,.ip-factor,.ip-faq-item{
- background-image:radial-gradient(420px circle at var(--mx) var(--my),rgba(255,190,140,calc(var(--spot)*.085)),transparent 60%),var(--ip-card)!important;
-}
-.ip-fit-card.good{background-image:radial-gradient(420px circle at var(--mx) var(--my),rgba(255,190,140,calc(var(--spot)*.09)),transparent 60%),radial-gradient(120% 90% at 0 0,rgba(240,124,50,.13),transparent 60%),var(--ip-card)!important}
-.ip-plan.featured{background-image:radial-gradient(420px circle at var(--mx) var(--my),rgba(255,190,140,calc(var(--spot)*.09)),transparent 60%),radial-gradient(100% 70% at 50% 0,rgba(240,124,50,.16),transparent 70%),var(--ip-card)!important}
-.ip-factor{background-image:radial-gradient(320px circle at var(--mx) var(--my),rgba(127,209,195,calc(var(--spot)*.08)),transparent 60%)!important;background-color:#121119!important}
-.fx-on{--spot:1}
-.ip-card.fx-on,.ip-fit-card.fx-on,.wb-row.fx-on{border-color:rgba(255,255,255,.16)}
 .ip-g3>.ip-card:hover,.ip-g4>.ip-card:hover,.ip-flow>.ip-card:hover,.ip-cadence>.ip-card:hover,.ip-plans>.ip-card:hover,.ip-ways>.ip-card:hover{transform:translateY(-4px)}
 .ip-svc-ico{transition:transform .5s cubic-bezier(.2,.8,.2,1),background .3s}
 .ip-card:hover .ip-svc-ico{transform:rotate(-8deg) scale(1.06)}
@@ -604,3 +590,28 @@ textarea.ip-input{height:auto;min-height:104px;resize:none;padding:14px 16px}
 .ps-nav{grid-auto-rows:1fr;align-content:stretch}
 @media (max-width:1000px){.ps-nav{grid-auto-rows:auto}.wb-client{position:relative;top:0}}
 @media (max-width:900px){.ip-quote{grid-template-columns:1fr}}
+/* real brand marks */
+.wb-engine{background:#fff;border:1px solid rgba(255,255,255,.12);box-shadow:0 8px 20px -10px rgba(0,0,0,.8)}
+.wb-engine svg{width:22px;height:22px;display:block}
+.wb-engine.e-chatgpt{background:#0d0d0d}
+.wb-engine.e-perplexity{background:#091717}
+.wb-engine.e-youtube{background:#fff}
+.wb-engine.e-editorial{background:rgba(255,255,255,.06);color:#ffd2ad}
+.ps-core{background:#16151d;border:1px solid rgba(255,190,140,.4)}
+.ps-core img{width:28px;height:28px}
+.ps-sat{display:inline-flex;align-items:center;gap:6px}
+.ps-sat-ico{display:grid;place-items:center;width:16px;height:16px;border-radius:4px;background:#fff;font-style:normal;color:#111}
+.ps-sat-ico svg{width:11px;height:11px;display:block}
+/* orbit: elliptical so every platform stays inside the frame */
+.ps-sat{transform:translate(-50%,-50%) translate(calc(cos(var(--a)) * 200px * var(--d)),calc(sin(var(--a)) * 84px * var(--d)))}
+.ps-ring{animation:none!important}
+.ps-ring.r1{width:328px;height:138px;margin:-69px 0 0 -164px}
+.ps-ring.r2{width:400px;height:168px;margin:-84px 0 0 -200px}
+@media (max-width:620px){.ps-sat{transform:translate(-50%,-50%) translate(calc(cos(var(--a)) * 132px * var(--d)),calc(sin(var(--a)) * 80px * var(--d)))}.ps-ring.r1{width:216px;height:130px;margin:-65px 0 0 -108px}.ps-ring.r2{width:264px;height:160px;margin:-80px 0 0 -132px}}
+.v-understand{display:flex;flex-wrap:wrap;justify-content:center;align-content:center;gap:10px;padding:28px 48px}
+.v-understand .ps-chipq{position:relative;left:auto;top:auto;display:inline-flex;align-items:center;gap:8px;padding:10px 15px;font-size:13.5px}
+.v-understand .ps-chipq::before{content:"";width:12px;height:12px;border:1.6px solid #ffb27a;border-radius:50%;box-shadow:4px 4px 0 -3px #ffb27a;flex:none;opacity:.85}
+.v-understand .ps-chipq:hover{border-color:rgba(255,190,140,.45);color:#fff}
+@media (max-width:620px){.v-understand{padding:18px 16px;gap:8px}.v-understand .ps-chipq{padding:8px 12px;font-size:12px}}
+.v-understand .ps-chipq,.v-understand .ps-chipq:nth-child(2n){animation:ps-pop .7s cubic-bezier(.2,.8,.2,1) both}
+@media (max-width:620px){.v-understand .ps-chipq:nth-child(n+5){display:none}}

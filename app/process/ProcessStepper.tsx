@@ -1,6 +1,7 @@
 "use client";
 import {useCallback,useEffect,useRef,useState} from 'react';
-import {Check} from 'lucide-react';
+import {Check,Newspaper} from 'lucide-react';
+import {sourceMarks} from '../hero-marks';
 
 const DURATION=7000;
 
@@ -13,8 +14,7 @@ const stages=[
 
 function Visual({i}:{i:number}){
  if(i===0) return <div className="ps-vis v-understand" aria-hidden="true">
-  {['best RFP software','Loopio alternatives','AI for security questionnaires','how to answer RFPs faster','Responsive vs Loopio'].map((q,k)=><span key={q} className="ps-chipq" style={{animationDelay:`${k*120}ms`,['--x' as string]:`${[8,46,14,52,26][k]}%`,['--y' as string]:`${[10,24,44,58,78][k]}%`}}>{q}</span>)}
-  <svg className="ps-lines" viewBox="0 0 400 260" preserveAspectRatio="none"><path d="M60 40 C160 60 220 90 300 70 M80 130 C170 120 230 160 330 160 M70 210 C170 190 240 230 320 220" /></svg>
+  {['best CRM for a small real estate team','Yext alternatives','best payroll software for startups','dentist open on Sunday','HubSpot vs Pipedrive','best sunscreen for oily skin','boutique hotels in Goa'].map((q,k)=><span key={q} className="ps-chipq" style={{animationDelay:`${k*120}ms`}}>{q}</span>)}
  </div>;
  if(i===1) return <div className="ps-vis v-create" aria-hidden="true">
   {[0,1,2].map(k=><div key={k} className="ps-doc" style={{animationDelay:`${k*140}ms`,['--r' as string]:`${(k-1)*5}deg`,['--o' as string]:`${(k-1)*26}px`}}>
@@ -22,9 +22,9 @@ function Visual({i}:{i:number}){
   </div>)}
  </div>;
  if(i===2) return <div className="ps-vis v-place" aria-hidden="true">
-  <span className="ps-core">n</span>
+  <span className="ps-core"><img src="/brand/nakama-icon-dark.svg" alt=""/></span>
   <span className="ps-ring r1"/><span className="ps-ring r2"/>
-  {['Reddit','YouTube','Quora','Medium','LinkedIn','G2','Substack','Editorial'].map((p,k)=><span key={p} className="ps-sat" style={{['--a' as string]:`${k*45}deg`,['--d' as string]:k%2?'118px':'78px',animationDelay:`${k*70}ms`}}>{p}</span>)}
+  {['Reddit','YouTube','Quora','Medium','LinkedIn','G2','Substack','Editorial'].map((p,k)=><span key={p} className="ps-sat" style={{['--a' as string]:`${k*45}deg`,['--d' as string]:k%2?'1':'.82',animationDelay:`${k*70}ms`}}><i className="ps-sat-ico">{p==='Editorial'?<Newspaper size={12}/>:sourceMarks[p]}</i>{p}</span>)}
  </div>;
  return <div className="ps-vis v-prove" aria-hidden="true">
   <div className="ps-bars">{[28,36,34,48,55,63,72,84].map((h,k)=><span key={k} style={{['--h' as string]:`${h}%`,animationDelay:`${k*70}ms`}}/>)}</div>

@@ -4,13 +4,12 @@ import {ArrowUpRight,Check,X} from 'lucide-react';
 import {Reveal} from '../site';
 import {BookCallButton} from '@/components/booking/BookCall';
 import './inner.css';
-import {Fx} from './Fx';
 
 type Tone='teal'|'ember'|'indigo'|'rose';
 
 /** Atmosphere that sits behind a whole inner page: soft aurora glows that drift, never hard edges. */
 export function IpAtmos({tone='teal'}:{tone?:Tone}){
- return <><Fx/><div className={`ip-atmos ip-tone-${tone}`} aria-hidden="true"><i className="a1"/><i className="a2"/><i className="a3"/><div className="ip-grid"/></div></>;
+ return <div className={`ip-atmos ip-tone-${tone}`} aria-hidden="true"><i className="a1"/><i className="a2"/><i className="a3"/><div className="ip-grid"/></div>;
 }
 
 export function IpHero({eyebrow,title,accent,lead,children,aside,tone='teal'}:{eyebrow:string;title:ReactNode;accent:ReactNode;lead:ReactNode;children?:ReactNode;aside?:ReactNode;tone?:Tone}){

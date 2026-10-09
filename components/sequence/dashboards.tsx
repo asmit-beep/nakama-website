@@ -28,11 +28,11 @@ function EngineIcon({i}: {i: number}) {
 /* ---------------- MAP ---------------- */
 type Verdict = "named" | "cited" | "missing";
 const PROMPTS: {q: string; tag: string; v: Verdict[]; who: string}[] = [
-  {q: "best RFP software for small teams", tag: "Category", v: ["named", "missing", "cited", "missing"], who: "Perplexity named NorthPeak and Quillbase. You weren't mentioned."},
+  {q: "best payroll software for startups", tag: "Category", v: ["named", "missing", "cited", "missing"], who: "Perplexity named NorthPeak and Quillbase. You weren't mentioned."},
   {q: "NorthPeak alternatives", tag: "Replacement", v: ["missing", "missing", "missing", "cited"], who: "Every engine recommends Quillbase first. Biggest gap on the board."},
-  {q: "AI for security questionnaires", tag: "Use case", v: ["named", "named", "cited", "named"], who: "You're named on 3 of 4 engines. Protect this one."},
+  {q: "payroll for remote teams in India", tag: "Use case", v: ["named", "named", "cited", "named"], who: "You're named on 3 of 4 engines. Protect this one."},
   {q: "NorthPeak vs Quillbase", tag: "Comparison", v: ["missing", "cited", "missing", "missing"], who: "Comparison answers lean on one YouTube video. You aren't in it."},
-  {q: "how to answer RFPs faster", tag: "Problem", v: ["cited", "missing", "named", "missing"], who: "Answers quote a Reddit thread from r/sales. Room to add a useful reply."},
+  {q: "how to run payroll without an accountant", tag: "Problem", v: ["cited", "missing", "named", "missing"], who: "Answers quote a Reddit thread from r/startups. Room to add a useful reply."},
 ];
 const SOV: Record<string, number[]> = {chatgpt: [22, 41, 27, 10], perplexity: [14, 38, 36, 12], gemini: [26, 33, 29, 12], google: [18, 44, 25, 13]};
 const BRANDS = ["YourBrand", "NorthPeak", "Quillbase", "Others"];
@@ -43,11 +43,11 @@ const TYPES = [
   {name: "Use cases", k: 1.6, l: 0.8},
 ];
 const GAPS = [
-  {src: "reddit.com/r/sales", share: 29, status: "Missing", plan: "Two genuinely useful replies from a practitioner, disclosed, in the threads answers already cite."},
+  {src: "reddit.com/r/startups", share: 29, status: "Missing", plan: "Two genuinely useful replies from a practitioner, disclosed, in the threads answers already cite."},
   {src: "youtube.com · 'vs' videos", share: 22, status: "Competitor", plan: "One side-by-side comparison built around the exact 'NorthPeak vs Quillbase' query."},
   {src: "g2.com · category grid", share: 17, status: "Weak", plan: "A review drive with recent customers so the G2 category page reflects current ratings."},
-  {src: "Listicles · 'best RFP tools'", share: 15, status: "Opportunity", plan: "Pitch inclusion to the 6 listicles that show up most in AI sources."},
-  {src: "Medium + Substack essays", share: 9, status: "Opportunity", plan: "A founder essay on Medium and a guest issue in an RFP ops newsletter."},
+  {src: "Listicles · 'best payroll tools'", share: 15, status: "Opportunity", plan: "Pitch inclusion to the 6 listicles that show up most in AI sources."},
+  {src: "Medium + Substack essays", share: 9, status: "Opportunity", plan: "A founder essay on Medium and a guest issue in a startup operations newsletter."},
 ];
 
 export function MapDash({step}: {step: number}) {
@@ -125,25 +125,25 @@ export function MapDash({step}: {step: number}) {
 const CHECKS = ["Answers the question in the first line", "Names the category plainly", "Backs claims with a real number", "Links to a source anyone can open"];
 type Col = 0 | 1 | 2;
 const CARDS: {id: string; plat: string; title: string}[] = [
-  {id: "a", plat: "Reddit", title: "Reply: 'What's working for RFPs?'"},
+  {id: "a", plat: "Reddit", title: "Reply: 'How do you run payroll at 15 people?'"},
   {id: "b", plat: "YouTube", title: "NorthPeak vs Quillbase vs YourBrand"},
-  {id: "c", plat: "LinkedIn", title: "How lean teams answer 40 RFPs a quarter"},
-  {id: "d", plat: "Quora", title: "Is AI good enough for security questionnaires?"},
-  {id: "e", plat: "Listicle", title: "Inclusion: 'Best RFP software 2026'"},
-  {id: "f", plat: "Medium", title: "Why we stopped copy-pasting RFP answers"},
-  {id: "g", plat: "Substack", title: "Guest issue: RFP Ops Weekly"},
+  {id: "c", plat: "LinkedIn", title: "How a 20-person startup closes payroll in an hour"},
+  {id: "d", plat: "Quora", title: "Is payroll software worth it for a small team?"},
+  {id: "e", plat: "Listicle", title: "Inclusion: 'Best payroll software 2026'"},
+  {id: "f", plat: "Medium", title: "Why we stopped running payroll in spreadsheets"},
+  {id: "g", plat: "Substack", title: "Guest issue: Startup Ops Weekly"},
   {id: "h", plat: "G2", title: "Review drive: 12 verified customer reviews"},
-  {id: "i", plat: "X", title: "Thread: 5 proposal mistakes we keep seeing"},
+  {id: "i", plat: "X", title: "Thread: 5 payroll mistakes founders make"},
 ];
 const NODES = [
-  {name: "Reddit", x: 16, y: 16, says: "“the one that drafts security questionnaires fast”"},
-  {name: "YouTube", x: 50, y: 8, says: "“best for lean proposal teams”"},
-  {name: "LinkedIn", x: 84, y: 16, says: "“AI-native RFP software for small teams”"},
+  {name: "Reddit", x: 16, y: 16, says: "“the one that runs payroll in minutes”"},
+  {name: "YouTube", x: 50, y: 8, says: "“best for lean startup teams”"},
+  {name: "LinkedIn", x: 84, y: 16, says: "“payroll and compliance built for startups”"},
   {name: "G2", x: 92, y: 50, says: "“fastest setup in the category”"},
-  {name: "Substack", x: 84, y: 84, says: "“the RFP tool small teams actually finish setting up”"},
-  {name: "Listicles", x: 50, y: 92, says: "“AI-native RFP software, best for small teams”"},
-  {name: "Medium", x: 16, y: 84, says: "“drafts from your own approved answers”"},
-  {name: "Quora", x: 8, y: 50, says: "“fast first drafts, built-in approvals”"},
+  {name: "Substack", x: 84, y: 84, says: "“the payroll tool founders actually finish setting up”"},
+  {name: "Listicles", x: 50, y: 92, says: "“payroll software, best for small teams”"},
+  {name: "Medium", x: 16, y: 84, says: "“handles tax filings automatically”"},
+  {name: "Quora", x: 8, y: 50, says: "“fast setup, compliance built in”"},
 ];
 
 export function EarnDash({step}: {step: number}) {
@@ -158,9 +158,9 @@ export function EarnDash({step}: {step: number}) {
         <div className="dx-body dx-in dx-earn0" key="e0">
           <div className="dx-draft">
             <small>Draft · answer-first</small>
-            <h4>What's the best RFP software for a small team?</h4>
-            <p><mark>For teams under 10, AI-native tools like YourBrand cut first-draft time from days to minutes</mark>, because they write from your own past answers. Larger teams with huge content libraries may prefer NorthPeak.</p>
-            <p className="dim">Source: 2026 survey of 140 proposal managers · full method linked</p>
+            <h4>What's the best payroll software for a startup?</h4>
+            <p><mark>For teams under 50, tools like YourBrand cut payroll from a day to under an hour</mark>, because filings and payslips run automatically. Larger companies with complex benefits may prefer NorthPeak.</p>
+            <p className="dim">Source: 2026 survey of 140 startup founders · full method linked</p>
           </div>
           <div className="dx-ready">
             <div className="dx-ring" style={{"--p": score} as CSSProperties}><b>{score}</b><small>quote-ready</small></div>
@@ -204,7 +204,7 @@ export function EarnDash({step}: {step: number}) {
             <svg viewBox="0 0 100 100" preserveAspectRatio="none" aria-hidden="true">
               {NODES.map((n, i) => <line key={n.name} x1="50" y1="50" x2={n.x} y2={n.y} className={node === i ? "on" : ""} />)}
             </svg>
-            <span className="dx-core"><b>YourBrand</b><small>AI-native RFP software for small teams</small></span>
+            <span className="dx-core"><b>YourBrand</b><small>Payroll software for startups</small></span>
             {NODES.map((n, i) => (
               <button type="button" key={n.name} className={`dx-node${node === i ? " on" : ""}`} style={{left: `${n.x}%`, top: `${n.y}%`}} onMouseEnter={() => setNode(i)} onFocus={() => setNode(i)} onClick={() => setNode(i)}>{n.name === "Listicles" ? <i className="dx-list-ic">≡</i> : sourceMarks[n.name]}{n.name}</button>
             ))}
@@ -225,7 +225,7 @@ const SERIES: Record<string, number[]> = {
 const ACTIONS = [
   {k: "Refresh", t: "Update the comparison video with 2026 pricing", m: "+6 citations last cycle"},
   {k: "Expand", t: "Add 12 enterprise prompts to the radar", m: "New prompt cluster"},
-  {k: "Place", t: "Pitch a guest issue to 2 RFP newsletters", m: "Substack sources rising in Perplexity"},
+  {k: "Place", t: "Pitch a guest issue to 2 founder newsletters", m: "Substack sources rising in Perplexity"},
 ];
 
 export function CompoundDash({step}: {step: number}) {

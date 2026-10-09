@@ -1,18 +1,20 @@
 "use client";
 import {useEffect,useRef,useState} from 'react';
-import {ArrowUpRight,Check,Copy} from 'lucide-react';
+import {ArrowUpRight,Check,Copy,Newspaper} from 'lucide-react';
+import type {ReactNode} from 'react';
+import {engineMarks,sourceMarks} from '../hero-marks';
 import {proofClients} from '../proof-data';
 
 const LOGO:Record<string,string>={'Synup':'/clients/color/synup.svg','Inventive AI':'/clients/color/inventive.png','HubEngage':'/clients/color/hubengage.png','StarAgile':'/clients/color/staragile.png','BacklinkOS':'/clients/color/backlinkos.png','SERPsGrowth':'/clients/color/serps.png','Inbound Blogging':'/clients/color/inbound.png'};
 const SECTOR:Record<string,string>={'Synup':'Local listings software','Inventive AI':'AI RFP software','HubEngage':'Internal communications','StarAgile':'Professional certification','BacklinkOS':'Backlink management','SERPsGrowth':'Digital PR & links','Inbound Blogging':'SaaS SEO'};
 
-function engineOf(platform:string){
+function engineOf(platform:string):{k:string;l:ReactNode}{
  const p=platform.toLowerCase();
- if(p.startsWith('perplexity'))return {k:'perplexity',l:'P'};
- if(p.startsWith('chatgpt'))return {k:'chatgpt',l:'C'};
- if(p.startsWith('youtube'))return {k:'youtube',l:'▶'};
- if(p.startsWith('google'))return {k:'google',l:'G'};
- return {k:'editorial',l:'¶'};
+ if(p.startsWith('perplexity'))return {k:'perplexity',l:engineMarks.perplexity};
+ if(p.startsWith('chatgpt'))return {k:'chatgpt',l:engineMarks.chatgpt};
+ if(p.startsWith('youtube'))return {k:'youtube',l:sourceMarks.YouTube};
+ if(p.startsWith('google'))return {k:'google',l:engineMarks.google};
+ return {k:'editorial',l:<Newspaper size={20} strokeWidth={1.8}/>};
 }
 
 function Typed({text}:{text:string}){
@@ -62,7 +64,7 @@ export function WorkBoard(){
    </aside>
    <ol className="wb-list">
     {c.entries.map((e,i)=>{const eng=engineOf(e.platform);return <li key={e.query+i} className="wb-row" style={{animationDelay:`${80+i*90}ms`}}>
-     <span className={`wb-engine e-${eng.k}`} aria-hidden="true">{eng.l}</span>
+     <span className={`wb-engine e-${eng.k}`} title={e.platform.split(' · ')[0]} aria-hidden="true">{eng.l}</span>
      <div className="wb-body">
       <span className="wb-platform">{e.platform}</span>
       <div className="wb-query"><span className="wb-q-ico" aria-hidden="true">⌕</span><span><Typed text={e.query}/></span></div>
