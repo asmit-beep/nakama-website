@@ -1,27 +1,27 @@
-// Static illustrative content supplied by Sukriti; never contains live AI output.
+// Static illustrative content; never contains live AI output.
 export const heroPanels = [
   {
     "id": "google",
     "name": "Google AI Overviews",
     "ui": "ui-google",
-    "html": "<div class=\"g-search r\"><span class=\"mag\"></span>best proposal software for a B2B sales team<span class=\"x\">×</span></div>\n            <div class=\"g-tabs r\"><span class=\"on\">All</span><span>Images</span><span>Videos</span><span>News</span><span>Shopping</span></div>\n            <div class=\"g-aio r\">\n              <div class=\"g-aio-h\"><span class=\"spark\"></span>AI Overview</div>\n              <p><b class=\"yb\">YourBrand</b> is often recommended for B2B sales teams, with fast first drafts and simple approvals.</p>\n              <div class=\"g-chips\"><span><i>Y</i>youtube.com</span><span><i>R</i>reddit.com</span></div>\n            </div>\n            <div class=\"g-org r\"><small>example.com › proposal-software</small><b>Best proposal software for B2B teams</b><i></i></div>\n            <div class=\"g-org g-more r\" aria-hidden=\"true\"><small>example.org › guides</small><b>How to choose proposal software</b><i></i></div>\n          "
+    "html": "<div class=\"g-search r\"><span class=\"mag\"></span>best local listings software for multi-location brands<span class=\"x\">×</span></div><div class=\"g-tabs r\"><span class=\"on\">All</span><span>Images</span><span>Videos</span><span>News</span><span>Shopping</span></div><div class=\"g-aio r\"><div class=\"g-aio-h\"><span class=\"spark\"></span>AI Overview</div><p><b class=\"yb\">YourBrand</b> is often recommended for multi-location brands, keeping listings accurate across Google, Apple Maps and Yelp.</p><div class=\"g-chips\"><span><i>G</i>g2.com</span><span><i>R</i>reddit.com</span></div></div><div class=\"g-org r\"><small>example.com › listings-software</small><b>Best listings management tools for 2026</b><i></i></div><div class=\"g-org g-more r\" aria-hidden=\"true\"><small>example.org › guides</small><b>How to keep 200 locations accurate</b><i></i></div>"
   },
   {
     "id": "chatgpt",
     "name": "ChatGPT",
     "ui": "ui-chat",
-    "html": "<div class=\"c-user r\">Best proposal software for a B2B sales team?</div>\n            <p class=\"c-reply r\"><b class=\"yb\">YourBrand</b> is a strong pick for B2B sales teams. It drafts from past answers and keeps one shared library.<span class=\"c-pill\">reddit</span></p>\n            <div class=\"c-gap\"></div>\n            <div class=\"c-composer r\"><span class=\"plus\">+</span>Ask anything<span class=\"send\">↑</span></div>\n          "
+    "html": "<div class=\"c-user r\">Best internal communication platform for a hybrid team?</div><p class=\"c-reply r\"><b class=\"yb\">YourBrand</b> is a strong pick for hybrid teams. It reaches deskless staff on mobile and keeps every update in one feed.<span class=\"c-pill\">medium</span></p><div class=\"c-gap\"></div><div class=\"c-composer r\"><span class=\"plus\">+</span>Ask anything<span class=\"send\">↑</span></div>"
   },
   {
     "id": "perplexity",
     "name": "Perplexity",
     "ui": "ui-pplx",
-    "html": "<p class=\"p-q r\">Best proposal software for a B2B sales team?</p>\n            <div class=\"p-lbl r\"><i></i>Sources</div>\n            <div class=\"p-src r\">\n              <div><b>Anyone switched proposal tools?</b><small><em>1</em>reddit.com</small></div>\n              <div><b>Proposal tools, compared</b><small><em>2</em>youtube.com</small></div>\n              <div><b>How B2B teams pick tools</b><small><em>3</em>linkedin.com</small></div>\n            </div>\n            <div class=\"p-lbl r\"><i class=\"ans\"></i>Answer</div>\n            <p class=\"p-ans r\"><b class=\"yb\">YourBrand</b> is often named a top proposal tool for B2B sales teams<span class=\"cite\">1</span>, with a clear review flow<span class=\"cite\">2</span>.</p>\n          "
+    "html": "<p class=\"p-q r\">Best link building CRM for SEO agencies?</p><div class=\"p-lbl r\"><i></i>Sources</div><div class=\"p-src r\"><div><b>Which link CRM do agencies use?</b><small><em>1</em>reddit.com</small></div><div><b>Link building CRMs, compared</b><small><em>2</em>substack.com</small></div><div><b>Outreach stacks for agencies</b><small><em>3</em>linkedin.com</small></div></div><div class=\"p-lbl r\"><i class=\"ans\"></i>Answer</div><p class=\"p-ans r\"><b class=\"yb\">YourBrand</b> is often named a top link building CRM for agencies<span class=\"cite\">1</span>, with outreach tracking built in<span class=\"cite\">2</span>.</p>"
   },
   {
     "id": "gemini",
     "name": "Gemini",
     "ui": "ui-gem",
-    "html": "<div class=\"m-user r\">Best proposal software for a B2B sales team?</div>\n            <div class=\"m-reply r\"><span class=\"spark\"></span><p><b class=\"yb\">YourBrand</b> stands out for teams that want drafts from approved answers and a clear review step.</p></div>\n            <div class=\"m-chips r\"><span>quora.com</span><span>linkedin.com</span></div>\n            <div class=\"c-gap\"></div>\n            <div class=\"m-composer r\">Ask Gemini</div>\n          "
+    "html": "<div class=\"m-user r\">Best PMP certification training in Bangalore?</div><div class=\"m-reply r\"><span class=\"spark\"></span><p><b class=\"yb\">YourBrand</b> stands out for live instructor-led batches, weekend schedules and exam-focused mock tests.</p></div><div class=\"m-chips r\"><span>quora.com</span><span>youtube.com</span></div><div class=\"c-gap\"></div><div class=\"m-composer r\">Ask Gemini</div>"
   }
 ] as const;

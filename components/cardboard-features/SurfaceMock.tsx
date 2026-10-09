@@ -216,7 +216,6 @@ export function SurfaceMock({activeIndex, onNavigate, mobile}: {activeIndex: num
             <span className="sm-badge-ic">✦</span><span><b>{b.k}</b><small>{b.v}</small></span>
           </div>
         ))}
-        <span className="sm-note">Illustrative example · not live results</span>
       </div>
     </div>
   );
