@@ -230,3 +230,16 @@
 .pv-vid .pv-thumb i{font-size:13px}
 .pv-vid-t b{display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
 .pv-yt2,.pv-ans,.pv-res{justify-content:flex-start}
+
+/* Book-a-call buttons (now open the on-site booking sheet) */
+button.btn,button.contact-flare-cta,button.button{font:inherit;border:0;cursor:pointer;appearance:none}
+.footer-book{all:unset;cursor:pointer;display:inline-flex;align-items:center;gap:4px;font:inherit;color:inherit;opacity:inherit}
+.footer-book:hover{color:#fff}
+.hero-mail{position:absolute;left:50%;transform:translateX(-50%);white-space:nowrap;margin-top:12px;font-size:13.5px;color:#ffffff99;text-decoration:none;transition:color .2s}
+.hero-mail b{color:#f4e6d8;font-weight:600;border-bottom:1px solid #f0b58b66}
+.hero-mail:hover b{color:#fff;border-color:#f0b58b}
+/* Hero source cards cycle through more platforms */
+.src-swap{animation:src-in .7s cubic-bezier(.2,.8,.2,1) both}
+@keyframes src-in{from{opacity:0;filter:blur(6px);transform:translateY(6px)}}
+@media (prefers-reduced-motion:reduce){.src-swap{animation:none}}
+.hero-mail-row{position:relative;height:0;width:100%}

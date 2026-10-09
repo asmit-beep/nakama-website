@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import "./fonts.css";
+import {BookCallModal} from "@/components/booking/BookCall";
 import "./globals.css";
 import "./midnight.css";
 import "./editorial.css";
@@ -15,5 +16,5 @@ export const metadata: Metadata = {
  robots: {index: false, follow: false},
 };
 export default function RootLayout({children}: Readonly<{children: React.ReactNode}>) {
- return <html lang="en" data-theme="dark" style={{overflowX:"clip"}}><body><SiteTheme>{children}</SiteTheme></body></html>;
+ return <html lang="en" data-theme="dark" style={{overflowX:"clip"}}><body><SiteTheme>{children}</SiteTheme><BookCallModal/></body></html>;
 }
