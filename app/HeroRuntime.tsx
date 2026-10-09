@@ -4,25 +4,35 @@ import {ArrowUpRight,Pause,Play} from 'lucide-react';
 import {heroPanels} from './hero-panels';
 import {heroClients} from './hero-clients';
 import {engineMarks,sourceMarks} from './hero-marks';
-import {BookCallButton,CONTACT_EMAIL} from '@/components/booking/BookCall';
+import {BookCallButton} from '@/components/booking/BookCall';
 
+const TOPICS = [
+ {tool:'RFP tool',q:'answering RFPs faster'},
+ {tool:'listings tool',q:'keeping 200 store listings accurate'},
+ {tool:'internal comms app',q:'reaching frontline staff'},
+ {tool:'link building CRM',q:'tracking backlink outreach'},
+ {tool:'PMP course',q:'passing the PMP first try'},
+];
+const cap=(t:string)=>t.charAt(0).toUpperCase()+t.slice(1);
+const FORMATS:Record<string,{kind:string;f:(t:typeof TOPICS[number])=>string}>={
+ Reddit:{kind:'Thread',f:t=>`Anyone switched ${t.tool}s this year?`},
+ Medium:{kind:'Article',f:t=>`What we learned ${t.q}`},
+ X:{kind:'Thread',f:t=>`5 mistakes teams make ${t.q}`},
+ YouTube:{kind:'Video',f:t=>`${cap(t.tool)}s compared: a full walkthrough`},
+ Instagram:{kind:'Reel',f:t=>`A 60-second guide to ${t.q}`},
+ 'Product Hunt':{kind:'Launch',f:t=>`New ${t.tool}s launching this month`},
+ LinkedIn:{kind:'Post',f:t=>`How teams choose the right ${t.tool}`},
+ Substack:{kind:'Newsletter',f:t=>`This week: ${t.tool}s we’d buy again`},
+ Facebook:{kind:'Group',f:t=>`Which ${t.tool} is your team on?`},
+ Quora:{kind:'Question',f:t=>`What’s the best ${t.tool} right now?`},
+ G2:{kind:'Reviews',f:t=>`Top-rated ${t.tool}s by verified users`},
+ Discord:{kind:'Community',f:t=>`Open thread: your ${t.tool} stack?`},
+};
 const sourceSlots = [
- {position:'p1',items:[
-  {name:'Reddit',kind:'Thread',text:'Anyone switched proposal tools this year?'},
-  {name:'Medium',kind:'Article',text:'Why we replaced our RFP library with AI'},
-  {name:'X',kind:'Thread',text:'5 proposal mistakes we keep seeing'}]},
- {position:'p2',items:[
-  {name:'YouTube',kind:'Video',text:'Proposal software compared: a full walkthrough'},
-  {name:'Instagram',kind:'Reel',text:'A 60-second RFP workflow teardown'},
-  {name:'Product Hunt',kind:'Launch',text:'AI proposal tools launching this month'}]},
- {position:'p4',items:[
-  {name:'LinkedIn',kind:'Post',text:'How B2B teams pick proposal software'},
-  {name:'Substack',kind:'Newsletter',text:'RFP Ops Weekly: tools we’d buy again'},
-  {name:'Facebook',kind:'Group',text:'Proposal managers: which tool are you on?'}]},
- {position:'p5',items:[
-  {name:'Quora',kind:'Question',text:'What’s the best tool for answering RFPs?'},
-  {name:'G2',kind:'Reviews',text:'Top-rated proposal software by verified users'},
-  {name:'Discord',kind:'Community',text:'Sales ops crew: your RFP tool stack?'}]},
+ {position:'p1',items:['Reddit','Medium','X']},
+ {position:'p2',items:['YouTube','Instagram','Product Hunt']},
+ {position:'p4',items:['LinkedIn','Substack','Facebook']},
+ {position:'p5',items:['Quora','G2','Discord']},
 ];
 
 /** Sukriti’s “Into the Answer” direction, with React-owned, accessible controls. */
@@ -34,10 +44,10 @@ export function HeroRuntime({booking}:{booking:string}){
  const [hidden,setHidden]=useState(false);
  const [offscreen,setOffscreen]=useState(false);
  const [reduced,setReduced]=useState(false);
- const dwell=5000;
+ const dwell=3000;
  const [srcTick,setSrcTick]=useState(0);
  const held=paused||hidden||offscreen;
- useEffect(()=>{if(held)return;const t=window.setInterval(()=>setSrcTick(n=>n+1),2600);return()=>clearInterval(t);},[held]);
+ useEffect(()=>{if(held)return;const t=window.setInterval(()=>setSrcTick(n=>n+1),3000);return()=>clearInterval(t);},[held]);
  useEffect(()=>{
   const motion=matchMedia('(prefers-reduced-motion: reduce)');
   const sync=()=>{setReduced(motion.matches);setPaused(motion.matches);};
@@ -70,12 +80,12 @@ export function HeroRuntime({booking}:{booking:string}){
    </h1>
    <p className="sub rv" style={{'--d':'.7s'} as CSSProperties}>AI does its homework. We write the notes it copies.</p>
    <div className="ctas rv" style={{'--d':'.85s'} as CSSProperties}><BookCallButton className="btn">Book a call<i aria-hidden="true"><ArrowUpRight/></i></BookCallButton><a className="ghost" href="/process">See how it works</a></div>
-   <div className="hero-mail-row rv" style={{'--d':'.95s'} as CSSProperties}><a className="hero-mail" href={`mailto:${CONTACT_EMAIL}`}>or write to <b>{CONTACT_EMAIL}</b></a></div>
+
   </div>
   <div className="stage">
    <div className="core" aria-hidden="true"/>
    <div className="corridor" aria-label="The sources AI engines read"><div className="cwrap">
-    {sourceSlots.map((slot,i)=>{const turn=Math.floor((srcTick+(4-i))/4);const source=slot.items[turn%slot.items.length];return <div className={`plane ${slot.position}`} key={slot.position}><div className="src-swap" key={source.name}><div className="pt"><span className="glyph" aria-hidden="true">{sourceMarks[source.name]}</span>{source.name}<em>{source.kind}</em></div><p className="snip">{source.text}</p></div></div>;})}
+    {sourceSlots.map((slot,i)=>{const turn=Math.floor((srcTick+(4-i))/4);const name=slot.items[turn%slot.items.length];const topic=TOPICS[(turn+i*2)%TOPICS.length];const source={name,kind:FORMATS[name].kind,text:FORMATS[name].f(topic)};return <div className={`plane ${slot.position}`} key={slot.position}><div className="src-swap" key={source.name+source.text}><div className="pt"><span className="glyph" aria-hidden="true">{sourceMarks[source.name]}</span>{source.name}<em>{source.kind}</em></div><p className="snip">{source.text}</p></div></div>;})}
    </div></div>
    <div className="card-wrap">
     <article className="answer" aria-label="Illustrative AI answers">
@@ -83,7 +93,6 @@ export function HeroRuntime({booking}:{booking:string}){
       <div className="tabs" role="tablist" aria-label="Example answers by AI engine" onKeyDown={onKeys}>
        {heroPanels.map((panel,i)=><button key={panel.id} ref={el=>{tabs.current[i]=el;}} type="button" role="tab" className="tab" title={panel.name} aria-label={panel.name} id={`hero-tab-${panel.id}`} aria-controls={`hero-panel-${panel.id}`} aria-selected={active===i} tabIndex={active===i?0:-1} onClick={()=>choose(i)}><span className="mark">{engineMarks[panel.id]}</span><span className="sr-only">{panel.name}</span></button>)}
       </div>
-      <p className="a-foot">Example only. Not live AI results.</p>
       <button type="button" className="pp" aria-label={paused?'Play rotation':'Pause rotation'} aria-pressed={paused} onClick={()=>setPaused(p=>!p)}>{paused?<Play size={12}/>:<Pause size={12}/>}</button>
      </div>
      <div className="screen"><div className="states">
