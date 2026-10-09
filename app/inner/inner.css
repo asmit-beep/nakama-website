@@ -400,3 +400,9 @@ fieldset.ip-field{border:0;margin:0;padding:0;min-width:0}
  radial-gradient(55% 900px at -5% 5000px,rgba(110,105,220,.09),transparent 70%)!important}
 .site-frame.ip-page .site-footer{background:linear-gradient(180deg,transparent,rgba(0,0,0,.35) 40%,#08080b)!important}
 .ip-work-proof .evidence-room,.ip-work-proof .page-width{width:100%!important;max-width:none!important;padding-left:0!important;padding-right:0!important}
+
+/* ---- quieter labels: no glowing dots, no rainbow text ---- */
+.ip-eyebrow{gap:0;color:#b9b7c0;letter-spacing:.14em}
+.ip-eyebrow i,.ip-fit-tag i{display:none}
+.ip-fit-tag{gap:0}
+.ip-grad,.ip-page main h2 em,.ip-page main h1 em{background:none;-webkit-background-clip:border-box;background-clip:border-box;color:#f2a06a;-webkit-text-fill-color:#f2a06a}

@@ -57,14 +57,6 @@ export default function About(){
     </div>
    </IpSection>
 
-   <IpSection>
-    <Reveal className="ip-stats">
-     <div className="ip-stat"><b>8</b><span>brands partnered across SaaS, AI and training</span></div>
-     <div className="ip-stat"><b>4</b><span>AI engines tracked: ChatGPT, Perplexity, Gemini and Google</span></div>
-     <div className="ip-stat"><b>12<sup>+</sup></b><span>platforms we publish on, from Reddit to Substack</span></div>
-     <div className="ip-stat"><b>1</b><span>business day to hear back from us, every time</span></div>
-    </Reveal>
-   </IpSection>
 
    <IpSection>
     <IpHead eyebrow="What we believe" title={<>Four principles behind <em>every placement.</em></>} lead="They shape how we research, write, publish and measure, for every client and every platform."/>
