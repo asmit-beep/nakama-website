@@ -413,7 +413,6 @@ export function HomeFaqLite(){
    <Reveal className="faq-editorial-intro">
     <span className="eyebrow"><span className="tiny-cross"/>A little more clarity</span>
     <h2 id="faq-title">Good questions.<br/><span>Straight answers.</span></h2>
-    <Link className="text-link" href="/services">More on how we work<ArrowUpRight size={17}/></Link>
    </Reveal>
    <div className="faq-editorial-list">
     {items.map((item,i)=>(
@@ -452,9 +451,8 @@ export function HomeContact(){
      </ul>
      <div className="contact-flare-actions">
       <BookCallButton className="contact-flare-cta"><span>Book a call</span><i><ArrowUpRight size={20}/></i></BookCallButton>
-      <Link href="/work" className="contact-flare-work">See the work<ArrowUpRight size={16}/></Link>
+      <Link href="/pricing#quote" className="contact-flare-work">Get a custom quote<ArrowUpRight size={16}/></Link>
      </div>
-     <a className="contact-flare-mail" href="mailto:hello@nakama.in">hello@nakama.in</a>
     </div>
    </div>
   </section>

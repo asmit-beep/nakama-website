@@ -8,13 +8,14 @@ const CAL = "https://cal.com/snehil-srivastava-4jm7sq";
 const EVENT = "book-call";
 
 /** Opens the on-site booking sheet. Visitors never leave nakama. */
-export function openBookCall() {
-  window.dispatchEvent(new Event(EVENT));
+export type BookCallOptions = {len?: "15min" | "30min"; name?: string; email?: string; notes?: string};
+export function openBookCall(opts?: BookCallOptions) {
+  window.dispatchEvent(new CustomEvent<BookCallOptions | undefined>(EVENT, {detail: opts}));
 }
 
 export function BookCallButton({children, className = "", ariaLabel}: {children: ReactNode; className?: string; ariaLabel?: string}) {
   return (
-    <button type="button" className={className} aria-label={ariaLabel} aria-haspopup="dialog" onClick={openBookCall}>
+    <button type="button" className={className} aria-label={ariaLabel} aria-haspopup="dialog" onClick={() => openBookCall()}>
       {children}
     </button>
   );
@@ -30,9 +31,15 @@ export function BookCallModal() {
   const [loaded, setLoaded] = useState(false);
   const [copied, setCopied] = useState(false);
   const [len, setLen] = useState<"15min" | "30min">("30min");
+  const [prefill, setPrefill] = useState<BookCallOptions>({});
 
   useEffect(() => {
-    const open = () => {
+    const open = (e?: Event) => {
+      const d0 = (e as CustomEvent<BookCallOptions | undefined> | undefined)?.detail;
+      if (d0 && typeof d0 === "object" && "len" in d0) {
+        setPrefill({name: d0.name, email: d0.email, notes: d0.notes});
+        if (d0.len) {setLen(d0.len); setLoaded(false);}
+      }
       setOpened(true);
       const d = ref.current;
       if (d && !d.open) d.showModal();
@@ -92,7 +99,7 @@ export function BookCallModal() {
             <iframe
               title="Book a call with Nakama"
               key={len}
-              src={`${CAL}/${len}?embed=true&theme=dark&layout=month_view`}
+              src={`${CAL}/${len}?embed=true&theme=dark&layout=month_view${prefill.name ? `&name=${encodeURIComponent(prefill.name)}` : ""}${prefill.email ? `&email=${encodeURIComponent(prefill.email)}` : ""}${prefill.notes ? `&notes=${encodeURIComponent(prefill.notes)}` : ""}`}
               onLoad={() => setLoaded(true)}
               allow="payment"
             />
