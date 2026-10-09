@@ -210,6 +210,7 @@ export function Presence(){
   const motion=matchMedia('(prefers-reduced-motion: reduce)');
   const narrow=matchMedia('(max-width: 640px)');
   let frame=0;
+  let sizes:number[][]=[];
   const update=()=>{
    frame=0;
    if(motion.matches||narrow.matches){map.style.setProperty('--fold','0');return;}
@@ -219,10 +220,11 @@ export function Presence(){
    const eased=p*p*(3-2*p);
    map.style.setProperty('--fold',String(1-eased));
    map.style.setProperty('--card-reveal',String(Math.max(0,(eased-.55)/.45)));
-   cards.forEach(card=>{card.style.setProperty('--scale-x',String(1+(300/card.offsetWidth-1)*(1-eased)));card.style.setProperty('--scale-y',String(1+(280/card.offsetHeight-1)*(1-eased)))});
+   cards.forEach((card,i)=>{const size=sizes[i]||[300,280];card.style.setProperty('--scale-x',String(1+(300/size[0]-1)*(1-eased)));card.style.setProperty('--scale-y',String(1+(280/size[1]-1)*(1-eased)))});
   };
   const schedule=()=>{if(!frame)frame=requestAnimationFrame(update)};
   const measure=()=>{
+   sizes=cards.map(card=>[card.offsetWidth||300,card.offsetHeight||280]);
    cards.forEach((card,i)=>{
     card.style.setProperty('--fold-x',`${map.clientWidth/2-card.offsetLeft-card.offsetWidth/2}px`);
     card.style.setProperty('--fold-y',`${map.clientHeight/2-card.offsetTop-card.offsetHeight/2-(i+1)*5}px`);
