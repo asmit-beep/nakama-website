@@ -306,3 +306,9 @@ button.btn,button.contact-flare-cta,button.button{font:inherit;border:0;cursor:p
 .ip-article-page .article-body h2{font-family:'Manrope',Arial,sans-serif!important;color:#f6f3ee!important;letter-spacing:-.025em!important;font-weight:700!important}
 .ip-article-page .article-meta span,.ip-article-page .article-part{color:#7fd1c3!important}
 .ip-article-page .back-link{color:#ffd2ad!important}
+/* real brand marks in cards */
+.plat-logo.plat-mark{background:#fff;padding:4px;border-radius:50%}
+.plat-logo.plat-mark.sq{border-radius:6px}
+.plat-logo.plat-mark svg{width:100%;height:100%;display:block}
+.pv-res-row.hit .fav.fav-img{background:#fff;overflow:hidden;padding:2px}
+.fav.fav-img img{width:100%;height:100%;object-fit:contain;border-radius:4px}

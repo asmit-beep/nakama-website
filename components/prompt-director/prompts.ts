@@ -8,31 +8,30 @@ export type Chip = {
 };
 
 // Real buyer questions from the categories Nakama's clients compete in
-// (local listings, RFP software, internal comms, certification training,
-// link building, digital PR and SaaS SEO).
+// across many kinds of business: software, D2C, local services, education and travel.
 export const PROMPT_ROWS: Chip[][] = [
   [
     { Icon: Icons.Search, short: "“best local listings management software”", full: "best local listings management software for multi-location brands" },
-    { Icon: Icons.Sparkles, short: "“best AI RFP software”", full: "best AI RFP software for proposal teams answering security questionnaires" },
+    { Icon: Icons.Sparkles, short: "“best CRM for real estate agents”", full: "best CRM for a small real estate team that needs fast lead follow-up" },
     { Icon: Icons.Message, short: "“best internal communication platform”", full: "best internal communication platform for a frontline and hybrid workforce" },
-    { Icon: Icons.Users, short: "“best PMP certification training”", full: "best PMP certification training in Bangalore with live instructor-led classes" },
-    { Icon: Icons.Layers, short: "“best backlink management software”", full: "best backlink management software for agencies tracking hundreds of placements" },
-    { Icon: Icons.Megaphone, short: "“best digital PR agencies”", full: "best digital PR agencies for B2B SaaS brands in 2026" },
+    { Icon: Icons.Users, short: "“best PMP certification training”", full: "best PMP certification training with live instructor-led classes" },
+    { Icon: Icons.Layers, short: "“best payroll software for startups”", full: "best payroll software for a 20-person startup with remote employees" },
+    { Icon: Icons.Megaphone, short: "“best moisturiser for sensitive skin”", full: "best fragrance-free moisturiser for sensitive skin under ₹1,000" },
   ],
   [
-    { Icon: Icons.SearchCheck, short: "“best SEO agency for enterprise SaaS”", full: "best SEO agency for enterprise SaaS companies that need AI search visibility" },
+    { Icon: Icons.SearchCheck, short: "“best project management tool for agencies”", full: "best project management tool for a 15-person creative agency" },
     { Icon: Icons.Radar, short: "“best reputation management software”", full: "best reputation management software for monitoring reviews across locations" },
-    { Icon: Icons.Quote, short: "“Loopio vs Responsive”", full: "Loopio vs Responsive vs an AI-native RFP tool: which should a lean team pick?" },
-    { Icon: Icons.Share, short: "“best employee experience tools”", full: "best employee experience tools for internal communication and engagement" },
-    { Icon: Icons.Zap, short: "“best link building CRM”", full: "best link building CRM for agencies running outreach at scale" },
-    { Icon: Icons.Pen, short: "“best KnowledgeHut alternatives”", full: "best KnowledgeHut alternatives for PMP and Scrum certification" },
+    { Icon: Icons.Quote, short: "“Shopify vs WooCommerce”", full: "Shopify vs WooCommerce: which is better for a new D2C brand?" },
+    { Icon: Icons.Share, short: "“best boutique hotel in Goa”", full: "best boutique hotel in Goa for a quiet weekend away" },
+    { Icon: Icons.Zap, short: "“best accounting software for freelancers”", full: "best accounting software for freelancers who invoice in multiple currencies" },
+    { Icon: Icons.Pen, short: "“best online coding bootcamp”", full: "best online coding bootcamp for working professionals switching careers" },
   ],
   [
-    { Icon: Icons.BarChart, short: "“best white label link building”", full: "best white label link building agencies for SEO resellers" },
-    { Icon: Icons.Flame, short: "“best listicle link building agency”", full: "top agencies for listicle link building in 2026" },
-    { Icon: Icons.Bot, short: "“best proposal management software”", full: "best proposal management software for a B2B sales team" },
-    { Icon: Icons.Scan, short: "“best Scrum Master certification”", full: "best Scrum Master certification course for working professionals" },
-    { Icon: Icons.Users, short: "“best SaaS digital PR agency”", full: "best SaaS digital PR agency for earning placements in AI answers" },
+    { Icon: Icons.BarChart, short: "“best cybersecurity training for employees”", full: "best cybersecurity awareness training for a 200-person company" },
+    { Icon: Icons.Flame, short: "“best protein powder for beginners”", full: "best protein powder for beginners with no added sugar" },
+    { Icon: Icons.Bot, short: "“best AI meeting notes app”", full: "best AI meeting notes app for sales calls" },
+    { Icon: Icons.Scan, short: "“best dental clinic near me”", full: "best dental clinic for invisible aligners near me" },
+    { Icon: Icons.Users, short: "“best HR software for small business”", full: "best HR software for a small business with hourly staff" },
     { Icon: Icons.Search, short: "“best Yext alternatives”", full: "best Yext alternatives for managing local listings" },
   ],
 ];

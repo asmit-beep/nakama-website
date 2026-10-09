@@ -7,11 +7,12 @@ import {engineMarks,sourceMarks} from './hero-marks';
 import {BookCallButton} from '@/components/booking/BookCall';
 
 const TOPICS = [
- {tool:'RFP tool',q:'answering RFPs faster'},
  {tool:'listings tool',q:'keeping 200 store listings accurate'},
  {tool:'internal comms app',q:'reaching frontline staff'},
  {tool:'link building CRM',q:'tracking backlink outreach'},
  {tool:'PMP course',q:'passing the PMP first try'},
+ {tool:'payroll app',q:'running payroll for a 20-person startup'},
+ {tool:'skincare brand',q:'building a routine for sensitive skin'},
 ];
 const cap=(t:string)=>t.charAt(0).toUpperCase()+t.slice(1);
 const FORMATS:Record<string,{kind:string;f:(t:typeof TOPICS[number])=>string}>={
