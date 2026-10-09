@@ -6,11 +6,11 @@ import {
   useLayoutEffect,
   useRef,
   useState,
-  type CSSProperties,
   type PointerEvent as ReactPointerEvent,
   type ReactNode,
 } from "react";
 import "./sequence.css";
+import { MapDash, EarnDash, CompoundDash } from "./dashboards";
 
 const SCRUB = 720;
 const STAGE_INSET = 88;
@@ -20,91 +20,40 @@ const ROWS = [
   {
     id: "map",
     eyebrow: "Map",
-    heading: "See exactly where AI leaves your SaaS out",
+    heading: "Find the prompts where you go missing",
     intro:
-      "We run the questions closest to a buying decision across ChatGPT, Perplexity, Gemini, and AI Overviews—then trace who gets recommended and why.",
+      "We ask ChatGPT, Perplexity, Gemini and Google the questions your buyers ask right before they shortlist, and record who gets named.",
     steps: [
-      {
-        title: "Map high-intent buyer prompts",
-        body: "Build a living set of category, comparison, use-case, and replacement prompts from the language buyers actually use.",
-      },
-      {
-        title: "Benchmark recommendation share",
-        body: "Measure where you are named, cited, or recommended against the competitors already owning the shortlist.",
-      },
-      {
-        title: "Trace every citation gap",
-        body: "Find the pages, communities, and third-party sources teaching answer engines to choose someone else.",
-      },
+      {title: "Collect the real buyer prompts", body: "Category, comparison, 'alternative to' and use-case questions, written the way buyers actually type them."},
+      {title: "Score who gets named", body: "Every prompt on every engine: named, cited, or missing while a competitor takes the slot."},
+      {title: "Trace the sources behind it", body: "The threads, videos and articles the answers lean on, so we know exactly where to show up."},
     ],
   },
   {
     id: "earn",
     eyebrow: "Earn",
-    heading: "Build the evidence answer engines can trust",
+    heading: "Write the notes AI copies",
     intro:
-      "Nakama turns real buyer questions into clear, source-backed answers and places them where models—and the people using them—already look.",
+      "We create the sources answer engines trust, then place them where buyers and models already read.",
     steps: [
-      {
-        title: "Create citation-ready answers",
-        body: "Publish answer-first assets with extractable claims, original evidence, and unmistakable product-category context.",
-      },
-      {
-        title: "Earn third-party authority",
-        body: "Place useful contributions across editorial, Reddit, LinkedIn, YouTube, comparison pages, and relevant communities.",
-      },
-      {
-        title: "Strengthen entity consistency",
-        body: "Align how your category, use cases, proof, and product language appear everywhere the model retrieves them.",
-      },
+      {title: "Draft answers worth quoting", body: "Direct, specific, evidence-backed content a model can lift cleanly into an answer."},
+      {title: "Place them off-site", body: "Reddit threads, YouTube comparisons, LinkedIn articles, Quora answers and listicles, each native to its platform."},
+      {title: "Keep the story consistent", body: "Same category, same strengths, same proof everywhere, so every model describes you the same way."},
     ],
   },
   {
     id: "compound",
     eyebrow: "Compound",
-    heading: "Turn AI visibility into measurable demand",
+    heading: "Watch the mentions stack up",
     intro:
-      "We track the answer, the source behind it, and the buyer action after it—then continuously reinforce the signals that create recommendation.",
+      "Every placement keeps working after it ships. We track what moves the answers, then double down on it.",
     steps: [
-      {
-        title: "Track citations and recommendations",
-        body: "Monitor mention rate, citation share, recommendation rate, sentiment, and competitor movement across answer engines.",
-      },
-      {
-        title: "Connect visibility to pipeline",
-        body: "Attribute AI-referred visits, assisted conversions, demo requests, and influenced opportunities—not just screenshots.",
-      },
-      {
-        title: "Reinforce what compounds",
-        body: "Refresh winning sources, close new gaps, and scale the placements that move your SaaS from known to recommended.",
-      },
+      {title: "Track mentions weekly", body: "Mentions, citations and recommendations across every engine, week over week."},
+      {title: "Tie it to real demand", body: "AI-referred visits, demo requests and the deals they touch, straight from your analytics."},
+      {title: "Reinforce what works", body: "Refresh winning sources, close new gaps, and expand into the next set of prompts."},
     ],
   },
 ] as const;
-
-const ENGINES = ["ChatGPT", "Perplexity", "Gemini", "AI Overview"];
-const PROMPTS = [
-  ["best AI-native proposal software", "Commercial", "48/mo"],
-  ["RFP response tools for SaaS", "Comparison", "31/mo"],
-  ["Loopio alternatives with AI", "Replacement", "22/mo"],
-  ["proposal automation for enterprise", "Use case", "19/mo"],
-];
-
-function Check() {
-  return (
-    <svg viewBox="0 0 16 16" aria-hidden="true">
-      <path d="m3 8 3 3 7-7" />
-    </svg>
-  );
-}
-
-function Arrow() {
-  return (
-    <svg viewBox="0 0 16 16" aria-hidden="true">
-      <path d="M3 8h10M9 4l4 4-4 4" />
-    </svg>
-  );
-}
 
 function DragFrame({
   children,
@@ -176,218 +125,13 @@ function DragFrame({
 }
 
 function MapPrototype({ step }: { step: number }) {
-  return (
-    <DragFrame className="map-frame">
-      <div className="prototype-bar">
-        <span>Buyer prompt map</span>
-        <span className="prototype-live"><i /> LIVE</span>
-      </div>
-      <div className="map-head">
-        <span>Inventive AI / Proposal software</span>
-        <strong>50 high-intent prompts</strong>
-      </div>
-      <div className="engine-tabs">
-        {ENGINES.map((engine, i) => (
-          <button className={i === Math.min(step, 3) ? "active" : ""} key={engine}>
-            {engine}
-          </button>
-        ))}
-      </div>
-      <div className="map-state" key={step}>
-        {step === 0 && (
-          <>
-            <div className="prompt-table">
-              <div className="prompt-row prompt-labels">
-                <span>Buyer prompt</span><span>Intent</span><span>Demand</span>
-              </div>
-              {PROMPTS.map(([prompt, intent, volume], i) => (
-                <div
-                  className="prompt-row"
-                  key={prompt}
-                  style={{ "--delay": `${i * 55}ms` } as CSSProperties}
-                >
-                  <span><i>{i + 1}</i>{prompt}</span><span>{intent}</span><span>{volume}</span>
-                </div>
-              ))}
-            </div>
-            <div className="map-detail">
-              <small>PROMPT COVERAGE</small>
-              <strong>Mapped from actual buyer language</strong>
-              <p>Category, comparison, replacement, and use-case questions prioritized by buying intent.</p>
-            </div>
-          </>
-        )}
-        {step === 1 && (
-          <div className="benchmark-view">
-            <div className="benchmark-summary">
-              <span><small>RECOMMENDATION RATE</small><strong>18%</strong><em>Category median 31%</em></span>
-              <span><small>CITATION SHARE</small><strong>12.4%</strong><em>Gap to leader −16 pts</em></span>
-            </div>
-            <div className="benchmark-table">
-              <div><span>Engine</span><span>Mentioned</span><span>Recommended</span></div>
-              {ENGINES.map((engine, i) => (
-                <div key={engine} style={{ "--delay": `${i * 65}ms` } as CSSProperties}>
-                  <b>{engine}</b><span>{[24, 18, 21, 11][i]} / 50</span>
-                  <i><em style={{ "--w": `${[48, 36, 42, 22][i]}%` } as CSSProperties} /></i>
-                </div>
-              ))}
-            </div>
-          </div>
-        )}
-        {step === 2 && (
-          <div className="citation-gap-view">
-            <div className="gap-head"><span><small>CITATION GAP</small><strong>7 sources shape this shortlist</strong></span><em>3 urgent</em></div>
-            {[
-              ["reddit.com/r/sales", "Cited in 32% of answers", "Missing"],
-              ["g2.com/categories/rfp", "Cited in 26% of answers", "Competitor"],
-              ["youtube.com/results", "Cited in 19% of answers", "Opportunity"],
-              ["linkedin.com/pulse", "Cited in 14% of answers", "Weak"],
-            ].map(([source, reach, status], i) => (
-              <button className="gap-source" key={source} style={{ "--delay": `${i * 70}ms` } as CSSProperties}>
-                <i>{i + 1}</i><span><b>{source}</b><small>{reach}</small></span><em>{status}</em><Arrow />
-              </button>
-            ))}
-          </div>
-        )}
-      </div>
-      <div className="prototype-foot">
-        <span><i /> Updated 2m ago</span>
-        <button>Open prompt set <Arrow /></button>
-      </div>
-    </DragFrame>
-  );
+  return <DragFrame className="dx-frame"><MapDash step={step} /></DragFrame>;
 }
-
-const PLACEMENTS = [
-  ["Comparison page", "AI-native proposal software", "Ready"],
-  ["Reddit contribution", "r/SaaS · RFP tools", "Review"],
-  ["YouTube answer", "Loopio vs Responsive vs Inventive", "Live"],
-];
-
 function EarnPrototype({ step }: { step: number }) {
-  return (
-    <DragFrame className="earn-frame">
-      <div className="prototype-bar">
-        <span>Authority workbench</span>
-        <span>Draft 08</span>
-      </div>
-      {step === 0 && (
-        <div className="answer-editor state-enter">
-          <div className="editor-meta"><span>ANSWER-FIRST ASSET</span><span>High intent</span></div>
-          <h4>What should an AI-native proposal platform actually do?</h4>
-          <p>
-            The strongest platforms do more than generate a document. They connect
-            discovery, source retrieval, approvals, and buyer context in one reliable workflow.
-          </p>
-          <blockquote>
-            <i>01</i>
-            <span><b>Direct answer</b> Extractable, unambiguous opening</span>
-          </blockquote>
-          <blockquote>
-            <i>02</i>
-            <span><b>Original proof</b> Claims linked to primary evidence</span>
-          </blockquote>
-          <div className="quality">
-            <span>Retrievability</span><b>94</b><i style={{ "--score": "94%" } as CSSProperties} />
-            <span>Source strength</span><b>88</b><i style={{ "--score": "88%" } as CSSProperties} />
-          </div>
-        </div>
-      )}
-      {step === 1 && (
-        <div className="placement-board state-enter">
-          <div className="board-head"><span>SOURCE PLACEMENTS</span><strong>Meet buyers where they research</strong></div>
-          {PLACEMENTS.map(([type, title, status], i) => (
-            <button className="placement-item" key={title} style={{ "--delay": `${i * 80}ms` } as CSSProperties}>
-              <i>{type[0]}</i><span><small>{type}</small><b>{title}</b></span><em>{status}</em><Arrow />
-            </button>
-          ))}
-        </div>
-      )}
-      {step === 2 && (
-        <div className="entity-map state-enter">
-          <div className="entity-head"><span>ENTITY CONSISTENCY</span><strong>One clear story across every source</strong></div>
-          <div className="entity-graph">
-            <svg viewBox="0 0 600 250" aria-hidden="true">
-              <path d="M300 125 115 55M300 125 490 45M300 125 520 188M300 125 88 196M300 125 290 25" />
-            </svg>
-            <span className="entity-core">Inventive AI<small>AI-native RFP software</small></span>
-            <span style={{ left: "8%", top: "12%" }}>Reddit</span>
-            <span style={{ left: "72%", top: "8%" }}>Editorial</span>
-            <span style={{ left: "78%", top: "68%" }}>YouTube</span>
-            <span style={{ left: "4%", top: "72%" }}>LinkedIn</span>
-            <span style={{ left: "42%", top: "0%" }}>Website</span>
-          </div>
-          <div className="entity-score"><span>Category consistency</span><strong>91%</strong></div>
-        </div>
-      )}
-      <div className="prototype-foot">
-        <span><i /> Sources checked</span>
-        <button>Review authority <Arrow /></button>
-      </div>
-    </DragFrame>
-  );
+  return <DragFrame className="dx-frame"><EarnDash step={step} /></DragFrame>;
 }
-
-const CHART = [22, 31, 28, 41, 49, 46, 61, 68, 73, 82, 88, 94];
-
 function CompoundPrototype({ step }: { step: number }) {
-  return (
-    <DragFrame className="compound-frame">
-      <div className="prototype-bar">
-        <span>AI visibility report</span>
-        <span>LAST 12 WEEKS</span>
-      </div>
-      {step === 0 && (
-        <div className="visibility-report state-enter">
-          <div className="metric-grid">
-            <div><small>Recommendation rate</small><strong>32.8%</strong><span>↑ 11.4 pts</span></div>
-            <div><small>Citation share</small><strong>21.4%</strong><span>↑ 6.8 pts</span></div>
-            <div><small>Positive mentions</small><strong>184</strong><span>↑ 38%</span></div>
-          </div>
-          <div className="visibility-chart">
-            <div><span>Answer presence</span><strong>94</strong></div>
-            <div className="chart-bars">
-              {CHART.map((height, i) => (
-                <i key={i} style={{ "--height": `${height}%`, "--delay": `${i * 38}ms` } as CSSProperties} />
-              ))}
-            </div>
-            <div className="chart-axis"><span>Jun</span><span>Jul</span><span>Aug</span></div>
-          </div>
-        </div>
-      )}
-      {step === 1 && (
-        <div className="attribution state-enter">
-          <div className="attribution-head"><span>AI-ASSISTED PIPELINE</span><strong>From answer to opportunity</strong></div>
-          <div className="funnel">
-            <div style={{ "--w": "100%" } as CSSProperties}><span>AI answer impressions</span><b>42,810</b></div>
-            <div style={{ "--w": "78%" } as CSSProperties}><span>AI-referred sessions</span><b>3,284</b></div>
-            <div style={{ "--w": "55%" } as CSSProperties}><span>High-intent visits</span><b>1,106</b></div>
-            <div style={{ "--w": "34%" } as CSSProperties}><span>Demo requests</span><b>87</b></div>
-          </div>
-          <div className="pipeline-total"><span>Influenced pipeline</span><strong>$486k</strong><small>↑ 27% vs previous period</small></div>
-        </div>
-      )}
-      {step === 2 && (
-        <div className="reinforce state-enter">
-          <div className="reinforce-head"><span>NEXT CYCLE</span><strong>Scale what earns recommendation</strong></div>
-          <div className="reinforce-grid">
-            <article><small>REFRESH</small><b>RFP software comparison</b><span>+9 citations</span></article>
-            <article><small>EXPAND</small><b>Enterprise proposal cluster</b><span>12 new prompts</span></article>
-            <article><small>PLACE</small><b>Technical buyer proof</b><span>4 source targets</span></article>
-          </div>
-          <div className="cycle-line">
-            <span className="done"><Check /> Map</span><i />
-            <span className="done"><Check /> Earn</span><i />
-            <span className="active">Compound</span>
-          </div>
-        </div>
-      )}
-      <div className="prototype-foot">
-        <span><i /> Evidence updated 2m ago</span>
-        <button>Open citations <Arrow /></button>
-      </div>
-    </DragFrame>
-  );
+  return <DragFrame className="dx-frame"><CompoundDash step={step} /></DragFrame>;
 }
 
 const PROTOTYPES = [MapPrototype, EarnPrototype, CompoundPrototype];

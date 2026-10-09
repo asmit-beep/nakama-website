@@ -31,6 +31,7 @@ export function FeaturesSection() {
   useMotionValueEvent(scrollYProgress, "change", (p) => {
     if(reduceMotion)return;
     const next = Math.min(FEATURES.length - 1, Math.max(0, Math.floor(p * FEATURES.length)));
+    sectionRef.current?.style.setProperty("--tab-p", String(Math.min(1, Math.max(0, p * FEATURES.length - next))));
     setActiveIndex((current) => (current === next ? current : next));
   });
 

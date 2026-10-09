@@ -53,7 +53,7 @@ export function HeroRuntime({booking}:{booking:string}){
    <h1 id="answer-hero-title" aria-label="We put your brand inside the AI answer.">
     {['We put your brand','inside the AI answer.'].map((line,row)=><span className={`hl ${row?'accent-line':''}`} key={line} aria-hidden="true">{line.split(' ').map((word,i)=><span className="w" key={word}><span style={{'--d':`${.2+(row*4+i)*.05}s`} as CSSProperties}>{word}</span>{' '}</span>)}</span>)}
    </h1>
-   <p className="sub rv" style={{'--d':'.7s'} as CSSProperties}>We get B2B and SaaS brands named in AI answers. All off-site.</p>
+   <p className="sub rv" style={{'--d':'.7s'} as CSSProperties}>AI does its homework. We write the notes it copies.</p>
    <div className="ctas rv" style={{'--d':'.85s'} as CSSProperties}><a className="btn" href={booking} target="_blank" rel="noopener noreferrer">Book a call<i aria-hidden="true"><ArrowUpRight/></i></a><a className="ghost" href="/process">See how it works</a></div>
   </div>
   <div className="stage">

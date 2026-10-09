@@ -352,7 +352,6 @@ export function HomeProof(){
  const copy=()=>{navigator.clipboard?.writeText(entry.query).then(()=>{setCopied(true);setTimeout(()=>setCopied(false),1600)}).catch(()=>{})};
  return (
   <section className="evidence-room page-width" id="proof" aria-labelledby="proof-title" style={{'--client':color} as CSSProperties}>
-   <span className="evidence-kanji" aria-hidden="true">証</span>
    <Reveal className="evidence-heading">
     <div>
      <span className="eyebrow">Documented presence</span>
@@ -362,12 +361,10 @@ export function HomeProof(){
    </Reveal>
    <div className="evidence-shell">
     <div className="evidence-rail" role="tablist" aria-label="Select a client">
-     {proofClients.map((c,i)=>(
+     {proofClients.map(c=>(
       <button key={c.name} role="tab" aria-selected={client===c.name} aria-controls="proof-client-record" style={{'--brand-color':clientMarks[c.name].color} as CSSProperties} type="button" onClick={()=>{setClient(c.name);setPick(0);}}>
-       <span className="evidence-rail-no">{String(i+1).padStart(2,'0')}</span>
        <span className={`evidence-rail-logo ${c.name==='Synup'?'is-wordmark':''}`}><img src={clientMarks[c.name].src} alt="" width="28" height="28" loading="lazy"/></span>
        <span className="evidence-rail-name">{c.name}</span>
-       <span className="evidence-rail-count">{c.entries.length}</span>
       </button>
      ))}
     </div>

@@ -4,7 +4,7 @@
  * browser window. Designed at 775 x 615 and scaled to fit its container.
  * Illustrative only; not live results.
  */
-import {useEffect, useRef, type CSSProperties, type ReactNode} from "react";
+import {useEffect, useRef, type CSSProperties, type PointerEvent, type ReactNode} from "react";
 import {engineMarks, sourceMarks} from "@/app/hero-marks";
 import "./surface-mock.css";
 
@@ -72,7 +72,7 @@ function Reddit() {
         <div className="sm-rd-comment top rv">
           <div className="sm-rd-meta"><i className="sm-rd-u u1" /><b>ops_maya</b> · 7h <em>Top comment</em></div>
           <p>We switched to <B>YourBrand</B> in March. First drafts in minutes, and the questionnaire answers pull from our own docs. Not affiliated, just relieved.</p>
-          <div className="sm-rd-bar small"><span className="vote">▲ 238 ▼</span><span>Reply</span><span>Award</span></div>
+          <div className="sm-rd-bar small"><span className="vote">▲ <span className="sm-count" style={{"--to": 238} as CSSProperties} /> ▼</span><span>Reply</span><span>Award</span></div>
         </div>
         <div className="sm-rd-comment reply rv">
           <div className="sm-rd-meta"><i className="sm-rd-u u2" /><b>dealdesk_dan</b> · 5h</div>
@@ -106,7 +106,7 @@ function YouTube() {
         </div>
         <div className="sm-yt-info">
           <h4>Loopio vs Responsive vs <B>YourBrand</B>: Which RFP Software Actually Wins in 2026?</h4>
-          <p>48K views · 3 weeks ago</p>
+          <p><span className="sm-count" style={{"--to": 48} as CSSProperties} />K views · 3 weeks ago</p>
           <p className="ch"><i />Proposal Pros ✓</p>
           <p className="desc">We ran the same 120-question security questionnaire through all three tools. Here&apos;s what happened…</p>
           <span className="sm-yt-chap">4 chapters · Setup · Drafting · Accuracy · Verdict</span>
@@ -147,7 +147,7 @@ function Quora() {
           </div>
           <p>Short answer: yes, if you answer a lot of security questionnaires. We moved from Loopio to <B>YourBrand</B> last year. The AI drafts are good enough that our reviewers edit instead of write.</p>
           <p className="muted">Where it shines: speed and approvals. Where it doesn&apos;t: very large content libraries still feel more at home in Loopio.</p>
-          <div className="sm-qa-foot"><span className="up">▲ Upvote · 64</span><span>2.1K views</span><span>💬 9</span></div>
+          <div className="sm-qa-foot"><span className="up">▲ Upvote · <span className="sm-count" style={{"--to": 64} as CSSProperties} /></span><span>2.1K views</span><span>💬 9</span></div>
         </div>
       </div>
       <div className="sm-qa-related rv">
@@ -160,6 +160,12 @@ function Quora() {
 }
 
 const PANELS = [ChatGPT, Reddit, YouTube, Quora];
+const BADGES = [
+  {k: "Named first", v: "with Reddit + YouTube as sources", x: 452, y: 440},
+  {k: "Top comment", v: "238 upvotes, clearly disclosed", x: 480, y: 515},
+  {k: "Ranks #1", v: "for 'loopio vs responsive'", x: 480, y: 515},
+  {k: "Quoted back", v: "AI engines cite this answer", x: 480, y: 515},
+];
 
 export function SurfaceMock({activeIndex, onNavigate, mobile}: {activeIndex: number; onNavigate: (i: number) => void; mobile?: boolean}) {
   const frame = useRef<HTMLDivElement>(null);
@@ -171,8 +177,18 @@ export function SurfaceMock({activeIndex, onNavigate, mobile}: {activeIndex: num
     return () => ro.disconnect();
   }, []);
   const tab = TABS[activeIndex];
+  const tilt = (e: PointerEvent<HTMLDivElement>) => {
+    if (mobile || matchMedia("(prefers-reduced-motion: reduce)").matches) return;
+    const r = e.currentTarget.getBoundingClientRect();
+    e.currentTarget.style.setProperty("--rx", `${((e.clientY - r.top) / r.height - 0.5) * -4}deg`);
+    e.currentTarget.style.setProperty("--ry", `${((e.clientX - r.left) / r.width - 0.5) * 5}deg`);
+  };
+  const untilt = (e: PointerEvent<HTMLDivElement>) => {
+    e.currentTarget.style.setProperty("--rx", "0deg");
+    e.currentTarget.style.setProperty("--ry", "0deg");
+  };
   return (
-    <div ref={frame} className={`surface-mock${mobile ? " is-mobile" : ""}`} style={{"--k": 1} as CSSProperties}>
+    <div ref={frame} className={`surface-mock${mobile ? " is-mobile" : ""}`} style={{"--k": 1} as CSSProperties} onPointerMove={tilt} onPointerLeave={untilt}>
       <div className="sm-stage">
         <div className="sm-window">
           <div className="sm-chrome">
@@ -181,7 +197,7 @@ export function SurfaceMock({activeIndex, onNavigate, mobile}: {activeIndex: num
               {TABS.map((t, i) => (
                 <button key={t.id} type="button" role="tab" aria-selected={i === activeIndex} tabIndex={mobile ? -1 : 0}
                   className={`sm-tab${i === activeIndex ? " on" : ""}`} onClick={() => onNavigate(i)}>
-                  <span className="fav">{t.mark}</span><span className="lbl">{t.label}</span>
+                  <span className="fav">{t.mark}</span><span className="lbl">{t.label}</span>{i === activeIndex && !mobile ? <i className="sm-tab-prog" /> : null}
                 </button>
               ))}
             </div>
@@ -195,6 +211,11 @@ export function SurfaceMock({activeIndex, onNavigate, mobile}: {activeIndex: num
             ))}
           </div>
         </div>
+        {BADGES.map((b, i) => (
+          <div key={b.k} className={`sm-badge${i === activeIndex ? " on" : ""}`} style={{left: b.x, top: b.y}} aria-hidden="true">
+            <span className="sm-badge-ic">✦</span><span><b>{b.k}</b><small>{b.v}</small></span>
+          </div>
+        ))}
         <span className="sm-note">Illustrative example · not live results</span>
       </div>
     </div>
