@@ -1,5 +1,5 @@
 "use client";
-import {useEffect,useRef,useState,type CSSProperties,type KeyboardEvent} from 'react';
+import {memo,useEffect,useRef,useState,type CSSProperties,type KeyboardEvent} from 'react';
 import {ArrowUpRight,Pause,Play} from 'lucide-react';
 import {heroPanels} from './hero-panels';
 import {heroClients} from './hero-clients';
@@ -35,6 +35,21 @@ const sourceSlots = [
  {position:'p5',items:['Quora','G2','Discord']},
 ];
 
+
+/** The four orbiting source cards run on their own clock, isolated from the answer dashboard
+ *  so a card swap never re-renders (or repaints) the engine panel. */
+const PanelState=memo(function PanelState({id,ui,html,on}:{id:string;ui:string;html:string;on:boolean}){
+ const inner=useRef({__html:html}).current;
+ return <div id={`hero-panel-${id}`} role="tabpanel" aria-labelledby={`hero-tab-${id}`} aria-hidden={!on} className={`state ${ui}${on?' on':''}`} dangerouslySetInnerHTML={inner}/>;
+});
+const SourceCorridor=memo(function SourceCorridor({held}:{held:boolean}){
+ const [srcTick,setSrcTick]=useState(0);
+ useEffect(()=>{if(held)return;let t=0;const k=window.setTimeout(()=>{setSrcTick(n=>n+1);t=window.setInterval(()=>setSrcTick(n=>n+1),3000);},1500);return()=>{clearTimeout(k);clearInterval(t);};},[held]);
+ return <div className="corridor" aria-label="The sources AI engines read"><div className="cwrap">
+    {sourceSlots.map((slot,i)=>{const turn=Math.floor((srcTick+(4-i))/4);const name=slot.items[turn%slot.items.length];const topic=TOPICS[(turn+i*2)%TOPICS.length];const source={name,kind:FORMATS[name].kind,text:FORMATS[name].f(topic)};return <div className={`plane ${slot.position}`} key={slot.position}><div className="src-swap" key={source.name+source.text}><div className="pt"><span className="glyph" aria-hidden="true">{sourceMarks[source.name]}</span>{source.name}<em>{source.kind}</em></div><p className="snip">{source.text}</p></div></div>;})}
+   </div></div>;
+});
+
 /** Sukriti’s “Into the Answer” direction, with React-owned, accessible controls. */
 export function HeroRuntime({booking}:{booking:string}){
  const hero=useRef<HTMLElement>(null);
@@ -45,9 +60,7 @@ export function HeroRuntime({booking}:{booking:string}){
  const [offscreen,setOffscreen]=useState(false);
  const [reduced,setReduced]=useState(false);
  const dwell=3000;
- const [srcTick,setSrcTick]=useState(0);
  const held=paused||hidden||offscreen;
- useEffect(()=>{if(held)return;const t=window.setInterval(()=>setSrcTick(n=>n+1),3000);return()=>clearInterval(t);},[held]);
  useEffect(()=>{
   const motion=matchMedia('(prefers-reduced-motion: reduce)');
   const sync=()=>{setReduced(motion.matches);setPaused(motion.matches);};
@@ -59,7 +72,7 @@ export function HeroRuntime({booking}:{booking:string}){
   if(hero.current)observer.observe(hero.current);
   return()=>{observer.disconnect();motion.removeEventListener('change',sync);document.removeEventListener('visibilitychange',visibility);};
  },[]);
- /* every engine shows for exactly 5 s, then the next one opens; choosing a tab restarts the 5 s */
+ /* every engine shows for exactly 3 s, then the next one opens; choosing a tab restarts the 3 s */
  useEffect(()=>{
   if(held)return;
   const timer=window.setTimeout(()=>setActive(i=>(i+1)%heroPanels.length),dwell);
@@ -84,9 +97,7 @@ export function HeroRuntime({booking}:{booking:string}){
   </div>
   <div className="stage">
    <div className="core" aria-hidden="true"/>
-   <div className="corridor" aria-label="The sources AI engines read"><div className="cwrap">
-    {sourceSlots.map((slot,i)=>{const turn=Math.floor((srcTick+(4-i))/4);const name=slot.items[turn%slot.items.length];const topic=TOPICS[(turn+i*2)%TOPICS.length];const source={name,kind:FORMATS[name].kind,text:FORMATS[name].f(topic)};return <div className={`plane ${slot.position}`} key={slot.position}><div className="src-swap" key={source.name+source.text}><div className="pt"><span className="glyph" aria-hidden="true">{sourceMarks[source.name]}</span>{source.name}<em>{source.kind}</em></div><p className="snip">{source.text}</p></div></div>;})}
-   </div></div>
+   <SourceCorridor held={held}/>
    <div className="card-wrap">
     <article className="answer" aria-label="Illustrative AI answers">
      <div className="a-top">
@@ -96,7 +107,7 @@ export function HeroRuntime({booking}:{booking:string}){
       <button type="button" className="pp" aria-label={paused?'Play rotation':'Pause rotation'} aria-pressed={paused} onClick={()=>setPaused(p=>!p)}>{paused?<Play size={12}/>:<Pause size={12}/>}</button>
      </div>
      <div className="screen"><div className="states">
-      {heroPanels.map((panel,i)=><div key={panel.id} id={`hero-panel-${panel.id}`} role="tabpanel" aria-labelledby={`hero-tab-${panel.id}`} aria-hidden={active!==i} className={`state ${panel.ui}${active===i?' on':''}`} dangerouslySetInnerHTML={{__html:panel.html}}/>)}
+      {heroPanels.map((panel,i)=><PanelState key={panel.id} id={panel.id} ui={panel.ui} html={panel.html} on={active===i}/>)}
      </div></div>
     </article>
    </div>

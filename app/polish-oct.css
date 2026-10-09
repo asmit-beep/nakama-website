@@ -264,3 +264,6 @@ button.btn,button.contact-flare-cta,button.button{font:inherit;border:0;cursor:p
 /* Documented presence: let its glow bleed past the column and dissolve softly on every side */
 .home-cinema main>section.evidence-room,.home-cinema main>section.home-faq{-webkit-mask-image:none!important;mask-image:none!important;overflow:visible!important}
 .home-cinema .evidence-room:before{-webkit-mask-image:radial-gradient(ellipse 50% 50% at 50% 50%,#000 35%,transparent 100%);mask-image:radial-gradient(ellipse 50% 50% at 50% 50%,#000 35%,transparent 100%)}
+/* keep each source card on its own compositor layer so swaps never repaint the dashboard */
+.answer-hero .plane{will-change:transform;contain:layout paint}
+.answer-hero .card-wrap{isolation:isolate}
