@@ -156,10 +156,15 @@
 @media(max-width:860px){.evidence-search-text{font-size:14px}.evidence-heading h2{font-size:38px}.evidence-room{padding-top:70px}}
 .contact-flare-cta span,.contact-flare-cta i{position:relative;z-index:1}
 
-/* Hero client logos: barely there on purpose (Sukriti), so the answer cards stay the focus */
-.answer-hero .clients .c-item{opacity:.22!important;transition:opacity .4s}
-.answer-hero .clients .c-item:hover{opacity:1!important}
-.answer-hero .clients .c-track{animation-duration:110s!important}
+/* Hero client strip peeks in right at the fold (Sukriti), full brightness */
+@media(min-width:761px){
+.answer-hero.answer-hero{height:calc(100svh + 34px)!important;min-height:740px!important}
+.answer-hero.answer-hero .clients{margin-top:auto!important;margin-bottom:18px!important;position:relative;z-index:2}
+}
+.answer-hero.answer-hero{position:relative}
+.answer-hero.answer-hero .clients{position:relative;z-index:7}
+/* Soft scrim behind the fixed nav so content never collides with the logo */
+.site-nav:before{content:'';position:absolute;left:0;right:0;top:0;height:110px;background:linear-gradient(180deg,#07060ae6 0%,#07060a99 45%,#07060a00 100%);pointer-events:none;z-index:-1}
 
 /* ===== Edge-to-edge layout: everything lines up with the nav, nothing boxed ===== */
 :root,html[data-theme="dark"]{--gutter:clamp(20px,5vw,72px);--page-width:100000px}

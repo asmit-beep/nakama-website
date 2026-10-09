@@ -265,7 +265,8 @@ export function PromptDirector() {
                     y={node.y}
                     width="10"
                     height="10"
-                    fill="white"
+                    rx="5"
+                    fill="#edb781"
                     className={`pd-node pd-node--${i}${bursting ? " is-burst" : ""}`}
                     style={{ ["--dx" as string]: `${dx}px` }}
                   />

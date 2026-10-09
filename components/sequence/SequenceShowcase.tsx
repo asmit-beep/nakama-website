@@ -20,7 +20,7 @@ const ROWS = [
   {
     id: "map",
     eyebrow: "Map",
-    heading: "Find the prompts where you go missing",
+    heading: "See where you go missing",
     intro:
       "We ask ChatGPT, Perplexity, Gemini and Google the questions your buyers ask right before they shortlist, and record who gets named.",
     steps: [
