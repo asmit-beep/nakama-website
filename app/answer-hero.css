@@ -392,3 +392,9 @@
  .answer-hero.answer-hero *,.answer-hero.answer-hero *:before,.answer-hero.answer-hero *:after{animation:none!important;transition:none!important}
  .answer-hero.answer-hero .w>span,.answer-hero.answer-hero .rv,.answer-hero.answer-hero .card-wrap,.answer-hero.answer-hero .cwrap,.answer-hero.answer-hero .core{opacity:1;transform:none}
 }
+/* Isolate the supplied palette and word spacing from legacy homepage rules. */
+.home-cinema .answer-hero.answer-hero{background:radial-gradient(at 12% 12%,#344949 0%,#0000 46%),radial-gradient(at 92% 58%,#4b3e43 0%,#0000 50%),linear-gradient(160deg,#172329,#222c35 50%,#1d242b)!important}
+.answer-hero.answer-hero h1 .w:not(:last-child){margin-right:.2em}
+.answer-hero.answer-hero .pt em{font-family:var(--sans)}
+.answer-hero.answer-hero .p-src em{font-family:var(--f-chat)}
+.answer-hero.answer-hero .floor{background:linear-gradient(#11101100,#111011cc 60%,#111011)}
