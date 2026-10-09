@@ -398,3 +398,39 @@
 .answer-hero.answer-hero .pt em{font-family:var(--sans)}
 .answer-hero.answer-hero .p-src em{font-family:var(--f-chat)}
 .answer-hero.answer-hero .floor{background:linear-gradient(#11101100,#111011cc 60%,#111011)}
+
+/* ---------- Oct 2026 pass: Sukriti's spec fidelity + smoother rendering ---------- */
+/* Performance: the halo is a huge blurred layer; rotating it forced a full-screen re-composite every frame.
+   Keep its colour, drop the motion. Grain without mix-blend-mode avoids blending the whole hero each frame.
+   Source planes sit on a smooth gradient, so a live backdrop blur added cost but no visible change. */
+.answer-hero.answer-hero .halo{animation:none;transform:rotate(-4deg) scale(1.04)}
+.answer-hero.answer-hero .grain{mix-blend-mode:normal;opacity:.035}
+.answer-hero.answer-hero .plane{-webkit-backdrop-filter:none;backdrop-filter:none;
+  background:linear-gradient(150deg,#ffffff1c,#ffffff0b 60%,#ffffff12),#1e262d8c;will-change:transform}
+.answer-hero.answer-hero .card-wrap,.answer-hero.answer-hero .c-track{will-change:transform}
+
+/* Logo: nav lockup at 34px tall (30px on phones), gate stem on the gutter, per the Gate guide */
+.site-frame .site-nav .brand .nakama-gate-lockup{width:auto;height:34px;margin-left:-6px}
+
+/* Desktop: the disclaimer sits inline in the card's top bar, as in the reference */
+@media(min-width:1200px){
+  .answer-hero.answer-hero .a-top{flex-wrap:nowrap;height:34px;min-height:0;gap:14px}
+  .answer-hero.answer-hero .a-foot{order:0;flex-basis:auto;padding:0;font-size:11px}
+  .answer-hero.answer-hero .tabs{height:100%;gap:clamp(14px,2vw,22px)}
+}
+
+/* Phones: one screen tall, card flexes, client strip sits at the bottom of the hero (always visible).
+   Source cards are hidden here, as in the reference. */
+@media(max-width:760px){
+  .site-frame .site-nav .brand .nakama-gate-lockup{width:auto;height:30px;margin-left:-5px}
+  .answer-hero.answer-hero{height:100svh;min-height:620px}
+  .answer-hero.answer-hero .corridor{display:none}
+  .answer-hero.answer-hero .stage{flex:1 1 0;min-height:0;margin-top:26px}
+  .answer-hero.answer-hero .card-wrap,.answer-hero.answer-hero .answer{flex:1 1 0;min-height:240px}
+  .answer-hero.answer-hero .answer{--fs:62%}
+  .answer-hero.answer-hero .clients{margin:4px 0 calc(10px + env(safe-area-inset-bottom))}
+}
+/* Source cards hold still (the 8px float forced the masked answer card to repaint every frame);
+   the tab progress line advances in fine steps instead of every frame. */
+.answer-hero.answer-hero .plane{animation:none}
+.answer-hero.answer-hero .tab i:after{animation-timing-function:steps(48)}
