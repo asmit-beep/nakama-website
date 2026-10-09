@@ -280,3 +280,29 @@ button.btn,button.contact-flare-cta,button.button{font:inherit;border:0;cursor:p
 .fw-morph:not(:hover):not(:focus-visible) .fw-word>b{transition-delay:calc(.12s + var(--i)*28ms)}
 .story-logo svg{width:1em;height:1em;display:block}
 @media (prefers-reduced-motion:reduce){.fw-word>b,.footer-wordmark-bold>span.fw-mark{transition:none!important}}
+
+/* ===== Nav: Company dropdown ===== */
+.site-frame .site-nav .desktop-nav{overflow:visible}
+.nav-drop{position:relative;display:flex}
+.nav-drop-btn{display:inline-flex;align-items:center;gap:5px;font:inherit;font-size:13px;line-height:20px;padding:10px 15px;color:#d4d5d8;background:transparent;border:0;border-radius:99px;cursor:pointer;transition:color .2s}
+.nav-drop-btn svg{transition:transform .25s ease;opacity:.7}
+.nav-drop:hover .nav-drop-btn,.nav-drop:focus-within .nav-drop-btn,.nav-drop.is-current .nav-drop-btn{color:#fff}
+.nav-drop:hover .nav-drop-btn svg,.nav-drop:focus-within .nav-drop-btn svg{transform:rotate(180deg)}
+.nav-drop-panel{position:absolute;top:100%;left:50%;padding-top:14px;transform:translate(-50%,6px);opacity:0;visibility:hidden;transition:opacity .2s ease,transform .25s cubic-bezier(.2,.8,.2,1),visibility .2s;z-index:60}
+.nav-drop:hover .nav-drop-panel,.nav-drop:focus-within .nav-drop-panel{opacity:1;visibility:visible;transform:translate(-50%,0)}
+.nav-drop-inner{width:280px;padding:8px;border-radius:20px;border:1px solid #ffffff1c;background:rgba(18,17,24,.92);backdrop-filter:blur(22px);-webkit-backdrop-filter:blur(22px);box-shadow:0 30px 60px -20px #000c,inset 0 1px 0 #ffffff12}
+.nav-drop-inner a{display:block;padding:12px 14px;border-radius:14px;text-decoration:none;transition:background .2s}
+.nav-drop-inner a:hover,.nav-drop-inner a[aria-current="page"]{background:#ffffff0d}
+.nav-drop-inner b{display:block;font:600 14px/1.2 'Manrope',Arial,sans-serif;color:#f4f2ee}
+.nav-drop-inner small{display:block;margin-top:4px;font:500 12.5px/1.35 'Manrope',Arial,sans-serif;color:#9a99a5}
+
+/* Inner pages opt out of the homepage's section edge masks */
+.ip-page main>section{-webkit-mask-image:none!important;mask-image:none!important;overflow:visible!important}
+
+/* Article pages on the inner system */
+.ip-article-page main article{position:relative;padding-top:150px}
+.ip-article-page .article-heading h1{font-family:'Manrope',Arial,sans-serif!important;color:#f6f3ee!important;letter-spacing:-.035em!important;font-weight:700!important}
+.ip-article-page .article-heading p,.ip-article-page .article-body p{color:#c9c8cf!important}
+.ip-article-page .article-body h2{font-family:'Manrope',Arial,sans-serif!important;color:#f6f3ee!important;letter-spacing:-.025em!important;font-weight:700!important}
+.ip-article-page .article-meta span,.ip-article-page .article-part{color:#7fd1c3!important}
+.ip-article-page .back-link{color:#ffd2ad!important}

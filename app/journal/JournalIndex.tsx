@@ -1,7 +1,0 @@
-"use client";
-import {useState} from 'react';
-import Link from 'next/link';
-import {ArrowUpRight,Plus} from 'lucide-react';
-import {articles} from './articles';
-import {Reveal} from '../site';
-export function JournalIndex(){const [category,setCategory]=useState('All notes');const shown=articles.filter(a=>category==='All notes'||a.category===category);return <section className="journal-index page-width"><div className="journal-toolbar"><nav aria-label="Filter journal notes">{['All notes','Strategy','Editorial','Measurement'].map(c=><button key={c} aria-pressed={category===c} onClick={()=>setCategory(c)}>{c}</button>)}</nav><span>{String(shown.length).padStart(2,'0')} field notes</span></div><div className="journal-grid">{shown.map((a,i)=><Reveal key={a.slug} className={`journal-card ${i===0?'journal-featured':''}`}><Link href={`/journal/${a.slug}`}><div className={`article-art art-${a.motif}`} aria-hidden="true"><span className="art-label">N / FIELD NOTES</span><span className="art-number">0{articles.indexOf(a)+1}</span>{a.motif==='question'?<div className="question-mark">?</div>:a.motif==='distribution'?<div className="distribution-art"><i/><i/><i/><i/><b>n.</b></div>:<div className="measurement-art"><i/><i/><i/><i/><i/><i/></div>}<Plus className="art-cross" size={15}/></div><div className="journal-card-copy"><div className="article-meta"><span>{a.category}</span><span>{a.readTime}</span></div><h2>{a.title}</h2><p>{a.description}</p><span className="text-link">Read the note<ArrowUpRight size={18}/></span></div></Link></Reveal>)}</div></section>}
