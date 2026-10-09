@@ -24,15 +24,15 @@ const factors=[
  [Gauge,'Where you start from','A brand AI already mentions moves faster than one it has never heard of.'],
 ] as const;
 
-const includes=[[Users,'A dedicated strategist'],[Eye,'Review before anything goes live'],[FileBarChart,'Monthly evidence report'],[ShieldCheck,'Disclosed, rule-respecting participation'],[Check,'No fake reviews, ever']] as const;
+const includes=[[Users,'A dedicated strategist'],[Eye,'Your review before anything goes live'],[FileBarChart,'Monthly evidence report'],[ShieldCheck,'Transparent community participation']] as const;
 
 const faq=[
  ['Why don’t you list fixed prices?','Because two brands rarely need the same thing. A company AI already cites needs a different plan from one it has never heard of. We scope each engagement around your category, channels and goals, then send a clear written quote.'],
  ['How quickly will I get a quote?','Fill in the form and book the 15-minute pricing call. We send a written proposal with scope and price within two business days of that call.'],
  ['Is there a minimum commitment?','The Visibility Audit is a one-time project. Growth Partnerships start with a three-month minimum, because earned visibility compounds and the first month is mostly research and setup.'],
  ['Can we start with a single service?','Yes. Many teams start with the audit, or with one channel such as YouTube or community, and add more once they see the evidence.'],
- ['Do you guarantee rankings or AI mentions?','No, and be wary of anyone who does. No one controls what AI engines say. We guarantee the work, the transparency and the reporting, and we show you exactly where your brand appears.'],
- ['What do you need from our team?','Product context, access to someone who knows your customers, and a quick review of drafts. Usually an hour or two a week.'],
+ ['Do you guarantee rankings or AI mentions?','No. No one controls what AI engines say. We guarantee the work, the transparency and the reporting, and we show you exactly where your brand appears.'],
+ ['What do you need from our team?','Product context, access to someone who knows your customers, and a quick review of drafts. Typically an hour or two a week.'],
 ] as const;
 
 export default function Pricing(){

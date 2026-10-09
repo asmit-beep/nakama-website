@@ -1,6 +1,6 @@
 import type {Metadata} from 'next';
 import {Shell,Reveal} from '../site';
-import {IpAtmos,IpHero,IpHead,IpSection,BookBtn,LinkBtn,FitSplit,IpCta,LogoRow} from '../inner/kit';
+import {IpAtmos,IpHero,IpHead,IpSection,BookBtn,LinkBtn,IpCta,LogoRow} from '../inner/kit';
 
 export const metadata:Metadata={
  title:'About — Nakama Growth',
@@ -72,7 +72,6 @@ export default function About(){
     </div>
    </IpSection>
 
-   <FitSplit/>
    <IpCta/>
   </Shell>
  );
