@@ -1,0 +1,19 @@
+name: Notify search engines (IndexNow)
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+jobs:
+  ping:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Wait for the Vercel deploy to go live
+        run: sleep 240
+      - name: Submit every sitemap URL to IndexNow (Bing, Yandex, Seznam, Naver)
+        run: |
+          KEY=b93b8a605d1378e0e7aea6f61971d190
+          URLS=$(curl -fsSL https://www.nakama.in/sitemap.xml | grep -oE '<loc>[^<]+</loc>' | sed -E 's#</?loc>##g' | jq -R . | jq -sc .)
+          echo "Submitting $(echo "$URLS" | jq length) URLs"
+          curl -sS -o /dev/null -w "IndexNow HTTP %{http_code}\n" -X POST https://api.indexnow.org/indexnow \
+            -H 'Content-Type: application/json; charset=utf-8' \
+            -d "{\"host\":\"www.nakama.in\",\"key\":\"$KEY\",\"keyLocation\":\"https://www.nakama.in/$KEY.txt\",\"urlList\":$URLS}"
