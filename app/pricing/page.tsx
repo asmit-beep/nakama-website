@@ -1,36 +1,34 @@
 import type {Metadata} from 'next';
-import {Check,Layers,Film,Globe2,Swords,Gauge,Users,ShieldCheck,FileBarChart,MessageSquareText,Eye} from 'lucide-react';
+import {Check} from 'lucide-react';
 import {Shell,Reveal} from '../site';
-import {IpAtmos,IpHero,IpHead,IpSection,BookBtn,LinkBtn,FitSplit,IpFaq} from '../inner/kit';
+import {IpAtmos,IpHero,IpSection,BookBtn,LinkBtn,FitSplit,IpFaq} from '../inner/kit';
 import {QuoteForm} from './QuoteForm';
 
 export const metadata:Metadata={
  title:'Pricing — Nakama Growth',
- description:'Every Nakama engagement is scoped to your product, buyers and category. Get a custom quote and book a 15-minute pricing call.',
+ description:'One Nakama plan with every service included. No tiers, no add-ons. Need enterprise or custom pricing? Book a call.',
 };
 
-const plans=[
- {name:'Visibility Audit',for:'See exactly where you stand before you invest.',len:'One-time · about 2 weeks',items:['Prompt map of the questions your buyers ask','Where you, and your competitors, appear in ChatGPT, Perplexity, Gemini and Google','Source gap analysis: which sites AI engines trust in your category','A prioritised 90-day plan your team can run with'],cta:'quote'},
- {name:'Growth Partnership',for:'An ongoing team that builds earned presence every month.',len:'Monthly retainer · 3 month minimum',featured:true,items:['Everything in the audit, refreshed every cycle','Editorial, comparison and buyer-guide content','Community participation on Reddit, Quora and more, always disclosed','YouTube scripts and video, Medium and Substack placements','Monthly evidence report with citations, mentions and next moves'],cta:'quote'},
- {name:'Agency & White-label',for:'Specialist AI visibility capacity under your agency’s name.',len:'Per-client or pod pricing',items:['Strategy, content, video and reporting delivered white-label','Direct line between our team and yours','Your branding on every report and deliverable','Flexible capacity as your client roster grows'],cta:'call'},
+const features=[
+ ['Buyer prompt map','the exact questions your buyers ask AI'],
+ ['AI visibility tracking','ChatGPT, Perplexity, Gemini and Google AI Overviews'],
+ ['Competitor and source audit','which sites AI trusts in your category'],
+ ['Editorial content','answer-first articles, comparisons and buyer guides'],
+ ['Community participation','Reddit, Quora and forums, always disclosed'],
+ ['YouTube and video','scripts, edits and short-form'],
+ ['Medium, Substack and LinkedIn','placements where your buyers read'],
+ ['Digital PR and listicles','outreach to the sources AI engines cite'],
+ ['Review site presence','G2 and category review pages kept current'],
+ ['A dedicated strategist','one owner for your account, every month'],
+ ['Your review before anything goes live','nothing publishes without your sign-off'],
+ ['Monthly evidence report','citations, mentions and next moves'],
 ] as const;
-
-const factors=[
- [Layers,'Platforms and channels','How many places we publish: communities, editorial, video, review sites and newsletters.'],
- [MessageSquareText,'Content volume','The number of articles, answers, comparisons and posts each month.'],
- [Film,'Video production','Whether we script only, or script, edit and publish YouTube and short-form.'],
- [Swords,'Category competition','Crowded categories need more sources and more consistency to win the answer.'],
- [Globe2,'Markets and languages','One market or several, and the languages your buyers search in.'],
- [Gauge,'Where you start from','A brand AI already mentions moves faster than one it has never heard of.'],
-] as const;
-
-const includes=[[Users,'A dedicated strategist'],[Eye,'Your review before anything goes live'],[FileBarChart,'Monthly evidence report'],[ShieldCheck,'Transparent community participation']] as const;
 
 const faq=[
- ['Why don’t you list fixed prices?','Because two brands rarely need the same thing. A company AI already cites needs a different plan from one it has never heard of. We scope each engagement around your category, channels and goals, then send a clear written quote.'],
+ ['Why only one plan?','Because tiers make you guess what you need. Every partner gets the full set of services from day one, and we put more effort where your category needs it most.'],
  ['How quickly will I get a quote?','Fill in the form and book the 15-minute pricing call. We send a written proposal with scope and price within two business days of that call.'],
- ['Is there a minimum commitment?','The Visibility Audit is a one-time project. Growth Partnerships start with a three-month minimum, because earned visibility compounds and the first month is mostly research and setup.'],
- ['Can we start with a single service?','Yes. Many teams start with the audit, or with one channel such as YouTube or community, and add more once they see the evidence.'],
+ ['Is there a minimum commitment?','Three months, because earned visibility compounds and the first month is mostly research and setup.'],
+ ['We’re an agency. Can you work white-label?','Yes. Agencies and larger teams use the enterprise option: our team delivers under your name, with your branding on every report.'],
  ['Do you guarantee rankings or AI mentions?','No. No one controls what AI engines say. We guarantee the work, the transparency and the reporting, and we show you exactly where your brand appears.'],
  ['What do you need from our team?','Product context, access to someone who knows your customers, and a quick review of drafts. Typically an hour or two a week.'],
 ] as const;
@@ -42,36 +40,32 @@ export default function Pricing(){
    <IpHero
     tone="ember"
     eyebrow="Pricing"
-    title="Priced around your goals,"
-    accent="not a package."
-    lead="Every brand starts from a different place, so every engagement is scoped to your product, your buyers and your category. Pick a starting shape, tell us about your goals, and get a custom quote."
+    title="One plan. Everything included."
+    accent="No tiers or add-ons."
+    lead="Every partner gets the full Nakama team from day one: strategy, content, community, video, PR and reporting. No upgrades to unlock, no surprises."
    >
-    <LinkBtn href="#quote">Get your custom quote</LinkBtn>
-    <LinkBtn href="#plans" ghost>Compare engagement types</LinkBtn>
+    <LinkBtn href="#quote">Get your quote</LinkBtn>
+    <LinkBtn href="#plan" ghost>See what’s included</LinkBtn>
    </IpHero>
 
-   <IpSection id="plans">
-    <IpHead eyebrow="Ways to work with us" title={<>Three starting shapes. <em>One custom plan.</em></>} lead="Most partners begin with one of these and we tailor it from there. Every price is quoted after a short call, never guessed from a form."/>
-    <div className="ip-plans">
-     {plans.map(p=><Reveal className={`ip-card ip-plan${'featured' in p&&p.featured?' featured':''}`} key={p.name}>
-      {'featured' in p&&p.featured&&<span className="ip-plan-badge">Most chosen</span>}
-      <span className="ip-num">{p.len}</span>
-      <h3>{p.name}</h3>
-      <p className="for">{p.for}</p>
-      <div className="price"><b>Custom</b><small>quoted after a 15-min call</small></div>
-      <ul>{p.items.map(i=><li key={i}><Check size={16}/>{i}</li>)}</ul>
-      {p.cta==='call'?<BookBtn className="ip-btn ip-btn-glass">Talk partnerships</BookBtn>:<LinkBtn href="#quote">Get your custom quote</LinkBtn>}
-     </Reveal>)}
-    </div>
-    <Reveal className="ip-includes">
-     {includes.map(([I,t])=><span key={t}><I size={15}/>{t}</span>)}
+   <IpSection id="plan">
+    <Reveal className="ip-card pr-one">
+     <div className="pr-one-head">
+      <div>
+       <span className="pr-one-tag">The Nakama plan</span>
+       <h2>Everything you need to show up in AI answers.</h2>
+      </div>
+      <LinkBtn href="#quote">Get your quote</LinkBtn>
+     </div>
+     <ul className="pr-feats">
+      {features.map(([t,d])=><li key={t}><span className="pr-tick"><Check size={14}/></span><span><b>{t}</b> — {d}</span></li>)}
+     </ul>
     </Reveal>
-   </IpSection>
 
-   <IpSection>
-    <IpHead eyebrow="What shapes your quote" title={<>Six things decide <em>the number.</em></>} lead="We price the work, not the hours. These are the levers we look at on the call."/>
-    <Reveal className="ip-factors">
-     {factors.map(([I,t,p])=><div className="ip-factor" key={t}><I size={22}/><h3>{t}</h3><p>{p}</p></div>)}
+    <Reveal className="pr-ent">
+     <h2>Need enterprise or custom pricing?</h2>
+     <p>For large teams, multiple brands or markets, and agencies that want white-label delivery, we build a tailored plan with dedicated support. Talk to us and we’ll shape it around your needs.</p>
+     <BookBtn>Schedule a call</BookBtn>
     </Reveal>
    </IpSection>
 
