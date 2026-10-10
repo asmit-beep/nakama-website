@@ -1,3 +1,4 @@
+import {pageMeta} from '@/lib/seo';
 import type {Metadata} from 'next';
 import {Shell,BOOKING} from './site';
 import {HeroRuntime} from './HeroRuntime';
@@ -6,10 +7,7 @@ import {HomeProof,HomeFaqLite,HomeContact} from './HomeSections';
 import {PromptDirector} from '@/components/prompt-director';
 import {SequenceShowcase} from '@/components/sequence';
 
-export const metadata:Metadata={
- title:'Nakama Growth — Be the brand they already know.',
- description:'A companion for earned growth. Nakama helps your brand get found, trusted and chosen across AI, search, editorial, communities and video.',
-};
+export const metadata:Metadata=pageMeta('/',{title:'Nakama Growth — Get your brand named in AI answers',description:'Nakama gets brands recommended in ChatGPT, Perplexity, Gemini and Google AI Overviews by earning the Reddit threads, YouTube videos, articles and reviews those answers rely on.'});
 
 export default function Home(){
  return (

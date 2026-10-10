@@ -1,11 +1,9 @@
+import {pageMeta} from '@/lib/seo';
 import type {Metadata} from 'next';
 import {Shell,Reveal} from '../site';
 import {IpAtmos,IpHero,IpHead,IpSection,BookBtn,LinkBtn,IpCta,LogoRow} from '../inner/kit';
 
-export const metadata:Metadata={
- title:'About — Nakama Growth',
- description:'Nakama means companion. We help SaaS and software brands earn visibility across AI answers, search, communities, editorial and video.',
-};
+export const metadata:Metadata=pageMeta('/about',{title:'About — Nakama Growth',description:'Nakama means companion. Meet the team that gets brands named in AI answers, and the rules we hold ourselves to.'});
 
 const principles=[
  ['01','Disclosed, always','Every community post is open about who is behind it. No fake reviews, no hidden endorsements. A mention that can’t survive being traced back isn’t worth having.'],

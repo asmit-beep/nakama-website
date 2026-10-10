@@ -203,7 +203,7 @@ export function SequenceShowcase() {
     };
 
     const settle = () => {
-      if (snapping.current || matchMedia("(prefers-reduced-motion: reduce)").matches) return;
+      if (snapping.current || matchMedia("(prefers-reduced-motion: reduce)").matches || matchMedia("(pointer: coarse)").matches) return;
       const root = rootRef.current;
       if (!root) return;
       const rootTop = root.getBoundingClientRect().top + scrollY;

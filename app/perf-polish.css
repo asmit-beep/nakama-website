@@ -1,0 +1,26 @@
+/* Cross-device and scroll-performance pass (Oct 2026). Loaded last. */
+
+/* Stop iOS/Android from inflating text in landscape; keep native momentum scrolling. */
+html{-webkit-text-size-adjust:100%;text-size-adjust:100%}
+body{overscroll-behavior-x:none}
+
+/* The scroll-blended ambient layers are composited once and only their opacity changes. */
+.colour-atmosphere{contain:paint;transform:translateZ(0)}
+.colour-atmosphere .colour-atmosphere-layer{will-change:opacity;transform:translateZ(0)}
+
+/* The footer is far below the fold: let the browser skip its layout and paint until it is near. */
+.site-footer{content-visibility:auto;contain-intrinsic-size:auto 640px}
+
+/* Long hero search queries wrap cleanly on tablets and phones instead of clipping inside the pill. */
+@media(max-width:900px){
+ .answer-hero.answer-hero .g-search{height:auto;min-height:40px;padding:9px 16px;line-height:1.35}
+}
+
+/* Touch screens have no hover: don't leave buttons stuck lifted after a tap. */
+@media(hover:none){
+ .button:hover{transform:none;box-shadow:none}
+ .button:hover svg,.quiet-link:hover svg{transform:none}
+}
+
+/* Firefox/Windows: thin, on-brand scrollbars instead of the bright default. */
+html{scrollbar-color:#3a3530 #0c0b0d}

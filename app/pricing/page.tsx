@@ -1,13 +1,11 @@
+import {pageMeta} from '@/lib/seo';
 import type {Metadata} from 'next';
 import {Check} from 'lucide-react';
 import {Shell,Reveal} from '../site';
 import {IpAtmos,IpHero,IpSection,BookBtn,LinkBtn,FitSplit,IpFaq} from '../inner/kit';
 import {QuoteForm} from './QuoteForm';
 
-export const metadata:Metadata={
- title:'Pricing — Nakama Growth',
- description:'One Nakama plan with every service included. No tiers, no add-ons. Need enterprise or custom pricing? Book a call.',
-};
+export const metadata:Metadata=pageMeta('/pricing',{title:'Pricing — Nakama Growth',description:'One Nakama plan with every service included, no tiers or add-ons. Enterprise and custom pricing available on a call.'});
 
 const features=[
  ['Buyer prompt map','the exact questions your buyers ask AI'],
@@ -39,7 +37,7 @@ export default function Pricing(){
     tone="ember"
     eyebrow="Pricing"
     title="One plan. Everything included."
-    accent="No tiers or add-ons."
+    accent="No tiers or add‑ons."
     lead="Every partner gets the full Nakama team from day one: strategy, content, community, video, PR and reporting. No upgrades to unlock, no surprises."
    >
     <LinkBtn href="#quote">Get your quote</LinkBtn>
