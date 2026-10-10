@@ -10,6 +10,9 @@ import "./answer-hero.css";
 import "./polish-oct.css";
 import { SiteTheme } from "./theme";
 export const metadata: Metadata = {
+ metadataBase: new URL(process.env.NEXT_PUBLIC_SITE_URL || "https://nakama-website.vercel.app"),
+ openGraph: {type: "website", siteName: "Nakama Growth", title: "Nakama Growth — Be the brand they already know.", description: "Earned visibility across AI answers, search, communities, editorial and video."},
+ twitter: {card: "summary_large_image", title: "Nakama Growth — Be the brand they already know.", description: "Earned visibility across AI answers, search, communities, editorial and video."},
  title: "Nakama Growth — Be the brand they already know.",
  description: "Your brand, everywhere that matters. Nakama builds earned visibility for SaaS brands across AI answers, search, communities, editorial and video.",
  icons: {icon: [{url: "/brand/nakama-favicon.svg", type: "image/svg+xml"}, {url: "/brand/favicon-32.png", sizes: "32x32", type: "image/png"}], shortcut: "/favicon.svg", apple: [{url: "/brand/apple-touch-icon-180.png", sizes: "180x180"}]},
