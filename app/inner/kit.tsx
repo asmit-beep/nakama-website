@@ -67,6 +67,7 @@ export function FitSplit({eyebrow='Who we work with',title=<>Built for teams pla
 
 export function IpFaq({items,eyebrow='Questions',title=<>Straight <em>answers.</em></>}:{items:readonly (readonly [string,string])[];eyebrow?:string;title?:ReactNode}){
  return <IpSection className="ip-faq">
+  <script type="application/ld+json" dangerouslySetInnerHTML={{__html:JSON.stringify({'@context':'https://schema.org','@type':'FAQPage',mainEntity:items.map(([q,a])=>({'@type':'Question',name:q,acceptedAnswer:{'@type':'Answer',text:a}}))}).replace(/</g,'\\u003c')}}/>
   <div className="ip-faq-grid">
    <IpHead eyebrow={eyebrow} title={title} lead={<>Something else on your mind? Write to <a href="mailto:hello@nakama.in">hello@nakama.in</a>.</>}/>
    <div className="ip-faq-list">

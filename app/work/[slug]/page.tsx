@@ -1,3 +1,4 @@
+import {pageMeta} from '@/lib/seo';
 import type {Metadata} from 'next';
 import Link from 'next/link';
 import {notFound} from 'next/navigation';
@@ -9,7 +10,7 @@ import {caseStudies,toSections} from '@/lib/content';
 type Props={params:Promise<{slug:string}>};
 export function generateStaticParams(){return caseStudies.map(c=>({slug:c.slug}));}
 export const dynamicParams=false;
-export async function generateMetadata({params}:Props):Promise<Metadata>{const {slug}=await params;const c=caseStudies.find(x=>x.slug===slug);return {title:c?`${c.client}: ${c.title} — Nakama`:'Case study — Nakama',description:c?.summary};}
+export async function generateMetadata({params}:Props):Promise<Metadata>{const {slug}=await params;const c=caseStudies.find(x=>x.slug===slug);if(!c)return {title:'Case study'};return pageMeta(`/work/${c.slug}`,{title:`${c.client}: ${c.title} — Nakama Growth`,description:c.summary,type:'article',publishedTime:c.date});}
 
 export default async function CaseStudyPage({params}:Props){
  const {slug}=await params;const c=caseStudies.find(x=>x.slug===slug);if(!c)notFound();

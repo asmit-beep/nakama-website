@@ -1,9 +1,10 @@
+import {pageMeta} from '@/lib/seo';
 import type {Metadata} from 'next';
 import {ProcessStepper} from './ProcessStepper';
 import {Shell,Reveal} from '../site';
 import {IpAtmos,IpHero,IpHead,IpSection,LinkBtn,IpCta} from '../inner/kit';
 
-export const metadata:Metadata={title:'Process — Nakama Growth',description:'How Nakama works: understand, create, place and prove. A sequence that compounds, not a one-off campaign.'};
+export const metadata:Metadata=pageMeta('/process',{title:'Process — Nakama Growth',description:'How a Nakama engagement runs: understand, create, place and prove, on a monthly cycle with a clear working cadence.'});
 
 const cadence=[
  ['Weekly','Async updates','Drafts, placements and anything that needs your eyes, in one shared workspace.'],

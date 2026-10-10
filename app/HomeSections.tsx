@@ -410,6 +410,7 @@ export function HomeFaqLite(){
  ];
  return (
   <section className="home-faq faq-editorial page-width" id="faq" aria-labelledby="faq-title">
+   <script type="application/ld+json" dangerouslySetInnerHTML={{__html:JSON.stringify({'@context':'https://schema.org','@type':'FAQPage',mainEntity:items.map(i=>({'@type':'Question',name:i.ask,acceptedAnswer:{'@type':'Answer',text:i.answer}}))}).replace(/</g,'\\u003c')}}/>
    <Reveal className="faq-editorial-intro">
     <span className="eyebrow"><span className="tiny-cross"/>A little more clarity</span>
     <h2 id="faq-title">Good questions.<br/><span>Straight answers.</span></h2>

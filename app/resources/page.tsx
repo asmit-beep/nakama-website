@@ -1,3 +1,4 @@
+import {pageMeta} from '@/lib/seo';
 import type {Metadata} from 'next';
 import Link from 'next/link';
 import {ArrowUpRight,BookOpen,FolderKanban} from 'lucide-react';
@@ -8,10 +9,7 @@ import {articles} from '../journal/all';
 import {CaseCards} from '../work/CaseCards';
 import {caseStudies} from '@/lib/content';
 
-export const metadata:Metadata={
- title:'Resources — Nakama Growth',
- description:'Case studies and field notes from Nakama: where client brands show up in AI answers, search and video, and how the work gets done.',
-};
+export const metadata:Metadata=pageMeta('/resources',{title:'Resources — Nakama Growth',description:'Field notes on how AI decides what to recommend, plus an index of Nakama client work.'});
 
 const LOGO:Record<string,string>={'Synup':'/clients/color/synup.svg','Inventive AI':'/clients/color/inventive.png','HubEngage':'/clients/color/hubengage.png','StarAgile':'/clients/color/staragile.png','BacklinkOS':'/clients/color/backlinkos.png','SERPsGrowth':'/clients/color/serps.png','Inbound Blogging':'/clients/color/inbound.png'};
 const SECTOR:Record<string,string>={'Synup':'Local listings software','Inventive AI':'AI RFP software','HubEngage':'Internal communications','StarAgile':'Professional certification','BacklinkOS':'Backlink management','SERPsGrowth':'Digital PR & links','Inbound Blogging':'SaaS SEO'};

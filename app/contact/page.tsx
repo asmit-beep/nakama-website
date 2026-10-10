@@ -1,8 +1,9 @@
+import {pageMeta} from '@/lib/seo';
 import type {Metadata} from 'next';
 import {CalendarDays,Receipt,Mail} from 'lucide-react';
 import {Shell,Reveal} from '../site';
 import {IpAtmos,IpHero,IpHead,IpSection,BookBtn,LinkBtn} from '../inner/kit';
-export const metadata:Metadata={title:'Contact — Nakama Growth',description:'Book a call, get a custom quote or email hello@nakama.in. We reply within one business day.'};
+export const metadata:Metadata=pageMeta('/contact',{title:'Contact — Nakama Growth',description:'Book a call, get a custom quote or email hello@nakama.in. We reply within one business day.'});
 export default function ContactPage(){
  return <Shell className="contact-page shell-cinema ip-page">
   <IpAtmos tone="indigo"/>

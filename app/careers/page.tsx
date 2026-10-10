@@ -1,3 +1,4 @@
+import {pageMeta} from '@/lib/seo';
 import type {Metadata} from 'next';
 import Link from 'next/link';
 import {ArrowUpRight,MapPin,Briefcase} from 'lucide-react';
@@ -5,7 +6,7 @@ import {Shell,Reveal} from '../site';
 import {IpAtmos,IpHero,IpSection,IpHead,LinkBtn} from '../inner/kit';
 import {openings} from '@/lib/content';
 
-export const metadata:Metadata={title:'Careers — Nakama Growth',description:'Join Nakama. We help brands earn their place in the answers buyers trust.'};
+export const metadata:Metadata=pageMeta('/careers',{title:'Careers — Nakama Growth',description:'Join Nakama: a small team of writers, researchers and strategists whose work gets quoted by AI engines.'});
 
 const values=[
  ['Craft over volume','We would rather publish one piece people quote than ten nobody reads.'],

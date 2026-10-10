@@ -1,3 +1,4 @@
+import {pageMeta} from '@/lib/seo';
 import type {Metadata} from 'next';
 import Link from 'next/link';
 import {notFound} from 'next/navigation';
@@ -9,7 +10,7 @@ import {openings,toSections} from '@/lib/content';
 type Props={params:Promise<{slug:string}>};
 export function generateStaticParams(){return openings.map(o=>({slug:o.slug}));}
 export const dynamicParams=false;
-export async function generateMetadata({params}:Props):Promise<Metadata>{const {slug}=await params;const o=openings.find(x=>x.slug===slug);return {title:o?`${o.title} — Careers at Nakama`:'Careers — Nakama',description:o?.summary};}
+export async function generateMetadata({params}:Props):Promise<Metadata>{const {slug}=await params;const o=openings.find(x=>x.slug===slug);if(!o)return {title:'Careers'};return pageMeta(`/careers/${o.slug}`,{title:`${o.title} — Careers at Nakama Growth`,description:o.summary});}
 
 export default async function Job({params}:Props){
  const {slug}=await params;const o=openings.find(x=>x.slug===slug);if(!o)notFound();
