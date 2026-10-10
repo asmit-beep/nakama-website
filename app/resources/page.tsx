@@ -4,7 +4,9 @@ import {ArrowUpRight,BookOpen,FolderKanban} from 'lucide-react';
 import {Shell} from '../site';
 import {IpAtmos,IpHero,IpHead,IpSection,IpCta} from '../inner/kit';
 import {proofClients} from '../proof-data';
-import {articles} from '../journal/articles';
+import {articles} from '../journal/all';
+import {CaseCards} from '../work/CaseCards';
+import {caseStudies} from '@/lib/content';
 
 export const metadata:Metadata={
  title:'Resources — Nakama Growth',
@@ -48,13 +50,14 @@ export default function Resources(){
     lead="Real case studies of where our client brands show up in AI answers, search and video, plus field notes on the method behind them. Every query is one you can run yourself."
    >
     <nav className="ip-tabs" aria-label="Resource types">
-     <a href="#case-studies"><FolderKanban size={16}/>Case studies<small>{proofClients.length}</small></a>
+     <a href="#case-studies"><FolderKanban size={16}/>Case studies<small>{proofClients.length+caseStudies.length}</small></a>
      <a href="#articles"><BookOpen size={16}/>Articles<small>{articles.length}</small></a>
     </nav>
    </IpHero>
 
    <IpSection id="case-studies">
     <IpHead eyebrow="Case studies" title={<>Brands that now show up <em>where buyers look.</em></>} lead="A curated sample of client work. Open any case to see the exact queries, platforms and placements."/>
+    {caseStudies.length?<div className="cs-wrap"><CaseCards items={[...caseStudies].sort((a,b)=>b.date.localeCompare(a.date))}/></div>:null}
     <div className="ip-g3">
       <Link href={`/work?client=${encodeURIComponent(feature.name)}`} className="ip-card ip-case feature">
        <div className="ip-case-main">
