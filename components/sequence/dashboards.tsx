@@ -5,10 +5,10 @@ import {engineMarks, sourceMarks} from "@/app/hero-marks";
 import "./dashboards.css";
 
 const ENG = [
-  {id: "chatgpt", name: "ChatGPT", mark: engineMarks.chatgpt},
-  {id: "perplexity", name: "Perplexity", mark: engineMarks.perplexity},
-  {id: "gemini", name: "Gemini", mark: engineMarks.gemini},
-  {id: "google", name: "AI Overview", mark: engineMarks.google},
+  {id: "chatgpt", name: "ChatGPT", short: "ChatGPT", mark: engineMarks.chatgpt},
+  {id: "perplexity", name: "Perplexity", short: "Perplexity", mark: engineMarks.perplexity},
+  {id: "gemini", name: "Gemini", short: "Gemini", mark: engineMarks.gemini},
+  {id: "google", name: "AI Overview", short: "Google", mark: engineMarks.google},
 ];
 
 function Bar({title, right}: {title: string; right?: string}) {
@@ -16,7 +16,7 @@ function Bar({title, right}: {title: string; right?: string}) {
     <div className="dx-bar">
       <span className="dx-dots"><i /><i /><i /></span>
       <b>{title}</b>
-      <span className="dx-bar-r"><i className="dx-live" />{right ?? "Illustrative data"}</span>
+      <span className="dx-bar-r"><i className="dx-live" />{right ?? "Example data"}</span>
     </div>
   );
 }
@@ -28,11 +28,11 @@ function EngineIcon({i}: {i: number}) {
 /* ---------------- MAP ---------------- */
 type Verdict = "named" | "cited" | "missing";
 const PROMPTS: {q: string; tag: string; v: Verdict[]; who: string}[] = [
-  {q: "best payroll software for startups", tag: "Category", v: ["named", "missing", "cited", "missing"], who: "Perplexity named NorthPeak and Quillbase. You weren't mentioned."},
-  {q: "NorthPeak alternatives", tag: "Replacement", v: ["missing", "missing", "missing", "cited"], who: "Every engine recommends Quillbase first. Biggest gap on the board."},
-  {q: "payroll for remote teams in India", tag: "Use case", v: ["named", "named", "cited", "named"], who: "You're named on 3 of 4 engines. Protect this one."},
-  {q: "NorthPeak vs Quillbase", tag: "Comparison", v: ["missing", "cited", "missing", "missing"], who: "Comparison answers lean on one YouTube video. You aren't in it."},
-  {q: "how to run payroll without an accountant", tag: "Problem", v: ["cited", "missing", "named", "missing"], who: "Answers quote a Reddit thread from r/startups. Room to add a useful reply."},
+  {q: "best payroll software for startups", tag: "Category", v: ["named", "missing", "cited", "missing"], who: "ChatGPT and Gemini mention you. Perplexity and Google recommend NorthPeak and Quillbase instead."},
+  {q: "NorthPeak alternatives", tag: "Replacement", v: ["missing", "missing", "missing", "cited"], who: "Only Google mentions you here. The other three suggest Quillbase first. This is the biggest gap."},
+  {q: "payroll for remote teams in India", tag: "Use case", v: ["named", "named", "cited", "named"], who: "All four AI tools mention you here. This is your strongest question, so keep it that way."},
+  {q: "NorthPeak vs Quillbase", tag: "Comparison", v: ["missing", "cited", "missing", "missing"], who: "Only Perplexity mentions you. Most answers lean on one YouTube comparison video you're not in."},
+  {q: "how to run payroll without an accountant", tag: "Problem", v: ["cited", "missing", "named", "missing"], who: "ChatGPT and Gemini mention you. The others quote a Reddit thread where you could add a helpful reply."},
 ];
 const SOV: Record<string, number[]> = {chatgpt: [22, 41, 27, 10], perplexity: [14, 38, 36, 12], gemini: [26, 33, 29, 12], google: [18, 44, 25, 13]};
 const BRANDS = ["YourBrand", "NorthPeak", "Quillbase", "Others"];
@@ -54,24 +54,32 @@ export function MapDash({step}: {step: number}) {
   const [row, setRow] = useState(0);
   const [eng, setEng] = useState(0);
   const [gap, setGap] = useState(0);
-  const count = useMemo(() => (k: Verdict) => PROMPTS.reduce((n, p) => n + p.v.filter(v => v === k).length, 0), []);
+  const total = PROMPTS.length * ENG.length;
+  const hits = useMemo(() => PROMPTS.reduce((n, p) => n + p.v.filter(v => v !== "missing").length, 0), []);
   return (
     <div className="dx">
-      <Bar title="Prompt radar · YourBrand" />
+      <Bar title="AI visibility · YourBrand" />
       {step === 0 && (
         <div className="dx-body dx-in" key="m0">
-          <div className="dx-head"><div><small>Named</small><strong className="ok">{count("named")}<em>of 20 checks</em></strong></div><div><small>Cited as a source</small><strong className="mid">{count("cited")}</strong></div><div><small>Missing</small><strong className="bad">{count("missing")}</strong></div></div>
-          <div className="dx-radar">
-            <div className="dx-radar-row dx-radar-labels"><span>Prompt</span>{ENG.map((e, i) => <span key={e.id} className="c"><EngineIcon i={i} /></span>)}</div>
-            {PROMPTS.map((p, i) => (
-              <button type="button" key={p.q} className={`dx-radar-row${row === i ? " on" : ""}`} onClick={() => setRow(i)} onMouseEnter={() => setRow(i)} style={{"--d": `${i * 60}ms`} as CSSProperties}>
-                <span className="q"><em>{p.tag}</em>{p.q}</span>
-                {p.v.map((v, j) => <span className="c" key={j}><i className={`dx-v ${v}`} title={v} /></span>)}
-              </button>
-            ))}
+          <div className="dx-head dx-head-2">
+            <div><small>AI answers that mention you</small><strong className="ok">{hits}<em>of {total}</em></strong></div>
+            <div><small>AI answers that leave you out</small><strong className="bad">{total - hits}<em>of {total}</em></strong></div>
+          </div>
+          <div className="dx-radar dx-simple">
+            <div className="dx-radar-row dx-radar-labels"><span>What buyers ask</span>{ENG.map((e, i) => <span key={e.id} className="c"><EngineIcon i={i} /><small>{e.short}</small></span>)}<span className="c sc">Score</span></div>
+            {PROMPTS.map((p, i) => {
+              const n = p.v.filter(v => v !== "missing").length;
+              return (
+                <button type="button" key={p.q} className={`dx-radar-row${row === i ? " on" : ""}`} onClick={() => setRow(i)} onMouseEnter={() => setRow(i)} style={{"--d": `${i * 60}ms`} as CSSProperties}>
+                  <span className="q">{p.q}</span>
+                  {p.v.map((v, j) => <span className="c" key={j}>{v === "missing" ? <i className="dx-yn no" aria-label="Not mentioned">✕</i> : <i className="dx-yn yes" aria-label="Mentioned">✓</i>}</span>)}
+                  <span className={`c sc s${n}`}>{n}/4</span>
+                </button>
+              );
+            })}
           </div>
           <div className="dx-insight" key={row}><span className="dx-spark">✦</span>{PROMPTS[row].who}</div>
-          <div className="dx-legend"><span><i className="dx-v named" />Named</span><span><i className="dx-v cited" />Cited as a source</span><span><i className="dx-v missing" />Missing</span></div>
+          <div className="dx-legend"><span><i className="dx-yn yes">✓</i>You show up in the answer</span><span><i className="dx-yn no">✕</i>You don't</span></div>
         </div>
       )}
       {step === 1 && (

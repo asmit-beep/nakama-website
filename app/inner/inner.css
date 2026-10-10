@@ -531,8 +531,6 @@ textarea.ip-input{height:auto;min-height:104px;resize:none;padding:14px 16px}
 .ps-bar{position:absolute;left:20px;right:20px;bottom:10px;height:2px;border-radius:2px;background:rgba(255,255,255,.06);opacity:0;transition:opacity .3s}
 .ps-step.on .ps-bar{opacity:1}
 .ps-bar i{display:block;height:100%;width:100%;border-radius:inherit;background:linear-gradient(90deg,#f07c32,#ffd2ad);transform-origin:left;transform:scaleX(0)}
-.ps-step.on .ps-bar i{animation:ps-fill linear forwards}
-.ps.is-paused .ps-step.on .ps-bar i{animation-play-state:paused}
 @keyframes ps-fill{to{transform:scaleX(1)}}
 .ps-panel{position:relative;border-radius:28px;border:1px solid var(--ip-line-2);overflow:hidden;min-height:520px}
 .ps-panel-in{display:grid;grid-template-rows:240px auto;height:100%}
