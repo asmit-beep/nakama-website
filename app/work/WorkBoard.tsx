@@ -17,6 +17,15 @@ function engineOf(platform:string):{k:string;l:ReactNode}{
  return {k:'editorial',l:<Newspaper size={20} strokeWidth={1.8}/>};
 }
 
+function runLink(platform:string,q:string):{href:string;label:string}{
+ const p=platform.toLowerCase(),e=encodeURIComponent(q);
+ if(p.startsWith('perplexity'))return {href:`https://www.perplexity.ai/search?q=${e}`,label:'Run it on Perplexity'};
+ if(p.startsWith('chatgpt'))return {href:`https://chatgpt.com/?q=${e}`,label:'Run it on ChatGPT'};
+ if(p.startsWith('youtube'))return {href:`https://www.youtube.com/results?search_query=${e}`,label:'Run it on YouTube'};
+ if(p.includes('ai mode'))return {href:`https://www.google.com/search?udm=50&q=${e}`,label:'Run it in AI Mode'};
+ return {href:`https://www.google.com/search?q=${e}`,label:'Run it on Google'};
+}
+
 function Typed({text}:{text:string}){
  const [n,setN]=useState(0);
  useEffect(()=>{
@@ -71,12 +80,12 @@ export function WorkBoard(){
       <p>{e.description}</p>
       <div className="wb-actions">
        <button type="button" onClick={()=>copy(e.query)}>{copied===e.query?<><Check size={14}/>Copied</>:<><Copy size={14}/>Copy query</>}</button>
-       <a href={`https://www.google.com/search?q=${encodeURIComponent(e.query)}`} target="_blank" rel="noreferrer">Run it yourself<ArrowUpRight size={14}/></a>
+       {(()=>{const r=runLink(e.platform,e.query);return <a href={r.href} target="_blank" rel="noreferrer">{r.label}<ArrowUpRight size={14}/></a>;})()}
       </div>
      </div>
     </li>;})}
    </ol>
   </div>
-  <p className="wb-note">Historical examples from Nakama’s portfolio. Results vary by query, location and time.</p>
+  <p className="wb-note">Captured when each placement went live. Live answers vary by location, account and date.</p>
  </div>;
 }

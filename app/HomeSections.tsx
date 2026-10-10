@@ -366,10 +366,10 @@ export function HomeProof(){
   <section className="evidence-room page-width" id="proof" aria-labelledby="proof-title" style={{'--client':color} as CSSProperties}>
    <Reveal className="evidence-heading">
     <div>
-     <span className="eyebrow">Documented presence</span>
-     <h2 id="proof-title">Work that shows up<br/><span>where buyers look.</span></h2>
+     <span className="eyebrow">Client work</span>
+     <h2 id="proof-title">Real queries.<br/><span>Real placements.</span></h2>
     </div>
-    <p>Real placements for real clients. Copy any query and run it yourself. Rankings and citations change over time.</p>
+    <p>Pick a client, copy a query and check it yourself. Captured when each piece went live; answers shift over time.</p>
    </Reveal>
    <div className="evidence-shell">
     <div className="evidence-rail" role="tablist" aria-label="Select a client">
@@ -403,7 +403,7 @@ export function HomeProof(){
 export function HomeFaqLite(){
  const items=[
   {ask:'How do AEO and GEO fit into our SEO strategy?',answer:'They build on a strong search foundation. AEO focuses on clear answers to buyer questions; GEO also considers how generative platforms understand your brand and retrieve supporting sources. We connect both with useful content, technical clarity and relevant distribution.',tag:'Strategy',glyph:'01'},
-  {ask:'Can we start with one service?',answer:'Yes. We can begin with a focused content, Reddit, link-building or YouTube project, then expand when the work and your priorities justify it. We agree on the deliverables, responsibilities and reporting before starting.',tag:'Scope',glyph:'02'},
+  {ask:'How long before we see anything?',answer:'The first month is research and first drafts. Placements start going live from month two, and AI answers can take a few more weeks to catch up, which is why we ask for three months to start.',tag:'Timeline',glyph:'02'},
   {ask:'Do you handle YouTube videos from idea to publishing?',answer:'We support topic research, scripts, video creation and editing, thumbnails, titles, chapters and publishing. We agree on the format, production requirements and review process with your team before work begins.',tag:'Video',glyph:'03'},
   {ask:'How will we know whether the work is helping?',answer:'We track the signals relevant to your scope: published assets, relevant mentions, search and video visibility, and observed AI citations. Where analytics access is available, we also review traffic and conversion signals, keeping those separate from claims of direct attribution.',tag:'Measurement',glyph:'04'},
   {ask:'Can you guarantee rankings or AI recommendations?',answer:'No. Search engines, communities and AI platforms control what they show. We commit to an agreed scope, careful execution and transparent reporting, and use the evidence to refine the next steps.',tag:'Expectations',glyph:'05'},
@@ -447,7 +447,7 @@ export function HomeContact(){
      <ul className="contact-flare-points">
       <li><Check size={15}/>Where you show up today, mapped</li>
       <li><Check size={15}/>Reply within one business day</li>
-      <li><Check size={15}/>Start with a single service</li>
+      <li><Check size={15}/>Written proposal within two business days</li>
      </ul>
      <div className="contact-flare-actions">
       <BookCallButton className="contact-flare-cta"><span>Book a call</span><i><ArrowUpRight size={20}/></i></BookCallButton>

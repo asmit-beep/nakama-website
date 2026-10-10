@@ -171,17 +171,16 @@ export function PromptDirector() {
           <h2
             className={`pd-reveal max-w-[520px] font-[family-name:var(--font-display)] text-[36px] leading-[1.05] font-normal tracking-[-0.01em] text-white md:text-[40px] ${shown ? "is-in" : ""}`}
           >
-            Direct your visibility with{" "}
+            Works in any{" "}
             <span className="relative inline-block">
-              prompts
+              category
               <Underline />
             </span>
           </h2>
           <p
             className={`pd-reveal pd-reveal--copy max-w-[380px] text-[16px] leading-[1.4] text-[#9B9B9B] md:text-right ${shown ? "is-in" : ""}`}
           >
-            Turn buyer questions into structured placements with intelligent surface
-            decisions and automated workflows.
+            Software, clinics, hotels, courses, skincare. If buyers ask AI to choose for them, we can get you on the shortlist.
           </p>
         </div>
       </div>

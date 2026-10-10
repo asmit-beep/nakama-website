@@ -45,9 +45,9 @@ export default function Resources(){
    <IpHero
     tone="teal"
     eyebrow="Resources"
-    title="Proof from the work."
-    accent="Notes on how it’s done."
-    lead="Real case studies of where our client brands show up in AI answers, search and video, plus field notes on the method behind them. Every query is one you can run yourself."
+    title="Notes from the field."
+    accent="And the work behind them."
+    lead="Practical reads on how AI decides what to recommend, plus an index of the clients we have done it for."
    >
     <nav className="ip-tabs" aria-label="Resource types">
      <a href="#case-studies"><FolderKanban size={16}/>Case studies<small>{proofClients.length+caseStudies.length}</small></a>
@@ -56,14 +56,14 @@ export default function Resources(){
    </IpHero>
 
    <IpSection id="case-studies">
-    <IpHead eyebrow="Case studies" title={<>Brands that now show up <em>where buyers look.</em></>} lead="A curated sample of client work. Open any case to see the exact queries, platforms and placements."/>
+    <IpHead eyebrow="Case studies" title={<>Seven brands, <em>one method.</em></>} lead="Open a client to see its queries and placements."/>
     {caseStudies.length?<div className="cs-wrap"><CaseCards items={[...caseStudies].sort((a,b)=>b.date.localeCompare(a.date))}/></div>:null}
     <div className="ip-g3">
       <Link href={`/work?client=${encodeURIComponent(feature.name)}`} className="ip-card ip-case feature">
        <div className="ip-case-main">
         <div className="ip-case-top"><span className="ip-case-logo"><img src={LOGO[feature.name]} alt=""/></span><div><b>{feature.name}</b><small>{SECTOR[feature.name]}</small></div></div>
         <p>{feature.description}</p>
-        <div className="ip-case-go">Read the case study<ArrowUpRight size={17}/></div>
+        <div className="ip-case-go">See the placements<ArrowUpRight size={17}/></div>
        </div>
        <div className="ip-case-side">
         {feature.entries.slice(0,3).map(e=><div key={e.query}><small>{e.platform}</small><strong>{e.query}</strong></div>)}
@@ -74,13 +74,13 @@ export default function Resources(){
        <div className="ip-case-top"><span className="ip-case-logo"><img src={LOGO[c.name]} alt=""/></span><div><b>{c.name}</b><small>{SECTOR[c.name]}</small></div></div>
        <p>{c.description}</p>
        <div className="ip-case-q">{[...new Set(c.entries.map(e=>e.query))].slice(0,2).map(q=><span key={q}>{q}</span>)}</div>
-       <div className="ip-case-go">Read the case study<ArrowUpRight size={17}/></div>
+       <div className="ip-case-go">See the placements<ArrowUpRight size={17}/></div>
       </Link>)}
     </div>
    </IpSection>
 
    <IpSection id="articles">
-    <IpHead eyebrow="Articles" title={<>Field notes on <em>earned visibility.</em></>} lead="Short, practical reads on buyer questions, useful content, distribution and measuring what matters."/>
+    <IpHead eyebrow="Articles" title={<>Field notes on <em>earned visibility.</em></>} lead="Short reads on buyer questions, distribution and measurement."/>
     <div className="ip-g2">
      <Link href={`/journal/${lead.slug}`} className="ip-card ip-article big"><Art i={0}/><div className="ip-article-body"><div className="ip-article-meta"><span>{lead.category}</span><span>{lead.readTime}</span></div><h3>{lead.title}</h3><p>{lead.description}</p><div className="ip-case-go">Read the article<ArrowUpRight size={17}/></div></div></Link>
      {more.map((a,i)=><Link key={a.slug} href={`/journal/${a.slug}`} className="ip-card ip-article"><Art i={i+1}/><div className="ip-article-body"><div className="ip-article-meta"><span>{a.category}</span><span>{a.readTime}</span></div><h3>{a.title}</h3><p>{a.description}</p><div className="ip-case-go">Read the article<ArrowUpRight size={17}/></div></div></Link>)}

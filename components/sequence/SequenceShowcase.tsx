@@ -20,9 +20,9 @@ const ROWS = [
   {
     id: "map",
     eyebrow: "Map",
-    heading: "See where you go missing",
+    heading: "Find the gaps",
     intro:
-      "We ask ChatGPT, Perplexity, Gemini and Google the questions your buyers ask right before they shortlist, and record who gets named.",
+      "We run the questions your buyers ask through ChatGPT, Perplexity, Gemini and Google, and log who gets recommended.",
     steps: [
       {title: "Collect the real buyer prompts", body: "Category, comparison, 'alternative to' and use-case questions, written the way buyers actually type them."},
       {title: "Score who gets named", body: "Every prompt on every engine: named, cited, or missing while a competitor takes the slot."},
@@ -32,23 +32,23 @@ const ROWS = [
   {
     id: "earn",
     eyebrow: "Earn",
-    heading: "Write the notes AI copies",
+    heading: "Fill them",
     intro:
-      "We create the sources answer engines trust, then place them where buyers and models already read.",
+      "We write what is missing and publish it on the pages those answers already pull from.",
     steps: [
       {title: "Draft answers worth quoting", body: "Direct, specific, evidence-backed content a model can lift cleanly into an answer."},
-      {title: "Place them off-site", body: "Reddit threads, YouTube comparisons, LinkedIn articles, Quora answers and listicles, each native to its platform."},
+      {title: "Place them off-site", body: "Each piece is rewritten for the platform it lands on, never pasted across."},
       {title: "Keep the story consistent", body: "Same category, same strengths, same proof everywhere, so every model describes you the same way."},
     ],
   },
   {
     id: "compound",
     eyebrow: "Compound",
-    heading: "Watch the mentions stack up",
+    heading: "Let it compound",
     intro:
-      "Every placement keeps working after it ships. We track what moves the answers, then double down on it.",
+      "Placements keep working long after they go live. We watch which ones move the answers and build on those.",
     steps: [
-      {title: "Track mentions weekly", body: "Mentions, citations and recommendations across every engine, week over week."},
+      {title: "Track mentions weekly", body: "Named, cited or missing, per question and per engine, every week."},
       {title: "Tie it to real demand", body: "AI-referred visits, demo requests and the deals they touch, straight from your analytics."},
       {title: "Reinforce what works", body: "Refresh winning sources, close new gaps, and expand into the next set of prompts."},
     ],

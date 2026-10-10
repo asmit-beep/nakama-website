@@ -17,7 +17,7 @@ export default function Careers(){
  const list=[...openings].sort((a,b)=>b.date.localeCompare(a.date));
  return <Shell className="shell-cinema ip-page">
   <IpAtmos tone="teal"/>
-  <IpHero tone="teal" eyebrow="Careers" title="Do the work" accent="people actually quote." lead="We are a small team of writers, researchers and strategists helping brands show up in AI answers, search and the communities buyers trust.">
+  <IpHero tone="teal" eyebrow="Careers" title="Do the work" accent="people actually quote." lead="A small team of writers, researchers and strategists. We write the threads, articles and videos AI engines end up quoting.">
    <LinkBtn href="#openings">See open roles</LinkBtn>
   </IpHero>
 

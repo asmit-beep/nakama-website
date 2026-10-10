@@ -28,8 +28,6 @@ const faq=[
  ['Why only one plan?','Because tiers make you guess what you need. Every partner gets the full set of services from day one, and we put more effort where your category needs it most.'],
  ['How quickly will I get a quote?','Fill in the form and book the 15-minute pricing call. We send a written proposal with scope and price within two business days of that call.'],
  ['Is there a minimum commitment?','Three months, because earned visibility compounds and the first month is mostly research and setup.'],
- ['We’re an agency. Can you work white-label?','Yes. Agencies and larger teams use the enterprise option: our team delivers under your name, with your branding on every report.'],
- ['Do you guarantee rankings or AI mentions?','No. No one controls what AI engines say. We guarantee the work, the transparency and the reporting, and we show you exactly where your brand appears.'],
  ['What do you need from our team?','Product context, access to someone who knows your customers, and a quick review of drafts. Typically an hour or two a week.'],
 ] as const;
 
