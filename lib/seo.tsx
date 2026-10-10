@@ -33,6 +33,7 @@ export const organizationLd={
  sameAs:['https://www.linkedin.com/company/nakama-growth/','https://www.instagram.com/nakama.growth/'],
  email:CONTACT_EMAIL,
  description:SITE_DESCRIPTION,
+hasOfferCatalog:{'@type':'OfferCatalog',name:'Nakama Growth plan',itemListElement:['Answer engine optimization (AEO)','Generative engine optimization (GEO)','Reddit and community marketing','Content marketing','YouTube marketing','Digital PR','AI visibility measurement'].map(name=>({'@type':'Offer',itemOffered:{'@type':'Service',name,provider:{'@id':`${SITE_URL}/#organization`}}}))},
  knowsAbout:['Answer engine optimization','Generative engine optimization','AI search visibility','Reddit marketing','YouTube marketing','Digital PR','Content marketing'],
 };
 export const websiteLd={
@@ -47,4 +48,10 @@ export const websiteLd={
 
 export function JsonLd({data}:{data:object|object[]}){
  return <script type="application/ld+json" dangerouslySetInnerHTML={{__html:JSON.stringify(data).replace(/</g,'\\u003c')}}/>;
+}
+
+/** BreadcrumbList structured data: Home › Section › Page. */
+export function Crumbs({trail}:{trail:{name:string;path:string}[]}){
+ const items=[{name:'Home',path:'/'},...trail];
+ return <JsonLd data={{'@context':'https://schema.org','@type':'BreadcrumbList',itemListElement:items.map((c,i)=>({'@type':'ListItem',position:i+1,name:c.name,item:abs(c.path)}))}}/>;
 }

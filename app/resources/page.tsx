@@ -1,4 +1,4 @@
-import {pageMeta} from '@/lib/seo';
+import {pageMeta,Crumbs} from '@/lib/seo';
 import type {Metadata} from 'next';
 import Link from 'next/link';
 import {ArrowUpRight,BookOpen,FolderKanban} from 'lucide-react';
@@ -9,7 +9,7 @@ import {articles} from '../journal/all';
 import {CaseCards} from '../work/CaseCards';
 import {caseStudies} from '@/lib/content';
 
-export const metadata:Metadata=pageMeta('/resources',{title:'Resources — Nakama Growth',description:'Field notes on how AI decides what to recommend, plus an index of Nakama client work.'});
+export const metadata:Metadata=pageMeta('/resources',{title:'Resources & Field Notes on AI Search — Nakama Growth',description:'Field notes on how ChatGPT, Perplexity, Gemini and Google AI Overviews decide what to recommend, plus an index of documented Nakama client work.'});
 
 const LOGO:Record<string,string>={'Synup':'/clients/color/synup.svg','Inventive AI':'/clients/color/inventive.png','HubEngage':'/clients/color/hubengage.png','StarAgile':'/clients/color/staragile.png','BacklinkOS':'/clients/color/backlinkos.png','SERPsGrowth':'/clients/color/serps.png','Inbound Blogging':'/clients/color/inbound.png'};
 const SECTOR:Record<string,string>={'Synup':'Local listings software','Inventive AI':'AI RFP software','HubEngage':'Internal communications','StarAgile':'Professional certification','BacklinkOS':'Backlink management','SERPsGrowth':'Digital PR & links','Inbound Blogging':'SaaS SEO'};
@@ -39,7 +39,7 @@ export default function Resources(){
  const [lead,...more]=articles;
  return (
   <Shell className="resources-page shell-cinema ip-page">
-   <IpAtmos tone="teal"/>
+   <IpAtmos tone="teal"/><Crumbs trail={[{name:'Resources',path:'/resources'}]}/>
    <IpHero
     tone="teal"
     eyebrow="Resources"

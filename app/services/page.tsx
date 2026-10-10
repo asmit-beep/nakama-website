@@ -1,10 +1,10 @@
-import {pageMeta} from '@/lib/seo';
+import {pageMeta,Crumbs} from '@/lib/seo';
 import type {Metadata} from 'next';
 import {Sparkles,Bot,FileText,MessageCircle,Play,Share2,ChartNoAxesCombined,Check} from 'lucide-react';
 import {Shell,Reveal} from '../site';
 import {IpAtmos,IpHero,IpHead,IpSection,BookBtn,LinkBtn,IpFaq,IpCta} from '../inner/kit';
 
-export const metadata:Metadata=pageMeta('/services',{title:'Services — Nakama Growth',description:'AEO, GEO, Reddit and community, content, YouTube, digital PR and measurement, run by one team and included in one plan.'});
+export const metadata:Metadata=pageMeta('/services',{title:'AEO, GEO & AI Visibility Services — Nakama Growth',description:'AEO, GEO, Reddit and community, content, YouTube, digital PR and measurement, run by one team and included in one plan to get you named in AI answers.'});
 
 const services=[
  {icon:Sparkles,tag:'AEO · Answer engines',name:'Be part of the answer.',p:'We turn buyer questions into clear, structured answers that search and answer engines can understand, retrieve and quote.',items:['Buyer-question and answer-gap research','Answer-first content and FAQ structure','Citation and visibility tracking']},
@@ -30,7 +30,7 @@ const faq=[
 export default function Services(){
  return (
   <Shell className="services-page shell-cinema ip-page">
-   <IpAtmos tone="teal"/>
+   <IpAtmos tone="teal"/><Crumbs trail={[{name:'Services',path:'/services'}]}/>
    <IpHero
     tone="teal"
     eyebrow="Services"

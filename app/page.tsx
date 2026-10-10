@@ -7,7 +7,7 @@ import {HomeProof,HomeFaqLite,HomeContact} from './HomeSections';
 import {PromptDirector} from '@/components/prompt-director';
 import {SequenceShowcase} from '@/components/sequence';
 
-export const metadata:Metadata=pageMeta('/',{title:'Nakama Growth — Get your brand named in AI answers',description:'Nakama gets brands recommended in ChatGPT, Perplexity, Gemini and Google AI Overviews by earning the Reddit threads, YouTube videos, articles and reviews those answers rely on.'});
+export const metadata:Metadata=pageMeta('/',{title:'Nakama Growth — Get your brand named in AI answers',description:'AI visibility agency: we get brands recommended in ChatGPT, Perplexity, Gemini and Google AI Overviews by earning the sources those answers cite.'});
 
 export default function Home(){
  return (

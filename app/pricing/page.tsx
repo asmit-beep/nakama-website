@@ -1,11 +1,11 @@
-import {pageMeta} from '@/lib/seo';
+import {pageMeta,Crumbs} from '@/lib/seo';
 import type {Metadata} from 'next';
 import {Check} from 'lucide-react';
 import {Shell,Reveal} from '../site';
 import {IpAtmos,IpHero,IpSection,BookBtn,LinkBtn,FitSplit,IpFaq} from '../inner/kit';
 import {QuoteForm} from './QuoteForm';
 
-export const metadata:Metadata=pageMeta('/pricing',{title:'Pricing — Nakama Growth',description:'One Nakama plan with every service included, no tiers or add-ons. Enterprise and custom pricing available on a call.'});
+export const metadata:Metadata=pageMeta('/pricing',{title:'Pricing: One All-Inclusive Plan — Nakama Growth',description:'One Nakama plan with every AI visibility service included, with no tiers or add-ons. Need enterprise scope or custom pricing? Book a call and we will scope it.'});
 
 const features=[
  ['Buyer prompt map','the exact questions your buyers ask AI'],
@@ -32,7 +32,7 @@ const faq=[
 export default function Pricing(){
  return (
   <Shell className="pricing-page shell-cinema ip-page">
-   <IpAtmos tone="ember"/>
+   <IpAtmos tone="ember"/><Crumbs trail={[{name:'Pricing',path:'/pricing'}]}/>
    <IpHero
     tone="ember"
     eyebrow="Pricing"
