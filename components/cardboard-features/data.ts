@@ -4,12 +4,12 @@ export const FEATURES = [
   {
     title: "Asked in ChatGPT",
     description:
-      "A buyer asks AI for a shortlist. We earn the sources it reads, so your name is in the answer instead of only your competitor's.",
+      "A buyer asks AI for a shortlist. If the pages it pulls from mention you, you make the list.",
   },
   {
     title: "Checked on Reddit",
     description:
-      "Next they look for honest opinions. Real practitioners, clearly disclosed and genuinely useful, back you up in the threads they find.",
+      "Next they want people who have actually used it. Disclosed, genuinely helpful replies put your name in the threads they open.",
   },
   {
     title: "Compared on YouTube",
@@ -19,7 +19,7 @@ export const FEATURES = [
   {
     title: "Confirmed on Quora",
     description:
-      "One last gut check. A detailed answer from someone who's used you closes the doubt, and AI engines quote it back.",
+      "One last gut check. A first-hand answer settles the doubt, and it tends to resurface in AI answers later.",
   },
 ] as const;
 

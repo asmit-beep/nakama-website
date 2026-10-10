@@ -15,16 +15,15 @@ const services=[
 ] as const;
 
 const flow=[
- ['Research tells us where to play','The prompt map and source audit show which questions matter and which platforms AI engines trust in your category.'],
- ['Content and placement run together','Each answer is written once, then shaped for the article, the thread, the video and the newsletter where it will be found.'],
- ['Evidence decides the next cycle','We track every citation and mention, double down on what moves and cut what doesn’t, every month.'],
+ ['AI names your competitors, not you','We lead with the answer audit and GEO work, then go after the exact sources that keep naming them.'],
+ ['Your category is new and nobody searches for it yet','Editorial and video come first, explaining the problem in the words buyers use, before we chase comparisons.'],
+ ['Reddit already has opinions about you','Community work starts with listening. We answer what is being asked, openly, before adding anything new.'],
 ] as const;
 
 const faq=[
- ['Do I need all of these services?','No. Most partners start with an audit plus one or two channels. We recommend a mix based on where your buyers actually research.'],
+ ['What if a channel doesn’t suit us?','Then we skip it. A niche B2B tool may not need YouTube, so that effort moves to the channels that do matter for you.'],
  ['How is this different from SEO?','SEO focuses on your own site ranking in search. We focus on your brand being mentioned and cited everywhere buyers research, including AI answers, communities and video. The two work well together.'],
  ['Is community work transparent?','Always. We participate openly, follow each community’s rules and never post fake reviews or hidden endorsements.'],
- ['How do you measure results?','A monthly evidence report shows where your brand appeared, in which AI engines, for which prompts, which sources were cited, and what we will do next.'],
 ] as const;
 
 export default function Services(){
@@ -36,14 +35,14 @@ export default function Services(){
     eyebrow="Services"
     title="One system for"
     accent="earned visibility."
-    lead="Strategy, content and distribution working together, built around your product, your buyers and the places they already research. Pick a single channel or the full system."
+    lead="Six disciplines, one team, all aimed at the questions your buyers ask before they shortlist."
    >
     <LinkBtn href="/pricing#quote">Get your custom quote</LinkBtn>
     <LinkBtn href="#services" ghost>Explore services</LinkBtn>
    </IpHero>
 
    <IpSection id="services">
-    <IpHead eyebrow="What we do" title={<>Six capabilities. <em>One shared goal.</em></>} lead="Every service is designed to make your brand easier to find, trust and choose, by people and by AI engines."/>
+    <IpHead eyebrow="What we do" title={<>Six capabilities. <em>One shared goal.</em></>} lead="All six come with the Nakama plan. We weight them toward the channels your category actually leans on."/>
     <div className="ip-g3">
      {services.map(s=><Reveal className="ip-card ip-svc" key={s.tag}>
       <div className="ip-svc-top"><span className="ip-svc-ico"><s.icon size={21}/></span></div>
@@ -63,7 +62,7 @@ export default function Services(){
    </IpSection>
 
    <IpSection>
-    <IpHead eyebrow="How it fits together" title={<>Services that <em>feed each other.</em></>}/>
+    <IpHead eyebrow="Starting points" title={<>Where the effort <em>goes first.</em></>} lead="Every partner gets all six. What changes is the order."/>
     <div className="ip-flow">
      {flow.map(([t,p])=><Reveal className="ip-card" key={t}><h3>{t}</h3><p>{p}</p></Reveal>)}
     </div>
