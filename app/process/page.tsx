@@ -1,10 +1,10 @@
-import {pageMeta} from '@/lib/seo';
+import {pageMeta,Crumbs} from '@/lib/seo';
 import type {Metadata} from 'next';
 import {ProcessStepper} from './ProcessStepper';
 import {Shell,Reveal} from '../site';
 import {IpAtmos,IpHero,IpHead,IpSection,LinkBtn,IpCta} from '../inner/kit';
 
-export const metadata:Metadata=pageMeta('/process',{title:'Process — Nakama Growth',description:'How a Nakama engagement runs: understand, create, place and prove, on a monthly cycle with a clear working cadence.'});
+export const metadata:Metadata=pageMeta('/process',{title:'How We Work — Nakama Growth',description:'How a Nakama engagement runs: understand, create, place and prove, on a monthly cycle with a clear cadence, shared evidence and one accountable team.'});
 
 const cadence=[
  ['Weekly','Async updates','Drafts, placements and anything that needs your eyes, in one shared workspace.'],
@@ -16,7 +16,7 @@ const cadence=[
 export default function Process(){
  return (
   <Shell className="process-page shell-cinema ip-page">
-   <IpAtmos tone="rose"/>
+   <IpAtmos tone="rose"/><Crumbs trail={[{name:'Process',path:'/process'}]}/>
    <IpHero
     tone="rose"
     eyebrow="Process"

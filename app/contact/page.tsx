@@ -1,12 +1,12 @@
-import {pageMeta} from '@/lib/seo';
+import {pageMeta,Crumbs} from '@/lib/seo';
 import type {Metadata} from 'next';
 import {CalendarDays,Receipt,Mail} from 'lucide-react';
 import {Shell,Reveal} from '../site';
 import {IpAtmos,IpHero,IpHead,IpSection,BookBtn,LinkBtn} from '../inner/kit';
-export const metadata:Metadata=pageMeta('/contact',{title:'Contact — Nakama Growth',description:'Book a call, get a custom quote or email hello@nakama.in. We reply within one business day.'});
+export const metadata:Metadata=pageMeta('/contact',{title:'Contact Nakama — Book a Call',description:'Book a call, ask for a custom quote or email hello@nakama.in about getting your brand named in AI answers. We reply within one business day.'});
 export default function ContactPage(){
  return <Shell className="contact-page shell-cinema ip-page">
-  <IpAtmos tone="indigo"/>
+  <IpAtmos tone="indigo"/><Crumbs trail={[{name:'Contact',path:'/contact'}]}/>
   <IpHero tone="indigo" eyebrow="Contact" title="Let’s talk about" accent="where you show up." lead="Pick whatever is easiest. Every route reaches the founding team, and we reply within one business day."/>
   <IpSection>
    <div className="ip-ways">

@@ -1,14 +1,14 @@
-import {pageMeta} from '@/lib/seo';
+import {pageMeta,Crumbs} from '@/lib/seo';
 import type {Metadata} from 'next';
 import {Shell,Reveal} from '../site';
 import {IpAtmos,IpHero,IpSection,IpHead,LinkBtn,IpCta} from '../inner/kit';
 import {WorkBoard} from './WorkBoard';
 import {CaseCards} from './CaseCards';
 import {caseStudies} from '@/lib/content';
-export const metadata:Metadata=pageMeta('/work',{title:'Work — Nakama Growth',description:'Documented client placements in Google AI Overviews, AI Mode, Perplexity, ChatGPT and YouTube. Pick a client and run the query yourself.'});
+export const metadata:Metadata=pageMeta('/work',{title:'Client Work & AI Search Results — Nakama Growth',description:'Documented client placements in Google AI Overviews, AI Mode, Perplexity, ChatGPT and YouTube. Pick a client and run the query yourself.'});
 export default function Work(){
  return <Shell className="work-page shell-cinema ip-page">
-  <IpAtmos tone="ember"/>
+  <IpAtmos tone="ember"/><Crumbs trail={[{name:'Work',path:'/work'}]}/>
   <IpHero tone="ember" eyebrow="Work" title="Built together." accent="Found in the right places." lead="Seven clients, each with the exact searches where our work surfaced. Open one and run the query on the same engine.">
    <LinkBtn href="/resources#articles" ghost>Read the field notes</LinkBtn>
   </IpHero>

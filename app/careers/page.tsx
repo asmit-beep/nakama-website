@@ -1,4 +1,4 @@
-import {pageMeta} from '@/lib/seo';
+import {pageMeta,Crumbs} from '@/lib/seo';
 import type {Metadata} from 'next';
 import Link from 'next/link';
 import {ArrowUpRight,MapPin,Briefcase} from 'lucide-react';
@@ -6,7 +6,7 @@ import {Shell,Reveal} from '../site';
 import {IpAtmos,IpHero,IpSection,IpHead,LinkBtn} from '../inner/kit';
 import {openings} from '@/lib/content';
 
-export const metadata:Metadata=pageMeta('/careers',{title:'Careers — Nakama Growth',description:'Join Nakama: a small team of writers, researchers and strategists whose work gets quoted by AI engines.'});
+export const metadata:Metadata=pageMeta('/careers',{title:'Careers at Nakama — Nakama Growth',description:'Join Nakama: a small team of writers, researchers and strategists whose work gets quoted by AI engines. See open roles and internships, and how we hire.'});
 
 const values=[
  ['Craft over volume','We would rather publish one piece people quote than ten nobody reads.'],
@@ -17,7 +17,7 @@ const values=[
 export default function Careers(){
  const list=[...openings].sort((a,b)=>b.date.localeCompare(a.date));
  return <Shell className="shell-cinema ip-page">
-  <IpAtmos tone="teal"/>
+  <IpAtmos tone="teal"/><Crumbs trail={[{name:'Careers',path:'/careers'}]}/>
   <IpHero tone="teal" eyebrow="Careers" title="Do the work" accent="people actually quote." lead="A small team of writers, researchers and strategists. We write the threads, articles and videos AI engines end up quoting.">
    <LinkBtn href="#openings">See open roles</LinkBtn>
   </IpHero>
