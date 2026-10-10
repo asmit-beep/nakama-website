@@ -34,30 +34,45 @@ function Visual({i}:{i:number}){
 
 export function ProcessStepper(){
  const [active,setActive]=useState(0);
- const [paused,setPaused]=useState(false);
  const [inView,setInView]=useState(false);
- const [tick,setTick]=useState(0);
+ const [hold,setHold]=useState(false);
  const ref=useRef<HTMLDivElement>(null);
+ const bars=useRef<(HTMLElement|null)[]>([]);
+ const elapsed=useRef(0);
+ const activeRef=useRef(0);
+ activeRef.current=active;
 
- useEffect(()=>{const el=ref.current;if(!el)return;const io=new IntersectionObserver(([e])=>setInView(e.isIntersecting),{threshold:.35});io.observe(el);return()=>io.disconnect();},[]);
+ useEffect(()=>{const el=ref.current;if(!el)return;const io=new IntersectionObserver(([e])=>setInView(e.isIntersecting),{threshold:0,rootMargin:'-20% 0px -20% 0px'});io.observe(el);return()=>io.disconnect();},[]);
+ // Timer driven in JS so the bar and the step change always stay in sync.
  useEffect(()=>{
-  if(paused||!inView)return;
-  const t=setTimeout(()=>{setActive(a=>(a+1)%stages.length);setTick(x=>x+1);},DURATION);
-  return()=>clearTimeout(t);
- },[active,paused,inView,tick]);
- const go=useCallback((i:number)=>{setActive(i);setTick(x=>x+1);},[]);
+  if(!inView||hold)return;
+  let raf=0,last=performance.now();
+  const loop=(now:number)=>{
+   if(!document.hidden) elapsed.current+=now-last;
+   last=now;
+   const pct=Math.min(1,elapsed.current/DURATION);
+   const bar=bars.current[activeRef.current];
+   if(bar) bar.style.transform=`scaleX(${pct})`;
+   if(pct>=1){elapsed.current=0;setActive(a=>(a+1)%stages.length);}
+   raf=requestAnimationFrame(loop);
+  };
+  raf=requestAnimationFrame(loop);
+  return()=>cancelAnimationFrame(raf);
+ },[inView,hold]);
+ useEffect(()=>{bars.current.forEach((b,i)=>{if(b&&i!==active)b.style.transform='scaleX(0)';});},[active]);
+ const go=useCallback((i:number)=>{elapsed.current=0;const b=bars.current[i];if(b)b.style.transform='scaleX(0)';setActive(i);},[]);
  const onKey=(e:React.KeyboardEvent)=>{if(e.key==='ArrowDown'||e.key==='ArrowRight'){e.preventDefault();go((active+1)%4);}if(e.key==='ArrowUp'||e.key==='ArrowLeft'){e.preventDefault();go((active+3)%4);}};
  const s=stages[active];
 
- return <div className={`ps${paused||!inView?' is-paused':''}`} ref={ref} onMouseEnter={()=>setPaused(true)} onMouseLeave={()=>setPaused(false)}>
+ return <div className="ps" ref={ref}>
   <div className="ps-nav" role="tablist" aria-label="Process stages" aria-orientation="vertical" onKeyDown={onKey}>
    {stages.map((st,i)=><button key={st.n} role="tab" aria-selected={i===active} tabIndex={i===active?0:-1} className={`ps-step${i===active?' on':''}${i<active?' done':''}`} onClick={()=>go(i)}>
     <span className="ps-n">{st.n}</span>
     <span className="ps-t"><b>{st.name}</b><small>{st.short}</small></span>
-    <span className="ps-bar"><i key={`${i}-${tick}`} style={{animationDuration:`${DURATION}ms`}}/></span>
+    <span className="ps-bar"><i ref={el=>{bars.current[i]=el;}}/></span>
    </button>)}
   </div>
-  <div className="ps-panel" role="tabpanel" aria-live="polite">
+  <div className="ps-panel" role="tabpanel" aria-live="polite" onMouseEnter={()=>setHold(true)} onMouseLeave={()=>setHold(false)}>
    <div className="ps-panel-in" key={active}>
     <Visual i={active}/>
     <div className="ps-copy">
