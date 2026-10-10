@@ -6,6 +6,7 @@ const nextConfig: NextConfig = {
   env: {NK_BUILD_SECRET: process.env.NK_BUILD_SECRET || randomBytes(32).toString("hex")},
   async redirects() {
     return [
+      {source: "/:path*", has: [{type: "host", value: "nakama-website.vercel.app"}], destination: "https://www.nakama.in/:path*", permanent: true},
       {source: "/journal", destination: "/resources#articles", permanent: false},
       {source: "/what-we-do", destination: "/services", permanent: false},
     ];
