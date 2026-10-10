@@ -10,7 +10,7 @@ import "./answer-hero.css";
 import "./polish-oct.css";
 import { SiteTheme } from "./theme";
 export const metadata: Metadata = {
- metadataBase: new URL(process.env.NEXT_PUBLIC_SITE_URL || "https://nakama.in"),
+ metadataBase: new URL(process.env.NEXT_PUBLIC_SITE_URL || "https://www.nakama.in"),
  openGraph: {type: "website", siteName: "Nakama Growth", title: "Nakama Growth — Be the brand they already know.", description: "Earned visibility across AI answers, search, communities, editorial and video."},
  twitter: {card: "summary_large_image", title: "Nakama Growth — Be the brand they already know.", description: "Earned visibility across AI answers, search, communities, editorial and video."},
  title: "Nakama Growth — Be the brand they already know.",
