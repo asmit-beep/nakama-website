@@ -312,3 +312,32 @@ button.btn,button.contact-flare-cta,button.button{font:inherit;border:0;cursor:p
 .plat-logo.plat-mark svg{width:100%;height:100%;display:block}
 .pv-res-row.hit .fav.fav-img{background:#fff;overflow:hidden;padding:2px}
 .fav.fav-img img{width:100%;height:100%;object-fit:contain;border-radius:4px}
+
+/* ===== footer v2: one continuous surface, no seam ===== */
+.site-footer.nk-foot{position:relative;background:linear-gradient(180deg,transparent 0,rgba(5,5,7,.55) 220px,#050507 100%)!important;border-top:0!important;padding:96px 0 0!important;margin-top:0!important;font-family:'Manrope',system-ui,Arial,sans-serif}
+.site-footer.nk-foot::before{content:"";position:absolute;left:0;right:0;top:0;height:1px;background:linear-gradient(90deg,transparent,rgba(255,255,255,.07) 30%,rgba(255,255,255,.07) 70%,transparent);opacity:.0}
+.nkf-top{display:grid!important;grid-template-columns:minmax(0,1.05fr) minmax(0,2fr);gap:64px;align-items:start}
+.nkf-logo{display:inline-block;margin-left:-5px}.nkf-logo img{height:30px;width:auto;display:block}
+.nkf-brand p{margin-top:20px!important;max-width:340px;font-size:15px;line-height:1.7;color:#a9a6ad}
+.nkf-cta{display:flex;align-items:center;gap:14px;margin-top:28px;flex-wrap:wrap}
+.nkf-btn{display:inline-flex;align-items:center;gap:10px;height:44px;padding:0 18px;border:0;border-radius:999px;background:linear-gradient(180deg,#ffe2c9,#f4a06a);color:#1a120c;font-weight:700;font-size:14px;box-shadow:0 10px 24px -12px rgba(240,124,50,.8);transition:transform .3s cubic-bezier(.2,.8,.2,1),box-shadow .3s}
+.nkf-btn:hover{transform:translateY(-2px);box-shadow:0 14px 30px -12px rgba(240,124,50,.9)}
+.nkf-btn svg{transition:transform .3s}.nkf-btn:hover svg{transform:translate(2px,-2px)}
+.nkf-social{display:flex;gap:8px}
+.nkf-social a{display:grid;place-items:center;width:44px;height:44px;border-radius:50%;border:1px solid rgba(255,255,255,.12);color:#cfccd3;transition:border-color .3s,color .3s,transform .3s,background .3s}
+.nkf-social a svg{width:17px;height:17px}
+.nkf-social a:hover{border-color:rgba(255,190,140,.5);color:#ffd2ad;background:rgba(240,124,50,.08);transform:translateY(-2px)}
+.nkf-cols{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:32px}
+.nkf-col>span{display:block;margin-bottom:18px;font-size:12px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:#f2a06a}
+.nkf-col nav{display:grid;gap:12px;justify-items:start}
+.nkf-col a{position:relative;font-size:15px;color:#d9d6dc;transition:color .25s}
+.nkf-col a::after{content:"";position:absolute;left:0;right:0;bottom:-3px;height:1px;background:#f2a06a;transform:scaleX(0);transform-origin:left;transition:transform .35s cubic-bezier(.2,.8,.2,1)}
+.nkf-col a:hover{color:#fff}.nkf-col a:hover::after{transform:scaleX(1)}
+.nkf-base{display:flex!important;align-items:center;justify-content:space-between;gap:20px;margin-top:72px!important;padding:22px 0!important;border-top:1px solid rgba(255,255,255,.07);font-size:13px;color:#8a8790}
+.nkf-tag{letter-spacing:.06em}
+.nkf-top-link{display:inline-flex;align-items:center;gap:6px;color:#cfccd3;transition:color .25s}
+.nkf-top-link:hover{color:#f2a06a}
+.nkf-top-link svg{transform:rotate(-45deg)}
+.site-footer.nk-foot .footer-wordmark{margin-top:8px!important}
+@media (max-width:1000px){.nkf-top{grid-template-columns:1fr;gap:48px}}
+@media (max-width:640px){.site-footer.nk-foot{padding-top:64px!important}.nkf-cols{grid-template-columns:repeat(2,minmax(0,1fr));gap:36px 20px}.nkf-base{flex-direction:column;align-items:flex-start;gap:10px;margin-top:48px!important}}

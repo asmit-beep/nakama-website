@@ -2,7 +2,7 @@ import type {Metadata} from 'next';
 import Link from 'next/link';
 import {notFound} from 'next/navigation';
 import {ArrowLeft,ArrowUpRight} from 'lucide-react';
-import {articles} from '../articles';
+import {articles} from '../all';
 import {Shell} from '../../site';
 import {IpAtmos} from '../../inner/kit';
 type Props={params:Promise<{slug:string}>};

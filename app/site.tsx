@@ -7,7 +7,7 @@ import {BookCallButton} from '@/components/booking/BookCall';
 import {Sheet,SheetTrigger,SheetContent,SheetTitle,SheetDescription,SheetClose} from '@/components/ui/sheet';
 export const BOOKING='https://app.cal.com/snehil-srivastava-4jm7sq';
 export const navigationLinks=[['Pricing','/pricing'],['Resources','/resources'],['About','/about']] as const;
-export const companyLinks=[['Services','/services','What we do, channel by channel'],['Work','/work','Where our clients show up'],['Process','/process','How an engagement runs']] as const;
+export const companyLinks=[['Services','/services','What we do, channel by channel'],['Work','/work','Where our clients show up'],['Process','/process','How an engagement runs'],['Careers','/careers','Join the team']] as const;
 export function Logo({className=''}:{className?:string}){return <svg className={className} viewBox="0 0 64 64" aria-hidden="true"><path d="M9 57V30A23 23 0 0 1 55 30V57H42V30A10 10 0 0 0 22 30V57Z" fill="#f3f1ed"/><circle cx="32" cy="30" r="5.6" fill="#f07c32"/></svg>}
 export function Booking({children='Book a conversation',className=''}:{children?:ReactNode,className?:string}){return <BookCallButton className={`button ${className}`}>{children}<ArrowUpRight size={17}/></BookCallButton>}
 export function Header(){
@@ -60,7 +60,30 @@ export function NextChapter({title='Let’s build your next chapter.',text='A sh
     </Reveal>
   );
 }
-export function Footer(){return <footer className="site-footer site-footer-cinema"><div className="footer-meta page-width"><Link href="/contact" className="footer-invitation">A good place to start.<br/><span>Say hello <ArrowUpRight size={20}/></span></Link><div className="footer-columns"><div className="footer-col"><span className="footer-col-label">Company</span><nav aria-label="Company">{[['Home','/'],['About','/about'],['Pricing','/pricing'],['Resources','/resources'],['Services','/services'],['Work','/work'],['Process','/process']].map(([label,href])=><Link key={href} href={href}>{label}</Link>)}</nav></div><div className="footer-col"><span className="footer-col-label">Legal</span><nav aria-label="Legal"><Link href="/privacy">Privacy</Link><Link href="/terms">Terms</Link></nav></div><div className="footer-col"><span className="footer-col-label">Contact</span><nav aria-label="Contact"><Link href="/contact">Contact us</Link><Link href="/pricing#quote">Get a quote</Link><a href="mailto:hello@nakama.in">hello@nakama.in</a></nav></div><div className="footer-col"><span className="footer-col-label">Social</span><nav aria-label="Social links"><a href="https://www.linkedin.com/company/nakama-growth/" target="_blank" rel="noopener noreferrer">LinkedIn<ArrowUpRight size={13}/></a><a href="https://www.instagram.com/nakama.growth/" target="_blank" rel="noopener noreferrer">Instagram<ArrowUpRight size={13}/></a></nav></div></div></div><div className="footer-baseline page-width"><span>© {new Date().getFullYear()} Nakama Growth</span><span className="footer-pronunciation">na · ka · ma / in it together</span><div><Link href="/privacy">Privacy</Link><Link href="/terms">Terms</Link><a href="#top" aria-label="Back to top"><ArrowUpRight size={16}/></a></div></div><div className="footer-wordmark footer-wordmark-bold fw-morph" tabIndex={0} aria-label="Nakama, in it together"><span className="fw-word" aria-hidden="true">{"nakama".split("").map((c,i)=><b key={i} style={{"--i":i} as CSSProperties}>{c}</b>)}</span><span className="fw-mark" aria-hidden="true"><svg viewBox="0 0 64 64"><defs><linearGradient id="fwg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stopColor="#b9d2c6"/><stop offset=".5" stopColor="#d6d6e6"/><stop offset="1" stopColor="#e2b48e"/></linearGradient></defs><path d="M9 57V30A23 23 0 0 1 55 30V57H42V30A10 10 0 0 0 22 30V57Z" fill="url(#fwg)"/><circle cx="32" cy="30" r="5.6" fill="#f07c32"/></svg></span></div></footer>}
+const FOOT_COLS:[string,[string,string][]][]=[
+ ['Company',[['About','/about'],['Services','/services'],['Work','/work'],['Process','/process'],['Careers','/careers']]],
+ ['Resources',[['Articles','/resources#articles'],['Case studies','/resources#case-studies'],['Pricing','/pricing'],['Get a quote','/pricing#quote']]],
+ ['Contact',[['Contact us','/contact'],['hello@nakama.in','mailto:hello@nakama.in']]],
+ ['Legal',[['Privacy','/privacy'],['Terms','/terms']]],
+];
+const LI_PATH="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 1 1 0-4.125 2.062 2.062 0 0 1 0 4.125zM7.119 20.452H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z";
+export function Footer(){return <footer className="site-footer nk-foot">
+ <div className="nkf-top page-width">
+  <div className="nkf-brand">
+   <Link href="/" className="nkf-logo" aria-label="Nakama home"><img src="/brand/nakama-lockup-dark.svg" alt="Nakama"/></Link>
+   <p>Earned visibility across AI answers, search and the communities buyers already trust.</p>
+   <div className="nkf-cta">
+    <BookCallButton className="nkf-btn">Book a call<ArrowUpRight size={16}/></BookCallButton>
+    <div className="nkf-social">
+     <a href="https://www.linkedin.com/company/nakama-growth/" target="_blank" rel="noopener noreferrer" aria-label="Nakama on LinkedIn"><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d={LI_PATH}/></svg></a>
+     <a href="https://www.instagram.com/nakama.growth/" target="_blank" rel="noopener noreferrer" aria-label="Nakama on Instagram"><svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" strokeWidth="2"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4.2"/><circle cx="17.4" cy="6.6" r="1" fill="currentColor" stroke="none"/></svg></a>
+    </div>
+   </div>
+  </div>
+  <div className="nkf-cols">{FOOT_COLS.map(([label,links])=><div key={label} className="nkf-col"><span>{label}</span><nav aria-label={label}>{links.map(([t,h])=>h.startsWith('mailto:')?<a key={h} href={h}>{t}</a>:<Link key={h} href={h}>{t}</Link>)}</nav></div>)}</div>
+ </div>
+ <div className="nkf-base page-width"><span>© {new Date().getFullYear()} Nakama Growth. Made in India.</span><span className="nkf-tag">na · ka · ma / in it together</span><a href="#top" className="nkf-top-link">Back to top<ArrowUpRight size={14}/></a></div>
+ <div className="footer-wordmark footer-wordmark-bold fw-morph" tabIndex={0} aria-label="Nakama, in it together"><span className="fw-word" aria-hidden="true">{"nakama".split("").map((c,i)=><b key={i} style={{"--i":i} as CSSProperties}>{c}</b>)}</span><span className="fw-mark" aria-hidden="true"><svg viewBox="0 0 64 64"><defs><linearGradient id="fwg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stopColor="#b9d2c6"/><stop offset=".5" stopColor="#d6d6e6"/><stop offset="1" stopColor="#e2b48e"/></linearGradient></defs><path d="M9 57V30A23 23 0 0 1 55 30V57H42V30A10 10 0 0 0 22 30V57Z" fill="url(#fwg)"/><circle cx="32" cy="30" r="5.6" fill="#f07c32"/></svg></span></div></footer>}
 export function Shell({children,className=''}:{children:ReactNode,className?:string}){
   /* Frame carries cinema classes so Super Dude's .home-cinema .site-nav glass can match the header (sibling of main otherwise). */
   return <div className={`site-frame ${className}`.trim()}>
