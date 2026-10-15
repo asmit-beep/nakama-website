@@ -75,7 +75,7 @@ ${proofClients.map(c=>`### ${c.name}\n\n${c.description}\n\n${c.entries.map(e=>`
 
 ## Authors
 
-${authors.map(a=>`### ${a.name}, ${a.jobTitle}, Nakama Growth\n\nURL: ${authorUrl(a.slug)}\n\n${a.bio.join('\n\n')}\n\nArticles: ${articlesBy(a).map(x=>`[${x.title}](${abs(`/journal/${x.slug}`)})`).join('; ')}`).join('\n\n')}
+${authors.map(a=>`### ${a.name}, ${a.jobTitle}, Nakama Growth\n\nURL: ${authorUrl(a.slug)}\n\n${a.bio.join('\n\n')}${a.links?.length?`\n\nProfiles: ${a.links.map(l=>`[${l.label}](${l.url})`).join('; ')}`:''}${articlesBy(a).length?`\n\nArticles: ${articlesBy(a).map(x=>`[${x.title}](${abs(`/journal/${x.slug}`)})`).join('; ')}`:''}`).join('\n\n')}
 
 ## Articles
 
