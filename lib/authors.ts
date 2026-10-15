@@ -32,7 +32,8 @@ export const authors:Author[]=[
   metaTitle:'Snehil Srivastava, CEO & Creative Director of Nakama Growth',
   metaDescription:'Snehil Srivastava is CEO and Creative Director of Nakama Growth, an AEO and GEO agency in India that helps B2B and SaaS brands get named in AI answers.',
   bio:[
-   'Snehil Srivastava is CEO and Creative Director of Nakama Growth, an AEO and GEO agency in India that helps B2B and SaaS brands get named when buyers ask ChatGPT, Perplexity, Gemini and Google AI Overviews what to choose.',
+   'Snehil Srivastava is CEO and Creative Director of Nakama Growth, an AEO and GEO agency in India that helps B2B and SaaS brands get named when buyers ask AI tools what to choose. A creative strategist and content lead, he has spent 4+ years building brands through writing, copywriting and content marketing.',
+   'He writes guides on local SEO, RFP software, listings management and certifications. Outside work he is a passionate photographer who loves cameras, and holds Certified Professional Photographer certificates from National Geographic and Michigan State University.',
   ],
   image:{src:'/authors/snehil-srivastava-nakama-ceo.webp',src800:'/authors/snehil-srivastava-nakama-ceo-800.webp',width:800,height:800,alt:'Snehil Srivastava, CEO & Creative Director of Nakama Growth'},
   links:[
