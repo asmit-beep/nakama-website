@@ -695,3 +695,6 @@ textarea.ip-input{height:auto;min-height:104px;resize:none;padding:14px 16px}
 .pr-ent p{max-width:620px;margin:16px auto 28px!important;font-size:16px;line-height:1.7;color:var(--ip-mute)}
 .pr-ent .ip-btn{display:inline-flex}
 @media(max-width:760px){.pr-one{padding:26px 20px}.pr-one-head{flex-direction:column;align-items:flex-start}.pr-feats{grid-template-columns:1fr}.pr-ent{padding:40px 20px}}
+
+/* Short inner pages (e.g. an author with no articles): the 1500px atmosphere is taller than the page, which added an empty dark strip below the footer. Clip it to the page frame; it still bleeds behind the footer. */
+.site-frame.ip-page{overflow-y:clip}
