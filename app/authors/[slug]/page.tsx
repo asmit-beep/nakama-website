@@ -53,11 +53,11 @@ export default async function AuthorPage({params}:Props){
    <Link href="/about" className="ip-ghost"><span>About Nakama</span><ArrowUpRight size={15}/></Link>
   </IpHero>
 
-  <IpSection className="author-bio-sec">
+  {a.bio.length>1&&<IpSection className="author-bio-sec">
    <Reveal className="author-bio ip-prose">
     {a.bio.slice(1).map(p=><p key={p}>{p}</p>)}
    </Reveal>
-  </IpSection>
+  </IpSection>}
 
   {list.length>0&&<IpSection id="articles">
    <IpHead eyebrow="Articles" title={<>Written by <em>{a.name}.</em></>}/>

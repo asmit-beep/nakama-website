@@ -20,7 +20,6 @@ export const authors:Author[]=[
   metaDescription:'Yash Kumar is Co-founder and CEO of Nakama Growth, an AEO and GEO agency in India. Read his guides to AEO and GEO agencies.',
   bio:[
    'Yash Kumar is Co-founder and CEO of Nakama Growth, an AEO and GEO agency in India that helps B2B and SaaS brands get named when buyers ask ChatGPT, Perplexity, Gemini and Google AI Overviews what to choose. He leads Nakama\u2019s work on earning mentions on the sources those tools read.',
-   'Nakama earns those mentions on Reddit, YouTube, LinkedIn, Quora, editorial and review sites.',
   ],
   image:{src:'/authors/yash-kumar-nakama-ceo.webp',src800:'/authors/yash-kumar-nakama-ceo-800.webp',width:800,height:800,alt:'Yash Kumar, Co-founder and CEO of Nakama Growth'},
  },
