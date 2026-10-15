@@ -701,3 +701,4 @@ textarea.ip-input{height:auto;min-height:104px;resize:none;padding:14px 16px}
 
 /* /privacy and /terms put "legal-page" on the site frame, which pulled in the old boxed legal-card styles (border, radius, side padding, bottom margin, 140px top margin) and squeezed the whole footer into a narrow glass box. Neutralise them on the frame; the .ip-legal section owns the layout. */
 .site-frame.legal-page.ip-page{max-width:none!important;width:100%!important;margin:0!important;padding:0!important;border:0!important;border-radius:0!important;backdrop-filter:none!important;-webkit-backdrop-filter:none!important}
+.site-frame.legal-page.ip-page :is(header,footer) a{text-decoration:none!important}
