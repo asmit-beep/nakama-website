@@ -28,13 +28,13 @@ export const authors:Author[]=[
  {
   slug:'snehil-srivastava',
   name:'Snehil Srivastava',
-  jobTitle:'Co-founder',
-  metaTitle:'Snehil Srivastava, Co-founder of Nakama Growth',
-  metaDescription:'Snehil Srivastava is Co-founder of Nakama Growth, an AEO and GEO agency in India that helps B2B and SaaS brands get named in AI answers.',
+  jobTitle:'CEO & Creative Director',
+  metaTitle:'Snehil Srivastava, CEO & Creative Director of Nakama Growth',
+  metaDescription:'Snehil Srivastava is CEO and Creative Director of Nakama Growth, an AEO and GEO agency in India that helps B2B and SaaS brands get named in AI answers.',
   bio:[
-   'Snehil Srivastava is Co-founder of Nakama Growth, an AEO and GEO agency in India that helps B2B and SaaS brands get named when buyers ask ChatGPT, Perplexity, Gemini and Google AI Overviews what to choose.',
+   'Snehil Srivastava is CEO and Creative Director of Nakama Growth, an AEO and GEO agency in India that helps B2B and SaaS brands get named when buyers ask ChatGPT, Perplexity, Gemini and Google AI Overviews what to choose.',
   ],
-  image:{src:'/authors/snehil-srivastava-nakama-cofounder.webp',src800:'/authors/snehil-srivastava-nakama-cofounder-800.webp',width:800,height:800,alt:'Snehil Srivastava, Co-founder of Nakama Growth'},
+  image:{src:'/authors/snehil-srivastava-nakama-ceo.webp',src800:'/authors/snehil-srivastava-nakama-ceo-800.webp',width:800,height:800,alt:'Snehil Srivastava, CEO & Creative Director of Nakama Growth'},
   links:[
    {label:'LinkedIn',url:'https://www.linkedin.com/in/snehil-srivastava-356739175/'},
    {label:'Instagram',url:'https://www.instagram.com/maazakthakya/'},
@@ -42,6 +42,8 @@ export const authors:Author[]=[
  },
 ];
 
+/** Job title for running text, with "&" spelled out. */
+export const jobTitleText=(a:Author)=>a.jobTitle.replace(/ & /g,' and ');
 export const authorPath=(slug:string)=>`/authors/${slug}`;
 export const authorUrl=(slug:string)=>abs(authorPath(slug));
 export const authorId=(slug:string)=>`${authorUrl(slug)}#person`;
