@@ -6,7 +6,7 @@ import type {Article} from './articles';
  * the RSS pubDate, the sitemap lastmod (via `date`) and the visible "Published ... Last updated ..." line.
  * Update the modified value (MODIFIED_AT) together with the visible "Last updated" date on later edits.
  */
-export const AEO_VS_SEO_VS_GEO_PUBLISHED_AT = '2026-10-16T19:30:00+05:30';
+export const AEO_VS_SEO_VS_GEO_PUBLISHED_AT = '2026-10-16T20:59:00+05:30';
 const PUBLISHED_AT = AEO_VS_SEO_VS_GEO_PUBLISHED_AT;
 const MODIFIED_AT = PUBLISHED_AT;
 
@@ -114,7 +114,7 @@ const breadcrumbLd = {
    "@type": "ListItem",
    "position": 1,
    "name": "Home",
-   "item": "https://www.nakama.in"
+   "item": "https://www.nakama.in/"
   },
   {
    "@type": "ListItem",
