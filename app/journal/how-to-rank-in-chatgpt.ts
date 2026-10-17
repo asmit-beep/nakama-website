@@ -6,7 +6,7 @@ import type {Article} from './articles';
  * the RSS pubDate, the sitemap lastmod (via `date`) and the visible "Published ... Last updated ..." line.
  * Update MODIFIED_AT together with the visible "Last updated" date on later edits.
  */
-export const HOW_TO_RANK_IN_CHATGPT_PUBLISHED_AT = '2026-10-17T17:47:00+05:30';
+export const HOW_TO_RANK_IN_CHATGPT_PUBLISHED_AT = '2026-10-17T17:50:00+05:30';
 const PUBLISHED_AT = HOW_TO_RANK_IN_CHATGPT_PUBLISHED_AT;
 const MODIFIED_AT = PUBLISHED_AT;
 
@@ -201,9 +201,9 @@ export const howToRankInChatgptJsonLd = [articleLd, breadcrumbLd, faqLd];
 
 const bodyHtml = `<nav aria-label="Breadcrumb" class="article-breadcrumb"><ol style="list-style:none;display:flex;flex-wrap:wrap;gap:.5rem;padding:0;margin:0 0 1.25rem;font-size:.9rem"><li><a href="https://www.nakama.in/">Home</a></li><li aria-hidden="true">/</li><li><a href="https://www.nakama.in/resources">Resources</a></li><li aria-hidden="true">/</li><li aria-current="page">How to rank in ChatGPT (and get cited): what works in 2026</li></ol></nav>
 <h1 id="how-to-rank-in-chatgpt-and-get-cited-what-works-in-2026">How to rank in ChatGPT (and get cited): what works in 2026</h1>
-<p>How to rank in ChatGPT starts with one fact: ChatGPT cites pages its own search retrieves, and a top Google position predicts little about which ones. Let OpenAI's search crawler in, answer the buyer's exact question in plain words, and earn other sites that name you.</p>
 <p>Published ${publishedDate}. Last updated ${modifiedDate}.</p>
 <p>By <a href="https://www.nakama.in/authors/snehil-srivastava" rel="author">Snehil Srivastava</a>, CEO &amp; Creative Director, Nakama Growth</p>
+<p>How to rank in ChatGPT starts with one fact: ChatGPT cites pages its own search retrieves, and a top Google position predicts little about which ones. Let OpenAI's search crawler in, answer the buyer's exact question in plain words, and earn other sites that name you.</p>
 <figure><img src="/journal/how-to-rank-in-chatgpt/how-to-rank-in-chatgpt-hero.png" alt="Graded list of ChatGPT citation tactics with evidence labels on a dark Nakama background" width="1600" height="900" fetchpriority="high" decoding="async"></figure>
 <blockquote>
 <p><strong>TL;DR</strong></p>
@@ -354,9 +354,9 @@ export const howToRankInChatgptArticle: Article = {
   "heading": "Introduction",
   "paragraphs": [
    "How to rank in ChatGPT (and get cited): what works in 2026",
-   "How to rank in ChatGPT starts with one fact: ChatGPT cites pages its own search retrieves, and a top Google position predicts little about which ones. Let OpenAI's search crawler in, answer the buyer's exact question in plain words, and earn other sites that name you.",
    "Published 17 Oct 2026. Last updated 17 Oct 2026.",
    "By Snehil Srivastava , CEO & Creative Director, Nakama Growth",
+   "How to rank in ChatGPT starts with one fact: ChatGPT cites pages its own search retrieves, and a top Google position predicts little about which ones. Let OpenAI's search crawler in, answer the buyer's exact question in plain words, and earn other sites that name you.",
    "TL;DR",
    "\"Ranking\" in ChatGPT means being named or cited often across repeated runs of one question.",
    "Blocking GPTBot leaves you in ChatGPT search; opting out of OAI-SearchBot removes you, apart from navigational links.",
