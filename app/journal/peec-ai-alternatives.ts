@@ -6,7 +6,7 @@ import type {Article} from './articles';
  * the RSS pubDate, the sitemap lastmod (via `date`) and the visible "Published ... Last updated ..." line.
  * Update MODIFIED_AT together with the visible "Last updated" date on later edits.
  */
-export const PEEC_AI_ALTERNATIVES_PUBLISHED_AT = '2026-10-18T19:22:30+05:30';
+export const PEEC_AI_ALTERNATIVES_PUBLISHED_AT = '2026-10-18T19:32:44+05:30';
 const PUBLISHED_AT = PEEC_AI_ALTERNATIVES_PUBLISHED_AT;
 const MODIFIED_AT = PUBLISHED_AT;
 
