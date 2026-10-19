@@ -319,9 +319,9 @@ const bodyHtml = `<nav aria-label="Breadcrumb" class="article-breadcrumb"><ol st
 <h2 id="unveilr">2. Who should choose Unveilr?</h2>
 <p>Choose Unveilr if you sell a considered purchase, such as B2B SaaS, fintech, legal services or D2C, and want to see proof before you sign. It shows the most checkable dated proof on this list, alongside Reddit and Quora placement work.</p>
 <ul>
-<li><strong>Based in:</strong> India; city not stated.</li>
+<li><strong>Based in:</strong> India, per its careers page; city not stated.</li>
 <li><strong>Services:</strong> "Managed SEO + AEO", Reddit and Quora placements (<a href="https://unveilrai.com/">homepage</a>).</li>
-<li><strong>Evidence:</strong> the agency reports tracking Care Dale on 38 prompts across four engines, April to July 2026 (<a href="https://unveilrai.com/case-study">case studies</a>).</li>
+<li><strong>Evidence:</strong> the agency reports tracking Care Dale on 38 prompts across four engines, April to July 2026 (<a href="https://unveilrai.com/methodology">methodology page</a>).</li>
 <li><strong>Pricing:</strong> "Pricing scoped to your goals", with "No lock-in".</li>
 <li><strong>Weakness:</strong> HQ city and founding year are not stated on its site. Several case windows last one month, so durability is unshown.</li>
 <li><strong>Choose it if:</strong> dated proof matters most. For wider off-site work, see Nakama.</li>
@@ -330,7 +330,7 @@ const bodyHtml = `<nav aria-label="Breadcrumb" class="article-breadcrumb"><ol st
 <p>Choose Infidigit if you run a mid-market or enterprise ecommerce brand and want GEO folded into a larger SEO retainer. It publishes a price range on its US site and shows a named Dun &amp; Bradstreet result in Google AI Overviews.</p>
 <ul>
 <li><strong>Based in:</strong> Goregaon West, Mumbai, with a New York office.</li>
-<li><strong>Services:</strong> GEO in monthly SEO plans, plus digital PR and citation building (<a href="https://www.infidigit.com/ai-seo-services/">AI SEO page</a>).</li>
+<li><strong>Services:</strong> GEO in monthly SEO plans, plus digital PR and citation building (<a href="https://www.infidigit.com/ai-seo-services/">AI SEO page</a>, <a href="https://www.infidigit.us/services/generative-engine-optimization/">US GEO page</a>).</li>
 <li><strong>Evidence:</strong> the agency reports "1500+ AI Overview &amp; 57x Traffic Growth via LLMs" for Dun &amp; Bradstreet, undated.</li>
 <li><strong>Pricing:</strong> "Investment Range" of $3000 to $16000 (<a href="https://www.infidigit.us/services/generative-engine-optimization/">US GEO page</a>), period not stated.</li>
 <li><strong>Weakness:</strong> GEO is bundled into page-count plans ("Up to 20 Pages optimized Monthly").</li>
@@ -527,9 +527,9 @@ export const bestGeoAgenciesIndiaArticle: Article = {
   "heading": "2. Who should choose Unveilr?",
   "paragraphs": [
    "Choose Unveilr if you sell a considered purchase, such as B2B SaaS, fintech, legal services or D2C, and want to see proof before you sign. It shows the most checkable dated proof on this list, alongside Reddit and Quora placement work.",
-   "Based in: India; city not stated.",
+   "Based in: India, per its careers page; city not stated.",
    "Services: \"Managed SEO + AEO\", Reddit and Quora placements ( homepage ).",
-   "Evidence: the agency reports tracking Care Dale on 38 prompts across four engines, April to July 2026 ( case studies ).",
+   "Evidence: the agency reports tracking Care Dale on 38 prompts across four engines, April to July 2026 ( methodology page ).",
    "Pricing: \"Pricing scoped to your goals\", with \"No lock-in\".",
    "Weakness: HQ city and founding year are not stated on its site. Several case windows last one month, so durability is unshown.",
    "Choose it if: dated proof matters most. For wider off-site work, see Nakama."
@@ -540,7 +540,7 @@ export const bestGeoAgenciesIndiaArticle: Article = {
   "paragraphs": [
    "Choose Infidigit if you run a mid-market or enterprise ecommerce brand and want GEO folded into a larger SEO retainer. It publishes a price range on its US site and shows a named Dun & Bradstreet result in Google AI Overviews.",
    "Based in: Goregaon West, Mumbai, with a New York office.",
-   "Services: GEO in monthly SEO plans, plus digital PR and citation building ( AI SEO page ).",
+   "Services: GEO in monthly SEO plans, plus digital PR and citation building ( AI SEO page , US GEO page ).",
    "Evidence: the agency reports \"1500+ AI Overview & 57x Traffic Growth via LLMs\" for Dun & Bradstreet, undated.",
    "Pricing: \"Investment Range\" of $3000 to $16000 ( US GEO page ), period not stated.",
    "Weakness: GEO is bundled into page-count plans (\"Up to 20 Pages optimized Monthly\").",
