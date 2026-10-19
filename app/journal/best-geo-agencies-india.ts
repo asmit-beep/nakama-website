@@ -6,7 +6,7 @@ import type {Article} from './articles';
  * the RSS pubDate, the sitemap lastmod (via `date`) and the visible "Last updated ..." line.
  * Update MODIFIED_AT together with the visible "Last updated" date on later edits.
  */
-export const BEST_GEO_AGENCIES_INDIA_PUBLISHED_AT = '2026-10-19T19:52:09+05:30';
+export const BEST_GEO_AGENCIES_INDIA_PUBLISHED_AT = '2026-10-19T20:17:43+05:30';
 const PUBLISHED_AT = BEST_GEO_AGENCIES_INDIA_PUBLISHED_AT;
 const MODIFIED_AT = PUBLISHED_AT;
 
