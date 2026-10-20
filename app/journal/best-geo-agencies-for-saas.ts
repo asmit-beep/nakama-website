@@ -1,12 +1,12 @@
 import type {Article} from './articles';
 
 /**
- * PUBLISH TIME for this article. PLACEHOLDER: set the real go-live time here at merge (ISO 8601 with +05:30).
+ * PUBLISH TIME for this article. Set the real go-live time here at merge (ISO 8601 with +05:30).
  * It feeds datePublished and dateModified in the schema, og/article published and modified times,
  * the RSS pubDate, the sitemap lastmod (via `date`) and the visible "Last updated ..." line.
  * Update MODIFIED_AT together with the visible "Last updated" date on later edits.
  */
-export const BEST_GEO_AGENCIES_FOR_SAAS_PUBLISHED_AT = '2026-10-21T12:00:00+05:30';
+export const BEST_GEO_AGENCIES_FOR_SAAS_PUBLISHED_AT = '2026-10-21T04:23:12+05:30';
 const PUBLISHED_AT = BEST_GEO_AGENCIES_FOR_SAAS_PUBLISHED_AT;
 const MODIFIED_AT = PUBLISHED_AT;
 
