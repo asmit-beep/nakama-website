@@ -22,7 +22,7 @@ const articleLd = {
    "@id": "https://www.nakama.in/journal/best-geo-agencies-for-saas#webpage",
    "url": "https://www.nakama.in/journal/best-geo-agencies-for-saas",
    "name": "Best GEO Agencies for SaaS Companies (2026): Prices Compared",
-   "description": "Find the best GEO agency for SaaS companies, compared on published retainer prices, named SaaS case studies and who each one fits. Sites checked Oct 2026.",
+   "description": "Find the best GEO agency for SaaS companies: 9 compared on retainers from $2,500 to $20,000+ a month, named SaaS case studies and fit. Checked Oct 2026.",
    "isPartOf": {
     "@id": "https://www.nakama.in/#website"
    },
@@ -84,7 +84,7 @@ const articleLd = {
    "@type": "Article",
    "@id": "https://www.nakama.in/journal/best-geo-agencies-for-saas#article",
    "headline": "Best GEO Agencies for SaaS Companies (2026)",
-   "description": "Find the best GEO agency for SaaS companies, compared on published retainer prices, named SaaS case studies and who each one fits. Sites checked Oct 2026.",
+   "description": "Find the best GEO agency for SaaS companies: 9 compared on retainers from $2,500 to $20,000+ a month, named SaaS case studies and fit. Checked Oct 2026.",
    "author": {
     "@id": "https://www.nakama.in/authors/snehil-srivastava#person"
    },
@@ -112,7 +112,7 @@ const faqLd = {
  "mainEntity": [
   {
    "@type": "Question",
-   "name": "What is the best GEO agency for SaaS companies?",
+   "name": "Who is the best GEO agency for SaaS companies?",
    "acceptedAnswer": {
     "@type": "Answer",
     "text": "As of 21 Oct 2026, our editorial picks by buyer fit are Rock The Rankings, MADX Digital and Nakama, then Breaking B2B and DerivateX. Nakama is #3 for SaaS teams whose gap is off-site mentions; Arobis AI fits tight budgets and Graphite fits product-led teams."
@@ -200,9 +200,8 @@ const bodyHtml = `<nav aria-label="Breadcrumb" class="article-breadcrumb"><ol st
 <p>We rank the top GEO agencies for B2B SaaS by buyer fit. Rock The Rankings and MADX Digital lead on prices and SaaS proof. Nakama is #3 for SaaS teams whose gap is off-site mentions on Reddit, YouTube, Quora and publishing platforms; it publishes no price or client metrics yet and does no on-page work on your website.</p>
 <div class="article-table"><table><caption style="caption-side:top;text-align:left;color:#8e8a84;font-size:13px;line-height:1.5;padding:0 0 10px">GEO agencies for SaaS compared. Prices in USD from each agency's own page, checked 21 Oct 2026.</caption><thead><tr><th scope="col">#</th><th scope="col">Agency</th><th scope="col">Best for</th><th scope="col">HQ and US presence</th><th scope="col">Engines named</th><th scope="col">Published starting price</th><th scope="col">Minimum term</th><th scope="col">Off-site work named</th><th scope="col">Named SaaS case</th><th scope="col">Weakness</th></tr></thead><tbody><tr><td>1</td><td>Rock The Rankings</td><td>Series A to D, $2M to $50M ARR</td><td>Not stated (Rock The Rankings LLC)</td><td>7 LLMs (count only)</td><td><a href="https://www.rocktherankings.com/pricing">$5,500/mo on the 90-day program</a></td><td>None; month-to-month costs $500 more</td><td>Digital PR, placements</td><td>Waitwell, Rasa</td><td>Your team must ship site edits</td></tr><tr><td>2</td><td>MADX Digital</td><td>Lowest price on a 12-month term</td><td>London (per its site's structured data); MADX Digital Ltd</td><td>ChatGPT, Google AI Overviews, Claude (entry plan)</td><td><a href="https://www.madx.digital/pricing">$3,500/mo on a 12-month term</a></td><td>12 months for listed price</td><td>Guide placements, press</td><td>Postalytics, Nosto</td><td>Listed prices need a year</td></tr><tr><td>3</td><td>Nakama</td><td>Off-site AI mentions</td><td>Delhi; works remotely</td><td>4 engines (ChatGPT, Gemini, Perplexity, Google AI Overviews)</td><td>Quote after a call; one plan</td><td>Ask on the call</td><td>Reddit, YouTube, Quora, Medium, Substack, LinkedIn, G2, PR</td><td>Synup, Inventive AI, HubEngage, StarAgile</td><td>No on-site work; no public price</td></tr><tr><td>4</td><td>Breaking B2B</td><td>Senior-led SEO with Reddit and YouTube</td><td>Not stated</td><td>ChatGPT, Perplexity, AI Overviews</td><td><a href="https://breakingb2b.com/pricing">$4,600/mo Light plan on 12 months; Silver $6,000</a></td><td>6 months</td><td>Reddit, YouTube, links</td><td>Chattermill, RB2B</td><td>No month-to-month plan</td></tr><tr><td>5</td><td>DerivateX</td><td>$5M to $50M ARR</td><td>Bengaluru team on US hours</td><td>ChatGPT, Perplexity, Gemini, Claude</td><td><a href="https://derivatex.agency/pricing/">$5,000/mo</a></td><td>90-day pilot</td><td>Digital PR, listicles, community</td><td>Gumlet</td><td>Off-site budget billed on top</td></tr><tr><td>6</td><td>Obility</td><td>Enterprise tech already buying paid and SEO</td><td>Lake Grove, Oregon (contact address on its site)</td><td>LLMs, Google AI Overviews, Reddit</td><td><a href="https://www.obilityb2b.com/pricing/">$5,450/mo SEO and GEO core</a></td><td>Not published</td><td>Brand mentions, Reddit</td><td>Fastly, ServicePower</td><td>GEO is one of many services</td></tr><tr><td>7</td><td>Arobis AI</td><td>Budget, done for you</td><td>Remote; staff in Boston</td><td>5 engines</td><td><a href="https://arobis.ai/pricing">$2,500/mo</a></td><td>3 months</td><td>Third-party placements, G2</td><td>None named</td><td>No named client results</td></tr><tr><td>8</td><td>Omniscient Digital</td><td>$10M+ ARR content programs</td><td>Austin plus US mailing addresses</td><td>Not published</td><td><a href="https://beomniscient.com/">$120,000/yr</a></td><td>Not published</td><td>Digital PR</td><td>Convert, OnBoard</td><td>High entry price</td></tr><tr><td>9</td><td>Graphite</td><td>Research-led PLG growth</td><td>Not stated</td><td>Not published</td><td>No public price</td><td>Not published</td><td>Reddit, YouTube, affiliates</td><td>Webflow</td><td>Not SaaS-only; no price</td></tr></tbody></table></div>
 <h2 id="how-we-compared">How did we compare each B2B SaaS GEO agency?</h2>
-<p>We checked every agency against the same five criteria, fixed before we opened any site, and marked the evidence on its own pages as full, partial or none on 21 Oct 2026. The final order is an editorial pick by buyer fit, using that evidence.</p>
-<div class="article-table"><table><thead><tr><th scope="col">Criterion</th><th scope="col">Full</th><th scope="col">Partial</th></tr></thead><tbody><tr><td>SaaS-specific GEO offer on its own site</td><td>Page aimed at SaaS or software buyers</td><td>B2B or startups in general</td></tr><tr><td>Named SaaS proof</td><td>Client named, numbers and a dated period</td><td>Named with numbers, no dates</td></tr><tr><td>Published price and term</td><td>Price on its own page</td><td>Range or partial</td></tr><tr><td>Off-site work named</td><td>Community, PR or review sites listed</td><td>Links only</td></tr><tr><td>Measurement stated</td><td>Engines and prompts named</td><td>Vague reporting</td></tr></tbody></table></div>
-<div class="article-table"><table><thead><tr><th scope="col">Agency</th><th scope="col">SaaS offer</th><th scope="col">Proof</th><th scope="col">Price</th><th scope="col">Off-site</th><th scope="col">Measurement</th><th scope="col">Evidence</th></tr></thead><tbody><tr><td>Rock The Rankings</td><td>Full</td><td>Full</td><td>Full</td><td>Full</td><td>Full</td><td><a href="https://www.rocktherankings.com/pricing">rocktherankings.com/pricing</a>; <a href="https://www.rocktherankings.com/services/saas-geo-agency">SaaS GEO page</a></td></tr><tr><td>MADX Digital</td><td>Full</td><td>Partial</td><td>Full</td><td>Full</td><td>Full</td><td><a href="https://www.madx.digital/pricing">madx.digital/pricing</a>; <a href="https://www.madx.digital/">madx.digital</a></td></tr><tr><td>Nakama</td><td>Partial</td><td>None</td><td>None</td><td>Full</td><td>Full</td><td><a href="https://www.nakama.in/services">nakama.in/services</a>; <a href="https://www.nakama.in/work">nakama.in/work</a></td></tr><tr><td>Breaking B2B</td><td>Full</td><td>Partial</td><td>Full</td><td>Full</td><td>Full</td><td><a href="https://breakingb2b.com/pricing">breakingb2b.com/pricing</a></td></tr><tr><td>DerivateX</td><td>Full</td><td>Partial</td><td>Full</td><td>Full</td><td>Full</td><td><a href="https://derivatex.agency/pricing/">derivatex.agency/pricing</a>; <a href="https://derivatex.agency/geo-agency/">GEO page</a></td></tr><tr><td>Obility</td><td>Full</td><td>Partial</td><td>Full</td><td>Full</td><td>Full</td><td><a href="https://www.obilityb2b.com/pricing/">pricing</a>; <a href="https://www.obilityb2b.com/services/generative-engine-optimization-geo/">GEO page</a>; <a href="https://www.obilityb2b.com/case-study/fastly/">Fastly case</a></td></tr><tr><td>Arobis AI</td><td>Full</td><td>None</td><td>Full</td><td>Full</td><td>Full</td><td><a href="https://arobis.ai/pricing">arobis.ai/pricing</a></td></tr><tr><td>Omniscient Digital</td><td>Partial</td><td>Partial</td><td>Full</td><td>Full</td><td>Partial</td><td><a href="https://beomniscient.com/">beomniscient.com</a>; <a href="https://beomniscient.com/case-studies/">case studies</a></td></tr><tr><td>Graphite</td><td>Partial</td><td>Full</td><td>None</td><td>Full</td><td>Full</td><td><a href="https://graphite.io/aeo">graphite.io/aeo</a>; <a href="https://graphite.io/five-percent/case-studies/webflow-llm-signups">Webflow case</a></td></tr></tbody></table></div>
+<p>We checked every agency against the same five criteria, fixed before we opened any site, and read the evidence on its own pages on 21 Oct 2026. The order is an editorial pick by buyer fit. Each entry below links the pages we used and names a weakness.</p>
+<div class="article-table"><table><thead><tr><th scope="col">Criterion</th><th scope="col">What we looked for</th><th scope="col">Weaker evidence</th></tr></thead><tbody><tr><td>SaaS-specific GEO offer on its own site</td><td>Page aimed at SaaS or software buyers</td><td>B2B or startups in general</td></tr><tr><td>Named SaaS proof</td><td>Client named, numbers and a dated period</td><td>Named with numbers, no dates</td></tr><tr><td>Published price and term</td><td>Price on its own page</td><td>Range or partial</td></tr><tr><td>Off-site work named</td><td>Community, PR or review sites listed</td><td>Links only</td></tr><tr><td>Measurement stated</td><td>Engines and prompts named</td><td>Vague reporting</td></tr></tbody></table></div>
 <p>No paid trials or client audits were part of this review.</p>
 <h2 id="cost">How much does a GEO retainer cost for B2B SaaS?</h2>
 <p>As of Oct 2026, published GEO retainers for SaaS start between $2,500 and $6,000 a month, and top tiers reach $15,000 to $20,000 or more. Two agencies on our list, Graphite and Nakama, publish no price. Published minimum terms run up to 12 months.</p>
@@ -318,7 +317,7 @@ const bodyHtml = `<nav aria-label="Breadcrumb" class="article-breadcrumb"><ol st
 <p>Match the agency to your funding stage and sales motion first. Budget-stage teams should start with the lowest published entry prices, sales-led teams with pipeline-focused agencies, and teams with a solid website but thin presence elsewhere with off-site specialists like Nakama.</p>
 <figure><img src="/journal/best-geo-agencies-for-saas/best-geo-agencies-for-saas-by-stage.png" alt="Table matching SaaS funding stage or sales motion to the GEO agencies to start with" width="1600" height="900" loading="lazy" decoding="async"></figure>
 <div class="article-table"><table><thead><tr><th scope="col">Stage or motion</th><th scope="col">Start with</th></tr></thead><tbody><tr><td>Seed to Series A, tight budget</td><td>Arobis AI, MADX Digital</td></tr><tr><td>Series A to C, sales-led</td><td>Rock The Rankings, Breaking B2B</td></tr><tr><td>$5M to $50M ARR</td><td>DerivateX, Rock The Rankings</td></tr><tr><td>$10M+ ARR, content-led</td><td>Omniscient Digital</td></tr><tr><td>Product-led</td><td>Graphite</td></tr><tr><td>Enterprise tech</td><td>Obility</td></tr><tr><td>Strong site, weak off-site presence</td><td>Nakama</td></tr></tbody></table></div>
-<h2 id="questions">How do you choose a GEO agency for SaaS before signing?</h2>
+<h2 id="questions">What should you ask a GEO agency for SaaS before signing?</h2>
 <p>Ask how they measure AI visibility before you discuss price. Good agencies name the engines, prompt set, runs per prompt and how mentions tie to pipeline. Then settle scope: what off-site work the retainer covers, who edits your website and how you can leave.</p>
 <ol>
 <li>Which engines will you watch, and how often is each prompt rerun?</li>
@@ -329,7 +328,7 @@ const bodyHtml = `<nav aria-label="Breadcrumb" class="article-breadcrumb"><ol st
 </ol>
 <p>Our guide to <a href="https://www.nakama.in/journal/what-a-useful-visibility-report-shows">reading an AI visibility report</a> goes deeper on question one, and our <a href="https://www.nakama.in/journal/how-to-rank-in-chatgpt">ChatGPT ranking guide</a> explains what the work changes.</p>
 <h2 id="faq">Frequently asked questions</h2>
-<h3 id="what-is-the-best-geo-agency-for-saas-companies">What is the best GEO agency for SaaS companies?</h3>
+<h3 id="who-is-the-best-geo-agency-for-saas-companies">Who is the best GEO agency for SaaS companies?</h3>
 <p>As of 21 Oct 2026, our editorial picks by buyer fit are Rock The Rankings, MADX Digital and Nakama, then Breaking B2B and DerivateX. Nakama is #3 for SaaS teams whose gap is off-site mentions; Arobis AI fits tight budgets and Graphite fits product-led teams.</p>
 <h3 id="do-geo-agencies-for-saas-work-on-g2-and-review-sites">Do GEO agencies for SaaS work on G2 and review sites?</h3>
 <p>Some do. On our list, Arobis AI includes G2 and Crunchbase consistency on its Growth plan, Breaking B2B counts review sites among its placements, and Nakama lists G2 presence in its plan. Ask whether review work means profile edits, review requests or both, and whether the retainer covers it.</p>
@@ -358,7 +357,7 @@ export const bestGeoAgenciesForSaasArticle: Article = {
  slug: 'best-geo-agencies-for-saas',
  category: 'Guide',
  title: "Best GEO Agencies for SaaS Companies (2026)",
- description: "Find the best GEO agency for SaaS companies, compared on published retainer prices, named SaaS case studies and who each one fits. Sites checked Oct 2026.",
+ description: "Find the best GEO agency for SaaS companies: 9 compared on retainers from $2,500 to $20,000+ a month, named SaaS case studies and fit. Checked Oct 2026.",
  readTime: '15 min read',
  motif: 'guide',
  metaTitle: "Best GEO Agencies for SaaS Companies (2026): Prices Compared",
@@ -403,9 +402,8 @@ export const bestGeoAgenciesForSaasArticle: Article = {
  {
   "heading": "How did we compare each B2B SaaS GEO agency?",
   "paragraphs": [
-   "We checked every agency against the same five criteria, fixed before we opened any site, and marked the evidence on its own pages as full, partial or none on 21 Oct 2026. The final order is an editorial pick by buyer fit, using that evidence.",
-   "Criterion | Full | Partial SaaS-specific GEO offer on its own site | Page aimed at SaaS or software buyers | B2B or startups in general Named SaaS proof | Client named, numbers and a dated period | Named with numbers, no dates Published price and term | Price on its own page | Range or partial Off-site work named | Community, PR or review sites listed | Links only Measurement stated | Engines and prompts named | Vague reporting",
-   "Agency | SaaS offer | Proof | Price | Off-site | Measurement | Evidence Rock The Rankings | Full | Full | Full | Full | Full | rocktherankings.com/pricing ; SaaS GEO page MADX Digital | Full | Partial | Full | Full | Full | madx.digital/pricing ; madx.digital Nakama | Partial | None | None | Full | Full | nakama.in/services ; nakama.in/work Breaking B2B | Full | Partial | Full | Full | Full | breakingb2b.com/pricing DerivateX | Full | Partial | Full | Full | Full | derivatex.agency/pricing ; GEO page Obility | Full | Partial | Full | Full | Full | pricing ; GEO page ; Fastly case Arobis AI | Full | None | Full | Full | Full | arobis.ai/pricing Omniscient Digital | Partial | Partial | Full | Full | Partial | beomniscient.com ; case studies Graphite | Partial | Full | None | Full | Full | graphite.io/aeo ; Webflow case",
+   "We checked every agency against the same five criteria, fixed before we opened any site, and read the evidence on its own pages on 21 Oct 2026. The order is an editorial pick by buyer fit. Each entry below links the pages we used and names a weakness.",
+   "Criterion | What we looked for | Weaker evidence SaaS-specific GEO offer on its own site | Page aimed at SaaS or software buyers | B2B or startups in general Named SaaS proof | Client named, numbers and a dated period | Named with numbers, no dates Published price and term | Price on its own page | Range or partial Off-site work named | Community, PR or review sites listed | Links only Measurement stated | Engines and prompts named | Vague reporting",
    "No paid trials or client audits were part of this review."
   ]
  },
@@ -552,7 +550,7 @@ export const bestGeoAgenciesForSaasArticle: Article = {
   ]
  },
  {
-  "heading": "How do you choose a GEO agency for SaaS before signing?",
+  "heading": "What should you ask a GEO agency for SaaS before signing?",
   "paragraphs": [
    "Ask how they measure AI visibility before you discuss price. Good agencies name the engines, prompt set, runs per prompt and how mentions tie to pipeline. Then settle scope: what off-site work the retainer covers, who edits your website and how you can leave.",
    "Which engines will you watch, and how often is each prompt rerun?",
@@ -570,7 +568,7 @@ export const bestGeoAgenciesForSaasArticle: Article = {
   ]
  },
  {
-  "heading": "What is the best GEO agency for SaaS companies?",
+  "heading": "Who is the best GEO agency for SaaS companies?",
   "paragraphs": [
    "As of 21 Oct 2026, our editorial picks by buyer fit are Rock The Rankings, MADX Digital and Nakama, then Breaking B2B and DerivateX. Nakama is #3 for SaaS teams whose gap is off-site mentions; Arobis AI fits tight budgets and Graphite fits product-led teams."
   ]
