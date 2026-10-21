@@ -126,7 +126,8 @@ export const geoAuditJsonLd = [articleLd, faqLd];
 
 const bodyHtml = `<nav aria-label="Breadcrumb" class="article-breadcrumb"><ol style="list-style:none;display:flex;flex-wrap:wrap;gap:.5rem;padding:0;margin:0 0 1.25rem;font-size:.9rem"><li><a href="https://www.nakama.in/">Home</a></li><li aria-hidden="true">/</li><li><a href="https://www.nakama.in/resources">Resources</a></li><li aria-hidden="true">/</li><li aria-current="page">GEO audit: how to check your SaaS brand's AI visibility (2026)</li></ol></nav>
 <h1 id="geo-audit-how-to-check-your-saas-brand-s-ai-visibility-2026">GEO audit: how to check your SaaS brand's AI visibility (2026)</h1>
-<p>By <a href="https://www.nakama.in/authors/yash-kumar" rel="author">Yash Kumar</a>, Co-founder and CEO, Nakama Growth · Updated ${modifiedDate}</p>
+<p>Updated ${modifiedDate}</p>
+<p>By <a href="https://www.nakama.in/authors/yash-kumar" rel="author">Yash Kumar</a>, Co-founder and CEO, Nakama Growth</p>
 <figure><img src="/journal/geo-audit/geo-audit-hero.png" alt="Nakama Growth journal cover: GEO audit, how to check your SaaS brand's AI visibility in 2026" width="1200" height="630" fetchpriority="high" decoding="async"></figure>
 <p>A GEO audit is a structured check of whether AI answer engines can find, describe and recommend your brand. For a SaaS company, that means testing real buyer prompts in ChatGPT, Perplexity, Google AI Overviews, Gemini, Copilot and Claude, then fixing what blocks you: crawler access, JavaScript-only pages, thin third-party coverage and stale facts.</p>
 <p>This guide gives you the full GEO audit for SaaS teams in six steps, plus a copyable checklist, so you can measure AI search visibility for SaaS buyers the same way every month.</p>
@@ -252,7 +253,8 @@ export const geoAuditArticle: Article = {
   "heading": "Introduction",
   "paragraphs": [
    "GEO audit: how to check your SaaS brand's AI visibility (2026)",
-   `By Yash Kumar, Co-founder and CEO, Nakama Growth · Updated ${modifiedDate}`,
+   `Updated ${modifiedDate}`,
+   "By Yash Kumar, Co-founder and CEO, Nakama Growth",
    "A GEO audit is a structured check of whether AI answer engines can find, describe and recommend your brand. For a SaaS company, that means testing real buyer prompts in ChatGPT, Perplexity, Google AI Overviews, Gemini, Copilot and Claude, then fixing what blocks you: crawler access, JavaScript-only pages, thin third-party coverage and stale facts.",
    "This guide gives you the full GEO audit for SaaS teams in six steps, plus a copyable checklist, so you can measure AI search visibility for SaaS buyers the same way every month."
   ]
