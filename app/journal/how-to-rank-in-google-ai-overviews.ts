@@ -192,7 +192,7 @@ const bodyHtml = `<nav aria-label="Breadcrumb" class="article-breadcrumb"><ol st
 <h3 id="6-keep-structured-data-honest">6. Keep structured data honest</h3>
 <p>Google says no special schema is needed, but it does ask that structured data match the visible text. Use Article and FAQPage where they fit, and never mark up content the reader can't see.</p>
 <h3 id="7-earn-citations-off-your-own-site">7. Earn citations off your own site</h3>
-<p>Ahrefs found that 18% of AI Overview citations that didn't rank in the top 100 came from YouTube. Reviews, community threads, videos and analyst coverage all feed the sources Gemini can pull from.</p>
+<p><a href="https://ahrefs.com/blog/ai-overview-citations-top-10/#nonranking-citations">Ahrefs found</a> that 18% of AI Overview citations that didn't rank in the top 100 came from YouTube. Reviews, community threads, videos and analyst coverage all feed the sources Gemini can pull from.</p>
 <p>Off-site sources often carry much of the answer. When we sampled four "AI RFP software" queries twice each on 22 October 2026, every one of the 8 AI Overviews referenced Reddit, YouTube and Gartner alongside vendor pages. That is a small sample, so treat it as directional.</p>
 <p>One caution for "best X" pages. Lily Ray's analysis of 100 B2B software queries, covered by Search Engine Land on 18 June 2026, found that when AI Overviews cited a brand's own self-ranked list, they left that brand out of the recommendation 69% of the time. Being cited is different from being chosen.</p>
 <p>Google's generative AI guide warns that seeking inauthentic mentions isn't helpful. Earn real coverage instead of planting posts.</p>
