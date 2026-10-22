@@ -227,7 +227,7 @@ const bodyHtml = `<nav aria-label="Breadcrumb" class="article-breadcrumb"><ol st
 <div class="author-box" id="sandeep-kumar">
 <img src="/authors/sandeep-kumar-nakama-seo-geo.webp" srcset="/authors/sandeep-kumar-nakama-seo-geo.webp 400w, /authors/sandeep-kumar-nakama-seo-geo-800.webp 800w" sizes="96px" alt="Sandeep, SEO and GEO Specialist at Nakama Growth" width="96" height="96" loading="lazy" decoding="async">
 <div class="author-box-text">
-<p>BYLINE BIO: <a href="https://www.nakama.in/authors/sandeep-kumar" rel="author">Sandeep Kumar</a> is an SEO and GEO Specialist at Nakama Growth in Delhi. He writes content built for AI answers: pages that answer a buyer's question in plain words, so ChatGPT, Perplexity and Google AI Overviews can quote them. His focus is B2B software comparison content that AI tools can pick up and cite.</p>
+<p><a href="https://www.nakama.in/authors/sandeep-kumar" rel="author">Sandeep Kumar</a> is an SEO and GEO Specialist at Nakama Growth in Delhi. He writes content built for AI answers: pages that answer a buyer's question in plain words, so ChatGPT, Perplexity and Google AI Overviews can quote them. His focus is B2B software comparison content that AI tools can pick up and cite.</p>
 </div>
 </div>`;
 
@@ -444,7 +444,7 @@ export const howToRankInGoogleAiOverviewsArticle: Article = {
  {
   "heading": "About the author",
   "paragraphs": [
-   "BYLINE BIO: Sandeep Kumar is an SEO and GEO Specialist at Nakama Growth in Delhi. He writes content built for AI answers: pages that answer a buyer's question in plain words, so ChatGPT, Perplexity and Google AI Overviews can quote them. His focus is B2B software comparison content that AI tools can pick up and cite."
+   "Sandeep Kumar is an SEO and GEO Specialist at Nakama Growth in Delhi. He writes content built for AI answers: pages that answer a buyer's question in plain words, so ChatGPT, Perplexity and Google AI Overviews can quote them. His focus is B2B software comparison content that AI tools can pick up and cite."
   ]
  }
 ],
