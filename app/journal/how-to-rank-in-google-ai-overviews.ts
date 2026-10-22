@@ -33,7 +33,7 @@ const articleLd = {
    "publisher": {
     "@id": "https://www.nakama.in/#organization"
    },
-   "image": "https://www.nakama.in/journal/how-to-rank-in-google-ai-overviews/ai-overviews-og.webp"
+   "image": "https://www.nakama.in/journal/how-to-rank-in-google-ai-overviews/ai-overviews-og.png"
   },
   {
    "@type": "Person",
