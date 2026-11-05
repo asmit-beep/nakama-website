@@ -6,8 +6,9 @@ import {ArrowUpRight,ArrowRight,Menu,Plus,ChevronDown} from 'lucide-react';
 import {BookCallButton} from '@/components/booking/BookCall';
 import {Sheet,SheetTrigger,SheetContent,SheetTitle,SheetDescription,SheetClose} from '@/components/ui/sheet';
 export const BOOKING='https://app.cal.com/snehil-srivastava-4jm7sq';
-export const navigationLinks=[['Industries','/industries'],['Pricing','/pricing'],['Resources','/resources'],['About','/about']] as const;
-export const companyLinks=[['Services','/services','What we do, channel by channel'],['White label','/white-label','Resell our work under your brand'],['Work','/work','Where our clients show up'],['Process','/process','How an engagement runs'],['Careers','/careers','Join the team']] as const;
+export const navigationLinks=[['Pricing','/pricing'],['Resources','/resources'],['About','/about']] as const;
+export const companyLinks=[['Services','/services','What we do, channel by channel'],['Industries','/industries','Sectors we serve'],['White label','/white-label','Resell our work under your brand'],['Work','/work','Where our clients show up'],['Process','/process','How an engagement runs'],['Careers','/careers','Join the team']] as const;
+export const industryLinks=[['All industries','/industries','Every sector we serve'],['Healthcare','/industries/healthcare','GEO for clinics, hospitals and health brands']] as const;
 export function Logo({className=''}:{className?:string}){return <svg className={className} viewBox="0 0 64 64" aria-hidden="true"><path d="M9 57V30A23 23 0 0 1 55 30V57H42V30A10 10 0 0 0 22 30V57Z" fill="#f3f1ed"/><circle cx="32" cy="30" r="5.6" fill="#f07c32"/></svg>}
 export function Booking({children='Book a conversation',className=''}:{children?:ReactNode,className?:string}){return <BookCallButton className={`button ${className}`}>{children}<ArrowUpRight size={17}/></BookCallButton>}
 export function Header(){
@@ -22,7 +23,7 @@ export function Header(){
   },[]);
   return <header className={`site-nav${scrolled?' is-scrolled':''}`}>
     <Link className="brand" href="/" aria-label="Nakama Growth home"><img className="nakama-gate-lockup" src="/brand/nakama-lockup-dark.svg" alt="Nakama" width="220" height="50"/></Link>
-    <nav className="desktop-nav" aria-label="Main navigation"><div className={`nav-drop${companyLinks.some(([,h])=>path.startsWith(h))?' is-current':''}`}><button type="button" className="nav-drop-btn" aria-haspopup="true">Company<ChevronDown size={14}/></button><div className="nav-drop-panel"><div className="nav-drop-inner">{companyLinks.map(([label,href,sub])=><Link key={href} href={href} aria-current={path.startsWith(href)?'page':undefined}><b>{label}</b><small>{sub}</small></Link>)}</div></div></div><div className={`nav-drop${path.startsWith('/services')?' is-current':''}`}><button type="button" className="nav-drop-btn" aria-haspopup="true">Services<ChevronDown size={14}/></button><div className="nav-drop-panel"><div className="nav-drop-inner">{serviceLinks.map(([label,href])=><Link key={href} href={href} aria-current={path===href||path.startsWith(href+'/')?'page':undefined}><b>{label}</b></Link>)}</div></div></div>{navigationLinks.map(([label,href])=><Link key={href} href={href} aria-current={path===href||path.startsWith(href+'/')?'page':undefined}>{label}</Link>)}</nav>
+    <nav className="desktop-nav" aria-label="Main navigation"><div className={`nav-drop${companyLinks.some(([,h])=>path.startsWith(h))?' is-current':''}`}><button type="button" className="nav-drop-btn" aria-haspopup="true">Company<ChevronDown size={14}/></button><div className="nav-drop-panel"><div className="nav-drop-inner">{companyLinks.map(([label,href,sub])=><Link key={href} href={href} aria-current={path.startsWith(href)?'page':undefined}><b>{label}</b><small>{sub}</small></Link>)}</div></div></div><div className={`nav-drop${path.startsWith('/services')?' is-current':''}`}><button type="button" className="nav-drop-btn" aria-haspopup="true">Services<ChevronDown size={14}/></button><div className="nav-drop-panel"><div className="nav-drop-inner">{serviceLinks.map(([label,href])=><Link key={href} href={href} aria-current={path===href||path.startsWith(href+'/')?'page':undefined}><b>{label}</b></Link>)}</div></div></div><div className={`nav-drop${path.startsWith('/industries')?' is-current':''}`}><button type="button" className="nav-drop-btn" aria-haspopup="true">Industries<ChevronDown size={14}/></button><div className="nav-drop-panel"><div className="nav-drop-inner">{industryLinks.map(([label,href,sub])=><Link key={href} href={href} aria-current={(href==='/industries'?path===href:path===href||path.startsWith(href+'/'))?'page':undefined}><b>{label}</b><small>{sub}</small></Link>)}</div></div></div>{navigationLinks.map(([label,href])=><Link key={href} href={href} aria-current={path===href||path.startsWith(href+'/')?'page':undefined}>{label}</Link>)}</nav>
     <div className="nav-actions">
       <Link className="nav-contact" href="/contact">Contact us<ArrowUpRight size={16}/></Link>
       <Sheet open={open} onOpenChange={setOpen}>
@@ -30,7 +31,7 @@ export function Header(){
         <SheetContent className="mobile-menu">
           <SheetTitle>Nakama Growth</SheetTitle>
           <SheetDescription>Choose where to explore.</SheetDescription>
-          <nav>{[['Home','/'],...companyLinks.map(([l,h])=>[l,h] as const),...navigationLinks,['Contact us','/contact']].map(([label,href])=><SheetClose asChild key={href}><Link href={href} aria-current={path===href?'page':undefined}>{label}<ArrowUpRight size={18}/></Link></SheetClose>)}</nav>
+          <nav>{[['Home','/'],...companyLinks.map(([l,h])=>[l,h] as const),...industryLinks.map(([l,h])=>[l,h] as const),...navigationLinks,['Contact us','/contact']].map(([label,href])=><SheetClose asChild key={`${label}-${href}`}><Link href={href} aria-current={path===href?'page':undefined}>{label}<ArrowUpRight size={18}/></Link></SheetClose>)}</nav>
         </SheetContent>
       </Sheet>
     </div>
@@ -62,7 +63,7 @@ export function NextChapter({title='Let’s build your next chapter.',text='A sh
 }
 export const serviceLinks=[['GEO services','/services/geo'],['AEO services','/services/aeo'],['AI Visibility Audit','/services/ai-visibility-audit'],['Reddit & community','/services/reddit'],['Content & editorial','/services/content'],['YouTube Marketing','/services/youtube'],['Digital PR services','/services/digital-pr']] as const;
 const FOOT_COLS:[string,[string,string][]][]=[
- ['Company',[['About','/about'],['Services','/services'],['Industries','/industries'],['Healthcare','/industries/healthcare'],['Work','/work'],['Process','/process'],['Careers','/careers']]],
+ ['Company',[['About','/about'],['Services','/services'],['Industries','/industries'],['Work','/work'],['Process','/process'],['Careers','/careers']]],
  ['Services',serviceLinks.map(([l,h])=>[l,h])],
  ['Resources',[['Articles','/resources#articles'],['Case studies','/resources#case-studies'],['Pricing','/pricing'],['Get a quote','/pricing#quote']]],
  ['Contact',[['Contact us','/contact'],['contact@nakama.in','mailto:contact@nakama.in']]],
