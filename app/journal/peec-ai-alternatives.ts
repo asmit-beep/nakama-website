@@ -32,7 +32,7 @@ const articleLd = {
    "dateModified": MODIFIED_AT,
    "inLanguage": "en-US",
    "articleSection": "AI visibility tools",
-   "keywords": "peec ai alternatives, peec ai competitors, otterly alternatives, profound alternatives, athenahq alternatives, scrunch alternatives, best ai visibility tools",
+   "keywords": "peec ai alternatives, peec ai competitors, otterly alternatives, athenahq alternatives, scrunch alternatives, best ai visibility tools",
    "author": {
     "@id": "https://www.nakama.in/authors/yash-kumar#person"
    },
@@ -305,7 +305,7 @@ const bodyHtml = `<nav aria-label="Breadcrumb" class="article-breadcrumb"><ol st
 <p><strong>Good for:</strong> Enterprise depth. The pricing page lists up to 9 answer engines, Agent Analytics, ChatGPT Shopping, CSV and JSON exports, API access and unlimited seats.</p>
 <p><strong>Weakness:</strong> Trial users get a recommended prompt set based on their industry and "cannot customize their prompts", per its own plan page. The Trial covers ChatGPT, Gemini and AI Overviews only.</p>
 <p><strong>Choose it if:</strong> You have an enterprise budget and need security reviews passed, many engines and agent workflows.</p>
-<p><strong>Skip it if:</strong> You want a self-serve price today. If you are weighing Profound alternatives for that reason, AthenaHQ and SE Visible both publish prices.</p>
+<p><strong>Skip it if:</strong> You want a self-serve price today. If you are weighing <a href="/journal/profound-alternatives">Profound alternatives</a> for that reason, AthenaHQ and SE Visible both publish prices.</p>
 <h2 id="how-we-compared">How we compared</h2>
 <p>We read each vendor's pricing page, plus help pages where the pricing page left gaps, on 18 Oct 2026. Peec AI's prices only appear in a browser, so we read them there and kept a screenshot. We did not run prompts through these tools or test their accuracy.</p>
 <p>Prices are in USD as shown on 18 Oct 2026. Several vendors, including Ahrefs and Otterly.AI, show euros or other currencies to some regions, so your page may differ.</p>
@@ -482,7 +482,7 @@ export const peecAiAlternativesArticle: Article = {
    "Good for: Enterprise depth. The pricing page lists up to 9 answer engines, Agent Analytics, ChatGPT Shopping, CSV and JSON exports, API access and unlimited seats.",
    "Weakness: Trial users get a recommended prompt set based on their industry and \"cannot customize their prompts\", per its own plan page. The Trial covers ChatGPT, Gemini and AI Overviews only.",
    "Choose it if: You have an enterprise budget and need security reviews passed, many engines and agent workflows.",
-   "Skip it if: You want a self-serve price today. If you are weighing Profound alternatives for that reason, AthenaHQ and SE Visible both publish prices."
+   "Skip it if: You want a self-serve price today. If you are weighing Profound alternatives (/journal/profound-alternatives) for that reason, AthenaHQ and SE Visible both publish prices."
   ]
  },
  {
