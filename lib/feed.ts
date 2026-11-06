@@ -2,6 +2,7 @@ import {articles} from '@/app/journal/all';
 import {posts,caseStudies,openings} from '@/lib/content';
 import {authors,authorPath,articlesBy,jobTitleText} from '@/lib/authors';
 import {META as HC_META, TITLE as HC_TITLE} from '@/app/industries/healthcare/copy';
+import {META as EC_META, TITLE as EC_TITLE} from '@/app/industries/ecommerce/copy';
 import {META as AIA_META, PREVIEW as AIA_PREVIEW, SLUG as AIA_SLUG} from '@/app/services/ai-visibility-audit/copy';
 import {META as DPR_META, PREVIEW as DPR_PREVIEW, SLUG as DPR_SLUG} from '@/app/services/digital-pr/copy';
 
@@ -22,8 +23,9 @@ export const corePages:{path:string;title:string;summary:string;priority:number;
  {path:'/services/youtube',title:'YouTube Marketing',summary:'Nakama Growth runs YouTube end to end for SaaS, tech and AI brands: script, shoot, edit, publish. Long-form, chaptered videos built to be easy to cite.',priority:.8,freq:'monthly',src:['app/services/youtube']},
  ...(DPR_PREVIEW?[]:[{path:DPR_SLUG,title:'Digital PR services',summary:DPR_META,priority:.8,freq:'monthly' as const,src:['app/services/digital-pr']}]),
  ...(AIA_PREVIEW?[]:[{path:AIA_SLUG,title:'AI Visibility Audit',summary:AIA_META,priority:.8,freq:'monthly' as const,src:['app/services/ai-visibility-audit']}]),
- {path:'/industries',title:'Industries We Serve: GEO & AI Visibility by Sector | Nakama',summary:'Industry pages for GEO and AI visibility at Nakama Growth. Healthcare is live; SaaS, tech and AI run through our services.',priority:.8,freq:'monthly',src:['app/industries']},
+ {path:'/industries',title:'Industries We Serve: GEO & AI Visibility by Sector | Nakama',summary:'Industry pages for GEO and AI visibility at Nakama Growth. Healthcare and ecommerce each have a live page; SaaS, tech and AI run through our services.',priority:.8,freq:'monthly',src:['app/industries']},
  {path:'/industries/healthcare',title:HC_TITLE,summary:HC_META,priority:.8,freq:'monthly',src:['app/industries/healthcare']},
+ {path:'/industries/ecommerce',title:EC_TITLE,summary:EC_META,priority:.8,freq:'monthly',src:['app/industries/ecommerce']},
  {path:'/white-label',title:'White label',summary:'White label YouTube production plus AEO, GEO, Reddit and Quora, content, digital PR and link building for agencies, delivered under the agency brand.',priority:.8,freq:'monthly',src:['app/white-label']},
  {path:'/work',title:'Work',summary:'Documented client placements in Google AI Overviews, AI Mode, Perplexity, ChatGPT, YouTube and search, with queries you can run.',priority:.9,freq:'weekly',src:['app/work', 'app/proof-data.ts', 'content/case-studies.json']},
  {path:'/process',title:'Process',summary:'Understand, create, place, prove: the monthly cycle and working cadence.',priority:.8,freq:'monthly',src:['app/process']},
