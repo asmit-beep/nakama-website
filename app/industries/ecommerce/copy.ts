@@ -121,7 +121,7 @@ export const PROOF_SHORT = 'Platform eligibility for Google Merchant Center, Sho
 export const PROOF_STEPS: readonly {n: string; title: string; body: string}[] = [
  {n: '1', title: 'Catalog match', body: 'Product data on your site, feed, Google Merchant Center and Shopify Catalog should agree on price, availability, variants and IDs.'},
  {n: '2', title: 'Policy clarity', body: 'Shipping, returns and refund pages should be public and should match what you actually do.'},
- {n: '3', title: 'Real reviews', body: 'We work with genuine reviews and disclosed mentions. We do not create fake or hidden paid reviews.'},
+ {n: '3', title: 'Real reviews', body: 'We work with genuine reviews. We do not create fake or hidden paid reviews.'},
  {n: '4', title: 'Substantiated claims', body: 'Product claims need a source you can stand behind before they go live.'},
  {n: '5', title: 'Entity consistency', body: 'Brand and product names should match across your site, profiles and listings.'},
  {n: '6', title: 'Your approval', body: 'Your team approves catalog and claim changes before they publish. We do not silently overwrite live product or policy pages.'},
