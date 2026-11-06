@@ -72,7 +72,7 @@ const articleLd = {
    "articleSection": "AI visibility tools",
    "keywords": "profound alternatives",
    "author": {
-    "@id": "https://www.nakama.in/authors/yash-kumar#person"
+    "@id": "https://www.nakama.in/authors/asmit-choudhary#person"
    },
    "publisher": {
     "@id": "https://www.nakama.in/#organization"
@@ -87,18 +87,18 @@ const articleLd = {
   },
   {
    "@type": "Person",
-   "@id": "https://www.nakama.in/authors/yash-kumar#person",
-   "name": "Yash Kumar",
-   "jobTitle": "Co-founder and CEO",
-   "url": "https://www.nakama.in/authors/yash-kumar",
-   "description": "Yash Kumar is Co-founder and CEO of Nakama Growth, an AEO and GEO agency in India that helps B2B and SaaS brands get named when buyers ask ChatGPT, Perplexity, Gemini and Google AI Overviews what to choose. He leads Nakama's work on earning mentions on the sources those tools read.",
+   "@id": "https://www.nakama.in/authors/asmit-choudhary#person",
+   "name": "Asmit Choudhary",
+   "jobTitle": "AI & GEO Strategist",
+   "url": "https://www.nakama.in/authors/asmit-choudhary",
+   "description": "Asmit Choudhary is an AI and GEO Strategist at Nakama Growth, based in India. He owns brand strategy end to end, shaping how a brand looks and sounds from the core and making every piece across AEO, GEO, Reddit and SEO clear, consistent and ready for AI answers from tools like ChatGPT, Perplexity and Google AI Overviews.",
    "image": {
     "@type": "ImageObject",
-    "url": "https://www.nakama.in/authors/yash-kumar-nakama-ceo-800.webp",
-    "contentUrl": "https://www.nakama.in/authors/yash-kumar-nakama-ceo-800.webp",
+    "url": "https://www.nakama.in/authors/asmit-choudhary-nakama-ai-geo-800.webp",
+    "contentUrl": "https://www.nakama.in/authors/asmit-choudhary-nakama-ai-geo-800.webp",
     "width": 800,
     "height": 800,
-    "caption": "Yash Kumar, Co-founder and CEO of Nakama Growth"
+    "caption": "Asmit Choudhary, AI & GEO Strategist at Nakama Growth"
    },
    "worksFor": {
     "@id": "https://www.nakama.in/#organization"
@@ -200,7 +200,7 @@ const faqHtml = FAQS.map(({q, a}) => `<h3 id="${faqId(q)}">${q}</h3>\n<p>${a}</p
 const bodyHtml = `<nav aria-label="Breadcrumb" class="article-breadcrumb"><ol style="list-style:none;display:flex;flex-wrap:wrap;gap:.5rem;padding:0;margin:0 0 1.25rem;font-size:.9rem"><li><a href="https://www.nakama.in/">Home</a></li><li aria-hidden="true">/</li><li><a href="https://www.nakama.in/resources">Resources</a></li><li aria-hidden="true">/</li><li aria-current="page">${H1}</li></ol></nav>
 <h1 id="profound-alternatives-2026">${H1}</h1>
 <p><strong>Updated: ${modifiedDate}</strong> · Prices and features checked on each vendor's official pricing page on ${modifiedDate}.</p>
-<p>By <a href="https://www.nakama.in/authors/yash-kumar" rel="author">Yash Kumar</a>, Co-founder and CEO, Nakama Growth</p>
+<p>By <a href="https://www.nakama.in/authors/asmit-choudhary" rel="author">Asmit Choudhary</a>, AI & GEO Strategist, Nakama Growth</p>
 ${fig('profound-alternatives-hero', HERO_ALT, true)}
 <p>The main Profound alternatives in 2026 are Peec AI, OtterlyAI, Scrunch, AthenaHQ and Ahrefs Brand Radar. Unlike Profound, each shows at least one public price. We compared engines, prompt limits and prices on official pages on ${modifiedDate}.</p>
 <h2 id="what-are-the-main-profound-alternatives-in-2026">What are the main Profound alternatives in 2026?</h2>
@@ -261,10 +261,10 @@ ${faqHtml}
 <p><a href="/pricing#quote">Get a quote</a> for managed GEO/AEO work scoped to your brand.</p>
 <p>Not sure yet? Start with an <a href="/services/ai-visibility-audit">AI visibility audit</a>.</p>
 <h2 id="about-the-author">About the author</h2>
-<div class="author-box" id="yash-kumar">
-<img src="/authors/yash-kumar-nakama-ceo.webp" srcset="/authors/yash-kumar-nakama-ceo.webp 400w, /authors/yash-kumar-nakama-ceo-800.webp 800w" sizes="96px" alt="Yash Kumar, Co-founder and CEO of Nakama Growth" width="96" height="96" loading="lazy" decoding="async">
+<div class="author-box" id="asmit-choudhary">
+<img src="/authors/asmit-choudhary-nakama-ai-geo.webp" srcset="/authors/asmit-choudhary-nakama-ai-geo.webp 400w, /authors/asmit-choudhary-nakama-ai-geo-800.webp 800w" sizes="96px" alt="Asmit Choudhary, AI & GEO Strategist at Nakama Growth" width="96" height="96" loading="lazy" decoding="async">
 <div class="author-box-text">
-<p><a href="https://www.nakama.in/authors/yash-kumar" rel="author">Yash Kumar</a> is Co-founder and CEO of Nakama Growth, an AEO and GEO agency in India that helps B2B and SaaS brands get named when buyers ask ChatGPT, Perplexity, Gemini and Google AI Overviews what to choose. He leads Nakama's work on earning mentions on the sources those tools read.</p>
+<p><a href="https://www.nakama.in/authors/asmit-choudhary" rel="author">Asmit Choudhary</a> is an AI and GEO Strategist at Nakama Growth, based in India. He owns brand strategy end to end, shaping how a brand looks and sounds from the core and making every piece across AEO, GEO, Reddit and SEO clear, consistent and ready for AI answers from tools like ChatGPT, Perplexity and Google AI Overviews.</p>
 </div>
 </div>`;
 
@@ -318,7 +318,7 @@ export const profoundAlternativesArticle: Article = {
  metaTitle: META_TITLE,
  date: dayOf(PUBLISHED_AT),
  publishedAt: PUBLISHED_AT,
- authorName: 'Yash Kumar',
+ authorName: 'Asmit Choudhary',
  /** GO-LIVE TODO: PREVIEW is the only switch. false => index,follow plus sitemap, llms and RSS. Leave corePages for ship GO. */
  noindex: PREVIEW,
  /** Keep reading stays on the Peec twin. A noindex preview can still show that one card. */
