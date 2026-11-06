@@ -3,11 +3,11 @@ import Link from 'next/link';
 import {pageMeta, Crumbs, JsonLd, abs, SITE_URL} from '@/lib/seo';
 import {Shell} from '../../site';
 import {
- BADGE, CHIPS, CTA_PRIMARY, CTA_PRIMARY_HREF, CTA_SECONDARY, CTA_SECONDARY_HREF, DAL_DEF, DAL_DIFF,
+ CHIPS, CTA_PRIMARY, CTA_PRIMARY_HREF, CTA_SECONDARY, CTA_SECONDARY_HREF, DAL_DEF, DAL_DIFF,
  DAL_FRAME, DAL_NINETY, DAL_PROOF, DAL_PROMPTS, DAL_SHOP, DAL_SVC, DAL_WHO, DAL_WHY, DEF_ENTITY,
  DEF_FLOW, EYEBROW, FAQ, FIN_LEAD, FIT_NO, FIT_NO_H, FIT_NOTE, FIT_YES, FIT_YES_H, FRAME_NOTE, H1,
  H2_DEF, H2_FAQ, H2_FIN, H2_FIT, H2_FRAME, H2_NINETY, H2_PROOF, H2_PROMPTS, H2_SVC, H2_WHO, H2_WHY,
- H3_DIFF, H3_SHOP, HERO_CAPTION, HERO_PROMPT, LEAD, MEASURES, META, NAMED, NINETY_NOTE, PAINS, PHASES,
+ H3_DIFF, H3_SHOP, HERO_PROMPT, LEAD, MEASURES, META, NAMED, NINETY_NOTE, PAINS, PHASES,
  PREVIEW, PROMPT_STATES, PROMPTS, PROOF_ACROSS, PROOF_LABEL, PROOF_LOGOS, PROOF_SHORT, PROOF_STEPS,
  RELATED_LIVE, SEGMENTS, SERVICES, SHOP_BRIDGE, SHOP_PROMPT, SLUG, SOURCE_CAPTION, SOURCE_HEADS,
  SOURCES, STATE_LABEL, STEPS, SURFACE_CAPTION, SURFACES, SVC_NOTE, TITLE, WHY_SHORT,
@@ -118,7 +118,7 @@ export default function EcommerceIndustry() {
         <Ctas />
        </div>
        <div className="ec-panel">
-        <p className="ec-pl"><span>Shopper prompt</span><span className="ec-sb">{BADGE}</span></p>
+        <p className="ec-pl"><span>Shopper prompt</span></p>
         <div className="ec-prompt"><span className="ec-chev" aria-hidden="true">›</span>{HERO_PROMPT}</div>
         <div className="ec-answer">
          <span className="ec-pulse" aria-hidden="true" />
@@ -133,7 +133,6 @@ export default function EcommerceIndustry() {
           {CHIPS.map(chip => <span className="ec-chip" key={chip}>{chip}</span>)}
          </div>
         </div>
-        <p className="ec-wcn">{HERO_CAPTION}</p>
        </div>
       </div>
      </div>
@@ -200,7 +199,6 @@ export default function EcommerceIndustry() {
       <div className="ec-stbl">
        <div className="ec-tc">
         <span className="ec-cap">{SOURCE_CAPTION}</span>
-        <span className="ec-cap ec-sb">{BADGE}</span>
        </div>
        <table>
         <thead>
@@ -246,7 +244,6 @@ export default function EcommerceIndustry() {
        <div className="ec-way">
         <div className="ec-wh">
          <span className="ec-cap">{SURFACE_CAPTION}</span>
-         <span className="ec-cap ec-sb">{BADGE}</span>
         </div>
         {SURFACES.map((row, i) => (
          <div className={row.on ? 'ec-wr is-on' : 'ec-wr'} key={row.title}>
@@ -332,7 +329,6 @@ export default function EcommerceIndustry() {
       <div className="ec-way ec-states">
        <div className="ec-wh">
         <span className="ec-cap">{STATE_LABEL}</span>
-        <span className="ec-cap ec-sb">{BADGE}</span>
        </div>
        <div className="ec-wq"><span className="ec-chev" aria-hidden="true">›</span>{HERO_PROMPT}</div>
        {PROMPT_STATES.map(row => (

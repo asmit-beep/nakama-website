@@ -125,10 +125,6 @@ main.ec-page .ec .ec-pl{
   font-size:11px;letter-spacing:.18em;text-transform:uppercase;color:var(--mut2);
   font-weight:700;margin:0 0 10px;display:flex;justify-content:space-between;align-items:center;gap:12px;
 }
-main.ec-page .ec .ec-pl .ec-sb,
-main.ec-page .ec .ec-wh .ec-sb{
-  color:var(--mut);border:1px solid var(--hl2);border-radius:6px;padding:3px 8px;letter-spacing:.16em;
-}
 main.ec-page .ec .ec-prompt{
   background:var(--bg);border:1px solid var(--hl);border-radius:14px;padding:16px 18px;
   font-size:16px;font-weight:600;line-height:1.45;
@@ -163,7 +159,6 @@ main.ec-page .ec .ec-chip{
   font-size:12px;font-weight:500;padding:6px 12px 6px 10px;border-radius:8px 8px 3px 3px;
   border:1px solid var(--sgl);border-bottom:1.5px solid var(--sg);color:rgba(243,241,237,.85);background:var(--sgf);
 }
-main.ec-page .ec .ec-wcn{font-size:12.5px;color:var(--mut);margin:14px 0 0;line-height:1.5}
 
 main.ec-page .ec .ec-logos{padding:56px 0 64px;border-top:1px solid var(--hl)}
 main.ec-page .ec .ec-cap{
@@ -436,7 +431,6 @@ main.ec-page .ec .ec-rel a:hover{color:var(--cr);border-color:var(--hl2)}
   main.ec-page .ec .ec-pain .ec-card:last-child{border-bottom:0}
   main.ec-page .ec .ec-pain .ec-pt{font-size:16px;margin:6px 0}
   main.ec-page .ec .ec-tc{padding:16px 20px}
-  main.ec-page .ec .ec-tc .ec-cap:first-child{max-width:72%}
   /* Mobile source table only. Desktop tbody th keeps its cell padding. */
   main.ec-page .ec .ec-stbl thead{
     position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;

@@ -24,8 +24,6 @@ export const CTA_SECONDARY_HREF = '/services/ai-visibility-audit';
 
 export const HERO_PROMPT = 'Best running shoes for flat feet';
 export const NAMED = 'Your brand';
-export const BADGE = 'Sample';
-export const HERO_CAPTION = 'Sample, not a real result or a placement promise.';
 export const CHIPS = ['Review', 'Comparison', 'Publisher'] as const;
 
 export const PROOF_LABEL = 'Brands we have grown in AI search';
