@@ -26,7 +26,7 @@ const SLUG = 'profound-alternatives';
 const CANONICAL = `https://www.nakama.in/journal/${SLUG}`;
 const H1 = 'Profound Alternatives (2026)';
 const META_TITLE = 'Profound Alternatives (2026): AI Visibility Tools Compared';
-const DESCRIPTION = 'Comparing Profound alternatives? Peec AI, Otterly, Scrunch, AthenaHQ and Ahrefs Brand Radar side by side: engines, prompt limits and public prices, checked 6 Nov 2026.';
+const DESCRIPTION = 'Comparing Profound alternatives? Peec AI, Otterly, Scrunch, AthenaHQ and Ahrefs Brand Radar: engines, prompt limits and public prices, checked 6 Nov 2026.';
 const HERO_ALT = 'Profound Alternatives (2026): five AI visibility tools with public prices compared to Profound';
 const TOOL_ALT = 'Side-by-side of a self-serve AI visibility tracker versus a managed GEO and AEO service';
 const OG_ALT = 'Profound Alternatives (2026)';
@@ -200,7 +200,7 @@ const faqHtml = FAQS.map(({q, a}) => `<h3 id="${faqId(q)}">${q}</h3>\n<p>${a}</p
 const bodyHtml = `<nav aria-label="Breadcrumb" class="article-breadcrumb"><ol style="list-style:none;display:flex;flex-wrap:wrap;gap:.5rem;padding:0;margin:0 0 1.25rem;font-size:.9rem"><li><a href="https://www.nakama.in/">Home</a></li><li aria-hidden="true">/</li><li><a href="https://www.nakama.in/resources">Resources</a></li><li aria-hidden="true">/</li><li aria-current="page">${H1}</li></ol></nav>
 <h1 id="profound-alternatives-2026">${H1}</h1>
 <p><strong>Updated: ${modifiedDate}</strong> · Prices and features checked on each vendor's official pricing page on ${modifiedDate}.</p>
-<p>By Yash Kumar, Co-founder and CEO, Nakama Growth</p>
+<p>By <a href="https://www.nakama.in/authors/yash-kumar" rel="author">Yash Kumar</a>, Co-founder and CEO, Nakama Growth</p>
 ${fig('profound-alternatives-hero', HERO_ALT, true)}
 <p>The main Profound alternatives in 2026 are Peec AI, OtterlyAI, Scrunch, AthenaHQ and Ahrefs Brand Radar. Unlike Profound, each shows at least one public price. We compared engines, prompt limits and prices on official pages on ${modifiedDate}.</p>
 <h2 id="what-are-the-main-profound-alternatives-in-2026">What are the main Profound alternatives in 2026?</h2>
