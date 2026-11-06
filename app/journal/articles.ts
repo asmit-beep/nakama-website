@@ -4,6 +4,7 @@ import {aeoAgenciesArticle} from './aeo-agencies';
 import {aeoVsSeoVsGeoArticle} from './aeo-vs-seo-vs-geo';
 import {howToRankInChatgptArticle} from './how-to-rank-in-chatgpt';
 import {peecAiAlternativesArticle} from './peec-ai-alternatives';
+import {profoundAlternativesArticle} from './profound-alternatives';
 import {bestGeoAgenciesIndiaArticle} from './best-geo-agencies-india';
 import {bestGeoAgenciesForSaasArticle} from './best-geo-agencies-for-saas';
 import {geoAuditArticle} from './geo-audit';
@@ -44,6 +45,7 @@ export type Article={
  coverImage?:{src:string,width:number,height:number,alt?:string},
 };
 export const articles:Article[]=[
+ profoundAlternativesArticle,
  bestEnterpriseAiSeoAgenciesArticle,
  geoAeoPricingArticle,
  howToHireAnAeoAgencyArticle,
