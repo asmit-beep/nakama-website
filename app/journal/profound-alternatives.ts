@@ -5,17 +5,16 @@ import type {Article} from './articles';
  * It feeds datePublished and dateModified in the schema, og/article times,
  * the RSS pubDate, the sitemap lastmod (via `date`) and the visible "Updated" line.
  *
- * PREVIEW ONLY. Prod HOLD. Do not merge to main.
- * GO-LIVE TODO: set PREVIEW to false.
+ * Yash GO: PREVIEW is false.
  * That one flag flips robots to index,follow and adds this note to the sitemap,
- * llms.txt, llms-full.txt, RSS and the author index.
- * While PREVIEW is true the page stays noindex,follow and off those surfaces.
- * Do not add this URL to corePages until ship GO.
+ * llms.txt, llms-full.txt, RSS, the resources index and the author index.
+ * Live journal notes are not separate corePages rows. Peec and the other live
+ * notes enter the sitemap and both llms files through feedArticles.
  */
 export const PROFOUND_ALTERNATIVES_PUBLISHED_AT = '2026-11-06T09:00:00+05:30';
 const PUBLISHED_AT = PROFOUND_ALTERNATIVES_PUBLISHED_AT;
 const MODIFIED_AT = PUBLISHED_AT;
-const PREVIEW = true;
+const PREVIEW = false;
 
 const MONTHS = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
 const dayOf = (iso: string) => iso.slice(0, 10);
@@ -319,7 +318,7 @@ export const profoundAlternativesArticle: Article = {
  date: dayOf(PUBLISHED_AT),
  publishedAt: PUBLISHED_AT,
  authorName: 'Asmit Choudhary',
- /** GO-LIVE TODO: PREVIEW is the only switch. false => index,follow plus sitemap, llms and RSS. Leave corePages for ship GO. */
+ /** PREVIEW false => index,follow plus sitemap, llms.txt, llms-full.txt, RSS and the author index. */
  noindex: PREVIEW,
  /** Keep reading stays on the Peec twin. A noindex preview can still show that one card. */
  nextSlug: 'peec-ai-alternatives',
