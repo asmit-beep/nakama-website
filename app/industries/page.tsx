@@ -9,7 +9,7 @@ const PREVIEW = false;
 
 const SLUG = '/industries';
 const TITLE = 'Industries We Serve: GEO & AI Visibility by Sector | Nakama';
-const META = 'Industry pages for GEO and AI visibility at Nakama Growth. Healthcare is live; SaaS, tech and AI run through our services.';
+const META = 'Industry pages for GEO and AI visibility at Nakama Growth. Healthcare and ecommerce each have a live page; SaaS, tech and AI run through our services.';
 const LEAD = 'AI answers each industry differently. We build visibility around the sources and prompts that matter in yours.';
 const ENTITY = 'Nakama Growth helps brands get named, cited and recommended in ChatGPT, Perplexity, Gemini and Google AI Overviews, with industry pages where the rules change most.';
 const WHY_LEAD = 'The method stays the same in every industry. What changes is what buyers ask, which sources engines trust, and how risky a claim is.';
@@ -27,7 +27,7 @@ const FAQ: {q: string; text: string}[] = [
  },
  {
   q: 'Which industries does Nakama Growth work with today?',
-  text: 'Healthcare has its own page, covering clinics, hospitals, healthtech and wellness brands. SaaS, tech and AI companies work through our GEO and AEO services, which cover how those buyers ask and which sources engines cite. Other categories can still start with a prompt and source check before any commitment.',
+  text: 'Healthcare and ecommerce each have their own page. Healthcare covers clinics, hospitals, healthtech and wellness brands. Ecommerce covers DTC, Shopify and online store brands. SaaS, tech and AI companies work through our GEO and AEO services, which cover how those buyers ask and which sources engines cite. Other categories can still start with a prompt and source check before any commitment.',
  },
  {
   q: 'Should I start with an industry page or a service page?',
@@ -74,9 +74,10 @@ const collectionLd = {
  mainEntity: {
   '@type': 'ItemList',
   itemListOrder: 'https://schema.org/ItemListOrderAscending',
-  numberOfItems: 1,
+  numberOfItems: 2,
   itemListElement: [
    {'@type': 'ListItem', position: 1, name: 'Healthcare', url: abs('/industries/healthcare')},
+   {'@type': 'ListItem', position: 2, name: 'Ecommerce', url: abs('/industries/ecommerce')},
   ],
  },
 };
@@ -87,6 +88,17 @@ function Heart() {
    <svg viewBox="0 0 48 48" fill="none" stroke="#f3f1ed" strokeWidth="1.5" vectorEffect="non-scaling-stroke">
     <path d="M24 40S6 29 6 17a9 9 0 0 1 18-3 9 9 0 0 1 18 3c0 12-18 23-18 23z" />
     <path d="M12 24h7l3-5 4 10 3-5h7" />
+   </svg>
+  </span>
+ );
+}
+
+function Bag() {
+ return (
+  <span className="ih-heart" aria-hidden="true">
+   <svg viewBox="0 0 48 48" fill="none" stroke="#f3f1ed" strokeWidth="1.5" vectorEffect="non-scaling-stroke">
+    <path d="M10 16h28l-2.4 22.4a2 2 0 0 1-2 1.6H14.4a2 2 0 0 1-2-1.6z" />
+    <path d="M18 16v-3a6 6 0 0 1 12 0v3" />
    </svg>
   </span>
  );
@@ -134,8 +146,17 @@ export default function IndustriesHub() {
       </div>
       <Link className="ih-go" href="/industries/healthcare">View healthcare →</Link>
      </article>
-     <article className="ih-door ih-door-c">
+     <article className="ih-door ih-door-f">
       <span className="ih-num ih-n2" aria-hidden="true">02</span>
+      <div>
+       <Bag />
+       <p className="ih-lab">Industry</p>
+       <h2 id="ih-ecommerce">Ecommerce</h2>
+       <p>AI shopping answers name a few products, so catalog facts, policies and proof have to match the live store.</p>
+      </div>
+      <Link className="ih-go" href="/industries/ecommerce">View ecommerce →</Link>
+     </article>
+     <article className="ih-door ih-door-c">
       <p className="ih-lab">Via services</p>
       <h2 id="ih-saas">SaaS, tech and AI</h2>
       <p>AI answers here lean on comparisons, docs, and community threads, not your homepage.</p>
@@ -203,7 +224,9 @@ function faqAnswer(q: string) {
   return (
    <>
     <Link href="/industries/healthcare">Healthcare</Link>
-    {' has its own page, covering clinics, hospitals, healthtech and wellness brands. SaaS, tech and AI companies work through our '}
+    {' and '}
+    <Link href="/industries/ecommerce">ecommerce</Link>
+    {' each have their own page. Healthcare covers clinics, hospitals, healthtech and wellness brands. Ecommerce covers DTC, Shopify and online store brands. SaaS, tech and AI companies work through our '}
     <Link href="/services/geo">GEO</Link>
     {' and '}
     <Link href="/services/aeo">AEO</Link>

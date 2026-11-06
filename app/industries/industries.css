@@ -242,9 +242,9 @@ main.ih-page .ih-hero a.ih-btn .ih-arr{
  position:relative;
  isolation:isolate;
  display:grid;
- grid-template-columns:1.75fr 1fr;
+ grid-template-columns:1fr 1fr;
  gap:44px;
- align-items:end;
+ align-items:stretch;
  margin-bottom:88px;
 }
 .ih-num{
@@ -318,7 +318,7 @@ main.ih-page .ih-door h2{
  font-size:17px;
  line-height:1.5;
 }
-.ih-door-c{padding:36px;border-color:var(--ih-line)}
+.ih-door-c{padding:36px;border-color:var(--ih-line);grid-column:1 / -1}
 main.ih-page .ih-door-c h2{font-size:30px}
 
 .ih-heart{

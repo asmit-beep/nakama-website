@@ -3,11 +3,11 @@
  * Render these exactly. US spelling. Nakama Growth. No em dashes.
  * Diagram labels are the V1.2 visual chrome, not new claims.
  *
- * Yash GO is preview-only. PREVIEW true keeps this route noindex.
- * Production ship (index, sitemap, llms, hub card, nav, footer child, redirects)
- * stays HOLD until a later, separate GO. Do not flip PREVIEW in a preview commit.
+ * Yash production GO. PREVIEW false keeps robots index, follow.
+ * Listed from corePages (sitemap and llms.txt) and the Industries hub.
+ * Footer stays the hub link. Do not restore the removed mock labels or the review qualifier.
  */
-export const PREVIEW = true;
+export const PREVIEW = false;
 
 export const SLUG = '/industries/ecommerce';
 export const TITLE = 'Ecommerce GEO Agency | AI Visibility for Ecommerce Brands | Nakama Growth';

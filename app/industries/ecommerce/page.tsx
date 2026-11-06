@@ -14,7 +14,7 @@ import {
 } from './copy';
 import './ecommerce.css';
 
-/** Preview only. Production index,follow is a later ship GO. Do not drop this while PREVIEW is true. */
+/** Live. PREVIEW false keeps robots index, follow. */
 const robots: Metadata['robots'] = PREVIEW
  ? {index: false, follow: true, googleBot: {index: false, follow: true}}
  : {index: true, follow: true, googleBot: {index: true, follow: true, 'max-image-preview': 'large', 'max-snippet': -1, 'max-video-preview': -1}};
