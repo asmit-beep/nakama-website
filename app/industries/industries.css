@@ -377,7 +377,7 @@ main.ih-page .ih-why-lead{
 .ih-why-table{display:grid}
 .ih-why-tr{
  display:grid;
- grid-template-columns:110px 1fr 1fr;
+ grid-template-columns:110px repeat(4,minmax(0,1fr));
  gap:20px 28px;
  padding:16px 0;
  border-bottom:1px solid var(--ih-line);
@@ -625,4 +625,11 @@ main.ih-page .ip-svc-btn-line:focus-visible{outline:2px solid #ffd2ad;outline-of
  .ih-door-f{
   background:radial-gradient(120% 80% at 0% 0%,#f07c3222,#0000 55%),#141215;
  }
+}
+
+@media (max-width:900px){
+ .ih-why-tr{grid-template-columns:1fr;gap:8px;padding:18px 0}
+ .ih-why-th{display:none}
+ .ih-why-td[data-col]::before{content:attr(data-col);display:block;font:600 11px/1 var(--ih-font);letter-spacing:.12em;text-transform:uppercase;color:#b9b7c0;margin-bottom:6px}
+ .ih-why-lab{margin-bottom:4px}
 }

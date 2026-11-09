@@ -17,7 +17,7 @@ import {
 } from './copy';
 import './real-estate.css';
 
-/** Preview. PREVIEW true keeps robots noindex, follow. Ship flips the flag. */
+/** Live. PREVIEW false keeps robots index, follow. */
 const robots: Metadata['robots'] = PREVIEW
  ? {index: false, follow: true, googleBot: {index: false, follow: true}}
  : {index: true, follow: true, googleBot: {index: true, follow: true, 'max-image-preview': 'large', 'max-snippet': -1, 'max-video-preview': -1}};

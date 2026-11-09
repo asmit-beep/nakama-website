@@ -9,15 +9,15 @@ const PREVIEW = false;
 
 const SLUG = '/industries';
 const TITLE = 'Industries We Serve: GEO & AI Visibility by Sector | Nakama';
-const META = 'Industry pages for GEO and AI visibility at Nakama Growth. Healthcare and ecommerce each have a live page; SaaS, tech and AI run through our services.';
+const META = 'Industry pages for GEO, AEO and AI visibility. Healthcare, ecommerce and real estate each have a live page; SaaS, tech and AI run through our services.';
 const LEAD = 'AI answers each industry differently. We build visibility around the sources and prompts that matter in yours.';
 const ENTITY = 'Nakama Growth helps brands get named, cited and recommended in ChatGPT, Perplexity, Gemini and Google AI Overviews, with industry pages where the rules change most.';
 const WHY_LEAD = 'The method stays the same in every industry. What changes is what buyers ask, which sources engines trust, and how risky a claim is.';
 
 const WHY_ROWS = [
- ['Prompts', 'Patients and buyers ask about safety, location, reviews and who to trust.', 'Buyers ask for comparisons, alternatives, integrations and pricing.'],
- ['Sources', 'Medical publishers, review and directory sites, and reviewed brand pages.', 'Docs, review platforms, comparison articles and community threads.'],
- ['Claim risk', 'High. Health claims need clinical review before they publish.', 'Moderate. Claims need current docs, pricing and dated sources.'],
+ ['Prompts', 'Patients and buyers ask about safety, location, reviews and who to trust.', 'Shoppers ask which product to buy, often within a budget.', 'Buyers and sellers check an agent, team or brokerage before they call.', 'Buyers ask for comparisons, alternatives, integrations and pricing.'],
+ ['Sources', 'Medical publishers, review and directory sites, and reviewed brand pages.', 'Product and policy pages, product feeds, review publishers, Reddit and YouTube.', 'Office and agent pages, portal profiles, public license lookups, listing pages and local directories.', 'Docs, review platforms, comparison articles and community threads.'],
+ ['Claim risk', 'High. Health claims need clinical review before they publish.', 'Moderate. Product claims need a source and your team\'s approval before they go live.', 'High. Agent, listing and brokerage claims need broker of record approval before they publish.', 'Moderate. Claims need current docs, pricing and dated sources.'],
 ] as const;
 
 const FAQ: {q: string; text: string}[] = [
@@ -27,7 +27,7 @@ const FAQ: {q: string; text: string}[] = [
  },
  {
   q: 'Which industries does Nakama Growth work with today?',
-  text: 'Healthcare and ecommerce each have their own page. Healthcare covers clinics, hospitals, healthtech and wellness brands. Ecommerce covers DTC, Shopify and online store brands. SaaS, tech and AI companies work through our GEO and AEO services, which cover how those buyers ask and which sources engines cite. Other categories can still start with a prompt and source check before any commitment.',
+  text: 'Healthcare, ecommerce and real estate each have their own page. Healthcare covers clinics, hospitals, healthtech and wellness brands. Ecommerce covers DTC, Shopify and online store brands. Real estate covers residential brokerages and agent teams. SaaS, tech and AI companies work through our GEO and AEO services, which cover how those buyers ask and which sources engines cite. Other categories can still start with a prompt and source check before any commitment.',
  },
  {
   q: 'Should I start with an industry page or a service page?',
@@ -74,10 +74,11 @@ const collectionLd = {
  mainEntity: {
   '@type': 'ItemList',
   itemListOrder: 'https://schema.org/ItemListOrderAscending',
-  numberOfItems: 2,
+  numberOfItems: 3,
   itemListElement: [
    {'@type': 'ListItem', position: 1, name: 'Healthcare', url: abs('/industries/healthcare')},
    {'@type': 'ListItem', position: 2, name: 'Ecommerce', url: abs('/industries/ecommerce')},
+   {'@type': 'ListItem', position: 3, name: 'Real estate', url: abs('/industries/real-estate')},
   ],
  },
 };
@@ -99,6 +100,18 @@ function Bag() {
    <svg viewBox="0 0 48 48" fill="none" stroke="#f3f1ed" strokeWidth="1.5" vectorEffect="non-scaling-stroke">
     <path d="M10 16h28l-2.4 22.4a2 2 0 0 1-2 1.6H14.4a2 2 0 0 1-2-1.6z" />
     <path d="M18 16v-3a6 6 0 0 1 12 0v3" />
+   </svg>
+  </span>
+ );
+}
+
+function Key() {
+ return (
+  <span className="ih-heart" aria-hidden="true">
+   <svg viewBox="0 0 48 48" fill="none" stroke="#f3f1ed" strokeWidth="1.5" vectorEffect="non-scaling-stroke">
+    <path d="M27.50 29.75a10.22 10.22 0 1 1-20.45 0 10.22 10.22 0 0 1 20.45 0z" />
+    <path d="M20.12 29.75a2.84 2.84 0 1 1-5.68 0 2.84 2.84 0 0 1 5.68 0z" />
+    <path d="M24.51 22.52L40.58 6.45M35.76 11.27L40.58 16.09M39.77 7.26L43.79 11.27" />
    </svg>
   </span>
  );
@@ -156,6 +169,16 @@ export default function IndustriesHub() {
       </div>
       <Link className="ih-go" href="/industries/ecommerce">View ecommerce →</Link>
      </article>
+     <article className="ih-door ih-door-f">
+      <span className="ih-num ih-n2" aria-hidden="true">03</span>
+      <div>
+       <Key />
+       <p className="ih-lab">Industry</p>
+       <h2 id="ih-real-estate">Real estate</h2>
+       <p>People check a brokerage in AI answers before they call, so agent, team and office facts have to match everywhere.</p>
+      </div>
+      <Link className="ih-go" href="/industries/real-estate">View real estate →</Link>
+     </article>
      <article className="ih-door ih-door-c">
       <p className="ih-lab">Via services</p>
       <h2 id="ih-saas">SaaS, tech and AI</h2>
@@ -176,13 +199,17 @@ export default function IndustriesHub() {
      <div className="ih-why-table" role="table" aria-label="How GEO differs by industry">
       <div className="ih-why-tr ih-why-th" role="row">
        <span className="ih-why-td ih-why-lab" role="columnheader" />
-       <span className="ih-why-td" role="columnheader">Healthcare</span>
-       <span className="ih-why-td" role="columnheader">SaaS, tech and AI</span>
+       <span className="ih-why-td" role="columnheader" data-col="Healthcare">Healthcare</span>
+       <span className="ih-why-td" role="columnheader" data-col="Ecommerce">Ecommerce</span>
+       <span className="ih-why-td" role="columnheader" data-col="Real estate">Real estate</span>
+       <span className="ih-why-td" role="columnheader" data-col="SaaS, tech and AI">SaaS, tech and AI</span>
       </div>
-      {WHY_ROWS.map(([label, healthcare, saas]) => (
+      {WHY_ROWS.map(([label, healthcare, ecommerce, realEstate, saas]) => (
        <div className="ih-why-tr" role="row" key={label}>
         <span className="ih-why-td ih-why-lab" role="rowheader">{label}</span>
         <span className="ih-why-td" role="cell" data-col="Healthcare">{healthcare}</span>
+        <span className="ih-why-td" role="cell" data-col="Ecommerce">{ecommerce}</span>
+        <span className="ih-why-td" role="cell" data-col="Real estate">{realEstate}</span>
         <span className="ih-why-td" role="cell" data-col="SaaS, tech and AI">{saas}</span>
        </div>
       ))}
@@ -224,9 +251,11 @@ function faqAnswer(q: string) {
   return (
    <>
     <Link href="/industries/healthcare">Healthcare</Link>
-    {' and '}
+    {', '}
     <Link href="/industries/ecommerce">ecommerce</Link>
-    {' each have their own page. Healthcare covers clinics, hospitals, healthtech and wellness brands. Ecommerce covers DTC, Shopify and online store brands. SaaS, tech and AI companies work through our '}
+    {' and '}
+    <Link href="/industries/real-estate">real estate</Link>
+    {' each have their own page. Healthcare covers clinics, hospitals, healthtech and wellness brands. Ecommerce covers DTC, Shopify and online store brands. Real estate covers residential brokerages and agent teams. SaaS, tech and AI companies work through our '}
     <Link href="/services/geo">GEO</Link>
     {' and '}
     <Link href="/services/aeo">AEO</Link>

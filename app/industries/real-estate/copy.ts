@@ -2,14 +2,13 @@
  * /industries/real-estate · Hibiku DRAFT V2.1 strings.
  * Render these exactly. US spelling. Nakama Growth. No em dashes.
  *
- * Preview only. PREVIEW true keeps this route noindex,follow.
- * Hub card, sitemap and llms.txt stay off until ship. See SHIP-FLIP.md.
- * Do not flip PREVIEW in a preview commit.
+ * Live. PREVIEW false keeps this route index, follow.
+ * The hub card, sitemap and llms.txt list this page.
  *
  * Sample badges from section 01b are not rendered. Live healthcare and
- * ecommerce do not show them, and this preview must not restore them.
+ * ecommerce do not show them, and this page must not restore them.
  */
-export const PREVIEW = true;
+export const PREVIEW = false;
 
 export const SLUG = '/industries/real-estate';
 export const TITLE = 'Real Estate AEO Agency for Brokerages | Nakama Growth';
