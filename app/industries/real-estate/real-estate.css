@@ -366,7 +366,8 @@ main.re-page .re .re-fq p{
 }
 main.re-page .re .re-fq p a{text-decoration:underline;text-underline-offset:3px}
 
-main.re-page .re .re-logos{padding:72px 0 28px;border-top:1px solid var(--hl)}
+main.re-page .re .re-rel-sec{padding:0;margin:0;border:0}
+main.re-page .re .re-logos{padding:48px 0 0;border-top:0}
 main.re-page .re .re-logos .re-cap{color:var(--mut)}
 main.re-page .re .re-lr{
   display:flex;justify-content:space-between;align-items:center;gap:28px;margin:22px 0 0;padding:0;flex-wrap:wrap;
@@ -380,7 +381,7 @@ main.re-page .re .re-vh{
   clip:rect(0 0 0 0);clip-path:inset(50%);white-space:nowrap;border:0;
 }
 
-main.re-page .re .re-final{border-top:0;padding-top:28px}
+main.re-page .re .re-final{border-top:0;padding-top:100px}
 main.re-page .re .re-fin{
   display:grid;grid-template-columns:1.3fr 1fr;gap:56px;align-items:center;
   background:var(--s2);border:1px solid var(--hl2);border-radius:26px;padding:64px;
@@ -389,7 +390,8 @@ main.re-page .re .re-fin{
 main.re-page .re .re-vap-fin{inset:-100px -100px -100px 40%}
 main.re-page .re .re-fin-copy,main.re-page .re .re-fin .re-btns{position:relative}
 main.re-page .re .re-fin .re-btns{margin-top:0}
-main.re-page .re .re-rel{display:flex;gap:12px 28px;flex-wrap:wrap;margin-top:28px}
+main.re-page .re .re-rel{display:flex;gap:12px 28px;flex-wrap:wrap;margin:0;padding:0;list-style:none}
+main.re-page .re .re-rel li{margin:0;padding:0}
 main.re-page .re .re-rel a{
   font-size:15px;color:var(--cr);padding:0;border:0;border-radius:0;background:none;
   text-decoration:underline;text-underline-offset:4px;text-decoration-color:rgba(168,153,111,.7);
@@ -486,4 +488,28 @@ main.re-page .re .re-rel a{
   main.re-page .re .re-tree{padding:16px 14px}
   main.re-page .re .re-tree ul{padding-left:14px}
   main.re-page .re .re-tree .re-tr{column-gap:8px}
+  main.re-page .re .re-side-card{padding:20px}
+}
+
+main.re-page .re .re-side-dot.is-ring{border-color:rgba(243,241,237,.45)}
+main.re-page .re .re-logos{padding-top:48px;padding-bottom:0;border-top:0}
+main.re-page .re .re-final{padding-top:100px}
+@media (min-width:768px) and (max-width:1023px){
+  main.re-page .re .re-side-card{max-width:643px}
+}
+@media (min-width:1024px){
+  #re-why .re-side-card{align-self:center}
+}
+@media (max-width:767px){
+  main.re-page .re .re-final{padding-top:56px}
+  main.re-page .re .re-rel{flex-direction:column;align-items:flex-start;gap:0}
+  main.re-page .re .re-rel a{min-height:44px;display:inline-flex;align-items:center}
+  main.re-page .re .re-lr{
+    display:grid;grid-template-columns:repeat(3,minmax(0,1fr));
+    justify-items:center;align-items:center;gap:16px 10px;margin-top:16px;
+  }
+  main.re-page .re .re-lr li{justify-content:center}
+  main.re-page .re .re-lr img{height:18px}
+  main.re-page .re .re-lr li.is-word img{height:15px}
+  main.re-page .re .re-lr span{font-size:12px;white-space:normal;text-align:center}
 }

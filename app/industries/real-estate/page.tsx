@@ -496,6 +496,16 @@ export default function RealEstateIndustry() {
      </div>
     </section>
 
+    <section className="re-rel-sec">
+     <div className="re-w">
+      <ul className="re-rel" aria-label="Related services">
+       {RELATED.map(link => (
+        <li key={link.href}><Link href={link.href}>{link.label}</Link></li>
+       ))}
+      </ul>
+     </div>
+    </section>
+
     <section className="re-logos" id="re-logos">
      <div className="re-w">
       <p className="re-cap" id="re-proof-label">{PROOF_LABEL}</p>
@@ -521,9 +531,6 @@ export default function RealEstateIndustry() {
         <p className="re-lead re-lead-fin">{FIN_LEAD}</p>
        </div>
        <Ctas />
-      </div>
-      <div className="re-rel">
-       {RELATED.map(link => <Link key={link.href} href={link.href}>{link.label}</Link>)}
       </div>
      </div>
     </section>
