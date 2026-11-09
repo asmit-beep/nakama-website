@@ -44,8 +44,8 @@ export const DAL_DIFF = 'Real estate SEO works on rankings and clicks in search 
 export const LBL_WHY = '04 · Why it matters';
 export const H2_WHY = 'Why do AI answers matter for real estate brokerages?';
 export const DAL_WHY = 'Buyers still most often find an agent through people they know, then many check that agent and brokerage in AI tools before they call. Real estate AI visibility starts there. If an answer ties an agent to a brokerage they left, quotes a sold listing as active or leaves your office off a shortlist, the first impression is wrong.';
-export const EVIDENCE_1 = 'In NAR\'s 2026 Profile of Home Buyers and Sellers, as reported by Chicago Agent and WAV Group (Nov 5, 2026), 40% of buyers found their agent through a friend, neighbor or relative, and just 1% found their agent through AI search.';
-export const EVIDENCE_2 = 'In a January 2026 1000WATT survey of 1,500 recent US buyers and sellers, 44% used an AI chatbot during the deal, and 61% of those used it to find or assess agents.';
+export const EVIDENCE_1 = 'In a 1000WATT survey of 1,500 recent US buyers and sellers, published January 2026, 44% used an AI chatbot during the deal, and 61% of those used it to find or assess agents.';
+export const EVIDENCE_2 = 'In NAR\'s 2026 Profile of Home Buyers and Sellers, as reported by Chicago Agent and WAV Group (Nov 5, 2026), 40% of buyers found their agent through a friend, neighbor or relative, and 1% found their agent through AI search. WAV Group notes that NAR measured how buyers found their agent, not how many used AI for research. So NAR\'s 1% does not capture a buyer who gets a referral and then checks that agent in an AI tool.';
 export const PORTAL_LINE = 'Zillow (October 2025), Redfin (February 2026) and Realtor.com (March 2026) each launched an app inside ChatGPT. Zillow and Realtor.com say agent contact and tours go back to their own sites. This work is about what AI answers say about your brokerage and your agents.';
 
 export const H2_SURFACES = 'What shapes the answer about your brokerage';
