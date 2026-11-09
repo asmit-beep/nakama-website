@@ -228,7 +228,7 @@ ${figure('chatgpt-seo-agency-evidence.webp', EVIDENCE_ALT, 1600, 900)}
 <h2 id="which-chatgpt-evidence-should-you-ask-to-inspect">Which ChatGPT evidence should you ask to inspect?</h2>
 <p>A ChatGPT SEO proposal should make its ChatGPT evidence inspectable at the answer level, with the test context attached. Ask for the raw answer behind each claim, a clear label for what happened and a connection to the work delivered. Treat these as proposed acceptance criteria, not promises of placement.</p>
 <h3 id="which-chatgpt-experience-and-access-mode-does-the-evidence-cover">Which ChatGPT experience and access mode does the evidence cover?</h3>
-<p>Ask where the ChatGPT test happened and what access mode the team used. Does the evidence come from the ChatGPT interface your buyers use, or an API-based test? What model or mode does the record identify? Does it record whether search was used?</p>
+<p>Ask where the ChatGPT test happened and what access mode the team used. Does the evidence come from the ChatGPT interface your buyers use, or an API-based test? What model or mode does the record identify? Does it record whether <a href="https://help.openai.com/en/articles/9237897-chatgpt-search">search was used</a>?</p>
 <p>The proposal should state the limits of that evidence. A test in one named setup should not silently become a claim about every ChatGPT experience. If the setup changes during the engagement, ask how the report will mark that change rather than combine unlike observations.</p>
 <h3 id="does-the-raw-answer-support-the-label-in-the-report">Does the raw answer support the label in the report?</h3>
 <p>Ask the team to show the dated ChatGPT answer behind an unlinked brand mention, a recommendation and a search-linked citation. Require separate labels for each. A recommendation should include the surrounding words that explain the use case, rather than a cropped brand name.</p>
@@ -243,7 +243,7 @@ ${figure('chatgpt-seo-agency-labels.webp', LABELS_ALT, 1600, 900)}
 <p>A dated change followed by a favorable answer does not, by itself, establish causation. The report should distinguish "we delivered this page" from "ChatGPT cited this page" and from "our work caused this citation."</p>
 <p>If the ChatGPT proposal promises to make pricing or product facts citable, ask where those specifics will appear in visible page text you can open. A fact stored only in an image or script is not the same deliverable as a readable statement on the named page. Neither format is a citation guarantee.</p>
 <h3 id="which-access-and-training-decisions-remain-yours">Which access and training decisions remain yours?</h3>
-<p>Ask whether the proposed work includes changes involving ChatGPT access or training permissions, and which decisions require your approval. Require a clear description of the proposed change and its purpose before treating it as included work.</p>
+<p>Ask whether the proposed work includes changes involving ChatGPT <a href="https://developers.openai.com/api/docs/bots">access or training permissions</a>, and which decisions require your approval. Require a clear description of the proposed change and its purpose before treating it as included work.</p>
 <p>The proposal should separate a recommendation, your approval and an implemented change. An access decision is not evidence that ChatGPT recommended your business. A training-permission decision is not a purchased answer placement. Keep both separate from the raw-answer evidence used to assess the engagement.</p>
 <p>If a proposal already isolates that ChatGPT evidence:</p>
 ${quoteLink}
@@ -254,7 +254,7 @@ ${quoteLink}
 <h2 id="when-is-a-chatgpt-engagement-the-wrong-purchase">When is a ChatGPT engagement the wrong purchase?</h2>
 <p>A ChatGPT SEO engagement is the wrong purchase when its promised evidence cannot distinguish ChatGPT-specific work from a generic visibility report. It is also the wrong purchase if you cannot inspect the named ChatGPT setup, observation labels and delivery provenance described earlier.</p>
 <p>If you want to carry out the work yourself, use our <a href="https://www.nakama.in/journal/how-to-rank-in-chatgpt">ChatGPT implementation guide</a>.</p>
-<p>If you want names to compare, use the <a href="https://www.nakama.in/journal/best-ai-seo-agencies">AI SEO agency comparison</a>. For dollar tables, return to the pricing guide linked above.</p>
+<p>If you want names to compare, use the <a href="https://www.nakama.in/journal/best-ai-seo-agencies">AI SEO agency comparison</a>.</p>
 <p>For the full procurement process and the agency-versus-consultant-versus-software decision, start at <a href="https://www.nakama.in/journal/how-to-hire-an-aeo-agency#step-1-decide-if-you-need-an-agency-at-all">Step 1: Decide if you need an agency at all</a> in the AEO agency hiring guide. This page's narrower job is to help you read a ChatGPT-specific proposal.</p>
 <h2 id="what-else-should-a-chatgpt-proposal-clarify">What else should a ChatGPT proposal clarify?</h2>
 <p>A ChatGPT SEO proposal should clarify the limits of the evidence alongside the deliverables. You need to know what the report can demonstrate when answers vary, when the brand appears without a link and when no mention appears. The answers below concern accepting ChatGPT-scoped work.</p>
