@@ -60,10 +60,10 @@ main.re-page .re h3{
 main.re-page .re .re-h3-gap{font-size:20px;margin:40px 0 12px;max-width:36ch}
 main.re-page .re .re-ans{
   font-size:17px;line-height:1.72;color:rgba(243,241,237,.82);max-width:62ch;
-  padding-left:22px;border-left:1px solid var(--sgl);margin:0;
+  padding-left:22px;border-left:1px solid var(--sgl);margin:0;text-wrap:pretty;
 }
 main.re-page .re .re-sub{
-  font-size:15px;line-height:1.65;color:var(--mut);max-width:68ch;margin:20px 0 0 22px;
+  font-size:15px;line-height:1.65;color:var(--mut);max-width:68ch;margin:20px 0 0 22px;text-wrap:pretty;
 }
 main.re-page .re .re-with-side .re-ans,
 main.re-page .re .re-with-side .re-sub{max-width:62ch}
@@ -498,16 +498,13 @@ main.re-page .re .re-final{padding-top:100px}
   main.re-page .re .re-side-card{max-width:643px}
 }
 @media (min-width:1024px){
-  #re-why .re-side-card{align-self:center}
+  #re-why .re-side-card{align-self:start}
 }
 @media (max-width:767px){
   main.re-page .re .re-final{padding-top:56px}
   main.re-page .re .re-rel{flex-direction:column;align-items:flex-start;gap:0}
   main.re-page .re .re-rel a{min-height:44px;display:inline-flex;align-items:center}
-  main.re-page .re .re-lr{
-    display:grid;grid-template-columns:repeat(3,minmax(0,1fr));
-    justify-items:center;align-items:center;gap:16px 10px;margin-top:16px;
-  }
+  main.re-page .re .re-logos .re-lr{display:flex;flex-wrap:wrap;justify-content:center;column-gap:24px;row-gap:16px;max-width:330px;margin-inline:auto}
   main.re-page .re .re-lr li{justify-content:center}
   main.re-page .re .re-lr img{height:18px}
   main.re-page .re .re-lr li.is-word img{height:15px}
