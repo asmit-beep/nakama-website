@@ -85,7 +85,6 @@ main.re-page .re .re-side-card li{
 main.re-page .re .re-side-dot{
   width:6px;height:6px;margin-top:8px;border-radius:50%;flex:none;box-sizing:border-box;
 }
-main.re-page .re .re-side-dot.is-solid{background:var(--sg)}
 main.re-page .re .re-side-dot.is-ring{border:1px solid var(--mut2);background:transparent}
 @media (max-width:374px){
   main.re-page .re .re-side-card{padding:20px}

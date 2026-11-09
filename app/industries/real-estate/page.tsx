@@ -253,7 +253,7 @@ export default function RealEstateIndustry() {
        <p className="re-side-lab" id="re-def-covers">Covers</p>
        <ul aria-labelledby="re-def-covers" role="list">
         {['Entity mapping', 'Public license sources', 'Service areas', 'Dated listing sources', 'Portal profile ownership', 'Repeat prompt runs'].map(item => (
-         <li key={item}><span className="re-side-dot is-solid" aria-hidden="true" />{item}</li>
+         <li key={item}><span className="re-side-dot is-ring" aria-hidden="true" />{item}</li>
         ))}
        </ul>
        <p className="re-side-lab" id="re-def-out">Does not cover</p>
