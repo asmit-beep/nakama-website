@@ -1,19 +1,20 @@
 import type {Article} from './articles';
 
 /**
- * Preview for Yash, requested via Totonoe on 8 November 2026.
- * PUBLISH TIME is the article date in the same ISO 8601 +05:30 form sibling notes use.
+ * PUBLISH TIME for this article. ISO 8601 with +05:30.
  * It feeds datePublished and dateModified. The visible freshness line stays
  * "Updated 8 November 2026".
  *
- * PREVIEW stays true. That flag keeps robots noindex,follow and omits this note
- * from the sitemap, llms.txt, llms-full.txt, RSS, the resources index and the author index.
- * Do not set PREVIEW to false here. A production ship is a separate authorization.
+ * Yash GO: PREVIEW is false.
+ * That one flag flips robots to index,follow and adds this note to the sitemap,
+ * llms.txt, llms-full.txt, RSS, the resources index and the author index.
+ * Live journal notes are not separate corePages rows. They enter the sitemap
+ * and both llms files through feedArticles.
  */
 export const CHATGPT_SEO_AGENCY_PUBLISHED_AT = '2026-11-08T09:00:00+05:30';
 const PUBLISHED_AT = CHATGPT_SEO_AGENCY_PUBLISHED_AT;
 const MODIFIED_AT = PUBLISHED_AT;
-const PREVIEW = true;
+const PREVIEW = false;
 
 const dayOf = (iso: string) => iso.slice(0, 10);
 
@@ -308,7 +309,7 @@ export const chatgptSeoAgencyArticle: Article = {
  date: dayOf(MODIFIED_AT),
  publishedAt: PUBLISHED_AT,
  authorName: 'Snehil Srivastava',
- /** Preview only. false would index this note and list it. Leave true. */
+ /** Yash GO: PREVIEW false => index,follow plus sitemap, llms.txt, llms-full.txt, RSS and the author index. */
  noindex: PREVIEW,
  /** Keep reading stays on the AEO hiring guide. A noindex preview can still show that one card. */
  nextSlug: 'how-to-hire-an-aeo-agency',
