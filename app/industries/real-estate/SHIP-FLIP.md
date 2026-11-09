@@ -87,9 +87,17 @@ CollectionPage ItemList becomes `numberOfItems: 3`, in this order:
 
 Hub Title and H1 stay free of hire terms. Do not put "real estate AEO agency" in the hub Title, H1, or H2s.
 
-Hub FAQ "Which industries does Nakama Growth work with today?": the rewritten opening is still PENDING.
+Hub FAQ "Which industries does Nakama Growth work with today?" Pending Totonoe check.
 
-TODO (Hibiku): PENDING. The rewritten opening of that answer is not supplied. Leave this placeholder. Invent no copy.
+Current full answer, from `app/industries/page.tsx` (the FAQ `text`, which is also the FAQPage schema answer, and the visible words):
+
+> Healthcare and ecommerce each have their own page. Healthcare covers clinics, hospitals, healthtech and wellness brands. Ecommerce covers DTC, Shopify and online store brands. SaaS, tech and AI companies work through our GEO and AEO services, which cover how those buyers ask and which sources engines cite. Other categories can still start with a prompt and source check before any commitment.
+
+Resulting full answer. The opening is replaced verbatim, and "Real estate covers residential brokerages and agent teams." is inserted verbatim right after the ecommerce sentence. Neither added sentence has an em dash.
+
+> Healthcare, ecommerce and real estate each have their own page. Healthcare covers clinics, hospitals, healthtech and wellness brands. Ecommerce covers DTC, Shopify and online store brands. Real estate covers residential brokerages and agent teams. SaaS, tech and AI companies work through our GEO and AEO services, which cover how those buyers ask and which sources engines cite. Other categories can still start with a prompt and source check before any commitment.
+
+The FAQPage schema answer must be updated to match the visible answer word for word. In `app/industries/page.tsx`, set the FAQ `text` for this question to the resulting answer, and make `faqAnswer` render those same words (links may stay on the existing link labels). Do not let the schema text and the visible text diverge.
 
 ## 4. Header
 
