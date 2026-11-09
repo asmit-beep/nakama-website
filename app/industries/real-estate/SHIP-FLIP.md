@@ -32,10 +32,23 @@ Locked sub-line, verbatim. Add it beside Healthcare and Ecommerce. Href `/indust
 ['Real estate','/industries/real-estate','AEO for residential brokerages and agent teams']
 ```
 
-4. Hub card icon: PENDING from Gohan. Invent no mark. Drop it into `app/industries/page.tsx`, where the live cards set theirs:
-   - Healthcare uses `Heart()` (the inline SVG in that file) inside the first `ih-door` article, above the "Industry" label and the Healthcare h2.
-   - Ecommerce uses `Bag()` (the inline SVG in that file) inside the second `ih-door` article, above the "Industry" label and the Ecommerce h2.
-   A real estate card would take a third component in that same spot, on a new door after Ecommerce.
+4. Hub card icon from Gohan. Paste this in `app/industries/page.tsx` the same way `Heart()` and `Bag()` are inlined: a `span` with `className="ih-heart"` and `aria-hidden="true"`, then the SVG with `strokeWidth` and `vectorEffect`. Call it `<Key />` inside the real estate door, above the "Industry" label, where `<Heart />` and `<Bag />` sit on their cards.
+
+```tsx
+function Key() {
+ return (
+  <span className="ih-heart" aria-hidden="true">
+   <svg viewBox="0 0 48 48" fill="none" stroke="#f3f1ed" strokeWidth="1.5" vectorEffect="non-scaling-stroke">
+    <g transform="rotate(-45 24 24)">
+     <path d="M23 24a9 9 0 1 1-18 0 9 9 0 0 1 18 0z" />
+     <path d="M16.5 24a2.5 2.5 0 1 1-5 0 2.5 2.5 0 0 1 5 0z" />
+     <path d="M23 24h20M37 24v6M42 24v5" />
+    </g>
+   </svg>
+  </span>
+ );
+}
+```
 
 5. Keep omitting the Sample badges. Do not render the hero, five-profile, or prompt-tracker Sample pills on the live page.
 
@@ -67,7 +80,7 @@ The `/industries` summary on line 26 is a separate string from the real-estate p
 
 ## 3. Hub card
 
-On `/industries`, after the Ecommerce door, add a third live card. No Coming soon. The icon is checklist item 4 and is still PENDING from Gohan.
+On `/industries`, after the Ecommerce door, add a third live card. No Coming soon. The icon is the `Key()` JSX in checklist item 4.
 
 Hub card blurb, verbatim from HIBIKU-RE-COPY-V2 V2.1 (Hub card for /industries):
 
