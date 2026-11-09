@@ -633,3 +633,4 @@ main.ih-page .ip-svc-btn-line:focus-visible{outline:2px solid #ffd2ad;outline-of
  .ih-why-td[data-col]::before{content:attr(data-col);display:block;font:600 11px/1 var(--ih-font);letter-spacing:.12em;text-transform:uppercase;color:#b9b7c0;margin-bottom:6px}
  .ih-why-lab{margin-bottom:4px}
 }
+@media (min-width:701px){.ih-hall{row-gap:104px}}
