@@ -245,10 +245,24 @@ export default function RealEstateIndustry() {
     </section>
 
     <section className="re-sec" id="re-def" aria-labelledby="re-def-h">
-     <div className="re-w">
+     <div className="re-w re-with-side">
       <Label>{LBL_DEF}</Label>
       <h2 id="re-def-h">{H2_DEF}</h2>
       <p className="re-ans">{DAL_DEF}</p>
+      <div className="re-side-card">
+       <p className="re-side-lab" id="re-def-covers">Covers</p>
+       <ul aria-labelledby="re-def-covers" role="list">
+        {['Entity mapping', 'Public license sources', 'Service areas', 'Dated listing sources', 'Portal profile ownership', 'Repeat prompt runs'].map(item => (
+         <li key={item}><span className="re-side-dot is-solid" aria-hidden="true" />{item}</li>
+        ))}
+       </ul>
+       <p className="re-side-lab" id="re-def-out">Does not cover</p>
+       <ul aria-labelledby="re-def-out" role="list">
+        {['IDX builds', 'Website rebuilds', 'Lead buying'].map(item => (
+         <li key={item}><span className="re-side-dot is-ring" aria-hidden="true" />{item}</li>
+        ))}
+       </ul>
+      </div>
       <p className="re-sub">{DEF_ENTITY}</p>
       <h3 className="re-h3-gap">{H3_DIFF}</h3>
       <p className="re-ans">{DAL_DIFF}</p>
@@ -256,10 +270,18 @@ export default function RealEstateIndustry() {
     </section>
 
     <section className="re-sec re-alt" id="re-why" aria-labelledby="re-why-h">
-     <div className="re-w">
+     <div className="re-w re-with-side">
       <Label>{LBL_WHY}</Label>
       <h2 id="re-why-h">{H2_WHY}</h2>
       <p className="re-ans">{DAL_WHY}</p>
+      <div className="re-side-card">
+       <p className="re-side-lab" id="re-why-wrong">What a wrong answer looks like</p>
+       <ul aria-labelledby="re-why-wrong" role="list">
+        {['An agent tied to a brokerage they left', 'A sold listing quoted as active', 'Your office left off a shortlist'].map(item => (
+         <li key={item}><span className="re-side-dot is-ring" aria-hidden="true" />{item}</li>
+        ))}
+       </ul>
+      </div>
       <p className="re-sub">{EVIDENCE_1}</p>
       <p className="re-sub">{EVIDENCE_2}</p>
       <p className="re-sub">{PORTAL_LINE}</p>
