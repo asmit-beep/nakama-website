@@ -310,6 +310,8 @@ export const chatgptSeoAgencyArticle: Article = {
  authorName: 'Snehil Srivastava',
  /** Preview only. false would index this note and list it. Leave true. */
  noindex: PREVIEW,
+ /** Keep reading stays on the AEO hiring guide. A noindex preview can still show that one card. */
+ nextSlug: 'how-to-hire-an-aeo-agency',
  coverImage: {src: `/journal/${SLUG}/chatgpt-seo-agency-cover.webp`, width: 1920, height: 1080, alt: COVER_ALT},
  ogImage: {
   url: OG_URL,
