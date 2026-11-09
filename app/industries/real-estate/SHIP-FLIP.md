@@ -39,11 +39,9 @@ function Key() {
  return (
   <span className="ih-heart" aria-hidden="true">
    <svg viewBox="0 0 48 48" fill="none" stroke="#f3f1ed" strokeWidth="1.5" vectorEffect="non-scaling-stroke">
-    <g transform="rotate(-45 24 24)">
-     <path d="M23 24a9 9 0 1 1-18 0 9 9 0 0 1 18 0z" />
-     <path d="M16.5 24a2.5 2.5 0 1 1-5 0 2.5 2.5 0 0 1 5 0z" />
-     <path d="M23 24h20M37 24v6M42 24v5" />
-    </g>
+    <path d="M27.50 29.75a10.22 10.22 0 1 1-20.45 0 10.22 10.22 0 0 1 20.45 0z" />
+    <path d="M20.12 29.75a2.84 2.84 0 1 1-5.68 0 2.84 2.84 0 0 1 5.68 0z" />
+    <path d="M24.51 22.52L40.58 6.45M35.76 11.27L40.58 16.09M39.77 7.26L43.79 11.27" />
    </svg>
   </span>
  );
@@ -134,7 +132,7 @@ This is the page meta, not the `lib/feed.ts` line 26 summary. That summary stays
 
 ## Hub industry-list audit
 
-Checked the hub page, the shell it renders (header, mobile menu, footer), its JSON-LD, and the llms files that repeat the hub's industry lines. Real estate entries below are either already specified in this note, or marked DRAFT, pending Hibiku lock. No em dashes in the drafts.
+Checked the hub page, the shell it renders (header, mobile menu, footer), its JSON-LD, and the llms files that repeat the hub's industry lines. The comparison table and the llms Industries fact below are LOCKED (Totonoe CLEAR). No em dashes in those lines.
 
 Already specified above, not a new draft:
 
@@ -147,27 +145,26 @@ Already specified above, not a new draft:
 - Root Organization `hasOfferCatalog` in `lib/seo.tsx`, rendered on the hub from the root layout. It lists services, not industries. No healthcare or ecommerce entry. No real estate entry.
 - FAQ "Why does GEO change by industry?", `app/industries/page.tsx` lines 25-26. It names a clinic and a software company. It does not list Healthcare and Ecommerce as entries. No real estate sentence.
 
-DRAFT, pending Hibiku lock:
+LOCKED (Totonoe CLEAR, Hibiku V2.1):
 
-1. Comparison table, `app/industries/page.tsx` lines 17-21 (`WHY_ROWS`) and the header row at lines 179-180. Columns today are Healthcare and SaaS, tech and AI. There is no ecommerce column. The draft adds a Real estate column in the same shape as Healthcare: one header, then one cell on each of Prompts, Sources, and Claim risk.
+1. Comparison table, re-checked on this branch: `app/industries/page.tsx` lines 17-21 (`WHY_ROWS`) and the header row at lines 179-180. Columns today are Healthcare, then SaaS, tech and AI. There is no Ecommerce column. At ship, column order is Healthcare, Ecommerce, Real estate, then SaaS, tech and AI. Add both new columns. If an Ecommerce column is already present, replace its three cells word for word. Leave the existing Healthcare and SaaS, tech and AI columns unchanged.
+
+Real estate
+
+- Prompts: "Buyers and sellers check an agent, team or brokerage before they call."
+- Sources: "Office and agent pages, portal profiles, public license lookups, listing pages and local directories."
+- Claim risk: "High. Agent, listing and brokerage claims need broker of record approval before they publish."
+
+Ecommerce
+
+- Prompts: "Shoppers ask which product to buy, often within a budget."
+- Sources: "Product and policy pages, product feeds, review publishers, Reddit and YouTube."
+- Claim risk: "Moderate. Product claims need a source and your team's approval before they go live."
+
+2. llms.txt Industries fact, `lib/llms.ts` line 21. The same array is printed in `llms.txt` and `llms-full.txt`. Replace that string exactly:
 
 ```ts
-header: 'Real estate'
-Prompts: 'Buyers and sellers check a brokerage or agent before they call.'
-Sources: 'Office pages, portal profiles, public license lookups and listing pages.'
-'Claim risk': 'High. Agent, listing and brokerage claims need the broker of record\'s approval before they publish.'
-```
-
-2. llms.txt Industries fact, `lib/llms.ts` line 21. The same array is printed in `llms.txt` and `llms-full.txt`. Current text does not name healthcare or ecommerce:
-
-```ts
-'Industries: B2B SaaS and software, plus local services, education, travel and consumer brands.',
-```
-
-Proposed replacement, same single bullet, with real estate added to the list:
-
-```ts
-'Industries: B2B SaaS and software, plus real estate, local services, education, travel and consumer brands.',
+'Industries: healthcare, ecommerce and real estate, each with its own page, plus B2B SaaS and software, local services, education, travel and consumer brands.',
 ```
 
 ## 4. Header
