@@ -20,6 +20,8 @@ const nextConfig: NextConfig = {
       {source: "/.well-known/llms.txt", destination: "/llms.txt", permanent: true},
       {source: "/industries/e-commerce", destination: "https://www.nakama.in/industries/ecommerce", permanent: true},
       {source: "/industries/ecommerce-brands", destination: "https://www.nakama.in/industries/ecommerce", permanent: true},
+      {source: "/industries/realestate", destination: "/industries/real-estate", permanent: true},
+      {source: "/industries/real-estate-brokerages", destination: "/industries/real-estate", permanent: true},
       {source: "/:path*", has: [{type: "host", value: "nakama-website.vercel.app"}], destination: "https://www.nakama.in/:path*", permanent: true},
       {source: "/journal", destination: "/resources#articles", permanent: false},
       {source: "/what-we-do", destination: "/services", permanent: false},
