@@ -14,7 +14,11 @@ Do this only on a later ship GO. Do not merge this note as the ship.
 {path:'/industries',title:'Industries We Serve: GEO & AI Visibility by Sector | Nakama',summary:'Industry pages for GEO and AI visibility at Nakama Growth. Healthcare and ecommerce each have a live page; SaaS, tech and AI run through our services.',priority:.8,freq:'monthly',src:['app/industries']},
 ```
 
-TODO (Hibiku): PENDING. The replacement summary is not supplied. Leave this placeholder. Invent no copy.
+Locked summary, verbatim. Replace only the `summary` string. No em dash in this line.
+
+```ts
+summary:'Healthcare, ecommerce and real estate each have a live page.'
+```
 
 3. Add the real estate `industryLinks` sub-line in `app/site.tsx`. Current entries, for context:
 
@@ -22,7 +26,11 @@ TODO (Hibiku): PENDING. The replacement summary is not supplied. Leave this plac
 export const industryLinks=[['All industries','/industries','Every sector we serve'],['Healthcare','/industries/healthcare','GEO for clinics, hospitals and health brands'],['Ecommerce','/industries/ecommerce','GEO for DTC, Shopify and online store brands']] as const;
 ```
 
-TODO (Hibiku): PENDING. The real estate sub-line is not supplied. Leave this placeholder. Invent no copy. The href, when the line exists, is `/industries/real-estate`, beside Healthcare and Ecommerce.
+Locked sub-line, verbatim. Add it beside Healthcare and Ecommerce. Href `/industries/real-estate`. No em dash in this line.
+
+```ts
+['Real estate','/industries/real-estate','AEO for residential brokerages and agent teams']
+```
 
 4. Hub card icon: PENDING from Gohan. Invent no mark. Drop it into `app/industries/page.tsx`, where the live cards set theirs:
    - Healthcare uses `Heart()` (the inline SVG in that file) inside the first `ih-door` article, above the "Industry" label and the Healthcare h2.
@@ -55,15 +63,19 @@ In `lib/feed.ts`, import `META as RE_META, TITLE as RE_TITLE` from the real-esta
 
 `llms-full.txt` does not list industry URLs today. Leave it.
 
-The `/industries` summary on line 26 is a separate string. Rewrite it only with Hibiku's text. See checklist item 2. Until that text exists, do not change the line.
+The `/industries` summary on line 26 is a separate string from the real-estate page meta. Replace it with the locked summary in checklist item 2: `Healthcare, ecommerce and real estate each have a live page.` Leave the title on that line as it is.
 
 ## 3. Hub card
 
-On `/industries`, after the Ecommerce door, add a live card. No Coming soon. The icon is checklist item 4 and is still PENDING from Gohan.
+On `/industries`, after the Ecommerce door, add a third live card. No Coming soon. The icon is checklist item 4 and is still PENDING from Gohan.
 
+Hub card blurb, verbatim from HIBIKU-RE-COPY-V2 V2.1 (Hub card for /industries):
+
+> People check a brokerage in AI answers before they call, so agent, team and office facts have to match everywhere.
+
+- Position: 03
 - Eyebrow: Industry
 - Title: Real estate
-- Blurb: People check a brokerage in AI answers before they call, so agent, team and office facts have to match everywhere.
 - Link label: View real estate →
 - Link: /industries/real-estate
 
@@ -73,11 +85,15 @@ CollectionPage ItemList becomes `numberOfItems: 3`, in this order:
 2. Ecommerce → `/industries/ecommerce`
 3. Real estate → `/industries/real-estate`
 
-Hub Title and H1 stay free of hire terms. Hub meta and the FAQ answer "Which industries does Nakama Growth work with today?" still need a rewrite from the hub owner. Hibiku V2.1 did not draft that rewrite, so it is not invented here. The live sentence still says healthcare and ecommerce each have a page. Replace that at ship so real estate is included, keep the meta between 150 and 160 characters, and do not put "real estate AEO agency" in the hub Title, H1, or H2s.
+Hub Title and H1 stay free of hire terms. Do not put "real estate AEO agency" in the hub Title, H1, or H2s.
+
+Hub FAQ "Which industries does Nakama Growth work with today?": the rewritten opening is still PENDING.
+
+TODO (Hibiku): PENDING. The rewritten opening of that answer is not supplied. Leave this placeholder. Invent no copy.
 
 ## 4. Header
 
-Add Real estate to `industryLinks` in `app/site.tsx`, beside Healthcare and Ecommerce, pointing at `/industries/real-estate`. The third-column sub-line is checklist item 3 and is still PENDING from Hibiku. Do not invent it. Footer Company stays the Industries hub only. No Real estate footer child.
+Add Real estate to `industryLinks` in `app/site.tsx`, beside Healthcare and Ecommerce, pointing at `/industries/real-estate`. The sub-line is the locked line in checklist item 3: `AEO for residential brokerages and agent teams`. Footer Company stays the Industries hub only. No Real estate footer child.
 
 ## 5. Already on this branch
 
