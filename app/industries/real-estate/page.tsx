@@ -107,6 +107,76 @@ function Key() {
  );
 }
 
+function MapMini({step}: {step: number}) {
+ if (step === 1) {
+  return (
+   <ul className="re-tree" aria-hidden="true">
+    <li>Team
+     <ul>
+      <li className="re-tr"><span>Agent</span><span className="re-tg re-tg-ok">License lookup</span></li>
+      <li className="re-tr"><span>Agent</span><span className="re-tg re-tg-fl">Left brokerage</span></li>
+     </ul>
+    </li>
+   </ul>
+  );
+ }
+ if (step === 2) {
+  return (
+   <ul className="re-tree" aria-hidden="true">
+    <li>Office
+     <ul>
+      <li>Service area</li>
+      <li>Team
+       <ul>
+        <li>Service area</li>
+       </ul>
+      </li>
+     </ul>
+    </li>
+   </ul>
+  );
+ }
+ if (step === 3) {
+  return (
+   <ul className="re-tree" aria-hidden="true">
+    <li>Listing page
+     <ul>
+      <li>Status date</li>
+      <li>Listing firm named</li>
+     </ul>
+    </li>
+   </ul>
+  );
+ }
+ if (step === 4) {
+  return (
+   <ul className="re-tree" aria-hidden="true">
+    <li>Agent
+     <ul>
+      <li className="re-tr"><span>Your site</span><span className="re-tg">Owner</span></li>
+      <li className="re-tr"><span>Portal profile</span><span className="re-tg">Owner</span></li>
+      <li className="re-tr"><span>Google Business Profile</span><span className="re-tg">Owner</span></li>
+     </ul>
+    </li>
+   </ul>
+  );
+ }
+ if (step === 5) {
+  return (
+   <ul className="re-tree" aria-hidden="true">
+    <li>AI answer
+     <ul>
+      <li>Mentioned</li>
+      <li>Cited</li>
+      <li>Recommended</li>
+     </ul>
+    </li>
+   </ul>
+  );
+ }
+ return null;
+}
+
 function RosterTree() {
  return (
   <ul className="re-tree" role="list">
@@ -273,7 +343,7 @@ export default function RealEstateIndustry() {
          <div className="re-ring" aria-hidden="true">{n}</div>
          <h3>{title}</h3>
          <p>{line}</p>
-         {i === 0 ? <RosterTree /> : null}
+         {i === 0 ? <RosterTree /> : <MapMini step={i} />}
         </li>
        ))}
       </ol>
@@ -404,15 +474,15 @@ export default function RealEstateIndustry() {
      </div>
     </section>
 
-    <section className="re-logos" id="re-logos" aria-labelledby="re-proof-label">
+    <section className="re-logos" id="re-logos">
      <div className="re-w">
       <p className="re-cap" id="re-proof-label">{PROOF_LABEL}</p>
       <ul className="re-lr" role="list" aria-labelledby="re-proof-label">
        {PROOF_LOGOS.map(logo => (
         <li key={logo.name} className={logo.word ? 'is-word' : undefined}>
          {/* eslint-disable-next-line @next/next/no-img-element -- existing client marks, fixed size */}
-         <img src={logo.src} alt="" width={logo.w} height={logo.h} loading="lazy" decoding="async" />
-         <span className={logo.word ? 're-vh' : undefined}>{logo.name}</span>
+         <img src={logo.src} alt={logo.word ? logo.name : ''} width={logo.w} height={logo.h} loading="lazy" decoding="async" />
+         {logo.word ? null : <span>{logo.name}</span>}
         </li>
        ))}
       </ul>
