@@ -381,7 +381,7 @@ main.re-page .re .re-vh{
   clip:rect(0 0 0 0);clip-path:inset(50%);white-space:nowrap;border:0;
 }
 
-main.re-page .re .re-final{border-top:0;padding-top:100px}
+main.re-page .re .re-final{border-top:0}
 main.re-page .re .re-fin{
   display:grid;grid-template-columns:1.3fr 1fr;gap:56px;align-items:center;
   background:var(--s2);border:1px solid var(--hl2);border-radius:26px;padding:64px;
@@ -395,6 +395,7 @@ main.re-page .re .re-rel li{margin:0;padding:0}
 main.re-page .re .re-rel a{
   font-size:15px;color:var(--cr);padding:0;border:0;border-radius:0;background:none;
   text-decoration:underline;text-underline-offset:4px;text-decoration-color:rgba(168,153,111,.7);
+  min-height:44px;display:inline-flex;align-items:center;
 }
 
 @media (max-width:1100px){
@@ -449,8 +450,6 @@ main.re-page .re .re-rel a{
   main.re-page .re .re-eng{grid-column:1;grid-row:2;font-size:14px;display:block}
   main.re-page .re .re-tag{grid-row:1 / 3;grid-column:2;align-self:center}
   main.re-page .re .re-wh{flex-wrap:wrap;gap:8px}
-  main.re-page .re .re-logos{padding:56px 0 20px}
-  main.re-page .re .re-final{padding-top:12px}
   main.re-page .re .re-stbl table,
   main.re-page .re .re-stbl tbody,
   main.re-page .re .re-stbl tr{display:block;width:100%}
@@ -492,7 +491,6 @@ main.re-page .re .re-rel a{
 }
 
 main.re-page .re .re-side-dot.is-ring{border-color:rgba(243,241,237,.45)}
-main.re-page .re .re-logos{padding-top:48px;padding-bottom:0;border-top:0}
 main.re-page .re .re-final{padding-top:100px}
 @media (min-width:768px) and (max-width:1023px){
   main.re-page .re .re-side-card{max-width:643px}
@@ -503,7 +501,6 @@ main.re-page .re .re-final{padding-top:100px}
 @media (max-width:767px){
   main.re-page .re .re-final{padding-top:56px}
   main.re-page .re .re-rel{flex-direction:column;align-items:flex-start;gap:0}
-  main.re-page .re .re-rel a{min-height:44px;display:inline-flex;align-items:center}
   main.re-page .re .re-logos .re-lr{display:flex;flex-wrap:wrap;justify-content:center;column-gap:24px;row-gap:16px;max-width:330px;margin-inline:auto}
   main.re-page .re .re-lr li{justify-content:center}
   main.re-page .re .re-lr img{height:18px}
