@@ -5,7 +5,7 @@
  */
 
 export const SLUG = '/services/youtube';
-export const TITLE = 'YouTube Marketing Agency for SaaS, Tech & AI - Nakama Growth';
+export const TITLE = 'YouTube Marketing Agency for SaaS, Tech & AI | Nakama Growth';
 export const META = 'Nakama Growth runs YouTube end to end for SaaS, tech and AI brands: script, shoot, edit, publish. Long-form, chaptered videos built to be easy to cite.';
 export const EYEBROW = 'YouTube marketing agency';
 export const H1 = 'YouTube, done end to end, for SaaS, tech and AI teams.';

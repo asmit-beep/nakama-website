@@ -7,7 +7,7 @@ import {BookCallButton} from '@/components/booking/BookCall';
 import {SvcIcon} from './icons';
 import './services.css';
 
-export const metadata:Metadata=pageMeta('/services',{title:'GEO, AEO & AI Visibility Services - Nakama Growth',description:'GEO, AEO, an AI visibility audit, Reddit and community, content, YouTube and digital PR, run by one team to get you named in AI answers.'});
+export const metadata:Metadata=pageMeta('/services',{title:'GEO, AEO & AI Visibility Services | Nakama Growth',description:'GEO, AEO, an AI visibility audit, Reddit and community, content, YouTube and digital PR, run by one team to get you named in AI answers.'});
 
 const services=[
  {id:'geo',href:'/services/geo',eyebrow:'Generative engines',name:'GEO services',lead:'Build a brand AI understands.',who:'For SaaS, tech & AI teams',body:'We audit where AI names your competitors, then build the product context and third-party sources ChatGPT, Perplexity, Gemini and Google AI Overviews cite.',items:['Buyer prompt map and competitor audits','Product and category context AI can reuse','Source strategy across communities, editorial and review sites']},

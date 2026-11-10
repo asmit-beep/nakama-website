@@ -6,7 +6,7 @@ import {BookCallButton} from '@/components/booking/BookCall';
 import {ModIcon, type ModIconName} from './icons';
 import './content.css';
 
-const TITLE = 'Answer-First Content Writing for SaaS, Tech & AI - Nakama Growth';
+const TITLE = 'Answer-First Content Writing for SaaS, Tech & AI | Nakama Growth';
 const DESCRIPTION = 'Answer-first content for AI search: listicles and comparisons for SaaS, tech & AI. AEO content writing you own and publish.';
 const CANONICAL = 'https://www.nakama.in/services/content';
 

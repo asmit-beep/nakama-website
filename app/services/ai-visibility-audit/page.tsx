@@ -92,7 +92,7 @@ export default function AiVisibilityAuditPage() {
          <div className="rep-h"><b>Citation source map</b></div>
          <i /><i /><i /><i />
         </div>
-        <figure className="rep rep-front" aria-label="Redacted report page, example data">
+        <figure className="rep rep-front" aria-label="Example AI visibility report page, brands hidden">
          <div className="rep-h">
           <b>
            {/* eslint-disable-next-line @next/next/no-img-element -- brand mark, fixed height */}

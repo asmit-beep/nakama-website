@@ -7,7 +7,7 @@ import {BookCallButton} from '@/components/booking/BookCall';
 import {ModIcon, type ModIconName} from './icons';
 import './reddit.css';
 
-const TITLE = 'Reddit Marketing Agency for SaaS, Tech & AI - Nakama Growth';
+const TITLE = 'Reddit Marketing Agency for SaaS, Tech & AI | Nakama Growth';
 const DESCRIPTION = 'Reddit marketing agency for SaaS, tech and AI. Nakama Growth maps the subreddits your buyers use and joins their threads with helpful, rules-fit answers.';
 
 export const metadata: Metadata = pageMeta('/services/reddit', {title: TITLE, description: DESCRIPTION});

@@ -7,7 +7,7 @@
 export const PREVIEW = false;
 
 export const SLUG = '/services/ai-visibility-audit';
-export const TITLE = 'AI Visibility Audit for SaaS - Nakama Growth';
+export const TITLE = 'AI Visibility Audit for SaaS | Nakama Growth';
 export const META = 'An AI visibility audit for SaaS. Nakama Growth runs your buyer prompts across AI engines and shows where you are mentioned, recommended, cited, or missing.';
 export const KW_PRIMARY = 'ai visibility audit';
 export const ROLE = 'AI Visibility Audit';
@@ -58,7 +58,7 @@ export const METRICS = [
 ] as const;
 
 export const REPORT_H2 = 'What the report looks like';
-export const REPORT_TAG = 'Redacted example';
+export const REPORT_TAG = 'Brands hidden';
 export const REPORT_EXAMPLE = 'Example data · 1 to 3 prompts × 2 engines × 3 runs';
 export const REPORT_RUNS = [
  ['Engine A', '14 to 16 Oct', '2', '1', '1'],
