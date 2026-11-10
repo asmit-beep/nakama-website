@@ -24,7 +24,9 @@ const FRESHNESS = `Updated ${PUBLISHED_DAY}`;
 
 const SLUG = 'geo-agency-vs-in-house';
 const TITLE = 'In-House AEO Team vs Agency vs Tools: Which to Pick?';
-const H1 = 'Should you build an in-house AEO or GEO team, hire an agency or use tools?';
+/** Visible H1. U+2011 keeps "In-house" on one line. Schema uses the ASCII hyphen below. */
+const H1 = 'In\u2011house AEO team, agency or tools: which should you pick?';
+const ALT_HEADLINE = 'In-house AEO team, agency or tools: which should you pick?';
 const DESCRIPTION = 'In-house AEO or GEO team, agency or tools? Compare off-site reach, speed, skills and measurement, then use a five-question test to pick your model.';
 const CANONICAL = `https://www.nakama.in/journal/${SLUG}`;
 const COVER_ALT = 'Nakama Growth journal cover: in-house AEO or GEO team vs agency vs tools, a guide to choosing the right model.';
@@ -78,7 +80,7 @@ const articleLd = {
    "@type": "Article",
    "@id": `${CANONICAL}#article`,
    "headline": TITLE,
-   "alternativeHeadline": H1,
+   "alternativeHeadline": ALT_HEADLINE,
    "description": DESCRIPTION,
    "image": [
     HERO_URL,

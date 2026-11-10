@@ -12,6 +12,12 @@
   margin-top: 18px;
 }
 
+/* Beat the shared 18ch H1 cap so this headline can sit on two lines. */
+:global(.ip-article-page .article-rich) .page :global(h1) {
+  text-wrap: balance;
+  max-width: none;
+}
+
 /* Desktop: TOC stays open and is not sticky. Narrow: native details starts closed. */
 @media (min-width: 768px) {
   .page :global(details.toc) {
