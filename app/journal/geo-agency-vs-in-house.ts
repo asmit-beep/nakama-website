@@ -468,6 +468,7 @@ const decode = (s: string) => s
  .replace(/&amp;/g, '&')
  .replace(/&lt;/g, '<')
  .replace(/&gt;/g, '>')
+ .replace(/\u2011/g, '-')
  .replace(/\s+/g, ' ')
  .trim();
 
