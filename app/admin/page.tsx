@@ -4,7 +4,7 @@ import {AdminLogin} from './AdminLogin';
 import {AdminDashboard} from './AdminDashboard';
 import './admin.css';
 
-export const metadata:Metadata={title:'Admin — Nakama',robots:{index:false,follow:false}};
+export const metadata:Metadata={title:{absolute:'Admin | Nakama'},robots:{index:false,follow:false}};
 export const dynamic='force-dynamic';
 
 export default async function AdminPage(){

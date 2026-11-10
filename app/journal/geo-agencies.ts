@@ -5,6 +5,24 @@ export const geoAgenciesJsonLd = {
  "@context": "https://schema.org",
  "@graph": [
   {
+   "@type": "Person",
+   "@id": "https://www.nakama.in/authors/yash-kumar#person",
+   "name": "Yash Kumar",
+   "jobTitle": "Co-founder and CEO",
+   "image": {
+    "@type": "ImageObject",
+    "url": "https://www.nakama.in/journal/best-generative-engine-optimization-agencies/yash-kumar-nakama-ceo-800.webp",
+    "contentUrl": "https://www.nakama.in/journal/best-generative-engine-optimization-agencies/yash-kumar-nakama-ceo-800.webp",
+    "width": 800,
+    "height": 800,
+    "caption": "Yash Kumar, Co-founder and CEO of Nakama Growth"
+   },
+   "worksFor": {
+    "@id": "https://www.nakama.in/#organization"
+   },
+   "url": "https://www.nakama.in/authors/yash-kumar"
+  },
+  {
    "@type": "Article",
    "@id": "https://www.nakama.in/journal/best-generative-engine-optimization-agencies#article",
    "headline": "Best Generative Engine Optimization (GEO) Agencies in 2026, Compared",
@@ -20,25 +38,7 @@ export const geoAgenciesJsonLd = {
     "https://www.nakama.in/journal/best-generative-engine-optimization-agencies/best-generative-engine-optimization-agencies-cover.webp"
    ],
    "author": {
-    "@type": "Person",
-    "@id": "https://www.nakama.in/authors/yash-kumar#person",
-    "name": "Yash Kumar",
-    "jobTitle": "Co-founder and CEO",
-    "image": {
-     "@type": "ImageObject",
-     "url": "https://www.nakama.in/journal/best-generative-engine-optimization-agencies/yash-kumar-nakama-ceo-800.webp",
-     "contentUrl": "https://www.nakama.in/journal/best-generative-engine-optimization-agencies/yash-kumar-nakama-ceo-800.webp",
-     "width": 800,
-     "height": 800,
-     "caption": "Yash Kumar, Co-founder and CEO of Nakama Growth"
-    },
-    "worksFor": {
-     "@type": "Organization",
-     "name": "Nakama Growth",
-     "url": "https://www.nakama.in"
-    },
-    "url": "https://www.nakama.in/authors/yash-kumar",
-    "description": "Co-founder and CEO of Nakama Growth, which runs generative and answer engine optimization for B2B and SaaS brands."
+    "@id": "https://www.nakama.in/authors/yash-kumar#person"
    },
    "publisher": {
     "@type": "Organization",

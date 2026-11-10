@@ -38,7 +38,7 @@ export default function Pricing(){
     tone="ember"
     eyebrow="Pricing"
     title="One plan. Everything included."
-    accent="No tiers or add‑ons."
+    accent="No tiers or add-ons."
     lead="Every partner gets the full Nakama team from day one: strategy, content, community, video, PR and reporting. No upgrades to unlock, no surprises."
    >
     <LinkBtn href="#quote">Get your quote</LinkBtn>

@@ -90,7 +90,6 @@ const articleLd = {
    "name": "Asmit Choudhary",
    "jobTitle": "AI & GEO Strategist",
    "url": "https://www.nakama.in/authors/asmit-choudhary",
-   "description": "Asmit Choudhary is an AI and GEO Strategist at Nakama Growth, based in India. He owns brand strategy end to end, shaping how a brand looks and sounds from the core and making every piece across AEO, GEO, Reddit and SEO clear, consistent and ready for AI answers from tools like ChatGPT, Perplexity and Google AI Overviews.",
    "image": {
     "@type": "ImageObject",
     "url": "https://www.nakama.in/authors/asmit-choudhary-nakama-ai-geo-800.webp",

@@ -8,7 +8,7 @@ import './industries.css';
 const PREVIEW = false;
 
 const SLUG = '/industries';
-const TITLE = 'Industries We Serve: GEO & AI Visibility by Sector | Nakama';
+const TITLE = 'Industries We Serve: GEO & AI Visibility by Sector | Nakama Growth';
 const META = 'Industry pages for GEO, AEO and AI visibility. Healthcare, ecommerce and real estate each have a live page; SaaS, tech and AI run through our services.';
 const LEAD = 'AI answers each industry differently. We build visibility around the sources and prompts that matter in yours.';
 const ENTITY = 'Nakama Growth helps brands get named, cited and recommended in ChatGPT, Perplexity, Gemini and Google AI Overviews, with industry pages where the rules change most.';

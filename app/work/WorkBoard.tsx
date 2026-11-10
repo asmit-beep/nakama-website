@@ -69,14 +69,13 @@ function Panel({c,i,active}:{c:Client;i:number;active:boolean}){
  </div>;
 }
 
-export function WorkBoard({initial=1}:{initial?:number}){
- const [active,setActive]=useState(initial);
+export function WorkBoard(){
+ const [active,setActive]=useState(1);
  const tabsRef=useRef<HTMLDivElement>(null);
  const [pill,setPill]=useState({x:0,w:0});
 
- // A new ?client= on a soft navigation resets the tab (state adjusted during render, not in an effect).
- const [shown,setShown]=useState(initial);
- if(shown!==initial){setShown(initial);setActive(initial);}
+ // ?client=X picks the tab after hydration so /work stays static; all five panels are already in the server HTML.
+ useEffect(()=>{const c=new URLSearchParams(location.search).get('client')?.trim().toLowerCase();const i=proofClients.findIndex(p=>p.name.toLowerCase()===c);if(i>=0)setActive(i);},[]);
  useEffect(()=>{
   const place=()=>{const el=tabsRef.current?.querySelectorAll<HTMLButtonElement>('button')[active];if(el)setPill({x:el.offsetLeft,w:el.offsetWidth});};
   place();window.addEventListener('resize',place);return()=>window.removeEventListener('resize',place);

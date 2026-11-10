@@ -60,7 +60,6 @@ const articleLd = {
    "worksFor": {
     "@id": "https://www.nakama.in/#organization"
    },
-   "description": "Yash Kumar is Co-founder and CEO of Nakama Growth, an AEO and GEO agency in India that helps B2B and SaaS brands get named when buyers ask AI tools what to choose. He leads Nakama's work on earning mentions on the sources those tools read.",
    "image": {
     "@type": "ImageObject",
     "url": "https://www.nakama.in/journal/best-aeo-agencies/yash-kumar-nakama-ceo-800.webp",

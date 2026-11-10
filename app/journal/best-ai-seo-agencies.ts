@@ -160,7 +160,6 @@ const articleLd = {
    "name": "Yash Kumar",
    "jobTitle": "Co-founder and CEO",
    "url": "https://www.nakama.in/authors/yash-kumar",
-   "description": "Yash Kumar is Co-founder and CEO of Nakama Growth, an AI visibility agency that helps SaaS, AI and software brands get named when buyers ask ChatGPT, Perplexity, Gemini and Google AI Overviews what to choose. He leads Nakama Growth's work on earning mentions on the sources those tools read.",
    "worksFor": {
     "@id": "https://www.nakama.in/#organization"
    }
