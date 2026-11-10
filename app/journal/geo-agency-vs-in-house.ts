@@ -12,7 +12,7 @@ import styles from './geo-agency-vs-in-house.module.css';
  */
 const PUBLISHED_AT = '2026-11-10T09:00:00+05:30';
 const MODIFIED_AT = PUBLISHED_AT;
-const PREVIEW = true;
+const PREVIEW = false;
 
 const dayOf = (iso: string) => iso.slice(0, 10);
 
@@ -31,7 +31,7 @@ const DESCRIPTION = 'In-house AEO or GEO team, agency or tools? Compare off-site
 const CANONICAL = `https://www.nakama.in/journal/${SLUG}`;
 const COVER_ALT = 'Nakama Growth journal cover: in-house AEO or GEO team vs agency vs tools, a guide to choosing the right model.';
 const OG_ALT = 'In-House AEO Team vs Agency vs Tools: Which to Pick? A Nakama Growth decision guide.';
-const HYBRID_ALT = 'Three hybrid AEO and GEO models showing which work stays in-house and which an agency owns: owner plus agency, content in-house with off-site outsourced, and agency builds then team inherits.';
+const HYBRID_ALT = 'Three hybrid AEO and GEO models showing what stays in-house and what an agency owns: owner plus agency, content in-house with off-site outsourced, and agency builds then team inherits.';
 const RAMP_ALT = 'Our view: a 90-day ramp for a new in-house AEO or GEO team, from access and baseline, to first pages and outreach, to repeat measurement.';
 const HERO_URL = `${CANONICAL}/geo-agency-vs-in-house-cover.webp`;
 const OG_URL = `${CANONICAL}/geo-agency-vs-in-house-og.png`;
