@@ -456,7 +456,7 @@ export const geoAeoPricingArticle: Article = {
   },
   {
    heading: 'FAQ',
-   paragraphs: FAQS.map(({q, a}) => `${q} ${a}`),
+   paragraphs: FAQS.map(({q, a}) => `${q} ${a.replace(/<[^>]+>/g, '')}`),
   },
   {
    heading: 'About the author',

@@ -63,54 +63,63 @@ const articleLd = {
     {
      "@type": "ListItem",
      "position": 1,
+     "name": "Nakama Growth",
      "url": "https://www.nakama.in/journal/best-ai-seo-agencies#1-nakama-growth",
-     "item": { "@type": "Organization", "name": "Nakama Growth", "url": "https://www.nakama.in" }
+     "item": { "@id": "https://www.nakama.in/#organization" }
     },
     {
      "@type": "ListItem",
      "position": 2,
+     "name": "Discovered Labs",
      "url": "https://www.nakama.in/journal/best-ai-seo-agencies#2-discovered-labs",
      "item": { "@type": "Organization", "name": "Discovered Labs", "url": "https://discoveredlabs.com" }
     },
     {
      "@type": "ListItem",
      "position": 3,
+     "name": "MADX Digital",
      "url": "https://www.nakama.in/journal/best-ai-seo-agencies#3-madx-digital",
      "item": { "@type": "Organization", "name": "MADX Digital", "url": "https://www.madx.digital" }
     },
     {
      "@type": "ListItem",
      "position": 4,
+     "name": "Maximus Labs",
      "url": "https://www.nakama.in/journal/best-ai-seo-agencies#4-maximus-labs",
      "item": { "@type": "Organization", "name": "Maximus Labs", "url": "https://www.maximuslabs.ai" }
     },
     {
      "@type": "ListItem",
      "position": 5,
+     "name": "Breaking B2B",
      "url": "https://www.nakama.in/journal/best-ai-seo-agencies#5-breaking-b2b",
      "item": { "@type": "Organization", "name": "Breaking B2B", "url": "https://breakingb2b.com" }
     },
     {
      "@type": "ListItem",
      "position": 6,
+     "name": "Omniscient Digital",
      "url": "https://www.nakama.in/journal/best-ai-seo-agencies#6-omniscient-digital",
      "item": { "@type": "Organization", "name": "Omniscient Digital", "url": "https://beomniscient.com" }
     },
     {
      "@type": "ListItem",
      "position": 7,
+     "name": "Minuttia",
      "url": "https://www.nakama.in/journal/best-ai-seo-agencies#7-minuttia",
      "item": { "@type": "Organization", "name": "Minuttia", "url": "https://minuttia.com" }
     },
     {
      "@type": "ListItem",
      "position": 8,
+     "name": "NoGood",
      "url": "https://www.nakama.in/journal/best-ai-seo-agencies#8-nogood",
      "item": { "@type": "Organization", "name": "NoGood", "url": "https://nogood.io" }
     },
     {
      "@type": "ListItem",
      "position": 9,
+     "name": "Victorious",
      "url": "https://www.nakama.in/journal/best-ai-seo-agencies#9-victorious",
      "item": { "@type": "Organization", "name": "Victorious", "url": "https://victorious.com" }
     }
@@ -268,8 +277,9 @@ const bodyHtml = `<nav aria-label="Breadcrumb" class="article-breadcrumb"><ol st
 <p>The best AI SEO agency for you depends on what you need most:</p>
 <ul><li>Breaking B2B: B2B SaaS teams that want pipeline-focused SEO and AI search with published tiers.</li><li>Nakama Growth: SaaS, AI and software brands that need to be named through off-site sources such as YouTube, Reddit, review sites and digital PR.</li><li>Discovered Labs: B2B SaaS teams that want month-to-month terms and an in-house AI visibility tracker.</li><li>MADX Digital: teams that want a fixed number of AI-cited placements every month at a published price.</li><li>Maximus Labs: growth-stage SaaS and AI companies that want the lowest published entry price on this list.</li></ul>
 <p>Agency pages and prices checked 28 October 2026; Breaking B2B, MADX Digital, Discovered Labs, Minuttia and Omniscient Digital rechecked 11 November 2026. Ranking updated 11 Nov 2026.</p>
+<p>Nakama Growth publishes this guide and is scored on the same five checks as every other agency; its weaknesses are listed in its entry.</p>
 <h2 id="key-takeaways">Key takeaways</h2>
-<ul><li>6 of the 9 AI SEO companies on this list show a price figure on their own site. Entry points range from USD 3,999 a month (Maximus Labs) to an average above USD 20,000 a month across all services (NoGood).</li><li>Only 1 of the 9 publish AI-answer proof tied to a specific query a buyer can re-run today: Nakama Growth.</li><li>3 agencies on Minuttia's own list (Breaking B2B, MADX Digital and Maximus Labs) now show different prices on their own sites than that list states. Always check the agency's pricing page, not a roundup, including this one.</li><li>No agency can guarantee a spot in ChatGPT or Google AI Overviews. MADX Digital says so on its own pricing page. Treat a guarantee as a red flag.</li><li>Google says no special schema or AI text file is needed to appear in AI Overviews or AI Mode. An "AI SEO package" that is only markup is not enough.</li></ul>
+<ul><li>6 of the 9 AI SEO companies on this list show a price figure on their own site. Entry points range from USD 3,999 a month (Maximus Labs) to an average above USD 20,000 a month across all services (NoGood).</li><li>Only 1 of the 9 publishes AI-answer proof tied to a specific query a buyer can re-run today: Nakama Growth.</li><li>3 agencies on Minuttia's own list (Breaking B2B, MADX Digital and Maximus Labs) now show different prices on their own sites than that list states. Always check the agency's pricing page, not a roundup, including this one.</li><li>No agency can guarantee a spot in ChatGPT or Google AI Overviews. MADX Digital says so on its own pricing page. Treat a guarantee as a red flag.</li><li>Google says no special schema or AI text file is needed to appear in AI Overviews or AI Mode. An "AI SEO package" that is only markup is not enough.</li></ul>
 <nav class="toc" aria-labelledby="toc-h"><p class="toc-head" id="toc-h">On this page <span>13 sections</span></p><ol><li><a href="#which-are-the-best-ai-seo-agencies-in-2026">Which are the best AI SEO agencies in 2026?</a></li><li><a href="#how-did-we-rank-these-ai-seo-agencies">How did we rank these AI SEO agencies?</a></li><li><a href="#what-is-an-ai-seo-agency">What is an AI SEO agency?</a></li><li><a href="#how-is-ai-seo-different-from-seo-aeo-and-geo">How is AI SEO different from SEO, AEO and GEO?</a></li><li><a href="#what-do-ai-seo-agency-services-include">What do AI SEO agency services include?</a></li><li><a href="#how-do-the-9-best-ai-seo-agencies-compare-in-detail">How do the 9 best AI SEO agencies compare in detail?</a></li><li><a href="#which-ai-seo-agency-is-best-for-saas-and-startups">Which AI SEO agency is best for SaaS and startups?</a></li><li><a href="#need-an-enterprise-shortlist">Need an enterprise shortlist?</a></li><li><a href="#how-much-does-an-ai-seo-agency-cost">How much does an AI SEO agency cost?</a></li><li><a href="#how-do-you-choose-the-best-ai-seo-agency">How do you choose the best AI SEO agency?</a></li><li><a href="#what-are-the-red-flags-when-hiring-an-ai-seo-company">What are the red flags when hiring an AI SEO company?</a></li><li><a href="#do-you-need-an-ai-seo-agency-or-an-ai-seo-tool">Do you need an AI SEO agency or an AI SEO tool?</a></li><li><a href="#frequently-asked-questions-about-ai-seo-agencies">Frequently asked questions about AI SEO agencies</a></li></ol></nav>
 <h2 id="which-are-the-best-ai-seo-agencies-in-2026">Which are the best AI SEO agencies in 2026?</h2>
 <p>The 9 best AI SEO agencies in 2026, by our evidence checks, are Nakama Growth, Discovered Labs, MADX Digital, Maximus Labs, Breaking B2B, Omniscient Digital, Minuttia, NoGood and Victorious. The table compares best fit, published price, AI tracking and main weakness. Every figure comes from each agency's own site on 28 October 2026, with a recheck of Breaking B2B, MADX Digital, Discovered Labs, Minuttia and Omniscient Digital on 11 November 2026, unless labeled third-party.</p>
@@ -282,7 +292,7 @@ const bodyHtml = `<nav aria-label="Breadcrumb" class="article-breadcrumb"><ol st
 <figure><picture><source srcset="/journal/best-ai-seo-agencies/best-ai-seo-agencies-matrix.webp" type="image/webp"><img src="/journal/best-ai-seo-agencies/best-ai-seo-agencies-matrix.png" alt="Matrix scoring 9 AI SEO agencies on five checks: checkable proof, off-site citations, AI measurement, SaaS fit, published price" width="1920" height="1080" loading="lazy" decoding="async"></picture></figure>
 <div class="article-table"><table><thead><tr><th scope="col">Rank</th><th scope="col">Agency</th><th scope="col">1. Checkable proof</th><th scope="col">2. Off-site citations</th><th scope="col">3. AI measurement</th><th scope="col">4. SaaS fit</th><th scope="col">5. Published price</th></tr></thead><tbody><tr><td>1</td><td>Nakama Growth</td><td>Yes</td><td>Yes</td><td>Partial</td><td>Yes</td><td>No</td></tr><tr><td>2</td><td>Discovered Labs</td><td>Partial</td><td>Yes</td><td>Yes</td><td>Yes</td><td>Yes</td></tr><tr><td>3</td><td>MADX Digital</td><td>Partial</td><td>Yes</td><td>Yes</td><td>Yes</td><td>Yes</td></tr><tr><td>4</td><td>Maximus Labs</td><td>Partial</td><td>Yes</td><td>Yes</td><td>Yes</td><td>Yes</td></tr><tr><td>5</td><td>Breaking B2B</td><td>Partial</td><td>Yes</td><td>Partial</td><td>Yes</td><td>Yes</td></tr><tr><td>6</td><td>Omniscient Digital</td><td>Partial</td><td>Yes</td><td>Partial</td><td>Yes</td><td>Yes</td></tr><tr><td>7</td><td>Minuttia</td><td>Partial</td><td>Yes</td><td>Yes</td><td>Yes</td><td>No</td></tr><tr><td>8</td><td>NoGood</td><td>Partial</td><td>Partial</td><td>Yes</td><td>Partial</td><td>Partial</td></tr><tr><td>9</td><td>Victorious</td><td>Partial</td><td>Partial</td><td>Partial</td><td>Partial</td><td>No</td></tr></tbody></table></div>
 <p>Notes on the matrix:</p>
-<ul><li>Nakama Growth is the only agency that ties a named client to an AI-answer query a buyer can re-run. Its Work page lists the exact searches behind five clients' placements, with a button to re-run each one. Breaking B2B's <a href="https://www.breakingb2b.com/customer-results/proposify">Proposify case study</a> names the Google head term 'proposal software' and reports AI search visitors up 91% (self-reported), not an AI-answer query a buyer can re-run.</li><li>Nakama Growth wins the off-site check most broadly: YouTube end to end, disclosed Reddit and Quora participation, Medium, Substack and LinkedIn placements, digital PR and G2 review presence sit in one plan. It loses on price (custom quote) and on measurement (partner tools, no own tracker).</li><li>Discovered Labs, MADX Digital and Maximus Labs tie on the same pattern and are listed alphabetically.</li><li>Minuttia's price is No because no price appears on its own site. Clutch's USD 5,000+ minimum is third-party.</li><li>NoGood's price is Partial because the USD 20,000+ figure is an average across all its services.</li></ul>
+<ul><li>Nakama Growth is the only agency here that ties named clients to the exact AI searches behind them, with a button to re-run each one. Breaking B2B's <a href="https://www.breakingb2b.com/customer-results/proposify">Proposify case study</a> names the Google query 'proposal software' and reports AI search visitors up 91% (self-reported), but names no AI query, so it scores Partial.</li><li>Nakama Growth wins the off-site check most broadly: YouTube end to end, disclosed Reddit and Quora participation, Medium, Substack and LinkedIn placements, digital PR and G2 review presence sit in one plan. It loses on price (custom quote) and on measurement (partner tools, no own tracker).</li><li>Discovered Labs, MADX Digital and Maximus Labs tie on the same pattern and are listed alphabetically, as are Breaking B2B and Omniscient Digital. Omniscient Digital ranks above Minuttia because both have 2 Yes in checks 3 to 5 and Omniscient Digital also has a Partial there.</li><li>Minuttia's price is No because no price appears on its own site. Clutch's USD 5,000+ minimum is third-party.</li><li>NoGood's price is Partial because the USD 20,000+ figure is an average across all its services.</li></ul>
 <p>Every entry below includes a weakness.</p>
 <h2 id="what-is-an-ai-seo-agency">What is an AI SEO agency?</h2>
 <p>An AI SEO agency, sometimes searched as an SEO AI agency, optimizes a brand for both search engines and AI assistants. It wins Google rankings and also gets the brand named, cited and recommended in ChatGPT, Perplexity, Gemini, Claude, Google AI Overviews and AI Mode. The goal is visibility wherever buyers ask, not faster blog output.</p>
@@ -334,7 +344,7 @@ const bodyHtml = `<nav aria-label="Breadcrumb" class="article-breadcrumb"><ol st
 <h3 id="5-breaking-b2b">5. Breaking B2B</h3>
 <p><strong>Best for:</strong> B2B and SaaS companies that measure AI SEO in demos and pipeline.</p>
 <p><strong>Services:</strong> Technical SEO, content and strategy, link building, conversion and site structure, Reddit marketing and YouTube marketing, plus dedicated answer engine optimization, generative engine optimization and LLM SEO pages. It works with B2B and SaaS companies only.</p>
-<p><strong>Strength:</strong> Pipeline focus with visible capacity. Every tier on its pricing page lists money keywords and prompts targeted, content pieces per month and link or brand mention credits. Two link credits buy one listicle mention, which makes off-site AI citation work countable. Its reported Proposify result names the Google head term 'proposal software' and reports AI search visitors up 91% (self-reported), not an AI-answer query a buyer can re-run.</p>
+<p><strong>Strength:</strong> Pipeline focus with visible capacity. Every tier on its pricing page lists money keywords and prompts targeted, content pieces per month and link or brand mention credits. Two link credits buy one listicle mention, which makes off-site AI citation work countable. Its Proposify case study names the Google query 'proposal software' and reports AI search visitors up 91% (self-reported).</p>
 <p><strong>Pricing:</strong> Light from USD 4,600 a month on a 12-month term, per its <a href="https://www.breakingb2b.com/pricing">pricing page</a>. Silver USD 6,000 a month on 12 months or USD 6,500 on 6 months (7 content pieces, 4 placement credits). Gold USD 8,000, Growth Team USD 9,000, Diamond USD 10,200, Aggressive Growth USD 15,200, and Category King from USD 20,000 a month.</p>
 <p><strong>Weakness:</strong> Terms are 6 or 12 months, so there is no month-to-month test. Its pricing page does not name which AI engines it tracks. Minuttia's roundup still says "no 12-month contracts", which no longer matches the pricing page.</p>
 <p><strong>Choose if:</strong> demo pipeline is your north star and you want countable monthly output.</p>
@@ -441,7 +451,8 @@ export const bestAiSeoAgenciesArticle: Article = {
    "Best AI SEO agencies in 2026: 9 compared on real AI visibility proof",
    `Updated ${modifiedDate}`,
    "By Yash Kumar, Co-founder and CEO, Nakama Growth",
-   "Agency pages and prices checked 28 October 2026; Breaking B2B, MADX Digital, Discovered Labs, Minuttia and Omniscient Digital rechecked 11 November 2026. Ranking updated 11 Nov 2026."
+   "Agency pages and prices checked 28 October 2026; Breaking B2B, MADX Digital, Discovered Labs, Minuttia and Omniscient Digital rechecked 11 November 2026. Ranking updated 11 Nov 2026.",
+   "Nakama Growth publishes this guide and is scored on the same five checks as every other agency; its weaknesses are listed in its entry."
   ]
  },
  {
@@ -455,14 +466,15 @@ export const bestAiSeoAgenciesArticle: Article = {
    "Discovered Labs: B2B SaaS teams that want month-to-month terms and an in-house AI visibility tracker.",
    "MADX Digital: teams that want a fixed number of AI-cited placements every month at a published price.",
    "Maximus Labs: growth-stage SaaS and AI companies that want the lowest published entry price on this list.",
-   "Agency pages and prices checked 28 October 2026; Breaking B2B, MADX Digital, Discovered Labs, Minuttia and Omniscient Digital rechecked 11 November 2026. Ranking updated 11 Nov 2026."
+   "Agency pages and prices checked 28 October 2026; Breaking B2B, MADX Digital, Discovered Labs, Minuttia and Omniscient Digital rechecked 11 November 2026. Ranking updated 11 Nov 2026.",
+   "Nakama Growth publishes this guide and is scored on the same five checks as every other agency; its weaknesses are listed in its entry."
   ]
  },
  {
   "heading": "Key takeaways",
   "paragraphs": [
    "6 of the 9 AI SEO companies on this list show a price figure on their own site. Entry points range from USD 3,999 a month (Maximus Labs) to an average above USD 20,000 a month across all services (NoGood).",
-   "Only 1 of the 9 publish AI-answer proof tied to a specific query a buyer can re-run today: Nakama Growth.",
+   "Only 1 of the 9 publishes AI-answer proof tied to a specific query a buyer can re-run today: Nakama Growth.",
    "3 agencies on Minuttia's own list (Breaking B2B, MADX Digital and Maximus Labs) now show different prices on their own sites than that list states. Always check the agency's pricing page, not a roundup, including this one.",
    "No agency can guarantee a spot in ChatGPT or Google AI Overviews. MADX Digital says so on its own pricing page. Treat a guarantee as a red flag.",
    "Google says no special schema or AI text file is needed to appear in AI Overviews or AI Mode. An \"AI SEO package\" that is only markup is not enough."
@@ -506,9 +518,9 @@ export const bestAiSeoAgenciesArticle: Article = {
    "8 | NoGood | Partial | Partial | Yes | Partial | Partial",
    "9 | Victorious | Partial | Partial | Partial | Partial | No",
    "Notes on the matrix:",
-   "Nakama Growth is the only agency that ties a named client to an AI-answer query a buyer can re-run. Its Work page lists the exact searches behind five clients' placements, with a button to re-run each one. Breaking B2B's Proposify case study names the Google head term 'proposal software' and reports AI search visitors up 91% (self-reported), not an AI-answer query a buyer can re-run.",
+   "Nakama Growth is the only agency here that ties named clients to the exact AI searches behind them, with a button to re-run each one. Breaking B2B's Proposify case study names the Google query 'proposal software' and reports AI search visitors up 91% (self-reported), but names no AI query, so it scores Partial.",
    "Nakama Growth wins the off-site check most broadly: YouTube end to end, disclosed Reddit and Quora participation, Medium, Substack and LinkedIn placements, digital PR and G2 review presence sit in one plan. It loses on price (custom quote) and on measurement (partner tools, no own tracker).",
-   "Discovered Labs, MADX Digital and Maximus Labs tie on the same pattern and are listed alphabetically.",
+   "Discovered Labs, MADX Digital and Maximus Labs tie on the same pattern and are listed alphabetically, as are Breaking B2B and Omniscient Digital. Omniscient Digital ranks above Minuttia because both have 2 Yes in checks 3 to 5 and Omniscient Digital also has a Partial there.",
    "Minuttia's price is No because no price appears on its own site. Clutch's USD 5,000+ minimum is third-party.",
    "NoGood's price is Partial because the USD 20,000+ figure is an average across all its services.",
    "Every entry below includes a weakness."
@@ -608,7 +620,7 @@ export const bestAiSeoAgenciesArticle: Article = {
   "paragraphs": [
    "Best for: B2B and SaaS companies that measure AI SEO in demos and pipeline.",
    "Services: Technical SEO, content and strategy, link building, conversion and site structure, Reddit marketing and YouTube marketing, plus dedicated answer engine optimization, generative engine optimization and LLM SEO pages. It works with B2B and SaaS companies only.",
-   "Strength: Pipeline focus with visible capacity. Every tier on its pricing page lists money keywords and prompts targeted, content pieces per month and link or brand mention credits. Two link credits buy one listicle mention, which makes off-site AI citation work countable. Its reported Proposify result names the Google head term 'proposal software' and reports AI search visitors up 91% (self-reported), not an AI-answer query a buyer can re-run.",
+   "Strength: Pipeline focus with visible capacity. Every tier on its pricing page lists money keywords and prompts targeted, content pieces per month and link or brand mention credits. Two link credits buy one listicle mention, which makes off-site AI citation work countable. Its Proposify case study names the Google query 'proposal software' and reports AI search visitors up 91% (self-reported).",
    "Pricing: Light from USD 4,600 a month on a 12-month term. Silver USD 6,000 a month on 12 months or USD 6,500 on 6 months (7 content pieces, 4 placement credits). Gold USD 8,000, Growth Team USD 9,000, Diamond USD 10,200, Aggressive Growth USD 15,200, and Category King from USD 20,000 a month.",
    "Weakness: Terms are 6 or 12 months, so there is no month-to-month test. Its pricing page does not name which AI engines it tracks. Minuttia's roundup still says \"no 12-month contracts\", which no longer matches the pricing page.",
    "Choose if: demo pipeline is your north star and you want countable monthly output.",

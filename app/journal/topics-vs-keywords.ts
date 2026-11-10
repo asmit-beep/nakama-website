@@ -10,7 +10,7 @@ import type {Article} from './articles';
  */
 export const TOPICS_VS_KEYWORDS_PUBLISHED_AT = '2026-10-27T09:00:00+05:30';
 const PUBLISHED_AT = TOPICS_VS_KEYWORDS_PUBLISHED_AT;
-const MODIFIED_AT = '2026-11-11T02:15:00+05:30';
+const MODIFIED_AT = PUBLISHED_AT;
 
 const MONTHS = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
 const dayOf = (iso: string) => iso.slice(0, 10);

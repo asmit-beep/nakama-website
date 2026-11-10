@@ -87,7 +87,7 @@ const citeCards: {id: string; engine: ReactNode; big: string; bigHot?: boolean; 
   id: 'chatgpt',
   engine: <a href={CITE_SOURCES.chatgpt} rel="noopener noreferrer">ChatGPT</a>,
   big: '10.1%',
-  who: <>Wikipedia <span className="reddit-pill is-light">#1</span> <span className="reddit-dot-sep" aria-hidden="true">·</span> <span className="is-hot">Reddit 6.2%</span> <span className="reddit-pill">#2</span></>,
+  who: <>Wikipedia <span className="reddit-pill is-light">1st</span> <span className="reddit-dot-sep" aria-hidden="true">·</span> <span className="is-hot">Reddit 6.2%</span> <span className="reddit-pill">2nd</span></>,
   bars: [
    {label: '1. Wikipedia', value: '10.1%', width: '40.4%'},
    {label: '2. Reddit', value: '6.2%', width: '24.8%', tone: 'hot'},
@@ -99,7 +99,7 @@ const citeCards: {id: string; engine: ReactNode; big: string; bigHot?: boolean; 
   engine: <a href={CITE_SOURCES.perplexity} rel="noopener noreferrer">Perplexity</a>,
   big: '24.6%',
   bigHot: true,
-  who: <>Reddit <span className="reddit-pill">#1</span></>,
+  who: <>Reddit <span className="reddit-pill">1st</span></>,
   bars: [
    {label: '1. Reddit', value: '24.6%', width: '98.4%', tone: 'hot'},
    {label: '2. YouTube', value: '14.2%', width: '56.8%'},
@@ -110,7 +110,7 @@ const citeCards: {id: string; engine: ReactNode; big: string; bigHot?: boolean; 
   id: 'aio',
   engine: <a href={CITE_SOURCES.aio} rel="noopener noreferrer">Google AI Overviews</a>,
   big: '24.5%',
-  who: <>YouTube <span className="reddit-pill is-light">#1</span> <span className="reddit-dot-sep" aria-hidden="true">·</span> <span className="is-hot">Reddit 18.1%</span> <span className="reddit-pill">#2</span></>,
+  who: <>YouTube <span className="reddit-pill is-light">1st</span> <span className="reddit-dot-sep" aria-hidden="true">·</span> <span className="is-hot">Reddit 18.1%</span> <span className="reddit-pill">2nd</span></>,
   bars: [
    {label: '1. YouTube', value: '24.5%', width: '98.0%', tone: 'light'},
    {label: '2. Reddit', value: '18.1%', width: '72.4%', tone: 'hot'},
