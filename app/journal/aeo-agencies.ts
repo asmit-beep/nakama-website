@@ -26,8 +26,8 @@ export const aeoAgenciesJsonLd = {
    "@type": "WebPage",
    "@id": "https://www.nakama.in/journal/best-aeo-agencies#webpage",
    "url": "https://www.nakama.in/journal/best-aeo-agencies",
-   "name": "AEO Agencies and AEO Services: 10 Best (Oct 2026)",
-   "description": "AEO agency and AEO services compared: 10 firms for US buyers on proof, price and fit. Claims checked on each agency's own site in Oct 2026.",
+   "name": "Best AEO Agencies (2026): 10 Compared on Proof and Price",
+   "description": "The 10 best AEO agencies compared for US buyers on proof, price and fit. Claims checked on each agency's own site in Oct 2026.",
    "inLanguage": "en-US",
    "isPartOf": {
     "@id": "https://www.nakama.in/#website"
@@ -73,7 +73,7 @@ export const aeoAgenciesJsonLd = {
     {
      "@type": "ListItem",
      "position": 3,
-     "name": "Best AEO agencies and AEO services in 2026, compared",
+     "name": "Best AEO agencies in 2026, compared",
      "item": "https://www.nakama.in/journal/best-aeo-agencies"
     }
    ]
@@ -81,14 +81,14 @@ export const aeoAgenciesJsonLd = {
   {
    "@type": "Article",
    "@id": "https://www.nakama.in/journal/best-aeo-agencies#article",
-   "headline": "Best AEO agencies and AEO services in 2026, compared",
-   "description": "AEO agency and AEO services compared: 10 firms for US buyers on proof, price and fit. Claims checked on each agency's own site in Oct 2026.",
+   "headline": "Best AEO agencies in 2026, compared",
+   "description": "The 10 best AEO agencies compared for US buyers on proof, price and fit. Claims checked on each agency's own site in Oct 2026.",
    "image": [
     "https://www.nakama.in/journal/best-aeo-agencies/best-aeo-agencies-2026-cover.png",
     "https://www.nakama.in/journal/best-aeo-agencies/best-aeo-agencies-2026-og.png"
    ],
    "datePublished": "2026-10-15T18:15:38+05:30",
-   "dateModified": "2026-10-15T18:15:38+05:30",
+   "dateModified": "2026-11-11T03:10:00+05:30",
    "inLanguage": "en-US",
    "articleSection": "Answer engine optimization",
    "keywords": "AEO agency, AEO agencies, AEO services, best AEO agencies, answer engine optimization agency",
@@ -292,9 +292,9 @@ export const aeoAgenciesJsonLd = {
  ]
 } as const;
 
-const bodyHtml = `<nav aria-label="Breadcrumb" class="article-breadcrumb"><ol style="list-style:none;display:flex;flex-wrap:wrap;gap:.5rem;padding:0;margin:0 0 1.25rem;font-size:.9rem"><li><a href="https://www.nakama.in/">Home</a></li><li aria-hidden="true">/</li><li><a href="https://www.nakama.in/resources">Resources</a></li><li aria-hidden="true">/</li><li aria-current="page">Best AEO agencies and AEO services in 2026, compared</li></ol></nav>
-<h1 id="best-aeo-agencies-and-aeo-services-in-2026-compared">Best AEO agencies and AEO services in 2026, compared</h1>
-<p>Published 15 October 2026. Last updated 15 October 2026. Agency pages and prices checked that day.</p>
+const bodyHtml = `<nav aria-label="Breadcrumb" class="article-breadcrumb"><ol style="list-style:none;display:flex;flex-wrap:wrap;gap:.5rem;padding:0;margin:0 0 1.25rem;font-size:.9rem"><li><a href="https://www.nakama.in/">Home</a></li><li aria-hidden="true">/</li><li><a href="https://www.nakama.in/resources">Resources</a></li><li aria-hidden="true">/</li><li aria-current="page">Best AEO agencies in 2026, compared</li></ol></nav>
+<h1 id="best-aeo-agencies-and-aeo-services-in-2026-compared">Best AEO agencies in 2026, compared</h1>
+<p>Published 15 October 2026. Last updated 11 November 2026. Agency pages and prices checked 15 October 2026.</p>
 <p>By Yash Kumar, Co-founder and CEO, Nakama Growth</p>
 <figure><img src="/journal/best-aeo-agencies/best-aeo-agencies-2026-cover.png" alt="Cover graphic for the guide to the best AEO agencies and AEO services in 2026, ten agencies compared on proof, price and fit" width="1600" height="900" fetchpriority="high" decoding="async"></figure>
 <h2 id="what-is-an-aeo-agency-and-which-one-is-best-for-a-us-company">What is an AEO agency, and which one is best for a US company?</h2>
@@ -833,12 +833,12 @@ const bodyHtml = `<nav aria-label="Breadcrumb" class="article-breadcrumb"><ol st
 export const aeoAgenciesArticle: Article = {
  slug: 'best-aeo-agencies',
  category: 'Guide',
- title: "Best AEO agencies and AEO services in 2026, compared",
- description: "AEO agency and AEO services compared: 10 firms for US buyers on proof, price and fit. Claims checked on each agency's own site in Oct 2026.",
+ title: "Best AEO agencies in 2026, compared",
+ description: "The 10 best AEO agencies compared for US buyers on proof, price and fit. Claims checked on each agency's own site in Oct 2026.",
  readTime: '31 min read',
  motif: 'guide',
- metaTitle: "AEO Agencies and AEO Services: 10 Best (Oct 2026)",
- date: '2026-10-15',
+ metaTitle: "Best AEO Agencies (2026): 10 Compared on Proof and Price",
+ date: '2026-11-11',
  publishedAt: '2026-10-15T18:15:38+05:30',
  authorName: 'Yash Kumar',
  coverImage: {src: '/journal/best-aeo-agencies/best-aeo-agencies-2026-cover.png', width: 1600, height: 900, alt: 'Cover graphic for the guide to the best AEO agencies and AEO services in 2026, ten agencies compared on proof, price and fit'},
@@ -855,7 +855,7 @@ export const aeoAgenciesArticle: Article = {
  {
   "heading": "Introduction",
   "paragraphs": [
-   "Best AEO agencies and AEO services in 2026, compared\nPublished 15 October 2026. Last updated 15 October 2026. Agency pages and prices checked that day.",
+   "Best AEO agencies in 2026, compared\nPublished 15 October 2026. Last updated 11 November 2026. Agency pages and prices checked 15 October 2026.",
    "By Yash Kumar, Co-founder and CEO, Nakama Growth",
    "Image: Cover graphic for the guide to the best AEO agencies and AEO services in 2026, ten agencies compared on proof, price and fit"
   ]

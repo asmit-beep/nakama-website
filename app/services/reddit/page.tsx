@@ -76,38 +76,46 @@ const faqLd = {
 
 type Bar = {label: string; value: string; width: string; tone?: 'hot' | 'light'};
 
-const citeCards: {engine: string; big: string; bigHot?: boolean; who: ReactNode; bars: Bar[]}[] = [
+const CITE_SOURCES = {
+ chatgpt: 'https://ahrefs.com/blog/most-cited-domains-in-chatgpt/',
+ perplexity: 'https://ahrefs.com/blog/most-cited-domains-perplexity/',
+ aio: 'https://ahrefs.com/blog/most-cited-domains-ai-overviews/',
+} as const;
+
+const citeCards: {id: string; engine: ReactNode; big: string; bigHot?: boolean; who: ReactNode; bars: Bar[]}[] = [
  {
-  engine: 'ChatGPT',
-  big: '16.8%',
-  bigHot: true,
-  who: <>Reddit <span className="reddit-pill">#1</span></>,
+  id: 'chatgpt',
+  engine: <a href={CITE_SOURCES.chatgpt} rel="noopener noreferrer">ChatGPT</a>,
+  big: '10.1%',
+  who: <>Wikipedia <span className="reddit-pill is-light">1st</span> <span className="reddit-dot-sep" aria-hidden="true">·</span> <span className="is-hot">Reddit 6.2%</span> <span className="reddit-pill">2nd</span></>,
   bars: [
-   {label: '1. Reddit', value: '16.8%', width: '67.2%', tone: 'hot'},
-   {label: '2. Wikipedia', value: '7.0%', width: '28.0%'},
-   {label: '3. YouTube', value: '2.5%', width: '10.0%'},
+   {label: '1. Wikipedia', value: '10.1%', width: '40.4%'},
+   {label: '2. Reddit', value: '6.2%', width: '24.8%', tone: 'hot'},
+   {label: '8. YouTube', value: '2.3%', width: '9.2%'},
   ],
  },
  {
-  engine: 'Perplexity',
-  big: '21.6%',
+  id: 'perplexity',
+  engine: <a href={CITE_SOURCES.perplexity} rel="noopener noreferrer">Perplexity</a>,
+  big: '24.6%',
   bigHot: true,
-  who: <>Reddit <span className="reddit-pill">#1</span></>,
+  who: <>Reddit <span className="reddit-pill">1st</span></>,
   bars: [
-   {label: '1. Reddit', value: '21.6%', width: '86.4%', tone: 'hot'},
-   {label: '2. YouTube', value: '20.8%', width: '83.2%'},
-   {label: '3. Wikipedia', value: '6.3%', width: '25.2%'},
+   {label: '1. Reddit', value: '24.6%', width: '98.4%', tone: 'hot'},
+   {label: '2. YouTube', value: '14.2%', width: '56.8%'},
+   {label: '3. Wikipedia', value: '7.2%', width: '28.8%'},
   ],
  },
  {
-  engine: 'Google AI Overviews',
-  big: '22.9%',
-  who: <>YouTube <span className="reddit-pill is-light">#1</span> <span className="reddit-dot-sep" aria-hidden="true">·</span> <span className="is-hot">Reddit 18.5%</span> <span className="reddit-pill">#2</span></>,
+  id: 'aio',
+  engine: <a href={CITE_SOURCES.aio} rel="noopener noreferrer">Google AI Overviews</a>,
+  big: '24.5%',
+  who: <>YouTube <span className="reddit-pill is-light">1st</span> <span className="reddit-dot-sep" aria-hidden="true">·</span> <span className="is-hot">Reddit 18.1%</span> <span className="reddit-pill">2nd</span></>,
   bars: [
-   {label: '1. YouTube', value: '22.9%', width: '91.6%', tone: 'light'},
-   {label: '2. Reddit', value: '18.5%', width: '74.0%', tone: 'hot'},
-   {label: '3. Quora', value: '4.7%', width: '18.8%'},
-   {label: '4. Wikipedia', value: '4.0%', width: '16.0%'},
+   {label: '1. YouTube', value: '24.5%', width: '98.0%', tone: 'light'},
+   {label: '2. Reddit', value: '18.1%', width: '72.4%', tone: 'hot'},
+   {label: '6. Quora', value: '4.4%', width: '17.6%'},
+   {label: '7. Wikipedia', value: '4.4%', width: '17.6%'},
   ],
  },
 ];
@@ -216,7 +224,7 @@ export default function RedditServices() {
      <p className="reddit-cite-sub">Mention share among top sources, by AI engine · Bars scaled 0 to 25%</p>
      <div className="reddit-cite-grid">
       {citeCards.map(card => (
-       <article className="reddit-cite-card" key={card.engine}>
+       <article className="reddit-cite-card" key={card.id}>
         <div className="reddit-cite-en">{card.engine}</div>
         <div className={card.bigHot ? 'reddit-cite-big is-hot' : 'reddit-cite-big'}>{card.big}</div>
         <div className="reddit-cite-who">{card.who}</div>
@@ -226,8 +234,8 @@ export default function RedditServices() {
        </article>
       ))}
      </div>
-     <p className="reddit-cite-cap">Independent AI-visibility studies rank Reddit among the most-cited websites in AI answers. Ahrefs&apos; September 2026 data puts it at #1 in ChatGPT and Perplexity and #2 in Google AI Overviews.</p>
-     <p className="reddit-cite-src">Ahrefs Brand Radar · US · Sep 2026 · mention share among top sources</p>
+     <p className="reddit-cite-cap">Independent AI visibility studies rank Reddit among the most cited websites in AI answers. In Ahrefs&apos; November 2026 data, Reddit is the top source in Perplexity and second in both ChatGPT and Google AI Overviews.</p>
+     <p className="reddit-cite-src">Ahrefs Brand Radar, US, November 2026</p>
     </div>
    </section>
 

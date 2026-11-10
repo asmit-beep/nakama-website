@@ -8,7 +8,7 @@ import type {Article} from './articles';
  */
 export const BEST_GEO_AGENCIES_INDIA_PUBLISHED_AT = '2026-10-19T20:17:43+05:30';
 const PUBLISHED_AT = BEST_GEO_AGENCIES_INDIA_PUBLISHED_AT;
-const MODIFIED_AT = PUBLISHED_AT;
+const MODIFIED_AT = '2026-11-11T03:10:00+05:30';
 
 const MONTHS = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
 const dayOf = (iso: string) => iso.slice(0, 10);
@@ -21,8 +21,8 @@ const articleLd = {
    "@type": "WebPage",
    "@id": "https://www.nakama.in/journal/best-geo-agencies-india#webpage",
    "url": "https://www.nakama.in/journal/best-geo-agencies-india",
-   "name": "Best GEO Agencies in India (2026): AEO and AI SEO Agencies Compared",
-   "description": "Best GEO agencies in India compared: AEO, AI SEO and LLM SEO firms judged on proof you can check, public pricing and fit. Agency sites checked Oct 2026.",
+   "name": "Best GEO Agencies in India (2026): Proof and Pricing",
+   "description": "Best GEO agencies in India compared on proof you can check, public pricing and fit, with teams in Bengaluru, Mumbai and Delhi NCR. Agency sites checked Oct 2026.",
    "inLanguage": "en-IN",
    "isPartOf": {
     "@id": "https://www.nakama.in/#website"
@@ -88,7 +88,7 @@ const articleLd = {
     {
      "@type": "ListItem",
      "position": 3,
-     "name": "Best GEO Agencies in India (2026): AEO and AI SEO Agencies Compared",
+     "name": "Best GEO Agencies in India (2026): Proof and Pricing",
      "item": "https://www.nakama.in/journal/best-geo-agencies-india"
     }
    ]
@@ -96,8 +96,8 @@ const articleLd = {
   {
    "@type": "Article",
    "@id": "https://www.nakama.in/journal/best-geo-agencies-india#article",
-   "headline": "Best GEO Agencies in India (2026): AEO and AI SEO Agencies Compared",
-   "description": "Best GEO agencies in India compared: AEO, AI SEO and LLM SEO firms judged on proof you can check, public pricing and fit. Agency sites checked Oct 2026.",
+   "headline": "Best GEO Agencies in India (2026): Proof and Pricing",
+   "description": "Best GEO agencies in India compared on proof you can check, public pricing and fit, with teams in Bengaluru, Mumbai and Delhi NCR. Agency sites checked Oct 2026.",
    "image": [
     "https://www.nakama.in/journal/best-geo-agencies-india/best-geo-agencies-india-hero.png",
     "https://www.nakama.in/journal/best-geo-agencies-india/best-geo-agencies-india-4x3.png",
@@ -247,8 +247,8 @@ const faqLd = {
 
 export const bestGeoAgenciesIndiaJsonLd = [articleLd, faqLd];
 
-const bodyHtml = `<nav aria-label="Breadcrumb" class="article-breadcrumb"><ol style="list-style:none;display:flex;flex-wrap:wrap;gap:.5rem;padding:0;margin:0 0 1.25rem;font-size:.9rem"><li><a href="https://www.nakama.in/">Home</a></li><li aria-hidden="true">/</li><li><a href="https://www.nakama.in/resources">Resources</a></li><li aria-hidden="true">/</li><li aria-current="page">Best GEO Agencies in India (2026): AEO and AI SEO Agencies Compared</li></ol></nav>
-<h1 id="best-geo-agencies-in-india-2026-aeo-and-ai-seo-agencies-compared">Best GEO Agencies in India (2026): AEO and AI SEO Agencies Compared</h1>
+const bodyHtml = `<nav aria-label="Breadcrumb" class="article-breadcrumb"><ol style="list-style:none;display:flex;flex-wrap:wrap;gap:.5rem;padding:0;margin:0 0 1.25rem;font-size:.9rem"><li><a href="https://www.nakama.in/">Home</a></li><li aria-hidden="true">/</li><li><a href="https://www.nakama.in/resources">Resources</a></li><li aria-hidden="true">/</li><li aria-current="page">Best GEO Agencies in India (2026): Proof and Pricing</li></ol></nav>
+<h1 id="best-geo-agencies-in-india-2026-aeo-and-ai-seo-agencies-compared">Best GEO Agencies in India (2026): Proof and Pricing</h1>
 <p>Last updated ${modifiedDate}. Agency sites checked 19 Oct 2026.</p>
 <p>By <a href="https://www.nakama.in/authors/yash-kumar" rel="author">Yash Kumar</a>, Co-founder and CEO, Nakama Growth</p>
 <p>As of 19 Oct 2026, Nakama is our first pick among GEO and AEO agencies in India for off-site AI visibility work, followed by Unveilr for dated proof and Infidigit for enterprise ecommerce. We ordered nine India-based agencies on six published criteria, using facts from each agency's own site.</p>
@@ -450,12 +450,12 @@ const bodyHtml = `<nav aria-label="Breadcrumb" class="article-breadcrumb"><ol st
 export const bestGeoAgenciesIndiaArticle: Article = {
  slug: 'best-geo-agencies-india',
  category: 'Guide',
- title: "Best GEO Agencies in India (2026): AEO and AI SEO Agencies Compared",
- description: "Best GEO agencies in India compared: AEO, AI SEO and LLM SEO firms judged on proof you can check, public pricing and fit. Agency sites checked Oct 2026.",
+ title: "Best GEO Agencies in India (2026): Proof and Pricing",
+ description: "Best GEO agencies in India compared on proof you can check, public pricing and fit, with teams in Bengaluru, Mumbai and Delhi NCR. Agency sites checked Oct 2026.",
  readTime: '13 min read',
  motif: 'guide',
- metaTitle: "Best GEO Agencies in India (2026): AEO and AI SEO Agencies Compared",
- date: dayOf(PUBLISHED_AT),
+ metaTitle: "Best GEO Agencies in India (2026): Proof and Pricing",
+ date: dayOf(MODIFIED_AT),
  publishedAt: PUBLISHED_AT,
  authorName: 'Yash Kumar',
  coverImage: {src: '/journal/best-geo-agencies-india/best-geo-agencies-india-hero.png', width: 1600, height: 900},
@@ -472,7 +472,7 @@ export const bestGeoAgenciesIndiaArticle: Article = {
  {
   "heading": "Introduction",
   "paragraphs": [
-   "Best GEO Agencies in India (2026): AEO and AI SEO Agencies Compared",
+   "Best GEO Agencies in India (2026): Proof and Pricing",
    `Last updated ${modifiedDate}. Agency sites checked 19 Oct 2026.`,
    "By Yash Kumar , Co-founder and CEO, Nakama Growth",
    "As of 19 Oct 2026, Nakama is our first pick among GEO and AEO agencies in India for off-site AI visibility work, followed by Unveilr for dated proof and Infidigit for enterprise ecommerce. We ordered nine India-based agencies on six published criteria, using facts from each agency's own site.",
