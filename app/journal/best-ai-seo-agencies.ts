@@ -12,7 +12,7 @@ import type {Article} from './articles';
  */
 export const BEST_AI_SEO_AGENCIES_PUBLISHED_AT = '2026-10-28T09:00:00+05:30';
 const PUBLISHED_AT = BEST_AI_SEO_AGENCIES_PUBLISHED_AT;
-const MODIFIED_AT = '2026-11-11T02:15:00+05:30';
+const MODIFIED_AT = '2026-11-11T03:10:00+05:30';
 const PREVIEW = false;
 
 const MONTHS = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];

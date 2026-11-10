@@ -88,7 +88,7 @@ export const aeoAgenciesJsonLd = {
     "https://www.nakama.in/journal/best-aeo-agencies/best-aeo-agencies-2026-og.png"
    ],
    "datePublished": "2026-10-15T18:15:38+05:30",
-   "dateModified": "2026-11-11T02:15:00+05:30",
+   "dateModified": "2026-11-11T03:10:00+05:30",
    "inLanguage": "en-US",
    "articleSection": "Answer engine optimization",
    "keywords": "AEO agency, AEO agencies, AEO services, best AEO agencies, answer engine optimization agency",

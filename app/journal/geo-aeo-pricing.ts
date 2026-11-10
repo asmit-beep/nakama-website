@@ -12,7 +12,7 @@ import type {Article} from './articles';
  */
 export const GEO_AEO_PRICING_PUBLISHED_AT = '2026-11-02T09:00:00+05:30';
 export const PUBLISHED_AT = GEO_AEO_PRICING_PUBLISHED_AT;
-const MODIFIED_AT = '2026-11-11T02:15:00+05:30';
+const MODIFIED_AT = '2026-11-11T03:10:00+05:30';
 const PREVIEW = false;
 
 const MONTHS = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];

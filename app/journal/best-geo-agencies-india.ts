@@ -8,7 +8,7 @@ import type {Article} from './articles';
  */
 export const BEST_GEO_AGENCIES_INDIA_PUBLISHED_AT = '2026-10-19T20:17:43+05:30';
 const PUBLISHED_AT = BEST_GEO_AGENCIES_INDIA_PUBLISHED_AT;
-const MODIFIED_AT = '2026-11-11T02:15:00+05:30';
+const MODIFIED_AT = '2026-11-11T03:10:00+05:30';
 
 const MONTHS = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
 const dayOf = (iso: string) => iso.slice(0, 10);
