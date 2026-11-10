@@ -20,6 +20,7 @@ import {howToHireAnAeoAgencyArticle} from './how-to-hire-an-aeo-agency';
 import {geoAeoPricingArticle} from './geo-aeo-pricing';
 import {bestEnterpriseAiSeoAgenciesArticle} from './best-enterprise-ai-seo-agencies';
 import {chatgptSeoAgencyArticle} from './chatgpt-seo-agency';
+import {geoAgencyVsInHouseArticle} from './geo-agency-vs-in-house';
 export type Article={
  slug:string,category:string,title:string,description:string,readTime:string,motif:string,
  sections:{heading:string,paragraphs:string[]}[],
@@ -46,6 +47,7 @@ export type Article={
  coverImage?:{src:string,width:number,height:number,alt?:string},
 };
 export const articles:Article[]=[
+ geoAgencyVsInHouseArticle,
  chatgptSeoAgencyArticle,
  profoundAlternativesArticle,
  bestEnterpriseAiSeoAgenciesArticle,
