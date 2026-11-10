@@ -256,7 +256,7 @@ const bodyHtml = `<nav aria-label="Breadcrumb" class="article-breadcrumb ${style
 <p>By <a href="${AUTHOR_URL}" rel="author">Sandeep Kumar</a>, SEO and GEO Specialist, Nakama Growth</p>
 ${figure('geo-agency-vs-in-house-cover.webp', COVER_ALT, 1920, 1080, true)}
 <p>Whether you call it AEO or GEO, what matters is who owns AI visibility and who proves it worked. Hire an agency for off-site reach and work shipped this quarter. Build in-house if you have an owner, writers and time to ramp. Use tools alone to see the gap. In our experience, many growing teams land on a hybrid.</p>
-<p>This is a decision guide, not a shortlist, a price list or a hiring process.</p>
+<p>This is a decision guide, not a shortlist of the <a href="https://www.nakama.in/journal/best-generative-engine-optimization-agencies">best GEO agencies</a>, a price list or a hiring process.</p>
 ${h2('Quick answer')}
 <ul>
 <li><strong>Pick an agency if</strong> nobody in-house owns AI visibility yet and your gap sits on other people's sites: press, Reddit threads, YouTube and review pages.</li>
@@ -326,7 +326,7 @@ ${h2('When does an agency fit best?')}
 </ul>
 <blockquote><p><strong>Our view:</strong> the agency route fails most often when the client side has no owner. An agency without someone in-house to approve claims, open doors to subject matter experts and push page changes through tends to produce reports with nothing shipped. Plan for at least a few hours a week of an internal owner's time, whichever agency you pick.</p></blockquote>
 <p>Before you sign, use our hiring guide to <a href="https://www.nakama.in/journal/how-to-hire-an-aeo-agency#step-5-check-the-proof-yourself">check the proof yourself</a>. It covers what to inspect and how to verify claimed results.</p>
-<p>If an agency fits, we will quote against your off-site gap and the owner time you can give:</p>
+<p>If an agency fits, we will quote our <a href="https://www.nakama.in/services/geo">GEO services</a> against your off-site gap and the owner time you can give:</p>
 ${quoteLink}
 ${h2('When does an in-house AEO or GEO team win?')}
 <p>An in-house AEO or GEO team wins when AI visibility is a lasting part of how you grow, your product needs deep context to explain well, and you can fund the roles and the ramp. In-house teams keep the knowledge, move faster on approvals and keep building after any contract would have ended.</p>

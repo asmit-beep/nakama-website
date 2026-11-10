@@ -63,7 +63,7 @@ export const aeoAgenciesJsonLd = {
      "@type": "ListItem",
      "position": 1,
      "name": "Home",
-     "item": "https://www.nakama.in"
+     "item": "https://www.nakama.in/"
     },
     {
      "@type": "ListItem",
@@ -293,7 +293,8 @@ export const aeoAgenciesJsonLd = {
  ]
 } as const;
 
-const bodyHtml = `<h1 id="best-aeo-agencies-and-aeo-services-in-2026-compared">Best AEO agencies and AEO services in 2026, compared</h1>
+const bodyHtml = `<nav aria-label="Breadcrumb" class="article-breadcrumb"><ol style="list-style:none;display:flex;flex-wrap:wrap;gap:.5rem;padding:0;margin:0 0 1.25rem;font-size:.9rem"><li><a href="https://www.nakama.in/">Home</a></li><li aria-hidden="true">/</li><li><a href="https://www.nakama.in/resources">Resources</a></li><li aria-hidden="true">/</li><li aria-current="page">Best AEO agencies and AEO services in 2026, compared</li></ol></nav>
+<h1 id="best-aeo-agencies-and-aeo-services-in-2026-compared">Best AEO agencies and AEO services in 2026, compared</h1>
 <p>Published 15 October 2026. Last updated 15 October 2026. Agency pages and prices checked that day.</p>
 <p>By Yash Kumar, Co-founder and CEO, Nakama Growth</p>
 <figure><img src="/journal/best-aeo-agencies/best-aeo-agencies-2026-cover.png" alt="Cover graphic for the guide to the best AEO agencies and AEO services in 2026, ten agencies compared on proof, price and fit" width="1600" height="900" fetchpriority="high" decoding="async"></figure>
@@ -629,7 +630,7 @@ const bodyHtml = `<h1 id="best-aeo-agencies-and-aeo-services-in-2026-compared">B
 <li><strong>Technical access and structured data.</strong> Crawlers allowed, pages indexed, schema that matches visible text. OpenAI says to <a href="https://developers.openai.com/api/docs/bots" rel="noopener" target="_blank">allow OAI-SearchBot in robots.txt</a> to appear in ChatGPT search results.</li>
 <li><strong>Off-site mentions and citations.</strong> Reddit, YouTube, review sites and publications, often sold as GEO. Pew found that Wikipedia, YouTube and Reddit made up 15% of the sources listed in Google AI summaries.</li>
 <li><strong>Entity and brand consistency.</strong> The same product facts, category and claims across your site, profiles and listings.</li>
-<li><strong>Tracking and reporting.</strong> Mentions, citations, share of voice, AI referral traffic and leads. Our note on <a href="https://www.nakama.in/journal/what-a-useful-visibility-report-shows">what a useful visibility report shows</a> covers the basics.</li>
+<li><strong>Tracking and reporting.</strong> Mentions, citations, share of voice, AI referral traffic and leads. Our note on <a href="https://www.nakama.in/journal/ai-visibility-report-template">what a useful visibility report shows</a> covers the basics.</li>
 </ol>
 <h2 id="which-are-the-10-best-aeo-agencies-in-2026">Which are the 10 best AEO agencies in 2026?</h2>
 <p>The 10 agencies below are listed in the order shown in the comparison table. Each entry follows the same format: best for, services, strength, pricing, limitation and HQ. Every figure comes from the agency's own site and is marked self-reported where we could not verify it independently.</p>
@@ -691,10 +692,10 @@ const bodyHtml = `<h1 id="best-aeo-agencies-and-aeo-services-in-2026-compared">B
 <p><strong>HQ:</strong> No headquarters statement on the pages we checked. A staff bio on its <a href="https://ipullrank.com/about-us" rel="noopener" target="_blank">about page</a> mentions a New York office.</p>
 <h3 id="8-nakama">8. Nakama</h3>
 <p><strong>Best for:</strong> SaaS and software brands, and brands in competitive categories, that need to be named when buyers ask AI tools what to pick.</p>
-<p><strong>Services:</strong> AEO work (buyer-question and answer-gap research, answer-first content and FAQ structure, citation tracking) plus GEO, Reddit and community, editorial content, YouTube and video, and digital PR. It tracks ChatGPT, Perplexity, Gemini and Google AI Overviews and starts with a buyer prompt map and a competitor and source audit. See Nakama's <a href="https://www.nakama.in/services">AEO and GEO services</a> and <a href="https://www.nakama.in/process">how an engagement runs</a>.</p>
+<p><strong>Services:</strong> AEO work (buyer-question and answer-gap research, answer-first content and FAQ structure, citation tracking) plus GEO, Reddit and community, editorial content, YouTube and video, and digital PR. It tracks ChatGPT, Perplexity, Gemini and Google AI Overviews and starts with a buyer prompt map and a competitor and source audit. See Nakama's <a href="https://www.nakama.in/services/aeo">AEO services</a>, its <a href="https://www.nakama.in/services/geo">GEO services</a> and <a href="https://www.nakama.in/process">how an engagement runs</a>.</p>
 <p><strong>Strength:</strong> Off-site work with proof you can run. The <a href="https://www.nakama.in/work">Work page</a> lists five clients with the exact searches where Nakama's work surfaced. In one example, Google's AI Overview cited a Nakama LinkedIn comparison right under a client's recommendation. Every community post is disclosed, and nothing publishes without the client's sign-off.</p>
 <p><strong>Pricing:</strong> No price is published. Nakama sells one all-inclusive plan with no tiers or add-ons. A written proposal arrives within two business days of a 15-minute pricing call, and the minimum commitment is three months. See <a href="https://www.nakama.in/pricing">how Nakama pricing works</a>.</p>
-<p><strong>Limitation:</strong> Nakama is a small team and takes a small number of partners at a time. Its Work page shows placements and the searches behind them but no performance metrics. It is based in India, so live calls with US teams need planning around the time difference. Buyers in India can compare local options in our guide to <a href="https://www.nakama.in/journal/best-geo-agencies-india">GEO and AEO agencies in India</a>. Its focus is off-site visibility, so a large site that needs deep technical SEO may need a specialist for that part.</p>
+<p><strong>Limitation:</strong> Nakama is a small team and takes a small number of partners at a time. Its Work page shows placements and the searches behind them but no performance metrics. It is based in India, so live calls with US teams need planning around the time difference. Buyers in India can compare local options in our guides to the <a href="https://www.nakama.in/journal/best-aeo-agencies-india">best AEO agencies in India</a> and <a href="https://www.nakama.in/journal/best-geo-agencies-india">GEO and AEO agencies in India</a>. Its focus is off-site visibility, so a large site that needs deep technical SEO may need a specialist for that part.</p>
 <p><strong>HQ:</strong> India.</p>
 <h3 id="9-marcel-digital">9. Marcel Digital</h3>
 <p><strong>Best for:</strong> Organizations that want AEO inside a full-service digital team. Its <a href="https://www.marceldigital.com/services/answer-engine-optimization" rel="noopener" target="_blank">AEO page</a> lists technology, associations, financial services, manufacturing, logistics and telecom as sectors.</p>
@@ -761,13 +762,13 @@ const bodyHtml = `<h1 id="best-aeo-agencies-and-aeo-services-in-2026-compared">B
 <ul>
 <li><strong>Software fits</strong> teams with in-house writers and SEOs that only need measurement.</li>
 <li><strong>An agency fits</strong> teams that lack capacity or need mentions earned on third-party sources.</li>
-<li><strong>A consultant fits</strong> teams that want advice and plan to run the work themselves.</li>
+<li><strong>A consultant fits</strong> teams that want advice and plan to run the work themselves. Compare the <a href="https://www.nakama.in/journal/best-aeo-consultants">best AEO consultants</a>.</li>
 <li><strong>Agencies use trackers too.</strong> Discovered Labs runs its own, NoGood uses Goodie AI, and Minuttia offers a free report tool.</li>
 <li><strong>Ask to see raw prompts and answers</strong> from any tool, so you can check the numbers yourself. Google says third-party tools <a href="https://developers.google.com/search/docs/fundamentals/third-party-seo" rel="noopener" target="_blank">cannot see its internal ranking data</a>.</li>
 </ul>
 <p>This guide ranks agencies only. It does not rank AEO software.</p>
 <h2 id="how-do-you-choose-an-aeo-agency">How do you choose an AEO agency?</h2>
-<p>Pick the agency that can show you AI answers it changed, explain how it measures them, and work on the sources your category depends on. Ask these nine questions on the first call, and write down the answers before you compare prices.</p>
+<p>Pick the agency that can show you AI answers it changed, explain how it measures them, and work on the sources your category depends on. Ask these nine questions on the first call, and write down the answers before you compare prices. For the full process, see <a href="https://www.nakama.in/journal/how-to-hire-an-aeo-agency">how to hire an AEO agency</a>.</p>
 <ol>
 <li><strong>Which AI engines do you track, and how?</strong> Look for named engines and a fixed set of prompts checked on a schedule.</li>
 <li><strong>Can I check your results myself?</strong> The best proof is a query you can run today and a citation you can see.</li>
@@ -1036,10 +1037,10 @@ export const aeoAgenciesArticle: Article = {
    "HQ: No headquarters statement on the pages we checked. A staff bio on its about page mentions a New York office.",
    "8. Nakama",
    "Best for: SaaS and software brands, and brands in competitive categories, that need to be named when buyers ask AI tools what to pick.",
-   "Services: AEO work (buyer-question and answer-gap research, answer-first content and FAQ structure, citation tracking) plus GEO, Reddit and community, editorial content, YouTube and video, and digital PR. It tracks ChatGPT, Perplexity, Gemini and Google AI Overviews and starts with a buyer prompt map and a competitor and source audit. See Nakama's AEO and GEO services and how an engagement runs.",
+   "Services: AEO work (buyer-question and answer-gap research, answer-first content and FAQ structure, citation tracking) plus GEO, Reddit and community, editorial content, YouTube and video, and digital PR. It tracks ChatGPT, Perplexity, Gemini and Google AI Overviews and starts with a buyer prompt map and a competitor and source audit. See Nakama's AEO services, its GEO services and how an engagement runs.",
    "Strength: Off-site work with proof you can run. The Work page lists five clients with the exact searches where Nakama's work surfaced. In one example, Google's AI Overview cited a Nakama LinkedIn comparison right under a client's recommendation. Every community post is disclosed, and nothing publishes without the client's sign-off.",
    "Pricing: No price is published. Nakama sells one all-inclusive plan with no tiers or add-ons. A written proposal arrives within two business days of a 15-minute pricing call, and the minimum commitment is three months. See how Nakama pricing works.",
-   "Limitation: Nakama is a small team and takes a small number of partners at a time. Its Work page shows placements and the searches behind them but no performance metrics. It is based in India, so live calls with US teams need planning around the time difference. Buyers in India can compare local options in our guide to GEO and AEO agencies in India. Its focus is off-site visibility, so a large site that needs deep technical SEO may need a specialist for that part.",
+   "Limitation: Nakama is a small team and takes a small number of partners at a time. Its Work page shows placements and the searches behind them but no performance metrics. It is based in India, so live calls with US teams need planning around the time difference. Buyers in India can compare local options in our guides to the best AEO agencies in India and GEO and AEO agencies in India. Its focus is off-site visibility, so a large site that needs deep technical SEO may need a specialist for that part.",
    "HQ: India.",
    "9. Marcel Digital",
    "Best for: Organizations that want AEO inside a full-service digital team. Its AEO page lists technology, associations, financial services, manufacturing, logistics and telecom as sectors.",
@@ -1078,7 +1079,7 @@ export const aeoAgenciesArticle: Article = {
    "An AEO tool tracks where your brand appears in AI answers. An AEO agency does the work that changes those answers: content, technical fixes, off-site mentions and reporting. Many teams need both measurement and execution, so check whether an agency includes tracking and what your own team would still have to run.",
    "Software fits teams with in-house writers and SEOs that only need measurement.",
    "An agency fits teams that lack capacity or need mentions earned on third-party sources.",
-   "A consultant fits teams that want advice and plan to run the work themselves.",
+   "A consultant fits teams that want advice and plan to run the work themselves. Compare the best AEO consultants.",
    "Agencies use trackers too. Discovered Labs runs its own, NoGood uses Goodie AI, and Minuttia offers a free report tool.",
    "Ask to see raw prompts and answers from any tool, so you can check the numbers yourself. Google says third-party tools cannot see its internal ranking data.",
    "This guide ranks agencies only. It does not rank AEO software."
@@ -1087,7 +1088,7 @@ export const aeoAgenciesArticle: Article = {
  {
   "heading": "How do you choose an AEO agency?",
   "paragraphs": [
-   "Pick the agency that can show you AI answers it changed, explain how it measures them, and work on the sources your category depends on. Ask these nine questions on the first call, and write down the answers before you compare prices.",
+   "Pick the agency that can show you AI answers it changed, explain how it measures them, and work on the sources your category depends on. Ask these nine questions on the first call, and write down the answers before you compare prices. For the full process, see how to hire an AEO agency.",
    "Which AI engines do you track, and how? Look for named engines and a fixed set of prompts checked on a schedule.",
    "Can I check your results myself? The best proof is a query you can run today and a citation you can see.",
    "What is my baseline? A good agency measures where you appear before it starts.",

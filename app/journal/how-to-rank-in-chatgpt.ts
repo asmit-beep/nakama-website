@@ -285,7 +285,7 @@ const bodyHtml = `<nav aria-label="Breadcrumb" class="article-breadcrumb"><ol st
 </ol>
 <p>In that preprint, cited sources for runs within 24 hours had a mean Jaccard similarity of 0.32 to 0.43, pooled over four engines (Swiss-German prompts, Swiss servers, early 2026). For ChatGPT alone it was 0.23, and 57.8% of its runs returned no citations.</p>
 <p>In GA4, links in ChatGPT's answer text reportedly lost the utm_source=chatgpt.com tag from about 8 Oct 2026 (Huesler) or 9 Oct (Graphite), so some visits can appear as Direct. Adobe's Cedric Huesler says a fix began rolling out on 15 Oct, with tagged clicks back to roughly 95 to 100% of the same hour a week earlier by 9 a.m. Pacific (<a href="https://www.searchenginejournal.com/chatgpt-traffic-drop-appears-to-be-a-tracking-problem/593157/">Search Engine Journal, 15 Oct 2026</a>). Huesler says most ChatGPT clicks still arrive without a referrer, so count the UTM tag and annotate 8 to 15 Oct in GA4.</p>
-<p>See also <a href="https://www.nakama.in/journal/what-a-useful-visibility-report-shows">what a useful visibility report shows</a>.</p>
+<p>See also <a href="https://www.nakama.in/journal/ai-visibility-report-template">what a useful visibility report shows</a>.</p>
 <h2 id="what-to-do-first">What should you do first?</h2>
 <p>What you should do first is the documented work, then the work with measured support. Fix crawler access this week, rewrite key pages around buyer questions this month, and start the third-party coverage that takes longest. Record a prompt baseline before you change anything.</p>
 <ol>
@@ -294,7 +294,7 @@ const bodyHtml = `<nav aria-label="Breadcrumb" class="article-breadcrumb"><ol st
 <li>This quarter: earn coverage on review, comparison and partner sites.</li>
 <li>Every month: rerun the prompt set.</li>
 </ol>
-<p>For help, see <a href="https://www.nakama.in/services">Nakama's services</a>, or compare <a href="https://www.nakama.in/journal/best-aeo-agencies">AEO agencies</a> and <a href="https://www.nakama.in/journal/best-generative-engine-optimization-agencies">GEO agencies</a>.</p>
+<p>For help, see <a href="https://www.nakama.in/services/geo">Nakama's GEO services</a>, or compare <a href="https://www.nakama.in/journal/best-aeo-agencies">AEO agencies</a> and <a href="https://www.nakama.in/journal/best-generative-engine-optimization-agencies">GEO agencies</a>.</p>
 <h2 id="what-changed-in-october-2026">What changed in October 2026?</h2>
 <p>October 2026 changed the evidence behind this page. GPT-6 began rolling out as ChatGPT's Chat model, a large preprint tested common advice within websites, Ahrefs published new data on what ChatGPT cites, and a reported tagging bug hid some ChatGPT referrals in GA4 for about a week.</p>
 <ul>
@@ -451,7 +451,7 @@ export const howToRankInChatgptArticle: Article = {
    "This month: rewrite the opening paragraph and the title on your ten key pages.",
    "This quarter: earn coverage on review, comparison and partner sites.",
    "Every month: rerun the prompt set.",
-   "For help, see Nakama's services , or compare AEO agencies and GEO agencies ."
+   "For help, see Nakama's GEO services , or compare AEO agencies and GEO agencies ."
   ]
  },
  {

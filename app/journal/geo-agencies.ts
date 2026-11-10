@@ -241,7 +241,7 @@ export const geoAgenciesJsonLd = {
     {
      "@type": "ListItem",
      "position": 2,
-     "name": "Journal",
+     "name": "Resources",
      "item": "https://www.nakama.in/resources"
     },
     {
@@ -255,11 +255,12 @@ export const geoAgenciesJsonLd = {
  ]
 } as const;
 
-const bodyHtml = `<h1 id="best-generative-engine-optimization-geo-agencies-in-2026-compared">Best Generative Engine Optimization (GEO) Agencies in 2026, Compared</h1>
+const bodyHtml = `<nav aria-label="Breadcrumb" class="article-breadcrumb"><ol style="list-style:none;display:flex;flex-wrap:wrap;gap:.5rem;padding:0;margin:0 0 1.25rem;font-size:.9rem"><li><a href="https://www.nakama.in/">Home</a></li><li aria-hidden="true">/</li><li><a href="https://www.nakama.in/resources">Resources</a></li><li aria-hidden="true">/</li><li aria-current="page">Best Generative Engine Optimization (GEO) Agencies in 2026, Compared</li></ol></nav>
+<h1 id="best-generative-engine-optimization-geo-agencies-in-2026-compared">Best Generative Engine Optimization (GEO) Agencies in 2026, Compared</h1>
 <p><strong>Last updated October 2026</strong></p>
 <p>By Yash Kumar, Co-founder and CEO, Nakama Growth</p>
 <figure><img src="/journal/best-generative-engine-optimization-agencies/best-generative-engine-optimization-agencies-cover.webp" alt="Best generative engine optimization agencies in 2026 compared" width="1920" height="1080" fetchpriority="high" decoding="async"></figure>
-<p>Choosing a generative engine optimization agency is harder than choosing an SEO agency, because almost every agency now claims GEO. This guide compares ten GEO agencies and generative engine optimization companies on the same five criteria, with every claim linked to the agency's own website or confirmed by the agency directly. If you are hiring in India, see our comparison of the <a href="https://www.nakama.in/journal/best-geo-agencies-india">best GEO agencies in India</a>.</p>
+<p>Choosing a generative engine optimization agency is harder than choosing an SEO agency, because almost every agency now claims GEO. This guide compares ten GEO agencies and generative engine optimization companies on the same five criteria, with every claim linked to the agency's own website or confirmed by the agency directly. If you are hiring in India, see our comparison of the <a href="https://www.nakama.in/journal/best-geo-agencies-india">best GEO agencies in India</a>, and for software companies, the <a href="https://www.nakama.in/journal/best-geo-agencies-for-saas">best GEO agencies for SaaS</a>.</p>
 <h2 id="short-answer">Short answer</h2>
 <p>The best generative engine optimization agency depends on where you need to show up. Nakama is our pick for brands that need to be named in ChatGPT, Perplexity, Gemini and Google AI Overviews through off-site sources like Reddit, YouTube and review sites. Nine Peaks Media fits B2B SaaS, software, IT, and technology companies looking to grow organic traffic and AI search visibility. Percepture suits teams that want published package pricing. iPullRank fits enterprise teams with complex, technical search programs.</p>
 <blockquote>
@@ -287,7 +288,7 @@ const bodyHtml = `<h1 id="best-generative-engine-optimization-geo-agencies-in-20
 <h2 id="geo-vs-seo-what-a-geo-agency-does">GEO vs SEO: what a GEO agency does</h2>
 <p>A GEO agency, sometimes called a generative AI search engine optimization agency, gets your brand cited or recommended inside AI-generated answers. When a buyer asks ChatGPT "what is the best CRM for a small real estate team," the answer draws on pages the model trusts. A GEO agency works out which pages those are, then makes sure your brand appears on them and on your own site in a form the model can quote.</p>
 <p>The term comes from the research paper <a href="https://arxiv.org/abs/2311.09735" rel="noopener" target="_blank">GEO: Generative Engine Optimization</a> by Pranjal Aggarwal and colleagues. The authors report that their methods can boost "visibility by up to 40% in generative engine responses," and that results vary by domain.</p>
-<p>In practice, <a href="https://www.nakama.in/services">GEO services</a> cover four things: mapping the questions buyers ask AI tools, auditing which sources those tools cite, creating or earning content on those sources, and measuring how often your brand appears in the answers. Some agencies call the same work AEO, or answer engine optimization. For that side of the market, see our comparison of the <a href="https://www.nakama.in/journal/best-aeo-agencies">best AEO agencies</a>.</p>
+<p>In practice, <a href="https://www.nakama.in/services/geo">GEO services</a> cover four things: mapping the questions buyers ask AI tools, auditing which sources those tools cite, creating or earning content on those sources, and measuring how often your brand appears in the answers. Some agencies call the same work AEO, or answer engine optimization. For that side of the market, see our comparison of the <a href="https://www.nakama.in/journal/best-aeo-agencies">best AEO agencies</a>.</p>
 <h3 id="geo-agency-vs-seo-agency">GEO agency vs SEO agency</h3>
 <div class="article-table"><table>
 <thead>
@@ -605,7 +606,7 @@ const bodyHtml = `<h1 id="best-generative-engine-optimization-geo-agencies-in-20
 <p>Arlington, Texas.</p>
 <h2 id="how-to-choose-a-generative-engine-optimization-agency">How to choose a generative engine optimization agency</h2>
 <figure><img src="/journal/best-generative-engine-optimization-agencies/best-generative-engine-optimization-agencies-checklist.webp" alt="Checklist of questions to ask before hiring a generative engine optimization agency" width="1600" height="820" loading="lazy" decoding="async"><figcaption>Questions to ask before you hire a generative engine optimization agency.</figcaption></figure>
-<p>Pick the agency that can show you the AI answers it changed, explain how it measures them, and work on the sources your category actually depends on. Ask these questions on the first call.</p>
+<p>Pick the agency that can show you the AI answers it changed, explain how it measures them, and work on the sources your category actually depends on. Ask these questions on the first call. Still deciding whether to hire at all? Compare <a href="https://www.nakama.in/journal/geo-agency-vs-in-house">in-house vs agency vs tools</a> first.</p>
 <ol>
 <li><strong>Which AI engines do you track, and how?</strong> You want named engines (ChatGPT, Perplexity, Gemini, Google AI Overviews) and a clear method, such as a fixed set of prompts checked on a schedule.</li>
 <li><strong>Can I check your results myself?</strong> The best proof is a query you can run today and a citation you can see. Screenshots and percentages without a baseline are weaker.</li>
@@ -635,7 +636,7 @@ const bodyHtml = `<h1 id="best-generative-engine-optimization-geo-agencies-in-20
 <h3 id="is-generative-engine-optimization-worth-it">Is generative engine optimization worth it?</h3>
 <p>It is worth it if your buyers ask AI tools for recommendations before they shortlist vendors. If AI answers in your category name competitors and leave you out, that gap affects your pipeline. Start with an audit of where you appear today before committing budget.</p>
 <h3 id="how-do-you-measure-generative-engine-optimization">How do you measure generative engine optimization?</h3>
-<p>Track a fixed set of buyer prompts across the AI engines that matter to you, and record how often your brand is mentioned or cited, in what position and alongside which competitors. Pair that with AI referral traffic and leads in your analytics. For more on what to look for, read <a href="https://www.nakama.in/journal/what-a-useful-visibility-report-shows">what a useful visibility report shows</a>.</p>
+<p>Track a fixed set of buyer prompts across the AI engines that matter to you, and record how often your brand is mentioned or cited, in what position and alongside which competitors. Pair that with AI referral traffic and leads in your analytics. For more on what to look for, read <a href="https://www.nakama.in/journal/ai-visibility-report-template">what a useful visibility report shows</a>.</p>
 <h3 id="what-is-the-difference-between-geo-and-seo">What is the difference between GEO and SEO?</h3>
 <p>SEO aims to rank your pages in search results. GEO aims to get your brand named inside AI answers. SEO is mostly about your own site. GEO also covers the third-party sources AI tools quote, such as Reddit, YouTube, review sites and publications.</p>
 <h3 id="what-is-a-generative-engine-optimization-audit">What is a generative engine optimization audit?</h3>
@@ -680,7 +681,7 @@ export const geoAgenciesArticle: Article = {
    "Best Generative Engine Optimization (GEO) Agencies in 2026, Compared\nLast updated October 2026",
    "By Yash Kumar, Co-founder and CEO, Nakama Growth",
    "Image: Best generative engine optimization agencies in 2026 compared",
-   "Choosing a generative engine optimization agency is harder than choosing an SEO agency, because almost every agency now claims GEO. This guide compares ten GEO agencies and generative engine optimization companies on the same five criteria, with every claim linked to the agency's own website or confirmed by the agency directly. If you are hiring in India, see our comparison of the best GEO agencies in India."
+   "Choosing a generative engine optimization agency is harder than choosing an SEO agency, because almost every agency now claims GEO. This guide compares ten GEO agencies and generative engine optimization companies on the same five criteria, with every claim linked to the agency's own website or confirmed by the agency directly. If you are hiring in India, see our comparison of the best GEO agencies in India, and for software companies, the best GEO agencies for SaaS."
   ]
  },
  {
@@ -915,7 +916,7 @@ export const geoAgenciesArticle: Article = {
   "paragraphs": [
    "Image: Checklist of questions to ask before hiring a generative engine optimization agency",
    "Questions to ask before you hire a generative engine optimization agency.",
-   "Pick the agency that can show you the AI answers it changed, explain how it measures them, and work on the sources your category actually depends on. Ask these questions on the first call.",
+   "Pick the agency that can show you the AI answers it changed, explain how it measures them, and work on the sources your category actually depends on. Ask these questions on the first call. Still deciding whether to hire at all? Compare in-house vs agency vs tools first.",
    "Which AI engines do you track, and how? You want named engines (ChatGPT, Perplexity, Gemini, Google AI Overviews) and a clear method, such as a fixed set of prompts checked on a schedule.",
    "Can I check your results myself? The best proof is a query you can run today and a citation you can see. Screenshots and percentages without a baseline are weaker.",
    "What is my baseline? A good agency measures where you appear before it starts, so progress means something.",

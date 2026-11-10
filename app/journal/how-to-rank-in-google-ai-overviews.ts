@@ -203,7 +203,7 @@ const bodyHtml = `<nav aria-label="Breadcrumb" class="article-breadcrumb"><ol st
 <p>Google also says clicks from results pages with AI Overviews tend to be higher quality, with people spending more time on the site. So watch engagement and conversions alongside sessions.</p>
 <p>AI Overviews change from run to run, so never judge from one search. We sample each priority query several times on the same day, log every cited domain, and repeat on a schedule.</p>
 <p>Be careful with rank-tracker data from late September 2026 onward. Search Engine Roundtable reported on 12 October that third-party rank tracking was not fully working, and Search Engine Journal covered a Nozzle analysis on 14 October showing that the skewed results pages trackers received carried fewer AI Overviews. Tracker counts can understate presence.</p>
-<p>If you'd rather use a tool for citation sampling, see our <a href="https://www.nakama.in/journal/peec-ai-alternatives">Peec AI alternatives</a> roundup. For the metrics worth reporting, see our note on <a href="https://www.nakama.in/journal/what-a-useful-visibility-report-shows">useful visibility reports</a>. Our <a href="https://www.nakama.in/journal/geo-audit">GEO audit</a> guide walks through the full method, and <a href="https://www.nakama.in/journal/aeo-vs-seo-vs-geo">AEO vs SEO vs GEO</a> covers how this fits with classic SEO.</p>
+<p>If you'd rather use a tool for citation sampling, see our <a href="https://www.nakama.in/journal/peec-ai-alternatives">Peec AI alternatives</a> roundup. For the metrics worth reporting, see our note on <a href="https://www.nakama.in/journal/ai-visibility-report-template">useful visibility reports</a>. Our <a href="https://www.nakama.in/journal/geo-audit">GEO audit</a> guide walks through the full method, and <a href="https://www.nakama.in/journal/aeo-vs-seo-vs-geo">AEO vs SEO vs GEO</a> covers how this fits with classic SEO.</p>
 <h2 id="where-most-ai-overview-advice-goes-wrong">Where most AI Overview advice goes wrong</h2>
 <p>Most top-ranking guides on this topic say the same five things: write good content, add schema, use E-E-A-T, add FAQs, be concise. None of that is wrong. It just isn't enough to win.</p>
 <p>The data points somewhere else. If roughly six in ten citations come from outside the top 10, the real contest is in the sub-queries you aren't tracking. Teams that only optimize for the head term are working on a minority of the citation pool.</p>
@@ -222,7 +222,7 @@ const bodyHtml = `<nav aria-label="Breadcrumb" class="article-breadcrumb"><ol st
 <h3 id="how-do-you-track-ai-overview-traffic">How do you track AI Overview traffic?</h3>
 <p>AI Overview and AI Mode traffic is counted in Search Console's Performance report under the Web search type, and Google's generative AI guide points to a Generative AI performance report as well. To track citations, sample your key queries several times on a schedule and record which URLs appear in the AI Overview.</p>
 <h2 id="want-to-see-where-you-re-cited-today">Want to see where you're cited today?</h2>
-<p>Most teams we talk to have never checked which of their pages Google actually quotes. If you'd like a clear picture of where you rank, where you're cited and where the gap is, <a href="https://www.nakama.in/contact">book a GEO audit call with Nakama Growth</a>. We'll walk you through what we find. No one can guarantee an AI Overview citation, and we won't.</p>
+<p>Most teams we talk to have never checked which of their pages Google actually quotes. If you'd like a clear picture of where you rank, where you're cited and where the gap is, <a href="https://www.nakama.in/contact">book a GEO audit call with Nakama Growth</a>. We'll walk you through what we find and what our <a href="https://www.nakama.in/services/geo">GEO services</a> would cover. No one can guarantee an AI Overview citation, and we won't.</p>
 <h2 id="about-the-author">About the author</h2>
 <div class="author-box" id="sandeep-kumar">
 <img src="/authors/sandeep-kumar-nakama-seo-geo.webp" srcset="/authors/sandeep-kumar-nakama-seo-geo.webp 400w, /authors/sandeep-kumar-nakama-seo-geo-800.webp 800w" sizes="96px" alt="Sandeep, SEO and GEO Specialist at Nakama Growth" width="96" height="96" loading="lazy" decoding="async">
@@ -438,7 +438,7 @@ export const howToRankInGoogleAiOverviewsArticle: Article = {
  {
   "heading": "Want to see where you're cited today?",
   "paragraphs": [
-   "Most teams we talk to have never checked which of their pages Google actually quotes. If you'd like a clear picture of where you rank, where you're cited and where the gap is, book a GEO audit call with Nakama Growth. We'll walk you through what we find. No one can guarantee an AI Overview citation, and we won't."
+   "Most teams we talk to have never checked which of their pages Google actually quotes. If you'd like a clear picture of where you rank, where you're cited and where the gap is, book a GEO audit call with Nakama Growth. We'll walk you through what we find and what our GEO services would cover. No one can guarantee an AI Overview citation, and we won't."
   ]
  },
  {

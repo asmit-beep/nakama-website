@@ -206,7 +206,7 @@ const bodyHtml = `<nav aria-label="Breadcrumb" class="article-breadcrumb"><ol st
 <p>The first two rows come from Ahrefs' 20,000 prompt test. The last two rows are our working guidance from the same pattern and are not measured figures.</p>
 <h2 id="how-do-you-improve-brand-visibility-in-ai-answer-engines-off-site">How do you improve brand visibility in AI answer engines off-site?</h2>
 <p>You can improve brand visibility in AI answer engines mostly off-site. Comparison and category prompts pull heavily from third-party pages, and brand web mentions correlate far more strongly with AI Overview visibility than backlinks. That lets a SaaS team grow citations through reviews, listicles, Reddit, YouTube and publications while the website stays as it is.</p>
-<p>This is where Nakama Growth focuses. We work off-site only. We find the third-party pages engines already cite for your prompts and work to get your product represented there accurately.</p>
+<p>This is where Nakama Growth's <a href="https://www.nakama.in/services/aeo">AEO services</a> focus. We work off-site only. We find the third-party pages engines already cite for your prompts and work to get your product represented there accurately.</p>
 <p>On-site work still has a floor. Your crawlers need access and your fact pages need to be clear, which covers Steps 1 and 3.</p>
 <h2 id="is-llm-seo-different-from-answer-engine-optimization">Is LLM SEO different from answer engine optimization?</h2>
 <p>LLM SEO and answer engine optimization describe the same goal: getting cited in answers produced by large language models. The labels differ by community and vendor. The work is the same set of steps covered above, from crawler access and fact pages to third-party mentions and prompt tracking across each engine you sell into.</p>
@@ -386,7 +386,7 @@ export const answerEngineOptimizationArticle: Article = {
   "heading": "How do you improve brand visibility in AI answer engines off-site?",
   "paragraphs": [
    "You can improve brand visibility in AI answer engines mostly off-site. Comparison and category prompts pull heavily from third-party pages, and brand web mentions correlate far more strongly with AI Overview visibility than backlinks. That lets a SaaS team grow citations through reviews, listicles, Reddit, YouTube and publications while the website stays as it is.",
-   "This is where Nakama Growth focuses. We work off-site only. We find the third-party pages engines already cite for your prompts and work to get your product represented there accurately.",
+   "This is where Nakama Growth's AEO services focus. We work off-site only. We find the third-party pages engines already cite for your prompts and work to get your product represented there accurately.",
    "On-site work still has a floor. Your crawlers need access and your fact pages need to be clear, which covers Steps 1 and 3."
   ]
  },

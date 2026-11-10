@@ -116,7 +116,7 @@ const faqLd = {
    "name": "What tools help with a GEO audit?",
    "acceptedAnswer": {
     "@type": "Answer",
-    "text": "A spreadsheet and manual prompt testing are enough for a first audit. Add Google Search Console's Generative AI performance report and Bing Webmaster Tools' AI Performance report for first-party data. Paid AI visibility tools can automate prompt tracking across engines once you know which prompts matter; our Peec AI alternatives roundup compares them."
+    "text": "A spreadsheet and manual prompt testing are enough for a first audit. Add Google Search Console's Generative AI performance report and Bing Webmaster Tools' AI Performance report for first-party data. Paid AI visibility tools can automate prompt tracking across engines once you know which prompts matter; our best AI visibility tools guide and Peec AI alternatives roundup compare them."
    }
   }
  ]
@@ -152,7 +152,7 @@ const bodyHtml = `<nav aria-label="Breadcrumb" class="article-breadcrumb"><ol st
 <h2 id="step-2-how-do-you-test-prompts-across-ai-engines">Step 2: How do you test prompts across AI engines?</h2>
 <p>Ask every prompt seven or more times on each engine, in fresh sessions with no chat history (logged out where the engine allows it), and record the date of every run. Report each engine on its own line with run counts, such as "named in 2 of 7 ChatGPT runs, 14 to 21 Oct 2026". Never add engines together into one score.</p>
 <p>The reason is variance. In a 2026 University of St. Gallen study, only 34% to 42% of cited sources overlapped from one day to the next, and the authors set seven daily repeats of each prompt as the minimum for tracking brands (<a href="https://arxiv.org/abs/2604.07585">Schulte et al.</a>). The study used Swiss-German prompts and suggests at least 8 runs when you track cited sources, so treat 7 as a floor.</p>
-<p>For each run, log six fields: whether your brand is <strong>mentioned</strong>, whether it is <strong>recommended</strong>, whether your URL is <strong>cited</strong>, whether price and features are <strong>accurate</strong>, which <strong>competitors</strong> appear, and which <strong>source domains</strong> the engine cites. For an example of the output this step should produce, see our post on <a href="https://www.nakama.in/journal/what-a-useful-visibility-report-shows">what a useful visibility report shows</a>.</p>
+<p>For each run, log six fields: whether your brand is <strong>mentioned</strong>, whether it is <strong>recommended</strong>, whether your URL is <strong>cited</strong>, whether price and features are <strong>accurate</strong>, which <strong>competitors</strong> appear, and which <strong>source domains</strong> the engine cites. For an example of the output this step should produce, see our post on <a href="https://www.nakama.in/journal/ai-visibility-report-template">what a useful visibility report shows</a>.</p>
 <h3 id="how-do-i-track-google-ai-overviews">How do I track Google AI Overviews?</h3>
 <p>Search each prompt in Google and record whether an AI Overview appears at all. Many queries show none: a study of 55,393 trending Google queries (March to April 2026) found AI Overviews on 13.7% overall and 64.7% of question-form queries (<a href="https://arxiv.org/abs/2605.14021">Xu et al.</a>). Log "no overview" as its own outcome.</p>
 <p>Because Google can use "query fan-out" to build one answer from several searches, a page on a narrow subtopic can earn a citation on a broad prompt (<a href="https://developers.google.com/search/docs/appearance/ai-features">Google</a>).</p>
@@ -207,7 +207,7 @@ const bodyHtml = `<nav aria-label="Breadcrumb" class="article-breadcrumb"><ol st
 <h2 id="should-you-run-a-geo-audit-yourself-or-hire-an-agency">Should you run a GEO audit yourself or hire an agency?</h2>
 <p>A small team can run a first GEO audit in-house with this checklist and a spreadsheet, which is often the right call for geo for saas startups working from a small set of prompts. An agency helps when you need monthly tracking across many engines, or outreach for third-party coverage your team cannot staff.</p>
 <p>If you are comparing partners, our list of the <a href="https://www.nakama.in/journal/best-geo-agencies-for-saas">best GEO agencies for SaaS</a> covers what to look for, and our roundup of <a href="https://www.nakama.in/journal/best-generative-engine-optimization-agencies">generative engine optimization agencies</a> covers the broader market.</p>
-<p>Nakama Growth is a Delhi-based GEO agency founded in 2026. It works with SaaS and AI companies such as Synup, HubEngage, Inventive AI and StarAgile. <strong><a href="https://www.nakama.in/contact">Book a GEO audit call with Nakama Growth</a></strong></p>
+<p>Nakama Growth is a Delhi-based GEO agency founded in 2026. It offers an <a href="https://www.nakama.in/services/ai-visibility-audit">AI visibility audit</a> and ongoing <a href="https://www.nakama.in/services/geo">GEO services</a>. It works with SaaS and AI companies such as Synup, HubEngage, Inventive AI and StarAgile. <strong><a href="https://www.nakama.in/contact">Book a GEO audit call with Nakama Growth</a></strong></p>
 <h2 id="faq">FAQ</h2>
 <h3 id="what-is-a-geo-audit">What is a GEO audit?</h3>
 <p>A GEO audit is a structured check of how AI answer engines such as ChatGPT, Perplexity, Gemini, Copilot, Claude and Google AI Overviews mention, cite and describe your brand. It also checks whether AI crawlers can access your site and whether your key content is readable without JavaScript.</p>
@@ -218,7 +218,7 @@ const bodyHtml = `<nav aria-label="Breadcrumb" class="article-breadcrumb"><ol st
 <h3 id="do-i-need-special-schema-or-an-llms-txt-file-for-ai-overviews">Do I need special schema or an llms.txt file for AI Overviews?</h3>
 <p>Google says no. Its guidance rules out AI text files such as llms.txt and special schema for its generative AI features. What you should verify is the Search Console opt-in for Search generative AI features, plus indexed key pages with snippets allowed.</p>
 <h3 id="what-tools-help-with-a-geo-audit">What tools help with a GEO audit?</h3>
-<p>A spreadsheet and manual prompt testing are enough for a first audit. Add Google Search Console's Generative AI performance report and Bing Webmaster Tools' AI Performance report for first-party data. Paid AI visibility tools can automate prompt tracking across engines once you know which prompts matter; our <a href="https://www.nakama.in/journal/peec-ai-alternatives">Peec AI alternatives</a> roundup compares them.</p>
+<p>A spreadsheet and manual prompt testing are enough for a first audit. Add Google Search Console's Generative AI performance report and Bing Webmaster Tools' AI Performance report for first-party data. Paid AI visibility tools can automate prompt tracking across engines once you know which prompts matter; our <a href="https://www.nakama.in/journal/best-ai-visibility-tools">best AI visibility tools</a> guide and <a href="https://www.nakama.in/journal/peec-ai-alternatives">Peec AI alternatives</a> roundup compare them.</p>
 <h2 id="about-the-author">About the author</h2>
 <div class="author-box" id="yash-kumar">
 <img src="/authors/yash-kumar-nakama-ceo.webp" srcset="/authors/yash-kumar-nakama-ceo.webp 400w, /authors/yash-kumar-nakama-ceo-800.webp 800w" sizes="96px" alt="Yash Kumar, Co-founder and CEO of Nakama Growth" width="96" height="96" loading="lazy" decoding="async">
@@ -387,7 +387,7 @@ export const geoAuditArticle: Article = {
   "paragraphs": [
    "A small team can run a first GEO audit in-house with this checklist and a spreadsheet, which is often the right call for geo for saas startups working from a small set of prompts. An agency helps when you need monthly tracking across many engines, or outreach for third-party coverage your team cannot staff.",
    "If you are comparing partners, our list of the best GEO agencies for SaaS covers what to look for, and our roundup of generative engine optimization agencies covers the broader market.",
-   "Nakama Growth is a Delhi-based GEO agency founded in 2026. It works with SaaS and AI companies such as Synup, HubEngage, Inventive AI and StarAgile. Book a GEO audit call with Nakama Growth"
+   "Nakama Growth is a Delhi-based GEO agency founded in 2026. It offers an AI visibility audit and ongoing GEO services. It works with SaaS and AI companies such as Synup, HubEngage, Inventive AI and StarAgile. Book a GEO audit call with Nakama Growth"
   ]
  },
  {
@@ -423,7 +423,7 @@ export const geoAuditArticle: Article = {
  {
   "heading": "What tools help with a GEO audit?",
   "paragraphs": [
-   "A spreadsheet and manual prompt testing are enough for a first audit. Add Google Search Console's Generative AI performance report and Bing Webmaster Tools' AI Performance report for first-party data. Paid AI visibility tools can automate prompt tracking across engines once you know which prompts matter; our Peec AI alternatives roundup compares them."
+   "A spreadsheet and manual prompt testing are enough for a first audit. Add Google Search Console's Generative AI performance report and Bing Webmaster Tools' AI Performance report for first-party data. Paid AI visibility tools can automate prompt tracking across engines once you know which prompts matter; our best AI visibility tools guide and Peec AI alternatives roundup compare them."
   ]
  },
  {

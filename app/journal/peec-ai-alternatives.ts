@@ -251,7 +251,7 @@ const bodyHtml = `<nav aria-label="Breadcrumb" class="article-breadcrumb"><ol st
 <li><strong>You care about AI crawlers:</strong> Scrunch AI Core includes AI bot traffic and five site audits a month.</li>
 <li><strong>You need enterprise controls:</strong> Profound Enterprise lists SSO, SAML and SOC 2 compliance.</li>
 </ul>
-<p>Before you sign, write down what your monthly report has to show. Our guide to <a href="https://www.nakama.in/journal/what-a-useful-visibility-report-shows">what a useful visibility report shows</a> lists the parts worth paying for.</p>
+<p>Before you sign, write down what your monthly report has to show. Our guide to <a href="https://www.nakama.in/journal/ai-visibility-report-template">what a useful visibility report shows</a> lists the parts worth paying for.</p>
 <p>We read the pricing pages of Writesonic and Rankscale and left both out of the seven. Writesonic's Starter, Basic and Growth plans track ChatGPT, Gemini and Google AI Overviews, and Rankscale sells credits that cost 0.25 for a ChatGPT answer and 2 for a Claude answer.</p>
 <h2 id="when-should-you-stay-on-peec-ai">When should you stay on Peec AI?</h2>
 <p>Stay on Peec AI if three engines cover where your buyers ask and 50 to 350 prompts fit your tracking plan. Every self-serve plan includes unlimited users. Peec AI's FAQ says extra countries or languages cost nothing, though its plan table caps countries at 1 on Starter and 3 on Pro and Advanced.</p>
@@ -309,10 +309,10 @@ const bodyHtml = `<nav aria-label="Breadcrumb" class="article-breadcrumb"><ol st
 <h2 id="how-we-compared">How we compared</h2>
 <p>We read each vendor's pricing page, plus help pages where the pricing page left gaps, on 18 Oct 2026. Peec AI's prices only appear in a browser, so we read them there and kept a screenshot. We did not run prompts through these tools or test their accuracy.</p>
 <p>Prices are in USD as shown on 18 Oct 2026. Several vendors, including Ahrefs and Otterly.AI, show euros or other currencies to some regions, so your page may differ.</p>
-<p>If you are reading lists of the best AI visibility tools, check which unit each price buys.</p>
+<p>If you are reading lists of the <a href="https://www.nakama.in/journal/best-ai-visibility-tools">best AI visibility tools</a>, check which unit each price buys.</p>
 <p><a href="https://www.searchenginejournal.com/ai-visibility-rankings-arent-stable-new-research-shows-its-mostly-statistical-noise/581905/">Search Engine Journal</a> (11 Jul 2026) reported a preprint study of rankings of cited websites: 27 of 30 platform and topic tests needed 33 to 94 cited answers before the order held steady and the leaders separated, and three never got there within 125 questions. A University of St. Gallen preprint (<a href="https://arxiv.org/abs/2604.07585">arXiv 2604.07585</a>) recommended at least 7 runs per prompt per day for brand visibility monitoring, the point where the standard error of a brand's detection rate fell below 0.10 in its Swiss test data.</p>
 <p>Our ChatGPT guide explains <a href="https://www.nakama.in/journal/how-to-rank-in-chatgpt#how-do-you-track-brand-mentions-in-chatgpt">how to track brand mentions in ChatGPT</a>.</p>
-<p>If you want a team to run this for you, see our roundups of <a href="https://www.nakama.in/journal/best-aeo-agencies">AEO agencies</a> and <a href="https://www.nakama.in/journal/best-generative-engine-optimization-agencies">GEO agencies</a>, or <a href="https://www.nakama.in/services">Nakama's services</a>.</p>
+<p>If you want a team to run this for you, see our roundups of <a href="https://www.nakama.in/journal/best-aeo-agencies">AEO agencies</a> and <a href="https://www.nakama.in/journal/best-generative-engine-optimization-agencies">GEO agencies</a>, or <a href="https://www.nakama.in/services/ai-visibility-audit">Nakama's AI visibility audit</a>.</p>
 <h2 id="what-do-people-ask-about-peec-ai-alternatives">What do people ask about Peec AI alternatives?</h2>
 <p>Here are questions that come up when you compare Peec AI alternatives, answered from the same vendor pages checked on 18 Oct 2026. Prices and engine lists change often, so check the vendor page on the day you buy. No answer here ranks one tool above the rest.</p>
 <h3 id="which-peec-ai-alternative-costs-least-to-start">Which Peec AI alternative costs least to start?</h3>
@@ -493,7 +493,7 @@ export const peecAiAlternativesArticle: Article = {
    "If you are reading lists of the best AI visibility tools, check which unit each price buys.",
    "Search Engine Journal (11 Jul 2026) reported a preprint study of rankings of cited websites: 27 of 30 platform and topic tests needed 33 to 94 cited answers before the order held steady and the leaders separated, and three never got there within 125 questions. A University of St. Gallen preprint ( arXiv 2604.07585 ) recommended at least 7 runs per prompt per day for brand visibility monitoring, the point where the standard error of a brand's detection rate fell below 0.10 in its Swiss test data.",
    "Our ChatGPT guide explains how to track brand mentions in ChatGPT .",
-   "If you want a team to run this for you, see our roundups of AEO agencies and GEO agencies , or Nakama's services ."
+   "If you want a team to run this for you, see our roundups of AEO agencies and GEO agencies , or Nakama's AI visibility audit ."
   ]
  },
  {

@@ -217,7 +217,7 @@ const bodyHtml = `<nav aria-label="Breadcrumb" class="article-breadcrumb"><ol st
 <li><strong>Bundled services.</strong> Some agencies fold in SEO, video or digital PR; others charge separately.</li>
 </ul>
 <p>When you evaluate providers, line them up by the same drivers rather than by headline price. A cheaper quote with no off-site work is usually a different product.</p>
-<p>For an all-inclusive plan example, see <a href="https://www.nakama.in/pricing#quote">Nakama Growth pricing</a>.</p>
+<p>For published agency prices side by side, see our <a href="https://www.nakama.in/journal/geo-aeo-pricing">GEO and AEO pricing</a> guide. For an all-inclusive plan example, see <a href="https://www.nakama.in/pricing#quote">Nakama Growth pricing</a>.</p>
 <h2 id="red-flags-before-you-sign">Red flags before you sign</h2>
 <p>Walk away, or slow down, if you see any of these. Each one shows up in sales calls before it shows up in results.</p>
 <ul>
@@ -362,7 +362,7 @@ export const howToHireAnAeoAgencyArticle: Article = {
     'Term length. Longer commitments often lower the monthly rate.',
     'Bundled services. Some agencies fold in SEO, video or digital PR; others charge separately.',
     'When you evaluate providers, line them up by the same drivers rather than by headline price. A cheaper quote with no off-site work is usually a different product.',
-    'For an all-inclusive plan example, see Nakama Growth pricing.',
+    'For published agency prices side by side, see our GEO and AEO pricing guide. For an all-inclusive plan example, see Nakama Growth pricing.',
    ],
   },
   {

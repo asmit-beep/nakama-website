@@ -212,4 +212,7 @@ export const RELATED_LIVE = [
  {href: '/services/aeo', label: 'AEO services'},
  {href: '/services/ai-visibility-audit', label: 'AI visibility audit'},
  {href: PRICING_HREF, label: 'GEO and AEO pricing guide'},
+ {href: '/industries/ecommerce', label: 'GEO for ecommerce brands'},
+ {href: '/industries/real-estate', label: 'AEO for real estate brokerages'},
+ {href: '/industries', label: 'See all industries'},
 ] as const;
