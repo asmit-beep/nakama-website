@@ -1,11 +1,12 @@
 import type {Article} from './articles';
+import styles from './geo-agency-vs-in-house.module.css';
 
 /**
  * PUBLISH TIME for this preview. ISO 8601 with +05:30.
  * Reset PUBLISHED_AT on ship day. MODIFIED_AT, the visible Updated line,
  * the matrix caption and both JSON-LD dates all read this one constant.
  *
- * Yash GO: set PREVIEW to false.
+ * Ship GO: set PREVIEW to false.
  * While PREVIEW is true the page stays noindex,follow and off the sitemap,
  * llms.txt, llms-full.txt, RSS, the resources index and the author index.
  */
@@ -32,9 +33,9 @@ const HYBRID_ALT = 'Three hybrid AEO and GEO models showing which work stays in-
 const RAMP_ALT = 'Our view: a 90-day ramp for a new in-house AEO or GEO team, from access and baseline, to first pages and outreach, to repeat measurement.';
 const HERO_URL = `${CANONICAL}/geo-agency-vs-in-house-cover.webp`;
 const OG_URL = `${CANONICAL}/geo-agency-vs-in-house-og.png`;
-const AUTHOR_URL = 'https://www.nakama.in/authors/yash-kumar';
-/** Live /authors/yash-kumar Person text, verbatim (lib/authors.ts). */
-const AUTHOR_BIO = 'Yash Kumar is Co-founder and CEO of Nakama Growth, an AEO and GEO agency in India that helps B2B and SaaS brands get named when buyers ask ChatGPT, Perplexity, Gemini and Google AI Overviews what to choose. He leads Nakama\u2019s work on earning mentions on the sources those tools read.';
+const AUTHOR_URL = 'https://www.nakama.in/authors/sandeep-kumar';
+/** Live /authors/sandeep-kumar Person text, verbatim (lib/authors.ts bio[0]). */
+const AUTHOR_BIO = 'Sandeep Kumar is an SEO and GEO Specialist at Nakama Growth, based in Delhi, India. He joined the team in June 2026 and works on content strategy and web content writing for brands that want to show up in Google search and in AI answers from tools like ChatGPT, Perplexity and Google AI Overviews.';
 const QUOTE_URL = 'https://www.nakama.in/pricing#quote';
 
 const FAQS: {q: string; a: string}[] = [
@@ -147,8 +148,8 @@ const articleLd = {
   {
    "@type": "Person",
    "@id": `${AUTHOR_URL}#person`,
-   "name": "Yash Kumar",
-   "jobTitle": "Co-founder and CEO",
+   "name": "Sandeep Kumar",
+   "jobTitle": "SEO and GEO Specialist",
    "url": AUTHOR_URL,
    "description": AUTHOR_BIO,
    "worksFor": {
@@ -199,20 +200,23 @@ const articleLd = {
 
 export const geoAgencyVsInHouseJsonLd = articleLd;
 
-const figure = (file: string, alt: string, width: number, height: number, eager = false) =>
- `<figure><img src="/journal/${SLUG}/${file}" alt="${alt}" width="${width}" height="${height}" ${eager ? 'fetchpriority="high"' : 'loading="lazy"'} decoding="async"></figure>`;
+const HYBRID_CAPTION = 'Three hybrid models: what stays in-house and what an agency owns.';
+const RAMP_CAPTION = 'Our view: a 90-day ramp for a new in-house AEO or GEO team.';
 
-const quoteLink = `<p><a href="${QUOTE_URL}">Get a quote</a></p>`;
+const figure = (file: string, alt: string, width: number, height: number, eager = false, extra?: {caption?: string; narrow?: boolean}) =>
+ `<figure${extra?.narrow ? ` class="${styles.narrow}"` : ''}><img src="/journal/${SLUG}/${file}" alt="${alt}" width="${width}" height="${height}" ${eager ? 'fetchpriority="high"' : 'loading="lazy"'} decoding="async">${extra?.caption ? `<figcaption>${extra.caption}</figcaption>` : ''}</figure>`;
+
+const quoteLink = `<p class="${styles.cta}"><a class="ip-btn" href="${QUOTE_URL}"><span>Get a quote</span><i aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 7h10v10"/><path d="M7 17 17 7"/></svg></i></a></p>`;
 
 const h2 = (text: string) => `<h2 id="${faqId(text)}">${text}</h2>`;
 const h3 = (text: string) => `<h3 id="${faqId(text)}">${text}</h3>`;
 
 const faqHtml = FAQS.map(({q, a}) => `${h3(q)}\n<p>${a}</p>`).join('\n');
 
-const authorBox = `<div class="author-box" id="yash-kumar">
-<img src="/authors/yash-kumar-nakama-ceo.webp" srcset="/authors/yash-kumar-nakama-ceo.webp 400w, /authors/yash-kumar-nakama-ceo-800.webp 800w" sizes="96px" alt="Yash Kumar, Co-founder and CEO of Nakama Growth" width="96" height="96" loading="lazy" decoding="async">
+const authorBox = `<div class="author-box" id="sandeep-kumar">
+<img src="/authors/sandeep-kumar-nakama-seo-geo.webp" srcset="/authors/sandeep-kumar-nakama-seo-geo.webp 400w, /authors/sandeep-kumar-nakama-seo-geo-800.webp 800w" sizes="96px" alt="Sandeep, SEO and GEO Specialist at Nakama Growth" width="96" height="96" loading="lazy" decoding="async">
 <div class="author-box-text">
-<p><a href="${AUTHOR_URL}" rel="author">Yash Kumar</a>${AUTHOR_BIO.slice('Yash Kumar'.length)}</p>
+<p><a href="${AUTHOR_URL}" rel="author">Sandeep Kumar</a>${AUTHOR_BIO.slice('Sandeep Kumar'.length)}</p>
 </div>
 </div>`;
 
@@ -222,7 +226,7 @@ const stackTable = (caption: string, corner: string, columns: string[], rows: {l
  return `<div class="stack-table"><table class="stack-table"><caption>${caption}</caption><thead><tr>${head}</tr></thead><tbody>${body}</tbody></table></div>`;
 };
 
-const toc = `<details class="toc" open>
+const toc = `<details class="toc">
 <summary>On this page</summary>
 <ol>
 <li><a href="#${faqId('In-house AEO team vs agency vs tools: the decision matrix')}">Decision matrix</a></li>
@@ -243,15 +247,14 @@ const toc = `<details class="toc" open>
 
 const matrixCaption = `In-house AEO team vs agency vs tools only vs hybrid, compared on off-site work, time to first work, skills, measurement and best fit. Nakama Growth, updated ${PUBLISHED_DAY}.`;
 
-const bodyHtml = `<nav aria-label="Breadcrumb" class="article-breadcrumb"><ol style="list-style:none;display:flex;flex-wrap:wrap;gap:.5rem;padding:0;margin:0 0 1.25rem;font-size:.9rem"><li><a href="https://www.nakama.in/">Home</a></li><li aria-hidden="true">/</li><li><a href="https://www.nakama.in/resources">Resources</a></li><li aria-hidden="true">/</li><li aria-current="page">${TITLE}</li></ol></nav>
-<div class="geo-decision">
+const bodyHtml = `<nav aria-label="Breadcrumb" class="article-breadcrumb ${styles.page}"><ol style="list-style:none;display:flex;flex-wrap:wrap;gap:.5rem;padding:0;margin:0 0 1.25rem;font-size:.9rem"><li><a href="https://www.nakama.in/">Home</a></li><li aria-hidden="true">/</li><li><a href="https://www.nakama.in/resources">Resources</a></li><li aria-hidden="true">/</li><li aria-current="page">${TITLE}</li></ol></nav>
+<div class="geo-decision ${styles.page}">
 <h1 id="${faqId(H1)}">${H1}</h1>
 <p>${FRESHNESS}</p>
-<p>By <a href="${AUTHOR_URL}" rel="author">Yash Kumar</a>, Co-founder and CEO, Nakama Growth</p>
+<p>By <a href="${AUTHOR_URL}" rel="author">Sandeep Kumar</a>, SEO and GEO Specialist, Nakama Growth</p>
 ${figure('geo-agency-vs-in-house-cover.webp', COVER_ALT, 1920, 1080, true)}
 <p>Whether you call it AEO or GEO, what matters is who owns AI visibility and who proves it worked. Hire an agency for off-site reach and work shipped this quarter. Build in-house if you have an owner, writers and time to ramp. Use tools alone to see the gap. In our experience, many growing teams land on a hybrid.</p>
 <p>This is a decision guide, not a shortlist, a price list or a hiring process.</p>
-<p>A note on bias: Nakama Growth is a GEO agency, so we gain when you pick the agency column. That is why this guide also says when an agency is the wrong call.</p>
 ${h2('Quick answer')}
 <ul>
 <li><strong>Pick an agency if</strong> nobody in-house owns AI visibility yet and your gap sits on other people's sites: press, Reddit threads, YouTube and review pages.</li>
@@ -332,7 +335,7 @@ ${h2('When does an in-house AEO or GEO team win?')}
 <li><strong>You already have pieces of the team</strong>: a strong SEO lead, content writers or a PR function that can absorb new work.</li>
 <li><strong>You can wait hiring time plus about a quarter for first results</strong>, and you will fund measurement as well as content.</li>
 </ul>
-<p>If most of these are true, an agency, Nakama Growth included, would mostly be renting you skills you should own.</p>
+<p>If most of these are true, an agency would mostly be renting you skills you should own.</p>
 <p>The Medill skills finding in the research section below is the warning label here. An in-house plan that depends on one hard-to-find hire stalls the day that person leaves or never joins.</p>
 ${h2('When are tools alone enough?')}
 <p>Tools alone are enough when you mainly need to know where you stand, and someone in-house can act on the data. This is the DIY GEO route: a tracker shows which prompts you appear in, and your team makes the page changes and does the outreach itself.</p>
@@ -346,7 +349,7 @@ ${h2('When are tools alone enough?')}
 <blockquote><p><strong>Our view:</strong> GEO tools vs agency is rarely an either-or choice, because most setups use both. Almost every agency uses tools, and most in-house teams should too. What matters is who acts on what the tool shows.</p></blockquote>
 ${h2('How does a hybrid AEO and GEO model work?')}
 <p>A hybrid model keeps ownership and judgment in-house and buys breadth from an agency. An internal owner sets goals, approves claims and runs on-site content, while the agency runs off-site work and per-engine measurement. In our experience, it is where many teams end up after the first year.</p>
-${figure('geo-agency-vs-in-house-hybrid-models.webp', HYBRID_ALT, 1600, 900)}
+${figure('geo-agency-vs-in-house-hybrid-models.webp', HYBRID_ALT, 1600, 900, false, {caption: HYBRID_CAPTION, narrow: true})}
 <p>There are three common ways to split the work. Pick by who you already have.</p>
 ${stackTable('Three hybrid AEO and GEO models, showing what stays in-house, what the agency owns and when each split fits.', 'Hybrid model', ['In-house owns', 'Agency owns', 'Fits when'], [
  {label: 'Owner plus agency', cells: [
@@ -379,7 +382,7 @@ ${stackTable('Six skills an in-house AEO or GEO team needs, what each covers and
 <p>Technical access is a good example of hidden scope. OpenAI documents that OAI-SearchBot (used to surface sites in ChatGPT search) and GPTBot are controlled by separate robots.txt settings, and that each setting is independent (<a href="https://developers.openai.com/api/docs/bots">OpenAI, crawler documentation</a>). Someone on the team has to own those decisions with legal and security.</p>
 ${h3('How long does an in-house team take to ramp?')}
 <p>Plan for hiring time plus about 90 days before a first meaningful read of results (our view). The first month goes on access and a baseline, the second on first pages and outreach, and the third on repeat measurement. Off-site relationships usually take longer than all three.</p>
-${figure('geo-agency-vs-in-house-90-day-ramp.webp', RAMP_ALT, 1600, 700)}
+${figure('geo-agency-vs-in-house-90-day-ramp.webp', RAMP_ALT, 1600, 700, false, {caption: RAMP_CAPTION, narrow: true})}
 <ul>
 <li><strong>Days 1 to 30:</strong> get access to analytics, the CMS and experts. Agree the prompt list. Record a dated baseline by engine.</li>
 <li><strong>Days 31 to 60:</strong> ship the first pages. Start outreach. Expect slow replies, because editors and communities do not know you yet.</li>
@@ -499,8 +502,8 @@ export const geoAgencyVsInHouseArticle: Article = {
  metaTitle: TITLE,
  date: dayOf(MODIFIED_AT),
  publishedAt: PUBLISHED_AT,
- authorName: 'Yash Kumar',
- /** Yash GO: PREVIEW true keeps noindex,follow and leaves this note out of the sitemap, llms files, RSS and the author index. */
+ authorName: 'Sandeep Kumar',
+ /** Ship GO: PREVIEW true keeps noindex,follow and leaves this note out of the sitemap, llms files, RSS and the author index. */
  noindex: PREVIEW,
  /** Keep reading is the template card only. A noindex preview can still show that one card. */
  nextSlug: 'best-aeo-agencies',
