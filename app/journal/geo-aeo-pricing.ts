@@ -184,7 +184,7 @@ const articleLd = {
     "name": q,
     "acceptedAnswer": {
      "@type": "Answer",
-     "text": a
+     "text": a.replace(/<[^>]+>/g, '')
     }
    }))
   }
@@ -291,6 +291,7 @@ export const geoAeoPricingArticle: Article = {
  metaTitle: TITLE,
  date: dayOf(MODIFIED_AT),
  publishedAt: PUBLISHED_AT,
+ modifiedAt: MODIFIED_AT,
  authorName: 'Yash Kumar',
  /** GO-LIVE TODO: PREVIEW is the only switch. false => index,follow plus sitemap, llms and RSS. */
  noindex: PREVIEW,
