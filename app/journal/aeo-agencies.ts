@@ -667,7 +667,7 @@ const bodyHtml = `<nav aria-label="Breadcrumb" class="article-breadcrumb"><ol st
 <p><strong>Services:</strong> Google and AI search strategy, human and AI-assisted content creation, digital PR, Reddit marketing and agent analytics, per its <a href="https://minuttia.com/" rel="noopener" target="_blank">homepage</a>. It offers a <a href="https://minuttia.com/aeo/report/" rel="noopener" target="_blank">free AEO report</a> that runs your brand through a set of prompts across AI platforms and shows visibility score, share of voice, citations and sentiment.</p>
 <p><strong>Strength:</strong> Research and retention. It publishes a study of 24,067 prompts across five AI search platforms. Its <a href="https://minuttia.com/case-studies/" rel="noopener" target="_blank">case studies page</a> names Meilisearch, with a 665% increase in LLM-driven traffic and 2,700% growth in LLM-driven conversions (self-reported). Its <a href="https://minuttia.com/" rel="noopener" target="_blank">homepage</a> reports 94% average client retention (as of June 2026), 24+ months average client tenure and 60+ clients (all self-reported).</p>
 <p><strong>Pricing:</strong> Not on its <a href="https://minuttia.com/aeo-agency/" rel="noopener" target="_blank">AEO agency page</a>. Its own <a href="https://minuttia.com/best-llmo-agencies/" rel="noopener" target="_blank">LLMO agency list</a>, with data as of 20 January 2026, states a minimum project size of USD 4,000+.</p>
-<p><strong>Limitation:</strong> It is built for established brands, so early-stage startups may not fit. Its free report tool currently tracks citations on Perplexity only, per the <a href="https://minuttia.com/aeo/report/" rel="noopener" target="_blank">tool page</a>. The Meilisearch result is the only named AI-search case we found, and its case studies page does not give the query behind it.</p>
+<p><strong>Limitation:</strong> It is built for established brands, so early-stage startups may not fit. Its free report tool currently tracks citations on Perplexity only, per the <a href="https://minuttia.com/aeo/report/" rel="noopener" target="_blank">tool page</a>. The Meilisearch result is the only named AI-search case we found, and its case studies page does not give the query behind it. If it is not a fit, compare these <a href="https://www.nakama.in/journal/minuttia-alternatives">Minuttia alternatives</a>.</p>
 <p><strong>HQ:</strong> Not stated on the pages we checked.</p>
 <h3 id="5-optimist">5. Optimist</h3>
 <p><strong>Best for:</strong> B2B tech and SaaS teams that want AEO and SEO strategy and advice in one engagement.</p>
@@ -770,7 +770,7 @@ const bodyHtml = `<nav aria-label="Breadcrumb" class="article-breadcrumb"><ol st
 <h2 id="how-do-you-choose-an-aeo-agency">How do you choose an AEO agency?</h2>
 <p>Pick the agency that can show you AI answers it changed, explain how it measures them, and work on the sources your category depends on. Ask these nine questions on the first call, and write down the answers before you compare prices. For the full process, see <a href="https://www.nakama.in/journal/how-to-hire-an-aeo-agency">how to hire an AEO agency</a>.</p>
 <ol>
-<li><strong>Which AI engines do you track, and how?</strong> Look for named engines and a fixed set of prompts checked on a schedule.</li>
+<li><strong>Which AI engines do you track, and how?</strong> Look for named engines and a fixed set of prompts checked on a schedule. If ChatGPT is the only engine you care about, see what a <a href="https://www.nakama.in/journal/chatgpt-seo-agency">ChatGPT SEO agency</a> should do.</li>
 <li><strong>Can I check your results myself?</strong> The best proof is a query you can run today and a citation you can see.</li>
 <li><strong>What is my baseline?</strong> A good agency measures where you appear before it starts.</li>
 <li><strong>Which sources do AI tools cite in my category?</strong> The answer should name subreddits, review sites, publications or channels.</li>
@@ -1012,7 +1012,7 @@ export const aeoAgenciesArticle: Article = {
    "Services: Google and AI search strategy, human and AI-assisted content creation, digital PR, Reddit marketing and agent analytics, per its homepage. It offers a free AEO report that runs your brand through a set of prompts across AI platforms and shows visibility score, share of voice, citations and sentiment.",
    "Strength: Research and retention. It publishes a study of 24,067 prompts across five AI search platforms. Its case studies page names Meilisearch, with a 665% increase in LLM-driven traffic and 2,700% growth in LLM-driven conversions (self-reported). Its homepage reports 94% average client retention (as of June 2026), 24+ months average client tenure and 60+ clients (all self-reported).",
    "Pricing: Not on its AEO agency page. Its own LLMO agency list, with data as of 20 January 2026, states a minimum project size of USD 4,000+.",
-   "Limitation: It is built for established brands, so early-stage startups may not fit. Its free report tool currently tracks citations on Perplexity only, per the tool page. The Meilisearch result is the only named AI-search case we found, and its case studies page does not give the query behind it.",
+   "Limitation: It is built for established brands, so early-stage startups may not fit. Its free report tool currently tracks citations on Perplexity only, per the tool page. The Meilisearch result is the only named AI-search case we found, and its case studies page does not give the query behind it. If it is not a fit, compare these Minuttia alternatives.",
    "HQ: Not stated on the pages we checked.",
    "5. Optimist",
    "Best for: B2B tech and SaaS teams that want AEO and SEO strategy and advice in one engagement.",
@@ -1089,7 +1089,7 @@ export const aeoAgenciesArticle: Article = {
   "heading": "How do you choose an AEO agency?",
   "paragraphs": [
    "Pick the agency that can show you AI answers it changed, explain how it measures them, and work on the sources your category depends on. Ask these nine questions on the first call, and write down the answers before you compare prices. For the full process, see how to hire an AEO agency.",
-   "Which AI engines do you track, and how? Look for named engines and a fixed set of prompts checked on a schedule.",
+   "Which AI engines do you track, and how? Look for named engines and a fixed set of prompts checked on a schedule. If ChatGPT is the only engine you care about, see what a ChatGPT SEO agency should do.",
    "Can I check your results myself? The best proof is a query you can run today and a citation you can see.",
    "What is my baseline? A good agency measures where you appear before it starts.",
    "Which sources do AI tools cite in my category? The answer should name subreddits, review sites, publications or channels.",

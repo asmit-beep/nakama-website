@@ -263,7 +263,7 @@ ${figure('geo-aeo-pricing-tier-cards', TIERS_ALT, 1600, 900)}
 <div class="article-table"><table><thead><tr><th scope="col">Option</th><th scope="col">Annual cost</th><th scope="col">Monthly equivalent</th><th scope="col">Deliverables a month</th><th scope="col">Weeks to first deliverable</th></tr></thead><tbody><tr><td>In-house, one GEO/AEO specialist</td><td>$146,028</td><td>$12,169</td><td>3.1</td><td>13.6</td></tr><tr><td>In-house team (specialist plus two writers)</td><td>$363,512</td><td>$30,293</td><td>9.4</td><td>17.9</td></tr><tr><td>Agency, Growth tier</td><td>$98,400</td><td>$8,200</td><td>6.5</td><td>3.4</td></tr></tbody></table></div>
 <p><em>Source: First Page Sage, October 2026. Model uses a median specialist salary of $96,400, writer salary of $74,600 and 27% benefits and payroll taxes. US salaries; India salaries are lower, so recheck this math for an India team.</em></p>
 <p>Treat this as a model, not a quote. It comes from an agency that sells GEO. The direction holds in most markets, though: one hire covers less ground than a team, and a full team costs more than most retainers.</p>
-<p>Many companies mix the two. An in-house owner sets goals and approves content, while an agency handles off-site work and tracking.</p>
+<p>Many companies mix the two. An in-house owner sets goals and approves content, while an agency handles off-site work and tracking. Our guide to <a href="https://www.nakama.in/journal/geo-agency-vs-in-house">GEO agency vs in-house</a> covers that choice beyond cost.</p>
 <h2 id="what-should-a-90-day-geo-budget-buy">What should a 90-day GEO budget buy?</h2>
 <p>A 90-day budget of about $4,500 to $15,000 (three months at $1,500 to $5,000) should buy a baseline, a fix plan, real published work and a per-engine report at day 90. The first month is mostly research. Expect movement to be judged over the quarter, not in week two.</p>
 <div class="article-table"><table><thead><tr><th scope="col">Days</th><th scope="col">What your budget should buy</th><th scope="col">What you should see</th></tr></thead><tbody><tr><td>1 to 30</td><td>Buyer prompt map, baseline across engines, competitor and source review</td><td>Baseline report with named prompts and engines</td></tr><tr><td>31 to 60</td><td>On-site fixes, first answer-first content, first off-site placements</td><td>Published pages and placements you can open</td></tr><tr><td>61 to 90</td><td>More content and mentions, re-run of the same prompts</td><td>Per-engine change against the day-1 baseline</td></tr></tbody></table></div>
@@ -425,7 +425,7 @@ export const geoAeoPricingArticle: Article = {
     'Agency, Growth tier | $98,400 | $8,200 | 6.5 | 3.4',
     'Source: First Page Sage, October 2026. Model uses a median specialist salary of $96,400, writer salary of $74,600 and 27% benefits and payroll taxes. US salaries; India salaries are lower, so recheck this math for an India team.',
     'Treat this as a model, not a quote. It comes from an agency that sells GEO. The direction holds in most markets, though: one hire covers less ground than a team, and a full team costs more than most retainers.',
-    'Many companies mix the two. An in-house owner sets goals and approves content, while an agency handles off-site work and tracking.',
+    'Many companies mix the two. An in-house owner sets goals and approves content, while an agency handles off-site work and tracking. Our guide to GEO agency vs in-house covers that choice beyond cost.',
    ],
   },
   {

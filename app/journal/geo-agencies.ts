@@ -331,7 +331,7 @@ const bodyHtml = `<nav aria-label="Breadcrumb" class="article-breadcrumb"><ol st
 </tr>
 </tbody>
 </table></div>
-<p>The two work together. Google's own guide to <a href="https://developers.google.com/search/docs/appearance/ai-features" rel="noopener" target="_blank">AI features and your website</a> says "There are no additional requirements to appear in AI Overviews or AI Mode," and that the same foundational SEO best practices apply. Most of the agencies below came from SEO, content or PR and added GEO on top. The difference that matters is whether an agency can show you the AI answers it changed.</p>
+<p>The two work together. Google's own guide to <a href="https://developers.google.com/search/docs/appearance/ai-features" rel="noopener" target="_blank">AI features and your website</a> says "There are no additional requirements to appear in AI Overviews or AI Mode," and that the same foundational SEO best practices apply. Most of the agencies below came from SEO, content or PR and added GEO on top. The difference that matters is whether an agency can show you the AI answers it changed. If you are hiring for AI SEO more broadly, compare the <a href="https://www.nakama.in/journal/best-ai-seo-agencies">best AI SEO agencies</a>, or the <a href="https://www.nakama.in/journal/best-enterprise-ai-seo-agencies">best enterprise AI SEO agencies</a> for large teams.</p>
 <h2 id="how-we-evaluated-these-geo-agencies">How we evaluated these GEO agencies</h2>
 <p>We scored every agency, including Nakama, against five criteria. We used information published on each agency's own website, or confirmed by the agency directly, checked in October 2026.</p>
 <ol>
@@ -728,7 +728,7 @@ export const geoAgenciesArticle: Article = {
    "Typical deliverables | Technical fixes, on-page content, backlinks | Prompt maps, source audits, answer-first content, digital PR, community and review presence",
    "How success is measured | Rankings, organic traffic | Mentions, citations and share of AI answers, plus traffic and leads",
    "Overlap | Strong technical SEO still helps AI tools find and read your pages | Good GEO work keeps SEO fundamentals in place",
-   "The two work together. Google's own guide to AI features and your website says \"There are no additional requirements to appear in AI Overviews or AI Mode,\" and that the same foundational SEO best practices apply. Most of the agencies below came from SEO, content or PR and added GEO on top. The difference that matters is whether an agency can show you the AI answers it changed."
+   "The two work together. Google's own guide to AI features and your website says \"There are no additional requirements to appear in AI Overviews or AI Mode,\" and that the same foundational SEO best practices apply. Most of the agencies below came from SEO, content or PR and added GEO on top. The difference that matters is whether an agency can show you the AI answers it changed. If you are hiring for AI SEO more broadly, compare the best AI SEO agencies, or the best enterprise AI SEO agencies for large teams."
   ]
  },
  {

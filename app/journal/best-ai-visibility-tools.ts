@@ -210,7 +210,7 @@ const bodyHtml = `<nav aria-label="Breadcrumb" class="article-breadcrumb"><ol st
 <h2 id="profound">Is Profound good for enterprise SaaS brands?</h2>
 <p>Profound suits larger SaaS companies that want deep tracking plus AI agents for marketing work. It tracks citations, sentiment, ranking and competitive presence. The Enterprise plan covers up to 9 answer engines, with single sign-on and SOC 2 listed among its features.</p>
 <p>The free trial runs 50 prompts daily for 7 days across ChatGPT, Gemini and Google AI Overviews.</p>
-<p>Profound also offers Agent Analytics, which tracks AI-sourced traffic through integrations such as Cloudflare, Vercel and Google Analytics.</p>
+<p>Profound also offers Agent Analytics, which tracks AI-sourced traffic through integrations such as Cloudflare, Vercel and Google Analytics. If Profound is more than you need, compare these <a href="https://www.nakama.in/journal/profound-alternatives">Profound alternatives</a>.</p>
 <p><strong>Weakness:</strong> No self-serve price is published for brands. Trial users also get a recommended prompt set they cannot customize.</p>
 <h2 id="otterlyai">Is OtterlyAI the cheapest AI visibility tool?</h2>
 <p>OtterlyAI has the lowest entry price in this list. Lite costs $29/month for 15 prompts, Standard costs $189/month for 100 prompts, and Premium costs $489/month for 400 prompts. Every plan tracks ChatGPT, Google AI Overviews, Perplexity and Microsoft Copilot daily.</p>
@@ -359,7 +359,7 @@ export const bestAiVisibilityToolsArticle: Article = {
   "paragraphs": [
    "Profound suits larger SaaS companies that want deep tracking plus AI agents for marketing work. It tracks citations, sentiment, ranking and competitive presence. The Enterprise plan covers up to 9 answer engines, with single sign-on and SOC 2 listed among its features.",
    "The free trial runs 50 prompts daily for 7 days across ChatGPT, Gemini and Google AI Overviews.",
-   "Profound also offers Agent Analytics, which tracks AI-sourced traffic through integrations such as Cloudflare, Vercel and Google Analytics.",
+   "Profound also offers Agent Analytics, which tracks AI-sourced traffic through integrations such as Cloudflare, Vercel and Google Analytics. If Profound is more than you need, compare these Profound alternatives.",
    "Weakness: No self-serve price is published for brands. Trial users also get a recommended prompt set they cannot customize."
   ]
  },
