@@ -3203,6 +3203,26 @@ html{overflow-x:clip;scroll-padding-top:110px}body{font-family:var(--sans);font-
 @media (min-width:960px){.ip-article-page .article-rich .toc ol{columns:2;column-gap:32px}}
 @media (max-width:640px){.ip-article-page .article-rich .toc{padding:20px;margin-top:24px}.ip-article-page .article-rich .toc a{padding:8px 8px 8px 10px}}
 @media (prefers-reduced-motion:reduce){.ip-article-page .article-rich .toc *{transition:none}}
+/* geo-agency-vs-in-house: native TOC disclosure and CSS-only table stacking (same table, no second copy). */
+.ip-article-page .article-rich .geo-decision details.toc>summary{margin:0 0 14px;font-size:12px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:#9a9690;cursor:pointer}
+.ip-article-page .article-rich .geo-decision .article-breadcrumb ol{max-width:100%}
+.ip-article-page .article-rich .geo-decision .article-breadcrumb li{min-width:0}
+.ip-article-page .article-rich .geo-decision .stack-table{overflow:visible;margin:22px 0 8px}
+.ip-article-page .article-rich .geo-decision table.stack-table{min-width:0;width:100%;position:relative}
+.ip-article-page .article-rich .geo-decision table.stack-table caption{caption-side:bottom;text-align:left;padding:10px 0 0;font-size:13px;line-height:1.5;font-style:italic;color:#8e8a84}
+@media(max-width:720px){
+ .ip-article-page .article-rich .geo-decision table.stack-table thead{position:absolute;left:0;top:0;width:1px;height:1px;margin:-1px;padding:0;overflow:hidden;clip:rect(0 0 0 0);clip-path:inset(50%);white-space:nowrap;border:0}
+ .ip-article-page .article-rich .geo-decision table.stack-table{display:flex;flex-direction:column;width:100%;min-width:0}
+ .ip-article-page .article-rich .geo-decision table.stack-table caption{display:block;order:2;width:100%;max-width:100%}
+ .ip-article-page .article-rich .geo-decision table.stack-table tbody{display:block;order:1;width:100%;min-width:0}
+ .ip-article-page .article-rich .geo-decision table.stack-table tr,
+ .ip-article-page .article-rich .geo-decision table.stack-table th,
+ .ip-article-page .article-rich .geo-decision table.stack-table td{display:block;width:auto;min-width:0}
+ .ip-article-page .article-rich .geo-decision table.stack-table tr{margin:0 0 16px;padding:4px 0 8px;border-bottom:1px solid rgba(255,255,255,.12)}
+ .ip-article-page .article-rich .geo-decision table.stack-table th[scope="row"]{text-transform:none;letter-spacing:0;font-size:16px;line-height:1.4;color:#f6f3ee;border-bottom:0;padding:8px 0 4px}
+ .ip-article-page .article-rich .geo-decision table.stack-table td{border-bottom:0;padding:8px 0}
+ .ip-article-page .article-rich .geo-decision table.stack-table td::before{content:attr(data-label);display:block;margin-bottom:4px;font-size:11px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:#9a9690}
+}
 .ip-article-page .article-rich .author-box{margin-top:16px;padding:22px 24px;border:1px solid rgba(255,255,255,.12);border-radius:16px;background:rgba(255,255,255,.03);display:grid;grid-template-columns:96px 1fr;gap:22px;align-items:start;scroll-margin-top:120px}
 .ip-article-page .article-rich .author-box img{width:96px;height:96px;border-radius:50%;object-fit:cover;border:1px solid rgba(255,255,255,.12)}
 .ip-article-page .article-rich .author-box-text p:first-child{margin-top:0}
