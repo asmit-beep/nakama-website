@@ -97,7 +97,7 @@ export default function AiVisibilityAuditPage() {
           <b>
            {/* eslint-disable-next-line @next/next/no-img-element -- brand mark, fixed height */}
            <img src="/brand/nakama-icon-dark.svg" alt="" width={18} height={18} />
-           AI visibility report
+           Example AI visibility report
           </b>
           <span className="stamp">{REPORT_TAG}</span>
          </div>
