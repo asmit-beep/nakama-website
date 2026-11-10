@@ -153,7 +153,6 @@ const articleLd = {
    "name": "Sandeep Kumar",
    "jobTitle": "SEO and GEO Specialist",
    "url": AUTHOR_URL,
-   "description": AUTHOR_BIO,
    "worksFor": {
     "@id": "https://www.nakama.in/#organization"
    }

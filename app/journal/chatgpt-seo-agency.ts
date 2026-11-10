@@ -31,7 +31,6 @@ const LABELS_ALT = 'Three distinct ChatGPT report labels: a brand mention, a rec
 const HERO_URL = `${CANONICAL}/chatgpt-seo-agency-cover.webp`;
 const OG_URL = `${CANONICAL}/chatgpt-seo-agency-og.png`;
 const AUTHOR_URL = 'https://www.nakama.in/authors/snehil-srivastava';
-const AUTHOR_BIO = 'Snehil Srivastava is CEO and Creative Director of Nakama Growth, an AEO and GEO agency in India that helps B2B and SaaS brands get named when buyers ask AI tools what to choose. He is a creative strategist and content lead. He has spent multiple years building brands.';
 const QUOTE_URL = 'https://www.nakama.in/pricing#quote';
 
 const FAQS: {q: string; a: string}[] = [
@@ -136,7 +135,6 @@ const articleLd = {
    "worksFor": {
     "@id": "https://www.nakama.in/#organization"
    },
-   "description": AUTHOR_BIO,
    "sameAs": [
     "https://www.linkedin.com/in/snehil-srivastava-356739175/"
    ]
