@@ -24,7 +24,7 @@ export const corePages:{path:string;title:string;summary:string;priority:number;
  {path:'/services/youtube',title:'YouTube Marketing',summary:'Nakama Growth runs YouTube end to end for SaaS, tech and AI brands: script, shoot, edit, publish. Long-form, chaptered videos built to be easy to cite.',priority:.8,freq:'monthly',src:['app/services/youtube']},
  ...(DPR_PREVIEW?[]:[{path:DPR_SLUG,title:'Digital PR services',summary:DPR_META,priority:.8,freq:'monthly' as const,src:['app/services/digital-pr']}]),
  ...(AIA_PREVIEW?[]:[{path:AIA_SLUG,title:'AI Visibility Audit',summary:AIA_META,priority:.8,freq:'monthly' as const,src:['app/services/ai-visibility-audit']}]),
- {path:'/industries',title:'Industries We Serve: GEO & AI Visibility by Sector | Nakama Growth',summary:'Healthcare, ecommerce and real estate each have a live page.',priority:.8,freq:'monthly',src:['app/industries']},
+ {path:'/industries',title:'Industries We Serve: GEO & AI Visibility by Sector | Nakama',summary:'Healthcare, ecommerce and real estate each have a live page.',priority:.8,freq:'monthly',src:['app/industries']},
  {path:'/industries/healthcare',title:HC_TITLE,summary:HC_META,priority:.8,freq:'monthly',src:['app/industries/healthcare']},
  {path:'/industries/ecommerce',title:EC_TITLE,summary:EC_META,priority:.8,freq:'monthly',src:['app/industries/ecommerce']},
  {path:'/industries/real-estate',title:RE_TITLE,summary:RE_META,priority:.8,freq:'monthly',src:['app/industries/real-estate']},
