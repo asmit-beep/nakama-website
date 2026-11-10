@@ -397,8 +397,8 @@ export function HomeProof(){
 
 /** Native disclosures keep the FAQ accessible without animation or layout offsets. */
 export function HomeFaqLite(){
- const items:{ask:string,answer:string,more?:ReactNode,tag:string,glyph:string}[]=[
-  {ask:'How do AEO and GEO fit into our SEO strategy?',answer:'They build on a strong search foundation. AEO focuses on clear answers to buyer questions; GEO also considers how generative platforms understand your brand and retrieve supporting sources. We connect both with useful content, technical clarity and relevant distribution.',more:<> See our <Link className="inline-link" href="/services/aeo">AEO services</Link> and <Link className="inline-link" href="/services/geo">GEO services</Link>.</>,tag:'Strategy',glyph:'01'},
+ const items:{ask:string,answer:string,more?:ReactNode,moreText?:string,tag:string,glyph:string}[]=[
+  {ask:'How do AEO and GEO fit into our SEO strategy?',answer:'They build on a strong search foundation. AEO focuses on clear answers to buyer questions; GEO also considers how generative platforms understand your brand and retrieve supporting sources. We connect both with useful content, technical clarity and relevant distribution.',more:<> See our <Link className="inline-link" href="/services/aeo">AEO services</Link> and <Link className="inline-link" href="/services/geo">GEO services</Link>.</>,moreText:' See our AEO services and GEO services.',tag:'Strategy',glyph:'01'},
   {ask:'How long before we see anything?',answer:'The first month is research and first drafts. Placements start going live from month two, and AI answers can take a few more weeks to catch up, which is why we ask for three months to start.',tag:'Timeline',glyph:'02'},
   {ask:'Do you handle YouTube videos from idea to publishing?',answer:'We support topic research, scripts, video creation and editing, thumbnails, titles, chapters and publishing. We agree on the format, production requirements and review process with your team before work begins.',tag:'Video',glyph:'03'},
   {ask:'How will we know whether the work is helping?',answer:'We track the signals relevant to your scope: published assets, relevant mentions, search and video visibility, and observed AI citations. Where analytics access is available, we also review traffic and conversion signals, keeping those separate from claims of direct attribution.',tag:'Measurement',glyph:'04'},
@@ -406,7 +406,7 @@ export function HomeFaqLite(){
  ];
  return (
   <section className="home-faq faq-editorial page-width" id="faq" aria-labelledby="faq-title">
-   <script type="application/ld+json" dangerouslySetInnerHTML={{__html:JSON.stringify({'@context':'https://schema.org','@type':'FAQPage',mainEntity:items.map(i=>({'@type':'Question',name:i.ask,acceptedAnswer:{'@type':'Answer',text:i.answer}}))}).replace(/</g,'\\u003c')}}/>
+   <script type="application/ld+json" dangerouslySetInnerHTML={{__html:JSON.stringify({'@context':'https://schema.org','@type':'FAQPage',mainEntity:items.map(i=>({'@type':'Question',name:i.ask,acceptedAnswer:{'@type':'Answer',text:i.answer+(i.moreText??'')}}))}).replace(/</g,'\\u003c')}}/>
    <Reveal className="faq-editorial-intro">
     <span className="eyebrow"><span className="tiny-cross"/>A little more clarity</span>
     <h2 id="faq-title">Good questions.<br/><span>Straight answers.</span></h2>
