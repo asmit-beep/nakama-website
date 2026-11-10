@@ -216,8 +216,8 @@ export default function ContentServices() {
      <p className="content-idx">03 · Anatomy</p>
      <h2>What makes a piece LLM-ready?</h2>
      <div className="content-anat">
-      <figure className="content-doc" aria-label="Sample LLM-ready outline, placeholders only">
-       <div className="content-doc-h"><span>Sample outline</span><span>Placeholders</span></div>
+      <figure className="content-doc" aria-label="LLM-ready outline template, placeholders only">
+       <div className="content-doc-h"><span>Outline template</span><span>Placeholders</span></div>
        <p className="content-doc-title">Best [Category] tools for [use case]</p>
        <div className="content-blk is-on">
         <span className="content-tg">Answer capsule</span>

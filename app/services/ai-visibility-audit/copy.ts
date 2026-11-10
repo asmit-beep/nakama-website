@@ -58,11 +58,11 @@ export const METRICS = [
 ] as const;
 
 export const REPORT_H2 = 'What the report looks like';
-export const REPORT_TAG = 'Sample, redacted';
+export const REPORT_TAG = 'Redacted example';
 export const REPORT_EXAMPLE = 'Example data · 1 to 3 prompts × 2 engines × 3 runs';
 export const REPORT_RUNS = [
- ['Engine A', '14–16 Oct', '2', '1', '1'],
- ['Engine B', '14–16 Oct', '3', '2', '0'],
+ ['Engine A', '14 to 16 Oct', '2', '1', '1'],
+ ['Engine B', '14 to 16 Oct', '3', '2', '0'],
 ] as const;
 export const REPORT_NOTE = 'Engines reported separately. No blended cross-engine number.';
 export const SOURCES = [

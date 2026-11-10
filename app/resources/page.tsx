@@ -6,7 +6,7 @@ import {Shell} from '../site';
 import {IpAtmos,IpHero,IpHead,IpSection,IpCta} from '../inner/kit';
 import {articles} from '../journal/all';
 
-export const metadata:Metadata=pageMeta('/resources',{title:'Resources & Field Notes on AI Search — Nakama Growth',description:'Practical field notes and articles on SEO, AI visibility, answer engines, and how brands earn recommendations across AI search.'});
+export const metadata:Metadata=pageMeta('/resources',{title:'Resources & Field Notes on AI Search | Nakama Growth',description:'Practical field notes and articles on SEO, AI visibility, answer engines, and how brands earn recommendations across AI search.'});
 
 const ART=[
  {bg:'radial-gradient(120% 120% at 0% 0%,#3a2a6b,transparent 60%),radial-gradient(120% 120% at 100% 100%,#7a3a1c,transparent 55%),#14131b',dots:['#f07c32','#9aa6ff','#7fd1c3']},

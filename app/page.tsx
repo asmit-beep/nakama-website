@@ -8,7 +8,7 @@ import {PromptDirector} from '@/components/prompt-director';
 import {SequenceShowcase} from '@/components/sequence';
 import {Toolkit} from '@/components/Toolkit';
 
-export const metadata:Metadata=pageMeta('/',{title:'Nakama Growth — Get your brand named in AI answers',description:'AI visibility agency: we get brands recommended in ChatGPT, Perplexity, Gemini and Google AI Overviews by earning the sources those answers cite.'});
+export const metadata:Metadata=pageMeta('/',{title:'Nakama Growth | Get your brand named in AI answers',description:'AI visibility agency: we get brands recommended in ChatGPT, Perplexity, Gemini and Google AI Overviews by earning the sources those answers cite.'});
 
 export default function Home(){
  return (

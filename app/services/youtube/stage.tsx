@@ -19,7 +19,7 @@ const SCRIPT_FULL = '# Ch 1  The question\n# Ch 2  The short answer\n  Start wit
 const RAIL = [
  ['yt-top', 'Title'],
  ['proof', 'Proof'],
- ['samples', 'Samples'],
+ ['samples', 'Our work'],
  ['why', 'Why now'],
  ['pipe', 'Pipeline'],
  ['anat', 'Anatomy'],
@@ -73,7 +73,7 @@ function Samples() {
  }, [activeId]);
  return (
   <section id="samples" className="sec" ref={ref}>
-   <Chip n="CH 02">Samples</Chip>
+   <Chip n="CH 02">Our work</Chip>
    <div className="sh">
     <h2 className="rv">{SAMPLES_H2}</h2>
     <p className="lead rv">{SAMPLES_LEAD}</p>

@@ -7,8 +7,8 @@ export const SITE_DESCRIPTION='Nakama gets brands named in AI answers. We earn t
 export const CONTACT_EMAIL='contact@nakama.in';
 export const abs=(path='/')=>`${SITE_URL}${path.startsWith('/')?path:`/${path}`}`;
 
-export const OG_IMAGE={url:'/opengraph-image.png',width:1200,height:630,alt:'Nakama Growth — Be the brand they already know.'};
-export const FEEDS={'application/rss+xml':[{url:'/rss.xml',title:'Nakama Growth — Field notes'}]};
+export const OG_IMAGE={url:'/opengraph-image.png',width:1200,height:630,alt:'Nakama Growth | Be the brand they already know.'};
+export const FEEDS={'application/rss+xml':[{url:'/rss.xml',title:'Nakama Growth | Field notes'}]};
 
 /** Per-page metadata: canonical URL plus matching Open Graph and Twitter cards. */
 export function pageMeta(path:string,{title,description,type='website',publishedTime,modifiedTime,image,author}:{title:string;description:string;type?:'website'|'article';publishedTime?:string;modifiedTime?:string;image?:{url:string;width:number;height:number;alt:string;type?:string};author?:string}):Metadata{

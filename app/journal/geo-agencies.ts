@@ -369,7 +369,7 @@ const bodyHtml = `<nav aria-label="Breadcrumb" class="article-breadcrumb"><ol st
 <td>Nine Peaks Media</td>
 <td>B2B SaaS, software, IT, and technology companies looking to grow organic traffic and AI search visibility</td>
 <td>Global, Remote</td>
-<td>$3,500–$10,000/month</td>
+<td>$3,500 to $10,000/month</td>
 <td>Combines B2B AI SEO, content marketing, link building, and AI visibility optimization</td>
 </tr>
 <tr>
@@ -750,7 +750,7 @@ export const geoAgenciesArticle: Article = {
    "The 10 GEO agencies at a glance. Pricing and HQ from each agency's own site or the agency directly, October 2026.",
    "Rank | Agency | Best for | HQ or offices | Pricing (public) | Standout strength",
    "1 | Nakama | Brands that need to be named in AI answers via off-site sources | Delhi, India | Custom quote | Off-site GEO across Reddit, YouTube, Quora, LinkedIn, editorial and review sites",
-   "2 | Nine Peaks Media | B2B SaaS, software, IT, and technology companies looking to grow organic traffic and AI search visibility | Global, Remote | $3,500–$10,000/month | Combines B2B AI SEO, content marketing, link building, and AI visibility optimization",
+   "2 | Nine Peaks Media | B2B SaaS, software, IT, and technology companies looking to grow organic traffic and AI search visibility | Global, Remote | $3,500 to $10,000/month | Combines B2B AI SEO, content marketing, link building, and AI visibility optimization",
    "3 | Percepture | Teams that want fixed package pricing | New York, NY | From $3,500/mo | Published GEO packages plus digital PR",
    "4 | First Page Sage | Teams that want to read the research first | SF Bay Area (per its contact page) | Not published on GEO page | Large library of GEO and AI ranking guides",
    "5 | iPullRank | Enterprise and Fortune 500 search programs | Not stated on pages we checked | Not published | Technical depth and relevance engineering",

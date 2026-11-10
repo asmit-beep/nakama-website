@@ -26,66 +26,72 @@ function runLink(platform:string,q:string):{href:string;label:string}{
  return {href:`https://www.google.com/search?q=${e}`,label:'Run it on Google'};
 }
 
+/** Full query stays in the server HTML for crawlers and screen readers; the typed copy is visual only. */
 function Typed({text}:{text:string}){
  const [n,setN]=useState(0);
  useEffect(()=>{
   if(window.matchMedia('(prefers-reduced-motion: reduce)').matches){setN(text.length);return;}
   setN(0);let i=0;const t=setInterval(()=>{i+=1;setN(i);if(i>=text.length)clearInterval(t);},22);return()=>clearInterval(t);
  },[text]);
- return <>{text.slice(0,n)}<span className={`wb-caret${n>=text.length?' done':''}`} aria-hidden="true"/></>;
+ return <><span className="wb-sr">{text}</span><span aria-hidden="true">{text.slice(0,n)}<span className={`wb-caret${n>=text.length?' done':''}`}/></span></>;
 }
 
-export function WorkBoard(){
- const [active,setActive]=useState(1);
+type Client=(typeof proofClients)[number];
+
+function Panel({c,i,active}:{c:Client;i:number;active:boolean}){
  const [copied,setCopied]=useState<string|null>(null);
+ const copy=async(q:string)=>{try{await navigator.clipboard.writeText(q);}catch{}setCopied(q);setTimeout(()=>setCopied(null),1600);};
+ return <div className="wb-stage" role="tabpanel" id={`wb-panel-${i}`} aria-labelledby={`wb-tab-${i}`} hidden={!active}>
+  <aside className="wb-client">
+   <span className="wb-logo"><img src={LOGO[c.name]} alt=""/></span>
+   <span className="wb-sector">{SECTOR[c.name]}</span>
+   <h3>{c.name}</h3>
+   <p>{c.description}</p>
+   <dl className="wb-meta">
+    <div><dt>Documented</dt><dd>{c.entries.length} placements</dd></div>
+    <div><dt>Surfaces</dt><dd>{[...new Set(c.entries.map(e=>e.platform.split(' · ')[0]))].join(', ')}</dd></div>
+   </dl>
+  </aside>
+  <ol className="wb-list">
+   {c.entries.map((e,i)=>{const eng=engineOf(e.platform);return <li key={e.query+i} className="wb-row" style={{animationDelay:`${80+i*90}ms`}}>
+    <span className={`wb-engine e-${eng.k}`} title={e.platform.split(' · ')[0]} aria-hidden="true">{eng.l}</span>
+    <div className="wb-body">
+     <span className="wb-platform">{e.platform}</span>
+     <div className="wb-query"><span className="wb-q-ico" aria-hidden="true">⌕</span><span>{active?<Typed text={e.query}/>:e.query}</span></div>
+     <p>{e.description}</p>
+     <div className="wb-actions">
+      <button type="button" onClick={()=>copy(e.query)}>{copied===e.query?<><Check size={14}/>Copied</>:<><Copy size={14}/>Copy query</>}</button>
+      {(()=>{const r=runLink(e.platform,e.query);return <a href={r.href} target="_blank" rel="noreferrer">{r.label}<ArrowUpRight size={14}/></a>;})()}
+     </div>
+    </div>
+   </li>;})}
+  </ol>
+ </div>;
+}
+
+export function WorkBoard({initial=1}:{initial?:number}){
+ const [active,setActive]=useState(initial);
  const tabsRef=useRef<HTMLDivElement>(null);
  const [pill,setPill]=useState({x:0,w:0});
 
- useEffect(()=>{const c=new URLSearchParams(location.search).get('client');const i=proofClients.findIndex(p=>p.name===c);if(i>=0)setActive(i);},[]);
+ // A new ?client= on a soft navigation resets the tab (state adjusted during render, not in an effect).
+ const [shown,setShown]=useState(initial);
+ if(shown!==initial){setShown(initial);setActive(initial);}
  useEffect(()=>{
   const place=()=>{const el=tabsRef.current?.querySelectorAll<HTMLButtonElement>('button')[active];if(el)setPill({x:el.offsetLeft,w:el.offsetWidth});};
   place();window.addEventListener('resize',place);return()=>window.removeEventListener('resize',place);
  },[active]);
 
- const c=proofClients[active];
- const copy=async(q:string)=>{try{await navigator.clipboard.writeText(q);}catch{}setCopied(q);setTimeout(()=>setCopied(null),1600);};
-
  return <div className="wb">
   <div className="wb-tabs-scroll">
    <div className="wb-tabs" ref={tabsRef} role="tablist" aria-label="Client">
     <span className="wb-pill" style={{transform:`translateX(${pill.x}px)`,width:pill.w}} aria-hidden="true"/>
-    {proofClients.map((p,i)=><button key={p.name} role="tab" aria-selected={i===active} className={i===active?'on':''} onClick={()=>setActive(i)}>
+    {proofClients.map((p,i)=><button key={p.name} role="tab" aria-selected={i===active} id={`wb-tab-${i}`} aria-controls={`wb-panel-${i}`} className={i===active?'on':''} onClick={()=>setActive(i)}>
      <img src={LOGO[p.name]} alt=""/><span>{p.name}</span>
     </button>)}
    </div>
   </div>
-
-  <div className="wb-stage" key={c.name}>
-   <aside className="wb-client">
-    <span className="wb-logo"><img src={LOGO[c.name]} alt=""/></span>
-    <span className="wb-sector">{SECTOR[c.name]}</span>
-    <h3>{c.name}</h3>
-    <p>{c.description}</p>
-    <dl className="wb-meta">
-     <div><dt>Documented</dt><dd>{c.entries.length} placements</dd></div>
-     <div><dt>Surfaces</dt><dd>{[...new Set(c.entries.map(e=>e.platform.split(' · ')[0]))].join(', ')}</dd></div>
-    </dl>
-   </aside>
-   <ol className="wb-list">
-    {c.entries.map((e,i)=>{const eng=engineOf(e.platform);return <li key={e.query+i} className="wb-row" style={{animationDelay:`${80+i*90}ms`}}>
-     <span className={`wb-engine e-${eng.k}`} title={e.platform.split(' · ')[0]} aria-hidden="true">{eng.l}</span>
-     <div className="wb-body">
-      <span className="wb-platform">{e.platform}</span>
-      <div className="wb-query"><span className="wb-q-ico" aria-hidden="true">⌕</span><span><Typed text={e.query}/></span></div>
-      <p>{e.description}</p>
-      <div className="wb-actions">
-       <button type="button" onClick={()=>copy(e.query)}>{copied===e.query?<><Check size={14}/>Copied</>:<><Copy size={14}/>Copy query</>}</button>
-       {(()=>{const r=runLink(e.platform,e.query);return <a href={r.href} target="_blank" rel="noreferrer">{r.label}<ArrowUpRight size={14}/></a>;})()}
-      </div>
-     </div>
-    </li>;})}
-   </ol>
-  </div>
+  {proofClients.map((p,i)=><Panel key={p.name} c={p} i={i} active={i===active}/>)}
   <p className="wb-note">Captured when each placement went live. Live answers vary by location, account and date.</p>
  </div>;
 }
