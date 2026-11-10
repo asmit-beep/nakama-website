@@ -4,8 +4,8 @@ import {ArrowUpRight,CalendarCheck,ChevronDown} from 'lucide-react';
 import {openBookCall} from '@/components/booking/BookCall';
 
 const SERVICES=['AI visibility (AEO / GEO)','Community & Reddit','Editorial content','YouTube & video','Digital PR & links','White-label'];
-const BUDGETS=['Not sure yet','Under $2,000 / month','$2,000 – $5,000 / month','$5,000 – $10,000 / month','$10,000+ / month'];
-const TIMELINES=['As soon as possible','Within a month','In 1 – 3 months','Just exploring'];
+const BUDGETS=['Not sure yet','Under $2,000 / month','$2,000 to $5,000 / month','$5,000 to $10,000 / month','$10,000+ / month'];
+const TIMELINES=['As soon as possible','Within a month','In 1 to 3 months','Just exploring'];
 
 export function QuoteForm(){
  const [picked,setPicked]=useState<string[]>([]);

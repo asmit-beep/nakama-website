@@ -6,7 +6,7 @@ import {BookCallButton} from '@/components/booking/BookCall';
 import {ModIcon, type ModIconName} from './icons';
 import './geo.css';
 
-const TITLE = 'Generative Engine Optimization Services for SaaS, Tech & AI - Nakama Growth';
+const TITLE = 'Generative Engine Optimization Services for SaaS, Tech & AI | Nakama Growth';
 const DESCRIPTION = 'Generative engine optimization services for SaaS, tech and AI. We audit where AI names your competitors, then build product context and sources ChatGPT, Perplexity, Gemini and Google AI Overviews cite.';
 const META_DESCRIPTION = 'Generative engine optimization services for SaaS, tech and AI. We audit AI competitor mentions and build sources ChatGPT, Perplexity and AI Overviews cite.';
 

@@ -6,7 +6,7 @@ import {BookCallButton} from '@/components/booking/BookCall';
 import {ModIcon, type ModIconName} from './icons';
 import './aeo.css';
 
-const TITLE = 'AEO Agency for SaaS, Tech & AI - Nakama Growth';
+const TITLE = 'AEO Agency for SaaS, Tech & AI | Nakama Growth';
 const DESCRIPTION = 'AEO agency for SaaS, tech and AI. Nakama Growth maps the questions your buyers ask and builds answer-first pages, FAQs and site structure that answer them.';
 
 export const metadata: Metadata = pageMeta('/services/aeo', {title: TITLE, description: DESCRIPTION});

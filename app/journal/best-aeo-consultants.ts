@@ -180,7 +180,6 @@ const articleLd = {
    "name": "Yash Kumar",
    "jobTitle": "Co-founder and CEO",
    "url": "https://www.nakama.in/authors/yash-kumar",
-   "description": "Yash Kumar is Co-founder and CEO of Nakama Growth, an AEO and AI visibility agency for SaaS, software and AI companies. He tracks how ChatGPT, Gemini, Perplexity and Google AI Overviews answer buyer prompts and publishes the results.",
    "worksFor": {
     "@id": "https://www.nakama.in/#organization"
    }

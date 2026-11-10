@@ -4,7 +4,7 @@ import {ProcessStepper} from './ProcessStepper';
 import {Shell,Reveal} from '../site';
 import {IpAtmos,IpHero,IpHead,IpSection,LinkBtn,IpCta} from '../inner/kit';
 
-export const metadata:Metadata=pageMeta('/process',{title:'How We Work — Nakama Growth',description:'How a Nakama engagement runs: understand, create, place and prove, on a monthly cycle with a clear cadence, shared evidence and one accountable team.'});
+export const metadata:Metadata=pageMeta('/process',{title:'How We Work | Nakama Growth',description:'How a Nakama engagement runs: understand, create, place and prove, on a monthly cycle with a clear cadence, shared evidence and one accountable team.'});
 
 const cadence=[
  ['Weekly','Async updates','Drafts, placements and anything that needs your eyes, in one shared workspace.'],

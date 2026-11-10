@@ -45,7 +45,6 @@ const articleLd = {
    },
    "jobTitle": "CEO & Creative Director",
    "image": "https://www.nakama.in/authors/snehil-srivastava-nakama-ceo-800.webp",
-   "description": "Snehil Srivastava is CEO and Creative Director of Nakama Growth, an AEO and GEO agency in India that helps B2B and SaaS brands get named when buyers ask AI tools what to choose. He is a creative strategist and content lead. He has spent multiple years building brands.",
    "sameAs": [
     "https://www.linkedin.com/in/snehil-srivastava-356739175/"
    ]

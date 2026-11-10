@@ -7,7 +7,7 @@
 export const PREVIEW = false;
 
 export const SLUG = '/services/ai-visibility-audit';
-export const TITLE = 'AI Visibility Audit for SaaS - Nakama Growth';
+export const TITLE = 'AI Visibility Audit for SaaS | Nakama Growth';
 export const META = 'An AI visibility audit for SaaS. Nakama Growth runs your buyer prompts across AI engines and shows where you are mentioned, recommended, cited, or missing.';
 export const KW_PRIMARY = 'ai visibility audit';
 export const ROLE = 'AI Visibility Audit';
@@ -15,9 +15,9 @@ export const H1 = 'AI Visibility Audit for SaaS';
 export const Q_HREF = '/pricing#quote';
 
 export const EYEBROW = 'AI visibility audit';
-export const LEAD = 'Nakama Growth\'s AI visibility audit runs your real buyer prompts through AI engines, repeats each run, and records where your brand is mentioned, recommended or cited next to named rivals. You get dated evidence, the sources engines trust and a fix list. Start with a free sample or book the full audit.';
+export const LEAD = 'Nakama Growth\'s AI visibility audit runs your real buyer prompts through AI engines, repeats each run, and records where your brand is mentioned, recommended or cited next to named rivals. You get dated evidence, the sources engines trust and a fix list. Start with a free AI visibility check or book the full audit.';
 export const BOOK = 'Book a call';
-export const FREE_CTA = 'Get a free sample';
+export const FREE_CTA = 'Get a free AI visibility check';
 export const SEE_PRICING = 'See pricing';
 export const ENG_LINE = 'Engines agreed for your audit, each reported separately.';
 
@@ -58,11 +58,11 @@ export const METRICS = [
 ] as const;
 
 export const REPORT_H2 = 'What the report looks like';
-export const REPORT_TAG = 'Sample, redacted';
+export const REPORT_TAG = 'Brands hidden';
 export const REPORT_EXAMPLE = 'Example data · 1 to 3 prompts × 2 engines × 3 runs';
 export const REPORT_RUNS = [
- ['Engine A', '14–16 Oct', '2', '1', '1'],
- ['Engine B', '14–16 Oct', '3', '2', '0'],
+ ['Engine A', '14 to 16 Oct', '2', '1', '1'],
+ ['Engine B', '14 to 16 Oct', '3', '2', '0'],
 ] as const;
 export const REPORT_NOTE = 'Engines reported separately. No blended cross-engine number.';
 export const SOURCES = [
@@ -78,7 +78,7 @@ export const FIXES = [
  ['Accuracy correction', 'Fix the outdated plan name engines repeat'],
 ] as const;
 
-export const CMP_H2 = 'Free sample vs full audit';
+export const CMP_H2 = 'Free AI visibility check vs full audit';
 export const CMP = [
  ['Prompts', '1 to 3 prompts (yours + up to 2 we write)', 'Agreed buyer prompt set'],
  ['Engines', '2 engines, reported separately', 'Engines agreed for your audit, each reported separately'],
@@ -92,13 +92,13 @@ export const CMP = [
  ['Delivery', 'Emailed, not instant', 'Report + call'],
 ] as const;
 
-export const SAMPLE_EYE = 'Free sample';
-export const SAMPLE_H2 = 'Get a free AI visibility sample';
+export const SAMPLE_EYE = 'Free AI visibility check';
+export const SAMPLE_H2 = 'Get a free AI visibility check';
 export const SAMPLE_SCOPE = 'Scope: 1 to 3 prompts × 2 engines × 3 runs each, per engine. No score, no %.';
 export const SAMPLE_BODY = 'Emailed, not instant. A person runs your prompts and checks each answer before we send it. No score, no average position.';
-export const SEND = 'Send my free sample';
+export const SEND = 'Send my free AI visibility check';
 export const THANKS_K = 'After you send it';
-export const THANKS = 'Thanks. We will run your prompts and email your sample once every run is checked.';
+export const THANKS = 'Thanks. We will run your prompts and email your AI visibility check once every run is checked.';
 export const THANKS_NEXT = 'Want the full audit?';
 
 export const PROCESS_H2 = 'How the audit runs';
@@ -144,14 +144,14 @@ export const FAQ = [
  ['How is this different from a free AI visibility grader?', 'Most graders run a prompt once and return a single score. We repeat runs, report each engine on its own, show the exact answers and sources, and hand you a ranked fix list with a walkthrough call.'],
  ['What do you need from us?', 'Your site, the buyer prompts you care about, and the competitors you want to compare against. If you are unsure about prompts, we draft a set with you before any runs.'],
  ['What happens after the audit?', 'You get the report, a walkthrough call and a prioritized roadmap with a re-test date. You can run the fixes yourself or ask Nakama Growth to handle the GEO and AEO work.'],
- ['Which engines do you check?', 'The paid audit covers the engines agreed for your audit, each reported separately. The free sample uses 2 engines.'],
- ['Is the free sample really free?', 'Yes. You get 1 to 3 prompts across 2 engines, with 3 runs each per engine, emailed to you. It is a sample, not a full measurement, so it has no score and no average position.'],
+ ['Which engines do you check?', 'The paid audit covers the engines agreed for your audit, each reported separately. The free AI visibility check uses 2 engines.'],
+ ['Is the free AI visibility check really free?', 'Yes. You get 1 to 3 prompts across 2 engines, with 3 runs each per engine, emailed to you. It is a check, not a full measurement, so it has no score and no average position.'],
  ['How long does the audit take?', 'It depends on how many prompts and engines are in scope. We confirm the timeline when we agree the prompt set.'],
  ['How does pricing work?', 'Pricing depends on the number of prompts, engines and competitors in scope. Book a call and we will quote the audit, or the audit plus fixes, for your site.'],
 ] as const;
 
 export const CTA_H2 = 'See how AI engines answer your buyers';
-export const CTA_P = 'Book the full audit, or start with a free sample emailed to you.';
+export const CTA_P = 'Book the full audit, or start with a free AI visibility check emailed to you.';
 export const RELATED = [
  ['GEO services', '/services/geo'],
  ['AEO services', '/services/aeo'],

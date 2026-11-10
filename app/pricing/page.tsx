@@ -6,7 +6,7 @@ import {Shell,Reveal} from '../site';
 import {IpAtmos,IpHero,IpSection,BookBtn,LinkBtn,FitSplit,IpFaq} from '../inner/kit';
 import {QuoteForm} from './QuoteForm';
 
-export const metadata:Metadata=pageMeta('/pricing',{title:'Pricing: One All-Inclusive Plan — Nakama Growth',description:'One Nakama plan with every AI visibility service included, with no tiers or add-ons. Need enterprise scope or custom pricing? Book a call and we will scope it.'});
+export const metadata:Metadata=pageMeta('/pricing',{title:'Pricing: One All-Inclusive Plan | Nakama Growth',description:'One Nakama plan with every AI visibility service included, with no tiers or add-ons. Need enterprise scope or custom pricing? Book a call and we will scope it.'});
 
 const features=[
  ['Buyer prompt map','the exact questions your buyers ask AI'],
@@ -38,7 +38,7 @@ export default function Pricing(){
     tone="ember"
     eyebrow="Pricing"
     title="One plan. Everything included."
-    accent="No tiers or add‑ons."
+    accent="No tiers or add-ons."
     lead="Every partner gets the full Nakama team from day one: strategy, content, community, video, PR and reporting. No upgrades to unlock, no surprises."
    >
     <LinkBtn href="#quote">Get your quote</LinkBtn>
@@ -56,7 +56,7 @@ export default function Pricing(){
       <LinkBtn href="#quote">Get your quote</LinkBtn>
      </div>
      <ul className="pr-feats">
-      {features.map(([t,d])=><li key={t}><span className="pr-tick"><Check size={14}/></span><span><b>{t}</b> — {d}</span></li>)}
+      {features.map(([t,d])=><li key={t}><span className="pr-tick"><Check size={14}/></span><span><b>{t}</b>: {d}</span></li>)}
      </ul>
     </Reveal>
 

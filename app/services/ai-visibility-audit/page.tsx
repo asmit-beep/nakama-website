@@ -81,7 +81,7 @@ export default function AiVisibilityAuditPage() {
         <p className="lead">{LEAD}</p>
         <div className="ctas">
          <Link className="btn btn-p" href={Q_HREF}>{BOOK} <span className="ar" aria-hidden="true">→</span></Link>
-         <Link className="btn btn-g" href="#free-sample">{FREE_CTA}</Link>
+         <Link className="btn btn-g" href="#free-ai-visibility-check">{FREE_CTA}</Link>
          <Link className="tl" href="#pricing">{SEE_PRICING}</Link>
         </div>
         <p className="eng"><span className="dot" aria-hidden="true" />{ENG_LINE}</p>
@@ -92,12 +92,12 @@ export default function AiVisibilityAuditPage() {
          <div className="rep-h"><b>Citation source map</b></div>
          <i /><i /><i /><i />
         </div>
-        <figure className="rep rep-front" aria-label="Redacted sample report page, example data">
+        <figure className="rep rep-front" aria-label="Example AI visibility report page, brands hidden">
          <div className="rep-h">
           <b>
            {/* eslint-disable-next-line @next/next/no-img-element -- brand mark, fixed height */}
            <img src="/brand/nakama-icon-dark.svg" alt="" width={18} height={18} />
-           AI visibility sample
+           Example AI visibility report
           </b>
           <span className="stamp">{REPORT_TAG}</span>
          </div>
@@ -183,7 +183,7 @@ export default function AiVisibilityAuditPage() {
        <p>{MID}</p>
        <div className="rail">
         <Link className="btn btn-p" href={Q_HREF}>{BOOK} <span className="ar" aria-hidden="true">→</span></Link>
-        <Link className="btn btn-g" href="#free-sample">{FREE_CTA}</Link>
+        <Link className="btn btn-g" href="#free-ai-visibility-check">{FREE_CTA}</Link>
        </div>
       </div>
      </div>
@@ -274,7 +274,7 @@ export default function AiVisibilityAuditPage() {
         <tbody>
          <tr>
           <th />
-          <th><div className="hd"><span><small>Lighter step</small>Free sample</span></div></th>
+          <th><div className="hd"><span><small>Lighter step</small>Free AI visibility check</span></div></th>
           <th className="paid"><div className="hd"><span className="dot" aria-hidden="true" /><span><small>Full measurement</small>Paid AI Visibility Audit</span></div></th>
          </tr>
          {CMP.map(([label, free, paid]) => (
@@ -292,7 +292,7 @@ export default function AiVisibilityAuditPage() {
         <div className="pair" key={label}>
          <h4>{label}</h4>
          <div>
-          <span><b>Free sample</b>{free}</span>
+          <span><b>Free AI visibility check</b>{free}</span>
           <span className="pp"><b><i className="dot" aria-hidden="true" />Paid audit</b>{paid}</span>
          </div>
         </div>
@@ -301,7 +301,7 @@ export default function AiVisibilityAuditPage() {
      </div>
     </section>
 
-    <section className="s s-alt fs-s" id="free-sample">
+    <section className="s s-alt fs-s" id="free-ai-visibility-check">
      <div className="fsa" aria-hidden="true"><div className="g2" /><div className="a2" /></div>
      <div className="wrap fs">
       <div>
@@ -321,7 +321,7 @@ export default function AiVisibilityAuditPage() {
         {THANKS_NEXT} <Link href={Q_HREF}>{BOOK}</Link> · <Link href="#pricing">{SEE_PRICING}</Link>
        </div>
       </div>
-      <div className="form" role="group" aria-label="Free sample request, preview only">
+      <div className="form" role="group" aria-label="Free AI visibility check request, preview only">
        <div className="f"><label>Work email</label><div className="in">you@company.com</div></div>
        <div className="f"><label>Site URL</label><div className="in">company.com</div></div>
        <div className="f full"><label>Competitors <small>· up to 3</small></label><div className="in">rival-one.com, rival-two.com</div></div>
@@ -409,7 +409,7 @@ export default function AiVisibilityAuditPage() {
       </div>
       <div className="rail">
        <Link className="btn btn-p" href={Q_HREF}>{BOOK} <span className="ar" aria-hidden="true">→</span></Link>
-       <Link className="btn btn-g" href="#free-sample">{FREE_CTA}</Link>
+       <Link className="btn btn-g" href="#free-ai-visibility-check">{FREE_CTA}</Link>
       </div>
      </div>
     </section>

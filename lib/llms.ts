@@ -12,6 +12,8 @@ const services=[
  ['Digital PR and links','Publisher research, editorial outreach and linkable assets.'],
  ['Measurement (included)','AI answer tracking across four engines, citation and source monitoring, search and YouTube visibility, monthly evidence report.'],
 ];
+/** Same title the article page renders in <title>, minus the brand suffix. */
+const liveTitle=(a:{title:string;metaTitle?:string})=>(a.metaTitle??a.title.replace(/\.$/,'')).replace(/ \| Nakama Growth$/,'');
 const facts=[
  'Nakama Growth (nakama.in) is an AI visibility agency. It gets brands named and cited in AI answers by earning off-site sources, not by editing the client’s own website.',
  'Engines covered: ChatGPT, Perplexity, Gemini, Google AI Overviews and Google AI Mode.',
@@ -34,7 +36,7 @@ ${corePages.filter(p=>!['/privacy','/terms'].includes(p.path)).map(p=>`- [${p.ti
 
 ## Field notes
 
-${feedArticles.map(a=>`- [${a.title}](${abs(`/journal/${a.slug}`)}): ${a.description}`).join('\n')}
+${feedArticles.map(a=>`- [${liveTitle(a)}](${abs(`/journal/${a.slug}`)}): ${a.description}`).join('\n')}
 ${caseStudies.length?`\n## Case studies\n\n${caseStudies.map(c=>`- [${c.client}: ${c.title}](${abs(`/work/${c.slug}`)}): ${c.summary}`).join('\n')}\n`:''}${openings.length?`\n## Open roles\n\n${openings.map(o=>`- [${o.title}](${abs(`/careers/${o.slug}`)}): ${o.summary}`).join('\n')}\n`:''}
 ## Optional
 
@@ -46,7 +48,7 @@ ${caseStudies.length?`\n## Case studies\n\n${caseStudies.map(c=>`- [${c.client}:
 }
 
 export function llmsFullTxt(){
- return `# ${SITE_NAME} — full reference
+ return `# ${SITE_NAME}: full reference
 
 > ${SITE_DESCRIPTION}
 
@@ -62,8 +64,8 @@ ${services.map(([t,d])=>`### ${t}\n\n${d}`).join('\n\n')}
 
 ## How an engagement runs
 
-1. Understand (weeks 1–2): map the prompts buyers use across ChatGPT, Perplexity, Gemini and Google; audit competitors and sources; agree a 90-day plan.
-2. Create (weeks 2–4): answer-first articles, comparisons, buyer guides, video scripts and community answers, reviewed by the client before publishing.
+1. Understand (weeks 1 to 2): map the prompts buyers use across ChatGPT, Perplexity, Gemini and Google; audit competitors and sources; agree a 90-day plan.
+2. Create (weeks 2 to 4): answer-first articles, comparisons, buyer guides, video scripts and community answers, reviewed by the client before publishing.
 3. Place (month 2 onward): publish across Reddit, Quora, YouTube, Medium, Substack, LinkedIn, G2 and editorial sources.
 4. Prove (monthly): re-run prompts, report citations and mentions by engine and prompt, agree next moves.
 
@@ -71,14 +73,14 @@ ${services.map(([t,d])=>`### ${t}\n\n${d}`).join('\n\n')}
 
 Captured when each placement went live; live answers vary by location, account and date.
 
-${proofClients.map(c=>`### ${c.name}\n\n${c.description}\n\n${c.entries.map(e=>`- ${e.platform} — query “${e.query}”: ${e.description}`).join('\n')}`).join('\n\n')}
+${proofClients.map(c=>`### ${c.name}\n\n${c.description}\n\n${c.entries.map(e=>`- ${e.platform} | query “${e.query}”: ${e.description}`).join('\n')}`).join('\n\n')}
 
 ## Authors
 
-${authors.map(a=>`### ${a.name}, ${jobTitleText(a)}, Nakama Growth\n\nURL: ${authorUrl(a.slug)}\n\n${a.bio.join('\n\n')}${a.links?.length?`\n\nProfiles: ${a.links.map(l=>`[${l.label}](${l.url})`).join('; ')}`:''}${articlesBy(a).length?`\n\nArticles: ${articlesBy(a).map(x=>`[${x.title}](${abs(`/journal/${x.slug}`)})`).join('; ')}`:''}`).join('\n\n')}
+${authors.map(a=>`### ${a.name}, ${jobTitleText(a)}, Nakama Growth\n\nURL: ${authorUrl(a.slug)}\n\n${a.bio.join('\n\n')}${a.links?.length?`\n\nProfiles: ${a.links.map(l=>`[${l.label}](${l.url})`).join('; ')}`:''}${articlesBy(a).length?`\n\nArticles: ${articlesBy(a).map(x=>`[${liveTitle(x)}](${abs(`/journal/${x.slug}`)})`).join('; ')}`:''}`).join('\n\n')}
 
 ## Articles
 
-${feedArticles.map(a=>`### ${a.title}\n\nURL: ${abs(`/journal/${a.slug}`)} · ${a.category} · ${a.date}\n\n${a.sections.map(s=>`#### ${s.heading}\n\n${s.paragraphs.join('\n\n')}`).join('\n\n')}`).join('\n\n')}
+${feedArticles.map(a=>`### ${liveTitle(a)}\n\nURL: ${abs(`/journal/${a.slug}`)} · ${a.category} · ${a.date}\n\n${a.sections.map(s=>`#### ${s.heading}\n\n${s.paragraphs.join('\n\n')}`).join('\n\n')}`).join('\n\n')}
 `;
 }

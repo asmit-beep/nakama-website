@@ -7,7 +7,7 @@ import {BookCallButton} from '@/components/booking/BookCall';
 import {ModIcon, type ModIconName} from './icons';
 import './reddit.css';
 
-const TITLE = 'Reddit Marketing Agency for SaaS, Tech & AI - Nakama Growth';
+const TITLE = 'Reddit Marketing Agency for SaaS, Tech & AI | Nakama Growth';
 const DESCRIPTION = 'Reddit marketing agency for SaaS, tech and AI. Nakama Growth maps the subreddits your buyers use and joins their threads with helpful, rules-fit answers.';
 
 export const metadata: Metadata = pageMeta('/services/reddit', {title: TITLE, description: DESCRIPTION});
@@ -189,7 +189,7 @@ export default function RedditServices() {
         ))}
        </ul>
       </div>
-      <figure className="reddit-thread" aria-label="Sample community thread">
+      <figure className="reddit-thread" aria-label="Example community thread">
        <div className="reddit-th">
         <span className="reddit-rtext">Reddit</span>
         <b>r/SaaS</b>
@@ -213,7 +213,7 @@ export default function RedditServices() {
     <div className="reddit-wrap">
      <p className="reddit-idx">01 · AI visibility</p>
      <h2>Where AI answers find their sources</h2>
-     <p className="reddit-cite-sub">Mention share among top sources, by AI engine · Bars scaled 0–25%</p>
+     <p className="reddit-cite-sub">Mention share among top sources, by AI engine · Bars scaled 0 to 25%</p>
      <div className="reddit-cite-grid">
       {citeCards.map(card => (
        <article className="reddit-cite-card" key={card.engine}>

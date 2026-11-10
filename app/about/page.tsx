@@ -3,7 +3,7 @@ import type {Metadata} from 'next';
 import {Shell,Reveal} from '../site';
 import {IpAtmos,IpHero,IpHead,IpSection,BookBtn,LinkBtn,IpCta,LogoRow} from '../inner/kit';
 
-export const metadata:Metadata=pageMeta('/about',{title:'About Nakama — The AI Visibility Team',description:'Nakama means companion. Meet the team of writers, researchers and strategists that gets brands named in AI answers, and the rules we hold ourselves to.'});
+export const metadata:Metadata=pageMeta('/about',{title:'About Nakama | The AI Visibility Team',description:'Nakama means companion. Meet the team of writers, researchers and strategists that gets brands named in AI answers, and the rules we hold ourselves to.'});
 
 const principles=[
  ['01','Disclosed, always','Every community post is open about who is behind it. No fake reviews, no hidden endorsements. A mention that can’t survive being traced back isn’t worth having.'],
