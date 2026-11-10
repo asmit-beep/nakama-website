@@ -297,7 +297,7 @@ const bodyHtml = `<nav aria-label="Breadcrumb" class="article-breadcrumb"><ol st
 
 <h2 id="aeo-vs-seo-what-is-the-difference">AEO vs SEO: what is the difference?</h2>
 <p>AEO vs SEO comes down to the unit of success. SEO tries to rank a page so people click it. AEO tries to make one passage the answer a search feature or assistant shows, even if nobody clicks. Both need a crawlable, indexed, well-written page. AEO adds answer-first structure and question-led headings on top of that.</p>
-<p>In practice, you take a page that already ranks and put the answer to its main question in the first lines under the heading, in plain words that still make sense when quoted alone.</p>
+<p>In practice, you take a page that already ranks and put the answer to its main question in the first lines under the heading, in plain words that still make sense when quoted alone. Our <a href="https://www.nakama.in/journal/answer-engine-optimization">answer engine optimization playbook</a> walks through each step.</p>
 <h2 id="geo-vs-seo-what-changes-and-what-does-not">GEO vs SEO: what changes and what does not</h2>
 <p>GEO vs SEO is a question of scope. SEO works mostly on your own site and its links. GEO aims to get your brand named inside AI-generated answers, which draw on many sources at once. Your own pages still matter. What third parties say about you, and how each AI engine retrieves sources, can matter more.</p>
 <p>The term comes from a <a href="https://arxiv.org/abs/2311.09735">2023 research paper by Aggarwal and colleagues</a>, later accepted at KDD 2024. Google's guide now describes AEO and GEO as terms used for work focused on visibility in AI search.</p>
@@ -349,15 +349,15 @@ const bodyHtml = `<nav aria-label="Breadcrumb" class="article-breadcrumb"><ol st
 <li><strong>Default setting.</strong> Sites are included by default (a property with a parent property inherits the parent's setting), and Google rolled the control out to all sites on 31 Aug 2026, so check that nobody has switched it off.</li>
 </ul>
 </li>
-<li><strong>Add answer-first passages to pages that already rank.</strong> Start with pages on page one or two for question queries. As a working target of our own, put a direct 40 to 60 word answer under each main heading. Google's guide does not ask for a set length. Use headings that match how people phrase the question. Add a comparison table where readers are comparing options.</li>
+<li><strong>Add answer-first passages to pages that already rank.</strong> Start with pages on page one or two for question queries. As a working target of our own, put a direct 40 to 60 word answer under each main heading. Google's guide does not ask for a set length. Use headings that match how people phrase the question (see <a href="https://www.nakama.in/journal/topics-vs-keywords">topics vs keywords</a>). Add a comparison table where readers are comparing options.</li>
 <li><strong>Build entity and off-site presence.</strong> Keep your brand name, category and description consistent everywhere. Earn real mentions in third-party articles, reviews, YouTube videos and community threads such as Reddit, with honest participation.</li>
 <li>
-<p><strong>Measure with repeated runs per prompt, per engine.</strong> Pick a fixed set of prompts. Run each one several times per engine and log the brands and sources named. Report each engine separately.</p>
+<p><strong>Measure with repeated runs per prompt, per engine.</strong> Pick a fixed set of prompts. Run each one several times per engine and log the brands and sources named. Report each engine separately. Our <a href="https://www.nakama.in/journal/geo-audit">GEO audit guide</a> covers a first round of prompt testing.</p>
 <p>The St. Gallen preprint recommends at least 7 runs per prompt per day for brand visibility and at least 8 when source-level coverage matters. The figures come from the study's repeated-run dataset in Switzerland (eight prompts in each of four topic areas, four engines, up to 10 runs each). Seven runs can spot large differences between brands but are too few to rank similar ones.</p>
 <p>In Google, also check the Generative AI performance report in Search Console.</p>
 </li>
 </ol>
-<p>For what a useful visibility report should contain, see <a href="https://www.nakama.in/journal/what-a-useful-visibility-report-shows">what a useful visibility report actually shows</a>.</p>
+<p>For what a useful visibility report should contain, see <a href="https://www.nakama.in/journal/ai-visibility-report-template">what a useful visibility report actually shows</a>.</p>
 <blockquote>
 <p><strong>When plain SEO is the answer</strong></p>
 <ul>
@@ -392,7 +392,7 @@ const bodyHtml = `<nav aria-label="Breadcrumb" class="article-breadcrumb"><ol st
 <h3 id="what-should-a-small-team-do-first">What should a small team do first?</h3>
 <p>Fix indexing and crawler access, then add answer-first passages to pages that already rank. Measure with repeated runs per engine before you spend on tools or agencies. Most of this early work is SEO work, so a small team can start with the pages and skills it already has.</p>
 <h2 id="the-one-thing-to-remember">The one thing to remember</h2>
-<p>Treat AEO and GEO as SEO with two extra jobs: earning mentions on sources you do not own, and measuring answers that change from run to run. For help with both, see <a href="https://www.nakama.in/services">how Nakama works on AEO and GEO</a>. To compare providers, see our <a href="https://www.nakama.in/journal/best-aeo-agencies">best AEO agencies</a> guide (ten firms) and <a href="https://www.nakama.in/journal/best-generative-engine-optimization-agencies">best GEO agencies</a> guide (nine firms).</p>
+<p>Treat AEO and GEO as SEO with two extra jobs: earning mentions on sources you do not own, and measuring answers that change from run to run. For help with both, see Nakama's <a href="https://www.nakama.in/services/aeo">AEO services</a> and <a href="https://www.nakama.in/services/geo">GEO services</a>. To compare providers, see our <a href="https://www.nakama.in/journal/best-aeo-agencies">best AEO agencies</a> guide (ten firms) and <a href="https://www.nakama.in/journal/best-generative-engine-optimization-agencies">best GEO agencies</a> guide (nine firms). To do the work yourself, start with <a href="https://www.nakama.in/journal/how-to-rank-in-chatgpt">how to rank in ChatGPT</a> and <a href="https://www.nakama.in/journal/how-to-rank-in-google-ai-overviews">how to rank in Google AI Overviews</a>.</p>
 <h2 id="about-the-author">About the author</h2>
 <div class="author-box" id="snehil-srivastava">
 <img src="/authors/snehil-srivastava-nakama-ceo.webp" srcset="/authors/snehil-srivastava-nakama-ceo.webp 400w, /authors/snehil-srivastava-nakama-ceo-800.webp 800w" sizes="96px" alt="Snehil Srivastava, CEO &amp; Creative Director of Nakama Growth" width="96" height="96" loading="lazy" decoding="async">
@@ -455,7 +455,7 @@ export const aeoVsSeoVsGeoArticle: Article = {
   "heading": "AEO vs SEO: what is the difference?",
   "paragraphs": [
    "AEO vs SEO comes down to the unit of success. SEO tries to rank a page so people click it. AEO tries to make one passage the answer a search feature or assistant shows, even if nobody clicks. Both need a crawlable, indexed, well-written page. AEO adds answer-first structure and question-led headings on top of that.",
-   "In practice, you take a page that already ranks and put the answer to its main question in the first lines under the heading, in plain words that still make sense when quoted alone."
+   "In practice, you take a page that already ranks and put the answer to its main question in the first lines under the heading, in plain words that still make sense when quoted alone. Our answer engine optimization playbook walks through each step."
   ]
  },
  {
@@ -522,9 +522,9 @@ export const aeoVsSeoVsGeoArticle: Article = {
    "Google. Google-Extended , which manages whether crawled content is used to train Gemini models and for grounding in Gemini Apps and Vertex AI, \"does not impact a site's inclusion in Google Search.\" For AI features in Search, Google points to robots.txt rules for Googlebot and snippet controls such as nosnippet.",
    "Search Console. Google's guide says a site must be included in Search generative AI features to be eligible. In Search Console this is the Search generative AI control , under Settings.",
    "Default setting. Sites are included by default (a property with a parent property inherits the parent's setting), and Google rolled the control out to all sites on 31 Aug 2026, so check that nobody has switched it off.",
-   "Add answer-first passages to pages that already rank. Start with pages on page one or two for question queries. As a working target of our own, put a direct 40 to 60 word answer under each main heading. Google's guide does not ask for a set length. Use headings that match how people phrase the question. Add a comparison table where readers are comparing options.",
+   "Add answer-first passages to pages that already rank. Start with pages on page one or two for question queries. As a working target of our own, put a direct 40 to 60 word answer under each main heading. Google's guide does not ask for a set length. Use headings that match how people phrase the question (see topics vs keywords). Add a comparison table where readers are comparing options.",
    "Build entity and off-site presence. Keep your brand name, category and description consistent everywhere. Earn real mentions in third-party articles, reviews, YouTube videos and community threads such as Reddit, with honest participation.",
-   "Measure with repeated runs per prompt, per engine. Pick a fixed set of prompts. Run each one several times per engine and log the brands and sources named. Report each engine separately. The St. Gallen preprint recommends at least 7 runs per prompt per day for brand visibility and at least 8 when source-level coverage matters. The figures come from the study's repeated-run dataset in Switzerland (eight prompts in each of four topic areas, four engines, up to 10 runs each). Seven runs can spot large differences between brands but are too few to rank similar ones. In Google, also check the Generative AI performance report in Search Console.",
+   "Measure with repeated runs per prompt, per engine. Pick a fixed set of prompts. Run each one several times per engine and log the brands and sources named. Report each engine separately. Our GEO audit guide covers a first round of prompt testing. The St. Gallen preprint recommends at least 7 runs per prompt per day for brand visibility and at least 8 when source-level coverage matters. The figures come from the study's repeated-run dataset in Switzerland (eight prompts in each of four topic areas, four engines, up to 10 runs each). Seven runs can spot large differences between brands but are too few to rank similar ones. In Google, also check the Generative AI performance report in Search Console.",
    "For what a useful visibility report should contain, see what a useful visibility report actually shows .",
    "When plain SEO is the answer",
    "Your important pages are not indexed, or they cannot show a snippet. No AI feature in Google can use them yet.",
@@ -603,7 +603,7 @@ export const aeoVsSeoVsGeoArticle: Article = {
  {
   "heading": "The one thing to remember",
   "paragraphs": [
-   "Treat AEO and GEO as SEO with two extra jobs: earning mentions on sources you do not own, and measuring answers that change from run to run. For help with both, see how Nakama works on AEO and GEO . To compare providers, see our best AEO agencies guide (ten firms) and best GEO agencies guide (nine firms)."
+   "Treat AEO and GEO as SEO with two extra jobs: earning mentions on sources you do not own, and measuring answers that change from run to run. For help with both, see Nakama's AEO services and GEO services . To compare providers, see our best AEO agencies guide (ten firms) and best GEO agencies guide (nine firms). To do the work yourself, start with how to rank in ChatGPT and how to rank in Google AI Overviews."
   ]
  },
  {

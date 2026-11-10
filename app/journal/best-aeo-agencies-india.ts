@@ -333,7 +333,7 @@ const bodyHtml = `<nav aria-label="Breadcrumb" class="article-breadcrumb"><ol st
 <h3 id="1-nakama-growth-best-aeo-agency-in-india-for-b2b-saas-and-ai-brands">1. Nakama Growth: best AEO agency in India for B2B SaaS and AI brands</h3>
 <p><strong>Best for:</strong> SaaS, software and AI companies, plus agencies that want a white-label AEO partner.</p>
 <p><strong>Evidence:</strong> Nakama Growth's <a href="https://www.nakama.in/work">Work page</a> names five clients: Synup, Inventive AI, HubEngage, StarAgile and BacklinkOS. Each entry lists the exact search where the work surfaced, so a buyer can re-run it. For Inventive AI, it documents four placements, including a Google AI Overview that cited a LinkedIn comparison under its Inventive AI recommendation. The AEO service tracks ChatGPT, Perplexity, Gemini and Google AI Overviews, and the channel mix includes disclosed Reddit and Quora participation, YouTube, digital PR, listicles and G2 presence.</p>
-<p><strong>Pricing:</strong> No public price. One plan with everything included, quoted per client. A written proposal arrives within two business days. Minimum commitment is three months.</p>
+<p><strong>Pricing:</strong> No public price. One plan with everything included, quoted per client (see <a href="https://www.nakama.in/pricing">Nakama's pricing page</a>). A written proposal arrives within two business days. Minimum commitment is three months.</p>
 <p><strong>Weakness:</strong> There is no published price, and placements on the Work page show no capture date or baseline. The team takes on a small number of partners at a time, so capacity is limited.</p>
 <p><strong>Choose if:</strong> You sell software to B2B buyers, in India or the US, and want query-level proof rather than a monthly dashboard of vanity metrics.</p>
 <p><strong>Score:</strong> 8/10.</p>
@@ -545,7 +545,7 @@ export const bestAeoAgenciesIndiaArticle: Article = {
  "paragraphs": [
   "Best for: SaaS, software and AI companies, plus agencies that want a white-label AEO partner.",
   "Evidence: Nakama Growth's Work page names five clients: Synup, Inventive AI, HubEngage, StarAgile and BacklinkOS. Each entry lists the exact search where the work surfaced, so a buyer can re-run it. For Inventive AI, it documents four placements, including a Google AI Overview that cited a LinkedIn comparison under its Inventive AI recommendation. The AEO service tracks ChatGPT, Perplexity, Gemini and Google AI Overviews, and the channel mix includes disclosed Reddit and Quora participation, YouTube, digital PR, listicles and G2 presence.",
-  "Pricing: No public price. One plan with everything included, quoted per client. A written proposal arrives within two business days. Minimum commitment is three months.",
+  "Pricing: No public price. One plan with everything included, quoted per client (see Nakama's pricing page). A written proposal arrives within two business days. Minimum commitment is three months.",
   "Weakness: There is no published price, and placements on the Work page show no capture date or baseline. The team takes on a small number of partners at a time, so capacity is limited.",
   "Choose if: You sell software to B2B buyers, in India or the US, and want query-level proof rather than a monthly dashboard of vanity metrics.",
   "Score: 8/10."

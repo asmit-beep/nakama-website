@@ -244,4 +244,7 @@ export const RELATED = [
  {label: 'AEO services', href: '/services/aeo'},
  {label: 'AI visibility audit', href: '/services/ai-visibility-audit'},
  {label: 'GEO and AEO pricing guide', href: '/journal/geo-aeo-pricing'},
+ {label: 'GEO for healthcare brands', href: '/industries/healthcare'},
+ {label: 'GEO for ecommerce brands', href: '/industries/ecommerce'},
+ {label: 'See all industries', href: '/industries'},
 ] as const;

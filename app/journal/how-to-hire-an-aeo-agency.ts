@@ -216,7 +216,7 @@ const bodyHtml = `<nav aria-label="Breadcrumb" class="article-breadcrumb"><ol st
 <li><strong>Term length.</strong> Longer commitments often lower the monthly rate.</li>
 <li><strong>Bundled services.</strong> Some agencies fold in SEO, video or digital PR; others charge separately.</li>
 </ul>
-<p>When you evaluate providers, line them up by the same drivers rather than by headline price. A cheaper quote with no off-site work is usually a different product.</p>
+<p>When you evaluate providers, line them up by the same drivers rather than by headline price. A cheaper quote with no off-site work is usually a different product. Our <a href="https://www.nakama.in/journal/geo-aeo-pricing">GEO and AEO pricing</a> guide explains how the common pricing models differ.</p>
 <p>For an all-inclusive plan example, see <a href="https://www.nakama.in/pricing#quote">Nakama Growth pricing</a>.</p>
 <h2 id="red-flags-before-you-sign">Red flags before you sign</h2>
 <p>Walk away, or slow down, if you see any of these. Each one shows up in sales calls before it shows up in results.</p>
@@ -361,7 +361,7 @@ export const howToHireAnAeoAgencyArticle: Article = {
     'Markets and languages. Each extra region adds research and channels.',
     'Term length. Longer commitments often lower the monthly rate.',
     'Bundled services. Some agencies fold in SEO, video or digital PR; others charge separately.',
-    'When you evaluate providers, line them up by the same drivers rather than by headline price. A cheaper quote with no off-site work is usually a different product.',
+    'When you evaluate providers, line them up by the same drivers rather than by headline price. A cheaper quote with no off-site work is usually a different product. Our GEO and AEO pricing guide explains how the common pricing models differ.',
     'For an all-inclusive plan example, see Nakama Growth pricing.',
    ],
   },

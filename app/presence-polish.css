@@ -275,3 +275,7 @@
 .home-contact-link {transition:transform .3s,box-shadow .3s,background .3s}
 .home-contact-link:hover {transform:translateY(-3px);box-shadow:0 7px 28px #e0b97b30}
 @media(prefers-reduced-motion:reduce){.home-contact-orbits,.home-contact-link:hover{transform:none}.home-contact-panel::after{display:none}}
+
+/* In-copy contextual links (internal linking pass). */
+.inline-link{color:inherit;text-decoration:underline;text-decoration-thickness:1px;text-underline-offset:3px;text-decoration-color:color-mix(in srgb,currentColor 45%,transparent);transition:text-decoration-color .2s,color .2s}
+.inline-link:hover{text-decoration-color:currentColor}

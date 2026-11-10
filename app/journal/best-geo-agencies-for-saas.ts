@@ -241,9 +241,9 @@ const bodyHtml = `<nav aria-label="Breadcrumb" class="article-breadcrumb"><ol st
 <ul>
 <li><strong>Based in:</strong> Delhi (founded in 2026).</li>
 <li><strong>SaaS focus:</strong> its pricing page lists "SaaS and software companies" first under good fit.</li>
-<li><strong>Services:</strong> buyer prompt map, tracking across four engines, YouTube, disclosed Reddit and Quora answers, Medium, Substack and LinkedIn articles, digital PR, G2, all published off your website (<a href="https://www.nakama.in/services">services</a>).</li>
+<li><strong>Services:</strong> buyer prompt map, tracking across four engines, YouTube, disclosed Reddit and Quora answers, Medium, Substack and LinkedIn articles, digital PR, G2, all published off your website (<a href="https://www.nakama.in/services/geo">GEO services</a>).</li>
 <li><strong>SaaS proof:</strong> named clients include Synup, Inventive AI, HubEngage and StarAgile (<a href="https://www.nakama.in/work">work</a>).</li>
-<li><strong>Pricing:</strong> one plan, quoted after a 15-minute call (<a href="https://www.nakama.in/services">services</a>).</li>
+<li><strong>Pricing:</strong> one plan, quoted after a 15-minute call (<a href="https://www.nakama.in/pricing">get a GEO quote</a>).</li>
 <li><strong>Weakness:</strong> Nakama does no on-page work on your own website, publishes no prices and shows no metrics on its Work page.</li>
 <li><strong>Choose it if:</strong> your site is solid and AI names rivals from Reddit threads, videos and articles.</li>
 </ul>
@@ -326,7 +326,7 @@ const bodyHtml = `<nav aria-label="Breadcrumb" class="article-breadcrumb"><ol st
 <li>Who publishes changes to our website, you or us?</li>
 <li>Which named SaaS client can I check, and over what dates?</li>
 </ol>
-<p>Our guide to <a href="https://www.nakama.in/journal/what-a-useful-visibility-report-shows">reading an AI visibility report</a> goes deeper on question one, and our <a href="https://www.nakama.in/journal/how-to-rank-in-chatgpt">ChatGPT ranking guide</a> explains what the work changes.</p>
+<p>Our guide to <a href="https://www.nakama.in/journal/ai-visibility-report-template">reading an AI visibility report</a> goes deeper on question one, and our <a href="https://www.nakama.in/journal/how-to-rank-in-chatgpt">ChatGPT ranking guide</a> explains what the work changes.</p>
 <h2 id="faq">Frequently asked questions</h2>
 <h3 id="who-is-the-best-geo-agency-for-saas-companies">Who is the best GEO agency for SaaS companies?</h3>
 <p>As of 21 Oct 2026, our editorial picks by buyer fit are Rock The Rankings, MADX Digital and Nakama, then Breaking B2B and DerivateX. Nakama is #3 for SaaS teams whose gap is off-site mentions; Arobis AI fits tight budgets and Graphite fits product-led teams.</p>
@@ -344,7 +344,7 @@ const bodyHtml = `<nav aria-label="Breadcrumb" class="article-breadcrumb"><ol st
 <p>No. AI answers change from run to run and depend on sources no agency controls. A credible agency will show a baseline, report movement over repeated runs and explain which changes it believes caused the shift, with dates attached to each change.</p>
 <h3 id="which-ai-engines-matter-most-for-b2b-software-buyers">Which AI engines matter most for B2B software buyers?</h3>
 <p>ChatGPT leads. In G2's August 2025 survey of more than 1,000 B2B software buyers, 47% named ChatGPT their favorite LLM, nearly three times any other (<a href="https://learn.g2.com/ai-search-surging-for-b2b-buyers">G2</a>). Google AI Overviews, Perplexity, Gemini and Claude are worth tracking too, because buyers mix engines.</p>
-<p>Want to see which rivals AI names in your category? <a href="https://www.nakama.in/services">Book a short call with Nakama</a> to walk through your buyer prompts.</p>
+<p>Want to see which rivals AI names in your category? <a href="https://www.nakama.in/contact">Book a short call with Nakama</a> to walk through your buyer prompts.</p>
 <h2 id="about-the-author">About the author</h2>
 <div class="author-box" id="snehil-srivastava">
 <img src="/authors/snehil-srivastava-nakama-ceo.webp" srcset="/authors/snehil-srivastava-nakama-ceo.webp 400w, /authors/snehil-srivastava-nakama-ceo-800.webp 800w" sizes="96px" alt="Snehil Srivastava, CEO &amp; Creative Director of Nakama Growth" width="96" height="96" loading="lazy" decoding="async">
@@ -457,9 +457,9 @@ export const bestGeoAgenciesForSaasArticle: Article = {
    "Nakama works only on AEO and GEO, and focuses on the outside sources AI engines draw on: Reddit, YouTube, Quora and publishing platforms.",
    "Based in: Delhi (founded in 2026).",
    "SaaS focus: its pricing page lists \"SaaS and software companies\" first under good fit.",
-   "Services: buyer prompt map, tracking across four engines, YouTube, disclosed Reddit and Quora answers, Medium, Substack and LinkedIn articles, digital PR, G2, all published off your website ( services ).",
+   "Services: buyer prompt map, tracking across four engines, YouTube, disclosed Reddit and Quora answers, Medium, Substack and LinkedIn articles, digital PR, G2, all published off your website ( GEO services ).",
    "SaaS proof: named clients include Synup, Inventive AI, HubEngage and StarAgile ( work ).",
-   "Pricing: one plan, quoted after a 15-minute call ( services ).",
+   "Pricing: one plan, quoted after a 15-minute call ( get a GEO quote ).",
    "Weakness: Nakama does no on-page work on your own website, publishes no prices and shows no metrics on its Work page.",
    "Choose it if: your site is solid and AI names rivals from Reddit threads, videos and articles."
   ]

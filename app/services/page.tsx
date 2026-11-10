@@ -117,7 +117,7 @@ export default function Services(){
       <div className="svc-next-copy">
        <p className="svc-next-eye"><span className="svc-next-dot" aria-hidden="true"/>Next step</p>
        <h2>Let’s map where your brand <em>should show up next.</em></h2>
-       <p className="svc-next-body">Every engagement is shaped around your product, your buyers and your category. Tell us where you are, and we’ll come back with a plan and a quote.</p>
+       <p className="svc-next-body">Every engagement is shaped around your product, your buyers and your category. See the <Link className="inline-link" href="/industries">industries we serve</Link>. Tell us where you are, and we’ll come back with a plan and a quote.</p>
        <p className="svc-next-meta"><span aria-hidden="true"/>Nakama Growth</p>
       </div>
       <aside className="svc-next-rail" aria-label="Actions">

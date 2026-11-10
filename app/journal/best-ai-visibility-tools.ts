@@ -210,7 +210,7 @@ const bodyHtml = `<nav aria-label="Breadcrumb" class="article-breadcrumb"><ol st
 <h2 id="profound">Is Profound good for enterprise SaaS brands?</h2>
 <p>Profound suits larger SaaS companies that want deep tracking plus AI agents for marketing work. It tracks citations, sentiment, ranking and competitive presence. The Enterprise plan covers up to 9 answer engines, with single sign-on and SOC 2 listed among its features.</p>
 <p>The free trial runs 50 prompts daily for 7 days across ChatGPT, Gemini and Google AI Overviews.</p>
-<p>Profound also offers Agent Analytics, which tracks AI-sourced traffic through integrations such as Cloudflare, Vercel and Google Analytics.</p>
+<p>Profound also offers Agent Analytics, which tracks AI-sourced traffic through integrations such as Cloudflare, Vercel and Google Analytics. If Profound is more than you need, compare these <a href="https://www.nakama.in/journal/profound-alternatives">Profound alternatives</a>.</p>
 <p><strong>Weakness:</strong> No self-serve price is published for brands. Trial users also get a recommended prompt set they cannot customize.</p>
 <h2 id="otterlyai">Is OtterlyAI the cheapest AI visibility tool?</h2>
 <p>OtterlyAI has the lowest entry price in this list. Lite costs $29/month for 15 prompts, Standard costs $189/month for 100 prompts, and Premium costs $489/month for 400 prompts. Every plan tracks ChatGPT, Google AI Overviews, Perplexity and Microsoft Copilot daily.</p>
@@ -256,8 +256,8 @@ const bodyHtml = `<nav aria-label="Breadcrumb" class="article-breadcrumb"><ol st
 <p>Larger SaaS companies with several products, integrations and competitors will often need 100 or more prompts to cover them.</p>
 <h2 id="what-can-t-ai-visibility-tools-fix">What can't AI visibility tools fix?</h2>
 <p>AI visibility tools show where you are missing from AI answers. They do not earn the mentions that change those answers. Which sources AI cites also varies by engine and shifts over time. In Ahrefs' Brand Radar data, about 1 in 5 US ChatGPT answers cited Reddit in March 2026 and about 1 in 43 by late September, while Wikipedia fell from 1 in 7 answers to 1 in 35 (<a href="https://ahrefs.com/blog/query-fan-out-chatgpt/">Ahrefs, 12 Oct 2026</a>). Ahrefs reads this as ChatGPT moving toward the sources that produce information, such as research bodies, regulators and brands. Use your tracker's source report to see which sites each engine cites for your prompts, engine by engine.</p>
-<p>Closing that gap takes content and off-site work: pages that answer buyer questions directly, placements on the sources each engine already cites, and steady tracking to prove what moved. Our guide to <a href="https://www.nakama.in/journal/what-a-useful-visibility-report-shows">what a useful visibility report shows</a> covers that last step.</p>
-<p>This is the work Nakama Growth does for SaaS and AI companies. If your tracker shows competitors winning prompts you should own, <a href="https://www.nakama.in/contact">talk to Nakama Growth</a> about a plan to close the gap.</p>
+<p>Closing that gap takes content and off-site work: pages that answer buyer questions directly, placements on the sources each engine already cites, and steady tracking to prove what moved. Our guide to <a href="https://www.nakama.in/journal/ai-visibility-report-template">what a useful visibility report shows</a> covers that last step.</p>
+<p>This is the work Nakama Growth does for SaaS and AI companies. Nakama's <a href="https://www.nakama.in/services/ai-visibility-audit">AI visibility audit</a> is one way to start. If your tracker shows competitors winning prompts you should own, <a href="https://www.nakama.in/contact">talk to Nakama Growth</a> about a plan to close the gap.</p>
 <h2 id="faq">FAQ</h2>
 <h3 id="what-are-ai-visibility-tools">What are AI visibility tools?</h3>
 <p>AI visibility tools run prompts through AI assistants such as ChatGPT, Gemini, Perplexity and Google AI Overviews. They report how often your brand appears, how it is described and which sources are cited.</p>
@@ -359,7 +359,7 @@ export const bestAiVisibilityToolsArticle: Article = {
   "paragraphs": [
    "Profound suits larger SaaS companies that want deep tracking plus AI agents for marketing work. It tracks citations, sentiment, ranking and competitive presence. The Enterprise plan covers up to 9 answer engines, with single sign-on and SOC 2 listed among its features.",
    "The free trial runs 50 prompts daily for 7 days across ChatGPT, Gemini and Google AI Overviews.",
-   "Profound also offers Agent Analytics, which tracks AI-sourced traffic through integrations such as Cloudflare, Vercel and Google Analytics.",
+   "Profound also offers Agent Analytics, which tracks AI-sourced traffic through integrations such as Cloudflare, Vercel and Google Analytics. If Profound is more than you need, compare these Profound alternatives.",
    "Weakness: No self-serve price is published for brands. Trial users also get a recommended prompt set they cannot customize."
   ]
  },
@@ -446,7 +446,7 @@ export const bestAiVisibilityToolsArticle: Article = {
   "paragraphs": [
    "AI visibility tools show where you are missing from AI answers. They do not earn the mentions that change those answers. Which sources AI cites also varies by engine and shifts over time. In Ahrefs' Brand Radar data, about 1 in 5 US ChatGPT answers cited Reddit in March 2026 and about 1 in 43 by late September, while Wikipedia fell from 1 in 7 answers to 1 in 35 (Ahrefs, 12 Oct 2026). Ahrefs reads this as ChatGPT moving toward the sources that produce information, such as research bodies, regulators and brands. Use your tracker's source report to see which sites each engine cites for your prompts, engine by engine.",
    "Closing that gap takes content and off-site work: pages that answer buyer questions directly, placements on the sources each engine already cites, and steady tracking to prove what moved. Our guide to what a useful visibility report shows covers that last step.",
-   "This is the work Nakama Growth does for SaaS and AI companies. If your tracker shows competitors winning prompts you should own, talk to Nakama Growth about a plan to close the gap."
+   "This is the work Nakama Growth does for SaaS and AI companies. Nakama's AI visibility audit is one way to start. If your tracker shows competitors winning prompts you should own, talk to Nakama Growth about a plan to close the gap."
   ]
  },
  {

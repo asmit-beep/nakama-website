@@ -267,7 +267,7 @@ ${figure(`${SLUG}-matrix`, MATRIX_ALT, 1920, 1500)}
 <p>Each entry uses the same format: best for, what they do, enterprise signals, how they measure AI answers, price, weakness, and when to choose or skip. Figures come from each agency's own pages on 3 November 2026. "Self-reported" means we could not verify the number independently.</p>
 <h3 id="1-nakama-growth-best-for-a-measured-ai-answer-baseline-before-a-big-retainer">1. Nakama Growth: best for a measured AI-answer baseline before a big retainer</h3>
 <p><strong>Best for:</strong> tech and AI brands that want a repeatable, dated read of where they appear in AI answers before committing to a large program.</p>
-<p><strong>What they do:</strong> one plan covering AI visibility, editorial content, disclosed community participation, YouTube and video, digital PR and review site presence (<a href="/pricing">pricing page</a>).</p>
+<p><strong>What they do:</strong> one plan covering AI visibility, editorial content, disclosed community participation, YouTube and video, digital PR and review site presence (<a href="/services/geo">GEO services</a>, <a href="/pricing">pricing page</a>).</p>
 <p><strong>Enterprise signals:</strong> the pricing page offers a tailored plan "for large teams, multiple brands or markets" with dedicated support. Nothing publishes without the client's sign-off, and every community post is disclosed. No security certification or regional team is published.</p>
 <p><strong>How they measure AI answers:</strong> the <a href="/services/ai-visibility-audit">AI visibility audit</a> runs agreed buyer prompts at least 7 times per prompt per engine in the paid version, dated. It counts mentioned, recommended and cited separately, reports each engine on its own, and gives no blended score. Its <a href="/work">Work page</a> lists seven clients with the exact searches where the work surfaced, so you can run them yourself.</p>
 <p><strong>Price:</strong> custom quote for one all-inclusive plan, with a three-month minimum.</p>
@@ -347,7 +347,7 @@ ${figure(`${SLUG}-matrix`, MATRIX_ALT, 1920, 1500)}
 <p><strong>Choose if:</strong> you want long-form expert content with the freedom to leave month to month.</p>
 <p><strong>Skip if:</strong> you need an agency that positions itself for enterprise programs.</p>
 <h2 id="which-enterprise-ai-seo-agency-fits-your-situation">Which enterprise AI SEO agency fits your situation?</h2>
-<p>Match the agency to your hardest constraint, not to the longest client list. Security review, many regions, a product-led motion, pipeline reporting and the need for a baseline each point to a different pick. If none of these is your constraint, our wider list of <a href="/journal/best-ai-seo-agencies">best AI SEO agencies</a> may fit better.</p>
+<p>Match the agency to your hardest constraint, not to the longest client list. Security review, many regions, a product-led motion, pipeline reporting and the need for a baseline each point to a different pick. If none of these is your constraint, our wider lists of <a href="/journal/best-ai-seo-agencies">best AI SEO agencies</a> and <a href="/journal/best-generative-engine-optimization-agencies">best GEO agencies</a> may fit better.</p>
 ${figure(`${SLUG}-picker`, PICKER_ALT, 1920, 1080)}
 <div class="article-table"><table><thead><tr><th scope="col">Your hardest constraint</th><th scope="col">Start with</th><th scope="col">Why</th></tr></thead><tbody>
 <tr><td>Security review before any vendor touches data</td><td>Brainlabs</td><td>Only public ISO 27001 signal on this list</td></tr>

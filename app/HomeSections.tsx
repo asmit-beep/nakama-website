@@ -438,7 +438,7 @@ export function HomeContact(){
     <div className="contact-flare-copy">
      <span className="eyebrow">The next move</span>
      <h2 id="home-contact-title">Get your brand<br/><span>into the answer.</span></h2>
-     <p>Start with a focused conversation about where your brand shows up in AI answers today, and where we can build next.</p>
+     <p>Start with a focused conversation about where your brand shows up in AI answers today, and where we can build next. See our <Link className="inline-link" href="/services/aeo">AEO services</Link> and <Link className="inline-link" href="/services/geo">GEO services</Link>, or browse all <Link className="inline-link" href="/services">GEO, AEO and related services</Link> first.</p>
     </div>
     <div className="contact-flare-side">
      <ul className="contact-flare-points">

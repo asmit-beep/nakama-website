@@ -498,7 +498,7 @@ export default function RealEstateIndustry() {
 
     <section className="re-rel-sec">
      <div className="re-w">
-      <ul className="re-rel" aria-label="Related services">
+      <ul className="re-rel" aria-label="Related services and industries">
        {RELATED.map(link => (
         <li key={link.href}><Link href={link.href}>{link.label}</Link></li>
        ))}

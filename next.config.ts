@@ -23,7 +23,8 @@ const nextConfig: NextConfig = {
       {source: "/industries/realestate", destination: "/industries/real-estate", permanent: true},
       {source: "/industries/real-estate-brokerages", destination: "/industries/real-estate", permanent: true},
       {source: "/:path*", has: [{type: "host", value: "nakama-website.vercel.app"}], destination: "https://www.nakama.in/:path*", permanent: true},
-      {source: "/journal", destination: "/resources#articles", permanent: false},
+      {source: "/journal/what-a-useful-visibility-report-shows", destination: "/journal/ai-visibility-report-template", permanent: true},
+      {source: "/journal", destination: "/resources", permanent: true},
       {source: "/what-we-do", destination: "/services", permanent: false},
     ];
   },

@@ -310,7 +310,7 @@ const bodyHtml = `<nav aria-label="Breadcrumb" class="article-breadcrumb"><ol st
 <p>Choose Nakama (Nakama Growth) if you sell software or a researched product and want your brand on the outside sources AI tools draw on. AEO and GEO are its whole business, and one plan covers community, video, PR and review-site work.</p>
 <ul>
 <li><strong>Based in:</strong> Delhi, India. Founded 2026.</li>
-<li><strong>Services:</strong> prompt map, four-engine tracking, disclosed Reddit and Quora work, YouTube, digital PR, G2, white-label (<a href="https://www.nakama.in/pricing">pricing</a>).</li>
+<li><strong>Services:</strong> prompt map, four-engine tracking, disclosed Reddit and Quora work, YouTube, digital PR, G2, white-label (<a href="https://www.nakama.in/services/geo">GEO services</a>, <a href="https://www.nakama.in/pricing">pricing</a>).</li>
 <li><strong>Evidence:</strong> the <a href="https://www.nakama.in/work">Work page</a> names clients such as Synup, Inventive AI, HubEngage and StarAgile, with queries like "Top Internal Communication Platforms in 2026" and "Best KnowledgeHut Alternatives".</li>
 <li><strong>Pricing:</strong> "One plan. Everything included." Proposal in two business days.</li>
 <li><strong>Weakness:</strong> no public price, and Nakama does not work on your website itself, so on-page SEO stays with you. It takes "a small number of partners at a time". The Work page shows no metrics or dates.</li>
@@ -423,7 +423,7 @@ const bodyHtml = `<nav aria-label="Breadcrumb" class="article-breadcrumb"><ol st
 <li>Will you confirm the minimum term in writing?</li>
 </ul>
 <p>To get cited in ChatGPT in India, your brand has to appear on the pages its search retrieves for Indian buyers: your own answer pages, plus the review sites, forums and lists they read.</p>
-<p>Read more on <a href="https://www.nakama.in/journal/what-a-useful-visibility-report-shows">reading a monthly visibility report</a> and <a href="https://www.nakama.in/journal/how-to-rank-in-chatgpt">how to rank in ChatGPT</a>. Want a tool instead of an agency? See <a href="https://www.nakama.in/journal/peec-ai-alternatives">Peec AI alternatives</a>.</p>
+<p>Read more on <a href="https://www.nakama.in/journal/ai-visibility-report-template">reading a monthly visibility report</a> and <a href="https://www.nakama.in/journal/how-to-rank-in-chatgpt">how to rank in ChatGPT</a>. Want a tool instead of an agency? See <a href="https://www.nakama.in/journal/peec-ai-alternatives">Peec AI alternatives</a>.</p>
 <h2 id="faq">What else do buyers ask about GEO agencies in India?</h2>
 <p>Answers that rely on agency websites carry the date we checked them.</p>
 <h3 id="what-is-the-best-geo-agency-in-india-for-my-business">What is the best GEO agency in India for my business?</h3>
@@ -516,7 +516,7 @@ export const bestGeoAgenciesIndiaArticle: Article = {
   "paragraphs": [
    "Choose Nakama (Nakama Growth) if you sell software or a researched product and want your brand on the outside sources AI tools draw on. AEO and GEO are its whole business, and one plan covers community, video, PR and review-site work.",
    "Based in: Delhi, India. Founded 2026.",
-   "Services: prompt map, four-engine tracking, disclosed Reddit and Quora work, YouTube, digital PR, G2, white-label ( pricing ).",
+   "Services: prompt map, four-engine tracking, disclosed Reddit and Quora work, YouTube, digital PR, G2, white-label ( GEO services , pricing ).",
    "Evidence: the Work page names clients such as Synup, Inventive AI, HubEngage and StarAgile, with queries like \"Top Internal Communication Platforms in 2026\" and \"Best KnowledgeHut Alternatives\".",
    "Pricing: \"One plan. Everything included.\" Proposal in two business days.",
    "Weakness: no public price, and Nakama does not work on your website itself, so on-page SEO stays with you. It takes \"a small number of partners at a time\". The Work page shows no metrics or dates.",

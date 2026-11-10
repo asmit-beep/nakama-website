@@ -284,7 +284,7 @@ ${fig('aiviz-template-three-metrics', 'Mentioned, Recommended and Cited kept as 
 </tbody></table></div>
 <p>Write the reasoning in the Notes column. Next month, you will want to know why you scored it the way you did.</p>
 <h2 id="when-diy-reporting-isnt-enough">When DIY reporting isn't enough</h2>
-<p>A monthly sheet tells you where you stand. It does not always tell you why. If your visibility is flat after a few months of work, or the engines keep citing sources you cannot influence on your own, a structured <a href="https://www.nakama.in/journal/geo-audit">GEO audit</a> is the next step. Nakama Growth runs audits and ongoing <a href="https://www.nakama.in/services/geo">GEO work</a> for B2B SaaS, AI and software teams that want to get named in the answers their buyers read.</p>
+<p>A monthly sheet tells you where you stand. It does not always tell you why. If your visibility is flat after a few months of work, or the engines keep citing sources you cannot influence on your own, a structured <a href="https://www.nakama.in/journal/geo-audit">GEO audit</a> is the next step. Nakama Growth runs <a href="https://www.nakama.in/services/ai-visibility-audit">AI visibility audits</a> and ongoing <a href="https://www.nakama.in/services/geo">GEO work</a> for B2B SaaS, AI and software teams that want to get named in the answers their buyers read.</p>
 <h2 id="faq">FAQ</h2>
 <h3 id="do-i-need-a-tool-to-track-ai-visibility-or-can-i-do-it-manually">Do I need a tool to track AI visibility, or can I do it manually?</h3>
 <p>You can do it manually, and for most teams starting out with AI visibility tracking you should. A manual sample of 20 prompts across three engines is enough to see where you stand, and you see the full answers rather than a summary. Tools help once you need more prompts, more locations or daily tracking.</p>
@@ -426,7 +426,7 @@ export const aiVisibilityReportTemplateArticle: Article = {
   {
    heading: "When DIY reporting isn't enough",
    paragraphs: [
-    'A monthly sheet tells you where you stand. It does not always tell you why. If your visibility is flat after a few months of work, or the engines keep citing sources you cannot influence on your own, a structured GEO audit is the next step. Nakama Growth runs audits and ongoing GEO work for B2B SaaS, AI and software teams that want to get named in the answers their buyers read.',
+    'A monthly sheet tells you where you stand. It does not always tell you why. If your visibility is flat after a few months of work, or the engines keep citing sources you cannot influence on your own, a structured GEO audit is the next step. Nakama Growth runs AI visibility audits and ongoing GEO work for B2B SaaS, AI and software teams that want to get named in the answers their buyers read.',
    ],
   },
   {

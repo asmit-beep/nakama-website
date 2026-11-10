@@ -212,7 +212,7 @@ ${quoteLink}
 <p>The distinction matters when a pitch says "ChatGPT" but the proposed report combines every platform into one visibility score. You cannot judge a ChatGPT engagement from that total. Ask which ChatGPT observations you will receive separately and what business questions those observations address.</p>
 <p>If Google AI Overviews is also in scope, keep its deliverables separate; use our <a href="https://www.nakama.in/journal/how-to-rank-in-google-ai-overviews">Google AI Overviews guide</a> for that engine's execution.</p>
 <p>Broader <a href="https://www.nakama.in/journal/aeo-vs-seo-vs-geo">SEO, AEO or GEO</a> work may be part of the engagement. That does not make a separate ChatGPT fee necessary. The proposal needs to identify the additional ChatGPT-specific delivery, rather than charge again for an existing content assignment under a different label.</p>
-<p>Nakama Growth does ChatGPT work as part of GEO/AEO engagements.</p>
+<p>Nakama Growth does ChatGPT work as part of its <a href="https://www.nakama.in/services/geo">GEO services</a> and <a href="https://www.nakama.in/services/aeo">AEO services</a>.</p>
 <h2 id="what-deliverables-should-the-proposal-commit-to">What deliverables should the proposal commit to?</h2>
 <p>A ChatGPT SEO proposal should commit to an inspectable record of the ChatGPT questions assessed, the work delivered against them and the answers observed afterward. ChatGPT SEO services need that connection between delivery and evidence. A dashboard total alone does not tell you what the engagement produced.</p>
 <p>Ask to see the proposed handover format before agreeing to the work. It should let you move between a tested buyer question, its dated ChatGPT answer and the relevant delivery record without relying on a sales presentation.</p>
@@ -255,7 +255,7 @@ ${quoteLink}
 <h2 id="when-is-a-chatgpt-engagement-the-wrong-purchase">When is a ChatGPT engagement the wrong purchase?</h2>
 <p>A ChatGPT SEO engagement is the wrong purchase when its promised evidence cannot distinguish ChatGPT-specific work from a generic visibility report. It is also the wrong purchase if you cannot inspect the named ChatGPT setup, observation labels and delivery provenance described earlier.</p>
 <p>If you want to carry out the work yourself, use our <a href="https://www.nakama.in/journal/how-to-rank-in-chatgpt">ChatGPT implementation guide</a>.</p>
-<p>If you want names to compare, use the <a href="https://www.nakama.in/journal/best-ai-seo-agencies">AI SEO agency comparison</a>.</p>
+<p>If you want names to compare, use the <a href="https://www.nakama.in/journal/best-ai-seo-agencies">AI SEO agency comparison</a> or our list of the <a href="https://www.nakama.in/journal/best-aeo-agencies">best AEO agencies</a>.</p>
 <p>For the full procurement process and the agency-versus-consultant-versus-software decision, start at <a href="https://www.nakama.in/journal/how-to-hire-an-aeo-agency#step-1-decide-if-you-need-an-agency-at-all">Step 1: Decide if you need an agency at all</a> in the AEO agency hiring guide. This page's narrower job is to help you read a ChatGPT-specific proposal.</p>
 <h2 id="what-else-should-a-chatgpt-proposal-clarify">What else should a ChatGPT proposal clarify?</h2>
 <p>A ChatGPT SEO proposal should clarify the limits of the evidence alongside the deliverables. You need to know what the report can demonstrate when answers vary, when the brand appears without a link and when no mention appears. The answers below concern accepting ChatGPT-scoped work.</p>

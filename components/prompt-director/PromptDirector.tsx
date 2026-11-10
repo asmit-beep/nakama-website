@@ -1,6 +1,7 @@
 "use client";
 
 import { useCallback, useEffect, useRef, useState } from "react";
+import Link from "next/link";
 import { Icons } from "./icons";
 import { LogoLoop } from "./LogoLoop";
 import { burstDx, NODES, PROMPT_ROWS, type Chip } from "./prompts";
@@ -180,7 +181,8 @@ export function PromptDirector() {
           <p
             className={`pd-reveal pd-reveal--copy max-w-[380px] text-[16px] leading-[1.4] text-[#9B9B9B] md:text-right ${shown ? "is-in" : ""}`}
           >
-            Software, clinics, hotels, courses, skincare. If buyers ask AI to choose for them, we can get you on the shortlist.
+            Software, clinics, hotels, courses, skincare. If buyers ask AI to choose for them, we can get you on the shortlist. See the{" "}
+            <Link href="/industries" className="inline-link">industries we serve</Link>.
           </p>
         </div>
       </div>
