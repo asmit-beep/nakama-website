@@ -15,8 +15,10 @@ const PREVIEW = true;
 
 const dayOf = (iso: string) => iso.slice(0, 10);
 
-/** D Mon YYYY of PUBLISHED_AT. Reset on ship day together with PUBLISHED_AT. */
-const PUBLISHED_DAY = '10 Nov 2026';
+/** D Mon YYYY, derived from PUBLISHED_AT. */
+const MONTHS = ['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'];
+const [PY, PM, PD] = dayOf(PUBLISHED_AT).split('-');
+const PUBLISHED_DAY = `${Number(PD)} ${MONTHS[Number(PM) - 1]} ${PY}`;
 const FRESHNESS = `Updated ${PUBLISHED_DAY}`;
 
 const SLUG = 'geo-agency-vs-in-house';
@@ -31,8 +33,8 @@ const RAMP_ALT = 'Our view: a 90-day ramp for a new in-house AEO or GEO team, fr
 const HERO_URL = `${CANONICAL}/geo-agency-vs-in-house-cover.webp`;
 const OG_URL = `${CANONICAL}/geo-agency-vs-in-house-og.png`;
 const AUTHOR_URL = 'https://www.nakama.in/authors/yash-kumar';
-/** Live /authors/yash-kumar Person text, with the words "in India" removed. */
-const AUTHOR_BIO = 'Yash Kumar is Co-founder and CEO of Nakama Growth, an AEO and GEO agency that helps B2B and SaaS brands get named when buyers ask ChatGPT, Perplexity, Gemini and Google AI Overviews what to choose. He leads Nakama\u2019s work on earning mentions on the sources those tools read.';
+/** Live /authors/yash-kumar Person text, verbatim (lib/authors.ts). */
+const AUTHOR_BIO = 'Yash Kumar is Co-founder and CEO of Nakama Growth, an AEO and GEO agency in India that helps B2B and SaaS brands get named when buyers ask ChatGPT, Perplexity, Gemini and Google AI Overviews what to choose. He leads Nakama\u2019s work on earning mentions on the sources those tools read.';
 const QUOTE_URL = 'https://www.nakama.in/pricing#quote';
 
 const FAQS: {q: string; a: string}[] = [
@@ -239,7 +241,7 @@ const toc = `<details class="toc" open>
 </ol>
 </details>`;
 
-const matrixCaption = `in-house AEO team vs agency vs tools only vs hybrid, compared on off-site work, time to first work, skills, measurement and best fit. Nakama Growth, updated ${PUBLISHED_DAY}.`;
+const matrixCaption = `In-house AEO team vs agency vs tools only vs hybrid, compared on off-site work, time to first work, skills, measurement and best fit. Nakama Growth, updated ${PUBLISHED_DAY}.`;
 
 const bodyHtml = `<nav aria-label="Breadcrumb" class="article-breadcrumb"><ol style="list-style:none;display:flex;flex-wrap:wrap;gap:.5rem;padding:0;margin:0 0 1.25rem;font-size:.9rem"><li><a href="https://www.nakama.in/">Home</a></li><li aria-hidden="true">/</li><li><a href="https://www.nakama.in/resources">Resources</a></li><li aria-hidden="true">/</li><li aria-current="page">${TITLE}</li></ol></nav>
 <div class="geo-decision">
@@ -247,7 +249,7 @@ const bodyHtml = `<nav aria-label="Breadcrumb" class="article-breadcrumb"><ol st
 <p>${FRESHNESS}</p>
 <p>By <a href="${AUTHOR_URL}" rel="author">Yash Kumar</a>, Co-founder and CEO, Nakama Growth</p>
 ${figure('geo-agency-vs-in-house-cover.webp', COVER_ALT, 1920, 1080, true)}
-<p>Whether you call it AEO or GEO, the real question is who owns AI visibility and who proves it worked. Hire an agency for off-site reach and work shipped this quarter. Build in-house if you have an owner, writers and time to ramp. Use tools alone to see the gap. In our experience, many growing teams land on a hybrid.</p>
+<p>Whether you call it AEO or GEO, what matters is who owns AI visibility and who proves it worked. Hire an agency for off-site reach and work shipped this quarter. Build in-house if you have an owner, writers and time to ramp. Use tools alone to see the gap. In our experience, many growing teams land on a hybrid.</p>
 <p>This is a decision guide, not a shortlist, a price list or a hiring process.</p>
 <p>A note on bias: Nakama Growth is a GEO agency, so we gain when you pick the agency column. That is why this guide also says when an agency is the wrong call.</p>
 ${h2('Quick answer')}
@@ -260,8 +262,8 @@ ${h2('Quick answer')}
 ${toc}
 ${h2('In-house AEO team vs agency vs tools: the decision matrix')}
 <p>The in-house AEO team vs agency choice comes down to five things: who does off-site work, how fast work starts, which skills you need, how AI search visibility is measured and which stage each model fits. The matrix sets out the pros and cons of an agency, an in-house team, tools only and a hybrid.</p>
-<p>Most teams already run some of this work themselves. In a 2026 survey of 198 US marketing professionals, 80% said their internal team implements AI in search marketing, against 36% for agencies and 28% for freelancers (<a href="https://spiegel.medill.northwestern.edu/ai-in-search-marketing-adoption-is-high-while-gaps-remain/">Medill Spiegel Research Center, Aug 2026</a>).</p>
-${stackTable(matrixCaption, '', ['Agency', 'In-house team', 'Tools only', 'Hybrid'], [
+<p>Most marketing teams already run AI in their search marketing in-house. In Northwestern's Medill Spiegel Research Center 2026 survey of 198 US marketing professionals, 80% said their internal team implements AI in search marketing (<a href="https://spiegel.medill.northwestern.edu/ai-in-search-marketing-adoption-is-high-while-gaps-remain/">Medill Spiegel Research Center, Aug 2026</a>).</p>
+${stackTable(matrixCaption, 'Factor', ['Agency', 'In-house team', 'Tools only', 'Hybrid'], [
  {label: 'Off-site work', cells: [
   'Usually included: digital PR, Reddit, YouTube and third-party mentions, through existing editor, creator and community relationships.',
   'Possible, but relationships start cold and take time to build.',
@@ -298,8 +300,7 @@ ${stackTable(matrixCaption, '', ['Agency', 'In-house team', 'Tools only', 'Hybri
 ${quoteLink}
 <p>Not sure which column? Start with an <a href="https://www.nakama.in/services/ai-visibility-audit">AI visibility audit</a>.</p>
 ${h2('How do you choose between in-house and agency GEO?')}
-<p>To choose between in-house and agency GEO, answer five questions honestly: who owns AI visibility today, where the gap is, how fast you need visible work, which skills you can really hire and who will measure each engine. If three or more answers point the same way, that is your model.</p>
-<p>This test is our short answer to how to choose between in-house vs agency generative engine optimization.</p>
+<p>To choose between in-house and agency generative engine optimization (GEO), answer five questions: who owns AI visibility today, where the gap is, how fast you need visible work, which skills you can actually hire and who will measure each engine. If three or more answers point the same way, that is your model.</p>
 <ol>
 <li><strong>Who owns AI visibility today?</strong> If the answer is nobody, lean agency or hybrid. A named owner with time points to in-house or hybrid.</li>
 <li><strong>Where is the gap?</strong> Start with a <a href="https://www.nakama.in/journal/geo-audit">GEO audit</a>. If you are missing mostly off-site, lean agency. If your own pages are the weak point, in-house can often fix them.</li>
@@ -342,7 +343,7 @@ ${h2('When are tools alone enough?')}
 <li><strong>Your category is narrow</strong>, with a short list of buyer questions you can cover yourself.</li>
 </ul>
 <p>Tools measure visibility. They do not write the page, pitch the editor or join the thread. Our tools review covers <a href="https://www.nakama.in/journal/best-ai-visibility-tools#what-can-t-ai-visibility-tools-fix">what AI visibility tools can't fix</a> in more detail.</p>
-<blockquote><p><strong>Our view on GEO tools vs agency:</strong> GEO tools vs agency is rarely an either-or choice, because most setups use both. Almost every agency uses tools, and most in-house teams should too. The real question is who acts on what the tool shows.</p></blockquote>
+<blockquote><p><strong>Our view:</strong> GEO tools vs agency is rarely an either-or choice, because most setups use both. Almost every agency uses tools, and most in-house teams should too. What matters is who acts on what the tool shows.</p></blockquote>
 ${h2('How does a hybrid AEO and GEO model work?')}
 <p>A hybrid model keeps ownership and judgment in-house and buys breadth from an agency. An internal owner sets goals, approves claims and runs on-site content, while the agency runs off-site work and per-engine measurement. In our experience, it is where many teams end up after the first year.</p>
 ${figure('geo-agency-vs-in-house-hybrid-models.webp', HYBRID_ALT, 1600, 900)}
@@ -391,7 +392,7 @@ ${h2('What can in-house teams rarely do off-site?')}
 <ul>
 <li><strong>Editorial relationships.</strong> Journalists and editors respond faster to people who have sent them useful sources before.</li>
 <li><strong>Community credibility.</strong> A brand account that appears in Reddit or forum threads only to promote itself gets ignored or removed. Credibility comes from a history of useful answers.</li>
-<li><strong>Video and creator reach.</strong> YouTube and creator partnerships need production skills and contacts most marketing teams lack.</li>
+<li><strong>Video and creator reach.</strong> YouTube and creator partnerships need production skills and contacts many marketing teams lack.</li>
 <li><strong>Outreach volume.</strong> Earning mentions across many sites takes sustained volume one in-house hire rarely has time for.</li>
 </ul>
 <blockquote><p><strong>Our view:</strong> this is also where an agency needs the closest watching. Off-site work is easy to report and hard to verify. Require a dated log of every placement, the live URL and whether it was earned or paid, so you can separate real work from activity.</p></blockquote>
@@ -408,7 +409,7 @@ ${h2('Can your SEO agency handle GEO?')}
 ${h3('Do you need a separate GEO agency?')}
 <p>You need a separate GEO agency only if your SEO agency cannot cover off-site work and per-engine measurement. If it can, extend the scope. If it cannot, a specialist can run alongside it, with your in-house owner deciding who owns which prompts.</p>
 <p>Engines disagree often enough that per-engine tracking matters. In a vendor study by Abovance, a competing GEO agency, 59 buyer questions were sent three times each to ChatGPT search, Perplexity and Claude through their APIs between 20 and 31 Oct 2026. The most-named agency appeared in 60 of 177 Claude answers but only 12 of 177 ChatGPT answers (<a href="https://abovance.com/research/geo-agencies-ai-recommendations-2026/" rel="nofollow">Abovance, 8 Nov 2026</a>). API answers are close to, but not the same as, the consumer apps.</p>
-<p>Check only ChatGPT and you would have seen that agency in 12 answers, not 60.</p>
+<p>Check only ChatGPT and you would have seen that agency in 12 of 177 answers. Check only Claude and you would have seen it in 60.</p>
 ${h2('When should you move AEO or GEO in-house from an agency?')}
 <p>Move AEO or GEO in-house when the work has become repeatable, you have a named owner with time, and the agency's main value is now execution your team could do. Keep the agency, or a narrower one, for off-site reach if your team still lacks those relationships.</p>
 <p>Signs you are ready:</p>
@@ -435,14 +436,14 @@ ${stackTable('Typical failure and guardrail for an agency, an in-house team, too
 ])}
 <p>In our view, you should pick the model whose failure mode you are best placed to prevent.</p>
 ${h2('What does 2026 research say about in-house vs agency?')}
-<p>2026 research points one way: most marketing teams run AI in their search marketing in-house, though the largest companies in one survey lean more on outside partners. Teams with a dedicated GEO budget are far more likely to measure their results. Treat each figure below with its sample and the publisher's interest.</p>
+<p>In 2026 surveys, most US marketers said their own team runs AI in search marketing, though the largest companies leaned more on outside partners. Teams with a dedicated GEO budget were also more likely to measure AI search visibility, though the link is not proven causal. Treat each figure below with its sample and the publisher's interest.</p>
 <p><strong>Most teams run AI in search marketing in-house.</strong> In Northwestern's Medill Spiegel Research Center survey of 198 US marketing professionals, 80% said their internal team implements AI in search marketing, against 36% for agencies and 28% for freelancers (<a href="https://spiegel.medill.northwestern.edu/ai-in-search-marketing-adoption-is-high-while-gaps-remain/">Medill Spiegel Research Center, Aug 2026</a>). The study covers AI use in search marketing broadly, not GEO alone.</p>
 <p><strong>Reliance on outside vendors is falling, except at the top.</strong> In the same Medill study, 43% reported reduced reliance on outside vendors and 28% reported increased reliance. Companies with 5,000+ employees were the only size group where more respondents reported increased reliance. That subgroup is 9% of the sample, about 18 people, so read it as a signal, not a rule.</p>
 <p><strong>Skills are the worry.</strong> Asked for their top AI-related SEO concerns, 27% of Medill responses named hiring people with AI skill sets, the most of any option. Only 3% named hiring vendors with AI skills. That is the core risk of the in-house route: the plan depends on a hire that marketers themselves rank as their top concern.</p>
 <p><strong>Funding tracks with measurement.</strong> In Brafton's research with 142 participants, fewer than 1 in 5 had a dedicated GEO budget. Of those without one, 34.18% were not measuring AI search visibility at all, while none of the funded group gave that answer (<a href="https://www.brafton.com/blog/brafton-research-lab/how-budgets-influence-geo-strategy-and-what-to-do-without-one/">Brafton, Oct 2026</a>). Brafton is a content agency, does not disclose fieldwork dates, geography or how respondents were recruited, and says the link is not causal.</p>
 <p><strong>The traffic is starting to matter.</strong> Adobe reports that in September 2026, AI traffic to US retail sites converted 90% better than non-AI traffic, up from converting 9% worse in August 2025 (<a href="https://business.adobe.com/blog/ai-traffic-higher-revenue-per-visit-retail-holiday">Adobe, 29 Oct 2026</a>). This is US retail data, not B2B or services buying, and Adobe sells AI visibility software (<a href="https://business.adobe.com/products/brand-visibility.html">Adobe Brand Visibility</a>).</p>
 <p><strong>More people now check the shortlist.</strong> In a predictions post, Forrester says internal buying teams have grown from an average of eight stakeholders to 13, without giving a time frame, and predicts buyers will double their human interactions to validate AI-generated recommendations (<a href="https://www.forrester.com/blogs/predictions-2027-ai-takes-over-business-buying-but-humans-retain-control/">Forrester, 28 Oct 2026</a>). The second point is a forecast, not survey data.</p>
-<p>In our view, read together, these figures make AI visibility worth doing. The open questions are who owns it and who proves it worked. Pick the model that answers both.</p>
+<p>Read together, these figures make AI visibility worth doing, in our view. The open questions are who owns it and who proves it worked. Pick the model that answers both.</p>
 ${h2('Should you hire an agency or do marketing in-house at all?')}
 <p>For marketing in general, in-house wins on context and speed of approval, and agencies win on specialist breadth and capacity you can switch on and off. In our experience, many mature marketing teams already mix both. AEO and GEO add one twist: much of the work happens on sites you do not control.</p>
 <p>That off-site layer is where the GEO agency vs in-house choice is hardest, so this guide gives it extra weight.</p>
