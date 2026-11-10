@@ -12,7 +12,7 @@ import type {Article} from './articles';
  */
 export const BEST_AEO_AGENCIES_INDIA_PUBLISHED_AT = '2026-10-28T09:00:00+05:30';
 const PUBLISHED_AT = BEST_AEO_AGENCIES_INDIA_PUBLISHED_AT;
-const MODIFIED_AT = PUBLISHED_AT;
+const MODIFIED_AT = '2026-11-11T02:15:00+05:30';
 const PREVIEW = false;
 
 const MONTHS = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
@@ -345,7 +345,7 @@ const bodyHtml = `<nav aria-label="Breadcrumb" class="article-breadcrumb"><ol st
 <p><strong>Score:</strong> 7/10.</p>
 <h3 id="3-ibs-fulcro-best-for-enterprises-that-want-published-aeo-pricing">3. ibs Fulcro: best for enterprises that want published AEO pricing</h3>
 <p><strong>Best for:</strong> Large Indian brands that want audit, content, web and social changes handled by one team.</p>
-<p><strong>Evidence:</strong> ibs Fulcro's <a href="https://www.ibsfulcro.com/pricing">pricing page</a> covers six engines in every tier: ChatGPT, Perplexity, Google AI Overview, Google AI Mode, Google Gemini and Microsoft Copilot. It does not cap prompts. Its about page says it has 150+ employees, has served 50+ Fortune India 500 companies, and traces its history to 2003. Its head office is in Andheri West, Mumbai.</p>
+<p><strong>Evidence:</strong> ibs Fulcro's <a href="https://www.ibsfulcro.com/aeo-pricing-india">pricing page</a> covers six engines in every tier: ChatGPT, Perplexity, Google AI Overview, Google AI Mode, Google Gemini and Microsoft Copilot. It does not cap prompts. Its about page says it has 150+ employees, has served 50+ Fortune India 500 companies, and traces its history to 2003. Its head office is in Andheri West, Mumbai.</p>
 <p><strong>Pricing:</strong> ₹75,000 a month (small enterprise), ₹1,50,000 (medium) and ₹2,75,000 (large). A standalone AI visibility audit costs ₹1 lakh to ₹6 lakh. API credits are billed at cost plus a 10% handling charge.</p>
 <p><strong>Weakness:</strong> Every AEO contract runs 12 months, which is long for a channel this new. The entry price is out of reach for most startups.</p>
 <p><strong>Choose if:</strong> You are an enterprise with a budget above ₹75,000 a month and you want every engine covered from day one.</p>
@@ -380,7 +380,7 @@ const bodyHtml = `<nav aria-label="Breadcrumb" class="article-breadcrumb"><ol st
 <p><strong>Score:</strong> 6/10.</p>
 <h3 id="8-vgraple-best-low-cost-aeo-for-small-businesses">8. VGraple: best low-cost AEO for small businesses</h3>
 <p><strong>Best for:</strong> Small and mid-sized Indian businesses that want SEO and AEO in one bundle.</p>
-<p><strong>Evidence:</strong> VGraple's <a href="https://www.vgraple.com/services/aeo">AEO page</a> covers FAQ and Speakable schema, llms.txt setup and AI crawler access for ChatGPT, Perplexity, Bing Copilot and Google AI Overviews. Its contact page gives an office in Navrangpura, Ahmedabad, and says it has served 700+ businesses since 2011.</p>
+<p><strong>Evidence:</strong> VGraple's <a href="https://www.vgraple.com/services/aeo/">AEO page</a> covers FAQ and Speakable schema, llms.txt setup and AI crawler access for ChatGPT, Perplexity, Bing Copilot and Google AI Overviews. Its contact page gives an office in Navrangpura, Ahmedabad, and says it has served 700+ businesses since 2011.</p>
 <p><strong>Pricing:</strong> The page banner says plans from ₹15,000 a month. Its FAQ says AEO starts from ₹20,000 a month, with mid-market retainers of ₹35,000 to ₹75,000. Three-month minimum, then 30 days' notice.</p>
 <p><strong>Weakness:</strong> The two starting prices on the same page do not match, and full AEO only appears in the top bundle. No named AEO case study was on the page.</p>
 <p><strong>Choose if:</strong> You are a small business with a limited budget and want basic AEO hygiene alongside local SEO.</p>
@@ -442,7 +442,7 @@ export const bestAeoAgenciesIndiaArticle: Article = {
  motif: 'guide',
  /** Document title only. The on-page H1 stays the shorter title. */
  metaTitle: "Best AEO Agencies in India (2026) | Pricing & Proof",
- date: dayOf(PUBLISHED_AT),
+ date: dayOf(MODIFIED_AT),
  publishedAt: PUBLISHED_AT,
  authorName: 'Yash Kumar',
  /** GO-LIVE TODO: PREVIEW is the only switch. false => index,follow plus sitemap, llms and RSS. */

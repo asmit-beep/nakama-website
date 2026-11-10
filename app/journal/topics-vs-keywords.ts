@@ -10,7 +10,7 @@ import type {Article} from './articles';
  */
 export const TOPICS_VS_KEYWORDS_PUBLISHED_AT = '2026-10-27T09:00:00+05:30';
 const PUBLISHED_AT = TOPICS_VS_KEYWORDS_PUBLISHED_AT;
-const MODIFIED_AT = PUBLISHED_AT;
+const MODIFIED_AT = '2026-11-11T02:15:00+05:30';
 
 const MONTHS = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
 const dayOf = (iso: string) => iso.slice(0, 10);
@@ -30,7 +30,7 @@ const articleLd = {
     "https://www.nakama.in/journal/topics-vs-keywords/topics-vs-keywords-cover.png"
    ],
    "datePublished": PUBLISHED_AT,
-   "dateModified": PUBLISHED_AT,
+   "dateModified": MODIFIED_AT,
    "inLanguage": "en",
    "articleSection": "Guide",
    "author": {
@@ -67,7 +67,7 @@ const articleLd = {
     "@id": "https://www.nakama.in/journal/topics-vs-keywords#breadcrumb"
    },
    "datePublished": PUBLISHED_AT,
-   "dateModified": PUBLISHED_AT,
+   "dateModified": MODIFIED_AT,
    "primaryImageOfPage": {
     "@type": "ImageObject",
     "url": "https://www.nakama.in/journal/topics-vs-keywords/topics-vs-keywords-cover.png",
@@ -264,7 +264,7 @@ const bodyHtml = `<nav aria-label="Breadcrumb" class="article-breadcrumb"><ol st
 <p><strong>Semantic keywords</strong> are where depth lives. A buyer researching listings software may never type "listings." They type "why is my business showing the wrong hours on Google." That query belongs to your topic, and most keyword lists built on phrase match will never surface it.</p>
 <h2 id="what-are-entities-and-how-do-they-connect-topics-and-keywords">What are entities, and how do they connect topics and keywords?</h2>
 <p>An entity is a specific, named thing that a search engine can identify and connect to facts: a brand, product, person, place, standard or concept. Entities ground meaning. They tell Google and AI tools which "Taj Mahal" or which "Responsive" a page means, and they link your keywords and topics to things the systems already know.</p>
-<p>Google introduced its Knowledge Graph in 2012 with the phrase "things, not strings." Its launch post said the graph "understands real-world entities and their relationships to one another," and held "more than 500 million objects" and "more than 3.5 billion facts" at launch (<a href="https://blog.google/products/search/introducing-knowledge-graph-things-not/">Google</a>).</p>
+<p>Google introduced its Knowledge Graph in 2012 with the phrase "things, not strings." Its launch post said the graph "understands real-world entities and their relationships to one another," and held "more than 500 million objects" and "more than 3.5 billion facts" at launch (<a href="https://blog.google/products-and-platforms/products/search/introducing-knowledge-graph-things-not/">Google</a>).</p>
 <p>The example in that post still explains the idea best. To a keyword-only system, [taj mahal] is two words. To an entity-aware system, it might mean a monument, a musician or a casino, and Google can tell which one you mean.</p>
 <p>In SaaS, the same problem shows up constantly. Brand names are often ordinary words. Product categories have three names. A feature in your docs may be called something different in a buyer's head. Entities are how you close those gaps.</p>
 <p>Here is how the three layers connect in one page:</p>
@@ -280,7 +280,7 @@ const bodyHtml = `<nav aria-label="Breadcrumb" class="article-breadcrumb"><ol st
 <h3 id="difference-3-a-topic-s-keywords-are-often-not-phrase-or-term-matches">Difference 3: A topic's keywords are often not phrase or term matches</h3>
 <p>The keywords that show depth are usually semantic. A page on AI RFP software that never mentions "content library," "SME review" or "security questionnaire" looks shallow to a reader who knows the job. It looks shallow to retrieval systems too.</p>
 <h3 id="difference-4-ai-answers-fan-out-across-a-topic">Difference 4: AI answers fan out across a topic</h3>
-<p>This difference is new. When Google's AI features fan out a query, they search for related subtopics. Ahrefs reports research by Joshua Hardwick, run with Surfer, which found that pages ranking across fan-out queries were 161% more likely to be cited in the final AI Overview than pages ranking only for the main term (<a href="https://ahrefs.com/blog/how-to-rank-in-ai-overviews/">Ahrefs</a>). Treat that as reported third-party research. Fan-outs are also unstable: Surfer found only about 27% of fan-out queries stayed consistent across repeated runs (<a href="https://surferseo.com/blog/keyword-query-fan-out-research/">Surfer</a>), so cover the subtopics that recur, not every fan-out.</p>
+<p>This difference is new. When Google's AI features fan out a query, they search for related subtopics. Ahrefs reports research by Joshua Hardwick, run with Surfer, which found that pages ranking across fan-out queries were 161% more likely to be cited in the final AI Overview than pages ranking only for the main term (<a href="https://ahrefs.com/blog/how-to-rank-in-ai-overviews/">Ahrefs</a>). Treat that as reported third-party research. Fan-outs are also unstable: Surfer found only about 27% of fan-out queries stayed consistent across repeated runs (<a href="https://surfer.ai/blog/query-fan-out/">Surfer</a>), so cover the subtopics that recur, not every fan-out.</p>
 <h3 id="difference-5-citations-reward-coverage-across-the-map">Difference 5: Citations reward coverage across the map</h3>
 <p>Floyi found that 26.8% to 43.7% of AI citations, depending on the engine, went to websites that did not rank for that query but did rank elsewhere in the same topical map (<a href="https://floyi.com/research/topical-authority-report/">Floyi</a>). A keyword report cannot see those citations, because they happen on queries you do not rank for.</p>
 <h3 id="difference-6-keywords-tell-you-how-to-win-one-query-topics-tell-you-how-to-win-many">Difference 6: Keywords tell you how to win one query, topics tell you how to win many</h3>
@@ -434,7 +434,7 @@ export const topicsVsKeywordsArticle: Article = {
  readTime: "36 min read",
  motif: 'guide',
  metaTitle: "Topics vs Keywords: Which to Use for SEO and AI Search (2026)",
- date: dayOf(PUBLISHED_AT),
+ date: dayOf(MODIFIED_AT),
  publishedAt: PUBLISHED_AT,
  authorName: 'Yash Kumar',
  /** Keep reading stays on this sibling. */
