@@ -65,7 +65,7 @@ export const serviceLinks=[['GEO services','/services/geo'],['AEO services','/se
 const FOOT_COLS:[string,[string,string][]][]=[
  ['Company',[['About','/about'],['Services','/services'],['Industries','/industries'],['Work','/work'],['Process','/process'],['Careers','/careers']]],
  ['Services',serviceLinks.map(([l,h])=>[l,h])],
- ['Resources',[['Articles','/resources#articles'],['Case studies','/work'],['Pricing','/pricing'],['Get a quote','/pricing#quote']]],
+ ['Resources',[['Articles','/resources#articles'],['Pricing','/pricing'],['Get a quote','/pricing#quote']]],
  ['Contact',[['Contact us','/contact'],['contact@nakama.in','mailto:contact@nakama.in']]],
 ];
 const LEGAL_LINKS:[string,string][]=[['Privacy','/privacy'],['Terms','/terms']];
