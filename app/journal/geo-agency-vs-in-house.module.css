@@ -24,7 +24,6 @@
     position: static;
   }
   .page :global(details.toc) > :global(summary) {
-    pointer-events: none;
     list-style: none;
   }
   .page :global(details.toc) > :global(summary)::-webkit-details-marker {
@@ -56,7 +55,7 @@
     justify-content: center;
     box-sizing: border-box;
   }
-  .narrow {
+  :global(.ip-article-page .article-rich) .narrow > img {
     display: none;
   }
   /* Clear the fixed menu button (44px) so body text and figures are not covered. */
