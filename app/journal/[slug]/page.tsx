@@ -26,7 +26,15 @@ function nextInCluster(list:typeof articles,current:(typeof articles)[number]){
   if(item&&!item.noindex)live.push(item);
  }
  const body=current.bodyHtml??'';
- return live.find(item=>!new RegExp(`/journal/${item.slug}(["#?])`).test(body))??live[0]??null;
+ const linked=(item:(typeof articles)[number])=>new RegExp(`/journal/${item.slug}(["#?])`).test(body);
+ if(!live.length)return null;
+ /* Every cluster member already linked in the body: take the next unlinked note in publish order, so the card adds a new path. */
+ const at=list.indexOf(current);
+ for(let step=1;step<list.length&&live.every(linked);step++){
+  const candidate=list[(at+step)%list.length];
+  if(!candidate.noindex&&candidate.slug!==current.slug&&!linked(candidate))return candidate;
+ }
+ return live.find(item=>!linked(item))??live[0];
 }
 /** Next indexable note. Preview articles (`noindex`) are skipped so they do not become another page's keep-reading card. An explicit `nextSlug` still shows that one card, including on a noindex preview. Otherwise the card stays in the post's topical cluster, then falls back to publish order. */
 function nextPublished(list:typeof articles,current:(typeof articles)[number]){
