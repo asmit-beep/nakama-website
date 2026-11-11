@@ -429,6 +429,7 @@ export const bestAiSeoAgenciesArticle: Article = {
  metaTitle: "Best AI SEO Agencies (2026): 9 Compared on Real AI Visibility Proof",
  date: dayOf(MODIFIED_AT),
  publishedAt: PUBLISHED_AT,
+ modifiedAt: MODIFIED_AT,
  authorName: 'Yash Kumar',
  /** GO-LIVE TODO: PREVIEW is the only switch. false => index,follow plus sitemap, llms and RSS. */
  noindex: PREVIEW,

@@ -457,6 +457,7 @@ export const bestGeoAgenciesIndiaArticle: Article = {
  metaTitle: "Best GEO Agencies in India (2026): Proof and Pricing",
  date: dayOf(MODIFIED_AT),
  publishedAt: PUBLISHED_AT,
+ modifiedAt: MODIFIED_AT,
  authorName: 'Yash Kumar',
  coverImage: {src: '/journal/best-geo-agencies-india/best-geo-agencies-india-hero.png', width: 1600, height: 900},
  ogImage: {

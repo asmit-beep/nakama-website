@@ -114,7 +114,7 @@ const articleLd = {
      "name": "Can you opt out of AI Overviews?",
      "acceptedAnswer": {
       "@type": "Answer",
-      "text": "You can limit what Google shows from your pages using nosnippet, data-nosnippet, max-snippet or noindex. Google says these preview controls apply to AI features in Search as well. Blocking <a href=\"https://developers.google.com/crawling/docs/crawlers-fetchers/google-common-crawlers\">Google-Extended</a> does not remove you from AI Overviews. It applies to Gemini Apps and Vertex AI, and Google says it has no effect on Search."
+      "text": "You can limit what Google shows from your pages using nosnippet, data-nosnippet, max-snippet or noindex. Google says these preview controls apply to AI features in Search as well. Blocking Google-Extended does not remove you from AI Overviews. It applies to Gemini Apps and Vertex AI, and Google says it has no effect on Search."
      }
     },
     {
@@ -241,6 +241,7 @@ export const howToRankInGoogleAiOverviewsArticle: Article = {
  metaTitle: "How to rank in Google AI Overviews (2026 guide) | Nakama Growth",
  date: dayOf(MODIFIED_AT),
  publishedAt: PUBLISHED_AT,
+ modifiedAt: MODIFIED_AT,
  authorName: 'Sandeep Kumar',
  coverImage: {src: '/journal/how-to-rank-in-google-ai-overviews/ai-overviews-og.webp', width: 1200, height: 630},
  ogImage: {

@@ -137,6 +137,39 @@ const articleLd = {
      "item": CANONICAL
     }
    ]
+  },
+  {
+   "@type": "FAQPage",
+   "@id": `${CANONICAL}#faq`,
+   "isPartOf": {
+    "@id": `${CANONICAL}#webpage`
+   },
+   "mainEntity": [
+    {
+     "@type": "Question",
+     "name": "How long does it take to hire an AEO agency?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "About three to five weeks if you run baseline prompts, discovery calls, proof checks and contract review properly."
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "How soon should I expect results?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "Expect the first month to be research and setup. Judge movement on your agreed prompts over a quarter, per engine."
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "Can an AEO agency guarantee ChatGPT citations?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "No. AI answers vary between runs and users. Treat any guarantee as a red flag."
+     }
+    }
+   ]
   }
  ]
 };

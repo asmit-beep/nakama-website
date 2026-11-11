@@ -245,6 +245,7 @@ export const answerEngineOptimizationArticle: Article = {
  metaTitle: "Answer engine optimization for SaaS: 2026 playbook | Nakama Growth",
  date: dayOf(MODIFIED_AT),
  publishedAt: PUBLISHED_AT,
+ modifiedAt: MODIFIED_AT,
  authorName: 'Snehil Srivastava',
  coverImage: {src: '/journal/answer-engine-optimization/og.webp', width: 1200, height: 630},
  ogImage: {
