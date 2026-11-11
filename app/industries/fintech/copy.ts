@@ -59,7 +59,6 @@ export const MARKETS_LINE = 'Answers and sources differ by market, so we run pro
 export const CC_HEADING = 'How your brand could show up in AI answers';
 export const CC_SLOT = 'Your brand';
 /** Screen reader only. Never visible. */
-export const CC_PANEL_LABEL = 'Example AI answer';
 export const CC_CAPTION = 'Example AI answers. Each one names a placeholder for your brand and shows where the reason came from.';
 export const CC_PROMPTS = [
  'Which personal loan app is good for a first-time borrower?',

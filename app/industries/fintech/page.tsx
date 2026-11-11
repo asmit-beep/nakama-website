@@ -5,7 +5,7 @@ import {pageMeta, Crumbs, JsonLd, abs, SITE_URL} from '@/lib/seo';
 import {Shell} from '../../site';
 import {
  ADVICE, AUDIENCE, BOUND_LEAD, BOUND_LIST, BREADCRUMB, CC_ANSWERS, CC_CAPTION, CC_HEADING,
- CC_PANEL_LABEL, CC_PROMPTS, CC_S4_CHIP, CC_S4_INTRO, CC_S4_MINE,
+ CC_PROMPTS, CC_S4_CHIP, CC_S4_INTRO, CC_S4_MINE,
  CC_S4_ROWS, CC_SLOT, COVERS, CTA_PRIMARY, CTA_PRIMARY_HREF, CTA_SECONDARY, CTA_SECONDARY_HREF,
  DAL_DEF, DAL_DIFF, DAL_FIT, DAL_MAP, DAL_NINETY, DAL_PROMPTS, DAL_SRC, DAL_SVC, DAL_WHO, DAL_WHY,
  DATA_LINE, DEF_ENTITY, DIFF_HEADS, DIFF_ROWS, EVIDENCE, EYEBROW, FAQ, FEE_HEADING, FEE_STEPS, FIN_LEAD, FIT_NO, FIT_NO_H,
@@ -112,8 +112,8 @@ function CycleCard() {
  return (
   <div className="fx-hr">
    <div className="cc fx-cycle" data-s="4">
-    <h2 id="cc-h" className="cc-h">{CC_HEADING}</h2>
-    <div className="cc-panel" role="region" aria-label={CC_PANEL_LABEL}>
+    <div className="cc-panel" role="region" aria-labelledby="cc-h">
+     <h2 id="cc-h" className="cc-h">{CC_HEADING}</h2>
      <p className="ft-vh">{CC_CAPTION}</p>
      <div className="cc-q">
       {CC_PROMPTS.map((prompt, i) => (
