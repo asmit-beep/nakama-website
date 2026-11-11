@@ -7,7 +7,7 @@ import {
  ADVICE, AUDIENCE, BOUND_LEAD, BOUND_LIST, BREADCRUMB, CC_ANSWERS, CC_CAPTION, CC_HEADING,
  CC_PROMPTS, CC_S4_CHIP, CC_S4_INTRO, CC_S4_MINE,
  CC_S4_ROWS, CC_SLOT, COVERS, CTA_PRIMARY, CTA_PRIMARY_HREF, CTA_SECONDARY, CTA_SECONDARY_HREF,
- DAL_DEF, DAL_DIFF, DAL_FIT, DAL_MAP, DAL_NINETY, DAL_PROMPTS, DAL_SRC, DAL_SVC, DAL_WHO, DAL_WHY,
+ DAL_DEF, DAL_DIFF, DAL_FIT, DAL_MAP, DAL_NINETY, DAL_PROMPTS, DAL_PROMPTS_AFTER, DAL_PROMPTS_LINK, DAL_SRC, DAL_SVC, DAL_WHO, DAL_WHY,
  DATA_LINE, DEF_ENTITY, DIFF_HEADS, DIFF_ROWS, EVIDENCE, EYEBROW, FAQ, FEE_HEADING, FEE_STEPS, FIN_LEAD, FIT_NO, FIT_NO_H,
  FIT_YES, FIT_YES_H, GEO_HREF, GO_LIVE_DATE, H1, H2_BOUND, H2_DEF, H2_FAQ, H2_FIN, H2_FIT, H2_MAP, H2_MKT,
  H2_NINETY, H2_PROMPTS, H2_SRC, H2_SURF, H2_SVC, H2_WHO, H2_WHY, H3_DIFF, LBL_BOUND, LBL_DEF,
@@ -15,7 +15,7 @@ import {
  LBL_WHO, LBL_WHY, LEAD, LISTINGS, LISTINGS_H, LISTINGS_SUB, MARKET_LINKS, MARKETS, MARKETS_LABEL,
  MARKETS_LINE, META, MID_LEAD, MKT_FOOTER, MKT_LEAD, MKT_QUESTION, MKT_ROW_LABELS,
  MKT_TABLIST_LABEL, NINETY_LINE, NOT_COVERED, PHASES, PREVIEW, PROMPTS, PROOF_LABEL, PROOF_LOGOS,
- RELATED, SCOPE_LINE, SECTORS, SECTORS_LABEL, SEG_FACTS, SEG_PROMPT,
+ RELATED, RELATED_INDUSTRIES, SCOPE_LINE, SECTORS, SECTORS_LABEL, SEG_FACTS, SEG_PROMPT,
  SEGMENTS, SERVICE_NAME, SERVICES, SLUG, SOURCES, SOURCES_LABEL, SRC_STEPS, STEPS, SURF_LEAD,
  SURFACES, SVC_GEO, TITLE, TRACKER_CUE, TRACKER_ENGINES, TRACKER_HEADS, TRACKER_LABEL,
  TRACKER_STATE, WHO_OUT, WRONG_CUE, WRONG_LABEL, WRONG_ROWS, WRONG_SAID, WRONG_SAYS,
@@ -420,7 +420,7 @@ export default function FintechIndustry() {
       <div className="ft-g3">
        <div className="ft-card">
         <h3>{SVC_GEO.title}</h3>
-        <p>{SVC_GEO.before}<a href={GEO_HREF}>{SVC_GEO.link}</a>{SVC_GEO.after}</p>
+        <p>{SVC_GEO.before}<Link href={GEO_HREF}>{SVC_GEO.link}</Link>{SVC_GEO.after}</p>
        </div>
        {SERVICES.map(([title, line, href]) => (
         <div className="ft-card" key={title}>
@@ -437,7 +437,7 @@ export default function FintechIndustry() {
      <div className="ft-w">
       <Label>{LBL_PROMPTS}</Label>
       <h2 id="ft-prompts-h">{H2_PROMPTS}</h2>
-      <p className="ft-ans">{DAL_PROMPTS}</p>
+      <p className="ft-ans">{DAL_PROMPTS}<Link href={DAL_PROMPTS_LINK.href}>{DAL_PROMPTS_LINK.label}</Link>{DAL_PROMPTS_AFTER}</p>
       <div className="ft-way ft-trk">
        <div className="ft-wh"><span className="ft-cap">{TRACKER_LABEL}</span></div>
        <table>
@@ -537,11 +537,16 @@ export default function FintechIndustry() {
        </div>
        <Ctas />
       </div>
-      <ul className="ft-rel fx-relrow" aria-label="Related services">
-       {RELATED.map(link => (
-        <li key={link.href}>{link.href.startsWith('http') ? <a href={link.href}>{link.label}</a> : <Link href={link.href}>{link.label}</Link>}</li>
-       ))}
-      </ul>
+      <nav className="fx-relrow" aria-label="Related services and industries">
+       <ul className="ft-rel">
+        {RELATED_INDUSTRIES.map(link => <li key={link.href}><Link href={link.href}>{link.label}</Link></li>)}
+       </ul>
+       <ul className="ft-rel fx-relrow2">
+        {RELATED.map(link => (
+         <li key={link.href}>{link.href.startsWith('http') ? <a href={link.href}>{link.label}</a> : <Link href={link.href}>{link.label}</Link>}</li>
+        ))}
+       </ul>
+      </nav>
      </div>
     </section>
    </div>

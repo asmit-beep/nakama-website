@@ -664,6 +664,8 @@ main.ft-page .ft .ft-lk{display:inline-flex;margin-top:14px;min-height:24px}
 
 /* related row under the final band (comp V1.0.6 #34) */
 main.ft-page .ft .fx-relrow{margin-top:28px}
+main.ft-page .ft .fx-relrow .fx-relrow2{margin-top:4px}
+@media (max-width:767px){main.ft-page .ft .fx-relrow .fx-relrow2{margin-top:0}}
 
 @media (max-width:1100px) and (min-width:861px){
   main.ft-page .ft .ft-hg{grid-template-columns:1fr 1fr;gap:40px}
@@ -873,3 +875,4 @@ main.ft-page .ft .fx-fs p{margin:6px 0 0;font-size:15px;line-height:1.55;color:v
  main.ft-page .ft .fx-fsn{position:absolute;left:20px;top:20px;margin:0;padding:0;width:24px;justify-content:center;background:var(--s2);letter-spacing:.04em}
  main.ft-page .ft .fx-fs li:not(:last-child) .fx-fsn:after{display:none}
 }
+main.ft-page .ft .ft-ans a{color:var(--cr);text-decoration:underline;text-underline-offset:3px;text-decoration-color:rgba(156,151,180,.7)}

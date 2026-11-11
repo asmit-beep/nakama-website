@@ -1,6 +1,6 @@
 /**
- * /industries/fintech · Hibiku DRAFT V1.3.3 strings
- * (HIBIKU-FINTECH-COPY-V1.3.3-2026-11-12.md) plus hero cycle card copy V1.3
+ * /industries/fintech · Hibiku DRAFT V1.3.4 strings
+ * (HIBIKU-FINTECH-COPY-V1.3.4-2026-11-12.md) plus hero cycle card copy V1.3
  * (soften/HIBIKU-FINTECH-CYCLE-CARD-COPY-V1.3-2026-11-12.md). Render these exactly.
  * Nakama Growth. No em or en dashes. Copy V1.3.0 (§09 discovery prompts). Design: Gohan page comp v1.0.6.6 and cycle card
  * comp V1.3.2 (Sozo CLEAR 12 Nov ~02:40 IST). No visible "Example" text (Yash, page-wide).
@@ -257,7 +257,7 @@ export const MID_LEAD = 'Want to see what AI answers say about your fintech bran
 export const LBL_SVC = '11 · Services';
 export const H2_SVC = 'GEO and AEO for fintech brands';
 export const DAL_SVC = 'Nakama Growth runs answer engine optimization in the same program as GEO, so AI answers can name your fintech brand and describe your products correctly. Method detail sits on our service pages, and the audit shows where you stand today.';
-export const GEO_HREF = 'https://www.nakama.in/services/geo';
+export const GEO_HREF = '/services/geo';
 export const SVC_GEO = {title: 'GEO', before: 'Work on the third-party sources that shape AI answers about your brand. See ', link: 'how our GEO service works', after: '.'} as const;
 export const SERVICES: readonly [string, string, string][] = [
  ['AEO', 'Make your pages the clearest answer to real customer and buyer questions.', '/services/aeo'],
@@ -267,7 +267,9 @@ export const SERVICES: readonly [string, string, string][] = [
 /* 12 Prompts */
 export const LBL_PROMPTS = '12 · Prompts';
 export const H2_PROMPTS = 'Fintech prompts we track';
-export const DAL_PROMPTS = 'For each fintech brand, we build a prompt set from the questions customers and buyers ask AI tools when they compare providers or check one before signing up. Each prompt runs repeatedly across engines and markets, and results are logged with dates. The rows below are illustrations only and promise no placement.';
+export const DAL_PROMPTS = 'For each fintech brand, we build a prompt set from the questions customers and buyers ask AI tools when they compare providers or check one before signing up. Each prompt runs repeatedly across engines and markets, and results are logged with dates. The rows below are illustrations only and promise no placement. You can see how we lay out the results in our ';
+export const DAL_PROMPTS_LINK = {label: 'AI visibility report template', href: '/journal/ai-visibility-report-template'} as const;
+export const DAL_PROMPTS_AFTER = '.';
 export const TRACKER_LABEL = 'Prompt, engine, state';
 /** Screen reader only table caption, never a row cell (Dodai 02:15, 3). */
 export const TRACKER_CUE = 'Illustration: placeholder rows showing how the prompt tracker is laid out.';
@@ -370,8 +372,15 @@ export const LBL_FIN = '16 · Next step';
 export const H2_FIN = 'See how AI answers describe your fintech brand';
 export const FIN_LEAD = 'Book a call and we will walk through the questions people ask AI about your brand, the engines and markets they use and the fee, licence and product facts behind the answers.';
 export const RELATED = [
- {label: 'GEO services', href: 'https://www.nakama.in/services/geo'},
+ {label: 'GEO services', href: '/services/geo'},
  {label: 'AEO services', href: '/services/aeo'},
  {label: 'AI visibility audit', href: '/services/ai-visibility-audit'},
  {label: 'GEO and AEO pricing guide', href: '/journal/geo-aeo-pricing'},
+] as const;
+/** §16 Related industries row (V1.3.4), above the Related row. */
+export const RELATED_INDUSTRIES = [
+ {label: 'Healthcare', href: '/industries/healthcare'},
+ {label: 'Ecommerce', href: '/industries/ecommerce'},
+ {label: 'Real Estate', href: '/industries/real-estate'},
+ {label: 'See all industries', href: '/industries'},
 ] as const;
