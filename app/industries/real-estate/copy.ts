@@ -246,5 +246,6 @@ export const RELATED = [
  {label: 'GEO and AEO pricing guide', href: '/journal/geo-aeo-pricing'},
  {label: 'GEO for healthcare brands', href: '/industries/healthcare'},
  {label: 'GEO for ecommerce brands', href: '/industries/ecommerce'},
+ {label: 'GEO for fintech brands', href: '/industries/fintech'},
  {label: 'See all industries', href: '/industries'},
 ] as const;

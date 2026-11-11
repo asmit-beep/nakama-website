@@ -214,5 +214,6 @@ export const RELATED_LIVE = [
  {href: PRICING_HREF, label: 'GEO and AEO pricing guide'},
  {href: '/industries/ecommerce', label: 'GEO for ecommerce brands'},
  {href: '/industries/real-estate', label: 'AEO for real estate brokerages'},
+ {href: '/industries/fintech', label: 'GEO for fintech brands'},
  {href: '/industries', label: 'See all industries'},
 ] as const;
