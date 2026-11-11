@@ -377,7 +377,7 @@ main.ih-page .ih-why-lead{
 .ih-why-table{display:grid}
 .ih-why-tr{
  display:grid;
- grid-template-columns:110px repeat(4,minmax(0,1fr));
+ grid-template-columns:110px repeat(5,minmax(0,1fr));
  gap:20px 28px;
  padding:16px 0;
  border-bottom:1px solid var(--ih-line);

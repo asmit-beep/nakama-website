@@ -5,12 +5,10 @@
  * Nakama Growth. No em or en dashes. Copy V1.3.0 (§09 discovery prompts). Design: Gohan page comp v1.0.6.6 and cycle card
  * comp V1.3.2 (Sozo CLEAR 12 Nov ~02:40 IST). No visible "Example" text (Yash, page-wide).
  *
- * PREVIEW. PREVIEW true keeps this route noindex, follow.
- * It is not on the /industries hub, in the header dropdown, the footer,
- * corePages, sitemap.xml or llms.txt. Do not flip it without Yash's ship GO.
- * {{GO_LIVE_DATE}} is filled at ship (journal date form, for example "11 Nov 2026").
+ * Live. Yash ship GO (12 Nov 2026). PREVIEW false keeps this route index, follow.
+ * It is on the /industries hub, in the header dropdown, corePages, sitemap.xml and llms.txt.
  */
-export const PREVIEW = true;
+export const PREVIEW = false;
 
 export const SLUG = '/industries/fintech';
 export const TITLE = 'Fintech GEO Agency | Fintech AI Visibility | Nakama Growth';
@@ -29,8 +27,8 @@ export const CTA_PRIMARY_HREF = '/pricing#quote';
 export const CTA_SECONDARY = 'AI visibility audit';
 export const CTA_SECONDARY_HREF = '/services/ai-visibility-audit';
 export const ADVICE = 'Nakama Growth gives marketing advice, not legal, regulatory or financial advice.';
-/** Filled at ship. Not rendered: the visible "Updated" line under the hero CTAs was removed (Yash, 12 Nov). Kept for the ship-day date fields (SHIP-FLIP item 1). */
-export const GO_LIVE_DATE = '{{GO_LIVE_DATE}}';
+/** Ship date (ISO). Feeds WebPage datePublished and dateModified in the JSON-LD; not rendered. */
+export const GO_LIVE_DATE = '2026-11-12';
 
 /* 01a Sector chips (anchor links to the section 09 cards) */
 export const SECTORS_LABEL = 'Sectors';

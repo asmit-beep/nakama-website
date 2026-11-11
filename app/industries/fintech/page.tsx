@@ -9,7 +9,7 @@ import {
  CC_S4_ROWS, CC_SLOT, COVERS, CTA_PRIMARY, CTA_PRIMARY_HREF, CTA_SECONDARY, CTA_SECONDARY_HREF,
  DAL_DEF, DAL_DIFF, DAL_FIT, DAL_MAP, DAL_NINETY, DAL_PROMPTS, DAL_SRC, DAL_SVC, DAL_WHO, DAL_WHY,
  DATA_LINE, DEF_ENTITY, DIFF_HEADS, DIFF_ROWS, EVIDENCE, EYEBROW, FAQ, FEE_HEADING, FEE_STEPS, FIN_LEAD, FIT_NO, FIT_NO_H,
- FIT_YES, FIT_YES_H, GEO_HREF, H1, H2_BOUND, H2_DEF, H2_FAQ, H2_FIN, H2_FIT, H2_MAP, H2_MKT,
+ FIT_YES, FIT_YES_H, GEO_HREF, GO_LIVE_DATE, H1, H2_BOUND, H2_DEF, H2_FAQ, H2_FIN, H2_FIT, H2_MAP, H2_MKT,
  H2_NINETY, H2_PROMPTS, H2_SRC, H2_SURF, H2_SVC, H2_WHO, H2_WHY, H3_DIFF, LBL_BOUND, LBL_DEF,
  LBL_FAQ, LBL_FIN, LBL_FIT, LBL_MAP, LBL_MKT, LBL_NINETY, LBL_PROMPTS, LBL_SRC, LBL_SURF, LBL_SVC,
  LBL_WHO, LBL_WHY, LEAD, LISTINGS, LISTINGS_H, LISTINGS_SUB, MARKET_LINKS, MARKETS, MARKETS_LABEL,
@@ -23,7 +23,7 @@ import {
 import {FintechMotion} from './motion';
 import './fintech.css';
 
-/** PREVIEW true keeps robots noindex, follow. Flip only with Yash's ship GO. */
+/** Live. PREVIEW false keeps robots index, follow. */
 const robots: Metadata['robots'] = PREVIEW
  ? {index: false, follow: true, googleBot: {index: false, follow: true}}
  : {index: true, follow: true, googleBot: {index: true, follow: true, 'max-image-preview': 'large', 'max-snippet': -1, 'max-video-preview': -1}};
@@ -58,6 +58,21 @@ const serviceLd = {
   {'@type': 'AdministrativeArea', name: 'European Union'},
   {'@type': 'Country', name: 'India'},
  ],
+};
+
+const webPageLd = {
+ '@context': 'https://schema.org',
+ '@type': 'WebPage',
+ '@id': abs(`${SLUG}#webpage`),
+ url: abs(SLUG),
+ name: TITLE,
+ description: META,
+ inLanguage: 'en',
+ isPartOf: {'@id': `${SITE_URL}/#website`},
+ publisher: {'@id': `${SITE_URL}/#organization`},
+ about: {'@id': abs(`${SLUG}#service`)},
+ datePublished: GO_LIVE_DATE,
+ dateModified: GO_LIVE_DATE,
 };
 
 const faqLd = {
@@ -152,7 +167,7 @@ export default function FintechIndustry() {
   <Shell className="ft-page shell-cinema">
    <script dangerouslySetInnerHTML={{__html: JS_FLAG}} />
    <Crumbs trail={[{name: 'Industries', path: '/industries'}, {name: BREADCRUMB, path: SLUG}]} />
-   <JsonLd data={[serviceLd, faqLd]} />
+   <JsonLd data={[webPageLd, serviceLd, faqLd]} />
    <div className="ft" id="ft-root">
     <section className="ft-hero fx-hero" id="ft-hero">
      <div className="ft-vap" aria-hidden="true" />

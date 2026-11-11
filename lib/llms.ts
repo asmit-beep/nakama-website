@@ -20,7 +20,7 @@ const facts=[
  'Pricing: one all-inclusive Nakama plan with every service; enterprise and custom pricing on request. Quotes follow a 15-minute call, with a written proposal within two business days. Minimum commitment is three months.',
  'Nakama does not guarantee rankings or AI recommendations; it commits to scope, transparent reporting and checkable evidence.',
  'Community work is always disclosed. No fake reviews or hidden endorsements.',
- 'Industries: healthcare, ecommerce and real estate, each with its own page, plus B2B SaaS and software, local services, education, travel and consumer brands.',
+ 'Industries: healthcare, ecommerce, real estate and fintech, each with its own page, plus B2B SaaS and software, local services, education, travel and consumer brands.',
 ];
 
 export function llmsTxt(){
