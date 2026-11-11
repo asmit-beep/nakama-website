@@ -1,5 +1,7 @@
 import type {Article} from './articles';
 
+const MODIFIED_AT = '2026-11-11T03:10:00+05:30';
+
 /** Buyer's guide to AEO agencies. Same optional article fields as the GEO guide (metaTitle, date, author, og image, JSON-LD, HTML body). The site-wide Organization and WebSite nodes are referenced by @id, not repeated. */
 export const aeoAgenciesJsonLd = {
  "@context": "https://schema.org",
@@ -88,7 +90,7 @@ export const aeoAgenciesJsonLd = {
     "https://www.nakama.in/journal/best-aeo-agencies/best-aeo-agencies-2026-og.png"
    ],
    "datePublished": "2026-10-15T18:15:38+05:30",
-   "dateModified": "2026-11-11T03:10:00+05:30",
+   "dateModified": MODIFIED_AT,
    "inLanguage": "en-US",
    "articleSection": "Answer engine optimization",
    "keywords": "AEO agency, AEO agencies, AEO services, best AEO agencies, answer engine optimization agency",
@@ -840,6 +842,7 @@ export const aeoAgenciesArticle: Article = {
  metaTitle: "Best AEO Agencies (2026): 10 Compared on Proof and Price",
  date: '2026-11-11',
  publishedAt: '2026-10-15T18:15:38+05:30',
+ modifiedAt: MODIFIED_AT,
  authorName: 'Yash Kumar',
  coverImage: {src: '/journal/best-aeo-agencies/best-aeo-agencies-2026-cover.png', width: 1600, height: 900, alt: 'Cover graphic for the guide to the best AEO agencies and AEO services in 2026, ten agencies compared on proof, price and fit'},
  ogImage: {

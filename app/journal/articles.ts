@@ -29,6 +29,8 @@ export type Article={
  date?:string,
  /** Optional full go-live timestamp (ISO 8601 with offset). Used for og/article published and modified times and the RSS dates when set; otherwise the day in `date` is used. */
  publishedAt?:string,
+ /** Optional last-modified timestamp (ISO 8601 with offset). Used for og/article modified time and the default Article dateModified when set; falls back to publishedAt, then date. */
+ modifiedAt?:string,
  authorName?:string,
  ogImage?:{url:string,width:number,height:number,alt:string,type?:string},
  /** Replaces the generic Article schema (and the shared breadcrumb schema) when set. */
@@ -70,7 +72,7 @@ export const articles:Article[]=[
  aeoVsSeoVsGeoArticle,
  aeoAgenciesArticle,
  geoAgenciesArticle,
- {slug:'build-around-the-buyers-next-question',category:'Strategy',authorName:'Sandeep Kumar',title:'Build around the buyer’s next question.',description:'A practical way to turn product expertise into a content plan built around the questions buyers ask next, so AI answers and search results can cite you.',readTime:'4 min read',motif:'question',sections:[
+ {slug:'build-around-the-buyers-next-question',category:'Strategy',authorName:'Sandeep Kumar',title:'Build around the buyer\'s next question.',description:'A practical way to turn product expertise into a content plan built around the questions buyers ask next, so AI answers and search results can cite you.',readTime:'4 min read',motif:'question',sections:[
  {heading:'Start with uncertainty.',paragraphs:['A content plan often starts with a list of things a company wants to say. We prefer to begin one step earlier: what is a buyer still trying to understand? That question changes the shape of the work. It gives an article, a comparison or a video a clear reason to exist.','For a software product, the uncertainty might be about accuracy, team adoption, implementation or the effort of switching. A useful plan makes room for those specific concerns instead of treating every reader as if they are ready for a demo.']},
  {heading:'Keep a question log.',paragraphs:['Collect the language people actually use in sales conversations, support requests, public discussions and research sessions. Record the question, the context and what the person was trying to decide. A phrase without its context can easily become the wrong brief.','Then group the questions by the decision they support. “Can it do this?” is different from “Will it work for our team?” and different again from “How do we get started?” Those distinctions help you choose the format and the level of detail.']},
  {heading:'Give each answer a job.',paragraphs:['Before making an asset, write down the question it answers, the evidence it needs and what the reader should understand afterwards. An expert interview may supply the missing context. A walkthrough may show a workflow more clearly than another paragraph. A comparison may need a visible evaluation method.','The aim is not to fit every question into the same template. It is to make the next decision easier. If a piece cannot explain its job in a sentence, the brief probably needs more work.']},
