@@ -1,6 +1,5 @@
 import type {Metadata} from 'next';
 import Link from 'next/link';
-import {Fragment} from 'react';
 import {preload} from 'react-dom';
 import {pageMeta, Crumbs, JsonLd, abs, SITE_URL} from '@/lib/seo';
 import {Shell} from '../../site';
@@ -114,14 +113,6 @@ function CycleCard() {
   <div className="fx-hr">
    <div className="cc fx-cycle" data-s="4">
     <h2 id="cc-h" className="cc-h">{CC_HEADING}</h2>
-    <p className="cc-ps">
-     {CC_PROMPTS.map((prompt, i) => (
-      <Fragment key={prompt}>
-       {i > 0 ? ' ' : null}
-       <span className={i === 3 ? 'cc-p is-on' : 'cc-p'}><span className="cc-t">{prompt}</span></span>
-      </Fragment>
-     ))}
-    </p>
     <div className="cc-panel" role="region" aria-label={CC_PANEL_LABEL}>
      <p className="ft-vh">{CC_CAPTION}</p>
      <div className="cc-q">
