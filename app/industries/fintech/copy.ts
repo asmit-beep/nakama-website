@@ -1,7 +1,9 @@
 /**
- * /industries/fintech · Hibiku DRAFT V1.2.3 strings
- * (HIBIKU-FINTECH-COPY-V1.2.3-2026-11-11.md). Render these exactly.
- * Nakama Growth. No em or en dashes. Design: Gohan comps V1.0.6.1 (Sozo CLEAR).
+ * /industries/fintech · Hibiku DRAFT V1.2.9 strings
+ * (HIBIKU-FINTECH-COPY-V1.2.9-2026-11-12.md) plus hero cycle card copy V1.3
+ * (soften/HIBIKU-FINTECH-CYCLE-CARD-COPY-V1.3-2026-11-12.md). Render these exactly.
+ * Nakama Growth. No em or en dashes. Design: Gohan page comp v1.0.6.6 and cycle card
+ * comp V1.3.2 (Sozo CLEAR 12 Nov ~02:40 IST). No visible "Example" text (Yash, page-wide).
  *
  * PREVIEW. PREVIEW true keeps this route noindex, follow.
  * It is not on the /industries hub, in the header dropdown, the footer,
@@ -21,7 +23,7 @@ export const AUDIENCE = 'Fintech companies, including payments, lending, neobank
 /* 01 Hero */
 export const EYEBROW = 'Fintech';
 export const H1 = 'GEO Agency for Fintech Brands';
-export const LEAD = 'Nakama Growth helps payments, lending, banking, investing, insurtech, crypto and embedded finance brands get named in ChatGPT, Perplexity, Gemini and Google AI Overviews, and described the way their own pages and filings say. We work with teams across the US, UK, EU and India.';
+export const LEAD = 'Nakama Growth helps payments, lending, banking, investing, insurtech, crypto and embedded finance brands get named in ChatGPT search, Perplexity, Gemini, Google AI Overviews and AI Mode, and described the way their own pages and filings say. We work with teams across the US, UK, EU and India.';
 export const CTA_PRIMARY = 'Book a call';
 export const CTA_PRIMARY_HREF = '/pricing#quote';
 export const CTA_SECONDARY = 'AI visibility audit';
@@ -53,40 +55,33 @@ export const MARKET_LINKS: readonly [string, string][] = [
 ];
 export const MARKETS_LINE = 'Answers and sources differ by market, so we run prompts and compare answers in each one.';
 
-/* 01c Hero panel: example answer trace */
-export const HERO_PILL = 'Example answer';
-export const HERO_PROMPT_LABEL = 'Customer prompt';
-export const HERO_PROMPT = 'Which money transfer app should I use to send money to India?';
-export const SRC_HEAD = ['Source', 'Fees page'] as const;
-export const SRC_ROWS: readonly [string, string][] = [
- ['Transfer fee', '[your transfer fee]'],
- ['Delivery time', '[your delivery time]'],
- ['Countries', '[your supported countries]'],
-];
-export const SRC_REF = ['Your fees page', 'checked [date]'] as const;
-export const HERO_ANSWER_LABEL = 'AI answer';
-export const HERO_ANSWER_STATE = 'Named';
-export const HERO_NAMED = '[Your brand]';
-export const ANSWER_1 = ['[Your brand] lists a transfer fee of ', '[your transfer fee]', ' for sending money to India.'] as const;
-export const ANSWER_1_CHIP = 'Fees page';
-export const ANSWER_2 = '[Your brand] is authorised as a [licence type] in [market].';
-export const ANSWER_2_CHIP = 'Licence register entry';
-export const ANSWER_3 = '[Your brand] lists delivery times and supported countries in its published terms.';
-export const ANSWER_3_CHIP = 'Terms, checked [date]';
-export const ENGINES = [
- {engine: 'ChatGPT', state: 'Mentioned', hot: false},
- {engine: 'Perplexity', state: 'Cited', hot: false},
- {engine: 'Google AI Overviews', state: 'Recommended', hot: true},
+/* Hero right column: cycle card (copy V1.3). Replaces the 01c answer trace (V1.2.9 note: 01c drops with it).
+   State 4 is the rest state: server HTML, no JS and reduced motion. */
+export const CC_HEADING = 'How your brand could show up in AI answers';
+export const CC_SLOT = 'Your brand';
+/** Screen reader only. Never visible. */
+export const CC_PANEL_LABEL = 'Example AI answer';
+export const CC_CAPTION = 'Example AI answers. Each one names a placeholder for your brand and shows where the reason came from.';
+export const CC_PAUSE_LABEL = 'Pause example answers';
+export const CC_PAUSE = 'Pause';
+export const CC_STOPPED = 'Autoplay stopped';
+export const CC_PROMPTS = [
+ 'Which personal loan app is good for a first-time borrower?',
+ 'Which crypto app should a beginner look at?',
+ "What's a simple health insurance app for freelancers?",
+ 'Which money transfer app should I use to send money to India?',
 ] as const;
-export const STEPS_LABEL = 'How the answer traces to your source';
-export const TRACE_STEPS: readonly [string, string][] = [
- ['Source', 'Step 1 of 4: the fees page you publish.'],
- ['Clause', 'Step 2 of 4: the clause on your fees page.'],
- ['Fact', 'Step 3 of 4: the fact taken from that clause.'],
- ['Answer', 'Step 4 of 4: the AI answer that cites your fees page.'],
+/** States 1 to 3: answer text after the slot, and the chip. */
+export const CC_ANSWERS: readonly [string, string][] = [
+ [' is one to look at. Its eligibility page explains who can apply and what you need.', 'Cited from your eligibility page'],
+ [' is worth a look, and its help centre says which company runs it.', 'Cited from your help centre'],
+ [' is a good fit. Its plans page sets out each plan for self-employed people in plain terms.', 'Cited from your plans page'],
 ];
-export const REPLAY = 'Replay';
-export const FIGURE_CAPTION = 'Example answer. A fee on your fees page becomes a cited fact in an AI answer that names your brand.';
+/** State 4: shortlist (rest state). */
+export const CC_S4_INTRO = 'A few apps to compare:';
+export const CC_S4_ROWS = ['App A · widely used for transfers abroad', 'App B · supports many countries'] as const;
+export const CC_S4_MINE = ' · recommended, shows the full fee before you send';
+export const CC_S4_CHIP = 'Cited from your fees page';
 
 /* 03 Definition */
 export const LBL_DEF = '03 · Definition';
@@ -109,7 +104,8 @@ export const LBL_WHY = '04 · Why it matters';
 export const H2_WHY = 'Why do AI answers matter for fintech brands?';
 export const DAL_WHY = 'People ask AI tools which app to use, who stands behind a product and whether it works in their country, then check the answer elsewhere. Fintech AI visibility starts there. If an answer quotes an old fee, calls a partner bank\'s product yours or puts you in a market you do not serve, the first impression is wrong.';
 export const WRONG_LABEL = 'What a wrong answer looks like';
-export const WRONG_PILL = 'Example';
+/** Screen reader only cue: the block's own visually hidden heading, never a row cell (Dodai 02:15, 3). */
+export const WRONG_CUE = 'Illustration: wrong answers about a placeholder brand.';
 export const WRONG_SAID = 'AI said';
 export const WRONG_SAYS = 'Your source says';
 export const WRONG_ROWS: readonly [string, string, string][] = [
@@ -135,38 +131,45 @@ export const SOURCES: readonly [string, string][] = [
 
 /* 05 Sourcing */
 export const LBL_SRC = '05 · Sourcing';
-export const H2_SRC = 'Every claim carries a source and a date';
-export const DAL_SRC = 'Nakama Growth ties every fee, licence and product fact we write to the page or document it came from, and dates it. When that fact changes, we re-check the pages that state it and the AI answers we track for it. You decide what goes live on your site, through your own process.';
+export const H2_SRC = 'How we source product claims';
+export const DAL_SRC = 'Nakama Growth links the fee, licence and product facts we write to the page or document they came from, with the date we checked it. When a fact changes, we look again at the pages and AI answers that repeat it. You decide what goes live on your site, through your own process.';
 export const SRC_STEPS: readonly [string, string][] = [
- ['Sourced draft', 'Every fee, licence or product fact we write links to the page or document it came from, such as your fees page, your terms or a licence register entry, with the date we checked it.'],
- ['Dated publish', 'Pages show when each fact was last checked, so readers can see how current it is.'],
- ['Re-check when something changes', 'When a fee, licence or product fact changes, we re-check the pages that state it and the AI answers we track for it, and log the date.'],
+ ['Start from your own pages', 'We draft from the pages and documents you already publish, such as your fees page, your terms or a licence register entry.'],
+ ['Note where each fact came from', 'A fee, licence or product fact in our drafts carries a note of the page it came from and when we checked it, so your team can see the source.'],
+ ['Look again when a fact changes', 'When a fee, licence or product fact changes, we look again at the pages and AI answers that repeat it.'],
 ];
 export const DATA_LINE = 'We work mainly from public sources and only ask for the access a task needs.';
 
-/* 05a Example: when a rate changes */
-export const RATE_PILL = 'Example';
-export const RATE_HEADING = 'Example: when a rate changes';
+/* 05a When a fee changes. Only two invented figures on the page, both here. "Your brand" renders in the slot. */
+export const RATE_HEADING = 'When a fee changes';
+/** Screen reader only, first in the card. */
+export const RATE_CUE = "Illustration: a placeholder brand's fee change.";
 export const RATE_CARD_LABEL = 'Source';
-export const RATE_SOURCE = ['[Your personal loan rate]', 'rate sheet', 'checked [date]'] as const;
-export const RATE_CHANGED = 'Was [old rate], now [new rate]';
+/** Value line: [slot]'s transfer fee to India: [$3.49 | $2.99] */
+export const RATE_VALUE_AFTER_SLOT = "'s transfer fee to India: ";
+export const RATE_OLD = '$3.49';
+export const RATE_NEW = '$2.99';
+export const RATE_REF = 'fees page · checked today';
 export const RATE_PAGES_H = 'Pages that state it';
 export const RATE_PAGES: readonly [string, string, boolean][] = [
- ['Loans page', 'Re-check', true],
+ ['Send money to India page', 'Re-check', true],
  ['Comparison page', 'Re-check', true],
- ['FAQ on loan costs', 'Re-check', true],
+ ['FAQ on transfer costs', 'Re-check', true],
  ['About page', 'No change needed', false],
 ];
 export const RATE_ANSWERS_H = 'AI answers we track for it';
-export const RATE_ANSWERS: readonly [string, string, boolean][] = [
- ['"Which personal loan apps work in [market]?"', 'Re-check', true],
- ['"What does [Your brand] charge for a personal loan?"', 'Re-check', true],
- ['"[Your brand] vs [Competitor] for personal loans"', 'Re-check', true],
+/** [before slot, slot or empty, after slot] */
+export const RATE_ANSWERS: readonly [string, string, string][] = [
+ ['"Which apps send money to India?"', '', ''],
+ ['"What does ', 'Your brand', ' charge to send money to India?"'],
+ ['"', 'Your brand', ' vs App A for sending money to India"'],
 ];
-export const RATE_LOG = 'Example log: rate changed [date]. Three pages and three tracked answers queued for re-check.';
-export const RATE_TOGGLE = 'Show what happens when this rate changes';
-export const RATE_TOGGLE_PRESSED = 'Reset example';
-export const RATE_LIVE = 'Rate changed. Three pages and three tracked answers marked for re-check.';
+export const RATE_LOG = 'Fee changed today. Three pages and three tracked answers marked for re-check.';
+export const RATE_TOGGLE = 'Show what happens when this fee changes';
+export const RATE_TOGGLE_PRESSED = 'Reset';
+export const RATE_LIVE = 'Fee changed. Three pages and three tracked answers marked for re-check.';
+/** Screen reader only (live region on reset). */
+export const RATE_LIVE_RESET = 'Example reset.';
 
 /* 06 Boundaries */
 export const LBL_BOUND = '06 · Boundaries';
@@ -186,7 +189,9 @@ export const LBL_MKT = '07 · Markets';
 export const H2_MKT = 'Same question, four markets';
 export const MKT_LEAD = 'The same customer question gets a different answer in each market, because the currency, the cost terms, the regulators and the public records all change. Nakama Growth runs prompts and compares answers market by market. The four panels below show what changes for one lending question and one crypto question.';
 export const MKT_QUESTION = 'Is [brand] licensed to lend here, and who is behind it?';
-export const MKT_ROW_LABELS = ['Example question in this market', 'Currency and cost terms', 'Regulators an answer may mention', 'Public records an answer can be compared with', 'Crypto firms'] as const;
+/** Tablist aria-label (Taiken N9). The hero markets list keeps "Markets". */
+export const MKT_TABLIST_LABEL = 'Choose a market';
+export const MKT_ROW_LABELS = ['Question in this market', 'Currency and cost terms', 'Regulators an answer may mention', 'Public records an answer can be compared with', 'Crypto firms'] as const;
 export const MKT_FOOTER = `Context only. ${ADVICE}`;
 export const MARKETS: readonly {id: string; tab: string; name: string; rows: readonly [string, string, string, string, string]}[] = [
  {
@@ -196,7 +201,7 @@ export const MARKETS: readonly {id: string; tab: string; name: string; rows: rea
    'US dollars (USD). Credit costs are shown as an annual percentage rate (APR).',
    'The Consumer Financial Protection Bureau (CFPB) and state regulators for consumer lending. Bank regulators (the OCC, the Federal Reserve, the FDIC and the NCUA) for banks and credit unions. The U.S. Securities and Exchange Commission (SEC), and FINRA, a self-regulatory organization overseen by the SEC, for investing. State insurance departments for insurance.',
    'NMLS Consumer Access for lenders, FDIC BankFind for banks, FINRA BrokerCheck for brokers, the SEC\'s Investment Adviser Public Disclosure site for advisers and NAIC Consumer Insurance Search for insurance.',
-   'Example question: "Who regulates this crypto platform?" There is no single crypto regulator. The SEC and the CFTC share oversight depending on the asset, under a March 2026 interpretation. Payment stablecoins come under the GENIUS Act, and exchanges usually register with FinCEN and hold state licences. Rules still changing.',
+   'Question: "Who regulates this crypto platform?" There is no single crypto regulator. The SEC and the CFTC share oversight depending on the asset, under a March 2026 interpretation. Payment stablecoins come under the GENIUS Act, and exchanges usually register with FinCEN and hold state licences. Rules still changing.',
   ],
  },
  {
@@ -206,7 +211,7 @@ export const MARKETS: readonly {id: string; tab: string; name: string; rows: rea
    'Pounds sterling (GBP). Adverts with a rate must show a representative APR and a representative example.',
    'The Financial Conduct Authority (FCA) for conduct. Some firms are also supervised by the Prudential Regulation Authority (PRA).',
    'The FCA Financial Services Register.',
-   'Example question: "Is this crypto firm registered with the FCA?" Crypto firms register with the FCA for anti-money laundering. A full authorisation regime is expected from 25 October 2027. Promotions carry the FCA risk warning.',
+   'Question: "Is this crypto firm registered with the FCA?" Crypto firms register with the FCA for anti-money laundering. A full authorisation regime is expected from 25 October 2027. Promotions carry the FCA risk warning.',
   ],
  },
  {
@@ -216,7 +221,7 @@ export const MARKETS: readonly {id: string; tab: string; name: string; rows: rea
    'The local currency, which is the euro (EUR) in the euro area. The cost of credit is shown as the annual percentage rate of charge (APRC).',
    'National authorities license firms. The EBA, ESMA and EIOPA set common rules. The Consumer Credit Directive (EU) 2023/2225 applies to credit agreements from 20 November 2026.',
    'Each national authority\'s register, which is the authoritative record. The EBA also keeps EU-wide registers of credit institutions and payment institutions for reference.',
-   'Example question: "Is this crypto provider authorised under MiCA?" Crypto service providers need MiCA authorisation from a national authority. The transition period ended on 1 July 2026. ESMA keeps an interim register of authorised providers.',
+   'Question: "Is this crypto provider authorised under MiCA?" Crypto service providers need MiCA authorisation from a national authority. The transition period ended on 1 July 2026. ESMA keeps an interim register of authorised providers.',
   ],
  },
  {
@@ -226,7 +231,7 @@ export const MARKETS: readonly {id: string; tab: string; name: string; rows: rea
    'Indian rupees (INR). Lenders give an APR and a Key Facts Statement (KFS).',
    'The Reserve Bank of India (RBI) for banks, NBFCs and digital lending. The Securities and Exchange Board of India (SEBI) for investing. The Insurance Regulatory and Development Authority of India (IRDAI) for insurance. NPCI runs UPI and is not a regulator.',
    'RBI\'s list of NBFCs and RBI\'s directory of digital lending apps, SEBI\'s list of registered intermediaries, and IRDAI\'s lists of licensed insurers and brokers. A listing in RBI\'s directory of digital lending apps is not RBI registration or endorsement.',
-   'Example question: "Is this crypto exchange registered with FIU-IND?" There is no crypto-specific regulator. Exchanges must register with FIU-IND as reporting entities under anti-money laundering law. This is not a licence.',
+   'Question: "Is this crypto exchange registered with FIU-IND?" There is no crypto-specific regulator. Exchanges must register with FIU-IND as reporting entities under anti-money laundering law. This is not a licence.',
   ],
  },
 ];
@@ -252,7 +257,7 @@ export const LBL_WHO = '09 · Who we work with';
 export const H2_WHO = 'Who we work with in fintech';
 export const DAL_WHO = 'Nakama Growth can work with fintech brands that sell to consumers or to businesses in the US, UK, EU and India, where customers check them in AI tools before they sign up. This is for heads of marketing, growth and product marketing. Each card below names the facts AI answers need to get right for that kind of product.';
 export const SEG_FACTS = 'Facts to get right';
-export const SEG_PROMPT = 'Example prompt';
+export const SEG_PROMPT = 'Prompt';
 export const SEGMENTS: readonly {id: string; title: string; facts: string; prompt: string}[] = [
  {id: 'payments', title: 'Payments and money transfer', facts: 'Fees, supported countries, delivery times and which entity holds the licence', prompt: '"Does [brand] send money to [country], and who runs it there?"'},
  {id: 'lending', title: 'Lending', facts: 'The type of lender, who provides the credit and which markets the product serves. We do not write eligibility promises or representative examples', prompt: '"What kind of lender is [brand], and who provides the credit?"'},
@@ -292,8 +297,14 @@ export const SERVICES: readonly [string, string, string][] = [
 /* 12 Prompts */
 export const LBL_PROMPTS = '12 · Prompts';
 export const H2_PROMPTS = 'Fintech prompts we track';
-export const DAL_PROMPTS = 'For each fintech brand, we build a prompt set from the questions customers and buyers ask AI tools when they compare providers or check one before signing up. Each prompt runs repeatedly across engines and markets, and results are logged with dates. The examples below are illustrations only and promise no placement.';
+export const DAL_PROMPTS = 'For each fintech brand, we build a prompt set from the questions customers and buyers ask AI tools when they compare providers or check one before signing up. Each prompt runs repeatedly across engines and markets, and results are logged with dates. The rows below are illustrations only and promise no placement.';
 export const TRACKER_LABEL = 'Prompt, engine, state';
+/** Screen reader only table caption, never a row cell (Dodai 02:15, 3). */
+export const TRACKER_CUE = 'Illustration: placeholder rows showing how the prompt tracker is laid out.';
+/** Same in every row. No outcome states, counts or ranks (Dodai 02:15, 1). */
+export const TRACKER_ENGINES = 'ChatGPT search, Perplexity, Gemini, Google AI Overviews';
+export const TRACKER_STATE = 'Logged [date]';
+export const TRACKER_HEADS = ['Prompt', 'Engine', 'State'] as const;
 export const PROMPTS = [
  '"Which money transfer apps can send money from the UK to India?"',
  '"Is [brand] authorised by the FCA?"',
@@ -355,12 +366,12 @@ export const FAQ: {q: string; a: string; href?: string; linkLabel?: string}[] = 
   a: 'No. No agency can guarantee that ChatGPT or any other AI answer will name or recommend a fintech brand, and we do not promise sign-ups, applications or revenue. We measure mentions, citations, recommendations and fact accuracy separately, and we work on the sources those answers already draw on.',
  },
  {
-  q: 'How is this different from a fintech SEO agency?',
-  a: 'A fintech SEO agency works on rankings and clicks for your product and content pages. GEO works on whether AI answers name your brand and describe your fees, licences and markets correctly. Some people call this AI SEO for fintech. We can work alongside your SEO partner on the same customer and buyer questions.',
- },
- {
   q: 'Which markets do you work in?',
   a: 'Nakama Growth can work with fintech brands that serve customers in the US, UK, EU and India. Advertising, licensing and financial promotion rules differ by market, and sometimes by product, so you and your own advisers decide which rules apply to each page. We run prompts and report results separately for each market.',
+ },
+ {
+  q: 'How is this different from a fintech SEO agency?',
+  a: 'A fintech SEO agency works on rankings and clicks for your product and content pages. GEO works on whether AI answers name your brand and describe your fees, licences and markets correctly. Some people call this AI SEO for fintech. We can work alongside your SEO partner on the same customer and buyer questions.',
  },
  {
   q: 'Do you work with crypto and insurtech brands?',

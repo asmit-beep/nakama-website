@@ -1,26 +1,27 @@
 import type {Metadata} from 'next';
 import Link from 'next/link';
+import {Fragment} from 'react';
 import {preload} from 'react-dom';
 import {pageMeta, Crumbs, JsonLd, abs, SITE_URL} from '@/lib/seo';
 import {Shell} from '../../site';
 import {
- ADVICE, ANSWER_1, ANSWER_1_CHIP, ANSWER_2, ANSWER_2_CHIP, ANSWER_3, ANSWER_3_CHIP, AUDIENCE,
- BOUND_LEAD, BOUND_LIST, BREADCRUMB, COVERS, CTA_PRIMARY, CTA_PRIMARY_HREF, CTA_SECONDARY,
- CTA_SECONDARY_HREF, DAL_DEF, DAL_DIFF, DAL_FIT, DAL_MAP, DAL_NINETY, DAL_PROMPTS, DAL_SRC, DAL_SVC,
- DAL_WHO, DAL_WHY, DATA_LINE, DEF_ENTITY, DIFF_HEADS, DIFF_ROWS, ENGINES, EVIDENCE, EYEBROW, FAQ,
- FIGURE_CAPTION, FIN_LEAD, FIT_NO, FIT_NO_H, FIT_YES, FIT_YES_H, GEO_HREF, H1, H2_BOUND, H2_DEF,
- H2_FAQ, H2_FIN, H2_FIT, H2_MAP, H2_MKT, H2_NINETY, H2_PROMPTS, H2_SRC, H2_SURF, H2_SVC, H2_WHO,
- H2_WHY, H3_DIFF, HERO_ANSWER_LABEL, HERO_ANSWER_STATE, HERO_NAMED, HERO_PILL, HERO_PROMPT,
- HERO_PROMPT_LABEL, LBL_BOUND, LBL_DEF, LBL_FAQ, LBL_FIN, LBL_FIT, LBL_MAP, LBL_MKT, LBL_NINETY,
- LBL_PROMPTS, LBL_SRC, LBL_SURF, LBL_SVC, LBL_WHO, LBL_WHY, LEAD, LISTINGS, LISTINGS_H,
- LISTINGS_SUB, MARKET_LINKS, MARKETS, MARKETS_LABEL, MARKETS_LINE, META, MID_LEAD, MKT_FOOTER,
- MKT_LEAD, MKT_QUESTION, MKT_ROW_LABELS, NINETY_LINE, NOT_COVERED, PHASES, PREVIEW, PROMPTS,
- PROOF_LABEL, PROOF_LOGOS, RATE_ANSWERS, RATE_ANSWERS_H, RATE_CARD_LABEL, RATE_CHANGED,
- RATE_HEADING, RATE_LOG, RATE_PAGES, RATE_PAGES_H, RATE_PILL, RATE_SOURCE, RATE_TOGGLE,
- RATE_TOGGLE_PRESSED, RELATED, REPLAY, SCOPE_LINE, SECTORS, SECTORS_LABEL, SEG_FACTS, SEG_PROMPT,
- SEGMENTS, SERVICE_NAME, SERVICES, SLUG, SOURCES, SOURCES_LABEL, SRC_HEAD, SRC_REF, SRC_ROWS,
- SRC_STEPS, STEPS, STEPS_LABEL, SURF_LEAD, SURFACES, SVC_GEO, TITLE, TRACE_STEPS, TRACKER_LABEL,
- UPDATED, WHO_OUT, WRONG_LABEL, WRONG_PILL, WRONG_ROWS, WRONG_SAID, WRONG_SAYS,
+ ADVICE, AUDIENCE, BOUND_LEAD, BOUND_LIST, BREADCRUMB, CC_ANSWERS, CC_CAPTION, CC_HEADING,
+ CC_PANEL_LABEL, CC_PAUSE, CC_PAUSE_LABEL, CC_PROMPTS, CC_S4_CHIP, CC_S4_INTRO, CC_S4_MINE,
+ CC_S4_ROWS, CC_SLOT, COVERS, CTA_PRIMARY, CTA_PRIMARY_HREF, CTA_SECONDARY, CTA_SECONDARY_HREF,
+ DAL_DEF, DAL_DIFF, DAL_FIT, DAL_MAP, DAL_NINETY, DAL_PROMPTS, DAL_SRC, DAL_SVC, DAL_WHO, DAL_WHY,
+ DATA_LINE, DEF_ENTITY, DIFF_HEADS, DIFF_ROWS, EVIDENCE, EYEBROW, FAQ, FIN_LEAD, FIT_NO, FIT_NO_H,
+ FIT_YES, FIT_YES_H, GEO_HREF, H1, H2_BOUND, H2_DEF, H2_FAQ, H2_FIN, H2_FIT, H2_MAP, H2_MKT,
+ H2_NINETY, H2_PROMPTS, H2_SRC, H2_SURF, H2_SVC, H2_WHO, H2_WHY, H3_DIFF, LBL_BOUND, LBL_DEF,
+ LBL_FAQ, LBL_FIN, LBL_FIT, LBL_MAP, LBL_MKT, LBL_NINETY, LBL_PROMPTS, LBL_SRC, LBL_SURF, LBL_SVC,
+ LBL_WHO, LBL_WHY, LEAD, LISTINGS, LISTINGS_H, LISTINGS_SUB, MARKET_LINKS, MARKETS, MARKETS_LABEL,
+ MARKETS_LINE, META, MID_LEAD, MKT_FOOTER, MKT_LEAD, MKT_QUESTION, MKT_ROW_LABELS,
+ MKT_TABLIST_LABEL, NINETY_LINE, NOT_COVERED, PHASES, PREVIEW, PROMPTS, PROOF_LABEL, PROOF_LOGOS,
+ RATE_ANSWERS, RATE_ANSWERS_H, RATE_CARD_LABEL, RATE_CUE, RATE_HEADING, RATE_LOG, RATE_NEW,
+ RATE_OLD, RATE_PAGES, RATE_PAGES_H, RATE_REF, RATE_TOGGLE, RATE_TOGGLE_PRESSED,
+ RATE_VALUE_AFTER_SLOT, RELATED, SCOPE_LINE, SECTORS, SECTORS_LABEL, SEG_FACTS, SEG_PROMPT,
+ SEGMENTS, SERVICE_NAME, SERVICES, SLUG, SOURCES, SOURCES_LABEL, SRC_STEPS, STEPS, SURF_LEAD,
+ SURFACES, SVC_GEO, TITLE, TRACKER_CUE, TRACKER_ENGINES, TRACKER_HEADS, TRACKER_LABEL,
+ TRACKER_STATE, UPDATED, WHO_OUT, WRONG_CUE, WRONG_LABEL, WRONG_ROWS, WRONG_SAID, WRONG_SAYS,
 } from './copy';
 import {FintechMotion} from './motion';
 import './fintech.css';
@@ -43,7 +44,7 @@ export const metadata: Metadata = {
  robots,
 };
 
-/** Schema per HIBIKU V1.2.3 "Schema (Dodai)". Service name is Dodai's call (see copy.ts). */
+/** Schema per HIBIKU V1.2.9 "Schema (Dodai)". Service name is Dodai's call (see copy.ts). */
 const serviceLd = {
  '@context': 'https://schema.org',
  '@type': 'Service',
@@ -101,68 +102,61 @@ function Label({children}: {children: string}) {
  return <p className="ft-lbl">{children}</p>;
 }
 
-function Glyph() {
- return (
-  <span className="fx-mono" aria-hidden="true">
-   <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="#9c97b4" strokeWidth="1.4" strokeLinecap="round" strokeLinejoin="round">
-    <path d="M6 3.5h8.5l4 4v13H6z" />
-    <path d="M14.5 3.5v4h4" />
-    <path d="M8.8 11.5h6.8" />
-    <path d="M9 16.2l1.6 1.6 3.2-3.2" />
-   </svg>
-  </span>
- );
+function Slot({className}: {className?: string}) {
+ return <span className={className ? `slot ${className}` : 'slot'}>{CC_SLOT}</span>;
 }
 
-function HeroPanel() {
+/**
+ * Hero cycle card (Gohan comp V1.3.2, copy V1.3). Every state is server HTML in one grid cell;
+ * inactive states are visibility:hidden. State 4 is the rest state (no JS, reduced motion, end of pass).
+ * The cycle itself lives in cycle.ts (Dodai guardrail re-check, conditions 1 to 8 plus addenda).
+ */
+function CycleCard() {
  return (
   <div className="fx-hr">
-   <div className="fx-panel" id="trail" data-s="4">
-    <p className="fx-pl"><span>{HERO_PROMPT_LABEL}</span><span className="fx-sb">{HERO_PILL}</span></p>
-    <div className="fx-prompt"><i aria-hidden="true">›</i><span>{HERO_PROMPT}</span></div>
-    <div className="fx-trail">
-     <div className="fx-src">
-      <p className="fx-sh"><span className="fx-k">{SRC_HEAD[0]}</span><span aria-hidden="true">·</span><span>{SRC_HEAD[1]}</span></p>
-      <dl className="fx-rows">
-       {SRC_ROWS.map(([label, value], i) => (
-        <div className={i === 0 ? 'fx-r fx-cl' : 'fx-r'} key={label}>
-         {i === 0 ? <><span className="fx-hb" aria-hidden="true" /><span className="fx-lr" aria-hidden="true" /></> : null}
-         <dt>{label}</dt>
-         <dd>{value}</dd>
-        </div>
-       ))}
-      </dl>
-      <p className="fx-ref"><span>{SRC_REF[0]}</span><span aria-hidden="true">·</span><span>{SRC_REF[1]}</span></p>
+   <div className="cc fx-cycle" data-s="4">
+    <h2 id="cc-h" className="cc-h">{CC_HEADING}</h2>
+    <p className="cc-ps">
+     {CC_PROMPTS.map((prompt, i) => (
+      <Fragment key={prompt}>
+       {i > 0 ? ' ' : null}
+       <span className="cc-p" role="button" tabIndex={0} aria-pressed={i === 3} aria-controls="cc-panel"><span className="cc-t">{prompt}</span></span>
+      </Fragment>
+     ))}
+    </p>
+    <div className="cc-row">
+     <button type="button" className="cc-pause" aria-label={CC_PAUSE_LABEL} aria-pressed="false">
+      <svg className="i-pause" viewBox="0 0 14 14" aria-hidden="true"><rect x="2.5" y="1.5" width="3" height="11" rx="1" /><rect x="8.5" y="1.5" width="3" height="11" rx="1" /></svg>
+      <svg className="i-play" viewBox="0 0 14 14" aria-hidden="true"><path d="M3.5 1.8v10.4c0 .5.5.8.9.5l8-5.2a.6.6 0 0 0 0-1L4.4 1.3c-.4-.3-.9 0-.9.5z" /></svg>
+      <span>{CC_PAUSE}</span>
+     </button>
+    </div>
+    <p className="cc-live ft-vh" aria-live="polite" />
+    <div className="cc-panel" id="cc-panel" role="region" aria-label={CC_PANEL_LABEL}>
+     <p className="ft-vh">{CC_CAPTION}</p>
+     <div className="cc-q">
+      {CC_PROMPTS.map((prompt, i) => (
+       <p className={i === 3 ? 'cc-l is-in' : 'cc-l'} data-s={i + 1} key={prompt}><span className="fx-p">{prompt}</span></p>
+      ))}
      </div>
-     <div className="fx-ans2">
-      <p className="fx-pl"><span>{HERO_ANSWER_LABEL}</span><span>{HERO_ANSWER_STATE}</span></p>
-      <div className="fx-nm"><Glyph />{HERO_NAMED}</div>
-      <p className="fx-cla fx-k1"><span className="fx-lr" aria-hidden="true" /><span>{ANSWER_1[0]}<span className="fx-mv">{ANSWER_1[1]}</span>{ANSWER_1[2]}</span><button type="button" className="fx-chip fx-c1">{ANSWER_1_CHIP}</button></p>
-      <p className="fx-cla fx-k2"><span className="fx-lr" aria-hidden="true" /><span>{ANSWER_2}</span><button type="button" className="fx-chip fx-c2">{ANSWER_2_CHIP}</button></p>
-      <p className="fx-cla fx-k3"><span className="fx-lr" aria-hidden="true" /><span>{ANSWER_3}</span><button type="button" className="fx-chip fx-c3">{ANSWER_3_CHIP}</button></p>
-      <div className="fx-eng">
-       {ENGINES.map(row => (
-        <span key={row.engine}>{row.engine} <b className={row.hot ? 'fx-rec' : undefined}>{row.state}</b></span>
-       ))}
+     <div className="cc-a">
+      {CC_ANSWERS.map(([answer, chip], i) => (
+       <div className="cc-l" data-s={i + 1} key={chip}>
+        <p className="cc-ans fx-a"><Slot />{answer}</p>
+        <span className="cc-chip fx-c"><i />{chip}</span>
+       </div>
+      ))}
+      <div className="cc-l s4 is-in" data-s="4">
+       <p className="cc-intro fx-a r1">{CC_S4_INTRO}</p>
+       <ul className="cc-rows">
+        <li className="fx-a r1 m">{CC_S4_ROWS[0]}</li>
+        <li className="fx-a r2 m">{CC_S4_ROWS[1]}</li>
+        <li className="fx-a r3"><Slot />{CC_S4_MINE}</li>
+       </ul>
+       <span className="cc-chip fx-c"><i />{CC_S4_CHIP}</span>
       </div>
      </div>
-     <span className="fx-cx" aria-hidden="true"><i className="fx-s1" /><i className="fx-s2" /><i className="fx-s3" /></span>
-     <span className="fx-tok" aria-hidden="true">[fee]</span>
     </div>
-    <p className="ft-vh">{FIGURE_CAPTION}</p>
-   </div>
-   <div className="fx-steps">
-    <ol aria-label={STEPS_LABEL}>
-     {TRACE_STEPS.map(([label], i) => (
-      <li key={label}>
-       <button type="button" className="fx-st" aria-current={i === 3 ? 'step' : undefined}><span>{i + 1}</span>{label}</button>
-      </li>
-     ))}
-    </ol>
-    <button type="button" className="fx-rp" hidden>{REPLAY}</button>
-    <p className="fx-scap" aria-live="polite">
-     {TRACE_STEPS.map(([, caption], i) => <span key={caption} hidden={i !== 3}>{caption}</span>)}
-    </p>
    </div>
   </div>
  );
@@ -199,7 +193,7 @@ export default function FintechIndustry() {
         <p className="fx-adv">{ADVICE}</p>
         <p className="fx-adv fx-upd">{UPDATED}</p>
        </div>
-       <HeroPanel />
+       <CycleCard />
       </div>
       <ul className="fx-scope" aria-label={SECTORS_LABEL}>
        <li className="fx-cap" aria-hidden="true">{SECTORS_LABEL}</li>
@@ -256,7 +250,8 @@ export default function FintechIndustry() {
       <h2 id="ft-why-h">{H2_WHY}</h2>
       <p className="ft-ans">{DAL_WHY}</p>
       <div className="fx-wa">
-       <div className="fx-tc"><span className="fx-cap">{WRONG_LABEL}</span><span className="fx-cap fx-sb">{WRONG_PILL}</span></div>
+       <h3 className="ft-vh">{WRONG_CUE}</h3>
+       <div className="fx-tc"><span className="fx-cap">{WRONG_LABEL}</span></div>
        {WRONG_ROWS.map(([label, said, says]) => (
         <div className="fx-war" key={label}>
          <h3>{label}</h3>
@@ -297,13 +292,14 @@ export default function FintechIndustry() {
       </ol>
       <p className="fx-note">{DATA_LINE}</p>
       <div className="fx-rc fx-chg" id="rc">
-       <div className="fx-tc"><h3 className="fx-cap fx-rch">{RATE_HEADING}</h3><span className="fx-cap fx-sb">{RATE_PILL}</span></div>
+       <p className="ft-vh">{RATE_CUE}</p>
+       <div className="fx-tc"><h3 className="fx-cap fx-rch">{RATE_HEADING}</h3></div>
        <div className="fx-rcg">
         <div className="fx-rsrc">
          <small className="fx-k">{RATE_CARD_LABEL}</small>
-         <p className="fx-v">{RATE_SOURCE[0]}</p>
-         <p className="fx-rf2">{`${RATE_SOURCE[1]} · ${RATE_SOURCE[2]}`}</p>
-         <p className="fx-now">{RATE_CHANGED}</p>
+         <p className="fx-v"><Slot className="slot--pre slot--inherit" />{RATE_VALUE_AFTER_SLOT}<span className="fx-vf"><span className="fx-v0">{RATE_OLD}</span><span className="fx-v1">{RATE_NEW}</span></span></p>
+         <p className="fx-rf2">{RATE_REF}</p>
+         <p className="fx-now">Was <span className="fx-sk">{RATE_OLD}</span>, now {RATE_NEW}</p>
         </div>
         <div>
          <h3>{RATE_PAGES_H}</h3>
@@ -314,12 +310,17 @@ export default function FintechIndustry() {
         <div>
          <h3>{RATE_ANSWERS_H}</h3>
          <ul className="fx-rl">
-          {RATE_ANSWERS.map(([name, label, hit]) => <li className={hit ? 'fx-hit' : 'fx-no'} key={name}><span>{name}</span><b className="fx-lab">{label}</b></li>)}
+          {RATE_ANSWERS.map(([before, slot, after]) => (
+           <li className="fx-hit" key={before + after}>
+            <span>{before}{slot ? <Slot className={before === '"' ? 'slot--post' : undefined} /> : null}{after}</span>
+            <b className="fx-lab">Re-check</b>
+           </li>
+          ))}
          </ul>
         </div>
        </div>
        <div className="fx-rcf">
-        <button type="button" className="fx-tg" aria-pressed="true" hidden><span className="fx-ta">{RATE_TOGGLE}</span><span className="fx-tb">{RATE_TOGGLE_PRESSED}</span></button>
+        <button type="button" className="fx-tg" hidden><span className="fx-ta">{RATE_TOGGLE}</span><span className="fx-tb">{RATE_TOGGLE_PRESSED}</span></button>
         <p className="fx-logw"><span className="fx-log">{RATE_LOG}</span></p>
         <p className="ft-vh" aria-live="polite" id="rclive" />
        </div>
@@ -346,7 +347,7 @@ export default function FintechIndustry() {
       <p className="ft-ans">{MKT_LEAD}</p>
       <div className="fx-mk">
        <p className="fx-mq"><i aria-hidden="true">›</i>{MKT_QUESTION}</p>
-       <div className="fx-mt" role="tablist" aria-label={MARKETS_LABEL}>
+       <div className="fx-mt" role="tablist" aria-label={MKT_TABLIST_LABEL}>
         {MARKETS.map((m, i) => (
          <button type="button" role="tab" id={`t-${m.id}`} aria-controls={m.id} aria-selected={i === 0} tabIndex={i === 0 ? 0 : -1} key={m.id}>{m.tab}</button>
         ))}
@@ -461,25 +462,27 @@ export default function FintechIndustry() {
     </section>
 
     <section className="ft-sec" id="ft-prompts" aria-labelledby="ft-prompts-h">
-     <div className="ft-w ft-split ft-split-start">
-      <div>
-       <Label>{LBL_PROMPTS}</Label>
-       <h2 id="ft-prompts-h">{H2_PROMPTS}</h2>
-       <p className="ft-ans">{DAL_PROMPTS}</p>
-       <ul className="ft-pls" role="list">
-        {PROMPTS.map(prompt => <li key={prompt}>{prompt}</li>)}
-       </ul>
-      </div>
-      <div className="ft-way ft-states">
+     <div className="ft-w">
+      <Label>{LBL_PROMPTS}</Label>
+      <h2 id="ft-prompts-h">{H2_PROMPTS}</h2>
+      <p className="ft-ans">{DAL_PROMPTS}</p>
+      <div className="ft-way ft-trk">
        <div className="ft-wh"><span className="ft-cap">{TRACKER_LABEL}</span></div>
-       <div className="ft-wq"><span className="ft-chev" aria-hidden="true">›</span>{HERO_PROMPT}</div>
-       {ENGINES.map(row => (
-        <div className="ft-state" key={row.engine}>
-         <span className="ft-bn">{HERO_NAMED}</span>
-         <span className="ft-eng">{row.engine}</span>
-         <span className={row.hot ? 'ft-tag is-hot' : 'ft-tag'}>{row.state}</span>
-        </div>
-       ))}
+       <table>
+        <caption className="ft-vh">{TRACKER_CUE}</caption>
+        <thead>
+         <tr>{TRACKER_HEADS.map(head => <th scope="col" key={head}>{head}</th>)}</tr>
+        </thead>
+        <tbody>
+         {PROMPTS.map(prompt => (
+          <tr key={prompt}>
+           <th scope="row"><span className="ft-chev" aria-hidden="true">›</span>{prompt}</th>
+           <td className="ft-eng">{TRACKER_ENGINES}</td>
+           <td><span className="ft-tag">{TRACKER_STATE}</span></td>
+          </tr>
+         ))}
+        </tbody>
+       </table>
       </div>
      </div>
     </section>
