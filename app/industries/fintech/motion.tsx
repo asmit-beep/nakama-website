@@ -23,7 +23,7 @@ export function FintechMotion() {
   const mq = matchMedia('(prefers-reduced-motion: reduce)');
   const hash = location.hash;
 
-  /* Hero cycle card: one pass, then rest on state 4 (cycle.ts). */
+  /* Hero cycle card: continuous loop through the 4 states (cycle.ts). */
   const cc = root.querySelector<HTMLElement>('.fx-cycle');
   if (cc) cleanups.push(startCycle(cc));
 

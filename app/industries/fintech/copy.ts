@@ -1,8 +1,8 @@
 /**
- * /industries/fintech · Hibiku DRAFT V1.2.9 strings
- * (HIBIKU-FINTECH-COPY-V1.2.9-2026-11-12.md) plus hero cycle card copy V1.3
+ * /industries/fintech · Hibiku DRAFT V1.3.2 strings
+ * (HIBIKU-FINTECH-COPY-V1.3.2-2026-11-12.md) plus hero cycle card copy V1.3
  * (soften/HIBIKU-FINTECH-CYCLE-CARD-COPY-V1.3-2026-11-12.md). Render these exactly.
- * Nakama Growth. No em or en dashes. Design: Gohan page comp v1.0.6.6 and cycle card
+ * Nakama Growth. No em or en dashes. Copy V1.3.0 (§09 discovery prompts). Design: Gohan page comp v1.0.6.6 and cycle card
  * comp V1.3.2 (Sozo CLEAR 12 Nov ~02:40 IST). No visible "Example" text (Yash, page-wide).
  *
  * PREVIEW. PREVIEW true keeps this route noindex, follow.
@@ -29,9 +29,8 @@ export const CTA_PRIMARY_HREF = '/pricing#quote';
 export const CTA_SECONDARY = 'AI visibility audit';
 export const CTA_SECONDARY_HREF = '/services/ai-visibility-audit';
 export const ADVICE = 'Nakama Growth gives marketing advice, not legal, regulatory or financial advice.';
-/** Filled at ship. Until then the placeholder renders as written in the copy file. */
+/** Filled at ship. Not rendered: the visible "Updated" line under the hero CTAs was removed (Yash, 12 Nov). Kept for the ship-day date fields (SHIP-FLIP item 1). */
 export const GO_LIVE_DATE = '{{GO_LIVE_DATE}}';
-export const UPDATED = `Updated ${GO_LIVE_DATE}`;
 
 /* 01a Sector chips (anchor links to the section 09 cards) */
 export const SECTORS_LABEL = 'Sectors';
@@ -62,9 +61,6 @@ export const CC_SLOT = 'Your brand';
 /** Screen reader only. Never visible. */
 export const CC_PANEL_LABEL = 'Example AI answer';
 export const CC_CAPTION = 'Example AI answers. Each one names a placeholder for your brand and shows where the reason came from.';
-export const CC_PAUSE_LABEL = 'Pause example answers';
-export const CC_PAUSE = 'Pause';
-export const CC_STOPPED = 'Autoplay stopped';
 export const CC_PROMPTS = [
  'Which personal loan app is good for a first-time borrower?',
  'Which crypto app should a beginner look at?',
@@ -259,13 +255,13 @@ export const DAL_WHO = 'Nakama Growth can work with fintech brands that sell to 
 export const SEG_FACTS = 'Facts to get right';
 export const SEG_PROMPT = 'Prompt';
 export const SEGMENTS: readonly {id: string; title: string; facts: string; prompt: string}[] = [
- {id: 'payments', title: 'Payments and money transfer', facts: 'Fees, supported countries, delivery times and which entity holds the licence', prompt: '"Does [brand] send money to [country], and who runs it there?"'},
- {id: 'lending', title: 'Lending', facts: 'The type of lender, who provides the credit and which markets the product serves. We do not write eligibility promises or representative examples', prompt: '"What kind of lender is [brand], and who provides the credit?"'},
- {id: 'neobanks', title: 'Neobanks and banking apps', facts: 'Which partner bank holds the money, which entity holds which licence and what the app offers in each market', prompt: '"Which bank holds the money in a [brand] account?"'},
- {id: 'wealth', title: 'Wealth and investing', facts: 'Which company runs the product, where it is registered and which products are offered in each market', prompt: '"Is [brand] registered in [market], and which company runs it?"'},
- {id: 'insurtech', title: 'Insurtech', facts: 'Whether the brand is the insurer, a broker or an agent, and which licensed insurer stands behind each product', prompt: '"Is [brand] an insurer or a broker?"'},
- {id: 'crypto', title: 'Crypto', facts: 'Which company operates the service in each market, and the registration or authorisation status it publishes where one applies', prompt: '"Which company operates [brand] in [market]?"'},
- {id: 'embedded-finance', title: 'Embedded finance and B2B fintech', facts: 'The partner bank or licensed provider behind the platform, supported markets and the docs and integration pages buyers read', prompt: '"Which payment platforms support payouts in the UK and EU?"'},
+ {id: 'payments', title: 'Payments and money transfer', facts: 'Fees, supported countries, delivery times and which entity holds the licence', prompt: '"Best international money transfer apps"'},
+ {id: 'lending', title: 'Lending', facts: 'The type of lender, who provides the credit and which markets the product serves. We do not write eligibility promises or representative examples', prompt: '"Best online personal loan apps"'},
+ {id: 'neobanks', title: 'Neobanks and banking apps', facts: 'Which partner bank holds the money, which entity holds which licence and what the app offers in each market', prompt: '"Best neobanks for freelancers"'},
+ {id: 'wealth', title: 'Wealth and investing', facts: 'Which company runs the product, where it is registered and which products are offered in each market', prompt: '"Best apps to start investing"'},
+ {id: 'insurtech', title: 'Insurtech', facts: 'Whether the brand is the insurer, a broker or an agent, and which licensed insurer stands behind each product', prompt: '"Best online insurance for small businesses"'},
+ {id: 'crypto', title: 'Crypto', facts: 'Which company operates the service in each market, and the registration or authorisation status it publishes where one applies', prompt: '"Top crypto exchanges for buying Bitcoin"'},
+ {id: 'embedded-finance', title: 'Embedded finance and B2B fintech', facts: 'The partner bank or licensed provider behind the platform, supported markets and the docs and integration pages buyers read', prompt: '"Best embedded finance platforms for SaaS"'},
 ];
 export const WHO_OUT = 'Paid ads, lead generation, loan lead resale, app builds and work for products that are not licensed or partnered where they operate are outside this page.';
 
@@ -318,11 +314,11 @@ export const PROMPTS = [
 /* 13 First 90 days */
 export const LBL_NINETY = '13 · First 90 days';
 export const H2_NINETY = 'Your first 90 days with Nakama Growth';
-export const DAL_NINETY = 'The first 90 days run in three phases. Days 1 to 30 build the prompt set, a baseline for each market and the entity map, and help you check licence, fee and market facts. Days 31 to 60 fix source, page and listing facts. Days 61 to 90 rerun the prompts and report each measure separately.';
+export const DAL_NINETY = "The first 90 days run in three phases. We learn your brand and set the baseline, push content and mentions hard where AI answers pull from, then show you where you now appear and where you don't yet.";
 export const PHASES: readonly [string, string][] = [
- ['Days 1 to 30 · Audit', 'Prompt set, baseline by market and engine, entity map, help with licence, fee and market checks, prioritized gaps'],
- ['Days 31 to 60 · Implement', 'Source, page and listing fixes, dated fact records, entity naming across profiles'],
- ['Days 61 to 90 · Measure', 'Repeat runs; report mentions, citations, recommendations and fact accuracy separately'],
+ ['Days 1 to 30 · Audit', 'Understand your brand and market, map competitors, set a baseline on the prompts that matter, find the gaps and build the content plan.'],
+ ['Days 31 to 60 · Push', 'Publish and fix content fast and often across your site, listings, YouTube, Reddit and press, the places ChatGPT, Perplexity, Gemini and Google AI Overviews pull answers from.'],
+ ['Days 61 to 90 · Measure', "Rerun every prompt and report mentions, citations and recommendations, so you see where you're visible and where you're not yet."],
 ];
 export const NINETY_LINE = 'Timing depends on how fast changes go live on your site. We do not promise that an engine will name you by day 90.';
 
@@ -336,7 +332,6 @@ export const FIT_YES = [
  'Licensed or partnered fintech brands with published product facts they can maintain',
  'Teams that want mentions, citations, recommendations and fact accuracy measured on an agreed prompt set',
  'Teams that serve customers in the US, UK, EU or India and want each market tracked on its own',
- 'Teams that accept that no one can guarantee placement in AI answers',
 ] as const;
 export const FIT_NO = [
  'Anyone who wants guaranteed ChatGPT mentions, sign-ups or applications',
@@ -359,7 +354,7 @@ export const FAQ: {q: string; a: string; href?: string; linkLabel?: string}[] = 
  },
  {
   q: 'How long before we see movement in AI answers?',
-  a: 'Engagements start with an audit and a 90 day plan. Early work is the entity map, help with licence, fee and market checks, and fixes to the sources behind wrong answers. We then rerun the same prompts in each market to see whether mentions, citations and recommendations move. We do not promise a date when an engine will name you.',
+  a: 'Engagements start with an audit and a 90 day plan. First we learn your brand, map competitors and set a baseline on the prompts that matter. Then we push content and mentions where AI answers pull from. We then rerun every prompt and report mentions, citations and recommendations. We do not promise a date when an engine will name you.',
  },
  {
   q: 'Can you guarantee ChatGPT will recommend our fintech brand?',

@@ -6,7 +6,7 @@ import {pageMeta, Crumbs, JsonLd, abs, SITE_URL} from '@/lib/seo';
 import {Shell} from '../../site';
 import {
  ADVICE, AUDIENCE, BOUND_LEAD, BOUND_LIST, BREADCRUMB, CC_ANSWERS, CC_CAPTION, CC_HEADING,
- CC_PANEL_LABEL, CC_PAUSE, CC_PAUSE_LABEL, CC_PROMPTS, CC_S4_CHIP, CC_S4_INTRO, CC_S4_MINE,
+ CC_PANEL_LABEL, CC_PROMPTS, CC_S4_CHIP, CC_S4_INTRO, CC_S4_MINE,
  CC_S4_ROWS, CC_SLOT, COVERS, CTA_PRIMARY, CTA_PRIMARY_HREF, CTA_SECONDARY, CTA_SECONDARY_HREF,
  DAL_DEF, DAL_DIFF, DAL_FIT, DAL_MAP, DAL_NINETY, DAL_PROMPTS, DAL_SRC, DAL_SVC, DAL_WHO, DAL_WHY,
  DATA_LINE, DEF_ENTITY, DIFF_HEADS, DIFF_ROWS, EVIDENCE, EYEBROW, FAQ, FIN_LEAD, FIT_NO, FIT_NO_H,
@@ -21,7 +21,7 @@ import {
  RATE_VALUE_AFTER_SLOT, RELATED, SCOPE_LINE, SECTORS, SECTORS_LABEL, SEG_FACTS, SEG_PROMPT,
  SEGMENTS, SERVICE_NAME, SERVICES, SLUG, SOURCES, SOURCES_LABEL, SRC_STEPS, STEPS, SURF_LEAD,
  SURFACES, SVC_GEO, TITLE, TRACKER_CUE, TRACKER_ENGINES, TRACKER_HEADS, TRACKER_LABEL,
- TRACKER_STATE, UPDATED, WHO_OUT, WRONG_CUE, WRONG_LABEL, WRONG_ROWS, WRONG_SAID, WRONG_SAYS,
+ TRACKER_STATE, WHO_OUT, WRONG_CUE, WRONG_LABEL, WRONG_ROWS, WRONG_SAID, WRONG_SAYS,
 } from './copy';
 import {FintechMotion} from './motion';
 import './fintech.css';
@@ -108,7 +108,7 @@ function Slot({className}: {className?: string}) {
 
 /**
  * Hero cycle card (Gohan comp V1.3.2, copy V1.3). Every state is server HTML in one grid cell;
- * inactive states are visibility:hidden. State 4 is the rest state (no JS, reduced motion, end of pass).
+ * inactive states are visibility:hidden. State 4 is the rest state (no JS, reduced motion); with JS the card loops 1 to 4 continuously.
  * The cycle itself lives in cycle.ts (Dodai guardrail re-check, conditions 1 to 8 plus addenda).
  */
 function CycleCard() {
@@ -120,19 +120,11 @@ function CycleCard() {
      {CC_PROMPTS.map((prompt, i) => (
       <Fragment key={prompt}>
        {i > 0 ? ' ' : null}
-       <span className="cc-p" role="button" tabIndex={0} aria-pressed={i === 3} aria-controls="cc-panel"><span className="cc-t">{prompt}</span></span>
+       <span className={i === 3 ? 'cc-p is-on' : 'cc-p'}><span className="cc-t">{prompt}</span></span>
       </Fragment>
      ))}
     </p>
-    <div className="cc-row">
-     <button type="button" className="cc-pause" aria-label={CC_PAUSE_LABEL} aria-pressed="false">
-      <svg className="i-pause" viewBox="0 0 14 14" aria-hidden="true"><rect x="2.5" y="1.5" width="3" height="11" rx="1" /><rect x="8.5" y="1.5" width="3" height="11" rx="1" /></svg>
-      <svg className="i-play" viewBox="0 0 14 14" aria-hidden="true"><path d="M3.5 1.8v10.4c0 .5.5.8.9.5l8-5.2a.6.6 0 0 0 0-1L4.4 1.3c-.4-.3-.9 0-.9.5z" /></svg>
-      <span>{CC_PAUSE}</span>
-     </button>
-    </div>
-    <p className="cc-live ft-vh" aria-live="polite" />
-    <div className="cc-panel" id="cc-panel" role="region" aria-label={CC_PANEL_LABEL}>
+    <div className="cc-panel" role="region" aria-label={CC_PANEL_LABEL}>
      <p className="ft-vh">{CC_CAPTION}</p>
      <div className="cc-q">
       {CC_PROMPTS.map((prompt, i) => (
@@ -190,8 +182,6 @@ export default function FintechIndustry() {
         <h1>{H1}</h1>
         <p className="ft-lead">{LEAD}</p>
         <Ctas />
-        <p className="fx-adv">{ADVICE}</p>
-        <p className="fx-adv fx-upd">{UPDATED}</p>
        </div>
        <CycleCard />
       </div>
