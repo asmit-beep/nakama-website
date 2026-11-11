@@ -7,9 +7,10 @@
  * Reduced motion: never starts, so the server rest state (4, payments) stays. No aria-live:
  * state changes are not announced; the panel keeps one static sr-only caption.
  * CSS transitions only. Returns a cleanup for soft navigation.
+ * Timing vars are read in ms or s: the production CSS minifier rewrites 5000ms as 5s.
  */
 export function startCycle(r: HTMLElement): () => void {
- const d = document, w = window, cs = getComputedStyle(r), v = (n: string) => parseFloat(cs.getPropertyValue('--fx-' + n));
+ const d = document, w = window, cs = getComputedStyle(r), v = (n: string) => { const x = cs.getPropertyValue('--fx-' + n).trim(); return parseFloat(x) * (/[^m]s$/.test(x) ? 1e3 : 1); };
  const H = v('hold'), H4 = v('hold-loop4'), SD = v('start-delay'), RM = v('resume-min'), EX = v('exit-dur');
  const rm = matchMedia('(prefers-reduced-motion: reduce)'), P = r.querySelectorAll('.cc-p');
  const L = (n: number) => r.querySelectorAll('.cc-l[data-s="' + (n + 1) + '"]'), hold = new Set<string>();

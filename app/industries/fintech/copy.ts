@@ -1,6 +1,6 @@
 /**
- * /industries/fintech · Hibiku DRAFT V1.3.2 strings
- * (HIBIKU-FINTECH-COPY-V1.3.2-2026-11-12.md) plus hero cycle card copy V1.3
+ * /industries/fintech · Hibiku DRAFT V1.3.3 strings
+ * (HIBIKU-FINTECH-COPY-V1.3.3-2026-11-12.md) plus hero cycle card copy V1.3
  * (soften/HIBIKU-FINTECH-CYCLE-CARD-COPY-V1.3-2026-11-12.md). Render these exactly.
  * Nakama Growth. No em or en dashes. Copy V1.3.0 (§09 discovery prompts). Design: Gohan page comp v1.0.6.6 and cycle card
  * comp V1.3.2 (Sozo CLEAR 12 Nov ~02:40 IST). No visible "Example" text (Yash, page-wide).
@@ -13,8 +13,8 @@
 export const PREVIEW = true;
 
 export const SLUG = '/industries/fintech';
-export const TITLE = 'Fintech GEO Agency | AI Visibility for Fintech Brands | Nakama Growth';
-export const META = 'Fintech GEO agency helping payments, lending, neobank, wealth, insurtech, crypto and embedded finance brands get named, cited and recommended in AI answers.';
+export const TITLE = 'Fintech GEO Agency | Fintech AI Visibility | Nakama Growth';
+export const META = 'Fintech GEO agency helping payments, lending, crypto and insurtech brands get named and cited in ChatGPT, Gemini and Google AI answers.';
 /** Schema Service name and serviceType. Dodai's call: "Fintech GEO" (sibling pattern) or "Generative engine optimization (GEO) for fintech". */
 export const SERVICE_NAME = 'Fintech GEO';
 export const BREADCRUMB = 'Fintech';
@@ -136,36 +136,13 @@ export const SRC_STEPS: readonly [string, string][] = [
 ];
 export const DATA_LINE = 'We work mainly from public sources and only ask for the access a task needs.';
 
-/* 05a When a fee changes. Only two invented figures on the page, both here. "Your brand" renders in the slot. */
-export const RATE_HEADING = 'When a fee changes';
-/** Screen reader only, first in the card. */
-export const RATE_CUE = "Illustration: a placeholder brand's fee change.";
-export const RATE_CARD_LABEL = 'Source';
-/** Value line: [slot]'s transfer fee to India: [$3.49 | $2.99] */
-export const RATE_VALUE_AFTER_SLOT = "'s transfer fee to India: ";
-export const RATE_OLD = '$3.49';
-export const RATE_NEW = '$2.99';
-export const RATE_REF = 'fees page · checked today';
-export const RATE_PAGES_H = 'Pages that state it';
-export const RATE_PAGES: readonly [string, string, boolean][] = [
- ['Send money to India page', 'Re-check', true],
- ['Comparison page', 'Re-check', true],
- ['FAQ on transfer costs', 'Re-check', true],
- ['About page', 'No change needed', false],
+/* 05a When a fee changes: static three step strip (V1.3.3). No figures, no brand slot. Step numbers come from the ol, not the copy. */
+export const FEE_HEADING = 'When a fee changes';
+export const FEE_STEPS: readonly [string, string][] = [
+ ['Your fee changes', 'You change a fee, and we log the new amount with the date and the page it comes from.'],
+ ['We update every page that states it', "We find each page and listing that shows the old fee and update it, or send your team the list for any we can't edit."],
+ ['We recheck the AI answers', 'We recheck the AI answers we track for the new fee and flag any that still show the old one.'],
 ];
-export const RATE_ANSWERS_H = 'AI answers we track for it';
-/** [before slot, slot or empty, after slot] */
-export const RATE_ANSWERS: readonly [string, string, string][] = [
- ['"Which apps send money to India?"', '', ''],
- ['"What does ', 'Your brand', ' charge to send money to India?"'],
- ['"', 'Your brand', ' vs App A for sending money to India"'],
-];
-export const RATE_LOG = 'Fee changed today. Three pages and three tracked answers marked for re-check.';
-export const RATE_TOGGLE = 'Show what happens when this fee changes';
-export const RATE_TOGGLE_PRESSED = 'Reset';
-export const RATE_LIVE = 'Fee changed. Three pages and three tracked answers marked for re-check.';
-/** Screen reader only (live region on reset). */
-export const RATE_LIVE_RESET = 'Example reset.';
 
 /* 06 Boundaries */
 export const LBL_BOUND = '06 · Boundaries';

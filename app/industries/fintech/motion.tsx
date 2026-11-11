@@ -1,7 +1,6 @@
 'use client';
 
 import {useEffect} from 'react';
-import {RATE_LIVE, RATE_LIVE_RESET} from './copy';
 import {startCycle} from './cycle';
 
 /**
@@ -38,21 +37,6 @@ export function FintechMotion() {
     o.observe(W);
     cleanups.push(() => o.disconnect());
    }
-  }
-
-  /* Concept C: rate change toggle */
-  const K = root.querySelector<HTMLElement>('#rc');
-  if (K) {
-   const b = K.querySelector<HTMLButtonElement>('.fx-tg')!;
-   const lv = root.querySelector<HTMLElement>('#rclive');
-   K.classList.remove('fx-chg');
-   b.hidden = false;
-   /* Taiken S3: no aria-pressed; the visible label swaps and the live region announces each change. */
-   on(b, 'click', () => {
-    const now = !K.classList.contains('fx-chg');
-    K.classList.toggle('fx-chg', now);
-    if (lv) lv.textContent = now ? RATE_LIVE : RATE_LIVE_RESET;
-   });
   }
 
   /* Concept B: four market tabs. Every panel stays in the HTML; unselected panels are visibility-hidden in one grid cell. */

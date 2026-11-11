@@ -9,16 +9,14 @@ import {
  CC_PANEL_LABEL, CC_PROMPTS, CC_S4_CHIP, CC_S4_INTRO, CC_S4_MINE,
  CC_S4_ROWS, CC_SLOT, COVERS, CTA_PRIMARY, CTA_PRIMARY_HREF, CTA_SECONDARY, CTA_SECONDARY_HREF,
  DAL_DEF, DAL_DIFF, DAL_FIT, DAL_MAP, DAL_NINETY, DAL_PROMPTS, DAL_SRC, DAL_SVC, DAL_WHO, DAL_WHY,
- DATA_LINE, DEF_ENTITY, DIFF_HEADS, DIFF_ROWS, EVIDENCE, EYEBROW, FAQ, FIN_LEAD, FIT_NO, FIT_NO_H,
+ DATA_LINE, DEF_ENTITY, DIFF_HEADS, DIFF_ROWS, EVIDENCE, EYEBROW, FAQ, FEE_HEADING, FEE_STEPS, FIN_LEAD, FIT_NO, FIT_NO_H,
  FIT_YES, FIT_YES_H, GEO_HREF, H1, H2_BOUND, H2_DEF, H2_FAQ, H2_FIN, H2_FIT, H2_MAP, H2_MKT,
  H2_NINETY, H2_PROMPTS, H2_SRC, H2_SURF, H2_SVC, H2_WHO, H2_WHY, H3_DIFF, LBL_BOUND, LBL_DEF,
  LBL_FAQ, LBL_FIN, LBL_FIT, LBL_MAP, LBL_MKT, LBL_NINETY, LBL_PROMPTS, LBL_SRC, LBL_SURF, LBL_SVC,
  LBL_WHO, LBL_WHY, LEAD, LISTINGS, LISTINGS_H, LISTINGS_SUB, MARKET_LINKS, MARKETS, MARKETS_LABEL,
  MARKETS_LINE, META, MID_LEAD, MKT_FOOTER, MKT_LEAD, MKT_QUESTION, MKT_ROW_LABELS,
  MKT_TABLIST_LABEL, NINETY_LINE, NOT_COVERED, PHASES, PREVIEW, PROMPTS, PROOF_LABEL, PROOF_LOGOS,
- RATE_ANSWERS, RATE_ANSWERS_H, RATE_CARD_LABEL, RATE_CUE, RATE_HEADING, RATE_LOG, RATE_NEW,
- RATE_OLD, RATE_PAGES, RATE_PAGES_H, RATE_REF, RATE_TOGGLE, RATE_TOGGLE_PRESSED,
- RATE_VALUE_AFTER_SLOT, RELATED, SCOPE_LINE, SECTORS, SECTORS_LABEL, SEG_FACTS, SEG_PROMPT,
+ RELATED, SCOPE_LINE, SECTORS, SECTORS_LABEL, SEG_FACTS, SEG_PROMPT,
  SEGMENTS, SERVICE_NAME, SERVICES, SLUG, SOURCES, SOURCES_LABEL, SRC_STEPS, STEPS, SURF_LEAD,
  SURFACES, SVC_GEO, TITLE, TRACKER_CUE, TRACKER_ENGINES, TRACKER_HEADS, TRACKER_LABEL,
  TRACKER_STATE, WHO_OUT, WRONG_CUE, WRONG_LABEL, WRONG_ROWS, WRONG_SAID, WRONG_SAYS,
@@ -281,39 +279,17 @@ export default function FintechIndustry() {
        ))}
       </ol>
       <p className="fx-note">{DATA_LINE}</p>
-      <div className="fx-rc fx-chg" id="rc">
-       <p className="ft-vh">{RATE_CUE}</p>
-       <div className="fx-tc"><h3 className="fx-cap fx-rch">{RATE_HEADING}</h3></div>
-       <div className="fx-rcg">
-        <div className="fx-rsrc">
-         <small className="fx-k">{RATE_CARD_LABEL}</small>
-         <p className="fx-v"><Slot className="slot--pre slot--inherit" />{RATE_VALUE_AFTER_SLOT}<span className="fx-vf"><span className="fx-v0">{RATE_OLD}</span><span className="fx-v1">{RATE_NEW}</span></span></p>
-         <p className="fx-rf2">{RATE_REF}</p>
-         <p className="fx-now">Was <span className="fx-sk">{RATE_OLD}</span>, now {RATE_NEW}</p>
-        </div>
-        <div>
-         <h3>{RATE_PAGES_H}</h3>
-         <ul className="fx-rl">
-          {RATE_PAGES.map(([name, label, hit]) => <li className={hit ? 'fx-hit' : 'fx-no'} key={name}><span>{name}</span><b className="fx-lab">{label}</b></li>)}
-         </ul>
-        </div>
-        <div>
-         <h3>{RATE_ANSWERS_H}</h3>
-         <ul className="fx-rl">
-          {RATE_ANSWERS.map(([before, slot, after]) => (
-           <li className="fx-hit" key={before + after}>
-            <span>{before}{slot ? <Slot className={before === '"' ? 'slot--post' : undefined} /> : null}{after}</span>
-            <b className="fx-lab">Re-check</b>
-           </li>
-          ))}
-         </ul>
-        </div>
-       </div>
-       <div className="fx-rcf">
-        <button type="button" className="fx-tg" hidden><span className="fx-ta">{RATE_TOGGLE}</span><span className="fx-tb">{RATE_TOGGLE_PRESSED}</span></button>
-        <p className="fx-logw"><span className="fx-log">{RATE_LOG}</span></p>
-        <p className="ft-vh" aria-live="polite" id="rclive" />
-       </div>
+      <div className="fx-fsw">
+       <div className="fx-tc"><h3 className="fx-cap fx-fsh">{FEE_HEADING}</h3></div>
+       <ol className="fx-fs">
+        {FEE_STEPS.map(([title, line], i) => (
+         <li key={title}>
+          <span className="fx-fsn" aria-hidden="true">{`0${i + 1}`}</span>
+          <h4>{title}</h4>
+          <p>{line}</p>
+         </li>
+        ))}
+       </ol>
       </div>
      </div>
     </section>

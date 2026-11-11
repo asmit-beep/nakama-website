@@ -532,39 +532,8 @@ main.ft-page .ft .fx-card{background:var(--s2);border:1px solid var(--hl);border
 main.ft-page .ft .fx-card h3{font-size:18px;margin:0 0 8px;letter-spacing:-.015em}
 main.ft-page .ft .fx-card p{font-size:14.5px;line-height:1.6;color:var(--mut);margin:0}
 main.ft-page .ft .fx-card .fx-n{display:block;font-size:12px;font-weight:700;letter-spacing:.16em;color:var(--vi);margin-bottom:14px;font-variant-numeric:tabular-nums}
-main.ft-page .ft .fx-rc{margin-top:28px;border:1px solid var(--hl2);border-radius:20px;background:var(--s2);overflow:hidden}
-main.ft-page .ft .fx-rc .fx-tc,main.ft-page .ft .fx-wa .fx-tc{display:flex;justify-content:space-between;align-items:center;padding:16px 26px;border-bottom:1px solid var(--hl)}
-main.ft-page .ft .fx-rc .fx-tc .fx-cap{color:var(--vi)}
-main.ft-page .ft .fx-rcg{display:grid;grid-template-columns:.9fr 1fr 1.2fr;gap:0}
-main.ft-page .ft .fx-rcg>div{padding:24px 26px;border-left:1px solid var(--hl)}
-main.ft-page .ft .fx-rcg>div:first-child{border-left:0}
-main.ft-page .ft .fx-rcg h3{font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:var(--mut);margin:0 0 10px;font-weight:700}
-main.ft-page .ft .fx-rsrc .fx-k{display:block;font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:var(--mut);font-weight:700}
-main.ft-page .ft .fx-rsrc .fx-v{font-size:19px;font-weight:700;margin:12px 0 4px;font-variant-numeric:tabular-nums}
-main.ft-page .ft .fx-rsrc .fx-rf2{font-size:13px;color:var(--mut);margin:0}
-main.ft-page .ft .fx-rsrc .fx-now{margin:16px 0 0;font-size:13.5px;color:var(--mut);font-variant-numeric:tabular-nums;transition:opacity .16s linear}
-/* 05a v1.0.6.6: struck old fee (strike note .now .sk:after{left:0;right:0}) and the big value switch */
-main.ft-page .ft .fx-now .fx-sk{position:relative;display:inline-block;color:var(--mut)}
-main.ft-page .ft .fx-now .fx-sk:after{content:"";position:absolute;left:0;right:0;top:54%;height:1.5px;background:var(--vi)}
-main.ft-page .ft .fx-vf{display:inline-grid}
-main.ft-page .ft .fx-vf>span{grid-area:1/1}
-main.ft-page .ft .fx-rc.fx-chg .fx-v0,main.ft-page .ft .fx-rc:not(.fx-chg) .fx-v1{visibility:hidden}
-main.ft-page .ft .fx-rl{list-style:none;margin:0;padding:0}
-main.ft-page .ft .fx-rl li{position:relative;display:flex;justify-content:space-between;gap:12px;align-items:center;padding:10px 0 10px 14px;border-top:1px solid var(--hl);font-size:14px;color:rgba(243,241,237,.86)}
-main.ft-page .ft .fx-rl li:before{content:"";position:absolute;left:0;top:8px;bottom:8px;width:2px;background:var(--vi);transform-origin:top;transition:transform .2s var(--ez)}
-main.ft-page .ft .fx-rl li.fx-no:before{display:none}
-main.ft-page .ft .fx-lab{font-size:10.5px;letter-spacing:.12em;text-transform:uppercase;font-weight:700;white-space:nowrap;color:var(--vi);transition:opacity .16s linear}
-main.ft-page .ft .fx-no .fx-lab{color:var(--mut)}
-main.ft-page .ft .fx-rcf{display:flex;align-items:center;gap:22px;padding:16px 26px;border-top:1px solid var(--hl)}
-main.ft-page .ft .fx-tg{min-width:340px;min-height:44px;padding:0 18px;border-radius:12px;border:1px solid var(--hl2);background:transparent;font-weight:700;font-size:14px;cursor:pointer}
-main.ft-page .ft .fx-rc .fx-ta{display:none}
-main.ft-page .ft .fx-rc:not(.fx-chg) .fx-ta{display:inline}
-main.ft-page .ft .fx-rc:not(.fx-chg) .fx-tb{display:none}
-main.ft-page .ft .fx-logw{margin:0;display:flex;align-items:center;gap:10px}
+main.ft-page .ft .fx-wa .fx-tc{display:flex;justify-content:space-between;align-items:center;padding:16px 26px;border-bottom:1px solid var(--hl)}
 main.ft-page .ft .fx-exl{flex:none;font-size:10.5px;letter-spacing:.16em;text-transform:uppercase;font-weight:700;color:var(--mut);border:1px solid var(--hl2);border-radius:6px;padding:3px 8px}
-main.ft-page .ft .fx-log{margin:0;font-size:13px;color:var(--mut);transition:opacity .16s linear}
-html.ft-js main.ft-page .ft .fx-rc:not(.fx-chg) .fx-lab,html.ft-js main.ft-page .ft .fx-rc:not(.fx-chg) .fx-log,html.ft-js main.ft-page .ft .fx-rc:not(.fx-chg) .fx-now{opacity:0}
-html.ft-js main.ft-page .ft .fx-rc:not(.fx-chg) .fx-rl li:before{transform:scaleY(0)}
 main.ft-page .ft .fx-mk{margin-top:44px;border:1px solid var(--hl2);border-radius:20px;background:#121013;overflow:hidden}
 main.ft-page .ft .fx-mq{margin:0;padding:18px 26px;font-size:16px;font-weight:600;border-bottom:1px solid var(--hl);background:var(--bg);display:flex;gap:8px}
 main.ft-page .ft .fx-mq i{color:var(--vi);font-style:normal}
@@ -619,12 +588,7 @@ main.ft-page .ft .fx-srcs span{margin:0 4px 0 0}
  main.ft-page .ft .fx-scope li.fx-cap{grid-column:1/3;border-top:0}
  main.ft-page .ft .fx-scope li:nth-child(2n){border-left:0;padding-left:0}
  main.ft-page .ft .fx-g4{grid-template-columns:1fr;gap:12px}
- main.ft-page .ft .fx-rcg{grid-template-columns:1fr}
- main.ft-page .ft .fx-rcg>div{border-left:0;border-top:1px solid var(--hl);padding:20px}
- main.ft-page .ft .fx-rcg>div:first-child{border-top:0}
- main.ft-page .ft .fx-rcf{flex-direction:column;align-items:stretch;gap:12px;padding:16px 20px}
- main.ft-page .ft .fx-tg{min-height:48px;width:100%;min-width:0}
- main.ft-page .ft .fx-rc .fx-tc,main.ft-page .ft .fx-wa .fx-tc{padding:14px 20px}
+ main.ft-page .ft .fx-wa .fx-tc{padding:14px 20px}
  main.ft-page .ft .fx-mq{padding:16px 20px;font-size:15px}
  main.ft-page .ft .fx-mt{padding:0 8px;gap:0}
  main.ft-page .ft .fx-mt [role=tab]{flex:1;min-width:0;padding:0 6px}
@@ -667,10 +631,6 @@ main.ft-page .ft .fx-srcs .fx-dot{margin:0 6px}
 main.ft-page .ft .fx-srcs a{display:inline;padding-block:4px}
 main.ft-page .ft .fx-war small,main.ft-page .ft .fx-said small{font-family:inherit}
 
-/* 05a rate example */
-main.ft-page .ft .fx-rch{margin:0;font-size:12px;letter-spacing:.18em;line-height:1.4;color:var(--vi);text-transform:uppercase}
-main.ft-page .ft .fx-rcg h3{line-height:1.4}
-html.ft-js main.ft-page .ft .fx-tg[hidden]{display:inline-block}
 
 /* 07 markets: every panel is server HTML. With JS all panels share one grid cell, so the reserve is always the
    tallest panel at the current width (no shift at 761-1439 or 376-389 px, Sozo note 1). Without JS they stack under H3s. */
@@ -714,9 +674,6 @@ main.ft-page .ft .fx-relrow{margin-top:28px}
 }
 @media (max-width:1100px) and (min-width:761px){
   main.ft-page .ft .fx-mkp dl>div{grid-template-columns:240px 1fr}
-  main.ft-page .ft .fx-rcg{grid-template-columns:1fr 1fr}
-  main.ft-page .ft .fx-rcg>div:first-child{grid-column:1/3;border-bottom:1px solid var(--hl)}
-  main.ft-page .ft .fx-rcg>div:nth-child(2){border-left:0}
 }
 @media (max-width:860px) and (min-width:761px){
   main.ft-page .ft .fx-scope{grid-template-columns:1fr 1fr 1fr 1fr;grid-auto-rows:48px;min-height:0}
@@ -887,4 +844,31 @@ main.ft-page .ft .ft-trk .ft-tag{display:inline-block;letter-spacing:.1em;white-
 @media (max-width:480px){
   main.ft-page .ft .ft-trk tbody tr{grid-template-columns:1fr}
   main.ft-page .ft .ft-trk td:last-child{grid-column:1;text-align:left}
+}
+
+/* 05a "When a fee changes": static three step strip (Sozo spec V1.0, copy V1.3.3). Server HTML, no JS, no transitions.
+   Step numbers are aria-hidden; the ol gives screen readers "1 of 3". Step 3 carries the one emphasis. */
+main.ft-page .ft .fx-fsw{margin-top:28px;border:1px solid var(--hl2);border-radius:20px;background:var(--s2);overflow:hidden}
+main.ft-page .ft .fx-fsw .fx-tc{display:flex;align-items:center;padding:16px 26px;border-bottom:1px solid var(--hl)}
+main.ft-page .ft .fx-fsh{margin:0;font-size:12px;letter-spacing:.18em;line-height:1.4;color:var(--vi);text-transform:uppercase}
+main.ft-page .ft .fx-fs{display:grid;grid-template-columns:repeat(3,1fr);list-style:none;margin:0;padding:0}
+main.ft-page .ft .fx-fs li{position:relative;padding:24px 26px;min-width:0}
+main.ft-page .ft .fx-fs li+li{border-left:1px solid var(--hl)}
+main.ft-page .ft .fx-fsn{position:relative;display:flex;align-items:center;gap:12px;font-size:12px;font-weight:700;letter-spacing:.16em;line-height:16px;color:var(--vil);font-variant-numeric:tabular-nums;margin-bottom:10px}
+main.ft-page .ft .fx-fs li:last-child .fx-fsn{color:var(--vi)}
+/* connector: number to the divider, ending in a 5px dot on the divider (steps 1 and 2) */
+main.ft-page .ft .fx-fs li:not(:last-child) .fx-fsn:after{content:"";flex:1;height:1px;margin-right:-26px;background:linear-gradient(var(--vir),var(--vir)) left center/calc(100% - 3px) 1px no-repeat,radial-gradient(circle,var(--vi) 2.5px,transparent 2.6px) right center/5px 5px no-repeat}
+main.ft-page .ft .fx-fs h4{margin:0;font-size:15px;line-height:1.4;font-weight:600;color:var(--cr)}
+main.ft-page .ft .fx-fs p{margin:6px 0 0;font-size:15px;line-height:1.55;color:var(--mut)}
+@media (max-width:1023px){
+ main.ft-page .ft .fx-fsw .fx-tc{padding:14px 20px}
+ main.ft-page .ft .fx-fs{grid-template-columns:1fr}
+ main.ft-page .ft .fx-fs li{padding:20px 20px 20px 59px}
+ main.ft-page .ft .fx-fs li+li{border-left:0;border-top:1px solid var(--hl)}
+ /* vertical connector down the left at the number's x, from number 1 to number 3; numbers sit on it with an s2 backing */
+ main.ft-page .ft .fx-fs li:before{content:"";position:absolute;left:31px;width:1px;background:var(--vir);top:0;bottom:0}
+ main.ft-page .ft .fx-fs li:first-child:before{top:28px}
+ main.ft-page .ft .fx-fs li:last-child:before{bottom:auto;height:28px}
+ main.ft-page .ft .fx-fsn{position:absolute;left:20px;top:20px;margin:0;padding:0;width:24px;justify-content:center;background:var(--s2);letter-spacing:.04em}
+ main.ft-page .ft .fx-fs li:not(:last-child) .fx-fsn:after{display:none}
 }
