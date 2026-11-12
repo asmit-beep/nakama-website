@@ -215,9 +215,15 @@ const matrixTable = `<div class="article-table"><table>
 </tbody>
 </table></div>`;
 
-/* Cover is page furniture (featured image, og/primary image, Keep reading card). It is not repeated in the body and does not replace the H1. */
+/* Cover is page furniture: the featured image shown once above the H1 (this article only, in its own bodyHtml chrome), plus the primary image and Keep reading card. og:image and twitter:image stay on the -og file. It is not repeated later in the body and does not replace the H1. */
+const coverHtml = `<figure class="article-cover" style="margin:8px 0 32px"><picture><source srcset="/journal/${SLUG}/${SLUG}-cover.webp" type="image/webp"><img src="/journal/${SLUG}/${SLUG}-cover.png" alt="${COVER_ALT}" width="1920" height="1080" fetchpriority="high" decoding="async"></picture></figure>`;
+/* Display-only H1: same locked words, with a line break after the comma. The space after the br keeps textContent identical to H1; JSON-LD headline and all metadata use the unbroken H1 string. */
+const H1_DISPLAY = H1.replace('AI search, ', 'AI search,<br> ');
+/* This H1 only: lift the shared 18ch cap and size the type so line 1 (through the comma) fits the 1040px column, giving two lines on desktop and tablet. Phones keep 34px and may wrap line 1, but the break after the comma holds. */
+const H1_STYLE = 'max-width:none;font-size:clamp(34px,4.6vw,54px)';
 const bodyHtml = `<nav aria-label="Breadcrumb" class="article-breadcrumb"><ol style="list-style:none;display:flex;flex-wrap:wrap;gap:.5rem;padding:0;margin:0 0 1.25rem;font-size:.9rem"><li><a href="https://www.nakama.in/">Home</a></li><li aria-hidden="true">/</li><li><a href="https://www.nakama.in/resources">Resources</a></li><li aria-hidden="true">/</li><li aria-current="page">${TITLE}</li></ol></nav>
-<h1 id="${faqId(H1)}">${H1}</h1>
+${coverHtml}
+<h1 id="${faqId(H1)}" style="${H1_STYLE}">${H1_DISPLAY}</h1>
 <p class="byline">By <a href="${AUTHOR_URL}" rel="author">Asmit Choudhary</a>, AI &amp; GEO Strategist, Nakama Growth · ${FRESHNESS}</p>
 ${h2('What are the best ways to track brand mentions in AI search?')}
 <p>Use four methods together, because no single one sees every engine. <strong>Prompt sampling</strong> shows whether answers name you. <strong>Tracking tools</strong> repeat that sampling at scale. <strong>First-party reports and analytics</strong> show the citations and clicks that Google, Microsoft and your own site can count. <strong>Log and citation checks</strong> show which AI systems fetch your pages and which sources they lean on. Of the six engines covered here, only Google's and Microsoft's public documentation describes a first-party report for site owners. For ChatGPT, Perplexity and the Gemini app, you have to sample.</p>
