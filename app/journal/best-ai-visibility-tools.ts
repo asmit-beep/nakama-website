@@ -6,7 +6,7 @@ import type {Article} from './articles';
  * the RSS pubDate, the sitemap lastmod (via `date`) and the visible "Last updated ..." line.
  */
 const PUBLISHED_AT = '2026-10-23T18:20:08+05:30';
-const MODIFIED_AT = PUBLISHED_AT;
+const MODIFIED_AT = '2026-11-12T23:42:00+05:30';
 
 const MONTHS = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
 const dayOf = (iso: string) => iso.slice(0, 10);
@@ -256,6 +256,7 @@ const bodyHtml = `<nav aria-label="Breadcrumb" class="article-breadcrumb"><ol st
 <p>Larger SaaS companies with several products, integrations and competitors will often need 100 or more prompts to cover them.</p>
 <h2 id="what-can-t-ai-visibility-tools-fix">What can't AI visibility tools fix?</h2>
 <p>AI visibility tools show where you are missing from AI answers. They do not earn the mentions that change those answers. Which sources AI cites also varies by engine and shifts over time. In Ahrefs' Brand Radar data, about 1 in 5 US ChatGPT answers cited Reddit in March 2026 and about 1 in 43 by late September, while Wikipedia fell from 1 in 7 answers to 1 in 35 (<a href="https://ahrefs.com/blog/query-fan-out-chatgpt/">Ahrefs, 12 Oct 2026</a>). Ahrefs reads this as ChatGPT moving toward the sources that produce information, such as research bodies, regulators and brands. Use your tracker's source report to see which sites each engine cites for your prompts, engine by engine.</p>
+<p>Our guide to tracking brand mentions in AI search covers <a href="https://www.nakama.in/journal/track-brand-mentions-in-ai-search">what tools can't tell you</a>, and the four methods to use instead.</p>
 <p>Closing that gap takes content and off-site work: pages that answer buyer questions directly, placements on the sources each engine already cites, and steady tracking to prove what moved. Our guide to <a href="https://www.nakama.in/journal/ai-visibility-report-template">what a useful visibility report shows</a> covers that last step.</p>
 <p>This is the work Nakama Growth does for SaaS and AI companies. Nakama's <a href="https://www.nakama.in/services/ai-visibility-audit">AI visibility audit</a> is one way to start. If your tracker shows competitors winning prompts you should own, <a href="https://www.nakama.in/contact">talk to Nakama Growth</a> about a plan to close the gap.</p>
 <h2 id="faq">FAQ</h2>
@@ -285,8 +286,9 @@ export const bestAiVisibilityToolsArticle: Article = {
  readTime: '10 min read',
  motif: 'guide',
  metaTitle: "Best AI visibility tools in 2026: 9 compared for SaaS",
- date: dayOf(PUBLISHED_AT),
+ date: dayOf(MODIFIED_AT),
  publishedAt: PUBLISHED_AT,
+ modifiedAt: MODIFIED_AT,
  authorName: 'Yash Kumar',
  coverImage: {src: '/journal/best-ai-visibility-tools/ai-visibility-tools-og.webp', width: 1200, height: 630},
  ogImage: {
@@ -445,6 +447,7 @@ export const bestAiVisibilityToolsArticle: Article = {
   "heading": "What can't AI visibility tools fix?",
   "paragraphs": [
    "AI visibility tools show where you are missing from AI answers. They do not earn the mentions that change those answers. Which sources AI cites also varies by engine and shifts over time. In Ahrefs' Brand Radar data, about 1 in 5 US ChatGPT answers cited Reddit in March 2026 and about 1 in 43 by late September, while Wikipedia fell from 1 in 7 answers to 1 in 35 (Ahrefs, 12 Oct 2026). Ahrefs reads this as ChatGPT moving toward the sources that produce information, such as research bodies, regulators and brands. Use your tracker's source report to see which sites each engine cites for your prompts, engine by engine.",
+   "Our guide to tracking brand mentions in AI search covers what tools can't tell you, and the four methods to use instead.",
    "Closing that gap takes content and off-site work: pages that answer buyer questions directly, placements on the sources each engine already cites, and steady tracking to prove what moved. Our guide to what a useful visibility report shows covers that last step.",
    "This is the work Nakama Growth does for SaaS and AI companies. Nakama's AI visibility audit is one way to start. If your tracker shows competitors winning prompts you should own, talk to Nakama Growth about a plan to close the gap."
   ]

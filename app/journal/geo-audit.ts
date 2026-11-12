@@ -8,7 +8,7 @@ import type {Article} from './articles';
  */
 export const GEO_AUDIT_PUBLISHED_AT = '2026-10-21T16:25:35+05:30';
 const PUBLISHED_AT = GEO_AUDIT_PUBLISHED_AT;
-const MODIFIED_AT = PUBLISHED_AT;
+const MODIFIED_AT = '2026-11-12T23:42:00+05:30';
 
 const MONTHS = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
 const dayOf = (iso: string) => iso.slice(0, 10);
@@ -191,6 +191,7 @@ const bodyHtml = `<nav aria-label="Breadcrumb" class="article-breadcrumb"><ol st
 <p>As a working guideline, keep each heading's lead answer between 40 and 60 words. Google states structured data isn't required for its generative AI features (<a href="https://developers.google.com/search/docs/fundamentals/ai-optimization-guide">Google</a>), so answers and facts carry the weight. For ChatGPT-specific tactics, read our guide on <a href="https://www.nakama.in/journal/how-to-rank-in-chatgpt">how to rank in ChatGPT</a>.</p>
 <h2 id="how-do-you-measure-results-over-time">How do you measure results over time?</h2>
 <p>Rerun the same frozen prompt set on the same engines every month, with the same run count, and compare mention, recommendation and citation rates against your baseline. Keep visibility metrics and pipeline metrics in separate columns.</p>
+<p>A companion guide covers how to <a href="https://www.nakama.in/journal/track-brand-mentions-in-ai-search">track brand mentions across engines</a>.</p>
 <p>For first-party data, use Google Search Console's Generative AI performance report, which Google recommends for seeing how content performs in its AI features (<a href="https://developers.google.com/search/docs/fundamentals/ai-optimization-guide">Google</a>), and Bing's AI Performance report, which shows total citations, cited pages, grounding queries and page-level activity across Copilot and Bing AI summaries (<a href="https://blogs.bing.com/webmaster/2026/2/Introducing-AI-Performance-in-Bing-Webmaster-Tools-Public-Preview/">Bing</a>). Treat these counts as directional; the report is still in preview. Our roundup of <a href="https://www.nakama.in/journal/peec-ai-alternatives">Peec AI alternatives</a> and our <a href="https://www.nakama.in/journal/best-ai-visibility-tools">best AI visibility tools</a> guide compare paid trackers.</p>
 <h2 id="the-geo-audit-checklist">The GEO audit checklist</h2>
 <p>Copy this into a sheet and add Pass/Fail, Owner and Due columns.</p>
@@ -235,8 +236,9 @@ export const geoAuditArticle: Article = {
  readTime: '11 min read',
  motif: 'guide',
  metaTitle: "GEO audit: how to check your SaaS brand's AI visibility",
- date: dayOf(PUBLISHED_AT),
+ date: dayOf(MODIFIED_AT),
  publishedAt: PUBLISHED_AT,
+ modifiedAt: MODIFIED_AT,
  authorName: 'Yash Kumar',
  coverImage: {src: '/journal/geo-audit/geo-audit-hero.png', width: 1200, height: 630},
  ogImage: {
@@ -361,6 +363,7 @@ export const geoAuditArticle: Article = {
   "heading": "How do you measure results over time?",
   "paragraphs": [
    "Rerun the same frozen prompt set on the same engines every month, with the same run count, and compare mention, recommendation and citation rates against your baseline. Keep visibility metrics and pipeline metrics in separate columns.",
+   "A companion guide covers how to track brand mentions across engines.",
    "For first-party data, use Google Search Console's Generative AI performance report, which Google recommends for seeing how content performs in its AI features ( Google ), and Bing's AI Performance report, which shows total citations, cited pages, grounding queries and page-level activity across Copilot and Bing AI summaries ( Bing ). Treat these counts as directional; the report is still in preview. Our roundup of Peec AI alternatives and our best AI visibility tools guide compare paid trackers."
   ]
  },

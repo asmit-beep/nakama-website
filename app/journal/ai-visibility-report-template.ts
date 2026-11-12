@@ -11,7 +11,7 @@ import type {Article} from './articles';
  */
 export const PUBLISHED_AT = '2026-10-26T17:10:00+05:30';
 export const AI_VISIBILITY_REPORT_TEMPLATE_PUBLISHED_AT = PUBLISHED_AT;
-const MODIFIED_AT = PUBLISHED_AT;
+const MODIFIED_AT = '2026-11-12T23:42:00+05:30';
 
 const MONTHS = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
 const dayOf = (iso: string) => iso.slice(0, 10);
@@ -243,7 +243,7 @@ ${fig('aiviz-template-four-beats', 'Four parts of a useful AI visibility report 
 <p>Every month should close with one decision: keep going, change the content, earn mentions on a source that keeps getting cited, or bring in a deeper audit.</p>
 <p>A report without a decision becomes a ritual. The Decision tab asks for a next action and an owner, so the report produces work rather than just a status update.</p>
 <h2 id="how-to-run-a-monthly-sample">How to run a monthly sample</h2>
-<p>This is the part most teams are actually searching for when they ask how to track brand mentions in ChatGPT. The method is simple. Consistency is what makes it useful.</p>
+<p>For the methods behind it, see <a href="https://www.nakama.in/journal/track-brand-mentions-in-ai-search">how to track brand mentions in AI search</a>. The method is simple. Consistency is what makes it useful.</p>
 <p>Method checked 26 October 2026.</p>
 ${fig('aiviz-template-method', 'Monthly AI visibility sampling method with seven runs per prompt per engine', 1600, 900)}
 <ol>
@@ -313,8 +313,9 @@ export const aiVisibilityReportTemplateArticle: Article = {
  readTime: '9 min read',
  motif: 'guide',
  metaTitle: TITLE,
- date: dayOf(PUBLISHED_AT),
+ date: dayOf(MODIFIED_AT),
  publishedAt: PUBLISHED_AT,
+ modifiedAt: MODIFIED_AT,
  authorName: 'Yash Kumar',
  coverImage: {src: `/journal/${SLUG}/aiviz-template-hero.webp`, width: 1600, height: 900},
  ogImage: {
@@ -388,7 +389,7 @@ export const aiVisibilityReportTemplateArticle: Article = {
   {
    heading: 'How to run a monthly sample',
    paragraphs: [
-    'This is the part most teams are actually searching for when they ask how to track brand mentions in ChatGPT. The method is simple. Consistency is what makes it useful.',
+    'For the methods behind it, see how to track brand mentions in AI search. The method is simple. Consistency is what makes it useful.',
     'Method checked 26 October 2026.',
     'Make your copy and set your terms. Copy the sheet, then replace the placeholders in the Prompt library with your brand, your category, your main competitors, your buyer roles and the problems you solve.',
     'Pick a prompt set and freeze it. Keep the IDs stable from month to month. If you retire a prompt, mark it in Notes rather than reusing its ID. Cover all four intents: brand, category, competitor and problem.',

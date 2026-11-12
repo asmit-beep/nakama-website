@@ -8,7 +8,7 @@ import type {Article} from './articles';
  */
 export const ANSWER_ENGINE_OPTIMIZATION_PUBLISHED_AT = '2026-10-25T16:13:12+05:30';
 const PUBLISHED_AT = ANSWER_ENGINE_OPTIMIZATION_PUBLISHED_AT;
-const MODIFIED_AT = '2026-11-11T03:10:00+05:30';
+const MODIFIED_AT = '2026-11-12T23:42:00+05:30';
 
 const MONTHS = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
 const dayOf = (iso: string) => iso.slice(0, 10);
@@ -122,7 +122,7 @@ const articleLd = {
      "name": "How do I track whether ChatGPT mentions my SaaS?",
      "acceptedAnswer": {
       "@type": "Answer",
-      "text": "Build a fixed list of buyer prompts, run them in ChatGPT on a set schedule from the locations you sell into, and log which brands and URLs get cited. Our AI visibility tools guide compares trackers that automate this. Keep the prompt list fixed between runs."
+      "text": "Build a fixed list of buyer prompts, run them in ChatGPT on a set schedule from the locations you sell into, and log which brands and URLs get cited. Our AI visibility tools guide compares trackers that automate this. Keep the prompt list fixed between runs. For a cross-engine method, see how to track brand mentions in AI search."
      }
     },
     {
@@ -229,7 +229,7 @@ const bodyHtml = `<nav aria-label="Breadcrumb" class="article-breadcrumb"><ol st
 <h3 id="which-pages-should-a-saas-company-fix-first-for-aeo">Which pages should a SaaS company fix first for AEO?</h3>
 <p>Start with the pages that answer factual prompts: pricing, features and docs. Factual questions cite official sites most often, so make prices, plans and capabilities clear in plain text. Then move to the third-party pages engines cite for comparison prompts.</p>
 <h3 id="how-do-i-track-whether-chatgpt-mentions-my-saas">How do I track whether ChatGPT mentions my SaaS?</h3>
-<p>Build a fixed list of buyer prompts, run them in ChatGPT on a set schedule from the locations you sell into, and log which brands and URLs get cited. Our <a href="https://www.nakama.in/journal/best-ai-visibility-tools">AI visibility tools</a> guide compares trackers that automate this. Keep the prompt list fixed between runs.</p>
+<p>Build a fixed list of buyer prompts, run them in ChatGPT on a set schedule from the locations you sell into, and log which brands and URLs get cited. Our <a href="https://www.nakama.in/journal/best-ai-visibility-tools">AI visibility tools</a> guide compares trackers that automate this. Keep the prompt list fixed between runs. For a cross-engine method, see <a href="https://www.nakama.in/journal/track-brand-mentions-in-ai-search">how to track brand mentions in AI search</a>.</p>
 <h3 id="is-aeo-worth-it-for-early-stage-saas">Is AEO worth it for early-stage SaaS?</h3>
 <p>Early-stage teams can start cheaply. Opening crawler access and publishing clear pricing and feature pages cost little, and factual prompts favour official sources. Off-site work can scale later as your category prompts become clear. Start by tracking ten to twenty buyer prompts so you can see which ones move first.</p>
 <h2 id="about-the-author">About the author</h2>
@@ -451,7 +451,7 @@ export const answerEngineOptimizationArticle: Article = {
  {
   "heading": "How do I track whether ChatGPT mentions my SaaS?",
   "paragraphs": [
-   "Build a fixed list of buyer prompts, run them in ChatGPT on a set schedule from the locations you sell into, and log which brands and URLs get cited. Our AI visibility tools guide compares trackers that automate this. Keep the prompt list fixed between runs."
+   "Build a fixed list of buyer prompts, run them in ChatGPT on a set schedule from the locations you sell into, and log which brands and URLs get cited. Our AI visibility tools guide compares trackers that automate this. Keep the prompt list fixed between runs. For a cross-engine method, see how to track brand mentions in AI search."
   ]
  },
  {
