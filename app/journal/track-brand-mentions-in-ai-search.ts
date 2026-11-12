@@ -5,15 +5,16 @@ import type {Article} from './articles';
  * It feeds datePublished and dateModified. The visible freshness line stays
  * "Checked 12 November 2026".
  *
- * PREVIEW ONLY. This date is a preview placeholder; the production date is set on Yash GO.
- * PREVIEW true keeps robots at noindex,follow and leaves this note out of the sitemap,
- * llms.txt, llms-full.txt, RSS, the resources index and the author index (feedArticles,
- * articlesBy and the resources page all filter on noindex).
+ * PREVIEW is false: noindex is off, so this note is listed in the sitemap, llms.txt,
+ * llms-full.txt, RSS, the resources index and the author index (feedArticles, articlesBy
+ * and the resources page all filter on noindex). It is still on the draft PR and goes
+ * live only on a merge GO. Setting PREVIEW back to true restores noindex,follow and
+ * removes it from those lists.
  */
 export const TRACK_BRAND_MENTIONS_PUBLISHED_AT = '2026-11-12T09:00:00+05:30';
 const PUBLISHED_AT = TRACK_BRAND_MENTIONS_PUBLISHED_AT;
 const MODIFIED_AT = PUBLISHED_AT;
-const PREVIEW = true;
+const PREVIEW = false;
 
 const dayOf = (iso: string) => iso.slice(0, 10);
 
@@ -335,7 +336,7 @@ export const trackBrandMentionsInAiSearchArticle: Article = {
  publishedAt: PUBLISHED_AT,
  modifiedAt: MODIFIED_AT,
  authorName: 'Asmit Choudhary',
- /** PREVIEW: noindex,follow and kept out of the sitemap, llms.txt, llms-full.txt, RSS, resources and the author index. */
+ /** PREVIEW true sets noindex,follow and keeps this note out of the sitemap, llms.txt, llms-full.txt, RSS, resources and the author index. */
  noindex: PREVIEW,
  /** Keep reading goes to the AI visibility report template. A noindex preview can still show that one card. */
  nextSlug: 'ai-visibility-report-template',
