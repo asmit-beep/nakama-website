@@ -13,6 +13,9 @@ export function Logo({className=''}:{className?:string}){return <svg className={
 export function Booking({children='Book a conversation',className=''}:{children?:ReactNode,className?:string}){return <BookCallButton className={`button ${className}`}>{children}<ArrowUpRight size={17}/></BookCallButton>}
 export function Header(){
   const path=usePathname();
+  /* /industries and /industries/*: header CTA is "Book a call", a real server-rendered link to the quote form (Dodai MUST: never BookCallButton). Other paths keep "Contact us". */
+  const isIndustry=path==='/industries'||path.startsWith('/industries/');
+  const [ctaLabel,ctaHref]=isIndustry?['Book a call','/pricing#quote'] as const:['Contact us','/contact'] as const;
   const [open,setOpen]=useState(false);
   const [scrolled,setScrolled]=useState(false);
   useEffect(()=>{
@@ -25,13 +28,13 @@ export function Header(){
     <Link className="brand" href="/" aria-label="Nakama Growth home"><img className="nakama-gate-lockup" src="/brand/nakama-lockup-dark.svg" alt="Nakama" width="220" height="50"/></Link>
     <nav className="desktop-nav" aria-label="Main navigation"><div className={`nav-drop${companyLinks.some(([,h])=>path.startsWith(h))?' is-current':''}`}><button type="button" className="nav-drop-btn" aria-haspopup="true">Company<ChevronDown size={14}/></button><div className="nav-drop-panel"><div className="nav-drop-inner">{companyLinks.map(([label,href,sub])=><Link key={href} href={href} aria-current={path.startsWith(href)?'page':undefined}><b>{label}</b><small>{sub}</small></Link>)}</div></div></div><div className={`nav-drop${path.startsWith('/services')?' is-current':''}`}><button type="button" className="nav-drop-btn" aria-haspopup="true">Services<ChevronDown size={14}/></button><div className="nav-drop-panel"><div className="nav-drop-inner">{serviceLinks.map(([label,href])=><Link key={href} href={href} aria-current={path===href||path.startsWith(href+'/')?'page':undefined}><b>{label}</b></Link>)}</div></div></div><div className={`nav-drop${path.startsWith('/industries')?' is-current':''}`}><button type="button" className="nav-drop-btn" aria-haspopup="true">Industries<ChevronDown size={14}/></button><div className="nav-drop-panel"><div className="nav-drop-inner">{industryLinks.map(([label,href,sub])=><Link key={href} href={href} aria-current={(href==='/industries'?path===href:path===href||path.startsWith(href+'/'))?'page':undefined}><b>{label}</b><small>{sub}</small></Link>)}</div></div></div>{navigationLinks.map(([label,href])=><Link key={href} href={href} aria-current={path===href||path.startsWith(href+'/')?'page':undefined}>{label}</Link>)}</nav>
     <div className="nav-actions">
-      <Link className="nav-contact" href="/contact">Contact us<ArrowUpRight size={16}/></Link>
+      <Link className="nav-contact" href={ctaHref}>{ctaLabel}<ArrowUpRight size={16}/></Link>
       <Sheet open={open} onOpenChange={setOpen}>
         <SheetTrigger asChild><button className="menu-button" aria-label="Open navigation"><Menu size={21}/></button></SheetTrigger>
         <SheetContent className="mobile-menu">
           <SheetTitle>Nakama Growth</SheetTitle>
           <SheetDescription>Choose where to explore.</SheetDescription>
-          <nav>{[['Home','/'],...companyLinks.map(([l,h])=>[l,h] as const),...industryLinks.map(([l,h])=>[l,h] as const),...navigationLinks,['Contact us','/contact']].map(([label,href])=><SheetClose asChild key={`${label}-${href}`}><Link href={href} aria-current={path===href?'page':undefined}>{label}<ArrowUpRight size={18}/></Link></SheetClose>)}</nav>
+          <nav>{[['Home','/'],...companyLinks.map(([l,h])=>[l,h] as const),...industryLinks.map(([l,h])=>[l,h] as const),...navigationLinks,[ctaLabel,ctaHref]].map(([label,href])=><SheetClose asChild key={`${label}-${href}`}><Link href={href} aria-current={path===href?'page':undefined}>{label}<ArrowUpRight size={18}/></Link></SheetClose>)}</nav>
         </SheetContent>
       </Sheet>
     </div>
