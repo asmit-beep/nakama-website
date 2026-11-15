@@ -229,7 +229,8 @@ main.lf-page .lf .logos{padding:56px 0;border-top:1px solid var(--hl)}
 main.lf-page .lf .lgh{font-size:14px;font-weight:600;color:var(--mut);margin:0 0 20px}
 main.lf-page .lf .lr{list-style:none;margin:0;padding:0;display:flex;flex-wrap:wrap;align-items:center;gap:20px 56px}
 main.lf-page .lf .lr li{display:inline-flex;align-items:center;gap:10px;font-weight:700;font-size:17px;color:var(--mut)}
-main.lf-page .lf .lr img{filter:brightness(0) invert(1);opacity:.66}
+main.lf-page .lf .lr img{filter:brightness(0) invert(1);opacity:.66;height:28px;width:auto;object-fit:contain;display:block}
+main.lf-page .lf .lr li.is-word img{height:25px}
 main.lf-page .lf .faqw{display:grid;grid-template-columns:.8fr 1.2fr;gap:64px;align-items:start}
 main.lf-page .lf .lf-faq{border-top:1px solid var(--hl3)}
 main.lf-page .lf .lf-faq details{border-bottom:1px solid var(--hl)}
@@ -339,6 +340,9 @@ main.lf-page .lf .ph3:before{left:5px;right:auto;top:6px;bottom:6px;width:1px;he
 main.lf-page .lf .phs:before{top:3px;left:-28px}
 main.lf-page .lf .fit{grid-template-columns:1fr;gap:36px}
 main.lf-page .lf .lr{gap:18px 32px}
+main.lf-page .lf .lr img{height:22px}
+main.lf-page .lf .lr li.is-word img{height:19px}
+main.lf-page .lf .lr li{font-size:15px}
 main.lf-page .lf .lf-faq summary{font-size:16.5px}
 main.lf-page .lf .close h2{font-size:34px}
 main.lf-page .lf .rel{flex-direction:column;gap:6px}

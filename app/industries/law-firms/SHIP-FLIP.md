@@ -1,22 +1,15 @@
 # Ship flip · /industries/law-firms
 
-Preview only today. Nothing below is applied on this branch. Every item lands in ONE commit and ONE deploy, with `PREVIEW = false`, and only after Yash's own ship GO. Never land any of these before the flip (Dodai P0 5).
+Applied on the PR branch in one commit after Yash's own ship GO (16 Nov 2026, about 12:59 AM IST), together with his logo strip change. Production changes only when the PR merges. Source: DODAI-LAW-FIRMS-TECH-PREBRIEF (13 Nov 2026), sections 1, 2 and 11.
 
-Source: DODAI-LAW-FIRMS-TECH-PREBRIEF (13 Nov 2026), section 1, 2 and 11.
+Checklist as applied:
 
-1. `app/industries/law-firms/copy.ts`: `PREVIEW = false`; `GO_LIVE_DATE = '<ship day ISO>'`. `MODIFIED_DATE` follows `GO_LIVE_DATE`; bump it on any later content edit so WebPage `dateModified` agrees with the sitemap lastmod.
-2. `lib/feed.ts` `corePages` (feeds sitemap.xml and llms.txt Pages): import `META as LF_META, TITLE as LF_TITLE` from `@/app/industries/law-firms/copy`, add after fintech:
-   `{path:'/industries/law-firms',title:LF_TITLE,summary:LF_META,priority:.8,freq:'monthly',src:['app/industries/law-firms']}`.
-   The `/industries` row summary gains law firms (Totonoe locks the words).
-3. `lib/llms.ts` facts line ("Industries: healthcare, ecommerce, real estate and fintech, ..."): add law firms. Feeds llms.txt and llms-full.txt. llms-full gets no industry URL entry, same as siblings.
-4. `app/site.tsx` `industryLinks` (header Industries dropdown and the mobile menu read the same array): append `['Law firms','/industries/law-firms','<locked sub-line, proposed GEO for law firms>']`. Footer: NO change (hub only).
-5. `app/industries/page.tsx` hub:
-   - Card 05 (`ih-door ih-door-f`) after fintech, before SaaS: numeral 05, `h2 id="ih-law-firms"`, link "View law firms" to `/industries/law-firms`, icon from Gohan (`aria-hidden`).
-   - ItemList `numberOfItems: 5` plus `{'@type':'ListItem',position:5,name:'Law firms',url:abs('/industries/law-firms')}`.
-   - Hub FAQ "Which industries...": both `FAQ[1].text` and the `faqAnswer()` JSX, with `<Link href="/industries/law-firms">law firms</Link>`.
-   - Why table: sixth value per `WHY_ROWS` row, header cell `data-col="Law firms"`, and `industries.css` `repeat(5,...)` to `repeat(6,...)`.
-   - Hub `META`: add law firms (Totonoe lock; Dodai candidate is 149 chars).
-   - Design flag (Gohan/Kensa): 5 vertical cards leave an orphan cell in the 2-column `.ih-hall`.
-6. `next.config.ts` `redirects()`: `{source:'/industries/legal',destination:'/industries/law-firms',permanent:true}` and the same for `/industries/law`. One hop, 308, no others.
-7. Not in the flip unless Yash says GO: reverse `GEO for law firms` Related links on healthcare, ecommerce, real estate and fintech.
-8. Header "Book a call" CTA on `/industries/*` is a separate PR (`preview/industries-header-book-a-call`).
+1. `app/industries/law-firms/copy.ts`: `PREVIEW = false` (index, follow with the max-* tokens, self canonical); `GO_LIVE_DATE = '2026-11-16'`. `MODIFIED_DATE` follows `GO_LIVE_DATE`; bump it on any later content edit so WebPage `dateModified` agrees with the sitemap lastmod.
+2. Logo strip (Yash, 16 Nov 2026): heading and logo set now match the live industry pages ("Brands we have grown in AI search", Synup, Inventive AI, HubEngage, StarAgile, BacklinkOS). `LOGOS_LABEL` and `LOGOS` re-export fintech's `PROOF_LABEL` and `PROOF_LOGOS`, so the list is not forked. "(not law firms)" is gone.
+3. `lib/feed.ts` `corePages` (sitemap.xml and llms.txt Pages): law firms row after fintech; the `/industries` summary names law firms.
+4. `lib/llms.ts` facts line names law firms (llms.txt and llms-full.txt). llms-full gets no industry URL entry, same as siblings.
+5. `app/site.tsx` `industryLinks`: `['Law firms','/industries/law-firms','GEO for law firms']` (header dropdown and mobile menu). Footer: no change (hub only).
+6. `app/industries/page.tsx` hub: card 05 after fintech, before SaaS (`h2 id="ih-law-firms"`, "View law firms"); ItemList `numberOfItems: 5` plus position 5; hub FAQ "Which industries..." in both `FAQ[1].text` and `faqAnswer()` with the law firms link; Why table sixth column (`data-col="Law firms"`, `industries.css` `repeat(6,...)`); hub `META` names law firms.
+7. `next.config.ts` `redirects()`: `/industries/legal` and `/industries/law` to `/industries/law-firms`, permanent (308), one hop.
+8. Not done (needs Yash's separate GO): reverse `GEO for law firms` Related links on healthcare, ecommerce, real estate and fintech.
+9. Header "Book a call" CTA on `/industries/*` ships as its own PR (#104, `preview/industries-header-book-a-call`).

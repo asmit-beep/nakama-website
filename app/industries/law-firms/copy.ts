@@ -5,11 +5,11 @@
  * Design: Gohan comp v1.1.1 (Sozo cleared). Tech: DODAI-LAW-FIRMS-TECH-PREBRIEF (13 Nov 2026).
  * Nakama Growth. No em or en dashes.
  *
- * PREVIEW ONLY. PREVIEW true keeps this route noindex, follow, and preview deploys add X-Robots-Tag from proxy.ts.
- * Not in the sitemap, llms.txt, llms-full, corePages, header dropdown, footer or the /industries hub,
- * and no /industries/legal or /industries/law redirects. All of those land with the flip (see SHIP-FLIP.md).
+ * Live. Yash ship GO (16 Nov 2026, about 12:59 AM IST). Index, follow with a self canonical; in the sitemap, llms.txt,
+ * corePages, the header Industries dropdown and the /industries hub (card 05), with /industries/legal and
+ * /industries/law 308s to this route. Footer unchanged (hub only). See SHIP-FLIP.md.
  */
-export const PREVIEW = true;
+export const PREVIEW = false;
 
 export const SLUG = '/industries/law-firms';
 export const TITLE = 'GEO Agency for Law Firms | GEO for Law Firms | Nakama Growth';
@@ -21,7 +21,7 @@ export const BREADCRUMB = 'Law firms';
 /** Dodai's copy-derived proposal; Totonoe locks it. */
 export const AUDIENCE = 'Law firms with several attorneys, including personal injury, family, immigration, criminal defense, estate planning and employment firms';
 /** Ship date (ISO). Empty while PREVIEW: the WebPage node carries no dates until the flip sets this. */
-export const GO_LIVE_DATE = '';
+export const GO_LIVE_DATE = '2026-11-16';
 /** Bump on any later content edit so WebPage dateModified moves with the sitemap lastmod. Defaults to GO_LIVE_DATE. */
 export const MODIFIED_DATE = GO_LIVE_DATE;
 
@@ -190,14 +190,9 @@ export const FIT_NO = [
  'PPC or Google Local Services Ads management',
 ] as const;
 
-/* Logo strip (between Fit and FAQ). Existing site paths (public/clients/white, byte-identical to the comp logos; used by fintech). */
-export const LOGOS_LABEL = 'Teams we have grown in AI search (not law firms)';
-export const LOGOS = [
- {name: 'Inventive AI', src: '/clients/white/inventive.png', w: 28, h: 28, word: false},
- {name: 'HubEngage', src: '/clients/white/hubengage.png', w: 28, h: 28, word: false},
- {name: 'StarAgile', src: '/clients/white/staragile.png', w: 45, h: 28, word: false},
- {name: 'Synup', src: '/clients/white/synup.svg', w: 92, h: 25, word: true},
-] as const;
+/* Logo strip (between Fit and FAQ). Same heading and logo set as the live industry pages (Yash, 16 Nov 2026):
+ * reuses the fintech list instead of a forked copy. */
+export {PROOF_LABEL as LOGOS_LABEL, PROOF_LOGOS as LOGOS} from '../fintech/copy';
 
 /* 10 FAQ. Ids fixed by the spec. Visible text and FAQPage JSON-LD both read from this array. */
 export const H2_FAQ = 'FAQ about hiring a GEO agency for law firms';

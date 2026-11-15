@@ -17,7 +17,7 @@ import {
 } from './copy';
 import './law-firms.css';
 
-/** PREVIEW true: noindex, follow. The flip sets PREVIEW false (index, follow with the max-* tokens, as fintech). */
+/** PREVIEW false since the flip (16 Nov 2026): index, follow with the max-* tokens, as fintech. */
 const robots: Metadata['robots'] = PREVIEW
  ? {index: false, follow: true, googleBot: {index: false, follow: true}}
  : {index: true, follow: true, googleBot: {index: true, follow: true, 'max-image-preview': 'large', 'max-snippet': -1, 'max-video-preview': -1}};
@@ -379,9 +379,9 @@ export default function LawFirmsIndustry() {
     <section className="logos" aria-labelledby="lg-h">
      <div className="w">
       <p className="lgh" id="lg-h">{LOGOS_LABEL}</p>
-      <ul className="lr">
+      <ul className="lr" role="list" aria-labelledby="lg-h">
        {LOGOS.map(logo => (
-        <li key={logo.name}>
+        <li key={logo.name} className={logo.word ? 'is-word' : undefined}>
          {/* eslint-disable-next-line @next/next/no-img-element -- existing client marks, fixed size */}
          <img src={logo.src} alt={logo.word ? logo.name : ''} width={logo.w} height={logo.h} loading="lazy" decoding="async" />
          {logo.word ? null : <span>{logo.name}</span>}
