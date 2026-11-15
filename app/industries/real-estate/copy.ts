@@ -247,5 +247,6 @@ export const RELATED = [
  {label: 'GEO for healthcare brands', href: '/industries/healthcare'},
  {label: 'GEO for ecommerce brands', href: '/industries/ecommerce'},
  {label: 'GEO for fintech brands', href: '/industries/fintech'},
+ {label: 'GEO for law firms', href: '/industries/law-firms'},
  {label: 'See all industries', href: '/industries'},
 ] as const;

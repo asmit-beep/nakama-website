@@ -226,5 +226,6 @@ export const RELATED_LIVE = [
  {href: '/industries/healthcare', label: 'GEO for healthcare brands'},
  {href: '/industries/real-estate', label: 'AEO for real estate brokerages'},
  {href: '/industries/fintech', label: 'GEO for fintech brands'},
+ {href: '/industries/law-firms', label: 'GEO for law firms'},
  {href: '/industries', label: 'See all industries'},
 ] as const;

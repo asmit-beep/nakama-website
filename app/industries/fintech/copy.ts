@@ -382,5 +382,6 @@ export const RELATED_INDUSTRIES = [
  {label: 'Healthcare', href: '/industries/healthcare'},
  {label: 'Ecommerce', href: '/industries/ecommerce'},
  {label: 'Real Estate', href: '/industries/real-estate'},
+ {label: 'GEO for law firms', href: '/industries/law-firms'},
  {label: 'See all industries', href: '/industries'},
 ] as const;
