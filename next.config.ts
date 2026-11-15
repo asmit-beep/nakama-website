@@ -22,6 +22,8 @@ const nextConfig: NextConfig = {
       {source: "/industries/ecommerce-brands", destination: "https://www.nakama.in/industries/ecommerce", permanent: true},
       {source: "/industries/realestate", destination: "/industries/real-estate", permanent: true},
       {source: "/industries/real-estate-brokerages", destination: "/industries/real-estate", permanent: true},
+      {source: "/industries/legal", destination: "/industries/law-firms", permanent: true},
+      {source: "/industries/law", destination: "/industries/law-firms", permanent: true},
       {source: "/:path*", has: [{type: "host", value: "nakama-website.vercel.app"}], destination: "https://www.nakama.in/:path*", permanent: true},
       {source: "/journal/what-a-useful-visibility-report-shows", destination: "/journal/ai-visibility-report-template", permanent: true},
       {source: "/journal", destination: "/resources", permanent: true},
