@@ -14,7 +14,7 @@ import type {Article} from './articles';
  */
 export const TRACK_BRAND_MENTIONS_PUBLISHED_AT = '2026-11-12T09:00:00+05:30';
 const PUBLISHED_AT = TRACK_BRAND_MENTIONS_PUBLISHED_AT;
-const MODIFIED_AT = '2026-11-17T08:30:00+05:30';
+const MODIFIED_AT = '2026-11-17T02:00:00+05:30';
 const PREVIEW = false;
 
 const dayOf = (iso: string) => iso.slice(0, 10);

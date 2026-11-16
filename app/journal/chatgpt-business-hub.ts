@@ -11,10 +11,10 @@ import type {Article} from './articles';
  * llms-full.txt, RSS, the resources index and the author index (feedArticles, articlesBy
  * and the resources page all filter on noindex). Set PREVIEW to false only on a merge GO.
  */
-export const CHATGPT_BUSINESS_HUB_PUBLISHED_AT = '2026-11-17T09:00:00+05:30';
+export const CHATGPT_BUSINESS_HUB_PUBLISHED_AT = '2026-11-17T02:30:00+05:30';
 const PUBLISHED_AT = CHATGPT_BUSINESS_HUB_PUBLISHED_AT;
 const MODIFIED_AT = PUBLISHED_AT;
-const PREVIEW = true;
+const PREVIEW = false;
 
 const MONTHS = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
 const dayOf = (iso: string) => iso.slice(0, 10);
