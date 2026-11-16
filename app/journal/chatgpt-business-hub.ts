@@ -56,7 +56,7 @@ const FAQS: {q: string; a: string}[] = [
  },
  {
   q: "Can I claim a business someone else already claimed?",
-  a: "You can dispute it. Open the profile, select the more options menu (•••), choose Dispute ownership and verify with Persona that you are authorized to represent the business. OpenAI says disputing ownership does not change the profile's visibility in ChatGPT.",
+  a: "You can dispute it. Open the profile, choose Dispute ownership from the three-dot menu, and verify with Persona that you are authorized to represent the business. OpenAI says disputing ownership does not change the profile's visibility in ChatGPT.",
  },
 ];
 
@@ -311,7 +311,7 @@ ${h2("What if your business is missing, locked or already claimed?")}
 <ul>
 <li><strong>Not found.</strong> Online businesses: look for the option to add one. Local stores and restaurants outside the US have no route yet.</li>
 <li><strong>"Contact support" on the listing.</strong> The listing is locked. Select Contact support to request access.</li>
-<li><strong>Already claimed by someone else.</strong> Open the profile, select the more options menu (•••), then Dispute ownership, and verify with Persona that you are authorized to represent the business. OpenAI says disputing ownership does not change the profile's visibility.</li>
+<li><strong>Already claimed by someone else.</strong> Open the profile, select the three-dot menu, then Dispute ownership, and verify with Persona that you are authorized to represent the business. OpenAI says disputing ownership does not change the profile's visibility.</li>
 <li><strong>A duplicate or wrong listing.</strong> OpenAI's policy bars fake or duplicate profiles, but the help center does not document how to merge or remove a duplicate. Contact OpenAI Support. Support cannot delete, unpublish or hide a published profile as part of a setup or ownership request.</li>
 <li><strong>Brands on a managed claim process.</strong> Individual location profiles stay locked by default. Ask your OpenAI account contact which claim path to use.</li>
 </ul>
