@@ -232,14 +232,20 @@ const authorBox = `<div class="author-box" id="sandeep-kumar">
 </div>
 </div>`;
 
-/* Hero is page furniture: shown once above the H1, eager with fetchpriority high, WebP with a PNG fallback. og:image and twitter:image use the -og file. It is not repeated in the body. */
-const coverHtml = `<figure class="article-cover" style="margin:8px 0 32px"><picture><source srcset="/journal/${SLUG}/${SLUG}-hero.webp" type="image/webp"><img src="/journal/${SLUG}/${SLUG}-hero.png" alt="${HERO_ALT}" width="1600" height="900" fetchpriority="high" decoding="async"></picture></figure>`;
+/* Hero: shown once, below the byline as on the majority of journal posts (for example best-enterprise-ai-seo-agencies). Eager with fetchpriority high, WebP with a PNG fallback. og:image and twitter:image use the -og file. */
+const coverHtml = `<figure><picture><source srcset="/journal/${SLUG}/${SLUG}-hero.webp" type="image/webp"><img src="/journal/${SLUG}/${SLUG}-hero.png" alt="${HERO_ALT}" width="1600" height="900" fetchpriority="high" decoding="async"></picture></figure>`;
+
+/* H1: same override as geo-agency-vs-in-house (lift the shared 18ch cap, balance the lines) so this 64-character headline sets in 3 lines at 1440px like best-enterprise-ai-seo-agencies. Text unchanged. */
+const H1_STYLE = 'max-width:none;text-wrap:balance';
+
+/** On this page: same nav.toc markup as topics-vs-keywords (numbered, two columns at 960px and up), placed after the first answer section. Labels are short; hrefs come from faqId so each one resolves to its H2 id. */
+const toc = `<nav class="toc" aria-labelledby="toc-h"><p class="toc-head" id="toc-h">On this page <span>16 sections</span></p><ol><li><a href="#${faqId("Who can claim a business in ChatGPT, and can Indian businesses claim?")}">Who can claim, and India</a></li><li><a href="#${faqId("What do you need before you start?")}">What you need first</a></li><li><a href="#${faqId("How do you claim your business in ChatGPT, step by step?")}">Claim it step by step</a></li><li><a href="#${faqId("What if your business is missing, locked or already claimed?")}">Missing, locked or claimed</a></li><li><a href="#${faqId("What if Business Hub verification fails or stays pending?")}">Verification problems</a></li><li><a href="#${faqId("What can you edit in a ChatGPT business profile?")}">What you can edit</a></li><li><a href="#${faqId("How do you fix wrong hours or wrong details about your business in ChatGPT?")}">Fixing wrong details</a></li><li><a href="#${faqId("Is claiming your business in ChatGPT free?")}">Is it free?</a></li><li><a href="#${faqId("Does claiming your business improve your visibility in ChatGPT?")}">Does it improve visibility?</a></li><li><a href="#${faqId("What do Business Hub insights show, and how do they compare with GA4 and prompt tracking?")}">Insights vs GA4 and prompt tracking</a></li><li><a href="#${faqId("How is ChatGPT Business Hub different from Google Business Profile, Apple Business and Bing Places?")}">Vs Google, Apple and Bing</a></li><li><a href="#${faqId("How should an agency get access to a client's Business Hub?")}">Agency access</a></li><li><a href="#${faqId("What do you agree to when you claim your business in ChatGPT?")}">What you agree to</a></li><li><a href="#${faqId("What are ChatGPT business agents, and who can create one?")}">Business agents</a></li><li><a href="#${faqId("What should you do in the first 28 days after claiming?")}">Your first 28 days</a></li><li><a href="#${faqId("What else do people ask about Businesses in ChatGPT?")}">FAQ</a></li></ol></nav>`;
 
 const bodyHtml = `<nav aria-label="Breadcrumb" class="article-breadcrumb"><ol style="list-style:none;display:flex;flex-wrap:wrap;gap:.5rem;padding:0;margin:0 0 1.25rem;font-size:.9rem"><li><a href="https://www.nakama.in/">Home</a></li><li aria-hidden="true">/</li><li><a href="https://www.nakama.in/resources">Resources</a></li><li aria-hidden="true">/</li><li aria-current="page">${TITLE}</li></ol></nav>
-${coverHtml}
-<h1 id="${faqId(H1)}">${H1}</h1>
+<h1 id="${faqId(H1)}" style="${H1_STYLE}">${H1}</h1>
 <p>${FRESHNESS}</p>
-<p class="byline">By <a href="${AUTHOR_URL}" rel="author">Sandeep Kumar</a>, SEO and GEO Specialist, Nakama Growth</p>
+<p>By <a href="${AUTHOR_URL}" rel="author">Sandeep Kumar</a>, SEO and GEO Specialist, Nakama Growth</p>
+${coverHtml}
 <p>To claim your business in ChatGPT:</p>
 <ol>
 <li>Sign in to ChatGPT and open Business Hub from the sidebar.</li>
@@ -254,6 +260,7 @@ ${h2("What is ChatGPT Business Hub?")}
 <p>OpenAI's <a href="https://openai.com/policies/businesses-in-chatgpt-terms/" target="_blank" rel="noopener">Businesses in ChatGPT Terms</a> define Business Hub as "the interface within Businesses in ChatGPT through which businesses may create, claim, and manage their business listings and access and use the Tools."</p>
 <p>Your business may already have a listing. The Terms say OpenAI may create and display a listing "regardless of whether you claim, manage, or cease managing it" (section 4.1).</p>
 <p>Business Hub is not ChatGPT Business, which is OpenAI's paid workspace plan for teams.</p>
+${toc}
 ${h2("Who can claim a business in ChatGPT, and can Indian businesses claim?")}
 <p>An owner or authorized representative can claim a business in ChatGPT, and no Ads account or Enterprise agreement is needed. OpenAI says claiming works where ChatGPT is available and the required verification is supported. India is on ChatGPT's supported countries list, but OpenAI publishes no Business Hub country list, so Indian eligibility is likely but not confirmed.</p>
 <p>What OpenAI does confirm:</p>
