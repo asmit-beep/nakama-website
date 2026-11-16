@@ -2,8 +2,9 @@ import type {Article} from './articles';
 
 /**
  * PUBLISH TIME for this article. ISO 8601 with +05:30.
- * It feeds datePublished and dateModified. The visible freshness line stays
- * "Checked 12 November 2026".
+ * It feeds datePublished. MODIFIED_AT feeds dateModified, `date` and `modifiedAt` (bumped for the
+ * inbound link to /journal/chatgpt-business-hub). The visible freshness line reads
+ * "Checked 12 November 2026. Updated 17 November 2026."
  *
  * PREVIEW is false: noindex is off, so this note is listed in the sitemap, llms.txt,
  * llms-full.txt, RSS, the resources index and the author index (feedArticles, articlesBy
@@ -13,7 +14,7 @@ import type {Article} from './articles';
  */
 export const TRACK_BRAND_MENTIONS_PUBLISHED_AT = '2026-11-12T09:00:00+05:30';
 const PUBLISHED_AT = TRACK_BRAND_MENTIONS_PUBLISHED_AT;
-const MODIFIED_AT = PUBLISHED_AT;
+const MODIFIED_AT = '2026-11-17T02:00:00+05:30';
 const PREVIEW = false;
 
 const dayOf = (iso: string) => iso.slice(0, 10);
@@ -22,7 +23,7 @@ const SLUG = 'track-brand-mentions-in-ai-search';
 const TITLE = 'Best Ways to Track Brand Mentions in AI Search (2026)';
 const H1 = 'How to track brand mentions in AI search, engine by engine';
 const DESCRIPTION = 'Four ways to track brand mentions in AI search, from prompt sampling to logs, and what each one can show you on ChatGPT, Gemini and Copilot.';
-const FRESHNESS = 'Checked 12 November 2026';
+const FRESHNESS = 'Checked 12 November 2026. Updated 17 November 2026.';
 const CANONICAL = `https://www.nakama.in/journal/${SLUG}`;
 const COVER_ALT = 'Four ways to track brand mentions in AI search, mapped against six AI engines.';
 const OG_ALT = 'Track Brand Mentions in AI Search: four methods across six AI engines, a Nakama Growth journal guide.';
@@ -266,6 +267,7 @@ ${h2('Method 3: What do first-party reports and analytics show?')}
 <p><strong>Google AI Overviews and AI Mode.</strong> Google's guide points site owners to a Generative AI performance report in Search Console for its generative AI features on Search and Discover. Its AI features page also says clicks from AI Overviews and AI Mode are counted in the Performance report under the "Web" search type. Check which view your property shows; our <a href="https://www.nakama.in/journal/how-to-rank-in-google-ai-overviews#how-do-you-measure-ai-overview-visibility">AI Overviews guide</a> covers reading it. Like the rest of Search Console, it reports on your own pages, so a mention of your brand with no link to your site will not show there.</p>
 <p><strong>Copilot.</strong> The <a href="https://www2.bing.com/webmasters/help/ai-performance-9f8e7d6c">AI Performance report in Bing Webmaster Tools</a> shows total citations, cited pages, page-level citation counts and the grounding queries behind them, across Microsoft Copilot, AI summaries in Bing and some partner experiences. Microsoft states the data is a sample, "not a complete log", and that very low citation activity may not appear. A preview Citation Share view shows your share of the citations for a grounding query, but it does not name the other sites. Microsoft is also clear that a citation is not a click.</p>
 <p><strong>ChatGPT, Gemini and Copilot clicks in GA4.</strong> Google Analytics has an <a href="https://support.google.com/analytics/answer/9756891">AI Assistant default channel</a> for visits from sources such as ChatGPT, Gemini, Deepseek, Copilot and Grok. It excludes AI Overviews and AI Mode, which Google counts under Organic Search. So a GA4 report on "AI traffic" leaves out Google's own AI features unless you add Search Console. Some ChatGPT clicks also arrive with no referrer and show up as Direct, which our ChatGPT guide explains.</p>
+<p><strong>ChatGPT Business Hub.</strong> Businesses that claim their profile in ChatGPT now get a first-party report from OpenAI: mentions, website clicks and discovery topics over the past 28 days. For an online business, a mention counts only when ChatGPT references its website, so unlinked brand mentions still need prompt sampling. Our <a href="https://www.nakama.in/journal/chatgpt-business-hub">ChatGPT Business Hub guide</a> covers claiming a profile and reading the numbers.</p>
 <p><strong>What it can't tell you:</strong> anything about answers that mention you without a click or a link. Analytics counts visits, and the platform reports count citations of your pages.</p>
 ${h2('Method 4: What can log and citation checks reveal?')}
 <p>Server logs show which AI systems fetched your pages, and citation checks show which sources an engine relied on. Neither one is a mention count, but both explain why mentions move.</p>
