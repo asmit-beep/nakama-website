@@ -8,7 +8,7 @@ import type {Article} from './articles';
  */
 export const HOW_TO_RANK_IN_CHATGPT_PUBLISHED_AT = '2026-10-17T18:12:57+05:30';
 const PUBLISHED_AT = HOW_TO_RANK_IN_CHATGPT_PUBLISHED_AT;
-const MODIFIED_AT = '2026-11-12T23:42:00+05:30';
+const MODIFIED_AT = '2026-11-17T08:30:00+05:30';
 
 const MONTHS = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
 const dayOf = (iso: string) => iso.slice(0, 10);
@@ -284,6 +284,7 @@ const bodyHtml = `<nav aria-label="Breadcrumb" class="article-breadcrumb"><ol st
 </ol>
 <p>In that preprint, cited sources for runs within 24 hours had a mean Jaccard similarity of 0.32 to 0.43, pooled over four engines (Swiss-German prompts, Swiss servers, early 2026). For ChatGPT alone it was 0.23, and 57.8% of its runs returned no citations.</p>
 <p>In GA4, links in ChatGPT's answer text reportedly lost the utm_source=chatgpt.com tag from about 8 Oct 2026 (Huesler) or 9 Oct (Graphite), so some visits can appear as Direct. Adobe's Cedric Huesler says a fix began rolling out on 15 Oct, with tagged clicks back to roughly 95 to 100% of the same hour a week earlier by 9 a.m. Pacific (<a href="https://www.searchenginejournal.com/chatgpt-traffic-drop-appears-to-be-a-tracking-problem/593157/">Search Engine Journal, 15 Oct 2026</a>). Huesler says most ChatGPT clicks still arrive without a referrer, so count the UTM tag and annotate 8 to 15 Oct in GA4.</p>
+<p>If you have claimed your business in ChatGPT, OpenAI's Business Hub adds its own count: 28 days of mentions and website clicks, where a mention of an online business counts only when ChatGPT references its website. Our guide on <a href="https://www.nakama.in/journal/chatgpt-business-hub">how to claim your business in ChatGPT</a> explains what those numbers include and leave out.</p>
 <p>See also <a href="https://www.nakama.in/journal/ai-visibility-report-template">what a useful visibility report shows</a>.</p>
 <p>For other engines, see <a href="https://www.nakama.in/journal/track-brand-mentions-in-ai-search">how to track brand mentions in AI search</a>.</p>
 <h2 id="what-to-do-first">What should you do first?</h2>
@@ -355,7 +356,7 @@ export const howToRankInChatgptArticle: Article = {
   "heading": "Introduction",
   "paragraphs": [
    "How to rank in ChatGPT (and get cited): what works in 2026",
-   "Published 17 Oct 2026. Last updated 12 Nov 2026.",
+   "Published 17 Oct 2026. Last updated 17 Nov 2026.",
    "By Snehil Srivastava , CEO & Creative Director, Nakama Growth",
    "How to rank in ChatGPT starts with one fact: ChatGPT cites pages its own search retrieves, and a top Google position predicts little about which ones. Let OpenAI's search crawler in, answer the buyer's exact question in plain words, and earn other sites that name you.",
    "TL;DR",
@@ -441,6 +442,7 @@ export const howToRankInChatgptArticle: Article = {
    "Log mentions, position, cited URLs and competitors, and compare months.",
    "In that preprint, cited sources for runs within 24 hours had a mean Jaccard similarity of 0.32 to 0.43, pooled over four engines (Swiss-German prompts, Swiss servers, early 2026). For ChatGPT alone it was 0.23, and 57.8% of its runs returned no citations.",
    "In GA4, links in ChatGPT's answer text reportedly lost the utm_source=chatgpt.com tag from about 8 Oct 2026 (Huesler) or 9 Oct (Graphite), so some visits can appear as Direct. Adobe's Cedric Huesler says a fix began rolling out on 15 Oct, with tagged clicks back to roughly 95 to 100% of the same hour a week earlier by 9 a.m. Pacific ( Search Engine Journal, 15 Oct 2026 ). Huesler says most ChatGPT clicks still arrive without a referrer, so count the UTM tag and annotate 8 to 15 Oct in GA4.",
+   "If you have claimed your business in ChatGPT, OpenAI's Business Hub adds its own count: 28 days of mentions and website clicks, where a mention of an online business counts only when ChatGPT references its website. Our guide on how to claim your business in ChatGPT explains what those numbers include and leave out.",
    "See also what a useful visibility report shows .",
    "For other engines, see how to track brand mentions in AI search."
   ]
