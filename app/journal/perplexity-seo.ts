@@ -1,4 +1,5 @@
 import type {Article} from './articles';
+import {journalCta, stripJournalCta} from './cta';
 
 /**
  * PUBLISH TIME for this article. ISO 8601 with +05:30.
@@ -203,7 +204,29 @@ const h2 = (text: string) => `<h2 id="${faqId(text)}">${text}</h2>`;
 
 const faqHtml = FAQS.map(({q, a}) => `<h3 id="${faqId(q)}">${q}</h3>\n<p>${a}</p>`).join('\n');
 
-const quoteLink = `<p><a href="${QUOTE_URL}">Get a quote</a></p>`;
+/** Journal CTAs (cta.ts, Kaimen spec v1.0.1, Sozo CLEAR). Copy verbatim from cta/mocks/HANDOFF.md. Each one replaces its lead-in line and the bare Get a quote link. */
+const cta1 = journalCta({
+ variant: 'inline',
+ id: 'perplexity-seo-1',
+ headline: 'Want us to run these six steps?',
+ sub: 'Tell us your category and the questions your buyers ask. We confirm scope on a 15-minute pricing call, then send a written proposal.',
+ buttonHref: QUOTE_URL,
+});
+const cta2 = journalCta({
+ variant: 'inline',
+ id: 'perplexity-seo-2',
+ headline: 'Missing an owner for part of this?',
+ sub: 'Crawler access, page rewrites or monthly prompt sampling. Tell us which parts your team cannot staff and where you are stuck.',
+ buttonHref: QUOTE_URL,
+});
+/** End band. The free AI visibility check secondary link is on by default; secondaryLabel: null switches it off. */
+const ctaBand = journalCta({
+ variant: 'band',
+ id: 'perplexity-seo-3',
+ headline: 'Cover Perplexity alongside the other AI engines',
+ sub: 'Tell us where you stand and we’ll come back with a plan and a price.',
+ buttonHref: QUOTE_URL,
+});
 
 const authorBox = `<div class="author-box" id="sandeep-kumar">
 <img src="/authors/sandeep-kumar-nakama-seo-geo.webp" srcset="/authors/sandeep-kumar-nakama-seo-geo.webp 400w, /authors/sandeep-kumar-nakama-seo-geo-800.webp 800w" sizes="96px" alt="Sandeep, SEO and GEO Specialist at Nakama Growth" width="96" height="96" loading="lazy" decoding="async">
@@ -265,8 +288,7 @@ ${h2("How to rank in Perplexity: which steps come first?")}
 <li><strong>Recheck monthly.</strong> Compare cited sources and brand mentions against the baseline, not against one run.</li>
 </ol>
 <p>Steps 3 and 5 draw on associations in the studies covered in the next section, not on anything Perplexity documents. Step 1 rests on Perplexity's crawler documentation. Steps 2 and 6 follow from the measurement research in the tracking section.</p>
-<p>If you would rather we run these steps for you, tell us your category and the questions your buyers ask:</p>
-${quoteLink}
+${cta1}
 ${h2("How does Perplexity choose which sources to cite?")}
 <p>We found no Perplexity documentation on how it chooses which sources to cite. Its help center says it searches the internet in real time, gathers information from sources such as "articles, websites, and journals", and adds numbered citations. To get cited by Perplexity, you work from what studies observed, not from a published rule.</p>
 <p>Its help center describes three steps: understanding the question, searching the web, then summarizing what it finds with citations (<a href="https://www.perplexity.ai/help-center/en/articles/10352895-how-does-perplexity-work">Perplexity Help Center</a>, last modified 12 Nov 2026). That tells you a page must be findable in Perplexity's search before it can be cited. It does not tell you how sources are ranked.</p>
@@ -346,12 +368,10 @@ ${h2("What should you not count on in Perplexity SEO?")}
 ${h2("Should you do Perplexity SEO yourself or get help?")}
 <p>Do it yourself if one person can own crawler access, page rewrites and monthly prompt sampling. Perplexity SEO stalls when no one has time to sample, because there is no first-party report to fall back on. It also stalls when firewall rules sit with another team, or when needed citations depend on coverage your team cannot earn.</p>
 <p>If any of those apply, weigh the options in <a href="https://www.nakama.in/journal/geo-agency-vs-in-house">agency vs in-house</a>, check vendors with <a href="https://www.nakama.in/journal/how-to-hire-an-aeo-agency">how to hire an AEO agency</a>, and see <a href="https://www.nakama.in/journal/geo-aeo-pricing">GEO and AEO pricing</a> for cost.</p>
-<p>If you want help with the parts your team cannot staff, tell us where you are stuck:</p>
-${quoteLink}
+${cta2}
 ${h2("FAQ")}
 ${faqHtml}
-<p>For a team that wants Perplexity covered alongside the other AI engines:</p>
-${quoteLink}
+${ctaBand}
 <h2 id="about-the-author">About the author</h2>
 ${authorBox}`;
 
@@ -366,7 +386,7 @@ const decode = (s: string) => s
  .trim();
 
 function blocks(html: string): string[] {
- const cleaned = html.replace(/<figure[\s\S]*?<\/figure>/g, '').replace(/<nav[\s\S]*?<\/nav>/g, '').replace(/<div class="author-box"[\s\S]*?<\/div>\s*<\/div>/g, '');
+ const cleaned = stripJournalCta(html).replace(/<figure[\s\S]*?<\/figure>/g, '').replace(/<nav[\s\S]*?<\/nav>/g, '').replace(/<div class="author-box"[\s\S]*?<\/div>\s*<\/div>/g, '');
  const out: string[] = [];
  for (const m of cleaned.matchAll(/<(h1|h3|p|li)\b[^>]*>([\s\S]*?)<\/\1>/g)) {
   const text = decode(m[2].replace(/<[^>]+>/g, ''));
