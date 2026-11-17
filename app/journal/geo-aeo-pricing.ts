@@ -204,7 +204,7 @@ const cta1 = journalCta({
  variant: 'inline',
  id: 'geo-aeo-pricing-1',
  headline: 'Want a quote for your brand?',
- sub: 'Tell us about your brand. We confirm scope on a pricing call, then send a written proposal with scope, timeline and price within two business days.',
+ sub: 'Tell us about your brand. We confirm scope on a pricing call, then send a written proposal with scope, timeline and price within two business days of that call.',
  buttonHref: 'https://www.nakama.in/pricing#quote',
 });
 const ctaBand = journalCta({
