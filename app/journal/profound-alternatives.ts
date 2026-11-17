@@ -268,8 +268,8 @@ ${fig('profound-alternatives-tool-vs-service', TOOL_ALT)}
 <h2 id="faq">FAQ</h2>
 ${faqHtml}
 <h2 id="ready-to-decide">Ready to decide?</h2>
-<p>Not sure yet? Start with an <a href="/services/ai-visibility-audit">AI visibility audit</a>.</p>
 ${ctaBand}
+<p>Not sure yet? Start with an <a href="/services/ai-visibility-audit">AI visibility audit</a>.</p>
 <h2 id="about-the-author">About the author</h2>
 <div class="author-box" id="asmit-choudhary">
 <img src="/authors/asmit-choudhary-nakama-ai-geo.webp" srcset="/authors/asmit-choudhary-nakama-ai-geo.webp 400w, /authors/asmit-choudhary-nakama-ai-geo-800.webp 800w" sizes="96px" alt="Asmit Choudhary, AI & GEO Strategist at Nakama Growth" width="96" height="96" loading="lazy" decoding="async">

@@ -70,8 +70,13 @@ export function journalCta(o: JournalCta): string {
   let subHtml = o.sub?.trim() ? txt(o.sub.trim()) : '';
   if (o.subLink) {
     const m = txt(o.subLink.text);
-    if (!subHtml.includes(m)) throw new Error(`journalCta: subLink text not in sub: ${o.subLink.text}`);
-    subHtml = subHtml.replace(m, `<a href="${safeHref(o.subLink.href)}">${m}</a>`);
+    const link = `<a href="${safeHref(o.subLink.href)}">${m}</a>`;
+    /* Odd parts are tags (e.g. the j-cta-nw span), so the match only lands in text, never inside an attribute. */
+    const parts = subHtml.split(/(<[^>]*>)/);
+    const i = parts.findIndex((p, k) => k % 2 === 0 && p.includes(m));
+    if (i < 0) throw new Error(`journalCta: subLink text not in sub: ${o.subLink.text}`);
+    parts[i] = parts[i].replace(m, () => link);
+    subHtml = parts.join('');
   }
   const sub = subHtml ? `<p class="j-cta-sub">${subHtml}</p>` : '';
   let eyebrow = '';

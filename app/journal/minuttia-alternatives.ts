@@ -255,14 +255,14 @@ export const minuttiaAlternativesJsonLd = [articleLd];
 const cta1 = journalCta({
  variant: 'inline',
  id: 'minuttia-alternatives-1',
- headline: 'See where AI engines mention you before you choose',
- sub: 'Tell us your category and the questions your buyers ask. We confirm scope on a pricing call, then send a written proposal.',
+ headline: 'Want a Minuttia alternative scoped to your brand?',
+ sub: 'Tell us where you stand and we’ll come back with a plan and a price.',
  buttonHref: 'https://www.nakama.in/pricing#quote',
 });
 const ctaBand = journalCta({
  variant: 'band',
  id: 'minuttia-alternatives-2',
- headline: 'Know where AI answers mention your brand today',
+ headline: 'Compare Nakama with Minuttia on your own brief',
  sub: 'Tell us where you stand and we’ll come back with a plan and a price.',
  buttonHref: 'https://www.nakama.in/pricing#quote',
 });

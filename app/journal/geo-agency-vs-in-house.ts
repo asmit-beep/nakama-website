@@ -213,7 +213,7 @@ const cta1 = journalCta({
  variant: 'inline',
  id: 'geo-agency-vs-in-house-1',
  headline: 'Does the agency or hybrid column fit?',
- sub: 'Tell us your gap and we will scope the work. We confirm scope on a pricing call, then send a written proposal.',
+ sub: 'Tell us your gap. We confirm scope on a pricing call, then send a written proposal.',
  buttonHref: QUOTE_URL,
 });
 const cta2 = journalCta({
