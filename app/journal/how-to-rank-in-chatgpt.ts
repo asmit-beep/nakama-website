@@ -259,7 +259,7 @@ const bodyHtml = `<nav aria-label="Breadcrumb" class="article-breadcrumb"><ol st
 <p>You make a page eligible for ChatGPT search, the first step to optimize for ChatGPT, by letting OpenAI's search crawler reach it. <a href="https://help.openai.com/en/articles/9237897-chatgpt-search">OpenAI's Help Center</a> says to allow OAI-SearchBot and to confirm your host or CDN accepts traffic from OpenAI's published search IP addresses.</p>
 <p>Check robots.txt and your CDN's bot protection, since robots.txt never shows CDN rules. OpenAI says it can take about 24 hours for robots.txt changes to take effect in search (<a href="https://developers.openai.com/api/docs/bots">OpenAI crawler docs</a>).</p>
 <p>Blocking GPTBot is a separate choice. OpenAI says GPTBot crawls content that may be used for training, and a site can disallow it while allowing OAI-SearchBot.</p>
-<p>Then rewrite the opening paragraph and title of key pages so they answer the buyer's question in the first sentence. In the preprint, title match helped Gemini and <a href="https://www.nakama.in/journal/perplexity-seo">Perplexity</a> and showed no effect for ChatGPT.</p>
+<p>Then rewrite the opening paragraph and title of key pages so they answer the buyer's question in the first sentence. In the preprint, title match helped Gemini and Perplexity and showed no effect for ChatGPT.</p>
 <h2 id="how-do-you-get-your-brand-to-appear-in-chatgpt-answers">How do you get your brand to appear in ChatGPT answers?</h2>
 <p>Your brand appears in ChatGPT answers when the model already knows it or when the pages ChatGPT reads name it. For small brands the second route matters more. In the Toronto study's small B2B software niche, the models barely knew the vendors, and answers named them mainly when a cited third-party page named them.</p>
 <p>In that niche, a cited third-party page naming a vendor multiplied the odds that ChatGPT names it by 39.7, though ChatGPT cited anything in only 35% of answers. To get cited in ChatGPT more often, aim for several pages per buying question that name you; that is our inference from one niche.</p>
@@ -286,7 +286,7 @@ const bodyHtml = `<nav aria-label="Breadcrumb" class="article-breadcrumb"><ol st
 <p>In GA4, links in ChatGPT's answer text reportedly lost the utm_source=chatgpt.com tag from about 8 Oct 2026 (Huesler) or 9 Oct (Graphite), so some visits can appear as Direct. Adobe's Cedric Huesler says a fix began rolling out on 15 Oct, with tagged clicks back to roughly 95 to 100% of the same hour a week earlier by 9 a.m. Pacific (<a href="https://www.searchenginejournal.com/chatgpt-traffic-drop-appears-to-be-a-tracking-problem/593157/">Search Engine Journal, 15 Oct 2026</a>). Huesler says most ChatGPT clicks still arrive without a referrer, so count the UTM tag and annotate 8 to 15 Oct in GA4.</p>
 <p>If you have claimed your business in ChatGPT, OpenAI's Business Hub adds its own count: 28 days of mentions and website clicks, where a mention of an online business counts only when ChatGPT references its website. Our guide on <a href="https://www.nakama.in/journal/chatgpt-business-hub">how to claim your business in ChatGPT</a> explains what those numbers include and leave out.</p>
 <p>See also <a href="https://www.nakama.in/journal/ai-visibility-report-template">what a useful visibility report shows</a>.</p>
-<p>For other engines, see <a href="https://www.nakama.in/journal/track-brand-mentions-in-ai-search">how to track brand mentions in AI search</a>.</p>
+<p>For other engines, see <a href="https://www.nakama.in/journal/track-brand-mentions-in-ai-search">how to track brand mentions in AI search</a>. For Perplexity specifically, see our guide on <a href="https://www.nakama.in/journal/perplexity-seo">how to rank in Perplexity</a>.</p>
 <h2 id="what-to-do-first">What should you do first?</h2>
 <p>What you should do first is the documented work, then the work with measured support. Fix crawler access this week, rewrite key pages around buyer questions this month, and start the third-party coverage that takes longest. Record a prompt baseline before you change anything.</p>
 <ol>
@@ -444,7 +444,7 @@ export const howToRankInChatgptArticle: Article = {
    "In GA4, links in ChatGPT's answer text reportedly lost the utm_source=chatgpt.com tag from about 8 Oct 2026 (Huesler) or 9 Oct (Graphite), so some visits can appear as Direct. Adobe's Cedric Huesler says a fix began rolling out on 15 Oct, with tagged clicks back to roughly 95 to 100% of the same hour a week earlier by 9 a.m. Pacific ( Search Engine Journal, 15 Oct 2026 ). Huesler says most ChatGPT clicks still arrive without a referrer, so count the UTM tag and annotate 8 to 15 Oct in GA4.",
    "If you have claimed your business in ChatGPT, OpenAI's Business Hub adds its own count: 28 days of mentions and website clicks, where a mention of an online business counts only when ChatGPT references its website. Our guide on how to claim your business in ChatGPT explains what those numbers include and leave out.",
    "See also what a useful visibility report shows .",
-   "For other engines, see how to track brand mentions in AI search."
+   "For other engines, see how to track brand mentions in AI search. For Perplexity specifically, see our guide on how to rank in Perplexity."
   ]
  },
  {
