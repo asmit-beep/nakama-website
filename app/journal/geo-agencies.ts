@@ -656,6 +656,7 @@ const bodyHtml = `<nav aria-label="Breadcrumb" class="article-breadcrumb"><ol st
 <h2 id="find-out-where-your-brand-stands-in-ai-answers">Find out where your brand stands in AI answers</h2>
 <p>The best generative engine optimization agency for you is the one that can show you, with queries you can run yourself, where your brand appears today and what it will take to get named. Nakama starts every conversation by checking a few of your buyers' questions before the call, then gives you a clear next step: an audit, a proposal or an honest "not a fit."</p>
 ${ctaBand}
+<p><a href="https://www.nakama.in/contact">Book a call with Nakama</a>. Prefer email? Write to contact@nakama.in.</p>
 <h2 id="about-the-author">About the author</h2>
 <div class="author-box" id="yash-kumar">
 <img src="/journal/best-generative-engine-optimization-agencies/yash-kumar-nakama-ceo.webp" srcset="/journal/best-generative-engine-optimization-agencies/yash-kumar-nakama-ceo.webp 400w, /journal/best-generative-engine-optimization-agencies/yash-kumar-nakama-ceo-800.webp 800w" sizes="96px" alt="Yash Kumar, Co-founder and CEO of Nakama Growth" width="96" height="96" loading="lazy" decoding="async">
@@ -973,6 +974,7 @@ export const geoAgenciesArticle: Article = {
   "heading": "Find out where your brand stands in AI answers",
   "paragraphs": [
    "\nThe best generative engine optimization agency for you is the one that can show you, with queries you can run yourself, where your brand appears today and what it will take to get named. Nakama starts every conversation by checking a few of your buyers' questions before the call, then gives you a clear next step: an audit, a proposal or an honest \"not a fit.\"",
+   "Book a call with Nakama. Prefer email? Write to contact@nakama.in."
   ]
  },
  {

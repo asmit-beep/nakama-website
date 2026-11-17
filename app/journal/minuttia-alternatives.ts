@@ -256,7 +256,7 @@ const cta1 = journalCta({
  variant: 'inline',
  id: 'minuttia-alternatives-1',
  headline: 'See where AI engines mention you before you choose',
- sub: 'Nakama checks a few of your buyers\' questions before the call, then gives you a clear next step.',
+ sub: 'Tell us your category and the questions your buyers ask. We confirm scope on a pricing call, then send a written proposal.',
  buttonHref: 'https://www.nakama.in/pricing#quote',
 });
 const ctaBand = journalCta({

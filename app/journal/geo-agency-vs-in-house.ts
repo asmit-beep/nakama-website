@@ -221,6 +221,7 @@ const cta2 = journalCta({
  id: 'geo-agency-vs-in-house-2',
  headline: 'Does an agency fit your team?',
  sub: 'We quote our GEO services against your off-site gap and the owner time you can give.',
+ subLink: {text: 'GEO services', href: 'https://www.nakama.in/services/geo'},
  buttonHref: QUOTE_URL,
 });
 const ctaBand = journalCta({

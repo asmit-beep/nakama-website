@@ -20,6 +20,8 @@ type Base = {
   buttonHref?: string;  // default QUOTE_URL
   /** Optional, off by default. Emits data-cta, data-cta-variant, data-cta-link. Not wired to analytics yet (on hold until after the core update hold). */
   dataAttrs?: boolean;
+  /** Optional. Turns the first exact match of `text` inside sub into a plain link (href checked like buttonHref). */
+  subLink?: {text: string; href: string};
 };
 /** Inline card: no eyebrow, no secondary, no steps. Passing any of them is a type error. */
 export type JournalCtaInline = Base & {
@@ -65,7 +67,13 @@ export function journalCta(o: JournalCta): string {
   const da = (link?: string) => o.dataAttrs ? ` data-cta="${o.id}" data-cta-variant="${o.variant}"${link ? ` data-cta-link="${link}"` : ''}` : '';
   const label = txt(o.buttonLabel ?? 'Get a quote');
   const href = safeHref(o.buttonHref ?? QUOTE_URL);
-  const sub = o.sub?.trim() ? `<p class="j-cta-sub">${txt(o.sub.trim())}</p>` : '';
+  let subHtml = o.sub?.trim() ? txt(o.sub.trim()) : '';
+  if (o.subLink) {
+    const m = txt(o.subLink.text);
+    if (!subHtml.includes(m)) throw new Error(`journalCta: subLink text not in sub: ${o.subLink.text}`);
+    subHtml = subHtml.replace(m, `<a href="${safeHref(o.subLink.href)}">${m}</a>`);
+  }
+  const sub = subHtml ? `<p class="j-cta-sub">${subHtml}</p>` : '';
   let eyebrow = '';
   let steps = '';
   let secondary = '';
