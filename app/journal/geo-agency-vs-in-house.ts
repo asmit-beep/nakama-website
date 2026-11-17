@@ -325,8 +325,8 @@ ${stackTable(matrixCaption, 'Factor', ['Agency', 'In-house team', 'Tools only', 
  ]},
 ])}
 <p>Cost is not in this table on purpose. Our <a href="https://www.nakama.in/journal/geo-aeo-pricing#is-a-geo-agency-cheaper-than-an-in-house-team">GEO pricing guide</a> compares what an agency and an in-house team cost.</p>
-<p>Not sure which column? Start with an <a href="https://www.nakama.in/services/ai-visibility-audit">AI visibility audit</a>.</p>
 ${cta1}
+<p>Not sure which column? Start with an <a href="https://www.nakama.in/services/ai-visibility-audit">AI visibility audit</a>.</p>
 ${h2('How do you choose between in-house and agency GEO?')}
 <p>To choose between in-house and agency generative engine optimization (GEO), answer five questions: who owns AI visibility today, where the gap is, how fast you need visible work, which skills you can actually hire and who will measure each engine. If three or more answers point the same way, that is your model.</p>
 <ol>

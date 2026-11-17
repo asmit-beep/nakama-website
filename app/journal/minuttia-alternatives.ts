@@ -256,7 +256,7 @@ const cta1 = journalCta({
  variant: 'inline',
  id: 'minuttia-alternatives-1',
  headline: 'Want a Minuttia alternative scoped to your brand?',
- sub: 'Tell us where you stand and we’ll come back with a plan and a price.',
+ sub: 'Tell us your category and the questions your buyers ask. We confirm scope on a pricing call, then send a written proposal.',
  buttonHref: 'https://www.nakama.in/pricing#quote',
 });
 const ctaBand = journalCta({

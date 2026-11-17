@@ -49,9 +49,10 @@ const esc = (s: string) =>
  * A nowrap span, not U+2011, so copy-paste, search and screen readers still get a normal hyphen. */
 const txt = (s: string) => esc(s).replace(/\b(\d+)-minute\b/g, '<span class="j-cta-nw">$1-minute</span>');
 
-/** Only https://www.nakama.in/... or a root-relative path. Anything else fails the build. */
-function safeHref(href: string): string {
-  if (!/^(https:\/\/www\.nakama\.in)?\/[^\s"'<>]*$/.test(href)) throw new Error(`journalCta: href not allowed: ${href}`);
+/** Only https://www.nakama.in/... or a root-relative path. Anything else fails the build,
+ * including protocol-relative '//host' and '/\host', and any backslash. */
+export function safeHref(href: string): string {
+  if (!/^(?:https:\/\/www\.nakama\.in)?\/(?![\/\\])[^\s"'<>\\]*$/.test(href)) throw new Error(`journalCta: href not allowed: ${href}`);
   return esc(href);
 }
 
@@ -71,12 +72,17 @@ export function journalCta(o: JournalCta): string {
   if (o.subLink) {
     const m = txt(o.subLink.text);
     const link = `<a href="${safeHref(o.subLink.href)}">${m}</a>`;
-    /* Odd parts are tags (e.g. the j-cta-nw span), so the match only lands in text, never inside an attribute. */
-    const parts = subHtml.split(/(<[^>]*>)/);
-    const i = parts.findIndex((p, k) => k % 2 === 0 && p.includes(m));
-    if (i < 0) throw new Error(`journalCta: subLink text not in sub: ${o.subLink.text}`);
-    parts[i] = parts[i].replace(m, () => link);
-    subHtml = parts.join('');
+    /* Tags (e.g. the j-cta-nw span) and entities (e.g. &amp;) are protected: a match may contain one whole,
+     * but may not start or end inside one, so it never lands in an attribute or splits an entity. */
+    const guarded = [...subHtml.matchAll(/<[^>]*>|&(?:#\d+|#x[\da-f]+|[a-z]+);/gi)].map(g => [g.index, g.index + g[0].length]);
+    const inside = (n: number) => guarded.some(([a, b]) => n > a && n < b);
+    let done = false;
+    subHtml = subHtml.replace(new RegExp(m.replace(/[.*+?^${}()|[\]\\]/g, '\\$&'), 'g'), (hit: string, at: number) => {
+      if (done || inside(at) || inside(at + hit.length)) return hit;
+      done = true;
+      return link;
+    });
+    if (!done) throw new Error(`journalCta: subLink text not in sub: ${o.subLink.text}`);
   }
   const sub = subHtml ? `<p class="j-cta-sub">${subHtml}</p>` : '';
   let eyebrow = '';

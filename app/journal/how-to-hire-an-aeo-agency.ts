@@ -182,7 +182,7 @@ const cta1 = journalCta({
  variant: 'inline',
  id: 'how-to-hire-an-aeo-agency-1',
  headline: 'Want an all-inclusive plan priced for your brand?',
- sub: 'Nakama Growth sells one all-inclusive plan. Tell us about your brand and we confirm scope on a pricing call, then send a written proposal.',
+ sub: 'Nakama Growth sells one plan. Tell us about your brand and we confirm scope on a pricing call, then send a written proposal.',
  buttonHref: 'https://www.nakama.in/pricing#quote',
 });
 const cta2 = journalCta({

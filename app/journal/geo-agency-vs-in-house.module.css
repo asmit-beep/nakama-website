@@ -8,10 +8,6 @@
   min-height: 44px;
 }
 
-.cta {
-  margin-top: 18px;
-}
-
 /* Beat the shared 18ch H1 cap so this headline can sit on two lines. */
 :global(.ip-article-page .article-rich) .page :global(h1) {
   text-wrap: balance;

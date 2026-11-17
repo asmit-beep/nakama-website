@@ -260,7 +260,7 @@ export const geoAgenciesJsonLd = {
 const ctaBand = journalCta({
  variant: 'band',
  id: 'geo-agencies-1',
- headline: 'See where your brand stands before you pick an agency',
+ headline: 'Get a clear scope and price before you pick an agency',
  sub: 'Tell us where you stand and we’ll come back with a plan and a price.',
  buttonHref: 'https://www.nakama.in/pricing#quote',
 });
