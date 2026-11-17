@@ -8,7 +8,7 @@ import type {Article} from './articles';
  */
 export const HOW_TO_RANK_IN_CHATGPT_PUBLISHED_AT = '2026-10-17T18:12:57+05:30';
 const PUBLISHED_AT = HOW_TO_RANK_IN_CHATGPT_PUBLISHED_AT;
-const MODIFIED_AT = '2026-11-17T02:00:00+05:30';
+const MODIFIED_AT = '2026-11-18T02:57:00+05:30';
 
 const MONTHS = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
 const dayOf = (iso: string) => iso.slice(0, 10);
@@ -286,7 +286,7 @@ const bodyHtml = `<nav aria-label="Breadcrumb" class="article-breadcrumb"><ol st
 <p>In GA4, links in ChatGPT's answer text reportedly lost the utm_source=chatgpt.com tag from about 8 Oct 2026 (Huesler) or 9 Oct (Graphite), so some visits can appear as Direct. Adobe's Cedric Huesler says a fix began rolling out on 15 Oct, with tagged clicks back to roughly 95 to 100% of the same hour a week earlier by 9 a.m. Pacific (<a href="https://www.searchenginejournal.com/chatgpt-traffic-drop-appears-to-be-a-tracking-problem/593157/">Search Engine Journal, 15 Oct 2026</a>). Huesler says most ChatGPT clicks still arrive without a referrer, so count the UTM tag and annotate 8 to 15 Oct in GA4.</p>
 <p>If you have claimed your business in ChatGPT, OpenAI's Business Hub adds its own count: 28 days of mentions and website clicks, where a mention of an online business counts only when ChatGPT references its website. Our guide on <a href="https://www.nakama.in/journal/chatgpt-business-hub">how to claim your business in ChatGPT</a> explains what those numbers include and leave out.</p>
 <p>See also <a href="https://www.nakama.in/journal/ai-visibility-report-template">what a useful visibility report shows</a>.</p>
-<p>For other engines, see <a href="https://www.nakama.in/journal/track-brand-mentions-in-ai-search">how to track brand mentions in AI search</a>.</p>
+<p>For other engines, see <a href="https://www.nakama.in/journal/track-brand-mentions-in-ai-search">how to track brand mentions in AI search</a>. For Perplexity specifically, see our guide on <a href="https://www.nakama.in/journal/perplexity-seo">how to rank in Perplexity</a>.</p>
 <h2 id="what-to-do-first">What should you do first?</h2>
 <p>What you should do first is the documented work, then the work with measured support. Fix crawler access this week, rewrite key pages around buyer questions this month, and start the third-party coverage that takes longest. Record a prompt baseline before you change anything.</p>
 <ol>
@@ -356,7 +356,7 @@ export const howToRankInChatgptArticle: Article = {
   "heading": "Introduction",
   "paragraphs": [
    "How to rank in ChatGPT (and get cited): what works in 2026",
-   "Published 17 Oct 2026. Last updated 17 Nov 2026.",
+   "Published 17 Oct 2026. Last updated 18 Nov 2026.",
    "By Snehil Srivastava , CEO & Creative Director, Nakama Growth",
    "How to rank in ChatGPT starts with one fact: ChatGPT cites pages its own search retrieves, and a top Google position predicts little about which ones. Let OpenAI's search crawler in, answer the buyer's exact question in plain words, and earn other sites that name you.",
    "TL;DR",
@@ -444,7 +444,7 @@ export const howToRankInChatgptArticle: Article = {
    "In GA4, links in ChatGPT's answer text reportedly lost the utm_source=chatgpt.com tag from about 8 Oct 2026 (Huesler) or 9 Oct (Graphite), so some visits can appear as Direct. Adobe's Cedric Huesler says a fix began rolling out on 15 Oct, with tagged clicks back to roughly 95 to 100% of the same hour a week earlier by 9 a.m. Pacific ( Search Engine Journal, 15 Oct 2026 ). Huesler says most ChatGPT clicks still arrive without a referrer, so count the UTM tag and annotate 8 to 15 Oct in GA4.",
    "If you have claimed your business in ChatGPT, OpenAI's Business Hub adds its own count: 28 days of mentions and website clicks, where a mention of an online business counts only when ChatGPT references its website. Our guide on how to claim your business in ChatGPT explains what those numbers include and leave out.",
    "See also what a useful visibility report shows .",
-   "For other engines, see how to track brand mentions in AI search."
+   "For other engines, see how to track brand mentions in AI search. For Perplexity specifically, see our guide on how to rank in Perplexity."
   ]
  },
  {

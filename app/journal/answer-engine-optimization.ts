@@ -8,7 +8,7 @@ import type {Article} from './articles';
  */
 export const ANSWER_ENGINE_OPTIMIZATION_PUBLISHED_AT = '2026-10-25T16:13:12+05:30';
 const PUBLISHED_AT = ANSWER_ENGINE_OPTIMIZATION_PUBLISHED_AT;
-const MODIFIED_AT = '2026-11-12T23:42:00+05:30';
+const MODIFIED_AT = '2026-11-18T02:57:00+05:30';
 
 const MONTHS = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
 const dayOf = (iso: string) => iso.slice(0, 10);
@@ -212,7 +212,7 @@ const bodyHtml = `<nav aria-label="Breadcrumb" class="article-breadcrumb"><ol st
 <p>If you want the full terminology map, our <a href="https://www.nakama.in/journal/aeo-vs-seo-vs-geo">AEO vs SEO vs GEO</a> guide covers it.</p>
 <h2 id="how-do-you-rank-in-google-ai-mode-as-a-saas-brand">How do you rank in Google AI Mode as a SaaS brand?</h2>
 <p>Google says the same SEO fundamentals apply to AI Mode, with no extra requirements or special markup. AI Mode is built for comparisons and complex questions and uses query fan-out, so SaaS brands should cover comparison topics in depth and earn mentions on the third-party pages that appear in related searches.</p>
-<p>For tactics on the sister feature, read <a href="https://www.nakama.in/journal/how-to-rank-in-google-ai-overviews">how to rank in Google AI Overviews</a>. For ChatGPT SEO, see <a href="https://www.nakama.in/journal/how-to-rank-in-chatgpt">how to rank in ChatGPT</a>.</p>
+<p>For tactics on the sister feature, read <a href="https://www.nakama.in/journal/how-to-rank-in-google-ai-overviews">how to rank in Google AI Overviews</a>. For ChatGPT SEO, see <a href="https://www.nakama.in/journal/how-to-rank-in-chatgpt">how to rank in ChatGPT</a>; for Perplexity, see our <a href="https://www.nakama.in/journal/perplexity-seo">Perplexity SEO guide</a>.</p>
 <h2 id="should-you-do-aeo-in-house-or-hire-help">Should you do AEO in-house or hire help?</h2>
 <p>Most SaaS teams can handle crawler access, fact pages and formatting in-house, since they own the product facts. The off-site work takes more time: tracking prompts across engines, finding cited pages and earning coverage there. Teams short on hours often bring in help for that part and keep fact pages in-house.</p>
 <p>If you are comparing providers, our guide to the <a href="https://www.nakama.in/journal/best-aeo-agencies">best AEO agencies</a> lists options with their strengths and weaknesses.</p>
@@ -401,7 +401,7 @@ export const answerEngineOptimizationArticle: Article = {
   "heading": "How do you rank in Google AI Mode as a SaaS brand?",
   "paragraphs": [
    "Google says the same SEO fundamentals apply to AI Mode, with no extra requirements or special markup. AI Mode is built for comparisons and complex questions and uses query fan-out, so SaaS brands should cover comparison topics in depth and earn mentions on the third-party pages that appear in related searches.",
-   "For tactics on the sister feature, read how to rank in Google AI Overviews. For ChatGPT SEO, see how to rank in ChatGPT."
+   "For tactics on the sister feature, read how to rank in Google AI Overviews. For ChatGPT SEO, see how to rank in ChatGPT; for Perplexity, see our Perplexity SEO guide."
   ]
  },
  {

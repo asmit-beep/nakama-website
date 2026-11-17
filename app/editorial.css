@@ -3228,6 +3228,80 @@ html{overflow-x:clip;scroll-padding-top:110px}body{font-family:var(--sans);font-
 .ip-article-page .article-rich .author-box-text p:first-child{margin-top:0}
 @media(max-width:560px){.ip-article-page .article-rich .author-box{grid-template-columns:1fr}}
 
+/* Journal in-article CTA (.j-cta). Built by app/journal/cta.ts, rendered inside bodyHtml.
+   Scoped under .ip-article-page .article-rich so it beats the prose rules at editorial.css L3152 (p) and L3156 (a).
+   Primary button and band surface copied from the live /services Next step block (app/services/services.css L234-248, L383-405).
+   Secondary carries the .ip-ghost look (inner.css L72, L425-427) on its own class, so no .ip-btn or .ip-ghost is used on the CTA. */
+
+/* SWAP POINT. One line holds the button colour, shape and the band glow. Values: solid ember per Sozo, 18 Nov. */
+.ip-article-page .article-rich .j-cta{--j-cta-btn-bg:#f07c32;--j-cta-btn-bg-hover:#f38948;--j-cta-btn-ink:#17110c;--j-cta-btn-radius:14px 14px 10px 10px;--j-cta-band-btn-shadow:0 10px 28px rgba(240,124,50,.22);--j-cta-glow:.16}
+
+.ip-article-page .article-rich .j-cta{position:relative;display:grid;grid-template-columns:minmax(0,1fr) auto;gap:18px 24px;align-items:center;
+ margin:36px 0 40px;padding:24px 28px;border:1px solid var(--ip-line-2);border-radius:20px;background:var(--ip-card);color:var(--ip-body);font-family:var(--ip-font)}
+.ip-article-page .article-rich .j-cta p{margin:0}
+.ip-article-page .article-rich .j-cta .j-cta-copy{min-width:0}
+.ip-article-page .article-rich .j-cta .j-cta-nw{white-space:nowrap}
+.ip-article-page .article-rich .j-cta .j-cta-title{font:700 20px/1.3 var(--ip-font);letter-spacing:-.01em;color:var(--ip-ink);overflow-wrap:break-word;text-wrap:balance}
+.ip-article-page .article-rich .j-cta .j-cta-sub{margin-top:6px;max-width:60ch;font-size:15.5px;line-height:1.6;color:var(--ip-body)}
+.ip-article-page .article-rich .j-cta .j-cta-actions{display:flex;flex-direction:column;align-items:flex-start;gap:14px;min-width:0;max-width:300px}
+
+/* Primary: live /services .svc-next-btn-primary, 48px. No arrow. No shadow on the inline card. */
+.ip-article-page .article-rich .j-cta .j-cta-btn,
+.ip-article-page .article-rich .j-cta .j-cta-btn:visited,
+.ip-article-page .article-rich .j-cta .j-cta-btn:hover{color:var(--j-cta-btn-ink);text-decoration:none}
+.ip-article-page .article-rich .j-cta .j-cta-btn{display:inline-flex;align-items:center;justify-content:center;box-sizing:border-box;min-height:48px;max-width:100%;padding:8px 22px;
+ border:0;border-radius:var(--j-cta-btn-radius);background:var(--j-cta-btn-bg);box-shadow:none;font:700 14px/1.2 var(--ip-font);letter-spacing:-.01em;text-align:center;cursor:pointer;transition:background-color .18s}
+.ip-article-page .article-rich .j-cta .j-cta-btn:hover{background:var(--j-cta-btn-bg-hover)}
+.ip-article-page .article-rich .j-cta .j-cta-btn:focus-visible,
+.ip-article-page .article-rich .j-cta .j-cta-alt:focus-visible{outline:2px solid #ffd2ad;outline-offset:3px}
+
+/* Secondary (band only): .ip-ghost look (inner.css L72, underline .18 per L425), 44px target, underline on the label. */
+.ip-article-page .article-rich .j-cta .j-cta-alt,
+.ip-article-page .article-rich .j-cta .j-cta-alt:visited{color:var(--ip-ink);text-decoration:none}
+.ip-article-page .article-rich .j-cta .j-cta-alt{display:inline-flex;align-items:center;gap:7px;min-height:44px;padding:0 2px;border-bottom:0;font:600 15px/1.35 var(--ip-font);transition:color .2s}
+.ip-article-page .article-rich .j-cta .j-cta-alt span{padding-bottom:3px;border-bottom:1px solid rgba(255,255,255,.18);transition:border-color .2s}
+.ip-article-page .article-rich .j-cta .j-cta-alt svg{flex:none;transition:transform .35s cubic-bezier(.2,.8,.2,1)}
+.ip-article-page .article-rich .j-cta .j-cta-alt:hover svg{transform:translate(2px,-2px)}
+.ip-article-page .article-rich .j-cta .j-cta-alt:hover{color:#ffd2ad}
+.ip-article-page .article-rich .j-cta .j-cta-alt:hover span{border-color:#ffd2ad}
+
+/* Variant B: end band. Live /services surface (services.css L240-247): ember + indigo radials over the dark gradient, no gradient edge. */
+.ip-article-page .article-rich .j-cta.j-cta--band{overflow:hidden;grid-template-columns:minmax(0,1.3fr) minmax(0,.7fr);gap:32px;align-items:end;
+ margin:56px 0 0;padding:40px 44px;border-radius:28px;border-color:rgba(255,255,255,.1);
+ background:radial-gradient(920px 480px at 8% 110%,rgb(240 124 50/var(--j-cta-glow)),transparent 58%),radial-gradient(600px 360px at 100% 0%,rgb(70 60 110/var(--j-cta-glow)),transparent 50%),linear-gradient(165deg,#1a171c 0%,#100e12 48%,#0e0c10 100%);
+ box-shadow:inset 0 1px 0 rgba(243,241,237,.06),0 30px 70px rgba(0,0,0,.35)}
+.ip-article-page .article-rich .j-cta .j-cta-eyebrow{display:flex;align-items:center;gap:10px;margin:0 0 16px;font:700 12px/1 var(--ip-font);letter-spacing:.12em;text-transform:uppercase;color:var(--ip-mute)}
+.ip-article-page .article-rich .j-cta .j-cta-eyebrow i{flex:none;width:7px;height:7px;border-radius:50%;background:var(--ip-ember);box-shadow:0 0 0 3px rgba(240,124,50,.14)}
+.ip-article-page .article-rich .j-cta.j-cta--band .j-cta-title{font-size:clamp(24px,3vw,32px);line-height:1.15;letter-spacing:-.025em}
+.ip-article-page .article-rich .j-cta.j-cta--band .j-cta-sub{margin-top:14px}
+.ip-article-page .article-rich .j-cta.j-cta--band .j-cta-btn{box-shadow:var(--j-cta-band-btn-shadow)}
+.ip-article-page .article-rich .j-cta .j-cta-steps{display:flex;flex-wrap:wrap;gap:8px 22px;margin:22px 0 0;padding:18px 0 0;border-top:1px solid rgba(255,255,255,.08);list-style:none;counter-reset:jcta}
+.ip-article-page .article-rich .j-cta .j-cta-steps li{counter-increment:jcta;margin:0;font-size:14px;font-weight:600;line-height:1.4;color:var(--ip-body)}
+.ip-article-page .article-rich .j-cta .j-cta-steps li::before{content:counter(jcta) ".";margin-right:7px;font-variant-numeric:tabular-nums;color:var(--ip-mute)}
+
+/* Stack at the article breakpoint (editorial.css L3176 uses max-width:720px). */
+@media(max-width:720px){
+ .ip-article-page .article-rich .j-cta{grid-template-columns:1fr;gap:18px;margin:32px 0 36px;padding:20px}
+ .ip-article-page .article-rich .j-cta.j-cta--band{grid-template-columns:1fr;gap:24px;margin:48px 0 0;padding:28px 22px;border-radius:24px}
+ .ip-article-page .article-rich .j-cta .j-cta-title{font-size:18px}
+ .ip-article-page .article-rich .j-cta.j-cta--band .j-cta-title{font-size:24px;line-height:1.2}
+ .ip-article-page .article-rich .j-cta .j-cta-actions{max-width:none;align-items:stretch}
+ .ip-article-page .article-rich .j-cta .j-cta-btn{width:100%;min-height:52px}
+ .ip-article-page .article-rich .j-cta .j-cta-alt{align-self:flex-start}
+ .ip-article-page .article-rich .j-cta .j-cta-steps{flex-direction:column;gap:8px}
+}
+@media(prefers-reduced-motion:reduce){
+ .ip-article-page .article-rich .j-cta .j-cta-btn,
+ .ip-article-page .article-rich .j-cta .j-cta-alt span,
+ .ip-article-page .article-rich .j-cta .j-cta-alt svg{transition:none}
+ .ip-article-page .article-rich .j-cta .j-cta-alt:hover svg{transform:none}
+}
+@media(forced-colors:active){
+ .ip-article-page .article-rich .j-cta{border:1px solid CanvasText}
+ .ip-article-page .article-rich .j-cta .j-cta-btn{border:2px solid ButtonText}
+}
+@media print{.ip-article-page .article-rich .j-cta{display:none}}
+
 /* Optional image on the "Keep reading" card. Only applies when the next article has a coverImage. */
 .next-article.has-image{gap:32px}
 .next-article.has-image .next-article-img{flex:0 0 auto;width:260px;height:auto;aspect-ratio:16/9;object-fit:cover;border-radius:14px;border:1px solid rgba(255,255,255,.1);display:block}
