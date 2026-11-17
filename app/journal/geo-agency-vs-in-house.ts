@@ -1,4 +1,5 @@
 import type {Article} from './articles';
+import {journalCta, stripJournalCta} from './cta';
 import styles from './geo-agency-vs-in-house.module.css';
 
 /**
@@ -207,7 +208,30 @@ const RAMP_CAPTION = 'Our view: a 90-day ramp for a new in-house AEO or GEO team
 const figure = (file: string, alt: string, width: number, height: number, eager = false, extra?: {caption?: string; narrow?: boolean}) =>
  `<figure${extra?.narrow ? ` class="${styles.narrow}"` : ''}><img src="/journal/${SLUG}/${file}" alt="${alt}" width="${width}" height="${height}" ${eager ? 'fetchpriority="high"' : 'loading="lazy"'} decoding="async">${extra?.caption ? `<figcaption>${extra.caption}</figcaption>` : ''}</figure>`;
 
-const quoteLink = `<p class="${styles.cta}"><a class="ip-btn" href="${QUOTE_URL}"><span>Get a quote</span><i aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 7h10v10"/><path d="M7 17 17 7"/></svg></i></a></p>`;
+/** Journal CTAs (cta.ts). Each one replaces a bare quote link and its lead-in, as on perplexity-seo. */
+const cta1 = journalCta({
+ variant: 'inline',
+ id: 'geo-agency-vs-in-house-1',
+ headline: 'Does the agency or hybrid column fit?',
+ sub: 'Tell us your gap and we will scope the work. We confirm scope on a pricing call, then send a written proposal.',
+ buttonHref: QUOTE_URL,
+});
+const cta2 = journalCta({
+ variant: 'inline',
+ id: 'geo-agency-vs-in-house-2',
+ headline: 'Does an agency fit your team?',
+ sub: 'We quote our GEO services against your off-site gap and the owner time you can give.',
+ buttonHref: QUOTE_URL,
+});
+const ctaBand = journalCta({
+ variant: 'band',
+ id: 'geo-agency-vs-in-house-3',
+ headline: 'Get an agency or hybrid model built around your gap',
+ sub: 'Tell us where you stand and we’ll come back with a plan and a price.',
+ buttonHref: QUOTE_URL,
+ /** This post already links to /services/ai-visibility-audit, so the band's free-check link is off. */
+ secondaryLabel: null,
+});
 
 const h2 = (text: string) => `<h2 id="${faqId(text)}">${text}</h2>`;
 const h3 = (text: string) => `<h3 id="${faqId(text)}">${text}</h3>`;
@@ -300,9 +324,8 @@ ${stackTable(matrixCaption, 'Factor', ['Agency', 'In-house team', 'Tools only', 
  ]},
 ])}
 <p>Cost is not in this table on purpose. Our <a href="https://www.nakama.in/journal/geo-aeo-pricing#is-a-geo-agency-cheaper-than-an-in-house-team">GEO pricing guide</a> compares what an agency and an in-house team cost.</p>
-<p>If the agency or hybrid column fits, tell us your gap and we will scope the work:</p>
-${quoteLink}
 <p>Not sure which column? Start with an <a href="https://www.nakama.in/services/ai-visibility-audit">AI visibility audit</a>.</p>
+${cta1}
 ${h2('How do you choose between in-house and agency GEO?')}
 <p>To choose between in-house and agency generative engine optimization (GEO), answer five questions: who owns AI visibility today, where the gap is, how fast you need visible work, which skills you can actually hire and who will measure each engine. If three or more answers point the same way, that is your model.</p>
 <ol>
@@ -325,8 +348,7 @@ ${h2('When does an agency fit best?')}
 </ul>
 <blockquote><p><strong>Our view:</strong> the agency route fails most often when the client side has no owner. An agency without someone in-house to approve claims, open doors to subject matter experts and push page changes through tends to produce reports with nothing shipped. Plan for at least a few hours a week of an internal owner's time, whichever agency you pick.</p></blockquote>
 <p>Before you sign, use our hiring guide to <a href="https://www.nakama.in/journal/how-to-hire-an-aeo-agency#step-5-check-the-proof-yourself">check the proof yourself</a>. It covers what to inspect and how to verify claimed results.</p>
-<p>If an agency fits, we will quote our <a href="https://www.nakama.in/services/geo">GEO services</a> against your off-site gap and the owner time you can give:</p>
-${quoteLink}
+${cta2}
 ${h2('When does an in-house AEO or GEO team win?')}
 <p>An in-house AEO or GEO team wins when AI visibility is a lasting part of how you grow, your product needs deep context to explain well, and you can fund the roles and the ramp. In-house teams keep the knowledge, move faster on approvals and keep building after any contract would have ended.</p>
 <p>An in-house GEO team is the right call if most of these are true:</p>
@@ -453,9 +475,7 @@ ${h2('Should you hire an agency or do marketing in-house at all?')}
 <p>That off-site layer is where the GEO agency vs in-house choice is hardest, so this guide gives it extra weight.</p>
 ${h2('FAQ')}
 ${faqHtml}
-<hr>
-<p>For an agency or hybrid model built around your gap:</p>
-${quoteLink}
+${ctaBand}
 ${h2('About the author')}
 ${authorBox}
 </div>`;
@@ -472,7 +492,7 @@ const decode = (s: string) => s
  .trim();
 
 function blocks(html: string): string[] {
- const cleaned = html.replace(/<figure[\s\S]*?<\/figure>/g, '').replace(/<nav[\s\S]*?<\/nav>/g, '').replace(/<div class="author-box"[\s\S]*?<\/div>\s*<\/div>/g, '');
+ const cleaned = stripJournalCta(html).replace(/<figure[\s\S]*?<\/figure>/g, '').replace(/<nav[\s\S]*?<\/nav>/g, '').replace(/<div class="author-box"[\s\S]*?<\/div>\s*<\/div>/g, '');
  const out: string[] = [];
  for (const m of cleaned.matchAll(/<(h1|h3|p|li)\b[^>]*>([\s\S]*?)<\/\1>/g)) {
   const text = decode(m[2].replace(/<[^>]+>/g, ''));

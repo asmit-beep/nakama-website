@@ -1,4 +1,5 @@
 import type {Article} from './articles';
+import {journalCta, stripJournalCta} from './cta';
 
 /**
  * PUBLISH TIME for this article. ISO 8601 with +05:30.
@@ -186,7 +187,29 @@ export const chatgptSeoAgencyJsonLd = articleLd;
 const figure = (file: string, alt: string, width: number, height: number, eager = false) =>
  `<figure><img src="/journal/${SLUG}/${file}" alt="${alt}" width="${width}" height="${height}" ${eager ? 'fetchpriority="high"' : 'loading="lazy"'} decoding="async"></figure>`;
 
-const quoteLink = `<p><a href="${QUOTE_URL}">Get a quote</a></p>`;
+
+/** Journal CTAs (cta.ts). Each one replaces a bare quote link and its lead-in, as on perplexity-seo. */
+const cta1 = journalCta({
+ variant: 'inline',
+ id: 'chatgpt-seo-agency-1',
+ headline: 'Want a ChatGPT scope you can check against this guide?',
+ sub: 'Tell us your category and the buyer questions that matter. We confirm scope on a pricing call, then send a written proposal.',
+ buttonHref: QUOTE_URL,
+});
+const cta2 = journalCta({
+ variant: 'inline',
+ id: 'chatgpt-seo-agency-2',
+ headline: 'Want ChatGPT evidence kept separate in your proposal?',
+ sub: 'Tell us which buyer questions you want covered in ChatGPT. We confirm scope on a pricing call, then send a written proposal.',
+ buttonHref: QUOTE_URL,
+});
+const ctaBand = journalCta({
+ variant: 'band',
+ id: 'chatgpt-seo-agency-3',
+ headline: 'Get a ChatGPT scope you can assess',
+ sub: 'Tell us where you stand and we’ll come back with a plan and a price.',
+ buttonHref: QUOTE_URL,
+});
 
 const faqHtml = FAQS.map(({q, a}) => `<h3 id="${faqId(q)}">${q}</h3>\n<p>${a}</p>`).join('\n');
 
@@ -203,14 +226,13 @@ const bodyHtml = `<nav aria-label="Breadcrumb" class="article-breadcrumb"><ol st
 <p>By <a href="${AUTHOR_URL}" rel="author">Snehil Srivastava</a>, CEO &amp; Creative Director, Nakama Growth</p>
 ${figure('chatgpt-seo-agency-cover.webp', COVER_ALT, 1920, 1080, true)}
 <p>A ChatGPT SEO agency is a paid engagement to improve how your business is represented in ChatGPT answers. Its proposal should identify the ChatGPT experience it will assess, the work it will deliver, and the evidence you can inspect. You are buying accountable work, not a reserved place in an answer.</p>
-<p>To review a ChatGPT-scoped proposal against this guide:</p>
-${quoteLink}
 <h2 id="what-does-a-chatgpt-seo-agency-actually-cover">What does a ChatGPT SEO agency actually cover?</h2>
 <p>A ChatGPT SEO agency covers an agreed scope of work tied to your business's appearance in ChatGPT, rather than an undefined promise of AI visibility. The proposal should name the buyer questions it covers and the ChatGPT experience it tests. Work for other platforms needs its own stated scope.</p>
 <p>The distinction matters when a pitch says "ChatGPT" but the proposed report combines every platform into one visibility score. You cannot judge a ChatGPT engagement from that total. Ask which ChatGPT observations you will receive separately and what business questions those observations address.</p>
 <p>If Google AI Overviews is also in scope, keep its deliverables separate; use our <a href="https://www.nakama.in/journal/how-to-rank-in-google-ai-overviews">Google AI Overviews guide</a> for that engine's execution.</p>
 <p>Broader <a href="https://www.nakama.in/journal/aeo-vs-seo-vs-geo">SEO, AEO or GEO</a> work may be part of the engagement. That does not make a separate ChatGPT fee necessary. The proposal needs to identify the additional ChatGPT-specific delivery, rather than charge again for an existing content assignment under a different label.</p>
 <p>Nakama Growth does ChatGPT work as part of its <a href="https://www.nakama.in/services/geo">GEO services</a> and <a href="https://www.nakama.in/services/aeo">AEO services</a>.</p>
+${cta1}
 <h2 id="what-deliverables-should-the-proposal-commit-to">What deliverables should the proposal commit to?</h2>
 <p>A ChatGPT SEO proposal should commit to an inspectable record of the ChatGPT questions assessed, the work delivered against them and the answers observed afterward. ChatGPT SEO services need that connection between delivery and evidence. A dashboard total alone does not tell you what the engagement produced.</p>
 <p>Ask to see the proposed handover format before agreeing to the work. It should let you move between a tested buyer question, its dated ChatGPT answer and the relevant delivery record without relying on a sales presentation.</p>
@@ -244,8 +266,7 @@ ${figure('chatgpt-seo-agency-labels.webp', LABELS_ALT, 1600, 900)}
 <h3 id="which-access-and-training-decisions-remain-yours">Which access and training decisions remain yours?</h3>
 <p>Ask whether the proposed work includes changes involving ChatGPT <a href="https://developers.openai.com/api/docs/bots">access or training permissions</a>, and which decisions require your approval. Require a clear description of the proposed change and its purpose before treating it as included work.</p>
 <p>The proposal should separate a recommendation, your approval and an implemented change. An access decision is not evidence that ChatGPT recommended your business. A training-permission decision is not a purchased answer placement. Keep both separate from the raw-answer evidence used to assess the engagement.</p>
-<p>If a proposal already isolates that ChatGPT evidence:</p>
-${quoteLink}
+${cta2}
 <h2 id="how-should-you-assess-a-chatgpt-scoped-quote">How should you assess a ChatGPT-scoped quote?</h2>
 <p>A ChatGPT-scoped quote should identify what you are paying for separately from any wider engagement. It should state whether setup and monitoring are separate, and whether content production, implementation and off-site work are included. A ChatGPT label on an existing retainer does not explain an additional charge.</p>
 <p>Read the quote against the evidence package. If it includes monitoring but excludes page changes, do not budget as though execution is covered. If ChatGPT reporting is bundled with other platforms, ask which deliverables remain specifically attributable to the ChatGPT scope.</p>
@@ -258,9 +279,7 @@ ${quoteLink}
 <h2 id="what-else-should-a-chatgpt-proposal-clarify">What else should a ChatGPT proposal clarify?</h2>
 <p>A ChatGPT SEO proposal should clarify the limits of the evidence alongside the deliverables. You need to know what the report can demonstrate when answers vary, when the brand appears without a link and when no mention appears. The answers below concern accepting ChatGPT-scoped work.</p>
 ${faqHtml}
-<hr>
-<p>For a ChatGPT scope you can assess against the evidence above:</p>
-${quoteLink}
+${ctaBand}
 ${authorBox}`;
 
 const decode = (s: string) => s
@@ -274,7 +293,7 @@ const decode = (s: string) => s
  .trim();
 
 function blocks(html: string): string[] {
- const cleaned = html.replace(/<figure[\s\S]*?<\/figure>/g, '').replace(/<nav[\s\S]*?<\/nav>/g, '').replace(/<div class="author-box"[\s\S]*?<\/div>\s*<\/div>/g, '');
+ const cleaned = stripJournalCta(html).replace(/<figure[\s\S]*?<\/figure>/g, '').replace(/<nav[\s\S]*?<\/nav>/g, '').replace(/<div class="author-box"[\s\S]*?<\/div>\s*<\/div>/g, '');
  const out: string[] = [];
  for (const m of cleaned.matchAll(/<(h1|h3|p|li)\b[^>]*>([\s\S]*?)<\/\1>/g)) {
   const text = decode(m[2].replace(/<[^>]+>/g, ''));
