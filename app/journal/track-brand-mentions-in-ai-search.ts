@@ -251,7 +251,7 @@ ${h2('Method 1: How does manual prompt sampling work?')}
 <li><strong>ChatGPT</strong> only searches the web for some prompts. In the St. Gallen data, 57.8% of ChatGPT runs returned no citations at all. Log a mention and a citation as separate fields, or you will undercount ChatGPT. Our <a href="https://www.nakama.in/journal/how-to-rank-in-chatgpt#how-do-you-track-brand-mentions-in-chatgpt">ChatGPT guide</a> covers the ChatGPT-specific details.</li>
 <li><strong>Google AI Overviews</strong> often do not trigger at all. Count a search with no overview separately from one where the overview leaves you out.</li>
 <li><strong>Google AI Mode</strong> may use different models from AI Overviews, so the answers and links differ, according to Google's page on <a href="https://developers.google.com/search/docs/appearance/ai-features">AI features and your website</a>. Keep it as a separate series.</li>
-<li><strong>Gemini, Perplexity and Copilot</strong>: keep the prompt list and run count identical to the other engines so the series compare. The GEO audit guide above covers what to record for each one.</li>
+<li><strong>Gemini, Perplexity and Copilot</strong>: keep the prompt list and run count identical to the other engines so the series compare. The GEO audit guide above covers what to record for each one. Our <a href="https://www.nakama.in/journal/perplexity-seo">Perplexity SEO guide</a> covers the Perplexity-specific details.</li>
 </ul>
 ${h2('Method 2: What can tracking tools add, and what can\'t they?')}
 <p>Tracking tools automate prompt sampling, usually daily, across several engines. They add scale and history. They do not add certainty.</p>
