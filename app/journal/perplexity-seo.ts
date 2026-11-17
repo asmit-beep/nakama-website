@@ -3,28 +3,28 @@ import {journalCta, stripJournalCta} from './cta';
 
 /**
  * PUBLISH TIME for this article. ISO 8601 with +05:30.
- * PREVIEW placeholder: the real go-live time is set here on Yash's GO, together with the visible
- * "Published DD Nov 2026. Last updated DD Nov 2026." line (FRESHNESS), which stays as a placeholder
- * in the preview. PUBLISHED_AT feeds the Article and WebPage datePublished and dateModified,
- * og/article published and modified times (via pageMeta), the RSS pubDate and the sitemap lastmod (via `date`).
+ * This one constant feeds the Article and WebPage datePublished and dateModified,
+ * og/article published and modified times (via pageMeta), the RSS pubDate, the sitemap
+ * lastmod (via `date`), and the visible freshness line. Set the real go-live time here at merge.
  *
- * PREVIEW is true: noindex,follow, and this note stays out of the sitemap, llms.txt,
+ * PREVIEW is false: noindex is off, so this note is listed in the sitemap, llms.txt,
  * llms-full.txt, RSS, the resources index and the author index (feedArticles, articlesBy
- * and the resources page all filter on noindex). Set PREVIEW to false only on a merge GO.
+ * and the resources page all filter on noindex).
  */
-export const PERPLEXITY_SEO_PUBLISHED_AT = '2026-11-18T09:00:00+05:30';
+export const PERPLEXITY_SEO_PUBLISHED_AT = '2026-11-18T03:30:00+05:30';
 const PUBLISHED_AT = PERPLEXITY_SEO_PUBLISHED_AT;
 const MODIFIED_AT = PUBLISHED_AT;
-const PREVIEW = true;
+const PREVIEW = false;
 
+const MONTHS = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
 const dayOf = (iso: string) => iso.slice(0, 10);
+const shortDate = (iso: string) => `${Number(iso.slice(8, 10))} ${MONTHS[Number(iso.slice(5, 7)) - 1]} ${iso.slice(0, 4)}`;
 
 const SLUG = 'perplexity-seo';
 const TITLE = "How to rank in Perplexity: a Perplexity SEO guide (2026)";
 const H1 = "How to rank in Perplexity: a Perplexity SEO guide (2026)";
-const DESCRIPTION = "How to rank in Perplexity, a Perplexity SEO guide built on Perplexity's own docs and labelled studies: getting cited, PerplexityBot vs Perplexity-User.";
-/** Placeholder dates kept as-is for the preview; both are set to the publish date on GO. */
-const FRESHNESS = "Published DD Nov 2026. Last updated DD Nov 2026.";
+const DESCRIPTION = "How to rank in Perplexity, a Perplexity SEO guide built on Perplexity's docs and labelled studies: getting cited, PerplexityBot vs Perplexity-User.";
+const FRESHNESS = `Published ${shortDate(PUBLISHED_AT)}. Last updated ${shortDate(MODIFIED_AT)}.`;
 const CANONICAL = `https://www.nakama.in/journal/${SLUG}`;
 const HERO_ALT = "Nakama journal cover on a dark background. Text reads How to rank in Perplexity, with the subhead What Perplexity’s docs and studies say gets cited, pills for Crawler access, Page structure and Tracking, and Checked 18 Nov 2026. On the right, a hand-drawn outline illustration of an AI answer card with grey placeholder text lines and small numbered citation markers 1, 2 and 3, above a staggered stack of three source cards numbered 1 to 3; card 2 is outlined brighter, marked with an orange dot and labelled Your page.";
 const OG_ALT = "Nakama journal share card reading How to rank in Perplexity, What Perplexity’s docs and studies say gets cited, Checked 18 Nov 2026. On the right, a hand-drawn outline illustration of an AI answer card with grey placeholder text lines and small numbered citation markers 1, 2 and 3, above a staggered stack of three source cards numbered 1 to 3; card 2 is outlined brighter, marked with an orange dot and labelled Your page.";
@@ -310,7 +310,7 @@ ${h2("How do you optimize crawler access, page structure and freshness for Perpl
 <p>For the short multi-engine crawler checklist, see <a href="https://www.nakama.in/journal/geo-audit#step-3-which-ai-crawlers-should-i-allow">Step 3 of our GEO audit</a>. The detail below is Perplexity only.</p>
 <h3 id="which-perplexity-user-agent-does-robots-txt-control">Which Perplexity user agent does robots.txt control?</h3>
 <p>robots.txt controls PerplexityBot. Perplexity's crawler docs say Perplexity-User "generally ignores robots.txt rules" because a user requested the fetch, so one combined "Perplexity" rule does not do what most teams expect. Set PerplexityBot in robots.txt, and handle Perplexity-User at the firewall if you need to restrict it.</p>
-<p>Perplexity's help center separately says an older feature that let users summarise a robots-blocked URL was disabled, so check your logs rather than assume either way.</p>
+<p>Perplexity's help center separately says an older feature that let users summarize a robots-blocked URL was disabled, so check your logs rather than assume either way.</p>
 <div class="article-table"><table>
 <thead><tr><th scope="col"></th><th scope="col">PerplexityBot</th><th scope="col">Perplexity-User</th></tr></thead>
 <tbody>
@@ -420,7 +420,7 @@ export const perplexitySeoArticle: Article = {
  publishedAt: PUBLISHED_AT,
  modifiedAt: MODIFIED_AT,
  authorName: 'Sandeep Kumar',
- /** PREVIEW true sets noindex,follow and keeps this note out of the sitemap, llms.txt, llms-full.txt, RSS, resources and the author index. */
+ /** PREVIEW false: index,follow, and this note is listed in the sitemap, llms.txt, llms-full.txt, RSS, resources and the author index. */
  noindex: PREVIEW,
  /** Keep reading goes to the GEO audit guide. A noindex preview can still show that one card. */
  nextSlug: 'geo-audit',

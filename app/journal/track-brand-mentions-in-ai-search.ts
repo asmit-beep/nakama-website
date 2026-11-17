@@ -3,8 +3,8 @@ import type {Article} from './articles';
 /**
  * PUBLISH TIME for this article. ISO 8601 with +05:30.
  * It feeds datePublished. MODIFIED_AT feeds dateModified, `date` and `modifiedAt` (bumped for the
- * inbound link to /journal/chatgpt-business-hub). The visible freshness line reads
- * "Checked 12 November 2026. Updated 17 November 2026."
+ * inbound link to /journal/perplexity-seo). The visible freshness line reads
+ * "Checked 12 November 2026. Updated 18 November 2026."
  *
  * PREVIEW is false: noindex is off, so this note is listed in the sitemap, llms.txt,
  * llms-full.txt, RSS, the resources index and the author index (feedArticles, articlesBy
@@ -14,7 +14,7 @@ import type {Article} from './articles';
  */
 export const TRACK_BRAND_MENTIONS_PUBLISHED_AT = '2026-11-12T09:00:00+05:30';
 const PUBLISHED_AT = TRACK_BRAND_MENTIONS_PUBLISHED_AT;
-const MODIFIED_AT = '2026-11-17T02:00:00+05:30';
+const MODIFIED_AT = '2026-11-18T03:00:00+05:30';
 const PREVIEW = false;
 
 const dayOf = (iso: string) => iso.slice(0, 10);
@@ -23,7 +23,7 @@ const SLUG = 'track-brand-mentions-in-ai-search';
 const TITLE = 'Best Ways to Track Brand Mentions in AI Search (2026)';
 const H1 = 'How to track brand mentions in AI search, engine by engine';
 const DESCRIPTION = 'Four ways to track brand mentions in AI search, from prompt sampling to logs, and what each one can show you on ChatGPT, Gemini and Copilot.';
-const FRESHNESS = 'Checked 12 November 2026. Updated 17 November 2026.';
+const FRESHNESS = 'Checked 12 November 2026. Updated 18 November 2026.';
 const CANONICAL = `https://www.nakama.in/journal/${SLUG}`;
 const COVER_ALT = 'Four ways to track brand mentions in AI search, mapped against six AI engines.';
 const OG_ALT = 'Track Brand Mentions in AI Search: four methods across six AI engines, a Nakama Growth journal guide.';

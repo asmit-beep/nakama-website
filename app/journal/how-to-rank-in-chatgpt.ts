@@ -8,7 +8,7 @@ import type {Article} from './articles';
  */
 export const HOW_TO_RANK_IN_CHATGPT_PUBLISHED_AT = '2026-10-17T18:12:57+05:30';
 const PUBLISHED_AT = HOW_TO_RANK_IN_CHATGPT_PUBLISHED_AT;
-const MODIFIED_AT = '2026-11-17T02:00:00+05:30';
+const MODIFIED_AT = '2026-11-18T03:00:00+05:30';
 
 const MONTHS = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
 const dayOf = (iso: string) => iso.slice(0, 10);
@@ -356,7 +356,7 @@ export const howToRankInChatgptArticle: Article = {
   "heading": "Introduction",
   "paragraphs": [
    "How to rank in ChatGPT (and get cited): what works in 2026",
-   "Published 17 Oct 2026. Last updated 17 Nov 2026.",
+   "Published 17 Oct 2026. Last updated 18 Nov 2026.",
    "By Snehil Srivastava , CEO & Creative Director, Nakama Growth",
    "How to rank in ChatGPT starts with one fact: ChatGPT cites pages its own search retrieves, and a top Google position predicts little about which ones. Let OpenAI's search crawler in, answer the buyer's exact question in plain words, and earn other sites that name you.",
    "TL;DR",

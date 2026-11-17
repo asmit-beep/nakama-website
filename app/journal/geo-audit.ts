@@ -8,7 +8,7 @@ import type {Article} from './articles';
  */
 export const GEO_AUDIT_PUBLISHED_AT = '2026-10-21T16:25:35+05:30';
 const PUBLISHED_AT = GEO_AUDIT_PUBLISHED_AT;
-const MODIFIED_AT = '2026-11-12T23:42:00+05:30';
+const MODIFIED_AT = '2026-11-18T03:00:00+05:30';
 
 const MONTHS = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
 const dayOf = (iso: string) => iso.slice(0, 10);
