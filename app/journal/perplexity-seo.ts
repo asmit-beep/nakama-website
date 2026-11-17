@@ -11,7 +11,7 @@ import {journalCta, stripJournalCta} from './cta';
  * llms-full.txt, RSS, the resources index and the author index (feedArticles, articlesBy
  * and the resources page all filter on noindex).
  */
-export const PERPLEXITY_SEO_PUBLISHED_AT = '2026-11-18T03:30:00+05:30';
+export const PERPLEXITY_SEO_PUBLISHED_AT = '2026-11-18T03:27:00+05:30';
 const PUBLISHED_AT = PERPLEXITY_SEO_PUBLISHED_AT;
 const MODIFIED_AT = PUBLISHED_AT;
 const PREVIEW = false;
