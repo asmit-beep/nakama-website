@@ -396,7 +396,7 @@ const bodyHtml = `<nav aria-label="Breadcrumb" class="article-breadcrumb"><ol st
 <td>First Page Sage</td>
 <td>Teams that want to read the research first</td>
 <td>SF Bay Area (per contact page title)</td>
-<td>Not published</td>
+<td>$6,000 to $12,000 a month (<a href="https://firstpagesage.com/seo-blog/geo-aeo-pricing-statistics/" rel="noopener" target="_blank">October 2026 pricing report</a>)</td>
 <td>Large library of AI search guides</td>
 </tr>
 <tr>
@@ -681,7 +681,7 @@ const bodyHtml = `<nav aria-label="Breadcrumb" class="article-breadcrumb"><ol st
 <p><strong>Best for:</strong> Teams that want to study an agency's research before hiring it.</p>
 <p><strong>Services:</strong> An <a href="https://firstpagesage.com/aeo-services/" rel="noopener" target="_blank">AEO service</a> built on six elements: a full AEO audit, authoritative content, technical implementation with structured data, continuous optimization, publicizing awards and usage statistics, and strategic coordination. The team also does list and database outreach.</p>
 <p><strong>Strength:</strong> A deep library of guides, including ChatGPT, SearchGPT and Perplexity optimization guides and a <a href="https://firstpagesage.com/seo-blog/generative-engine-optimization-geo-cost-breakdown/" rel="noopener" target="_blank">GEO cost breakdown</a>. Its <a href="https://firstpagesage.com/aeo-services/" rel="noopener" target="_blank">AEO page</a> says it has more than 15 years of experience in SEO and AEO (self-reported).</p>
-<p><strong>Pricing:</strong> Not published. Its <a href="https://firstpagesage.com/seo-blog/generative-engine-optimization-geo-cost-breakdown/" rel="noopener" target="_blank">GEO cost breakdown</a> lists market tiers based on pricing it has seen among the small number of companies offering GEO services. It does not list its own fees.</p>
+<p><strong>Pricing:</strong> $6,000 to $12,000 a month (<a href="https://firstpagesage.com/seo-blog/geo-aeo-pricing-statistics/" rel="noopener" target="_blank">October 2026 pricing report</a>). Its <a href="https://firstpagesage.com/seo-blog/generative-engine-optimization-geo-cost-breakdown/" rel="noopener" target="_blank">GEO cost breakdown</a> lists market tiers based on pricing it has seen among the small number of companies offering GEO services.</p>
 <p><strong>Limitation:</strong> Its <a href="https://firstpagesage.com/aeo-services/" rel="noopener" target="_blank">AEO page</a> is headlined "The #1 AEO Agency", a self-claim with no client results on that page. Its <a href="https://firstpagesage.com/case-studies/" rel="noopener" target="_blank">case studies page</a> shows anonymous AI results, such as AI recommendation share rising from 11% to 64% across 31 queries for an unnamed client (self-reported). The page also names Cadence Design Systems, for an SEO result.</p>
 <p>If you are weighing a move away from it, see the <a href="https://www.nakama.in/journal/first-page-sage-alternatives">First Page Sage alternatives</a>.</p>
 <p><strong>HQ:</strong> SF Bay Area, based on its <a href="https://firstpagesage.com/contact/" rel="noopener" target="_blank">contact page</a> title. No street address was given.</p>
@@ -897,7 +897,7 @@ export const aeoAgenciesArticle: Article = {
    "3 | Omniscient Digital | B2B software companies with budget | Five US addresses listed; team is distributed worldwide | Full service from USD 120,000/yr | Named AEO case studies, demand modeling",
    "4 | Minuttia | Established B2B SaaS brands | Not stated on pages we checked | Minimum project USD 4,000+ (its own list, Jan 2026) | Free AEO report, named Meilisearch case study",
    "5 | Optimist | B2B tech teams that want AEO and SEO strategy | Not stated on pages we checked | Advising from USD 3,000/mo, after a Roadmap (its guide, 11 Oct 2026) | Long B2B record, 21-factor audit",
-   "6 | First Page Sage | Teams that want to read the research first | SF Bay Area (per contact page title) | Not published | Large library of AI search guides",
+   "6 | First Page Sage | Teams that want to read the research first | SF Bay Area (per contact page title) | $6,000 to $12,000 a month (October 2026 pricing report) | Large library of AI search guides",
    "7 | iPullRank | Enterprise search programs | Not stated (a staff bio mentions a New York office) | Not published | Relevance engineering, AI Search Manual",
    "8 | Nakama | SaaS brands that need to be named via off-site sources | India (no US office stated) | Custom quote | Off-site AEO and GEO with checkable queries",
    "9 | Marcel Digital | Organizations that want AEO inside a full-service team | Chicago, IL | Not published | Schema and on-page AEO, 20+ years in search (self-reported)",
@@ -1028,7 +1028,7 @@ export const aeoAgenciesArticle: Article = {
    "Best for: Teams that want to study an agency's research before hiring it.",
    "Services: An AEO service built on six elements: a full AEO audit, authoritative content, technical implementation with structured data, continuous optimization, publicizing awards and usage statistics, and strategic coordination. The team also does list and database outreach.",
    "Strength: A deep library of guides, including ChatGPT, SearchGPT and Perplexity optimization guides and a GEO cost breakdown. Its AEO page says it has more than 15 years of experience in SEO and AEO (self-reported).",
-   "Pricing: Not published. Its GEO cost breakdown lists market tiers based on pricing it has seen among the small number of companies offering GEO services. It does not list its own fees.",
+   "Pricing: $6,000 to $12,000 a month (October 2026 pricing report). Its GEO cost breakdown lists market tiers based on pricing it has seen among the small number of companies offering GEO services.",
    "Limitation: Its AEO page is headlined \"The #1 AEO Agency\", a self-claim with no client results on that page. Its case studies page shows anonymous AI results, such as AI recommendation share rising from 11% to 64% across 31 queries for an unnamed client (self-reported). The page also names Cadence Design Systems, for an SEO result.",
    "If you are weighing a move away from it, see the First Page Sage alternatives.",
    "HQ: SF Bay Area, based on its contact page title. No street address was given.",

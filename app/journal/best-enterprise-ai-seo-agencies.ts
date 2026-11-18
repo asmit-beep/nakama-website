@@ -340,7 +340,7 @@ ${figure(`${SLUG}-matrix`, MATRIX_ALT, 1920, 1500)}
 <p><strong>What they do:</strong> SEO, thought-leadership content and AI search work aimed at qualified leads. Its homepage says "we don't believe in locking our clients into long-term contracts" (<a href="https://firstpagesage.com/">homepage</a>).</p>
 <p><strong>Enterprise signals:</strong> its case studies page names Cadence Design Systems, and its own October 2026 study lists Salesforce, Microsoft and Verizon among its clients (<a href="https://firstpagesage.com/seo-blog/the-best-generative-engine-optimization-geo-agencies/">its October 2026 agency study</a>).</p>
 <p><strong>How they measure AI answers:</strong> its case studies describe an unnamed AI writing assistant that AI tools called "an enterprise communication platform in 78 percent of tracked answers" by late 2025, up from 19 percent (<a href="https://firstpagesage.com/case-studies">case studies</a>, self-reported).</p>
-<p><strong>Price:</strong> USD 6,000 to 12,000 a month, per its own study.</p>
+<p><strong>Price:</strong> $6,000 to $12,000 a month (<a href="https://firstpagesage.com/seo-blog/geo-aeo-pricing-statistics/" rel="noopener" target="_blank">October 2026 pricing report</a>).</p>
 <p><strong>Weakness:</strong> that same study ranks First Page Sage first among the agencies it scored and names its best fit as "small and midsize businesses". Its AI-answer case studies do not name the clients.</p>
 <p><strong>Choose if:</strong> you want long-form expert content with the freedom to leave month to month.</p>
 <p>Already working with First Page Sage? Compare the <a href="https://www.nakama.in/journal/first-page-sage-alternatives">First Page Sage alternatives</a> on price and terms.</p>

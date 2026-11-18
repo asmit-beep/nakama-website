@@ -395,7 +395,7 @@ const bodyHtml = `<nav aria-label="Breadcrumb" class="article-breadcrumb"><ol st
 <td>First Page Sage</td>
 <td>Teams that want to read the research first</td>
 <td>SF Bay Area (per its contact page)</td>
-<td>Not published on GEO page</td>
+<td>$6,000 to $12,000 a month (<a href="https://firstpagesage.com/seo-blog/geo-aeo-pricing-statistics/" rel="noopener" target="_blank">October 2026 pricing report</a>)</td>
 <td>Large library of GEO and AI ranking guides</td>
 </tr>
 <tr>
@@ -513,10 +513,10 @@ const bodyHtml = `<nav aria-label="Breadcrumb" class="article-breadcrumb"><ol st
 <li>Runs industry-specific SEO and GEO pages for B2B SaaS, fintech, healthcare, cybersecurity and more.</li>
 </ul>
 <h4 id="limitation_3">Limitation</h4>
-<p>Its GEO case studies are anonymized and undated, and pricing is not published.</p>
+<p>Its GEO case studies are anonymized and undated.</p>
 <p>For agencies that compete with it on price, terms and proof, see the <a href="https://www.nakama.in/journal/first-page-sage-alternatives">First Page Sage alternatives</a>.</p>
 <h4 id="pricing_3">Pricing</h4>
-<p>Not published. Its GEO cost breakdown is an industry survey of other companies' prices.</p>
+<p>$6,000 to $12,000 a month (<a href="https://firstpagesage.com/seo-blog/geo-aeo-pricing-statistics/" rel="noopener" target="_blank">October 2026 pricing report</a>). Its GEO cost breakdown is an industry survey of other companies' prices.</p>
 <h4 id="hq_3">HQ</h4>
 <p>SF Bay Area, per its contact page; no address given.</p>
 <h3 id="5-ipullrank">5. iPullRank</h3>
@@ -766,7 +766,7 @@ export const geoAgenciesArticle: Article = {
    "1 | Nakama | Brands that need to be named in AI answers via off-site sources | Delhi, India | Custom quote | Off-site GEO across Reddit, YouTube, Quora, LinkedIn, editorial and review sites",
    "2 | Nine Peaks Media | B2B SaaS, software, IT, and technology companies looking to grow organic traffic and AI search visibility | Global, Remote | $3,500 to $10,000/month | Combines B2B AI SEO, content marketing, link building, and AI visibility optimization",
    "3 | Percepture | Teams that want fixed package pricing | New York, NY | From $3,500/mo | Published GEO packages plus digital PR",
-   "4 | First Page Sage | Teams that want to read the research first | SF Bay Area (per its contact page) | Not published on GEO page | Large library of GEO and AI ranking guides",
+   "4 | First Page Sage | Teams that want to read the research first | SF Bay Area (per its contact page) | $6,000 to $12,000 a month (October 2026 pricing report) | Large library of GEO and AI ranking guides",
    "5 | iPullRank | Enterprise and Fortune 500 search programs | Not stated on pages we checked | Not published | Technical depth and relevance engineering",
    "6 | Siege Media | Content and digital PR led GEO | Remote (US addresses) | Not published | Research reports and publisher relationships",
    "7 | NoGood | Growth teams wanting AEO plus performance marketing | New York (Soho) | Average retainer above $20,000/mo | Award-recognized AEO practice",
@@ -834,10 +834,10 @@ export const geoAgenciesArticle: Article = {
    "Over 15 years of experience, and calls itself a pioneer in both SEO and GEO.",
    "Runs industry-specific SEO and GEO pages for B2B SaaS, fintech, healthcare, cybersecurity and more.",
    "Limitation",
-   "Its GEO case studies are anonymized and undated, and pricing is not published.",
+   "Its GEO case studies are anonymized and undated.",
    "For agencies that compete with it on price, terms and proof, see the First Page Sage alternatives.",
    "Pricing",
-   "Not published. Its GEO cost breakdown is an industry survey of other companies' prices.",
+   "$6,000 to $12,000 a month (October 2026 pricing report). Its GEO cost breakdown is an industry survey of other companies' prices.",
    "HQ",
    "SF Bay Area, per its contact page; no address given.",
    "5. iPullRank",
