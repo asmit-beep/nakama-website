@@ -1,11 +1,10 @@
 import type {MetadataRoute} from 'next';
 import {abs} from '@/lib/seo';
 import {corePages,feedArticles,caseStudies,openings} from '@/lib/feed';
-import {lastChanged} from '@/lib/lastmod';
 
 export default function sitemap():MetadataRoute.Sitemap{
  return [
-  ...corePages.map(p=>({url:abs(p.path),lastModified:lastChanged(p.src),changeFrequency:p.freq,priority:p.priority})),
+  ...corePages.map(p=>({url:abs(p.path),lastModified:p.modified,changeFrequency:p.freq,priority:p.priority})),
   ...feedArticles
    .filter(a=>!a.canonical||a.canonical===`/journal/${a.slug}`)
    .map(a=>({url:abs(`/journal/${a.slug}`),lastModified:a.date,changeFrequency:'monthly' as const,priority:.6})),
