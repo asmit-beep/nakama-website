@@ -30,18 +30,16 @@ export function Header(){
     if(open){
       pendingContactScroll.current=true;
       setOpen(false);
+      window.setTimeout(()=>{
+        goToContactOptions();
+        pendingContactScroll.current=false;
+      },320);
       return;
     }
     goToContactOptions();
   }
   function onSheetOpenChange(next:boolean){
     setOpen(next);
-    if(!next&&pendingContactScroll.current){
-      window.setTimeout(()=>{
-        goToContactOptions();
-        pendingContactScroll.current=false;
-      },320);
-    }
   }
   useEffect(()=>{
     const update=()=>setScrolled(window.scrollY>18);
