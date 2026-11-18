@@ -97,7 +97,7 @@ export const SAMPLE_H2 = 'Get a free AI visibility check';
 export const SAMPLE_SCOPE = 'Scope: 1 to 3 prompts × 2 engines × 3 runs each, per engine. No score, no %.';
 export const SAMPLE_BODY = 'Emailed, not instant. A person runs your prompts and checks each answer before we send it. No score, no average position.';
 export const SEND = 'Send my free AI visibility check';
-export const THANKS_K = 'After you send it';
+export const THANKS_K = 'Request received';
 export const THANKS = 'Thanks. We will run your prompts and email your AI visibility check once every run is checked.';
 export const THANKS_NEXT = 'Want the full audit?';
 

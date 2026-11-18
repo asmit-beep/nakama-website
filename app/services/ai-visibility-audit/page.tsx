@@ -3,13 +3,13 @@ import Link from 'next/link';
 import {pageMeta, Crumbs, JsonLd, abs, SITE_URL} from '@/lib/seo';
 import {Shell} from '../../site';
 import {ReportScene} from './scene';
+import {FreeCheckRequest} from './FreeCheckForm';
 import {
  ANNS, BOOK, CMP, CMP_H2, CTA_H2, CTA_P, DEF_H2, DEF_P, ENG_LINE, EYEBROW, FAQ, FAQ_H2, FIT_NO,
  FIT_NO_ITEMS, FIT_YES, FIT_YES_ITEMS, FIXES, FREE_CTA, H1, KW_PRIMARY, LEAD, META, METRICS, MID,
  METRICS_H2, METRICS_LEAD, PAIN_H2, PAINS, PREVIEW, PRICE_H2, PRICE_ITEMS, PRICE_NAME, PRICE_ON,
  PROCESS_H2, Q_HREF, QUOTE, RELATED, REPORT_EXAMPLE, REPORT_H2, REPORT_NOTE, REPORT_RUNS,
- REPORT_TAG, RETAINER_H3, RETAINER_P, ROLE, SAMPLE_BODY, SAMPLE_EYE, SAMPLE_H2, SAMPLE_SCOPE, SEE_PRICING,
- SEND, SLUG, SOURCES, STEPS, THANKS, THANKS_K, THANKS_NEXT, TITLE, VIZ,
+ REPORT_TAG, RETAINER_H3, RETAINER_P, ROLE, SEE_PRICING, SLUG, SOURCES, STEPS, TITLE, VIZ,
 } from './copy';
 import './ai-visibility-audit.css';
 
@@ -303,32 +303,7 @@ export default function AiVisibilityAuditPage() {
 
     <section className="s s-alt fs-s" id="free-ai-visibility-check">
      <div className="fsa" aria-hidden="true"><div className="g2" /><div className="a2" /></div>
-     <div className="wrap fs">
-      <div>
-       <p className="eyb">{SAMPLE_EYE}</p>
-       <h2>{SAMPLE_H2}</h2>
-       <div className="scope">
-        <div><b>1<em>to</em>3</b><span>prompts</span></div>
-        <div><b>2</b><span>engines</span></div>
-        <div><b>3</b><span>runs each</span></div>
-       </div>
-       <p className="body">{SAMPLE_SCOPE}</p>
-       <p className="body">{SAMPLE_BODY}</p>
-       <div className="ty">
-        <b>{THANKS_K}</b>
-        {THANKS}
-        <br />
-        {THANKS_NEXT} <Link href={Q_HREF}>{BOOK}</Link> · <Link href="#pricing">{SEE_PRICING}</Link>
-       </div>
-      </div>
-      <div className="form" role="group" aria-label="Free AI visibility check request, preview only">
-       <div className="f"><label>Work email</label><div className="in">you@company.com</div></div>
-       <div className="f"><label>Site URL</label><div className="in">company.com</div></div>
-       <div className="f full"><label>Competitors <small>· up to 3</small></label><div className="in">rival-one.com, rival-two.com</div></div>
-       <div className="f full"><label>Buyer prompts <small>· 1 to 3</small></label><div className="in ta">best onboarding software for mid-market SaaS</div></div>
-       <div className="f full"><button type="button" className="btn btn-g btn-w">{SEND}</button></div>
-      </div>
-     </div>
+     <FreeCheckRequest />
     </section>
 
     <section className="s">
