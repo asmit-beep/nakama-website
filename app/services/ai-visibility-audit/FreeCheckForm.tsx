@@ -23,7 +23,7 @@ function track(event: string, props?: Record<string, string>) {
 }
 
 const FIELD_ORDER: FieldKey[] = ['email', 'siteUrl', 'competitors', 'prompts'];
-const MAILTO = 'mailto:contact@nakama.in?subject=Free%20AI%20visibility%20check%20request';
+const MAILTO = 'mailto:contact@nakama.in?subject=Free%20AI%20visibility%20check%20request&body=Site%3A%0ACompetitors%3A%0APrompts%3A';
 
 function collectAttribution() {
   const url = new URL(window.location.href);
@@ -263,22 +263,21 @@ export function FreeCheckRequest() {
           />
           <p className="err" id={id('prompts-err')}>{errors.prompts ?? ''}</p>
         </div>
-        <p className="err full" role={formError ? 'alert' : undefined}>
-          {formError ? (
-            formError.fallback ? (
-              <>
-                We could not send your request. Please try again, or{' '}
-                <a href={MAILTO}>email contact@nakama.in</a>
-                {' '}with your site and prompts.
-              </>
-            ) : ERRORS.generic
-          ) : null}
-        </p>
         <div className="f full">
           <button type="submit" className="btn btn-g btn-w" disabled={pending || sent}>
             {SEND}
           </button>
         </div>
+        <p className="err full" role={formError ? 'alert' : undefined}>
+          {formError ? (
+            formError.fallback ? (
+              <>
+                Not sent. Try again, or{' '}
+                <a href={MAILTO}>email contact@nakama.in</a>.
+              </>
+            ) : ERRORS.generic
+          ) : null}
+        </p>
         </form>
       </div>
     </div>

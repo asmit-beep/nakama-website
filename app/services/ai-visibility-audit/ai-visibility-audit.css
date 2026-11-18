@@ -164,6 +164,7 @@ main.aia-page .aia .pg h4{
   margin:0 0 16px;display:flex;justify-content:space-between;gap:12px;
 }
 main.aia-page .aia .pg h4 span{color:var(--dim);letter-spacing:.06em}
+main.aia-page .aia .pg h4 .run-dates{display:none}
 main.aia-page .aia .pg .note{font-size:12px;color:var(--quiet);margin-top:14px}
 main.aia-page .aia .src{list-style:none;margin:0;padding:0}
 main.aia-page .aia .src li{display:flex;justify-content:space-between;align-items:center;gap:12px;padding:11px 0;border-bottom:1px solid var(--hl);font-size:14px;color:var(--ink)}
@@ -231,7 +232,8 @@ main.aia-page .aia .f :is(input,textarea).in::placeholder{color:var(--dim);opaci
 main.aia-page .aia .f :is(input,textarea).in:focus-visible{outline:2px solid var(--em);outline-offset:3px}
 main.aia-page .aia .f :is(input,textarea).in[aria-invalid="true"]{border-color:var(--em)}
 main.aia-page .aia .form .err{margin:0;font-size:13px;color:#e8a090;line-height:1.4;min-height:2.8em}
-main.aia-page .aia .form .err.full{grid-column:1/-1;min-height:4.2em}
+main.aia-page .aia .form .err.full{grid-column:1/-1;min-height:2.8em}
+main.aia-page .aia .form .err.full a{color:#f3f1ed;text-decoration:underline;text-underline-offset:3px;white-space:nowrap}
 main.aia-page .aia .form.is-sent{opacity:.25}
 main.aia-page .aia .form{position:relative}
 main.aia-page .aia .form .hp{
@@ -529,7 +531,8 @@ main.aia-page .aia .cta .rail .btn{justify-content:center}
 @media (max-width:860px){
   main.aia-page .aia h1{font-size:44px}
   main.aia-page .aia .hero{padding:104px 0 70px}
-  main.aia-page .aia .hero-grid,
+  main.aia-page .aia .hero-grid{grid-template-columns:minmax(0,1fr);gap:28px}
+  main.aia-page .aia .hero-copy,main.aia-page .aia .stage{min-width:0}
   main.aia-page .aia .def,
   main.aia-page .aia .pain,
   main.aia-page .aia .mets3,
@@ -538,8 +541,8 @@ main.aia-page .aia .cta .rail .btn{justify-content:center}
   main.aia-page .aia .cta .wrap{grid-template-columns:1fr;gap:28px}
   main.aia-page .aia .glow{right:-80%;top:25%;width:900px;height:900px}
   main.aia-page .aia .arch{right:-30%;top:420px;width:420px}
-  main.aia-page .aia .rep-front{transform:rotateY(-5deg);margin-top:10px}
-  main.aia-page .aia .rep-back{right:-10px}
+  main.aia-page .aia .rep-front{transform:none;margin-top:10px}
+  main.aia-page .aia .rep-back{right:0}
   main.aia-page .aia .stage{min-height:0}
   main.aia-page .aia .def p{font-size:17px;margin-top:8px}
   main.aia-page .aia .pl{padding:30px}
@@ -555,15 +558,69 @@ main.aia-page .aia .cta .rail .btn{justify-content:center}
   main.aia-page .aia .pinw{position:static}
   main.aia-page .aia .pg{opacity:1}
   main.aia-page .aia .repx [data-r=t]{grid-column:auto}
+  main.aia-page .aia .repx-g{grid-template-columns:1fr;gap:14px}
+  main.aia-page .aia .pg{padding:18px}
+  main.aia-page .aia .pg h4{flex-wrap:wrap;gap:4px 12px}
   main.aia-page .aia .pp{background:linear-gradient(180deg,rgba(240,124,50,.08),transparent);border-left:2px solid var(--em);padding-left:10px}
   main.aia-page .aia .scope b{font-size:56px}
   main.aia-page .aia .fsa .a2{right:-40%}
   main.aia-page .aia .cta{padding:96px 0}
   main.aia-page .aia .cta h2{font-size:38px}
   main.aia-page .aia .s{padding-top:60px;padding-bottom:60px}
+  main.aia-page .aia :is(h1,h2,h3,.anns b){text-wrap:balance}
+  main.aia-page .aia .rel a,
+  main.aia-page .aia .tl,
+  main.aia-page .aia .ty a,
+  main.aia-page .aia .crumb a{
+    position:relative;display:inline-flex;align-items:center;
+  }
+  main.aia-page .aia .rel a:before,
+  main.aia-page .aia .tl:before,
+  main.aia-page .aia .ty a:before,
+  main.aia-page .aia .crumb a:before{
+    content:"";position:absolute;left:-8px;right:-8px;top:50%;height:44px;transform:translateY(-50%);
+  }
+  main.aia-page .aia .pr span{color:rgba(243,241,237,.4)}
+  main.aia-page .aia .pg h4 span,main.aia-page .aia .quote small,main.aia-page .aia .viz small{color:var(--mut)}
+  main.aia-page .aia .quote small,
+  main.aia-page .aia .viz small,
+  main.aia-page .aia .pair span b,
+  main.aia-page .aia .rt2 th,
+  main.aia-page .aia .pill,
+  main.aia-page .aia .stamp,
+  main.aia-page .aia .rep-meta div,
+  main.aia-page .aia .scope span{font-size:12px}
+  main.aia-page .aia .viz span,main.aia-page .aia .f label small{font-size:12px}
+}
+@media (max-width:560px){
+  main.aia-page .aia .pg h4 .run-dates{display:inline}
+  main.aia-page .aia .repx [data-r=t]{overflow-x:auto}
+  main.aia-page .aia .repx .rt2 th:nth-child(2),
+  main.aia-page .aia .repx .rt2 td:nth-child(2){display:none}
+  main.aia-page .aia .repx .rt2 td{white-space:nowrap}
+  main.aia-page .aia .repx .rt2 .rn{display:none}
+  main.aia-page .aia .repx .rt2{width:calc(100% + 16px);max-width:none;margin-left:-8px}
+  main.aia-page .aia .repx .rt2 th{letter-spacing:0;font-size:11px;white-space:nowrap}
+  main.aia-page .aia .repx .rt2 th,main.aia-page .aia .repx .rt2 td{padding:8px 4px}
+  main.aia-page .aia .repx .rt2 th:first-child,main.aia-page .aia .repx .rt2 td:first-child{padding-left:0}
+  main.aia-page .aia .repx .rt2 th:last-child,main.aia-page .aia .repx .rt2 td:last-child{padding-right:0}
 }
 @media (prefers-reduced-motion:reduce){
   main.aia-page .aia .anns li{min-height:0;padding:28px 0 28px 34px;opacity:1}
   main.aia-page .aia .pinw{position:static}
   main.aia-page .aia .pg{opacity:1}
+}
+
+@media (max-width:860px){
+  main.aia-page .aia .form{gap:12px;padding:20px 20px 10px}
+  main.aia-page .aia .form .f{gap:6px}
+  main.aia-page .aia .form .err{position:relative;min-height:1.4em;margin:0;padding-left:20px;font-size:13px;line-height:1.4;color:#e8a090}
+  main.aia-page .aia .form .err:not(:empty)::before{
+    content:"!" / "";position:absolute;left:0;top:2px;width:14px;height:14px;border-radius:50%;
+    background:#e8a090;color:#140c06;font:800 10px/14px Manrope,sans-serif;text-align:center}
+  main.aia-page .aia .form .err.full{min-height:2.8em;margin-top:-4px}
+  main.aia-page .aia .form .btn{height:auto;min-height:52px;padding:8px 20px;border:0;border-radius:14px 14px 10px 10px;
+    background:#f07c32;color:#17110c;font:700 16px/1.2 Manrope,sans-serif;letter-spacing:-.01em;box-shadow:none}
+  main.aia-page .aia .form .btn:hover{background:#f38948;color:#17110c;border:0;transform:none}
+  main.aia-page .aia .form .btn:focus-visible{outline:2px solid #ffd2ad;outline-offset:3px}
 }

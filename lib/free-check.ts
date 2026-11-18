@@ -19,7 +19,7 @@ export const ERRORS = {
   emailInvalid: 'Enter a valid work email.',
   siteRequired: 'Enter a site URL.',
   siteInvalid: 'Enter a site URL, such as company.com.',
-  competitors: 'Enter up to 3 competitors, separated by commas.',
+  competitors: 'Up to 3 competitors, comma separated.',
   prompts: 'Enter 1 to 3 buyer prompts, one per line.',
   generic: 'We could not send your request. Please try again.',
   notConfigured: 'not configured',
