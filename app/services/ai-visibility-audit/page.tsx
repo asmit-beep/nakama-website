@@ -219,9 +219,9 @@ export default function AiVisibilityAuditPage() {
             <tr key={engine}>
              <td>{engine}</td>
              <td>{date}</td>
-             <td className="of"><b>{mentioned}</b> of 3 runs</td>
-             <td className="of"><b>{recommended}</b> of 3 runs</td>
-             <td className="of"><b>{cited}</b> of 3 runs</td>
+             <td className="of"><b>{mentioned}</b> of 3<span className="rn"> runs</span></td>
+             <td className="of"><b>{recommended}</b> of 3<span className="rn"> runs</span></td>
+             <td className="of"><b>{cited}</b> of 3<span className="rn"> runs</span></td>
             </tr>
            ))}
           </tbody>

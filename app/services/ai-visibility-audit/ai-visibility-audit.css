@@ -232,7 +232,8 @@ main.aia-page .aia .f :is(input,textarea).in::placeholder{color:var(--dim);opaci
 main.aia-page .aia .f :is(input,textarea).in:focus-visible{outline:2px solid var(--em);outline-offset:3px}
 main.aia-page .aia .f :is(input,textarea).in[aria-invalid="true"]{border-color:var(--em)}
 main.aia-page .aia .form .err{margin:0;font-size:13px;color:#e8a090;line-height:1.4;min-height:2.8em}
-main.aia-page .aia .form .err.full{grid-column:1/-1;min-height:4.2em}
+main.aia-page .aia .form .err.full{grid-column:1/-1;min-height:2.8em}
+main.aia-page .aia .form .err.full a{color:#f3f1ed;text-decoration:underline;text-underline-offset:3px;white-space:nowrap}
 main.aia-page .aia .form.is-sent{opacity:.25}
 main.aia-page .aia .form{position:relative}
 main.aia-page .aia .form .hp{
@@ -580,7 +581,7 @@ main.aia-page .aia .cta .rail .btn{justify-content:center}
     content:"";position:absolute;left:-8px;right:-8px;top:50%;height:44px;transform:translateY(-50%);
   }
   main.aia-page .aia .pr span{color:rgba(243,241,237,.4)}
-  main.aia-page .aia .pg h4 span,main.aia-page .aia .quote small,main.aia-page .aia .viz small,main.aia-page .aia .mets .k{color:var(--mut)}
+  main.aia-page .aia .pg h4 span,main.aia-page .aia .quote small,main.aia-page .aia .viz small{color:var(--mut)}
   main.aia-page .aia .quote small,
   main.aia-page .aia .viz small,
   main.aia-page .aia .pair span b,
@@ -588,23 +589,18 @@ main.aia-page .aia .cta .rail .btn{justify-content:center}
   main.aia-page .aia .pill,
   main.aia-page .aia .stamp,
   main.aia-page .aia .rep-meta div,
-  main.aia-page .aia .mets .k,
   main.aia-page .aia .scope span{font-size:12px}
+  main.aia-page .aia .viz span,main.aia-page .aia .f label small{font-size:12px}
 }
 @media (max-width:560px){
   main.aia-page .aia .pg h4 .run-dates{display:inline}
   main.aia-page .aia .repx .rt2 th:nth-child(2),
   main.aia-page .aia .repx .rt2 td:nth-child(2){display:none}
-  main.aia-page .aia .repx .rt2{width:100%;max-width:100%}
-  main.aia-page .aia .repx .rt2 th{letter-spacing:.02em;font-size:12px;white-space:nowrap}
-  main.aia-page .aia .repx .rt2 th,main.aia-page .aia .repx .rt2 td{padding:8px 4px}
-  main.aia-page .aia .repx .rt2 th:first-child,main.aia-page .aia .repx .rt2 td:first-child{padding-left:0}
-  main.aia-page .aia .repx .rt2 th:last-child,main.aia-page .aia .repx .rt2 td:last-child{padding-right:0}
-}
-@media (max-width:360px){
+  main.aia-page .aia .repx .rt2 td{white-space:nowrap}
+  main.aia-page .aia .repx .rt2 .rn{display:none}
   main.aia-page .aia .repx .rt2{width:calc(100% + 16px);max-width:none;margin-left:-8px}
-  main.aia-page .aia .repx .rt2 th{letter-spacing:0}
-  main.aia-page .aia .repx .rt2 th,main.aia-page .aia .repx .rt2 td{padding:8px 3px}
+  main.aia-page .aia .repx .rt2 th{letter-spacing:0;font-size:11px;white-space:nowrap}
+  main.aia-page .aia .repx .rt2 th,main.aia-page .aia .repx .rt2 td{padding:8px 4px}
   main.aia-page .aia .repx .rt2 th:first-child,main.aia-page .aia .repx .rt2 td:first-child{padding-left:0}
   main.aia-page .aia .repx .rt2 th:last-child,main.aia-page .aia .repx .rt2 td:last-child{padding-right:0}
 }
@@ -621,9 +617,7 @@ main.aia-page .aia .cta .rail .btn{justify-content:center}
   main.aia-page .aia .form .err:not(:empty)::before{
     content:"!" / "";position:absolute;left:0;top:2px;width:14px;height:14px;border-radius:50%;
     background:#e8a090;color:#140c06;font:800 10px/14px Manrope,sans-serif;text-align:center}
-  main.aia-page .aia .form > .f:last-child{order:1}
-  main.aia-page .aia .form .err.full{order:2;min-height:2.8em;margin-top:-4px}
-  main.aia-page .aia .form .err.full a{color:#f3f1ed;text-decoration:underline;text-underline-offset:3px}
+  main.aia-page .aia .form .err.full{min-height:2.8em;margin-top:-4px}
   main.aia-page .aia .form .btn{height:auto;min-height:52px;padding:8px 20px;border:0;border-radius:14px 14px 10px 10px;
     background:#f07c32;color:#17110c;font:700 16px/1.2 Manrope,sans-serif;letter-spacing:-.01em;box-shadow:none}
   main.aia-page .aia .form .btn:hover{background:#f38948;color:#17110c;border:0;transform:none}
