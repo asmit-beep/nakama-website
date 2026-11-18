@@ -2,6 +2,8 @@ import {NextResponse} from 'next/server';
 import {ERRORS, validateFreeCheck, validateGuards} from '@/lib/free-check';
 import {deliverFreeCheck} from '@/lib/free-check-sink';
 
+export const runtime = 'nodejs';
+
 export async function POST(req: Request) {
   const body = await req.json().catch(() => null);
   if (!body || typeof body !== 'object') {
@@ -29,10 +31,10 @@ export async function POST(req: Request) {
   try {
     const delivered = await deliverFreeCheck(result.payload);
     if (!delivered.ok) {
-      return NextResponse.json({ok: false, error: delivered.error}, {status: delivered.status});
+      return NextResponse.json({ok: false, error: ERRORS.generic}, {status: delivered.status});
     }
     return NextResponse.json({ok: true});
   } catch {
-    return NextResponse.json({ok: false, error: ERRORS.generic}, {status: 500});
+    return NextResponse.json({ok: false, error: ERRORS.generic}, {status: 503});
   }
 }
