@@ -58,7 +58,8 @@ export function FreeCheckRequest() {
       const data = await res.json().catch(() => null);
       if (!res.ok || !data || data.ok !== true) {
         if (data?.fields && typeof data.fields === 'object') setErrors(data.fields);
-        setFormError(typeof data?.error === 'string' && res.status !== 503 ? data.error : ERRORS.generic);
+        const isFieldError = Boolean(data?.fields && typeof data.fields === 'object');
+        setFormError(isFieldError && typeof data?.error === 'string' ? data.error : ERRORS.generic);
         return;
       }
       setSent(true);
