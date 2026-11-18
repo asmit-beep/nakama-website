@@ -358,7 +358,7 @@ const bodyHtml = `<nav aria-label="Breadcrumb" class="article-breadcrumb"><ol st
 <h2 id="which-minuttia-alternative-should-you-pick">Which Minuttia alternative should you pick?</h2>
 <p>Pick by what you are swapping for. If you want the same program with more scale, look at Daydream or Skale. If the gap is citations outside your site, Nakama Growth fits. Bigger budgets suit Omniscient Digital or Graphite, pipeline focus suits Breaking B2B, and low lock-in suits Rock The Rankings.</p>
 <figure><img src="/journal/minuttia-alternatives/minuttia-alternatives-which.png" alt="Which Minuttia alternative to pick, mapped by need to each agency" width="1600" height="900" loading="lazy" decoding="async"></figure>
-<ul><li><strong>Same shape, more programmatic scale:</strong> Daydream.</li><li><strong>Off-site citations only, YouTube included, and a small first step:</strong> Nakama Growth.</li><li><strong>SaaS SEO systems at volume, with AI Brand Mentions added:</strong> Skale.</li><li><strong>Strategy plus PR on a large budget:</strong> Omniscient Digital.</li><li><strong>Demo pipeline first:</strong> Breaking B2B.</li><li><strong>Enterprise-scale AEO:</strong> Graphite.</li><li><strong>Founder-led, short commitment:</strong> Rock The Rankings.</li></ul>
+<ul><li><strong>Same shape, more programmatic scale:</strong> Daydream.</li><li><strong>GEO plus content and editorial, off-site citations and YouTube included, and a small first step:</strong> Nakama Growth.</li><li><strong>SaaS SEO systems at volume, with AI Brand Mentions added:</strong> Skale.</li><li><strong>Strategy plus PR on a large budget:</strong> Omniscient Digital.</li><li><strong>Demo pipeline first:</strong> Breaking B2B.</li><li><strong>Enterprise-scale AEO:</strong> Graphite.</li><li><strong>Founder-led, short commitment:</strong> Rock The Rankings.</li></ul>
 ${cta1}
 <h2 id="when-should-you-stay-with-minuttia">When should you stay with Minuttia?</h2>
 <p>Stay with Minuttia if you value one partner for SEO, AEO, content and measurement, and its tracker already gives you the reporting you need. Its retention figures and long case-study record are real strengths. Switching makes sense only when your gap is clearly elsewhere.</p>
@@ -606,7 +606,7 @@ export const minuttiaAlternativesArticle: Article = {
   "paragraphs": [
    "Pick by what you are swapping for. If you want the same program with more scale, look at Daydream or Skale. If the gap is citations outside your site, Nakama Growth fits. Bigger budgets suit Omniscient Digital or Graphite, pipeline focus suits Breaking B2B, and low lock-in suits Rock The Rankings.",
    "Same shape, more programmatic scale: Daydream.",
-   "Off-site citations only, YouTube included, and a small first step: Nakama Growth.",
+   "GEO plus content and editorial, off-site citations and YouTube included, and a small first step: Nakama Growth.",
    "SaaS SEO systems at volume, with AI Brand Mentions added: Skale.",
    "Strategy plus PR on a large budget: Omniscient Digital.",
    "Demo pipeline first: Breaking B2B.",
