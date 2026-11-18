@@ -100,6 +100,13 @@
  border-radius:14px;text-shadow:none;transition:transform .25s,box-shadow .25s;
 }
 .site-frame .site-nav .nav-contact:hover {transform:translateY(-2px);box-shadow:0 7px 25px #d9b58130!important}
+.site-frame .site-nav .nav-contact[aria-current="page"] {
+  font-weight:700;
+  text-decoration:underline;
+  text-underline-offset:4px;
+  text-decoration-thickness:1.5px;
+}
+.mobile-menu nav>a[aria-current="page"] {color:var(--accent)}
 .site-frame .site-nav .menu-button {background:#252a32!important;border:1px solid #ffffff25!important}
 @supports not ((backdrop-filter:blur(1px)) or (-webkit-backdrop-filter:blur(1px))){
  .site-frame .site-nav .desktop-nav {background:#303640f5!important}
