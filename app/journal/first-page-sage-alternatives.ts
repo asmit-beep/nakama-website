@@ -399,10 +399,10 @@ ${cta1}
 ${FAQS.map(f=>`<h3 id="${faqId(f.q)}">${esc(f.q)}</h3>
 <p>${esc(f.a)}</p>`).join('\n')}
 ${ctaBand}
-<h2 id="about-the-author">About the author</h2>
-<div class="author-box" id="yash-kumar"><img src="/authors/yash-kumar-nakama-ceo.webp" srcset="/authors/yash-kumar-nakama-ceo.webp 400w, /authors/yash-kumar-nakama-ceo-800.webp 800w" sizes="96px" alt="Yash Kumar, Co-founder and CEO of Nakama Growth" width="96" height="96" loading="lazy" decoding="async"><div class="author-box-text"><p><a href="https://www.nakama.in/authors/yash-kumar" rel="author">Yash Kumar</a> is Co-founder and CEO of Nakama Growth, an AEO and AI visibility agency for SaaS, software and AI companies. He tracks how ChatGPT, Gemini, Perplexity and Google AI Overviews answer buyer prompts and publishes the results.</p></div></div>
 <h2 id="related-reading">Related reading</h2>
-<ul><li><a href="https://www.nakama.in/journal/minuttia-alternatives">Minuttia alternatives</a></li><li><a href="https://www.nakama.in/journal/best-aeo-agencies">Best AEO agencies</a></li><li><a href="https://www.nakama.in/journal/best-generative-engine-optimization-agencies">Best generative engine optimization agencies</a></li><li><a href="https://www.nakama.in/journal/best-enterprise-ai-seo-agencies">Best enterprise AI SEO agencies</a></li><li><a href="https://www.nakama.in/journal/geo-aeo-pricing">GEO and AEO pricing</a></li></ul>`;
+<ul><li><a href="https://www.nakama.in/journal/minuttia-alternatives">Minuttia alternatives</a></li><li><a href="https://www.nakama.in/journal/best-aeo-agencies">Best AEO agencies</a></li><li><a href="https://www.nakama.in/journal/best-generative-engine-optimization-agencies">Best generative engine optimization agencies</a></li><li><a href="https://www.nakama.in/journal/best-enterprise-ai-seo-agencies">Best enterprise AI SEO agencies</a></li><li><a href="https://www.nakama.in/journal/geo-aeo-pricing">GEO and AEO pricing</a></li></ul>
+<h2 id="about-the-author">About the author</h2>
+<div class="author-box" id="yash-kumar"><img src="/authors/yash-kumar-nakama-ceo.webp" srcset="/authors/yash-kumar-nakama-ceo.webp 400w, /authors/yash-kumar-nakama-ceo-800.webp 800w" sizes="96px" alt="Yash Kumar, Co-founder and CEO of Nakama Growth" width="96" height="96" loading="lazy" decoding="async"><div class="author-box-text"><p><a href="https://www.nakama.in/authors/yash-kumar" rel="author">Yash Kumar</a> is Co-founder and CEO of Nakama Growth, an AEO and AI visibility agency for SaaS, software and AI companies. He tracks how ChatGPT, Gemini, Perplexity and Google AI Overviews answer buyer prompts and publishes the results.</p></div></div>`;
 
 export const firstPageSageAlternativesArticle: Article = {
  slug: SLUG,

@@ -32,7 +32,7 @@ export const geoAgenciesJsonLd = {
     "@type": "WebPage",
     "@id": "https://www.nakama.in/journal/best-generative-engine-optimization-agencies"
    },
-   "datePublished": "2026-10-14",
+   "datePublished": "2026-10-14T14:51:15+05:30",
    "dateModified": "2026-11-04T16:34:00+05:30",
    "image": [
     "https://www.nakama.in/journal/best-generative-engine-optimization-agencies/og-image.png",
@@ -675,7 +675,7 @@ export const geoAgenciesArticle: Article = {
  motif: 'guide',
  metaTitle: "Best Generative Engine Optimization Agencies in 2026",
  date: '2026-11-04',
- publishedAt: '2026-10-14',
+ publishedAt: '2026-10-14T14:51:15+05:30',
  modifiedAt: '2026-11-04T16:34:00+05:30',
  authorName: 'Yash Kumar',
  coverImage: {src: '/journal/best-generative-engine-optimization-agencies/best-generative-engine-optimization-agencies-cover.webp', width: 1920, height: 1080},
