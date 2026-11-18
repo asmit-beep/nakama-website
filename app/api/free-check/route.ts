@@ -5,6 +5,7 @@ import {
 import {deliverFreeCheck} from '@/lib/free-check-sink';
 
 export const runtime = 'nodejs';
+export const maxDuration = 60;
 
 const ROBOTS = {'X-Robots-Tag': 'noindex, nofollow'};
 const MAX_BODY = 16384;
