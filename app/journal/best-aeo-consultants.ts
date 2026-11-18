@@ -12,7 +12,7 @@ import type {Article} from './articles';
  */
 export const BEST_AEO_CONSULTANTS_PUBLISHED_AT = '2026-10-29T09:00:00+05:30';
 const PUBLISHED_AT = BEST_AEO_CONSULTANTS_PUBLISHED_AT;
-const MODIFIED_AT = '2026-11-18T19:17:00+05:30';
+const MODIFIED_AT = '2026-11-18T19:40:00+05:30';
 const PREVIEW = false;
 
 const MONTHS = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
@@ -263,7 +263,7 @@ const articleLd = {
      "name": "Who are the best AEO consultants in 2026?",
      "acceptedAnswer": {
       "@type": "Answer",
-      "text": "Our 2026 shortlist is Kevin Indig, Aleyda Solís, Lily Ray, Gaetano DiNardi, Taylor Scher, Jason Burns, Marie Haynes and Austin Heaton. See the comparison table at the top of this guide for type, best fit, engagement and published pricing."
+      "text": "Our 2026 shortlist is Kevin Indig, Aleyda Solís, Lily Ray, Gaetano DiNardi, Taylor Scher, Jason Burns, Marie Haynes and Austin Heaton. See the comparison table in this guide for type, best fit, engagement and published pricing."
      }
     },
     {
@@ -450,7 +450,7 @@ const bodyHtml = `<nav aria-label="Breadcrumb" class="article-breadcrumb"><ol st
 <h3 id="how-do-i-choose-an-aeo-consultant">How do I choose an AEO consultant?</h3>
 <p>Before you hire an AEO consultant, check three things: a clear measurement method (prompts, engines, runs), named proof from similar companies, and direct access to the person you are hiring. Match their specialty to your stage and market using the shortlist above.</p>
 <h3 id="who-are-the-best-aeo-consultants-in-2026">Who are the best AEO consultants in 2026?</h3>
-<p>Our 2026 shortlist is Kevin Indig, Aleyda Solís, Lily Ray, Gaetano DiNardi, Taylor Scher, Jason Burns, Marie Haynes and Austin Heaton. See the comparison table at the top of this guide for type, best fit, engagement and published pricing.</p>
+<p>Our 2026 shortlist is Kevin Indig, Aleyda Solís, Lily Ray, Gaetano DiNardi, Taylor Scher, Jason Burns, Marie Haynes and Austin Heaton. See the comparison table in this guide for type, best fit, engagement and published pricing.</p>
 <h3 id="is-aeo-different-from-geo">Is AEO different from GEO?</h3>
 <p>The terms overlap. AEO usually means optimizing to be the answer in AI and search answer features. GEO usually means optimizing for generative engines like ChatGPT and Gemini. Most consultants in this guide do both, so a GEO consultant and an AEO consultant are usually offering the same core service under different names.</p>
 <h3 id="do-i-need-seo-before-aeo">Do I need SEO before AEO?</h3>
@@ -787,7 +787,7 @@ export const bestAeoConsultantsArticle: Article = {
  {
  "heading": "Who are the best AEO consultants in 2026?",
  "paragraphs": [
-  "Our 2026 shortlist is Kevin Indig, Aleyda Solís, Lily Ray, Gaetano DiNardi, Taylor Scher, Jason Burns, Marie Haynes and Austin Heaton. See the comparison table at the top of this guide for type, best fit, engagement and published pricing."
+  "Our 2026 shortlist is Kevin Indig, Aleyda Solís, Lily Ray, Gaetano DiNardi, Taylor Scher, Jason Burns, Marie Haynes and Austin Heaton. See the comparison table in this guide for type, best fit, engagement and published pricing."
  ]
 },
  {
