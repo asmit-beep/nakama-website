@@ -315,7 +315,7 @@ const bodyHtml = `<nav aria-label="Breadcrumb" class="article-breadcrumb"><ol st
 <p><strong>How it differs from Skale:</strong> Skale also runs off-site citation outreach, but as an add-on to its SaaS SEO systems. Nakama Growth runs GEO plus content and editorial work, including original articles, comparisons and buyer guides, instead of a classic SEO program, handles YouTube end to end, and starts with a GEO audit rather than a retainer.</p>
 <p><strong>Weakness:</strong> founded in 2026, so its public case-study history is much shorter than Minuttia's 2020-era record. It also has no proprietary tracker; measurement runs on partner tools and a reporting framework.</p>
 <p><strong>Choose if:</strong> your blog is in decent shape and the gap is presence in the third-party sources AI answers draw from.</p>
-<p><strong>Skip if:</strong> you want one vendor to run your full classic SEO, content operations and its own tracking product.</p>
+<p><strong>Skip if:</strong> you want one vendor to run your full classic SEO program and its own tracking product.</p>
 <h2 id="3-what-is-skale">3. What is Skale?</h2>
 <p>Skale is a SaaS-only SEO agency known for repeatable growth systems and programmatic SEO. It has added a standalone AI Brand Mentions service, which makes it a credible Minuttia alternative for teams that want SEO scale first and AI visibility layered on. According to MADX, it was also the top pick on MADX's own Minuttia alternatives list.</p>
 <ul><li>Works only with SaaS companies.</li><li>Strong in programmatic SEO and content systems at volume.</li><li>Runs a dedicated AI Brand Mentions service: monthly off-site citation outreach for placements in the listicles, review and comparison pages and YouTube overviews that AI engines cite. That overlaps the off-site lane Nakama Growth works in.</li><li>Custom pricing; no public rate card.</li></ul>
@@ -352,7 +352,7 @@ const bodyHtml = `<nav aria-label="Breadcrumb" class="article-breadcrumb"><ol st
 <p><strong>Choose if:</strong> you want a low-lock-in SEO partner and AI search is a secondary goal.</p>
 <p><strong>Skip if:</strong> earning citations in third-party sources is your main AI visibility goal.</p>
 <h2 id="minuttia-vs-nakama-growth-what-is-the-practical-difference">Minuttia vs Nakama Growth: what is the practical difference?</h2>
-<p>Minuttia is a full-service B2B SaaS agency that owns content, SEO, AEO and measurement with its own tracker. Nakama Growth is narrower: it focuses on off-site citation channels (it does not take over your product site) and starts with a GEO audit. The choice depends on whether your gap is full-service content ownership or presence in the sources AI engines read.</p>
+<p>Minuttia is a full-service B2B SaaS agency that owns content, SEO, AEO and measurement with its own tracker. Nakama Growth is narrower: it runs GEO plus content and editorial, with off-site citation channels (it does not take over your product site), and starts with a GEO audit. The choice depends on whether your gap is full-service content ownership or presence in the sources AI engines read.</p>
 <figure><img src="/journal/minuttia-alternatives/minuttia-alternatives-vs.png" alt="Minuttia vs Nakama Growth: scope, tracker, measurement, entry, track record and ICP" width="1600" height="900" loading="lazy" decoding="async"></figure>
 <div class="article-table"><table><thead><tr><th scope="col"></th><th scope="col">Minuttia</th><th scope="col">Nakama Growth</th></tr></thead><tbody><tr><th scope="row">Core scope</th><td>SEO + AEO + content + PR + Reddit marketing</td><td>GEO plus content and editorial, including AI visibility via third-party sources</td></tr><tr><th scope="row">Own tracker</th><td>Yes (proprietary + free AEO report)</td><td>No (partner tools + reporting framework)</td></tr><tr><th scope="row">Measurement</th><td>Proprietary tracker, free report</td><td>Partner tools + reporting framework</td></tr><tr><th scope="row">Entry</th><td>Retainer; Clutch $5,000+ min</td><td>GEO audit</td></tr><tr><th scope="row">Track record</th><td>Since 2020, many public case studies</td><td>Since 2026, four named clients</td></tr><tr><th scope="row">ICP</th><td>B2B SaaS</td><td>Tech, SaaS and AI</td></tr><tr><th scope="row">Off-site work</th><td>Digital PR and Reddit marketing within a full-service program</td><td>The whole engagement: editorial, review, community and YouTube end to end</td></tr></tbody></table></div>
 <h2 id="which-minuttia-alternative-should-you-pick">Which Minuttia alternative should you pick?</h2>
@@ -514,7 +514,7 @@ export const minuttiaAlternativesArticle: Article = {
    "How it differs from Skale: Skale also runs off-site citation outreach, but as an add-on to its SaaS SEO systems. Nakama Growth runs GEO plus content and editorial work, including original articles, comparisons and buyer guides, instead of a classic SEO program, handles YouTube end to end, and starts with a GEO audit rather than a retainer.",
    "Weakness: founded in 2026, so its public case-study history is much shorter than Minuttia's 2020-era record. It also has no proprietary tracker; measurement runs on partner tools and a reporting framework.",
    "Choose if: your blog is in decent shape and the gap is presence in the third-party sources AI answers draw from.",
-   "Skip if: you want one vendor to run your full classic SEO, content operations and its own tracking product."
+   "Skip if: you want one vendor to run your full classic SEO program and its own tracking product."
   ]
  },
  {
@@ -590,7 +590,7 @@ export const minuttiaAlternativesArticle: Article = {
  {
   "heading": "Minuttia vs Nakama Growth: what is the practical difference?",
   "paragraphs": [
-   "Minuttia is a full-service B2B SaaS agency that owns content, SEO, AEO and measurement with its own tracker. Nakama Growth is narrower: it focuses on off-site citation channels (it does not take over your product site) and starts with a GEO audit. The choice depends on whether your gap is full-service content ownership or presence in the sources AI engines read.",
+   "Minuttia is a full-service B2B SaaS agency that owns content, SEO, AEO and measurement with its own tracker. Nakama Growth is narrower: it runs GEO plus content and editorial, with off-site citation channels (it does not take over your product site), and starts with a GEO audit. The choice depends on whether your gap is full-service content ownership or presence in the sources AI engines read.",
    " | Minuttia | Nakama Growth",
    "Core scope | SEO + AEO + content + PR + Reddit marketing | GEO plus content and editorial, including AI visibility via third-party sources",
    "Own tracker | Yes (proprietary + free AEO report) | No (partner tools + reporting framework)",
