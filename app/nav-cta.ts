@@ -47,7 +47,7 @@ export function goToContactOptions() {
   if (!section) return;
   const reduced = prefersReducedMotion();
   if (window.location.hash !== '#contact-options') {
-    history.pushState(null, '', '#contact-options');
+    history.replaceState(null, '', '#contact-options');
   }
   section.scrollIntoView({behavior: reduced ? 'auto' : 'smooth', block: 'start'});
   if (!reduced) {
