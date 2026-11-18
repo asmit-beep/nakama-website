@@ -184,7 +184,7 @@ export const geoAgenciesJsonLd = {
      "name": "How much does generative engine optimization cost?",
      "acceptedAnswer": {
       "@type": "Answer",
-      "text": "Pricing varies widely and most agencies do not publish it. Of the agencies in this list, Percepture publishes GEO packages from $3,500 to $10k+ per month, Omniscient Digital says full-service engagements start at $120,000 a year, and NoGood says its average retainer is above $20,000 a month. Nakama publishes no price; it uses one all-inclusive plan priced by custom quote with a three month minimum. Ask every agency for its pricing model and minimum term."
+      "text": "Pricing varies widely and most agencies do not publish it. Of the agencies in this list, Percepture publishes GEO packages from $3,500 to $10k+ per month, First Page Sage's own October 2026 pricing report lists $6,000 to $12,000 a month, Omniscient Digital says full-service engagements start at $120,000 a year, and NoGood says its average retainer is above $20,000 a month. Nakama publishes no price; it uses one all-inclusive plan priced by custom quote with a three month minimum. Ask every agency for its pricing model and minimum term."
      }
     },
     {
@@ -280,7 +280,7 @@ const bodyHtml = `<nav aria-label="Breadcrumb" class="article-breadcrumb"><ol st
 <ul>
 <li>A GEO agency gets your brand named or cited inside AI answers. Most of that work happens on third-party sources such as Reddit, YouTube, review sites and publications.</li>
 <li>Ask every agency for proof you can check yourself: a query you can run and a citation you can see.</li>
-<li>Only one agency in this list, Percepture, publishes GEO package prices. Omniscient Digital and NoGood publish a floor or an average.</li>
+<li>Only one agency in this list, Percepture, publishes GEO package prices. Omniscient Digital and NoGood publish a floor or an average, and First Page Sage publishes a monthly range in its own pricing report.</li>
 <li>No one can guarantee placement in ChatGPT or any AI answer. Treat guarantees as a red flag.</li>
 <li>Expect a first month of research and setup before visibility starts to compound.</li>
 </ul>
@@ -643,7 +643,7 @@ const bodyHtml = `<nav aria-label="Breadcrumb" class="article-breadcrumb"><ol st
 <h3 id="what-are-generative-engine-optimization-services">What are generative engine optimization services?</h3>
 <p>GEO services usually include a prompt map of buyer questions, an AI visibility audit, a source audit of which sites AI tools cite, answer-first content, digital PR, community and review site work, structured data, and ongoing tracking of mentions and citations.</p>
 <h3 id="how-much-does-generative-engine-optimization-cost">How much does generative engine optimization cost?</h3>
-<p>Pricing varies widely and most agencies do not publish it. Of the agencies in this list, Percepture publishes GEO packages from $3,500 to $10k+ per month, Omniscient Digital says full-service engagements start at $120,000 a year, and NoGood says its average retainer is above $20,000 a month. Nakama publishes no price; it uses one all-inclusive plan priced by custom quote with a three month minimum. Ask every agency for its pricing model and minimum term.</p>
+<p>Pricing varies widely and most agencies do not publish it. Of the agencies in this list, Percepture publishes GEO packages from $3,500 to $10k+ per month, First Page Sage's own October 2026 pricing report lists $6,000 to $12,000 a month, Omniscient Digital says full-service engagements start at $120,000 a year, and NoGood says its average retainer is above $20,000 a month. Nakama publishes no price; it uses one all-inclusive plan priced by custom quote with a three month minimum. Ask every agency for its pricing model and minimum term.</p>
 <h3 id="is-generative-engine-optimization-worth-it">Is generative engine optimization worth it?</h3>
 <p>It is worth it if your buyers ask AI tools for recommendations before they shortlist vendors. If AI answers in your category name competitors and leave you out, that gap affects your pipeline. Start with an audit of where you appear today before committing budget.</p>
 <h3 id="how-do-you-measure-generative-engine-optimization">How do you measure generative engine optimization?</h3>
@@ -710,7 +710,7 @@ export const geoAgenciesArticle: Article = {
   "paragraphs": [
    "A GEO agency gets your brand named or cited inside AI answers. Most of that work happens on third-party sources such as Reddit, YouTube, review sites and publications.",
    "Ask every agency for proof you can check yourself: a query you can run and a citation you can see.",
-   "Only one agency in this list, Percepture, publishes GEO package prices. Omniscient Digital and NoGood publish a floor or an average.",
+   "Only one agency in this list, Percepture, publishes GEO package prices. Omniscient Digital and NoGood publish a floor or an average, and First Page Sage publishes a monthly range in its own pricing report.",
    "No one can guarantee placement in ChatGPT or any AI answer. Treat guarantees as a red flag.",
    "Expect a first month of research and setup before visibility starts to compound."
   ]
@@ -961,7 +961,7 @@ export const geoAgenciesArticle: Article = {
    "What are generative engine optimization services?",
    "GEO services usually include a prompt map of buyer questions, an AI visibility audit, a source audit of which sites AI tools cite, answer-first content, digital PR, community and review site work, structured data, and ongoing tracking of mentions and citations.",
    "How much does generative engine optimization cost?",
-   "Pricing varies widely and most agencies do not publish it. Of the agencies in this list, Percepture publishes GEO packages from $3,500 to $10k+ per month, Omniscient Digital says full-service engagements start at $120,000 a year, and NoGood says its average retainer is above $20,000 a month. Nakama publishes no price; it uses one all-inclusive plan priced by custom quote with a three month minimum. Ask every agency for its pricing model and minimum term.",
+   "Pricing varies widely and most agencies do not publish it. Of the agencies in this list, Percepture publishes GEO packages from $3,500 to $10k+ per month, First Page Sage's own October 2026 pricing report lists $6,000 to $12,000 a month, Omniscient Digital says full-service engagements start at $120,000 a year, and NoGood says its average retainer is above $20,000 a month. Nakama publishes no price; it uses one all-inclusive plan priced by custom quote with a three month minimum. Ask every agency for its pricing model and minimum term.",
    "Is generative engine optimization worth it?",
    "It is worth it if your buyers ask AI tools for recommendations before they shortlist vendors. If AI answers in your category name competitors and leave you out, that gap affects your pipeline. Start with an audit of where you appear today before committing budget.",
    "How do you measure generative engine optimization?",
