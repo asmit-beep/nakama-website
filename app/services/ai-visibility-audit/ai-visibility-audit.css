@@ -613,3 +613,19 @@ main.aia-page .aia .cta .rail .btn{justify-content:center}
   main.aia-page .aia .pinw{position:static}
   main.aia-page .aia .pg{opacity:1}
 }
+
+@media (max-width:860px){
+  main.aia-page .aia .form{gap:12px;padding:20px 20px 10px}
+  main.aia-page .aia .form .f{gap:6px}
+  main.aia-page .aia .form .err{position:relative;min-height:1.4em;margin:0;padding-left:20px;font-size:13px;line-height:1.4;color:#e8a090}
+  main.aia-page .aia .form .err:not(:empty)::before{
+    content:"!" / "";position:absolute;left:0;top:2px;width:14px;height:14px;border-radius:50%;
+    background:#e8a090;color:#140c06;font:800 10px/14px Manrope,sans-serif;text-align:center}
+  main.aia-page .aia .form > .f:last-child{order:1}
+  main.aia-page .aia .form .err.full{order:2;min-height:2.8em;margin-top:-4px}
+  main.aia-page .aia .form .err.full a{color:#f3f1ed;text-decoration:underline;text-underline-offset:3px}
+  main.aia-page .aia .form .btn{height:auto;min-height:52px;padding:8px 20px;border:0;border-radius:14px 14px 10px 10px;
+    background:#f07c32;color:#17110c;font:700 16px/1.2 Manrope,sans-serif;letter-spacing:-.01em;box-shadow:none}
+  main.aia-page .aia .form .btn:hover{background:#f38948;color:#17110c;border:0;transform:none}
+  main.aia-page .aia .form .btn:focus-visible{outline:2px solid #ffd2ad;outline-offset:3px}
+}
