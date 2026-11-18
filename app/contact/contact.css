@@ -1,0 +1,33 @@
+/* Occupied header space: nav top offset + nav height on .site-frame. */
+.contact-page #contact-options {
+  scroll-margin-top: 82px;
+}
+.contact-page #contact-options:focus,
+.contact-page #contact-options:focus-visible {
+  outline: none;
+}
+.contact-page #contact-options .contact-options-title {
+  font-size: clamp(28px, 3.2vw, 40px);
+  line-height: 1.1;
+  letter-spacing: -.03em;
+  font-weight: 700;
+  margin: 0;
+  color: var(--ip-ink);
+}
+.contact-page #contact-options .contact-options-title + .ip-ways {
+  margin-top: 32px;
+}
+.contact-page #contact-options.is-pulse .ip-way {
+  animation: contact-card-pulse 600ms ease-out 1;
+}
+@keyframes contact-card-pulse {
+  0% { outline: 2px solid transparent; outline-offset: 6px; }
+  20% { outline: 2px solid rgba(240, 124, 50, .85); outline-offset: 6px; }
+  100% { outline: 2px solid transparent; outline-offset: 6px; }
+}
+@media (max-width: 800px) {
+  .contact-page #contact-options { scroll-margin-top: 70px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .contact-page #contact-options.is-pulse .ip-way { animation: none; }
+}

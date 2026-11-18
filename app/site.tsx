@@ -1,10 +1,11 @@
 "use client";
-import {useEffect,useRef,useState,type CSSProperties,type ReactNode,type RefObject} from 'react';
+import {useEffect,useRef,useState,type CSSProperties,type MouseEvent,type ReactNode,type RefObject} from 'react';
 import {usePathname} from 'next/navigation';
 import Link from 'next/link';
 import {ArrowUpRight,ArrowRight,Menu,Plus,ChevronDown} from 'lucide-react';
 import {BookCallButton} from '@/components/booking/BookCall';
 import {Sheet,SheetTrigger,SheetContent,SheetTitle,SheetDescription,SheetClose} from '@/components/ui/sheet';
+import {goToContactOptions,trackNavCtaClick} from '@/app/nav-cta';
 export const BOOKING='https://app.cal.com/snehil-srivastava-4jm7sq';
 export const navigationLinks=[['Pricing','/pricing'],['Resources','/resources'],['About','/about']] as const;
 export const companyLinks=[['Services','/services','What we do, channel by channel'],['Industries','/industries','Sectors we serve'],['White label','/white-label','Resell our work under your brand'],['Work','/work','Where our clients show up'],['Process','/process','How an engagement runs'],['Careers','/careers','Join the team']] as const;
@@ -15,9 +16,31 @@ export function Header(){
   const path=usePathname();
   /* /industries and /industries/*: header CTA is "Book a call", a real server-rendered link to the quote form (Dodai MUST: never BookCallButton). Other paths keep "Contact us". */
   const isIndustry=path==='/industries'||path.startsWith('/industries/');
-  const [ctaLabel,ctaHref]=isIndustry?['Book a call','/pricing#quote'] as const:['Contact us','/contact'] as const;
+  const isContactPage=path==='/contact';
+  const [ctaLabel,ctaHref]=isIndustry?['Book a call','/pricing#quote'] as const:isContactPage?['Contact us','#contact-options'] as const:['Contact us','/contact'] as const;
+  const ctaCurrent=isContactPage&&!isIndustry;
   const [open,setOpen]=useState(false);
   const [scrolled,setScrolled]=useState(false);
+  const pendingContactScroll=useRef(false);
+  function onCtaClick(event:MouseEvent<HTMLAnchorElement>,band:string){
+    trackNavCtaClick(band);
+    if(!isContactPage)return;
+    if(event.metaKey||event.ctrlKey||event.shiftKey||event.altKey||event.button!==0)return;
+    event.preventDefault();
+    if(open){
+      pendingContactScroll.current=true;
+      setOpen(false);
+      window.setTimeout(()=>{
+        goToContactOptions();
+        pendingContactScroll.current=false;
+      },320);
+      return;
+    }
+    goToContactOptions();
+  }
+  function onSheetOpenChange(next:boolean){
+    setOpen(next);
+  }
   useEffect(()=>{
     const update=()=>setScrolled(window.scrollY>18);
     update();
@@ -28,19 +51,19 @@ export function Header(){
     <Link className="brand" href="/" aria-label="Nakama Growth home"><img className="nakama-gate-lockup" src="/brand/nakama-lockup-dark.svg" alt="Nakama" width="220" height="50"/></Link>
     <nav className="desktop-nav" aria-label="Main navigation"><div className={`nav-drop${companyLinks.some(([,h])=>path.startsWith(h))?' is-current':''}`}><button type="button" className="nav-drop-btn" aria-haspopup="true">Company<ChevronDown size={14}/></button><div className="nav-drop-panel"><div className="nav-drop-inner">{companyLinks.map(([label,href,sub])=><Link key={href} href={href} aria-current={path.startsWith(href)?'page':undefined}><b>{label}</b><small>{sub}</small></Link>)}</div></div></div><div className={`nav-drop${path.startsWith('/services')?' is-current':''}`}><button type="button" className="nav-drop-btn" aria-haspopup="true">Services<ChevronDown size={14}/></button><div className="nav-drop-panel"><div className="nav-drop-inner">{serviceLinks.map(([label,href])=><Link key={href} href={href} aria-current={path===href||path.startsWith(href+'/')?'page':undefined}><b>{label}</b></Link>)}</div></div></div><div className={`nav-drop${path.startsWith('/industries')?' is-current':''}`}><button type="button" className="nav-drop-btn" aria-haspopup="true">Industries<ChevronDown size={14}/></button><div className="nav-drop-panel"><div className="nav-drop-inner">{industryLinks.map(([label,href,sub])=><Link key={href} href={href} aria-current={(href==='/industries'?path===href:path===href||path.startsWith(href+'/'))?'page':undefined}><b>{label}</b><small>{sub}</small></Link>)}</div></div></div>{navigationLinks.map(([label,href])=><Link key={href} href={href} aria-current={path===href||path.startsWith(href+'/')?'page':undefined}>{label}</Link>)}</nav>
     <div className="nav-actions">
-      <Link className="nav-contact" href={ctaHref}>{ctaLabel}<ArrowUpRight size={16}/></Link>
-      <Sheet open={open} onOpenChange={setOpen}>
+      <Link className="nav-contact" href={ctaHref} aria-current={ctaCurrent?'page':undefined} onClick={event=>onCtaClick(event,'header')}>{ctaLabel}<ArrowUpRight size={16}/></Link>
+      <Sheet open={open} onOpenChange={onSheetOpenChange}>
         <SheetTrigger asChild><button className="menu-button" aria-label="Open navigation"><Menu size={21}/></button></SheetTrigger>
-        <SheetContent className="mobile-menu">
+        <SheetContent className="mobile-menu" onCloseAutoFocus={event=>{if(pendingContactScroll.current)event.preventDefault();}}>
           <SheetTitle>Nakama Growth</SheetTitle>
           <SheetDescription>Choose where to explore.</SheetDescription>
-          <nav>{[['Home','/'],...companyLinks.map(([l,h])=>[l,h] as const),...industryLinks.map(([l,h])=>[l,h] as const),...navigationLinks,[ctaLabel,ctaHref]].map(([label,href])=><SheetClose asChild key={`${label}-${href}`}><Link href={href} aria-current={path===href?'page':undefined}>{label}<ArrowUpRight size={18}/></Link></SheetClose>)}</nav>
+          <nav>{[['Home','/'],...companyLinks.map(([l,h])=>[l,h] as const),...industryLinks.map(([l,h])=>[l,h] as const),...navigationLinks,[ctaLabel,ctaHref]].map(([label,href])=>{const isCta=href===ctaHref&&label===ctaLabel;return <SheetClose asChild key={`${label}-${href}`}><Link href={href} aria-current={isCta&&ctaCurrent?'page':path===href?'page':undefined} onClick={isCta?event=>onCtaClick(event,'menu'):undefined}>{label}<ArrowUpRight size={18}/></Link></SheetClose>})}</nav>
         </SheetContent>
       </Sheet>
     </div>
   </header>
 }
-export function Reveal({children,className='',style,id}:{children:ReactNode,className?:string,style?:CSSProperties,id?:string}){const ref=useRef<HTMLDivElement>(null);useEffect(()=>{const el=ref.current;if(!el)return;const reduced=matchMedia('(prefers-reduced-motion: reduce)');if(reduced.matches)return;el.classList.add('reveal-ready');const observer=new IntersectionObserver(([e])=>{if(e.isIntersecting){el.classList.add('reveal-in');observer.disconnect()}},{threshold:.08});observer.observe(el);return()=>observer.disconnect()},[]);return <div id={id} className={`reveal ${className}`} ref={ref} style={style}>{children}</div>}
+export function Reveal({children,className='',style,id,...rest}:{children:ReactNode,className?:string,style?:CSSProperties,id?:string,'data-contact-card'?:string}){const ref=useRef<HTMLDivElement>(null);useEffect(()=>{const el=ref.current;if(!el)return;const reduced=matchMedia('(prefers-reduced-motion: reduce)');if(reduced.matches)return;el.classList.add('reveal-ready');const observer=new IntersectionObserver(([e])=>{if(e.isIntersecting){el.classList.add('reveal-in');observer.disconnect()}},{threshold:.08});observer.observe(el);return()=>observer.disconnect()},[]);return <div id={id} className={`reveal ${className}`} ref={ref} style={style} {...rest}>{children}</div>}
 export function SectionTitle({label,title,description,center=false}:{label:string,title:ReactNode,description?:string,center?:boolean}){return <Reveal className={`section-title ${center?'center':''}`}><span className="eyebrow">{label}</span><h2>{title}</h2>{description&&<p>{description}</p>}</Reveal>}
 export function useScrollProgress(ref:RefObject<HTMLElement|null>){const [p,setP]=useState(0);useEffect(()=>{let frame=0;const q=matchMedia('(prefers-reduced-motion: reduce)');const update=()=>{frame=0;if(!ref.current)return;const r=ref.current.getBoundingClientRect();setP(q.matches?1:Math.max(0,Math.min(1,(110-r.top)/Math.max(1,r.height-innerHeight+110))))};const schedule=()=>{if(!frame)frame=requestAnimationFrame(update)};update();addEventListener('scroll',schedule,{passive:true});addEventListener('resize',schedule);q.addEventListener('change',schedule);return()=>{cancelAnimationFrame(frame);removeEventListener('scroll',schedule);removeEventListener('resize',schedule);q.removeEventListener('change',schedule)}},[ref]);return p}
 export function PageIntro({label,title,accent,description,children}:{label:string,title:string,accent:string,description:string,children?:ReactNode}){return <section className="page-intro page-intro-cinema page-width"><Reveal className="intro-stack"><span className="eyebrow"><span className="tiny-cross"/>{label}</span><h1>{title}<br/><span>{accent}</span></h1><p>{description}</p>{children}</Reveal><div className="intro-rule" aria-hidden="true"><i/><Plus size={13}/><i/></div></section>}

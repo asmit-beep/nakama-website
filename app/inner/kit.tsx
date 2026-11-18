@@ -35,8 +35,8 @@ export function IpHead({eyebrow,title,lead,center=false,children}:{eyebrow:strin
  </Reveal>;
 }
 
-export function IpSection({id,className='',children}:{id?:string;className?:string;children:ReactNode}){
- return <section id={id} className={`ip-section ${className}`.trim()}><div className="ip-wrap">{children}</div></section>;
+export function IpSection({id,className='',tabIndex,children}:{id?:string;className?:string;tabIndex?:number;children:ReactNode}){
+ return <section id={id} tabIndex={tabIndex} className={`ip-section ${className}`.trim()}><div className="ip-wrap">{children}</div></section>;
 }
 
 export function BookBtn({children='Book a call',className='ip-btn'}:{children?:ReactNode;className?:string}){
