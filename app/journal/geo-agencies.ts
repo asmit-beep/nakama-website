@@ -33,7 +33,7 @@ export const geoAgenciesJsonLd = {
     "@id": "https://www.nakama.in/journal/best-generative-engine-optimization-agencies"
    },
    "datePublished": "2026-10-14",
-   "dateModified": "2026-10-14",
+   "dateModified": "2026-11-04T16:34:00+05:30",
    "image": [
     "https://www.nakama.in/journal/best-generative-engine-optimization-agencies/og-image.png",
     "https://www.nakama.in/journal/best-generative-engine-optimization-agencies/best-generative-engine-optimization-agencies-cover.webp"
@@ -267,7 +267,7 @@ const ctaBand = journalCta({
 
 const bodyHtml = `<nav aria-label="Breadcrumb" class="article-breadcrumb"><ol style="list-style:none;display:flex;flex-wrap:wrap;gap:.5rem;padding:0;margin:0 0 1.25rem;font-size:.9rem"><li><a href="https://www.nakama.in/">Home</a></li><li aria-hidden="true">/</li><li><a href="https://www.nakama.in/resources">Resources</a></li><li aria-hidden="true">/</li><li aria-current="page">Best Generative Engine Optimization (GEO) Agencies in 2026, Compared</li></ol></nav>
 <h1 id="best-generative-engine-optimization-geo-agencies-in-2026-compared">Best Generative Engine Optimization (GEO) Agencies in 2026, Compared</h1>
-<p><strong>Last updated October 2026</strong></p>
+<p><strong>Last updated 4 Nov 2026</strong></p>
 <p>By Yash Kumar, Co-founder and CEO, Nakama Growth</p>
 <figure><img src="/journal/best-generative-engine-optimization-agencies/best-generative-engine-optimization-agencies-cover.webp" alt="Best generative engine optimization agencies in 2026 compared" width="1920" height="1080" fetchpriority="high" decoding="async"></figure>
 <p>Choosing a generative engine optimization agency is harder than choosing an SEO agency, because almost every agency now claims GEO. This guide compares ten GEO agencies and generative engine optimization companies on the same five criteria, with every claim linked to the agency's own website or confirmed by the agency directly. If you are hiring in India, see our comparison of the <a href="https://www.nakama.in/journal/best-geo-agencies-india">best GEO agencies in India</a>, and for software companies, the <a href="https://www.nakama.in/journal/best-geo-agencies-for-saas">best GEO agencies for SaaS</a>.</p>
@@ -673,7 +673,9 @@ export const geoAgenciesArticle: Article = {
  readTime: '16 min read',
  motif: 'guide',
  metaTitle: "Best Generative Engine Optimization Agencies in 2026",
- date: '2026-10-14',
+ date: '2026-11-04',
+ publishedAt: '2026-10-14',
+ modifiedAt: '2026-11-04T16:34:00+05:30',
  authorName: 'Yash Kumar',
  coverImage: {src: '/journal/best-generative-engine-optimization-agencies/best-generative-engine-optimization-agencies-cover.webp', width: 1920, height: 1080},
  ogImage: {
@@ -689,7 +691,7 @@ export const geoAgenciesArticle: Article = {
  {
   "heading": "Introduction",
   "paragraphs": [
-   "Best Generative Engine Optimization (GEO) Agencies in 2026, Compared\nLast updated October 2026",
+   "Best Generative Engine Optimization (GEO) Agencies in 2026, Compared\nLast updated 4 Nov 2026",
    "By Yash Kumar, Co-founder and CEO, Nakama Growth",
    "Image: Best generative engine optimization agencies in 2026 compared",
    "Choosing a generative engine optimization agency is harder than choosing an SEO agency, because almost every agency now claims GEO. This guide compares ten GEO agencies and generative engine optimization companies on the same five criteria, with every claim linked to the agency's own website or confirmed by the agency directly. If you are hiring in India, see our comparison of the best GEO agencies in India, and for software companies, the best GEO agencies for SaaS."

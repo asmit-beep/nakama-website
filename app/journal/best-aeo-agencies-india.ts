@@ -12,7 +12,7 @@ import type {Article} from './articles';
  */
 export const BEST_AEO_AGENCIES_INDIA_PUBLISHED_AT = '2026-10-28T09:00:00+05:30';
 const PUBLISHED_AT = BEST_AEO_AGENCIES_INDIA_PUBLISHED_AT;
-const MODIFIED_AT = PUBLISHED_AT;
+const MODIFIED_AT = '2026-11-04T21:05:00+05:30';
 const PREVIEW = false;
 
 const MONTHS = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
@@ -444,6 +444,7 @@ export const bestAeoAgenciesIndiaArticle: Article = {
  metaTitle: "Best AEO Agencies in India (2026) | Pricing & Proof",
  date: dayOf(MODIFIED_AT),
  publishedAt: PUBLISHED_AT,
+ modifiedAt: MODIFIED_AT,
  authorName: 'Yash Kumar',
  /** GO-LIVE TODO: PREVIEW is the only switch. false => index,follow plus sitemap, llms and RSS. */
  noindex: PREVIEW,
