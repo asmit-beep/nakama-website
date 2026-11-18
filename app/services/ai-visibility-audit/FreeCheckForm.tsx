@@ -23,7 +23,7 @@ function track(event: string, props?: Record<string, string>) {
 }
 
 const FIELD_ORDER: FieldKey[] = ['email', 'siteUrl', 'competitors', 'prompts'];
-const MAILTO = 'mailto:contact@nakama.in?subject=Free%20AI%20visibility%20check%20request';
+const MAILTO = 'mailto:contact@nakama.in?subject=Free%20AI%20visibility%20check%20request&body=Site%3A%0ACompetitors%3A%0APrompts%3A';
 
 function collectAttribution() {
   const url = new URL(window.location.href);

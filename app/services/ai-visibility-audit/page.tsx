@@ -13,6 +13,11 @@ import {
 } from './copy';
 import './ai-visibility-audit.css';
 
+const REPORT_RUN_DATE = REPORT_RUNS[0][1];
+if (REPORT_RUNS.some(row => row[1] !== REPORT_RUN_DATE)) {
+  throw new Error('REPORT_RUNS rows must share one date range');
+}
+
 /** Visual twin V3.0.1, live. PREVIEW false keeps robots index,follow and lists the URL. */
 const robots: Metadata['robots'] = PREVIEW
  ? {index: false, follow: true, googleBot: {index: false, follow: true}}
@@ -211,7 +216,7 @@ export default function AiVisibilityAuditPage() {
        <div className="repx-g">
         <div className="pg" data-r="t">
          <i className="md" />
-         <h4>Per-engine results <span>dated runs<span className="run-dates"> · 14 to 16 Oct</span></span></h4>
+         <h4>Per-engine results <span>dated runs<span className="run-dates">{` · ${REPORT_RUN_DATE}`}</span></span></h4>
          <table className="rt2">
           <tbody>
            <tr><th>Engine</th><th>Run date</th><th>Mentioned</th><th>Recommended</th><th>Cited</th></tr>

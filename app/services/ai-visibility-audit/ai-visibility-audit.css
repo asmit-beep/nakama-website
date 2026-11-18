@@ -594,6 +594,7 @@ main.aia-page .aia .cta .rail .btn{justify-content:center}
 }
 @media (max-width:560px){
   main.aia-page .aia .pg h4 .run-dates{display:inline}
+  main.aia-page .aia .repx [data-r=t]{overflow-x:auto}
   main.aia-page .aia .repx .rt2 th:nth-child(2),
   main.aia-page .aia .repx .rt2 td:nth-child(2){display:none}
   main.aia-page .aia .repx .rt2 td{white-space:nowrap}
