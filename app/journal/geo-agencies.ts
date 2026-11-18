@@ -514,7 +514,7 @@ const bodyHtml = `<nav aria-label="Breadcrumb" class="article-breadcrumb"><ol st
 </ul>
 <h4 id="limitation_3">Limitation</h4>
 <p>Its GEO case studies are anonymized and undated.</p>
-<p>For agencies that compete with it on price, terms and proof, see the <a href="https://www.nakama.in/journal/first-page-sage-alternatives">First Page Sage alternatives</a>.</p>
+<p>For agencies that compete with it on price, terms and proof, see the <a href="https://www.nakama.in/journal/first-page-sage-alternatives">First Page Sage competitors compared</a>.</p>
 <h4 id="pricing_3">Pricing</h4>
 <p>$6,000 to $12,000 a month (<a href="https://firstpagesage.com/seo-blog/geo-aeo-pricing-statistics/" rel="noopener" target="_blank">October 2026 pricing report</a>). Its GEO cost breakdown is an industry survey of other companies' prices.</p>
 <h4 id="hq_3">HQ</h4>
@@ -835,7 +835,7 @@ export const geoAgenciesArticle: Article = {
    "Runs industry-specific SEO and GEO pages for B2B SaaS, fintech, healthcare, cybersecurity and more.",
    "Limitation",
    "Its GEO case studies are anonymized and undated.",
-   "For agencies that compete with it on price, terms and proof, see the First Page Sage alternatives.",
+   "For agencies that compete with it on price, terms and proof, see the First Page Sage competitors compared.",
    "Pricing",
    "$6,000 to $12,000 a month (October 2026 pricing report). Its GEO cost breakdown is an industry survey of other companies' prices.",
    "HQ",
