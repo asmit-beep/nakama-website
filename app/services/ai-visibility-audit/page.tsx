@@ -211,7 +211,7 @@ export default function AiVisibilityAuditPage() {
        <div className="repx-g">
         <div className="pg" data-r="t">
          <i className="md" />
-         <h4>Per-engine results <span>dated runs</span></h4>
+         <h4>Per-engine results <span>dated runs<span className="run-dates"> · 14 to 16 Oct</span></span></h4>
          <table className="rt2">
           <tbody>
            <tr><th>Engine</th><th>Run date</th><th>Mentioned</th><th>Recommended</th><th>Cited</th></tr>
