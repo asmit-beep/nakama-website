@@ -6,7 +6,10 @@ export type SinkResult =
   | {ok: false; status: 503; error: typeof ERRORS.notConfigured};
 
 const INBOX = 'contact@nakama.in';
-const SEND_TIMEOUT_MS = 10_000;
+const CONNECT_TIMEOUT_MS = 10_000;
+const SEND_TIMEOUT_MS = 20_000;
+
+type SmtpSendInfo = {accepted?: unknown};
 
 function oneLine(value: string): string {
   return value.replace(/[\r\n\u0000-\u0008\u000B\u000C\u000E-\u001F\u007F]+/g, ' ').trim();
@@ -30,11 +33,64 @@ function formatSubmittedAtIst(date: Date): string {
 
 function errorClass(err: unknown): string {
   if (!err || typeof err !== 'object') return 'Error';
-  const e = err as {name?: unknown; code?: unknown; responseCode?: unknown; command?: unknown};
+  const e = err as {
+    name?: unknown;
+    code?: unknown;
+    responseCode?: unknown;
+    command?: unknown;
+    permanent?: unknown;
+  };
   const parts = [e.name, e.code, e.responseCode, e.command]
     .filter(value => value != null && value !== '')
     .map(value => String(value));
+  if (e.permanent === true) parts.push('permanent');
+  if (e.permanent === false) parts.push('transient');
   return parts.join(' ') || 'Error';
+}
+
+function smtpResponse(err: unknown): string | undefined {
+  if (!err || typeof err !== 'object') return undefined;
+  const response = (err as {response?: unknown}).response;
+  if (typeof response !== 'string') return undefined;
+  return response.replace(/[\r\n]+/g, ' ').slice(0, 160);
+}
+
+function recipientAccepted(info: SmtpSendInfo | null | undefined): boolean {
+  const accepted = info?.accepted;
+  if (!Array.isArray(accepted)) return false;
+  const needle = INBOX.toLowerCase();
+  return accepted.some(item => {
+    const value =
+      typeof item === 'string'
+        ? item
+        : item && typeof item === 'object' && 'address' in item
+          ? String((item as {address?: unknown}).address ?? '')
+          : String(item);
+    return value.toLowerCase() === needle;
+  });
+}
+
+/**
+ * Gmail may queue a message and still reply 451 after the DATA body
+ * (nodemailer code EMESSAGE, command DATA). Treating that, or any later
+ * timeout, as failure after the recipient was accepted makes the form show
+ * the mailto fallback and invites a duplicate send.
+ */
+function alreadyAccepted(err: unknown): boolean {
+  if (!err || typeof err !== 'object') return false;
+  const e = err as {
+    accepted?: unknown;
+    code?: unknown;
+    responseCode?: unknown;
+    command?: unknown;
+    permanent?: unknown;
+  };
+  if (recipientAccepted(e)) return true;
+  const command = String(e.command ?? '').toUpperCase();
+  const responseCode = Number(e.responseCode);
+  const transient =
+    e.permanent === false || (Number.isFinite(responseCode) && responseCode >= 400 && responseCode < 500);
+  return e.code === 'EMESSAGE' && command === 'DATA' && responseCode === 451 && transient;
 }
 
 function buildBody(
@@ -107,32 +163,63 @@ export async function deliverFreeCheck(
   const subject = `Free AI visibility check request: ${site}`;
   const redacted = redactFreeCheck(payload);
 
-  try {
-    const transporter = nodemailer.createTransport({
-      host: 'smtp.gmail.com',
-      port: 465,
-      secure: true,
-      auth: {user, pass},
-      connectionTimeout: SEND_TIMEOUT_MS,
-      greetingTimeout: SEND_TIMEOUT_MS,
-      socketTimeout: SEND_TIMEOUT_MS,
+  const transporter = nodemailer.createTransport({
+    host: 'smtp.gmail.com',
+    port: 465,
+    secure: true,
+    auth: {user, pass},
+    connectionTimeout: CONNECT_TIMEOUT_MS,
+    greetingTimeout: CONNECT_TIMEOUT_MS,
+    socketTimeout: SEND_TIMEOUT_MS,
+  });
+
+  let accepted = false;
+  const sendPromise = transporter
+    .sendMail({
+      from: `"Nakama website" <${INBOX}>`,
+      to: INBOX,
+      replyTo: {name: '', address: replyTo},
+      subject,
+      text: buildBody(payload, payload.attribution, payload.requestId, new Date()),
+    })
+    .then(info => {
+      if (recipientAccepted(info)) accepted = true;
+      return info;
+    })
+    .catch(err => {
+      if (alreadyAccepted(err)) {
+        accepted = true;
+        return err as SmtpSendInfo;
+      }
+      throw err;
     });
 
-    await withTimeout(
-      transporter.sendMail({
-        from: `"Nakama website" <${INBOX}>`,
-        to: INBOX,
-        replyTo: {name: '', address: replyTo},
-        subject,
-        text: buildBody(payload, payload.attribution, payload.requestId, new Date()),
-      }),
-      SEND_TIMEOUT_MS,
-    );
+  // Close only after sendMail settles, and never await it. Closing from a
+  // send-timeout path would abort an in-flight DATA that Gmail may already
+  // have queued.
+  void sendPromise.finally(() => {
+    transporter.close();
+  });
 
-    console.info('free-check sent', redacted);
-    return {ok: true};
+  try {
+    const info = await withTimeout(sendPromise, SEND_TIMEOUT_MS);
+    if (accepted || recipientAccepted(info)) {
+      console.info('free-check sent', redacted);
+      return {ok: true};
+    }
+    console.error('free-check send failed', {...redacted, class: 'no-accepted-recipients'});
+    return {ok: false, status: 503, error: ERRORS.notConfigured};
   } catch (err) {
-    console.error('free-check send failed', {...redacted, class: errorClass(err)});
+    if (accepted) {
+      console.info('free-check sent', {...redacted, class: errorClass(err)});
+      return {ok: true};
+    }
+    const response = smtpResponse(err);
+    console.error('free-check send failed', {
+      ...redacted,
+      class: errorClass(err),
+      ...(response ? {response} : {}),
+    });
     return {ok: false, status: 503, error: ERRORS.notConfigured};
   }
 }
