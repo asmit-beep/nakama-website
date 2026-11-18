@@ -9,6 +9,10 @@ export const MAX_EMAIL = 200;
 export const MAX_SITE = 300;
 export const MAX_COMPETITOR = 200;
 export const MAX_PROMPT = 500;
+export const HONEYPOT_NAME = 'hp_field_x';
+export const MAX_PAGE = 200;
+export const MAX_REFERRER = 500;
+export const MAX_UTM = 100;
 
 export const ERRORS = {
   emailRequired: 'Enter a work email.',
@@ -36,6 +40,14 @@ export type FreeCheckPayload = {
   siteUrl: string;
   competitors: string[];
   prompts: string[];
+};
+
+export type FreeCheckAttribution = {
+  page: string;
+  referrer: string;
+  utmSource: string;
+  utmMedium: string;
+  utmCampaign: string;
 };
 
 const EMAIL_RE = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
@@ -140,3 +152,40 @@ export function redactFreeCheck(payload: FreeCheckPayload) {
     prompts: payload.prompts.length,
   };
 }
+
+export function newRequestId(): string {
+  return crypto.randomUUID().slice(0, 8);
+}
+
+function lineValue(value: unknown, max: number): string {
+  if (typeof value !== 'string') return '';
+  return value.replace(/[\r\n\u0000-\u001F\u007F]+/g, ' ').trim().slice(0, max);
+}
+
+export function parseAttribution(raw: unknown): FreeCheckAttribution {
+  const record = raw && typeof raw === 'object' && !Array.isArray(raw)
+    ? raw as Record<string, unknown>
+    : {};
+  const pageRaw = lineValue(record.page, MAX_PAGE);
+  const page = pageRaw.startsWith('/') && !pageRaw.startsWith('//') && !/\s/.test(pageRaw)
+    ? pageRaw
+    : '';
+  const referrerRaw = lineValue(record.referrer, MAX_REFERRER);
+  let referrer = '';
+  if (referrerRaw) {
+    try {
+      const url = new URL(referrerRaw);
+      if (url.protocol === 'http:' || url.protocol === 'https:') referrer = url.toString();
+    } catch {
+      referrer = '';
+    }
+  }
+  return {
+    page,
+    referrer,
+    utmSource: lineValue(record.utmSource, MAX_UTM),
+    utmMedium: lineValue(record.utmMedium, MAX_UTM),
+    utmCampaign: lineValue(record.utmCampaign, MAX_UTM),
+  };
+}
+

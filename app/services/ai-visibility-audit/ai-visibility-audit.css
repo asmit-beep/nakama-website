@@ -199,7 +199,8 @@ main.aia-page .aia .scope div{padding:16px 18px;border-left:1px solid var(--hl)}
 main.aia-page .aia .scope div:first-child{border-left:0}
 main.aia-page .aia .scope b{display:block;font-size:22px;letter-spacing:-.02em;color:var(--ink)}
 main.aia-page .aia .scope span{font-size:12px;color:var(--mut);letter-spacing:.06em;text-transform:uppercase}
-main.aia-page .aia .ty{margin-top:22px;padding:20px 22px;border:1px dashed var(--hl2);border-radius:16px;font-size:14px;color:var(--mut);line-height:1.7}
+main.aia-page .aia .ty{margin-top:22px;padding:20px 22px;border:1px dashed var(--hl2);border-radius:16px;font-size:14px;color:var(--mut);line-height:1.7;min-height:140px}
+main.aia-page .aia .ty.is-pending{visibility:hidden}
 main.aia-page .aia .ty b{color:var(--ink);display:block;margin-bottom:6px;font-size:12px;letter-spacing:.14em;text-transform:uppercase}
 main.aia-page .aia .ty a{color:var(--ink);border-bottom:1px solid var(--em);font-weight:600}
 main.aia-page .aia .form{background:#0d0d0d;border:1px solid var(--hl2);border-radius:22px;padding:30px;display:grid;grid-template-columns:1fr 1fr;gap:18px}
@@ -224,7 +225,7 @@ main.aia-page .aia .f textarea.in{resize:none;line-height:1.45}
 main.aia-page .aia .f :is(input,textarea).in::placeholder{color:var(--dim);opacity:1}
 main.aia-page .aia .f :is(input,textarea).in:focus-visible{outline:2px solid var(--em);outline-offset:3px}
 main.aia-page .aia .f :is(input,textarea).in[aria-invalid="true"]{border-color:var(--em)}
-main.aia-page .aia .form .err{margin:0;font-size:13px;color:#e8a090;line-height:1.4}
+main.aia-page .aia .form .err{margin:0;font-size:13px;color:#e8a090;line-height:1.4;min-height:1.4em}
 main.aia-page .aia .form .err.full{grid-column:1/-1}
 main.aia-page .aia .form{position:relative}
 main.aia-page .aia .form .hp{
@@ -325,6 +326,8 @@ main.aia-page .aia .pair .dot{width:6px;height:6px}
   main.aia-page .aia .mcmp{display:grid;gap:12px;margin-top:40px}
   main.aia-page .aia .fs h2{font-size:30px}
   main.aia-page .aia .form{padding:20px}
+  main.aia-page .aia .ty{min-height:164px}
+  main.aia-page .aia .f :is(input,textarea).in{font-size:16px}
   main.aia-page .aia .pri .main,main.aia-page .aia .pri .side{padding:26px}
   main.aia-page .aia .card p.onc{font-size:28px}
   main.aia-page .aia .rel{gap:12px 20px}

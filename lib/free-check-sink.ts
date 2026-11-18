@@ -1,5 +1,5 @@
 import nodemailer from 'nodemailer';
-import {ERRORS, redactFreeCheck, type FreeCheckPayload} from './free-check';
+import {ERRORS, redactFreeCheck, type FreeCheckAttribution, type FreeCheckPayload} from './free-check';
 
 export type SinkResult =
   | {ok: true}
@@ -37,7 +37,12 @@ function errorClass(err: unknown): string {
   return parts.join(' ') || 'Error';
 }
 
-function buildBody(payload: FreeCheckPayload, submittedAt: Date): string {
+function buildBody(
+  payload: FreeCheckPayload,
+  attribution: FreeCheckAttribution,
+  requestId: string,
+  submittedAt: Date,
+): string {
   const email = oneLine(payload.email);
   const siteUrl = oneLine(payload.siteUrl);
   const competitors = payload.competitors.length
@@ -47,15 +52,22 @@ function buildBody(payload: FreeCheckPayload, submittedAt: Date): string {
     .map(item => oneLine(item))
     .filter(Boolean)
     .join('\n');
-  return [
+  const lines = [
     `Work email: ${email}`,
     `Site URL: ${siteUrl}`,
     `Competitors: ${competitors}`,
     'Buyer prompts:',
     prompts,
     '',
-    `Submitted: ${formatSubmittedAtIst(submittedAt)}`,
-  ].join('\n');
+  ];
+  if (attribution.page) lines.push(`Page: ${oneLine(attribution.page)}`);
+  if (attribution.referrer) lines.push(`Referrer: ${oneLine(attribution.referrer)}`);
+  if (attribution.utmSource) lines.push(`utm_source: ${oneLine(attribution.utmSource)}`);
+  if (attribution.utmMedium) lines.push(`utm_medium: ${oneLine(attribution.utmMedium)}`);
+  if (attribution.utmCampaign) lines.push(`utm_campaign: ${oneLine(attribution.utmCampaign)}`);
+  lines.push(`Request ID: ${oneLine(requestId)}`);
+  lines.push(`Submitted: ${formatSubmittedAtIst(submittedAt)}`);
+  return lines.join('\n');
 }
 
 async function withTimeout<T>(promise: Promise<T>, ms: number): Promise<T> {
@@ -75,7 +87,9 @@ async function withTimeout<T>(promise: Promise<T>, ms: number): Promise<T> {
 /**
  * Delivers a free-check submission to contact@nakama.in over Gmail SMTP.
  */
-export async function deliverFreeCheck(payload: FreeCheckPayload): Promise<SinkResult> {
+export async function deliverFreeCheck(
+  payload: FreeCheckPayload & {attribution: FreeCheckAttribution; requestId: string},
+): Promise<SinkResult> {
   const user = process.env.GMAIL_USER?.trim();
   const pass = process.env.GMAIL_APP_PASSWORD?.replaceAll(' ', '');
   if (!user || !pass) {
@@ -110,7 +124,7 @@ export async function deliverFreeCheck(payload: FreeCheckPayload): Promise<SinkR
         to: INBOX,
         replyTo,
         subject,
-        text: buildBody(payload, new Date()),
+        text: buildBody(payload, payload.attribution, payload.requestId, new Date()),
       }),
       SEND_TIMEOUT_MS,
     );
