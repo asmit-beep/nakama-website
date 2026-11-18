@@ -70,6 +70,14 @@ function recipientAccepted(info: SmtpSendInfo | null | undefined): boolean {
   });
 }
 
+function siteDomain(siteUrl: string): string {
+  try {
+    return new URL(siteUrl).hostname || 'unknown';
+  } catch {
+    return 'unknown';
+  }
+}
+
 /**
  * Gmail may queue a message and still reply 451 after the DATA body
  * (nodemailer code EMESSAGE, command DATA). Treating that, or any later
@@ -85,7 +93,7 @@ function alreadyAccepted(err: unknown): boolean {
     command?: unknown;
     permanent?: unknown;
   };
-  if (recipientAccepted(e)) return true;
+  if (recipientAccepted(e) && e.permanent !== true) return true;
   const command = String(e.command ?? '').toUpperCase();
   const responseCode = Number(e.responseCode);
   const transient =
@@ -174,6 +182,7 @@ export async function deliverFreeCheck(
   });
 
   let accepted = false;
+  let acceptedAfterError = false;
   const sendPromise = transporter
     .sendMail({
       from: `"Nakama website" <${INBOX}>`,
@@ -189,6 +198,7 @@ export async function deliverFreeCheck(
     .catch(err => {
       if (alreadyAccepted(err)) {
         accepted = true;
+        acceptedAfterError = true;
         return err as SmtpSendInfo;
       }
       throw err;
@@ -196,22 +206,39 @@ export async function deliverFreeCheck(
 
   // Close only after sendMail settles, and never await it. Closing from a
   // send-timeout path would abort an in-flight DATA that Gmail may already
-  // have queued.
+  // have queued. Catch the finally-chain rejection so a failed send does
+  // not become an unhandledRejection.
   void sendPromise.finally(() => {
     transporter.close();
-  });
+  }).catch(() => {});
 
   try {
     const info = await withTimeout(sendPromise, SEND_TIMEOUT_MS);
     if (accepted || recipientAccepted(info)) {
-      console.info('free-check sent', redacted);
+      if (acceptedAfterError) {
+        console.warn('free-check sent', {
+          class: 'accepted-after-451',
+          requestId: payload.requestId,
+          site: siteDomain(site),
+        });
+      } else {
+        console.info('free-check sent', redacted);
+      }
       return {ok: true};
     }
     console.error('free-check send failed', {...redacted, class: 'no-accepted-recipients'});
     return {ok: false, status: 503, error: ERRORS.notConfigured};
   } catch (err) {
     if (accepted) {
-      console.info('free-check sent', {...redacted, class: errorClass(err)});
+      if (acceptedAfterError) {
+        console.warn('free-check sent', {
+          class: 'accepted-after-451',
+          requestId: payload.requestId,
+          site: siteDomain(site),
+        });
+      } else {
+        console.info('free-check sent', {...redacted, class: errorClass(err)});
+      }
       return {ok: true};
     }
     const response = smtpResponse(err);
