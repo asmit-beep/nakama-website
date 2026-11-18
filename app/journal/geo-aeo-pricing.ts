@@ -1,4 +1,5 @@
 import type {Article} from './articles';
+import {journalCta} from './cta';
 
 /**
  * PUBLISH TIME for this article. ISO 8601 with +05:30.
@@ -198,6 +199,22 @@ const figure = (name: string, alt: string, width: number, height: number, eager 
 
 const faqHtml = FAQS.map(({q, a}) => `<h3 id="${faqId(q)}">${q}</h3>\n<p>${a}</p>`).join('\n');
 
+/** Journal CTAs (cta.ts). Each one replaces a bare quote link and its lead-in, as on perplexity-seo. */
+const cta1 = journalCta({
+ variant: 'inline',
+ id: 'geo-aeo-pricing-1',
+ headline: 'Want a scope and price for your brand?',
+ sub: 'Tell us about your brand. We confirm scope on a pricing call, then send a written proposal with scope, timeline and price within two business days of that call.',
+ buttonHref: 'https://www.nakama.in/pricing#quote',
+});
+const ctaBand = journalCta({
+ variant: 'band',
+ id: 'geo-aeo-pricing-2',
+ headline: 'Price GEO and AEO against your own brief',
+ sub: 'Tell us where you stand and we’ll come back with a plan and a price.',
+ buttonHref: 'https://www.nakama.in/pricing#quote',
+});
+
 const bodyHtml = `<nav aria-label="Breadcrumb" class="article-breadcrumb"><ol style="list-style:none;display:flex;flex-wrap:wrap;gap:.5rem;padding:0;margin:0 0 1.25rem;font-size:.9rem"><li><a href="https://www.nakama.in/">Home</a></li><li aria-hidden="true">/</li><li><a href="https://www.nakama.in/resources">Resources</a></li><li aria-hidden="true">/</li><li aria-current="page">${TITLE_HTML}</li></ol></nav>
 <h1 id="how-much-does-geo-cost-in-2026-geo-and-aeo-agency-pricing">${H1}</h1>
 <p>Updated ${modifiedDate}</p>
@@ -275,9 +292,10 @@ ${figure('geo-aeo-pricing-90-day', TIMELINE_ALT, 1600, 700)}
 <h2 id="what-does-nakamas-geo-and-aeo-plan-include">What does Nakama's GEO and AEO plan include?</h2>
 <p>Nakama Growth sells one all-inclusive plan, with no tiers or add-ons, and quotes it after a 15-minute call. The plan covers GEO and AEO strategy, content, community, video, digital PR and monthly reporting with one dedicated strategist. We ask for a three-month minimum, so we are not a fit for a one-off sprint.</p>
 <p>See what the plan includes on our <a href="https://www.nakama.in/services/geo">GEO service</a> and <a href="https://www.nakama.in/services/aeo">AEO service</a> pages.</p>
-<p><strong><a href="https://www.nakama.in/pricing#quote">Get your quote</a></strong>: tell us about your brand and you get a written proposal with scope, timeline and price within two business days.</p>
+${cta1}
 <h2 id="faq">FAQ</h2>
 ${faqHtml}
+${ctaBand}
 <h2 id="about-the-author">About the author</h2>
 <div class="author-box" id="yash-kumar"><img src="/authors/yash-kumar-nakama-ceo.webp" srcset="/authors/yash-kumar-nakama-ceo.webp 400w, /authors/yash-kumar-nakama-ceo-800.webp 800w" sizes="96px" alt="Yash Kumar, Co-founder and CEO of Nakama Growth" width="96" height="96" loading="lazy" decoding="async"><div class="author-box-text"><p><a href="https://www.nakama.in/authors/yash-kumar" rel="author">Yash Kumar</a> is Co-founder and CEO of Nakama Growth, an AEO and AI visibility agency for SaaS, software and AI companies. He tracks how ChatGPT, Gemini, Perplexity and Google AI Overviews answer buyer prompts and publishes the results.</p></div></div>`;
 
@@ -452,7 +470,6 @@ export const geoAeoPricingArticle: Article = {
    paragraphs: [
     'Nakama Growth sells one all-inclusive plan, with no tiers or add-ons, and quotes it after a 15-minute call. The plan covers GEO and AEO strategy, content, community, video, digital PR and monthly reporting with one dedicated strategist. We ask for a three-month minimum, so we are not a fit for a one-off sprint.',
     'See what the plan includes on our GEO service and AEO service pages.',
-    'Get your quote: tell us about your brand and you get a written proposal with scope, timeline and price within two business days.',
    ],
   },
   {

@@ -1,4 +1,5 @@
 import type {Article} from './articles';
+import {journalCta} from './cta';
 
 /**
  * PUBLISH TIME for this article. ISO 8601 with +05:30.
@@ -176,6 +177,29 @@ const articleLd = {
 
 export const howToHireAnAeoAgencyJsonLd = articleLd;
 
+/** Journal CTAs (cta.ts). Each one replaces a bare quote link and its lead-in, as on perplexity-seo. */
+const cta1 = journalCta({
+ variant: 'inline',
+ id: 'how-to-hire-an-aeo-agency-1',
+ headline: 'Want an all-inclusive plan priced for your brand?',
+ sub: 'Nakama Growth sells one plan. Tell us about your brand and we confirm scope on a pricing call, then send a written proposal.',
+ buttonHref: 'https://www.nakama.in/pricing#quote',
+});
+const cta2 = journalCta({
+ variant: 'inline',
+ id: 'how-to-hire-an-aeo-agency-2',
+ headline: 'Want to put us through this process?',
+ sub: 'Tell us your category and the questions your buyers ask. We confirm scope on a pricing call, then send a written proposal.',
+ buttonHref: 'https://www.nakama.in/pricing#quote',
+});
+const ctaBand = journalCta({
+ variant: 'band',
+ id: 'how-to-hire-an-aeo-agency-3',
+ headline: 'Hire for AEO with a clear scope and price',
+ sub: 'Tell us where you stand and we’ll come back with a plan and a price.',
+ buttonHref: 'https://www.nakama.in/pricing#quote',
+});
+
 const bodyHtml = `<nav aria-label="Breadcrumb" class="article-breadcrumb"><ol style="list-style:none;display:flex;flex-wrap:wrap;gap:.5rem;padding:0;margin:0 0 1.25rem;font-size:.9rem"><li><a href="https://www.nakama.in/">Home</a></li><li aria-hidden="true">/</li><li><a href="https://www.nakama.in/resources">Resources</a></li><li aria-hidden="true">/</li><li aria-current="page">${TITLE}</li></ol></nav>
 <h1 id="how-to-hire-an-aeo-agency-costs-questions-and-red-flags">${H1}</h1>
 <p>Updated ${modifiedDate}</p>
@@ -249,7 +273,7 @@ const bodyHtml = `<nav aria-label="Breadcrumb" class="article-breadcrumb"><ol st
 <li><strong>Bundled services.</strong> Some agencies fold in SEO, video or digital PR; others charge separately.</li>
 </ul>
 <p>When you evaluate providers, line them up by the same drivers rather than by headline price. A cheaper quote with no off-site work is usually a different product. Our <a href="https://www.nakama.in/journal/geo-aeo-pricing">GEO and AEO pricing</a> guide explains how the common pricing models differ.</p>
-<p>For an all-inclusive plan example, see <a href="https://www.nakama.in/pricing#quote">Nakama Growth pricing</a>.</p>
+${cta1}
 <h2 id="red-flags-before-you-sign">Red flags before you sign</h2>
 <p>Walk away, or slow down, if you see any of these. Each one shows up in sales calls before it shows up in results.</p>
 <ul>
@@ -267,7 +291,7 @@ const bodyHtml = `<nav aria-label="Breadcrumb" class="article-breadcrumb"><ol st
 <h2 id="talking-to-us">Talking to us</h2>
 <p>Nakama Growth is one option to put through this process. We run AEO and GEO for SaaS, tech and AI companies with one dedicated strategist per account, and nothing goes live without your sign-off. One honest limit: we ask for a three-month minimum, because the first month is mostly research, so we are not a fit for a one-off sprint.</p>
 <p>If AI answers are your main goal, see our <a href="https://www.nakama.in/services/aeo">AEO service</a>. If you want broader generative engine coverage, see our <a href="https://www.nakama.in/services/geo">GEO service</a>.</p>
-<p><strong><a href="https://www.nakama.in/pricing#quote">Get an AEO quote</a></strong> or book a call from the same page.</p>
+${cta2}
 <h2 id="faq">FAQ</h2>
 <h3 id="how-long-does-it-take-to-hire-an-aeo-agency">How long does it take to hire an AEO agency?</h3>
 <p>About three to five weeks if you run baseline prompts, discovery calls, proof checks and contract review properly.</p>
@@ -275,6 +299,7 @@ const bodyHtml = `<nav aria-label="Breadcrumb" class="article-breadcrumb"><ol st
 <p>Expect the first month to be research and setup. Judge movement on your agreed prompts over a quarter, per engine.</p>
 <h3 id="can-an-aeo-agency-guarantee-chatgpt-citations">Can an AEO agency guarantee ChatGPT citations?</h3>
 <p>No. AI answers vary between runs and users. Treat any guarantee as a red flag.</p>
+${ctaBand}
 <h2 id="about-the-author">About the author</h2>
 <div class="author-box" id="yash-kumar"><img src="/authors/yash-kumar-nakama-ceo.webp" srcset="/authors/yash-kumar-nakama-ceo.webp 400w, /authors/yash-kumar-nakama-ceo-800.webp 800w" sizes="96px" alt="Yash Kumar, Co-founder and CEO of Nakama Growth" width="96" height="96" loading="lazy" decoding="async"><div class="author-box-text"><p><a href="https://www.nakama.in/authors/yash-kumar" rel="author">Yash Kumar</a> is Co-founder and CEO of Nakama Growth, an AEO and AI visibility agency for SaaS, software and AI companies. He tracks how ChatGPT, Gemini, Perplexity and Google AI Overviews answer buyer prompts and publishes the results.</p></div></div>`;
 
@@ -394,7 +419,6 @@ export const howToHireAnAeoAgencyArticle: Article = {
     'Term length. Longer commitments often lower the monthly rate.',
     'Bundled services. Some agencies fold in SEO, video or digital PR; others charge separately.',
     'When you evaluate providers, line them up by the same drivers rather than by headline price. A cheaper quote with no off-site work is usually a different product. Our GEO and AEO pricing guide explains how the common pricing models differ.',
-    'For an all-inclusive plan example, see Nakama Growth pricing.',
    ],
   },
   {
@@ -422,7 +446,6 @@ export const howToHireAnAeoAgencyArticle: Article = {
    paragraphs: [
     'Nakama Growth is one option to put through this process. We run AEO and GEO for SaaS, tech and AI companies with one dedicated strategist per account, and nothing goes live without your sign-off. One honest limit: we ask for a three-month minimum, because the first month is mostly research, so we are not a fit for a one-off sprint.',
     'If AI answers are your main goal, see our AEO service. If you want broader generative engine coverage, see our GEO service.',
-    'Get an AEO quote or book a call from the same page.',
    ],
   },
   {

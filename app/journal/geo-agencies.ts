@@ -1,4 +1,5 @@
 import type {Article} from './articles';
+import {journalCta} from './cta';
 
 /** Buyer's guide. Optional article fields (metaTitle, date, author, og image, JSON-LD, HTML body) are read only when present, so the other journal notes keep their existing render. */
 export const geoAgenciesJsonLd = {
@@ -254,6 +255,15 @@ export const geoAgenciesJsonLd = {
   }
  ]
 } as const;
+
+/** Journal CTAs (cta.ts). Each one replaces a bare quote link and its lead-in, as on perplexity-seo. */
+const ctaBand = journalCta({
+ variant: 'band',
+ id: 'geo-agencies-1',
+ headline: 'Get a clear scope and price before you pick an agency',
+ sub: 'Tell us where you stand and we’ll come back with a plan and a price.',
+ buttonHref: 'https://www.nakama.in/pricing#quote',
+});
 
 const bodyHtml = `<nav aria-label="Breadcrumb" class="article-breadcrumb"><ol style="list-style:none;display:flex;flex-wrap:wrap;gap:.5rem;padding:0;margin:0 0 1.25rem;font-size:.9rem"><li><a href="https://www.nakama.in/">Home</a></li><li aria-hidden="true">/</li><li><a href="https://www.nakama.in/resources">Resources</a></li><li aria-hidden="true">/</li><li aria-current="page">Best Generative Engine Optimization (GEO) Agencies in 2026, Compared</li></ol></nav>
 <h1 id="best-generative-engine-optimization-geo-agencies-in-2026-compared">Best Generative Engine Optimization (GEO) Agencies in 2026, Compared</h1>
@@ -645,7 +655,8 @@ const bodyHtml = `<nav aria-label="Breadcrumb" class="article-breadcrumb"><ol st
 <p>Expect the first month to go to research and setup. At Nakama, the <a href="https://www.nakama.in/process">first cycle takes about a month</a>, and visibility compounds month over month after that. Be wary of anyone promising results in days.</p>
 <h2 id="find-out-where-your-brand-stands-in-ai-answers">Find out where your brand stands in AI answers</h2>
 <p>The best generative engine optimization agency for you is the one that can show you, with queries you can run yourself, where your brand appears today and what it will take to get named. Nakama starts every conversation by checking a few of your buyers' questions before the call, then gives you a clear next step: an audit, a proposal or an honest "not a fit."</p>
-<p><a href="https://www.nakama.in/contact">Book a call with Nakama</a> or <a href="https://www.nakama.in/pricing#quote">request a custom quote</a>. Prefer email? Write to contact@nakama.in.</p>
+${ctaBand}
+<p><a href="https://www.nakama.in/contact">Book a call with Nakama</a>. Prefer email? Write to contact@nakama.in.</p>
 <h2 id="about-the-author">About the author</h2>
 <div class="author-box" id="yash-kumar">
 <img src="/journal/best-generative-engine-optimization-agencies/yash-kumar-nakama-ceo.webp" srcset="/journal/best-generative-engine-optimization-agencies/yash-kumar-nakama-ceo.webp 400w, /journal/best-generative-engine-optimization-agencies/yash-kumar-nakama-ceo-800.webp 800w" sizes="96px" alt="Yash Kumar, Co-founder and CEO of Nakama Growth" width="96" height="96" loading="lazy" decoding="async">
@@ -963,7 +974,7 @@ export const geoAgenciesArticle: Article = {
   "heading": "Find out where your brand stands in AI answers",
   "paragraphs": [
    "\nThe best generative engine optimization agency for you is the one that can show you, with queries you can run yourself, where your brand appears today and what it will take to get named. Nakama starts every conversation by checking a few of your buyers' questions before the call, then gives you a clear next step: an audit, a proposal or an honest \"not a fit.\"",
-   "Book a call with Nakama or request a custom quote. Prefer email? Write to contact@nakama.in."
+   "Book a call with Nakama. Prefer email? Write to contact@nakama.in."
   ]
  },
  {

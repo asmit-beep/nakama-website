@@ -3224,6 +3224,7 @@ html{overflow-x:clip;scroll-padding-top:110px}body{font-family:var(--sans);font-
  .ip-article-page .article-rich .geo-decision table.stack-table td::before{content:attr(data-label);display:block;margin-bottom:4px;font-size:11px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:#9a9690}
 }
 .ip-article-page .article-rich .author-box{margin-top:16px;padding:22px 24px;border:1px solid rgba(255,255,255,.12);border-radius:16px;background:rgba(255,255,255,.03);display:grid;grid-template-columns:96px 1fr;gap:22px;align-items:start;scroll-margin-top:120px}
+.ip-article-page .article-rich .j-cta + .author-box{margin-top:48px}
 .ip-article-page .article-rich .author-box img{width:96px;height:96px;border-radius:50%;object-fit:cover;border:1px solid rgba(255,255,255,.12)}
 .ip-article-page .article-rich .author-box-text p:first-child{margin-top:0}
 @media(max-width:560px){.ip-article-page .article-rich .author-box{grid-template-columns:1fr}}

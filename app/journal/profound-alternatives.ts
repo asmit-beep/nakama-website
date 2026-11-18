@@ -1,4 +1,5 @@
 import type {Article} from './articles';
+import {journalCta, stripJournalCta} from './cta';
 
 /**
  * PUBLISH TIME for this article. ISO 8601 with +05:30.
@@ -195,6 +196,17 @@ const fig = (file: string, alt: string, eager = false) =>
 
 const faqHtml = FAQS.map(({q, a}) => `<h3 id="${faqId(q)}">${q}</h3>\n<p>${a}</p>`).join('\n');
 
+/** Journal CTAs (cta.ts). Each one replaces a bare quote link and its lead-in, as on perplexity-seo. */
+const ctaBand = journalCta({
+ variant: 'band',
+ id: 'profound-alternatives-1',
+ headline: 'Get managed GEO and AEO work scoped to your brand',
+ sub: 'Tell us where you stand and we’ll come back with a plan and a price.',
+ buttonHref: 'https://www.nakama.in/pricing#quote',
+ /** This post already links to /services/ai-visibility-audit, so the band's free-check link is off. */
+ secondaryLabel: null,
+});
+
 const bodyHtml = `<nav aria-label="Breadcrumb" class="article-breadcrumb"><ol style="list-style:none;display:flex;flex-wrap:wrap;gap:.5rem;padding:0;margin:0 0 1.25rem;font-size:.9rem"><li><a href="https://www.nakama.in/">Home</a></li><li aria-hidden="true">/</li><li><a href="https://www.nakama.in/resources">Resources</a></li><li aria-hidden="true">/</li><li aria-current="page">${H1}</li></ol></nav>
 <h1 id="profound-alternatives-2026">${H1}</h1>
 <p><strong>Updated: ${modifiedDate}</strong> · Prices and features checked on each vendor's official pricing page on ${modifiedDate}.</p>
@@ -256,7 +268,7 @@ ${fig('profound-alternatives-tool-vs-service', TOOL_ALT)}
 <h2 id="faq">FAQ</h2>
 ${faqHtml}
 <h2 id="ready-to-decide">Ready to decide?</h2>
-<p><a href="/pricing#quote">Get a quote</a> for managed GEO/AEO work scoped to your brand.</p>
+${ctaBand}
 <p>Not sure yet? Start with an <a href="/services/ai-visibility-audit">AI visibility audit</a>.</p>
 <h2 id="about-the-author">About the author</h2>
 <div class="author-box" id="asmit-choudhary">
@@ -277,7 +289,7 @@ const decode = (s: string) => s
  .trim();
 
 function blocks(html: string): string[] {
- const cleaned = html.replace(/<figure[\s\S]*?<\/figure>/g, '').replace(/<nav[\s\S]*?<\/nav>/g, '');
+ const cleaned = stripJournalCta(html).replace(/<figure[\s\S]*?<\/figure>/g, '').replace(/<nav[\s\S]*?<\/nav>/g, '');
  const out: string[] = [];
  for (const m of cleaned.matchAll(/<(h1|h3|p|li|caption|tr)\b[^>]*>([\s\S]*?)<\/\1>/g)) {
   const tag = m[1];

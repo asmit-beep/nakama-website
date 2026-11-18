@@ -20,6 +20,8 @@ type Base = {
   buttonHref?: string;  // default QUOTE_URL
   /** Optional, off by default. Emits data-cta, data-cta-variant, data-cta-link. Not wired to analytics yet (on hold until after the core update hold). */
   dataAttrs?: boolean;
+  /** Optional. Turns the first exact match of `text` inside sub into a plain link (href checked like buttonHref). */
+  subLink?: {text: string; href: string};
 };
 /** Inline card: no eyebrow, no secondary, no steps. Passing any of them is a type error. */
 export type JournalCtaInline = Base & {
@@ -47,9 +49,10 @@ const esc = (s: string) =>
  * A nowrap span, not U+2011, so copy-paste, search and screen readers still get a normal hyphen. */
 const txt = (s: string) => esc(s).replace(/\b(\d+)-minute\b/g, '<span class="j-cta-nw">$1-minute</span>');
 
-/** Only https://www.nakama.in/... or a root-relative path. Anything else fails the build. */
-function safeHref(href: string): string {
-  if (!/^(https:\/\/www\.nakama\.in)?\/[^\s"'<>]*$/.test(href)) throw new Error(`journalCta: href not allowed: ${href}`);
+/** Only https://www.nakama.in/... or a root-relative path. Anything else fails the build,
+ * including protocol-relative '//host' and '/\host', and any backslash. */
+export function safeHref(href: string): string {
+  if (!/^(?:https:\/\/www\.nakama\.in)?\/(?![\/\\])[^\s"'<>\\]*$/.test(href)) throw new Error(`journalCta: href not allowed: ${href}`);
   return esc(href);
 }
 
@@ -65,7 +68,23 @@ export function journalCta(o: JournalCta): string {
   const da = (link?: string) => o.dataAttrs ? ` data-cta="${o.id}" data-cta-variant="${o.variant}"${link ? ` data-cta-link="${link}"` : ''}` : '';
   const label = txt(o.buttonLabel ?? 'Get a quote');
   const href = safeHref(o.buttonHref ?? QUOTE_URL);
-  const sub = o.sub?.trim() ? `<p class="j-cta-sub">${txt(o.sub.trim())}</p>` : '';
+  let subHtml = o.sub?.trim() ? txt(o.sub.trim()) : '';
+  if (o.subLink) {
+    const m = txt(o.subLink.text);
+    const link = `<a href="${safeHref(o.subLink.href)}">${m}</a>`;
+    /* Tags (e.g. the j-cta-nw span) and entities (e.g. &amp;) are protected: a match may contain one whole,
+     * but may not start or end inside one, so it never lands in an attribute or splits an entity. */
+    const guarded = [...subHtml.matchAll(/<[^>]*>|&(?:#\d+|#x[\da-f]+|[a-z]+);/gi)].map(g => [g.index, g.index + g[0].length]);
+    const inside = (n: number) => guarded.some(([a, b]) => n > a && n < b);
+    let done = false;
+    subHtml = subHtml.replace(new RegExp(m.replace(/[.*+?^${}()|[\]\\]/g, '\\$&'), 'g'), (hit: string, at: number) => {
+      if (done || inside(at) || inside(at + hit.length)) return hit;
+      done = true;
+      return link;
+    });
+    if (!done) throw new Error(`journalCta: subLink text not in sub: ${o.subLink.text}`);
+  }
+  const sub = subHtml ? `<p class="j-cta-sub">${subHtml}</p>` : '';
   let eyebrow = '';
   let steps = '';
   let secondary = '';

@@ -1,4 +1,5 @@
 import type {Article} from './articles';
+import {journalCta} from './cta';
 
 /**
  * PUBLISH TIME for this article. Set the real go-live time here at merge (ISO 8601 with +05:30).
@@ -250,6 +251,22 @@ const articleLd = {
 
 export const minuttiaAlternativesJsonLd = [articleLd];
 
+/** Journal CTAs (cta.ts). Each one replaces a bare quote link and its lead-in, as on perplexity-seo. */
+const cta1 = journalCta({
+ variant: 'inline',
+ id: 'minuttia-alternatives-1',
+ headline: 'Want a Minuttia alternative scoped to your brand?',
+ sub: 'Tell us your category and the questions your buyers ask. We confirm scope on a pricing call, then send a written proposal.',
+ buttonHref: 'https://www.nakama.in/pricing#quote',
+});
+const ctaBand = journalCta({
+ variant: 'band',
+ id: 'minuttia-alternatives-2',
+ headline: 'Compare Nakama with Minuttia on your own brief',
+ sub: 'Tell us where you stand and we’ll come back with a plan and a price.',
+ buttonHref: 'https://www.nakama.in/pricing#quote',
+});
+
 const bodyHtml = `<nav aria-label="Breadcrumb" class="article-breadcrumb"><ol style="list-style:none;display:flex;flex-wrap:wrap;gap:.5rem;padding:0;margin:0 0 1.25rem;font-size:.9rem"><li><a href="https://www.nakama.in/">Home</a></li><li aria-hidden="true">/</li><li><a href="https://www.nakama.in/resources">Resources</a></li><li aria-hidden="true">/</li><li aria-current="page">Minuttia Alternatives (2026): 7 AEO Agencies Compared</li></ol></nav>
 <h1 id="minuttia-alternatives-2026-7-aeo-agencies-compared">Minuttia alternatives (2026): 7 AEO agencies compared</h1>
 <p>Updated ${modifiedDate}</p>
@@ -341,7 +358,7 @@ const bodyHtml = `<nav aria-label="Breadcrumb" class="article-breadcrumb"><ol st
 <p>Pick by what you are swapping for. If you want the same program with more scale, look at Daydream or Skale. If the gap is citations outside your site, Nakama Growth fits. Bigger budgets suit Omniscient Digital or Graphite, pipeline focus suits Breaking B2B, and low lock-in suits Rock The Rankings.</p>
 <figure><img src="/journal/minuttia-alternatives/minuttia-alternatives-which.png" alt="Which Minuttia alternative to pick, mapped by need to each agency" width="1600" height="900" loading="lazy" decoding="async"></figure>
 <ul><li><strong>Same shape, more programmatic scale:</strong> Daydream.</li><li><strong>Off-site citations only, YouTube included, and a small first step:</strong> Nakama Growth.</li><li><strong>SaaS SEO systems at volume, with AI Brand Mentions added:</strong> Skale.</li><li><strong>Strategy plus PR on a large budget:</strong> Omniscient Digital.</li><li><strong>Demo pipeline first:</strong> Breaking B2B.</li><li><strong>Enterprise-scale AEO:</strong> Graphite.</li><li><strong>Founder-led, short commitment:</strong> Rock The Rankings.</li></ul>
-<p>If you want to see where AI engines mention you today before choosing anyone, <a href="/pricing#quote">book a GEO audit call with Nakama Growth</a>.</p>
+${cta1}
 <h2 id="when-should-you-stay-with-minuttia">When should you stay with Minuttia?</h2>
 <p>Stay with Minuttia if you value one partner for SEO, AEO, content and measurement, and its tracker already gives you the reporting you need. Its retention figures and long case-study record are real strengths. Switching makes sense only when your gap is clearly elsewhere.</p>
 <ul><li>You want the agency to own your full content program.</li><li>You rely on its proprietary tracker and AI Overviews audits.</li><li>Your budget fits a retainer and you value its long SaaS track record.</li></ul>
@@ -363,14 +380,14 @@ const bodyHtml = `<nav aria-label="Breadcrumb" class="article-breadcrumb"><ol st
 <p>Some do. Minuttia has its own tracker, and Graphite and Daydream report inside their programs. Ask each agency which engines they track, how often, and whether citations are measured for ChatGPT and AI Overviews, not just Perplexity.</p>
 <h3 id="should-i-pick-an-agency-or-a-tracker-after-minuttias-free-report">Should I pick an agency or a tracker after Minuttia's free report?</h3>
 <p>Pick a tracker if you only need to monitor mentions and have a team to act on the data. Pick an agency if you need someone to change what AI engines say, through content, citations and PR. Many teams start with an audit to decide.</p>
+${ctaBand}
 <h2 id="about-the-author">About the author</h2>
 <div class="author-box" id="yash-kumar">
 <img src="/authors/yash-kumar-nakama-ceo.webp" srcset="/authors/yash-kumar-nakama-ceo.webp 400w, /authors/yash-kumar-nakama-ceo-800.webp 800w" sizes="96px" alt="Yash Kumar, Co-founder and CEO of Nakama Growth" width="96" height="96" loading="lazy" decoding="async">
 <div class="author-box-text">
 <p><a href="https://www.nakama.in/authors/yash-kumar" rel="author">Yash Kumar</a> is Co-founder and CEO of Nakama Growth, an AEO and GEO agency in India that helps B2B and SaaS brands get named when buyers ask ChatGPT, Perplexity, Gemini and Google AI Overviews what to choose. He leads Nakama's work on earning mentions on the sources those tools read.</p>
 </div>
-</div>
-<p>Want to know where ChatGPT, Perplexity and AI Overviews mention your brand today? <a href="/pricing#quote">Book a GEO audit call with Nakama Growth</a>.</p>`;
+</div>`;
 
 export const minuttiaAlternativesArticle: Article = {
  slug: 'minuttia-alternatives',
@@ -593,7 +610,6 @@ export const minuttiaAlternativesArticle: Article = {
    "Demo pipeline first: Breaking B2B.",
    "Enterprise-scale AEO: Graphite.",
    "Founder-led, short commitment: Rock The Rankings.",
-   "If you want to see where AI engines mention you today before choosing anyone, book a GEO audit call with Nakama Growth."
   ]
  },
  {
@@ -652,7 +668,6 @@ export const minuttiaAlternativesArticle: Article = {
   "heading": "Should I pick an agency or a tracker after Minuttia's free report?",
   "paragraphs": [
    "Pick a tracker if you only need to monitor mentions and have a team to act on the data. Pick an agency if you need someone to change what AI engines say, through content, citations and PR. Many teams start with an audit to decide.",
-   "Want to know where ChatGPT, Perplexity and AI Overviews mention your brand today? Book a GEO audit call with Nakama Growth."
   ]
  }
 ],
