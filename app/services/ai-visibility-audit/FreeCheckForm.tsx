@@ -159,6 +159,8 @@ export function FreeCheckRequest() {
         </div>
         <p className="body">{SAMPLE_SCOPE}</p>
         <p className="body">{SAMPLE_BODY}</p>
+      </div>
+      <div className="fs-slot">
         <div
           className={sent ? 'ty' : 'ty is-pending'}
           ref={thanksRef}
@@ -171,20 +173,19 @@ export function FreeCheckRequest() {
           <br />
           {THANKS_NEXT} <Link href={Q_HREF}>{BOOK}</Link> · <Link href="#pricing">{SEE_PRICING}</Link>
         </div>
-      </div>
-      <form
-        className={sent ? 'form is-sent' : 'form'}
-        method="post"
-        action="#free-ai-visibility-check"
-        onSubmit={onSubmit}
-        onFocusCapture={onInteract}
-        onInput={onInteract}
-        noValidate
-        aria-label="Free AI visibility check request"
-        aria-busy={pending}
-        aria-hidden={sent ? true : undefined}
-        inert={sent ? true : undefined}
-      >
+        <form
+          className={sent ? 'form is-sent' : 'form'}
+          method="post"
+          action="#free-ai-visibility-check"
+          onSubmit={onSubmit}
+          onFocusCapture={onInteract}
+          onInput={onInteract}
+          noValidate
+          aria-label="Free AI visibility check request"
+          aria-busy={pending}
+          aria-hidden={sent ? true : undefined}
+          inert={sent ? true : undefined}
+        >
         <div className="hp" aria-hidden="true">
           <label htmlFor={id('hp-x')}>Leave this empty</label>
           <input id={id('hp-x')} name={HONEYPOT_NAME} type="text" tabIndex={-1} autoComplete="off" />
@@ -278,7 +279,8 @@ export function FreeCheckRequest() {
             {SEND}
           </button>
         </div>
-      </form>
+        </form>
+      </div>
     </div>
   );
 }
