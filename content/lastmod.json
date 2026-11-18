@@ -3,7 +3,7 @@
   "/": {"modified": "2026-11-11", "src": ["app/page.tsx", "app/HomeSections.tsx", "app/ContentSections.tsx", "app/HeroRuntime.tsx", "app/proof-data.ts", "app/hero-panels.ts", "app/hero-clients.ts", "app/hero-marks.tsx", "components/Toolkit.tsx", "components/cardboard-features", "components/prompt-director", "components/sequence"]},
   "/services": {"modified": "2026-11-11", "src": ["app/services/page.tsx", "app/services/icons.tsx"]},
   "/services/geo": {"modified": "2026-11-11", "src": ["app/services/geo"]},
-  "/services/aeo": {"modified": "2026-11-11", "src": ["app/services/aeo"]},
+  "/services/aeo": {"modified": "2026-11-18", "src": ["app/services/aeo"]},
   "/services/reddit": {"modified": "2026-11-11", "src": ["app/services/reddit"]},
   "/services/content": {"modified": "2026-11-11", "src": ["app/services/content"]},
   "/services/youtube": {"modified": "2026-11-11", "src": ["app/services/youtube"]},

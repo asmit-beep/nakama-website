@@ -145,7 +145,7 @@ export default function AeoServices() {
       </article>
      </div>
      <p className="aeo-scene">A buyer asks how your product handles SSO for teams over 200 seats. Your answer sits in a help doc three clicks deep, so the pricing page and the AI answer both come from someone else&apos;s page.</p>
-     <p className="aeo-router">Answer engine optimization means your pages answer real buyer questions directly, in the first lines. Here it is hands-on work on your own site. <Link href="/journal/answer-engine-optimization">Read our answer engine optimization playbook</Link> for the full method.</p>
+     <p className="aeo-router">Answer engine optimization means your pages answer real buyer questions directly, in the first lines. Here it is hands-on work on your own site. <Link href="/journal/answer-engine-optimization">Read our answer engine optimization playbook</Link> for the full method, or compare <Link href="/journal/best-aeo-consultants">independent AEO consultants</Link> if you only need senior direction.</p>
     </div>
    </section>
 

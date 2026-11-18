@@ -408,6 +408,7 @@ const bodyHtml = `<nav aria-label="Breadcrumb" class="article-breadcrumb"><ol st
 <h2 id="how-do-you-choose-an-aeo-agency-in-india">How do you choose an AEO agency in India?</h2>
 <p>Choose an AEO agency in India by asking for proof you can re-run, a clear price and term, and a plan for the engines your buyers use. Seven questions separate real AEO practices from SEO agencies with a new label.</p>
 <ol><li><strong>Which prompts will you track, and how did you find them?</strong> Ask for the list.</li><li><strong>Which engines are covered?</strong> ChatGPT alone is not enough. Ask about Gemini, Perplexity and Google AI Overviews.</li><li><strong>Can I re-run your best case study?</strong> Ask for the exact prompt, engine and date.</li><li><strong>How do you report unprompted mentions?</strong> That means prompts that do not include your brand name.</li><li><strong>What is billed outside the fee?</strong> Placements, tools and API credits often are.</li><li><strong>What is the minimum term and notice period?</strong></li><li><strong>What will you not do?</strong> A good agency will rule out fake reviews and undisclosed forum posts.</li></ol>
+<p>If you only need senior direction, compare the <a href="/journal/best-aeo-consultants">best AEO consultants</a> instead.</p>
 <h2 id="what-are-the-red-flags-when-hiring-an-aeo-agency-in-india">What are the red flags when hiring an AEO agency in India?</h2>
 <p>The biggest red flag is a guarantee of a ChatGPT or Google AI Overviews mention. No agency controls those answers. Other warning signs are anonymised proof, prices that change between pages and plans that sell link volume as AEO.</p>
 <ul><li>Guaranteed &quot;#1 in ChatGPT&quot; claims.</li><li>Case studies with no client name, prompt or date.</li><li>&quot;50 backlinks a month&quot; sold as answer engine optimization.</li><li>Undisclosed Reddit or Quora posting.</li><li>Review counts that do not match the review site.</li><li>A 12-month lock-in with no exit clause.</li></ul>
@@ -686,7 +687,8 @@ export const bestAeoAgenciesIndiaArticle: Article = {
   "How do you report unprompted mentions? That means prompts that do not include your brand name.",
   "What is billed outside the fee? Placements, tools and API credits often are.",
   "What is the minimum term and notice period?",
-  "What will you not do? A good agency will rule out fake reviews and undisclosed forum posts."
+  "What will you not do? A good agency will rule out fake reviews and undisclosed forum posts.",
+  "If you only need senior direction, compare the best AEO consultants instead."
  ]
 },
  {
