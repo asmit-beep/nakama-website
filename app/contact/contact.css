@@ -1,6 +1,6 @@
-/* Occupied header space: nav top offset + nav height on .site-frame. */
+/* html already applies scroll-padding-top: 110px; extra margin here stacked below the header. */
 .contact-page #contact-options {
-  scroll-margin-top: 82px;
+  scroll-margin-top: 0;
 }
 .contact-page #contact-options:focus,
 .contact-page #contact-options:focus-visible {
@@ -24,9 +24,6 @@
   0% { outline: 2px solid transparent; outline-offset: 6px; }
   20% { outline: 2px solid rgba(240, 124, 50, .85); outline-offset: 6px; }
   100% { outline: 2px solid transparent; outline-offset: 6px; }
-}
-@media (max-width: 800px) {
-  .contact-page #contact-options { scroll-margin-top: 70px; }
 }
 @media (prefers-reduced-motion: reduce) {
   .contact-page #contact-options.is-pulse .ip-way { animation: none; }
