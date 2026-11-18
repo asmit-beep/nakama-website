@@ -343,6 +343,7 @@ ${figure(`${SLUG}-matrix`, MATRIX_ALT, 1920, 1500)}
 <p><strong>Price:</strong> USD 6,000 to 12,000 a month, per its own study.</p>
 <p><strong>Weakness:</strong> that same study ranks First Page Sage first among the agencies it scored and names its best fit as "small and midsize businesses". Its AI-answer case studies do not name the clients.</p>
 <p><strong>Choose if:</strong> you want long-form expert content with the freedom to leave month to month.</p>
+<p>Already working with First Page Sage? Compare the <a href="https://www.nakama.in/journal/first-page-sage-alternatives">First Page Sage alternatives</a> on price and terms.</p>
 <p><strong>Skip if:</strong> you need an agency that positions itself for enterprise programs.</p>
 <h2 id="which-enterprise-ai-seo-agency-fits-your-situation">Which enterprise AI SEO agency fits your situation?</h2>
 <p>Match the agency to your hardest constraint, not to the longest client list. Security review, many regions, a product-led motion, pipeline reporting and the need for a baseline each point to a different pick. If none of these is your constraint, our wider lists of <a href="/journal/best-ai-seo-agencies">best AI SEO agencies</a> and <a href="/journal/best-generative-engine-optimization-agencies">best GEO agencies</a> may fit better.</p>

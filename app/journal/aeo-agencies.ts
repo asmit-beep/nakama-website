@@ -683,6 +683,7 @@ const bodyHtml = `<nav aria-label="Breadcrumb" class="article-breadcrumb"><ol st
 <p><strong>Strength:</strong> A deep library of guides, including ChatGPT, SearchGPT and Perplexity optimization guides and a <a href="https://firstpagesage.com/seo-blog/generative-engine-optimization-geo-cost-breakdown/" rel="noopener" target="_blank">GEO cost breakdown</a>. Its <a href="https://firstpagesage.com/aeo-services/" rel="noopener" target="_blank">AEO page</a> says it has more than 15 years of experience in SEO and AEO (self-reported).</p>
 <p><strong>Pricing:</strong> Not published. Its <a href="https://firstpagesage.com/seo-blog/generative-engine-optimization-geo-cost-breakdown/" rel="noopener" target="_blank">GEO cost breakdown</a> lists market tiers based on pricing it has seen among the small number of companies offering GEO services. It does not list its own fees.</p>
 <p><strong>Limitation:</strong> Its <a href="https://firstpagesage.com/aeo-services/" rel="noopener" target="_blank">AEO page</a> is headlined "The #1 AEO Agency", a self-claim with no client results on that page. Its <a href="https://firstpagesage.com/case-studies/" rel="noopener" target="_blank">case studies page</a> shows anonymous AI results, such as AI recommendation share rising from 11% to 64% across 31 queries for an unnamed client (self-reported). The page also names Cadence Design Systems, for an SEO result.</p>
+<p>If you are weighing a move away from it, see the <a href="https://www.nakama.in/journal/first-page-sage-alternatives">First Page Sage alternatives</a>.</p>
 <p><strong>HQ:</strong> SF Bay Area, based on its <a href="https://firstpagesage.com/contact/" rel="noopener" target="_blank">contact page</a> title. No street address was given.</p>
 <h3 id="7-ipullrank">7. iPullRank</h3>
 <p><strong>Best for:</strong> Enterprise brands and category leaders with complex, multi-team search programs.</p>
@@ -1029,6 +1030,7 @@ export const aeoAgenciesArticle: Article = {
    "Strength: A deep library of guides, including ChatGPT, SearchGPT and Perplexity optimization guides and a GEO cost breakdown. Its AEO page says it has more than 15 years of experience in SEO and AEO (self-reported).",
    "Pricing: Not published. Its GEO cost breakdown lists market tiers based on pricing it has seen among the small number of companies offering GEO services. It does not list its own fees.",
    "Limitation: Its AEO page is headlined \"The #1 AEO Agency\", a self-claim with no client results on that page. Its case studies page shows anonymous AI results, such as AI recommendation share rising from 11% to 64% across 31 queries for an unnamed client (self-reported). The page also names Cadence Design Systems, for an SEO result.",
+   "If you are weighing a move away from it, see the First Page Sage alternatives.",
    "HQ: SF Bay Area, based on its contact page title. No street address was given.",
    "7. iPullRank",
    "Best for: Enterprise brands and category leaders with complex, multi-team search programs.",

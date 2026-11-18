@@ -514,6 +514,7 @@ const bodyHtml = `<nav aria-label="Breadcrumb" class="article-breadcrumb"><ol st
 </ul>
 <h4 id="limitation_3">Limitation</h4>
 <p>Its GEO case studies are anonymized and undated, and pricing is not published.</p>
+<p>For agencies that compete with it on price, terms and proof, see the <a href="https://www.nakama.in/journal/first-page-sage-alternatives">First Page Sage alternatives</a>.</p>
 <h4 id="pricing_3">Pricing</h4>
 <p>Not published. Its GEO cost breakdown is an industry survey of other companies' prices.</p>
 <h4 id="hq_3">HQ</h4>
@@ -834,6 +835,7 @@ export const geoAgenciesArticle: Article = {
    "Runs industry-specific SEO and GEO pages for B2B SaaS, fintech, healthcare, cybersecurity and more.",
    "Limitation",
    "Its GEO case studies are anonymized and undated, and pricing is not published.",
+   "For agencies that compete with it on price, terms and proof, see the First Page Sage alternatives.",
    "Pricing",
    "Not published. Its GEO cost breakdown is an industry survey of other companies' prices.",
    "HQ",
