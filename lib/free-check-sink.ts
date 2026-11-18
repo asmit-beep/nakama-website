@@ -1,5 +1,5 @@
 import nodemailer from 'nodemailer';
-import {ERRORS, redactFreeCheck, type FreeCheckAttribution, type FreeCheckPayload} from './free-check';
+import {EMAIL_RE, ERRORS, redactFreeCheck, type FreeCheckAttribution, type FreeCheckPayload} from './free-check';
 
 export type SinkResult =
   | {ok: true}
@@ -98,7 +98,7 @@ export async function deliverFreeCheck(
   }
 
   const replyTo = oneLine(payload.email);
-  if (!replyTo || /[\r\n]/.test(payload.email) || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(replyTo)) {
+  if (!replyTo || /[\r\n]/.test(payload.email) || !EMAIL_RE.test(replyTo)) {
     console.error('free-check invalid reply-to', redactFreeCheck(payload));
     return {ok: false, status: 503, error: ERRORS.notConfigured};
   }
@@ -122,7 +122,7 @@ export async function deliverFreeCheck(
       transporter.sendMail({
         from: `"Nakama website" <${INBOX}>`,
         to: INBOX,
-        replyTo,
+        replyTo: {name: '', address: replyTo},
         subject,
         text: buildBody(payload, payload.attribution, payload.requestId, new Date()),
       }),

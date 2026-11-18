@@ -225,8 +225,9 @@ main.aia-page .aia .f textarea.in{resize:none;line-height:1.45}
 main.aia-page .aia .f :is(input,textarea).in::placeholder{color:var(--dim);opacity:1}
 main.aia-page .aia .f :is(input,textarea).in:focus-visible{outline:2px solid var(--em);outline-offset:3px}
 main.aia-page .aia .f :is(input,textarea).in[aria-invalid="true"]{border-color:var(--em)}
-main.aia-page .aia .form .err{margin:0;font-size:13px;color:#e8a090;line-height:1.4;min-height:1.4em}
-main.aia-page .aia .form .err.full{grid-column:1/-1}
+main.aia-page .aia .form .err{margin:0;font-size:13px;color:#e8a090;line-height:1.4;min-height:2.8em}
+main.aia-page .aia .form .err.full{grid-column:1/-1;min-height:4.2em}
+main.aia-page .aia .form.is-sent{visibility:hidden}
 main.aia-page .aia .form{position:relative}
 main.aia-page .aia .form .hp{
   position:absolute;left:-10000px;top:auto;width:1px;height:1px;overflow:hidden;

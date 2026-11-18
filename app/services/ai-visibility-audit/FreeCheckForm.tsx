@@ -172,9 +172,8 @@ export function FreeCheckRequest() {
           {THANKS_NEXT} <Link href={Q_HREF}>{BOOK}</Link> · <Link href="#pricing">{SEE_PRICING}</Link>
         </div>
       </div>
-      {!sent && (
       <form
-        className="form"
+        className={sent ? 'form is-sent' : 'form'}
         method="post"
         action="#free-ai-visibility-check"
         onSubmit={onSubmit}
@@ -183,6 +182,8 @@ export function FreeCheckRequest() {
         noValidate
         aria-label="Free AI visibility check request"
         aria-busy={pending}
+        aria-hidden={sent ? true : undefined}
+        inert={sent ? true : undefined}
       >
         <div className="hp" aria-hidden="true">
           <label htmlFor={id('hp-x')}>Leave this empty</label>
@@ -203,7 +204,7 @@ export function FreeCheckRequest() {
             onChange={e => update('email', e.target.value)}
             aria-invalid={errors.email ? true : undefined}
             aria-describedby={errors.email ? id('email-err') : undefined}
-            disabled={pending}
+            disabled={pending || sent}
           />
           <p className="err" id={id('email-err')}>{errors.email ?? ''}</p>
         </div>
@@ -222,7 +223,7 @@ export function FreeCheckRequest() {
             onChange={e => update('siteUrl', e.target.value)}
             aria-invalid={errors.siteUrl ? true : undefined}
             aria-describedby={errors.siteUrl ? id('site-err') : undefined}
-            disabled={pending}
+            disabled={pending || sent}
           />
           <p className="err" id={id('site-err')}>{errors.siteUrl ?? ''}</p>
         </div>
@@ -239,7 +240,7 @@ export function FreeCheckRequest() {
             onChange={e => update('competitors', e.target.value)}
             aria-invalid={errors.competitors ? true : undefined}
             aria-describedby={errors.competitors ? id('competitors-err') : undefined}
-            disabled={pending}
+            disabled={pending || sent}
           />
           <p className="err" id={id('competitors-err')}>{errors.competitors ?? ''}</p>
         </div>
@@ -257,7 +258,7 @@ export function FreeCheckRequest() {
             onChange={e => update('prompts', e.target.value)}
             aria-invalid={errors.prompts ? true : undefined}
             aria-describedby={errors.prompts ? id('prompts-err') : undefined}
-            disabled={pending}
+            disabled={pending || sent}
           />
           <p className="err" id={id('prompts-err')}>{errors.prompts ?? ''}</p>
         </div>
@@ -273,12 +274,11 @@ export function FreeCheckRequest() {
           ) : null}
         </p>
         <div className="f full">
-          <button type="submit" className="btn btn-g btn-w" disabled={pending}>
+          <button type="submit" className="btn btn-g btn-w" disabled={pending || sent}>
             {SEND}
           </button>
         </div>
       </form>
-      )}
     </div>
   );
 }

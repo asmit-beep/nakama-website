@@ -50,7 +50,7 @@ export type FreeCheckAttribution = {
   utmCampaign: string;
 };
 
-const EMAIL_RE = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+export const EMAIL_RE = /^[A-Za-z0-9._%+-]+@[A-Za-z0-9-]+(?:\.[A-Za-z0-9-]+)*\.[A-Za-z]{2,}$/;
 
 export function parseCompetitors(raw: string): string[] {
   return raw.split(',').map(part => part.trim()).filter(Boolean);
