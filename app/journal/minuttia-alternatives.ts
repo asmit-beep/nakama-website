@@ -400,6 +400,7 @@ export const minuttiaAlternativesArticle: Article = {
  metaTitle: "Minuttia Alternatives (2026): 7 AEO Agencies Compared",
  date: dayOf(MODIFIED_AT),
  publishedAt: PUBLISHED_AT,
+ modifiedAt: MODIFIED_AT,
  authorName: 'Yash Kumar',
  coverImage: {src: '/journal/minuttia-alternatives/minuttia-alternatives-hero.png', width: 1600, height: 900, alt: 'Minuttia alternatives for AEO agencies compared by Nakama Growth'},
  ogImage: {

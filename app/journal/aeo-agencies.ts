@@ -2,6 +2,9 @@ import type {Article} from './articles';
 
 const MODIFIED_AT = '2026-11-11T03:10:00+05:30';
 const dayOf = (iso: string) => iso.slice(0, 10);
+const LONG_MONTHS = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
+const longDate = (iso: string) => `${Number(iso.slice(8, 10))} ${LONG_MONTHS[Number(iso.slice(5, 7)) - 1]} ${iso.slice(0, 4)}`;
+const modifiedLong = longDate(MODIFIED_AT);
 
 /** Buyer's guide to AEO agencies. Same optional article fields as the GEO guide (metaTitle, date, author, og image, JSON-LD, HTML body). The site-wide Organization and WebSite nodes are referenced by @id, not repeated. */
 export const aeoAgenciesJsonLd = {
@@ -297,7 +300,7 @@ export const aeoAgenciesJsonLd = {
 
 const bodyHtml = `<nav aria-label="Breadcrumb" class="article-breadcrumb"><ol style="list-style:none;display:flex;flex-wrap:wrap;gap:.5rem;padding:0;margin:0 0 1.25rem;font-size:.9rem"><li><a href="https://www.nakama.in/">Home</a></li><li aria-hidden="true">/</li><li><a href="https://www.nakama.in/resources">Resources</a></li><li aria-hidden="true">/</li><li aria-current="page">Best AEO agencies in 2026, compared</li></ol></nav>
 <h1 id="best-aeo-agencies-and-aeo-services-in-2026-compared">Best AEO agencies in 2026, compared</h1>
-<p>Published 15 October 2026. Last updated 11 November 2026. Agency pages and prices checked 15 October 2026.</p>
+<p>Published 15 October 2026. Last updated ${modifiedLong}. Agency pages and prices checked 15 October 2026.</p>
 <p>By Yash Kumar, Co-founder and CEO, Nakama Growth</p>
 <figure><img src="/journal/best-aeo-agencies/best-aeo-agencies-2026-cover.png" alt="Cover graphic for the guide to the best AEO agencies and AEO services in 2026, ten agencies compared on proof, price and fit" width="1600" height="900" fetchpriority="high" decoding="async"></figure>
 <h2 id="what-is-an-aeo-agency-and-which-one-is-best-for-a-us-company">What is an AEO agency, and which one is best for a US company?</h2>
@@ -860,7 +863,7 @@ export const aeoAgenciesArticle: Article = {
  {
   "heading": "Introduction",
   "paragraphs": [
-   "Best AEO agencies in 2026, compared\nPublished 15 October 2026. Last updated 11 November 2026. Agency pages and prices checked 15 October 2026.",
+   `Best AEO agencies in 2026, compared\nPublished 15 October 2026. Last updated ${modifiedLong}. Agency pages and prices checked 15 October 2026.`,
    "By Yash Kumar, Co-founder and CEO, Nakama Growth",
    "Image: Cover graphic for the guide to the best AEO agencies and AEO services in 2026, ten agencies compared on proof, price and fit"
   ]

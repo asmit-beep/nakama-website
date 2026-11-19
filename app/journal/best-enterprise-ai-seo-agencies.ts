@@ -422,6 +422,7 @@ export const bestEnterpriseAiSeoAgenciesArticle: Article = {
  metaTitle: TITLE,
  date: dayOf(MODIFIED_AT),
  publishedAt: PUBLISHED_AT,
+ modifiedAt: MODIFIED_AT,
  authorName: 'Snehil Srivastava',
  /** GO-LIVE TODO: PREVIEW is the only switch. false => index,follow plus sitemap, llms and RSS. */
  noindex: PREVIEW,
