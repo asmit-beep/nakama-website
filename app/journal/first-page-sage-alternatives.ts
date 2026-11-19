@@ -39,6 +39,7 @@ const OG_URL = `${CANONICAL}/first-page-sage-alternatives-og.png`;
 
 const slug = (s: string) => s.toLowerCase().replace(/['’]/g, '').replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '');
 const faqId = slug;
+const H1_STYLE = 'max-width:none;text-wrap:balance';
 const esc = (s: string) => s.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
 
 /** Visible FAQ and FAQPage JSON-LD both read this list, so the schema text equals the page text. */
@@ -289,7 +290,7 @@ const ctaBand = journalCta({
 });
 
 const bodyHtml = `<nav aria-label="Breadcrumb" class="article-breadcrumb"><ol style="list-style:none;display:flex;flex-wrap:wrap;gap:.5rem;padding:0;margin:0 0 1.25rem;font-size:.9rem"><li><a href="https://www.nakama.in/">Home</a></li><li aria-hidden="true">/</li><li><a href="https://www.nakama.in/resources">Resources</a></li><li aria-hidden="true">/</li><li aria-current="page">First Page Sage Alternatives (2026)</li></ol></nav>
-<h1 id="${slug(H1)}">${H1}</h1>
+<h1 id="${slug(H1)}" style="${H1_STYLE}">${H1}</h1>
 <p>Updated ${modifiedDate} · Services, prices and terms checked on each agency's own website on 19 Nov 2026.</p>
 <p>By <a href="https://www.nakama.in/authors/yash-kumar" rel="author">Yash Kumar</a>, Co-founder and CEO, Nakama Growth</p>
 <figure><picture><source srcset="/journal/first-page-sage-alternatives/first-page-sage-alternatives-hero.webp" type="image/webp"><img src="/journal/first-page-sage-alternatives/first-page-sage-alternatives-hero.png" alt="${HERO_ALT}" width="1600" height="900" fetchpriority="high" decoding="async"></picture></figure>
@@ -399,8 +400,6 @@ ${cta1}
 ${FAQS.map(f=>`<h3 id="${faqId(f.q)}">${esc(f.q)}</h3>
 <p>${esc(f.a)}</p>`).join('\n')}
 ${ctaBand}
-<h2 id="related-reading">Related reading</h2>
-<ul><li><a href="https://www.nakama.in/journal/minuttia-alternatives">Minuttia alternatives</a></li><li><a href="https://www.nakama.in/journal/best-aeo-agencies">Best AEO agencies</a></li><li><a href="https://www.nakama.in/journal/best-generative-engine-optimization-agencies">Best generative engine optimization agencies</a></li><li><a href="https://www.nakama.in/journal/best-enterprise-ai-seo-agencies">Best enterprise AI SEO agencies</a></li><li><a href="https://www.nakama.in/journal/geo-aeo-pricing">GEO and AEO pricing</a></li></ul>
 <h2 id="about-the-author">About the author</h2>
 <div class="author-box" id="yash-kumar"><img src="/authors/yash-kumar-nakama-ceo.webp" srcset="/authors/yash-kumar-nakama-ceo.webp 400w, /authors/yash-kumar-nakama-ceo-800.webp 800w" sizes="96px" alt="Yash Kumar, Co-founder and CEO of Nakama Growth" width="96" height="96" loading="lazy" decoding="async"><div class="author-box-text"><p><a href="https://www.nakama.in/authors/yash-kumar" rel="author">Yash Kumar</a> is Co-founder and CEO of Nakama Growth, an AEO and AI visibility agency for SaaS, software and AI companies. He tracks how ChatGPT, Gemini, Perplexity and Google AI Overviews answer buyer prompts and publishes the results.</p></div></div>`;
 
@@ -418,6 +417,8 @@ export const firstPageSageAlternativesArticle: Article = {
  authorName: 'Yash Kumar',
  /** PREVIEW true sets noindex,follow and keeps this note out of the sitemap, llms.txt, llms-full.txt, RSS, resources and the author index. */
  noindex: PREVIEW,
+ /** Keep reading card (rendered by app/journal/[slug]/page.tsx after the article). A noindex preview can still show this one card. */
+ nextSlug: 'minuttia-alternatives',
  coverImage: {src: '/journal/first-page-sage-alternatives/first-page-sage-alternatives-hero.png', width: 1600, height: 900},
  ogImage: {
   url: OG_URL,
@@ -610,6 +611,5 @@ export const firstPageSageAlternativesArticle: Article = {
  }
 ],
   {heading: 'Frequently asked questions about First Page Sage alternatives', paragraphs: FAQS.flatMap(f => [f.q, f.a])},
-  {heading: 'Related reading', paragraphs: ['Minuttia alternatives', 'Best AEO agencies', 'Best generative engine optimization agencies', 'Best enterprise AI SEO agencies', 'GEO and AEO pricing']},
  ],
 };
