@@ -1,6 +1,7 @@
 import type {Article} from './articles';
 
 const MODIFIED_AT = '2026-11-11T03:10:00+05:30';
+const dayOf = (iso: string) => iso.slice(0, 10);
 
 /** Buyer's guide to AEO agencies. Same optional article fields as the GEO guide (metaTitle, date, author, og image, JSON-LD, HTML body). The site-wide Organization and WebSite nodes are referenced by @id, not repeated. */
 export const aeoAgenciesJsonLd = {
@@ -841,7 +842,7 @@ export const aeoAgenciesArticle: Article = {
  readTime: '31 min read',
  motif: 'guide',
  metaTitle: "Best AEO Agencies (2026): 10 Compared on Proof and Price",
- date: '2026-11-11',
+ date: dayOf(MODIFIED_AT),
  publishedAt: '2026-10-15T18:15:38+05:30',
  modifiedAt: MODIFIED_AT,
  authorName: 'Yash Kumar',

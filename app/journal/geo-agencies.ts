@@ -1,6 +1,9 @@
 import type {Article} from './articles';
 import {journalCta} from './cta';
 
+const MODIFIED_AT = '2026-11-04T16:34:00+05:30';
+const dayOf = (iso: string) => iso.slice(0, 10);
+
 /** Buyer's guide. Optional article fields (metaTitle, date, author, og image, JSON-LD, HTML body) are read only when present, so the other journal notes keep their existing render. */
 export const geoAgenciesJsonLd = {
  "@context": "https://schema.org",
@@ -33,7 +36,7 @@ export const geoAgenciesJsonLd = {
     "@id": "https://www.nakama.in/journal/best-generative-engine-optimization-agencies"
    },
    "datePublished": "2026-10-14T14:51:15+05:30",
-   "dateModified": "2026-11-04T16:34:00+05:30",
+   "dateModified": MODIFIED_AT,
    "image": [
     "https://www.nakama.in/journal/best-generative-engine-optimization-agencies/og-image.png",
     "https://www.nakama.in/journal/best-generative-engine-optimization-agencies/best-generative-engine-optimization-agencies-cover.webp"
@@ -674,9 +677,9 @@ export const geoAgenciesArticle: Article = {
  readTime: '16 min read',
  motif: 'guide',
  metaTitle: "Best Generative Engine Optimization Agencies in 2026",
- date: '2026-11-04',
+ date: dayOf(MODIFIED_AT),
  publishedAt: '2026-10-14T14:51:15+05:30',
- modifiedAt: '2026-11-04T16:34:00+05:30',
+ modifiedAt: MODIFIED_AT,
  authorName: 'Yash Kumar',
  coverImage: {src: '/journal/best-generative-engine-optimization-agencies/best-generative-engine-optimization-agencies-cover.webp', width: 1920, height: 1080},
  ogImage: {
