@@ -12,10 +12,10 @@ import {journalCta} from './cta';
  * llms.txt, llms-full.txt, RSS, the resources index and the author index.
  * While PREVIEW is true the page stays noindex,follow and off those surfaces.
  */
-export const FIRST_PAGE_SAGE_ALTERNATIVES_PUBLISHED_AT = '2026-11-19T09:00:00+05:30';
+export const FIRST_PAGE_SAGE_ALTERNATIVES_PUBLISHED_AT = '2026-11-19T06:08:00+05:30';
 const PUBLISHED_AT = FIRST_PAGE_SAGE_ALTERNATIVES_PUBLISHED_AT;
-const MODIFIED_AT = '2026-11-19T09:00:00+05:30';
-const PREVIEW = true;
+const MODIFIED_AT = '2026-11-19T06:08:00+05:30';
+const PREVIEW = false;
 
 const MONTHS = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
 const dayOf = (iso: string) => iso.slice(0, 10);

@@ -1,7 +1,7 @@
 import type {Article} from './articles';
 import {journalCta} from './cta';
 
-const MODIFIED_AT = '2026-11-04T16:34:00+05:30';
+const MODIFIED_AT = '2026-11-19T05:38:00+05:30';
 const dayOf = (iso: string) => iso.slice(0, 10);
 const MONTHS = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
 const shortDate = (iso: string) => `${Number(iso.slice(8, 10))} ${MONTHS[Number(iso.slice(5, 7)) - 1]} ${iso.slice(0, 4)}`;

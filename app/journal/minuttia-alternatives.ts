@@ -9,7 +9,7 @@ import {journalCta} from './cta';
  */
 export const PUBLISHED_AT = '2026-10-25T19:46:08+05:30';
 export const MINUTTIA_ALTERNATIVES_PUBLISHED_AT = PUBLISHED_AT;
-const MODIFIED_AT = '2026-10-25T23:57:55+05:30';
+const MODIFIED_AT = '2026-11-19T05:38:00+05:30';
 
 const MONTHS = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
 const dayOf = (iso: string) => iso.slice(0, 10);

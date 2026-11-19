@@ -1,6 +1,6 @@
 import type {Article} from './articles';
 
-const MODIFIED_AT = '2026-11-11T03:10:00+05:30';
+const MODIFIED_AT = '2026-11-19T05:38:00+05:30';
 const dayOf = (iso: string) => iso.slice(0, 10);
 const LONG_MONTHS = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
 const longDate = (iso: string) => `${Number(iso.slice(8, 10))} ${LONG_MONTHS[Number(iso.slice(5, 7)) - 1]} ${iso.slice(0, 4)}`;
