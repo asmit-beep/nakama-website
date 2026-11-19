@@ -9,7 +9,7 @@ import {journalCta} from './cta';
  */
 export const PUBLISHED_AT = '2026-10-25T19:46:08+05:30';
 export const MINUTTIA_ALTERNATIVES_PUBLISHED_AT = PUBLISHED_AT;
-const MODIFIED_AT = '2026-10-25T23:57:55+05:30';
+const MODIFIED_AT = '2026-11-19T05:38:00+05:30';
 
 const MONTHS = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
 const dayOf = (iso: string) => iso.slice(0, 10);
@@ -294,6 +294,7 @@ const bodyHtml = `<nav aria-label="Breadcrumb" class="article-breadcrumb"><ol st
 <div class="article-table"><table><thead><tr><th scope="col">Agency</th><th scope="col">Best for</th><th scope="col">Tracking</th><th scope="col">Public price signal</th><th scope="col">Engines named</th><th scope="col">Main weakness</th></tr></thead><tbody><tr><th scope="row">Minuttia (reference)</th><td>Established B2B SaaS wanting full-service SEO + AEO</td><td>Own tracker, free AEO report</td><td>No public retainer pricing; Clutch $5,000+ min</td><td>ChatGPT, Gemini, Perplexity, AI Overviews</td><td>Retainer-shaped; free report citations Perplexity-only</td></tr><tr><th scope="row">Daydream</th><td>Funded SaaS wanting programmatic + AI visibility</td><td>In-program reporting</td><td>Not published</td><td>AI search (not itemised)</td><td>Built for Series A+ budgets</td></tr><tr><th scope="row">Nakama Growth</th><td>SaaS/AI teams needing off-site citations and a small start</td><td>Partner tools + reporting framework</td><td>Not published; starts with a GEO audit</td><td>ChatGPT, Perplexity, Gemini, AI Overviews</td><td>Founded 2026, short case-study history</td></tr><tr><th scope="row">Skale</th><td>Scaling SaaS needing SEO systems and page volume</td><td>SEO + AI Brand Mentions (off-site citation outreach)</td><td>Custom</td><td>ChatGPT, Claude, Perplexity, Gemini, Copilot, AI Overviews, AI Mode</td><td>SaaS-only, retainer model</td></tr><tr><th scope="row">Omniscient Digital</th><td>Larger B2B budgets wanting senior strategy + PR</td><td>Reporting in retainer</td><td>Full service from $120,000/yr (own site)</td><td>Not itemised</td><td>High entry cost</td></tr><tr><th scope="row">Breaking B2B</th><td>Mid-market SaaS chasing demo pipeline</td><td>Pipeline-tied reporting</td><td>From $6,000/mo on a 12-month term ($6,500 on 6 months)</td><td>Not itemised</td><td>6- or 12-month terms</td></tr><tr><th scope="row">Graphite</th><td>Mid-market and enterprise SEO + AEO at scale</td><td>Platform + reporting</td><td>Not published</td><td>Not itemised</td><td>Overkill for small teams</td></tr><tr><th scope="row">Rock The Rankings</th><td>Smaller SaaS wanting founder-led help</td><td>LLM visibility reporting</td><td>Not published</td><td>"All major LLMs" tracked</td><td>Lighter off-site citation focus</td></tr></tbody></table></div>
 <p>Figures and public claims checked 25 October 2026.</p>
 <p>For a category-wide view that is not Minuttia-specific, see the <a href="/journal/best-aeo-agencies">wider AEO agency shortlist</a>.</p>
+<p>Comparing First Page Sage as well? See the <a href="https://www.nakama.in/journal/first-page-sage-alternatives">First Page Sage alternatives</a>.</p>
 <h2 id="what-is-minuttia-and-who-is-it-for">What is Minuttia and who is it for?</h2>
 <p>Minuttia is a B2B SaaS SEO, AEO and content marketing agency founded in 2020. It pairs a full-service program (strategy, human and AI-assisted content, digital PR, Reddit marketing) with a proprietary AI visibility tracker covering ChatGPT, Gemini and Perplexity. It is the reference point every agency on this list is measured against.</p>
 <ul><li><strong>Founded:</strong> 2020, per Clutch and its llms.txt. Clutch lists HQ in Tallinn, Estonia, with a remote team.</li><li><strong>Leadership:</strong> George Chasiotis (Founder) and Zacharias Xiroudakis (Managing Director).</li><li><strong>Measurement:</strong> its tracker reports visibility, share of voice, position and sentiment by topic. The free AEO report also checks robots.txt and llms.txt accessibility.</li><li><strong>AI Overviews audits:</strong> one-off packages by page count: $1,075 (100 to 250 pages), $2,475 (251 to 500) and $5,475 (501 to 1,000).</li><li><strong>Proof:</strong> public case studies include Respona, LearnWorlds and Toggl. Its <a href="https://minuttia.com/case-studies/meilisearch/">Meilisearch case study</a> reports a 665% increase in LLM-driven traffic.</li></ul>
@@ -309,12 +310,12 @@ const bodyHtml = `<nav aria-label="Breadcrumb" class="article-breadcrumb"><ol st
 <p><strong>Skip if:</strong> you are pre-seed, or your main gap is off-site citations rather than on-site pages.</p>
 <h2 id="2-what-is-nakama-growth">2. What is Nakama Growth?</h2>
 <p>Nakama Growth is an AEO and GEO agency for tech, SaaS and AI companies that focuses on the off-site sources AI engines cite. Its work spans editorial placements, review platforms, video and community presence, plus digital PR and YouTube run end to end. It fits best when you need off-site citations and want to start with an audit, not a retainer. See Nakama's <a href="/services/aeo">AEO services</a>.</p>
-<ul><li><strong>Off-site citation system:</strong> editorial, review, video and community channels, with YouTube handled from scripting to publishing, plus digital PR. Nakama Growth does not edit client product sites.</li><li><strong>Answer-first off-site assets:</strong> placements shaped so AI engines can cite them (reviews, editorial, video), not on-site page rewrites.</li><li><strong>Entry point:</strong> starts with a GEO audit that maps where ChatGPT, Perplexity, Gemini and AI Overviews mention you today. See the <a href="/journal/geo-audit">GEO audit guide</a>.</li><li><strong>Named clients:</strong> Synup, Inventive AI, HubEngage and StarAgile.</li><li><strong>ICP:</strong> tech, SaaS and AI only. Local businesses and hotels are out of scope.</li></ul>
+<ul><li><strong>Off-site citation system:</strong> editorial, review, video and community channels, with YouTube handled from scripting to publishing, plus digital PR. Nakama Growth does not edit client product sites.</li><li><strong>Answer-first off-site assets:</strong> placements shaped so AI engines can cite them (reviews, editorial, video), not on-site page rewrites.</li><li><strong>Entry point:</strong> starts with a GEO audit that maps where ChatGPT, Perplexity, Gemini and AI Overviews mention you today. See the <a href="/journal/geo-audit">GEO audit guide</a>.</li><li><strong>Named clients:</strong> Synup, Inventive AI, HubEngage, StarAgile and BacklinkOS.</li><li><strong>ICP:</strong> tech, SaaS and AI only. Local businesses and hotels are out of scope.</li></ul>
 <p><strong>Standout:</strong> off-site citation work as the core service, not an add-on.</p>
-<p><strong>How it differs from Skale:</strong> Skale also runs off-site citation outreach, but as an add-on to its SaaS SEO systems. Nakama Growth works only off-site, does not run a classic SEO or content program, handles YouTube end to end, and starts with a GEO audit rather than a retainer.</p>
+<p><strong>How it differs from Skale:</strong> Skale also runs off-site citation outreach, but as an add-on to its SaaS SEO systems. Nakama Growth runs GEO plus content and editorial work, including original articles, comparisons and buyer guides, instead of a classic SEO program, handles YouTube end to end, and starts with a GEO audit rather than a retainer.</p>
 <p><strong>Weakness:</strong> founded in 2026, so its public case-study history is much shorter than Minuttia's 2020-era record. It also has no proprietary tracker; measurement runs on partner tools and a reporting framework.</p>
 <p><strong>Choose if:</strong> your blog is in decent shape and the gap is presence in the third-party sources AI answers draw from.</p>
-<p><strong>Skip if:</strong> you want one vendor to run your full classic SEO, content operations and its own tracking product.</p>
+<p><strong>Skip if:</strong> you want one vendor to run your full classic SEO program and its own tracking product.</p>
 <h2 id="3-what-is-skale">3. What is Skale?</h2>
 <p>Skale is a SaaS-only SEO agency known for repeatable growth systems and programmatic SEO. It has added a standalone AI Brand Mentions service, which makes it a credible Minuttia alternative for teams that want SEO scale first and AI visibility layered on. According to MADX, it was also the top pick on MADX's own Minuttia alternatives list.</p>
 <ul><li>Works only with SaaS companies.</li><li>Strong in programmatic SEO and content systems at volume.</li><li>Runs a dedicated AI Brand Mentions service: monthly off-site citation outreach for placements in the listicles, review and comparison pages and YouTube overviews that AI engines cite. That overlaps the off-site lane Nakama Growth works in.</li><li>Custom pricing; no public rate card.</li></ul>
@@ -351,13 +352,13 @@ const bodyHtml = `<nav aria-label="Breadcrumb" class="article-breadcrumb"><ol st
 <p><strong>Choose if:</strong> you want a low-lock-in SEO partner and AI search is a secondary goal.</p>
 <p><strong>Skip if:</strong> earning citations in third-party sources is your main AI visibility goal.</p>
 <h2 id="minuttia-vs-nakama-growth-what-is-the-practical-difference">Minuttia vs Nakama Growth: what is the practical difference?</h2>
-<p>Minuttia is a full-service B2B SaaS agency that owns content, SEO, AEO and measurement with its own tracker. Nakama Growth is narrower: it focuses on off-site citation channels (it does not take over your product site) and starts with a GEO audit. The choice depends on whether your gap is full-service content ownership or presence in the sources AI engines read.</p>
+<p>Minuttia is a full-service B2B SaaS agency that owns content, SEO, AEO and measurement with its own tracker. Nakama Growth is narrower: it runs GEO plus content and editorial, with off-site citation channels (it does not take over your product site), and starts with a GEO audit. The choice depends on whether your gap is full-service content ownership or presence in the sources AI engines read.</p>
 <figure><img src="/journal/minuttia-alternatives/minuttia-alternatives-vs.png" alt="Minuttia vs Nakama Growth: scope, tracker, measurement, entry, track record and ICP" width="1600" height="900" loading="lazy" decoding="async"></figure>
-<div class="article-table"><table><thead><tr><th scope="col"></th><th scope="col">Minuttia</th><th scope="col">Nakama Growth</th></tr></thead><tbody><tr><th scope="row">Core scope</th><td>SEO + AEO + content + PR + Reddit marketing</td><td>Off-site citations and AI visibility via third-party sources</td></tr><tr><th scope="row">Own tracker</th><td>Yes (proprietary + free AEO report)</td><td>No (partner tools + reporting framework)</td></tr><tr><th scope="row">Measurement</th><td>Proprietary tracker, free report</td><td>Partner tools + reporting framework</td></tr><tr><th scope="row">Entry</th><td>Retainer; Clutch $5,000+ min</td><td>GEO audit</td></tr><tr><th scope="row">Track record</th><td>Since 2020, many public case studies</td><td>Since 2026, four named clients</td></tr><tr><th scope="row">ICP</th><td>B2B SaaS</td><td>Tech, SaaS and AI</td></tr><tr><th scope="row">Off-site work</th><td>Digital PR and Reddit marketing within a full-service program</td><td>The whole engagement: editorial, review, community and YouTube end to end</td></tr></tbody></table></div>
+<div class="article-table"><table><thead><tr><th scope="col"></th><th scope="col">Minuttia</th><th scope="col">Nakama Growth</th></tr></thead><tbody><tr><th scope="row">Core scope</th><td>SEO + AEO + content + PR + Reddit marketing</td><td>GEO plus content and editorial, including AI visibility via third-party sources</td></tr><tr><th scope="row">Own tracker</th><td>Yes (proprietary + free AEO report)</td><td>No (partner tools + reporting framework)</td></tr><tr><th scope="row">Measurement</th><td>Proprietary tracker, free report</td><td>Partner tools + reporting framework</td></tr><tr><th scope="row">Entry</th><td>Retainer; Clutch $5,000+ min</td><td>GEO audit</td></tr><tr><th scope="row">Track record</th><td>Since 2020, many public case studies</td><td>Since 2026, five named clients</td></tr><tr><th scope="row">ICP</th><td>B2B SaaS</td><td>Tech, SaaS and AI</td></tr><tr><th scope="row">Off-site work</th><td>Digital PR and Reddit marketing within a full-service program</td><td>The whole engagement: editorial, review, community and YouTube end to end</td></tr></tbody></table></div>
 <h2 id="which-minuttia-alternative-should-you-pick">Which Minuttia alternative should you pick?</h2>
 <p>Pick by what you are swapping for. If you want the same program with more scale, look at Daydream or Skale. If the gap is citations outside your site, Nakama Growth fits. Bigger budgets suit Omniscient Digital or Graphite, pipeline focus suits Breaking B2B, and low lock-in suits Rock The Rankings.</p>
 <figure><img src="/journal/minuttia-alternatives/minuttia-alternatives-which.png" alt="Which Minuttia alternative to pick, mapped by need to each agency" width="1600" height="900" loading="lazy" decoding="async"></figure>
-<ul><li><strong>Same shape, more programmatic scale:</strong> Daydream.</li><li><strong>Off-site citations only, YouTube included, and a small first step:</strong> Nakama Growth.</li><li><strong>SaaS SEO systems at volume, with AI Brand Mentions added:</strong> Skale.</li><li><strong>Strategy plus PR on a large budget:</strong> Omniscient Digital.</li><li><strong>Demo pipeline first:</strong> Breaking B2B.</li><li><strong>Enterprise-scale AEO:</strong> Graphite.</li><li><strong>Founder-led, short commitment:</strong> Rock The Rankings.</li></ul>
+<ul><li><strong>Same shape, more programmatic scale:</strong> Daydream.</li><li><strong>GEO plus content and editorial, off-site citations and YouTube included, and a small first step:</strong> Nakama Growth.</li><li><strong>SaaS SEO systems at volume, with AI Brand Mentions added:</strong> Skale.</li><li><strong>Strategy plus PR on a large budget:</strong> Omniscient Digital.</li><li><strong>Demo pipeline first:</strong> Breaking B2B.</li><li><strong>Enterprise-scale AEO:</strong> Graphite.</li><li><strong>Founder-led, short commitment:</strong> Rock The Rankings.</li></ul>
 ${cta1}
 <h2 id="when-should-you-stay-with-minuttia">When should you stay with Minuttia?</h2>
 <p>Stay with Minuttia if you value one partner for SEO, AEO, content and measurement, and its tracker already gives you the reporting you need. Its retention figures and long case-study record are real strengths. Switching makes sense only when your gap is clearly elsewhere.</p>
@@ -397,8 +398,9 @@ export const minuttiaAlternativesArticle: Article = {
  readTime: '14 min read',
  motif: 'guide',
  metaTitle: "Minuttia Alternatives (2026): 7 AEO Agencies Compared",
- date: dayOf(PUBLISHED_AT),
+ date: dayOf(MODIFIED_AT),
  publishedAt: PUBLISHED_AT,
+ modifiedAt: MODIFIED_AT,
  authorName: 'Yash Kumar',
  coverImage: {src: '/journal/minuttia-alternatives/minuttia-alternatives-hero.png', width: 1600, height: 900, alt: 'Minuttia alternatives for AEO agencies compared by Nakama Growth'},
  ogImage: {
@@ -468,7 +470,8 @@ export const minuttiaAlternativesArticle: Article = {
    "Graphite | Mid-market and enterprise SEO + AEO at scale | Platform + reporting | Not published | Not itemised | Overkill for small teams",
    "Rock The Rankings | Smaller SaaS wanting founder-led help | LLM visibility reporting | Not published | \"All major LLMs\" tracked | Lighter off-site citation focus",
    "Figures and public claims checked 25 October 2026.",
-   "For a category-wide view that is not Minuttia-specific, see the wider AEO agency shortlist."
+   "For a category-wide view that is not Minuttia-specific, see the wider AEO agency shortlist.",
+   "Comparing First Page Sage as well? See the First Page Sage alternatives."
   ]
  },
  {
@@ -506,13 +509,13 @@ export const minuttiaAlternativesArticle: Article = {
    "Off-site citation system: editorial, review, video and community channels, with YouTube handled from scripting to publishing, plus digital PR. Nakama Growth does not edit client product sites.",
    "Answer-first off-site assets: placements shaped so AI engines can cite them (reviews, editorial, video), not on-site page rewrites.",
    "Entry point: starts with a GEO audit that maps where ChatGPT, Perplexity, Gemini and AI Overviews mention you today. See the GEO audit guide.",
-   "Named clients: Synup, Inventive AI, HubEngage and StarAgile.",
+   "Named clients: Synup, Inventive AI, HubEngage, StarAgile and BacklinkOS.",
    "ICP: tech, SaaS and AI only. Local businesses and hotels are out of scope.",
    "Standout: off-site citation work as the core service, not an add-on.",
-   "How it differs from Skale: Skale also runs off-site citation outreach, but as an add-on to its SaaS SEO systems. Nakama Growth works only off-site, does not run a classic SEO or content program, handles YouTube end to end, and starts with a GEO audit rather than a retainer.",
+   "How it differs from Skale: Skale also runs off-site citation outreach, but as an add-on to its SaaS SEO systems. Nakama Growth runs GEO plus content and editorial work, including original articles, comparisons and buyer guides, instead of a classic SEO program, handles YouTube end to end, and starts with a GEO audit rather than a retainer.",
    "Weakness: founded in 2026, so its public case-study history is much shorter than Minuttia's 2020-era record. It also has no proprietary tracker; measurement runs on partner tools and a reporting framework.",
    "Choose if: your blog is in decent shape and the gap is presence in the third-party sources AI answers draw from.",
-   "Skip if: you want one vendor to run your full classic SEO, content operations and its own tracking product."
+   "Skip if: you want one vendor to run your full classic SEO program and its own tracking product."
   ]
  },
  {
@@ -588,13 +591,13 @@ export const minuttiaAlternativesArticle: Article = {
  {
   "heading": "Minuttia vs Nakama Growth: what is the practical difference?",
   "paragraphs": [
-   "Minuttia is a full-service B2B SaaS agency that owns content, SEO, AEO and measurement with its own tracker. Nakama Growth is narrower: it focuses on off-site citation channels (it does not take over your product site) and starts with a GEO audit. The choice depends on whether your gap is full-service content ownership or presence in the sources AI engines read.",
+   "Minuttia is a full-service B2B SaaS agency that owns content, SEO, AEO and measurement with its own tracker. Nakama Growth is narrower: it runs GEO plus content and editorial, with off-site citation channels (it does not take over your product site), and starts with a GEO audit. The choice depends on whether your gap is full-service content ownership or presence in the sources AI engines read.",
    " | Minuttia | Nakama Growth",
-   "Core scope | SEO + AEO + content + PR + Reddit marketing | Off-site citations and AI visibility via third-party sources",
+   "Core scope | SEO + AEO + content + PR + Reddit marketing | GEO plus content and editorial, including AI visibility via third-party sources",
    "Own tracker | Yes (proprietary + free AEO report) | No (partner tools + reporting framework)",
    "Measurement | Proprietary tracker, free report | Partner tools + reporting framework",
    "Entry | Retainer; Clutch $5,000+ min | GEO audit",
-   "Track record | Since 2020, many public case studies | Since 2026, four named clients",
+   "Track record | Since 2020, many public case studies | Since 2026, five named clients",
    "ICP | B2B SaaS | Tech, SaaS and AI",
    "Off-site work | Digital PR and Reddit marketing within a full-service program | The whole engagement: editorial, review, community and YouTube end to end"
   ]
@@ -604,7 +607,7 @@ export const minuttiaAlternativesArticle: Article = {
   "paragraphs": [
    "Pick by what you are swapping for. If you want the same program with more scale, look at Daydream or Skale. If the gap is citations outside your site, Nakama Growth fits. Bigger budgets suit Omniscient Digital or Graphite, pipeline focus suits Breaking B2B, and low lock-in suits Rock The Rankings.",
    "Same shape, more programmatic scale: Daydream.",
-   "Off-site citations only, YouTube included, and a small first step: Nakama Growth.",
+   "GEO plus content and editorial, off-site citations and YouTube included, and a small first step: Nakama Growth.",
    "SaaS SEO systems at volume, with AI Brand Mentions added: Skale.",
    "Strategy plus PR on a large budget: Omniscient Digital.",
    "Demo pipeline first: Breaking B2B.",

@@ -16,6 +16,7 @@ import {topicsVsKeywordsArticle} from './topics-vs-keywords';
 import {bestAiSeoAgenciesArticle} from './best-ai-seo-agencies';
 import {bestAeoAgenciesIndiaArticle} from './best-aeo-agencies-india';
 import {bestAeoConsultantsArticle} from './best-aeo-consultants';
+import {firstPageSageAlternativesArticle} from './first-page-sage-alternatives';
 import {howToHireAnAeoAgencyArticle} from './how-to-hire-an-aeo-agency';
 import {geoAeoPricingArticle} from './geo-aeo-pricing';
 import {bestEnterpriseAiSeoAgenciesArticle} from './best-enterprise-ai-seo-agencies';
@@ -62,6 +63,7 @@ export const articles:Article[]=[
  geoAeoPricingArticle,
  howToHireAnAeoAgencyArticle,
  bestAeoConsultantsArticle,
+ firstPageSageAlternativesArticle,
  bestAeoAgenciesIndiaArticle,
  bestAiSeoAgenciesArticle,
  aiVisibilityReportTemplateArticle,

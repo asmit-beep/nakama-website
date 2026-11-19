@@ -1,6 +1,10 @@
 import type {Article} from './articles';
 
-const MODIFIED_AT = '2026-11-11T03:10:00+05:30';
+const MODIFIED_AT = '2026-11-19T05:38:00+05:30';
+const dayOf = (iso: string) => iso.slice(0, 10);
+const LONG_MONTHS = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
+const longDate = (iso: string) => `${Number(iso.slice(8, 10))} ${LONG_MONTHS[Number(iso.slice(5, 7)) - 1]} ${iso.slice(0, 4)}`;
+const modifiedLong = longDate(MODIFIED_AT);
 
 /** Buyer's guide to AEO agencies. Same optional article fields as the GEO guide (metaTitle, date, author, og image, JSON-LD, HTML body). The site-wide Organization and WebSite nodes are referenced by @id, not repeated. */
 export const aeoAgenciesJsonLd = {
@@ -296,7 +300,7 @@ export const aeoAgenciesJsonLd = {
 
 const bodyHtml = `<nav aria-label="Breadcrumb" class="article-breadcrumb"><ol style="list-style:none;display:flex;flex-wrap:wrap;gap:.5rem;padding:0;margin:0 0 1.25rem;font-size:.9rem"><li><a href="https://www.nakama.in/">Home</a></li><li aria-hidden="true">/</li><li><a href="https://www.nakama.in/resources">Resources</a></li><li aria-hidden="true">/</li><li aria-current="page">Best AEO agencies in 2026, compared</li></ol></nav>
 <h1 id="best-aeo-agencies-and-aeo-services-in-2026-compared">Best AEO agencies in 2026, compared</h1>
-<p>Published 15 October 2026. Last updated 11 November 2026. Agency pages and prices checked 15 October 2026.</p>
+<p>Published 15 October 2026. Last updated ${modifiedLong}. Agency pages and prices checked 15 October 2026.</p>
 <p>By Yash Kumar, Co-founder and CEO, Nakama Growth</p>
 <figure><img src="/journal/best-aeo-agencies/best-aeo-agencies-2026-cover.png" alt="Cover graphic for the guide to the best AEO agencies and AEO services in 2026, ten agencies compared on proof, price and fit" width="1600" height="900" fetchpriority="high" decoding="async"></figure>
 <h2 id="what-is-an-aeo-agency-and-which-one-is-best-for-a-us-company">What is an AEO agency, and which one is best for a US company?</h2>
@@ -316,7 +320,7 @@ const bodyHtml = `<nav aria-label="Breadcrumb" class="article-breadcrumb"><ol st
 <h2 id="key-takeaways">Key takeaways</h2>
 <ul>
 <li>AEO work gets your brand named inside AI answers. It starts with your own pages and often extends to the third-party sources AI tools read.</li>
-<li>Five of the 10 agencies show a price figure somewhere: Discovered Labs and Omniscient Digital on their own pages, NoGood (an average across all its services), and Optimist and Minuttia in their own guides.</li>
+<li>Six of the 10 agencies show a price figure somewhere: Discovered Labs and Omniscient Digital on their own pages, NoGood (an average across all its services), Optimist and Minuttia in their own guides, and First Page Sage in its own pricing report.</li>
 <li>Ask every agency for proof you can check yourself: a query you can run and a citation you can see.</li>
 <li>Nobody can guarantee a place in a ChatGPT or Gemini answer. Treat a guarantee as a red flag.</li>
 <li>Google says there are no extra technical requirements and no special schema to appear in <a href="https://developers.google.com/search/docs/appearance/ai-features" rel="noopener" target="_blank">AI Overviews or AI Mode</a>. Be wary of an "AEO package" that is only markup.</li>
@@ -396,7 +400,7 @@ const bodyHtml = `<nav aria-label="Breadcrumb" class="article-breadcrumb"><ol st
 <td>First Page Sage</td>
 <td>Teams that want to read the research first</td>
 <td>SF Bay Area (per contact page title)</td>
-<td>Not published</td>
+<td>USD 6,000 to 12,000 a month (<a href="https://firstpagesage.com/seo-blog/geo-aeo-pricing-statistics/" rel="noopener" target="_blank">October 2026 pricing report</a>)</td>
 <td>Large library of AI search guides</td>
 </tr>
 <tr>
@@ -507,7 +511,7 @@ const bodyHtml = `<nav aria-label="Breadcrumb" class="article-breadcrumb"><ol st
 <tr>
 <td>6</td>
 <td>First Page Sage</td>
-<td>No</td>
+<td>Partial</td>
 <td>Partial</td>
 <td>Yes</td>
 <td>Partial</td>
@@ -554,7 +558,7 @@ const bodyHtml = `<nav aria-label="Breadcrumb" class="article-breadcrumb"><ol st
 <p>Notes on the matrix:</p>
 <ul>
 <li>Omniscient Digital's price is Partial because its AEO page says full-service engagements start at USD 120,000 a year, a figure that covers its whole service menu.</li>
-<li>NoGood, Optimist and Minuttia are Partial on price: NoGood's figure is an average across all services, and the Optimist and Minuttia figures sit in their own guides.</li>
+<li>NoGood, Optimist, Minuttia and First Page Sage are Partial on price: NoGood's figure is an average across all services, the Optimist and Minuttia figures sit in their own guides, and First Page Sage's sits in its own pricing report.</li>
 <li>Discovered Labs' proof is client testimonials with figures, without calendar dates or queries.</li>
 <li>Optimist's AEO results on its AEO page carry no client name, so its proof is Partial.</li>
 <li>First Page Sage and iPullRank are Partial on proof because their AI results have no client name.</li>
@@ -681,8 +685,9 @@ const bodyHtml = `<nav aria-label="Breadcrumb" class="article-breadcrumb"><ol st
 <p><strong>Best for:</strong> Teams that want to study an agency's research before hiring it.</p>
 <p><strong>Services:</strong> An <a href="https://firstpagesage.com/aeo-services/" rel="noopener" target="_blank">AEO service</a> built on six elements: a full AEO audit, authoritative content, technical implementation with structured data, continuous optimization, publicizing awards and usage statistics, and strategic coordination. The team also does list and database outreach.</p>
 <p><strong>Strength:</strong> A deep library of guides, including ChatGPT, SearchGPT and Perplexity optimization guides and a <a href="https://firstpagesage.com/seo-blog/generative-engine-optimization-geo-cost-breakdown/" rel="noopener" target="_blank">GEO cost breakdown</a>. Its <a href="https://firstpagesage.com/aeo-services/" rel="noopener" target="_blank">AEO page</a> says it has more than 15 years of experience in SEO and AEO (self-reported).</p>
-<p><strong>Pricing:</strong> Not published. Its <a href="https://firstpagesage.com/seo-blog/generative-engine-optimization-geo-cost-breakdown/" rel="noopener" target="_blank">GEO cost breakdown</a> lists market tiers based on pricing it has seen among the small number of companies offering GEO services. It does not list its own fees.</p>
+<p><strong>Pricing:</strong> USD 6,000 to 12,000 a month (<a href="https://firstpagesage.com/seo-blog/geo-aeo-pricing-statistics/" rel="noopener" target="_blank">October 2026 pricing report</a>). Its <a href="https://firstpagesage.com/seo-blog/generative-engine-optimization-geo-cost-breakdown/" rel="noopener" target="_blank">GEO cost breakdown</a> lists market tiers based on pricing it has seen among the small number of companies offering GEO services.</p>
 <p><strong>Limitation:</strong> Its <a href="https://firstpagesage.com/aeo-services/" rel="noopener" target="_blank">AEO page</a> is headlined "The #1 AEO Agency", a self-claim with no client results on that page. Its <a href="https://firstpagesage.com/case-studies/" rel="noopener" target="_blank">case studies page</a> shows anonymous AI results, such as AI recommendation share rising from 11% to 64% across 31 queries for an unnamed client (self-reported). The page also names Cadence Design Systems, for an SEO result.</p>
+<p>If you are weighing a move away from it, see the <a href="https://www.nakama.in/journal/first-page-sage-alternatives">First Page Sage alternatives</a>.</p>
 <p><strong>HQ:</strong> SF Bay Area, based on its <a href="https://firstpagesage.com/contact/" rel="noopener" target="_blank">contact page</a> title. No street address was given.</p>
 <h3 id="7-ipullrank">7. iPullRank</h3>
 <p><strong>Best for:</strong> Enterprise brands and category leaders with complex, multi-team search programs.</p>
@@ -713,7 +718,7 @@ const bodyHtml = `<nav aria-label="Breadcrumb" class="article-breadcrumb"><ol st
 <p><strong>Limitation:</strong> Its AEO page cites market statistics without naming sources and shows no client AEO results. Content is its core, so deep technical work may need a partner.</p>
 <p><strong>HQ:</strong> Remote-based global team, per its <a href="https://www.animalz.co/about" rel="noopener" target="_blank">about page</a>. It started in New York.</p>
 <h2 id="how-much-do-aeo-services-cost">How much do AEO services cost?</h2>
-<p>There is no standard AEO pricing, and many agencies do not publish a price for AEO services. Five of the 10 agencies here show a price figure, Nakama quotes after a call, and the other four show nothing. We did not average the figures because currencies, terms and scopes differ.</p>
+<p>There is no standard AEO pricing, and many agencies do not publish a price for AEO services. Six of the 10 agencies here show a price figure, Nakama quotes after a call, and the other three show nothing. We did not average the figures because currencies, terms and scopes differ.</p>
 <p>None of the 10 publishes an ongoing monthly price below USD 3,000, so a smaller budget means comparing productized providers outside this list.</p>
 <div class="article-table"><table>
 <thead>
@@ -840,7 +845,7 @@ export const aeoAgenciesArticle: Article = {
  readTime: '31 min read',
  motif: 'guide',
  metaTitle: "Best AEO Agencies (2026): 10 Compared on Proof and Price",
- date: '2026-11-11',
+ date: dayOf(MODIFIED_AT),
  publishedAt: '2026-10-15T18:15:38+05:30',
  modifiedAt: MODIFIED_AT,
  authorName: 'Yash Kumar',
@@ -858,7 +863,7 @@ export const aeoAgenciesArticle: Article = {
  {
   "heading": "Introduction",
   "paragraphs": [
-   "Best AEO agencies in 2026, compared\nPublished 15 October 2026. Last updated 11 November 2026. Agency pages and prices checked 15 October 2026.",
+   `Best AEO agencies in 2026, compared\nPublished 15 October 2026. Last updated ${modifiedLong}. Agency pages and prices checked 15 October 2026.`,
    "By Yash Kumar, Co-founder and CEO, Nakama Growth",
    "Image: Cover graphic for the guide to the best AEO agencies and AEO services in 2026, ten agencies compared on proof, price and fit"
   ]
@@ -881,7 +886,7 @@ export const aeoAgenciesArticle: Article = {
   "heading": "Key takeaways",
   "paragraphs": [
    "AEO work gets your brand named inside AI answers. It starts with your own pages and often extends to the third-party sources AI tools read.",
-   "Five of the 10 agencies show a price figure somewhere: Discovered Labs and Omniscient Digital on their own pages, NoGood (an average across all its services), and Optimist and Minuttia in their own guides.",
+   "Six of the 10 agencies show a price figure somewhere: Discovered Labs and Omniscient Digital on their own pages, NoGood (an average across all its services), Optimist and Minuttia in their own guides, and First Page Sage in its own pricing report.",
    "Ask every agency for proof you can check yourself: a query you can run and a citation you can see.",
    "Nobody can guarantee a place in a ChatGPT or Gemini answer. Treat a guarantee as a red flag.",
    "Google says there are no extra technical requirements and no special schema to appear in AI Overviews or AI Mode. Be wary of an \"AEO package\" that is only markup."
@@ -896,7 +901,7 @@ export const aeoAgenciesArticle: Article = {
    "3 | Omniscient Digital | B2B software companies with budget | Five US addresses listed; team is distributed worldwide | Full service from USD 120,000/yr | Named AEO case studies, demand modeling",
    "4 | Minuttia | Established B2B SaaS brands | Not stated on pages we checked | Minimum project USD 4,000+ (its own list, Jan 2026) | Free AEO report, named Meilisearch case study",
    "5 | Optimist | B2B tech teams that want AEO and SEO strategy | Not stated on pages we checked | Advising from USD 3,000/mo, after a Roadmap (its guide, 11 Oct 2026) | Long B2B record, 21-factor audit",
-   "6 | First Page Sage | Teams that want to read the research first | SF Bay Area (per contact page title) | Not published | Large library of AI search guides",
+   "6 | First Page Sage | Teams that want to read the research first | SF Bay Area (per contact page title) | USD 6,000 to 12,000 a month (October 2026 pricing report) | Large library of AI search guides",
    "7 | iPullRank | Enterprise search programs | Not stated (a staff bio mentions a New York office) | Not published | Relevance engineering, AI Search Manual",
    "8 | Nakama | SaaS brands that need to be named via off-site sources | India (no US office stated) | Custom quote | Off-site AEO and GEO with checkable queries",
    "9 | Marcel Digital | Organizations that want AEO inside a full-service team | Chicago, IL | Not published | Schema and on-page AEO, 20+ years in search (self-reported)",
@@ -921,14 +926,14 @@ export const aeoAgenciesArticle: Article = {
    "3 | Omniscient Digital | Partial | Yes | Yes | Yes | Partial",
    "4 | Minuttia | Partial | Yes | Yes | Partial | No",
    "5 | Optimist | Partial | Partial | Yes | Yes | No",
-   "6 | First Page Sage | No | Partial | Yes | Partial | Partial",
+   "6 | First Page Sage | Partial | Partial | Yes | Partial | Partial",
    "7 | iPullRank | No | Partial | Partial | Yes | Partial",
    "8 | Nakama | No | Partial | Partial | Yes | Partial",
    "9 | Marcel Digital | No | No | Yes | Yes | Yes",
    "10 | Animalz | No | No | Yes | Partial | Partial",
    "Notes on the matrix:",
    "Omniscient Digital's price is Partial because its AEO page says full-service engagements start at USD 120,000 a year, a figure that covers its whole service menu.",
-   "NoGood, Optimist and Minuttia are Partial on price: NoGood's figure is an average across all services, and the Optimist and Minuttia figures sit in their own guides.",
+   "NoGood, Optimist, Minuttia and First Page Sage are Partial on price: NoGood's figure is an average across all services, the Optimist and Minuttia figures sit in their own guides, and First Page Sage's sits in its own pricing report.",
    "Discovered Labs' proof is client testimonials with figures, without calendar dates or queries.",
    "Optimist's AEO results on its AEO page carry no client name, so its proof is Partial.",
    "First Page Sage and iPullRank are Partial on proof because their AI results have no client name.",
@@ -1027,8 +1032,9 @@ export const aeoAgenciesArticle: Article = {
    "Best for: Teams that want to study an agency's research before hiring it.",
    "Services: An AEO service built on six elements: a full AEO audit, authoritative content, technical implementation with structured data, continuous optimization, publicizing awards and usage statistics, and strategic coordination. The team also does list and database outreach.",
    "Strength: A deep library of guides, including ChatGPT, SearchGPT and Perplexity optimization guides and a GEO cost breakdown. Its AEO page says it has more than 15 years of experience in SEO and AEO (self-reported).",
-   "Pricing: Not published. Its GEO cost breakdown lists market tiers based on pricing it has seen among the small number of companies offering GEO services. It does not list its own fees.",
+   "Pricing: USD 6,000 to 12,000 a month (October 2026 pricing report). Its GEO cost breakdown lists market tiers based on pricing it has seen among the small number of companies offering GEO services.",
    "Limitation: Its AEO page is headlined \"The #1 AEO Agency\", a self-claim with no client results on that page. Its case studies page shows anonymous AI results, such as AI recommendation share rising from 11% to 64% across 31 queries for an unnamed client (self-reported). The page also names Cadence Design Systems, for an SEO result.",
+   "If you are weighing a move away from it, see the First Page Sage alternatives.",
    "HQ: SF Bay Area, based on its contact page title. No street address was given.",
    "7. iPullRank",
    "Best for: Enterprise brands and category leaders with complex, multi-team search programs.",
@@ -1063,7 +1069,7 @@ export const aeoAgenciesArticle: Article = {
  {
   "heading": "How much do AEO services cost?",
   "paragraphs": [
-   "There is no standard AEO pricing, and many agencies do not publish a price for AEO services. Five of the 10 agencies here show a price figure, Nakama quotes after a call, and the other four show nothing. We did not average the figures because currencies, terms and scopes differ.",
+   "There is no standard AEO pricing, and many agencies do not publish a price for AEO services. Six of the 10 agencies here show a price figure, Nakama quotes after a call, and the other three show nothing. We did not average the figures because currencies, terms and scopes differ.",
    "None of the 10 publishes an ongoing monthly price below USD 3,000, so a smaller budget means comparing productized providers outside this list.",
    "Discovered Labs | Establish: USD 9,138/mo monthly, USD 8,567 on 3 months, USD 7,995 on 6 months (EUR 7,995, 7,495 and 6,995); Compete: USD 14,853/mo monthly, USD 13,710 on 3 months, USD 12,567 on 6 months (EUR 12,995, 11,995 and 10,995); Outlier and custom: from USD 18,282/mo (EUR 15,995); diagnostic: USD 4,995 one-off (EUR 4,370), credited to the first retainer month if you sign within 14 days of the walkthrough; add-ons: Reddit Marketing from USD 5,709/mo (EUR 4,995), Backlink Building from USD 2,852/mo (EUR 2,495) | Establish and Compete: month to month, 30 days notice, lower rate for 3 or 6 months; Outlier and custom: custom engagement; diagnostic: one-off; add-ons: monthly",
    "NoGood | Average retainer above USD 20,000/mo across all its services, per its homepage FAQ | Monthly retainers",

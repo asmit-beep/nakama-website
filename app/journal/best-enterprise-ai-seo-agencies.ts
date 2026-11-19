@@ -13,7 +13,7 @@ import type {Article} from './articles';
  */
 export const BEST_ENTERPRISE_AI_SEO_AGENCIES_PUBLISHED_AT = '2026-11-03T09:00:00+05:30';
 const PUBLISHED_AT = BEST_ENTERPRISE_AI_SEO_AGENCIES_PUBLISHED_AT;
-const MODIFIED_AT = PUBLISHED_AT;
+const MODIFIED_AT = '2026-11-19T05:38:00+05:30';
 const PREVIEW = false;
 
 const MONTHS = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
@@ -340,9 +340,10 @@ ${figure(`${SLUG}-matrix`, MATRIX_ALT, 1920, 1500)}
 <p><strong>What they do:</strong> SEO, thought-leadership content and AI search work aimed at qualified leads. Its homepage says "we don't believe in locking our clients into long-term contracts" (<a href="https://firstpagesage.com/">homepage</a>).</p>
 <p><strong>Enterprise signals:</strong> its case studies page names Cadence Design Systems, and its own October 2026 study lists Salesforce, Microsoft and Verizon among its clients (<a href="https://firstpagesage.com/seo-blog/the-best-generative-engine-optimization-geo-agencies/">its October 2026 agency study</a>).</p>
 <p><strong>How they measure AI answers:</strong> its case studies describe an unnamed AI writing assistant that AI tools called "an enterprise communication platform in 78 percent of tracked answers" by late 2025, up from 19 percent (<a href="https://firstpagesage.com/case-studies">case studies</a>, self-reported).</p>
-<p><strong>Price:</strong> USD 6,000 to 12,000 a month, per its own study.</p>
+<p><strong>Price:</strong> USD 6,000 to 12,000 a month (<a href="https://firstpagesage.com/seo-blog/geo-aeo-pricing-statistics/" rel="noopener" target="_blank">October 2026 pricing report</a>).</p>
 <p><strong>Weakness:</strong> that same study ranks First Page Sage first among the agencies it scored and names its best fit as "small and midsize businesses". Its AI-answer case studies do not name the clients.</p>
 <p><strong>Choose if:</strong> you want long-form expert content with the freedom to leave month to month.</p>
+<p>Already working with First Page Sage? Compare the <a href="https://www.nakama.in/journal/first-page-sage-alternatives">alternatives to First Page Sage</a> on price and terms.</p>
 <p><strong>Skip if:</strong> you need an agency that positions itself for enterprise programs.</p>
 <h2 id="which-enterprise-ai-seo-agency-fits-your-situation">Which enterprise AI SEO agency fits your situation?</h2>
 <p>Match the agency to your hardest constraint, not to the longest client list. Security review, many regions, a product-led motion, pipeline reporting and the need for a baseline each point to a different pick. If none of these is your constraint, our wider lists of <a href="/journal/best-ai-seo-agencies">best AI SEO agencies</a> and <a href="/journal/best-generative-engine-optimization-agencies">best GEO agencies</a> may fit better.</p>
@@ -421,6 +422,7 @@ export const bestEnterpriseAiSeoAgenciesArticle: Article = {
  metaTitle: TITLE,
  date: dayOf(MODIFIED_AT),
  publishedAt: PUBLISHED_AT,
+ modifiedAt: MODIFIED_AT,
  authorName: 'Snehil Srivastava',
  /** GO-LIVE TODO: PREVIEW is the only switch. false => index,follow plus sitemap, llms and RSS. */
  noindex: PREVIEW,
