@@ -10,15 +10,16 @@ export const abs=(path='/')=>`${SITE_URL}${path.startsWith('/')?path:`/${path}`}
 export const OG_IMAGE={url:'/opengraph-image.png',width:1200,height:630,alt:'Nakama Growth | Be the brand they already know.'};
 export const FEEDS={'application/rss+xml':[{url:'/rss.xml',title:'Nakama Growth | Field notes'}]};
 
-/** Per-page metadata: canonical URL plus matching Open Graph and Twitter cards. */
-export function pageMeta(path:string,{title,description,type='website',publishedTime,modifiedTime,image,author}:{title:string;description:string;type?:'website'|'article';publishedTime?:string;modifiedTime?:string;image?:{url:string;width:number;height:number;alt:string;type?:string};author?:string}):Metadata{
+/** Per-page metadata: canonical URL plus matching Open Graph and Twitter cards.
+ * `locale` overrides the site Open Graph locale (en_IN). `articleAuthor` is emitted as article:author. */
+export function pageMeta(path:string,{title,description,type='website',publishedTime,modifiedTime,image,author,locale,articleAuthor}:{title:string;description:string;type?:'website'|'article';publishedTime?:string;modifiedTime?:string;image?:{url:string;width:number;height:number;alt:string;type?:string};author?:string;locale?:string;articleAuthor?:string}):Metadata{
  const ogImage=image??OG_IMAGE;
  return {
   title:{absolute:title},
   description,
   ...(author?{authors:[{name:author}]}:{}),
   alternates:{canonical:path,types:FEEDS},
-  openGraph:{type,url:path,siteName:SITE_NAME,title,description,locale:'en_IN',images:[ogImage],...(publishedTime?{publishedTime}:{}),...(modifiedTime?{modifiedTime}:{})},
+  openGraph:{type,url:path,siteName:SITE_NAME,title,description,locale:locale??'en_IN',images:[ogImage],...(publishedTime?{publishedTime}:{}),...(modifiedTime?{modifiedTime}:{}),...(articleAuthor?{authors:[articleAuthor]}:{})},
   twitter:{card:'summary_large_image',title,description,images:image?[image]:['/twitter-image.png']},
  };
 }

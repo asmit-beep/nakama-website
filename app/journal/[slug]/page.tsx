@@ -65,6 +65,8 @@ export async function generateMetadata({params}:Props):Promise<Metadata>{
   modifiedTime:article.modifiedAt??article.publishedAt??article.date,
   image:article.ogImage,
   author:article.authorName,
+  locale:article.ogLocale,
+  articleAuthor:article.articleAuthor,
  });
  if(article.noindex)return {...meta,robots:{index:false,follow:true,googleBot:{index:false,follow:true}}};
  return meta;
