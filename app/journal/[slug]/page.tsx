@@ -68,7 +68,7 @@ export async function generateMetadata({params}:Props):Promise<Metadata>{
   locale:article.ogLocale,
   articleAuthor:article.articleAuthor,
  });
- if(article.noindex)return {...meta,robots:{index:false,follow:true,googleBot:{index:false,follow:true}}};
+ if(article.robotsNoindex??article.noindex)return {...meta,robots:{index:false,follow:true,googleBot:{index:false,follow:true}}};
  return meta;
 }
 export default async function ArticlePage({params}:Props){

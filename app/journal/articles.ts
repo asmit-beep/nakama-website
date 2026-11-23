@@ -50,8 +50,10 @@ export type Article={
  canonical?:string,
  /** HTML lead rendered under the dek on section-based notes. */
  pointerHtml?:string,
- /** Preview gate. noindex,follow, and omitted from the sitemap, llms files, RSS and the author index. */
+ /** Preview gate. Omitted from the sitemap, llms files, RSS, the resources index and the author index. Also sets the robots meta unless `robotsNoindex` is false. */
  noindex?:boolean,
+ /** Page robots noindex. Omitted means the same as `noindex`. False keeps the listing gate and inherits the site robots default. */
+ robotsNoindex?:boolean,
  /** When set, the Keep reading card links to this slug instead of the next indexable note. A noindex preview can still show that one card. */
  nextSlug?:string,
  /** Optional. When set, this article's cover shows on the "Keep reading" card of the article that links to it. Decorative: the title beside it names the article, so the image has an empty alt. */

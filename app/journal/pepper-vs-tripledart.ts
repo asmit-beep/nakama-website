@@ -7,9 +7,9 @@ import type {Article} from './articles';
  * the schema, the article times and `date`) with the real IST values, then
  * set PREVIEW to false.
  *
- * PREVIEW is the only switch. While it is true this note is noindex,follow
- * and stays out of the sitemap, llms.txt, llms-full.txt, RSS, the resources
- * index and the author index.
+ * PREVIEW gates the sitemap, llms.txt, llms-full.txt, RSS, the resources
+ * index and the author index. It does not set the robots meta: robotsNoindex
+ * is false, so the page inherits the site default.
  */
 const PUBLISHED_AT = 'REPLACE_WITH_PUBLISH_DATETIME';
 const MODIFIED_AT = 'REPLACE_WITH_MODIFIED_DATETIME';
@@ -553,8 +553,10 @@ export const pepperVsTripledartArticle: Article = {
  publishedAt: PUBLISHED_AT,
  modifiedAt: MODIFIED_AT,
  authorName: 'Snehil Srivastava',
- /** PREVIEW true sets noindex,follow and keeps this note out of the sitemap, llms.txt, llms-full.txt, RSS, resources and the author index. */
+ /** PREVIEW keeps this note out of the sitemap, llms.txt, llms-full.txt, RSS, resources and the author index. */
  noindex: PREVIEW,
+ /** Robots stay on the site default. PREVIEW does not emit a page robots tag. */
+ robotsNoindex: false,
  /** Keep reading goes to the in-house vs agency guide. A noindex preview can still show that one card. */
  nextSlug: 'geo-agency-vs-in-house',
  ogLocale: 'en_US',
