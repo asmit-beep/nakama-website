@@ -383,7 +383,7 @@ const bodyHtml = `<nav aria-label="Breadcrumb" class="article-breadcrumb"><ol st
 <p><strong>Price:</strong> not public.</p>
 <p><strong>Source:</strong> <a href="https://marketingadvice.io/about-me/">marketingadvice.io</a></p>
 <h3 id="5-aggee-kimpiab-best-for-hands-on-seo-and-aeo-in-ecommerce-b2b-and-manufacturing">5. Aggée Kimpiab: best for hands-on SEO and AEO in ecommerce, B2B and manufacturing</h3>
-<p>Aggée Kimpiab is an independent SEO and AEO consultant based in the UK, working under the name Aggée Writes. He says he has 6+ years in SEO, including 12 agency retainer clients, before working directly with clients.</p>
+<p>Aggée Kimpiab is an independent SEO and AEO consultant based in the UK, working under the name Aggée Writes. He says he has 6+ years in SEO, including agency-side work for 12 retainer clients.</p>
 <p>He does the audits, technical fixes, on-page work and content himself, with no agency layer. His AI search work makes sure the pages that already earn search traffic are also the ones AI assistants find and cite.</p>
 <p>He reports results for an unnamed UK outdoor ecommerce brand, January to November 2026 against the same period in 2025: organic search revenue up 28.6%, orders up 39.3%, and sales from Bing-powered search (Bing and Yahoo) up 130%. AI assistants grew from 1 order to 14, with 12 from ChatGPT (<a href="https://aggeewrites.com/dtc-ecommerce-seo-case-study/">case study</a>).</p>
 <p>His site also publishes a named manufacturing case: Lawton Tubes, organic users up 64% year on year, in <a href="https://aggeewrites.com/manufacturing-seo-case-study/">his manufacturing SEO case study</a>.</p>
@@ -629,7 +629,7 @@ export const bestAeoConsultantsArticle: Article = {
  {
  "heading": "5. Aggée Kimpiab: best for hands-on SEO and AEO in ecommerce, B2B and manufacturing",
  "paragraphs": [
-  "Aggée Kimpiab is an independent SEO and AEO consultant based in the UK, working under the name Aggée Writes. He says he has 6+ years in SEO, including 12 agency retainer clients, before working directly with clients.",
+  "Aggée Kimpiab is an independent SEO and AEO consultant based in the UK, working under the name Aggée Writes. He says he has 6+ years in SEO, including agency-side work for 12 retainer clients.",
   "He does the audits, technical fixes, on-page work and content himself, with no agency layer. His AI search work makes sure the pages that already earn search traffic are also the ones AI assistants find and cite.",
   "He reports results for an unnamed UK outdoor ecommerce brand, January to November 2026 against the same period in 2025: organic search revenue up 28.6%, orders up 39.3%, and sales from Bing-powered search (Bing and Yahoo) up 130%. AI assistants grew from 1 order to 14, with 12 from ChatGPT (case study).",
   "His site also publishes a named manufacturing case: Lawton Tubes, organic users up 64% year on year, in his manufacturing SEO case study.",
