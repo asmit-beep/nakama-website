@@ -354,7 +354,7 @@ export function CaseStudy() {
                 <h3>ChatGPT: from the gap to the first row</h3>
                 <p>ChatGPT was the platform StarAgile cared about most. On 3 August, StarAgile told us it had little to no visibility on ChatGPT. By 31 August it had StarAgile in its comparison table for &quot;Best CSPO Training&quot;. In the week of 1 to 7 September it put StarAgile in the first row for &quot;Best Certified Scrum Master Training Providers.&quot; By the end of the window, ChatGPT had named StarAgile first in 11 answers, including:</p>
                 <ul>
-                  <li>&quot;Top CSM Training Institutes in Bangalore&quot; (&quot;1. StarAgile, HSR Layout, Bengaluru&quot;)</li>
+                  <li>&quot;Top CSM Training Institutes in Bangalore&quot; (&quot;1. StarAgile&quot;)</li>
                   <li>&quot;Best Software Testing Courses With Placement Assistance&quot; (&quot;I would start by comparing StarAgile, QSpiders, ExcelR, TOPS Technologies, and SSquareIT&quot;)</li>
                 </ul>
               </div>
