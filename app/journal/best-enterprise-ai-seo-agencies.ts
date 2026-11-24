@@ -307,7 +307,7 @@ ${figure(`${SLUG}-matrix`, MATRIX_ALT, 1920, 1500)}
 <p><strong>Price:</strong> not published on the pages we read.</p>
 <p><strong>Weakness:</strong> the same SteelSeries result is quoted as a 23 times traffic and 27 times conversion increase on its AEO page, against 6.7 and 7.1 times in the case study body, so ask which period each covers. AI search is one practice in a broad agency.</p>
 <p><strong>Choose if:</strong> you want one squad across paid and organic, with AI search as part of the plan.</p>
-<p><strong>Skip if:</strong> you want an AI search specialist with published security credentials, or see our <a href="https://www.nakama.in/journal/nogood-alternatives">NoGood alternatives</a>.</p>
+<p><strong>Skip if:</strong> you want an AI search specialist with published security credentials (see our <a href="https://www.nakama.in/journal/nogood-alternatives">NoGood alternatives</a>).</p>
 <h3 id="6-siege-media-best-for-content-and-digital-pr-at-scale">6. Siege Media: best for content and digital PR at scale</h3>
 <p><strong>Best for:</strong> established tech brands that need a large volume of high-quality content and earned coverage.</p>
 <p><strong>What they do:</strong> content, technical SEO, AI citation strategy, digital PR and affiliate partnerships, with in-house tools for content planning and refreshing 20 to 60 pieces a quarter (<a href="https://www.siegemedia.com/services/saas-geo-agency">AI search page</a>).</p>

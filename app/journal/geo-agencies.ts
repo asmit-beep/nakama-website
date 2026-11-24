@@ -568,7 +568,7 @@ const bodyHtml = `<nav aria-label="Breadcrumb" class="article-breadcrumb"><ol st
 <li>Says its AEO program for SteelSeries drove a 23x increase in AI search traffic and 27x growth in conversions from AI platforms year over year (no date given).</li>
 </ul>
 <h4 id="limitation_6">Limitation</h4>
-<p>It is priced at the premium end, and it tracks AI visibility with Goodie AI, a third-party tool. It is also a broad growth agency covering paid growth, organic social, creative, digital PR and CRO, so AEO is one practice among several, or see our <a href="https://www.nakama.in/journal/nogood-alternatives">NoGood alternatives</a>.</p>
+<p>It is priced at the premium end, and it tracks AI visibility with Goodie AI, a third-party tool. It is also a broad growth agency covering paid growth, organic social, creative, digital PR and CRO, so AEO is one practice among several. For other options, see our <a href="https://www.nakama.in/journal/nogood-alternatives">NoGood alternatives</a>.</p>
 <h4 id="pricing_6">Pricing</h4>
 <p>Monthly retainers, with an average retainer above $20,000/month.</p>
 <h4 id="hq_6">HQ</h4>
@@ -883,7 +883,7 @@ export const geoAgenciesArticle: Article = {
    "Lists awards for its AEO work from The Shorty Awards, The Drum and The Webby Awards.",
    "Says its AEO program for SteelSeries drove a 23x increase in AI search traffic and 27x growth in conversions from AI platforms year over year (no date given).",
    "Limitation",
-   "It is priced at the premium end, and it tracks AI visibility with Goodie AI, a third-party tool. It is also a broad growth agency covering paid growth, organic social, creative, digital PR and CRO, so AEO is one practice among several, or see our NoGood alternatives.",
+   "It is priced at the premium end, and it tracks AI visibility with Goodie AI, a third-party tool. It is also a broad growth agency covering paid growth, organic social, creative, digital PR and CRO, so AEO is one practice among several. For other options, see our NoGood alternatives.",
    "Pricing",
    "Monthly retainers, with an average retainer above $20,000/month.",
    "HQ",

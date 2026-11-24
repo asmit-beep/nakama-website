@@ -387,7 +387,7 @@ const bodyHtml = `<nav aria-label="Breadcrumb" class="article-breadcrumb"><ol st
 <p><strong>Pricing:</strong> Its FAQ says the average retainer is above USD 20,000 a month across all services.</p>
 <p><strong>Weakness:</strong> Premium pricing, and AI SEO is one practice in a broad growth agency.</p>
 <p><strong>Choose if:</strong> you want one squad across paid and organic.</p>
-<p><strong>Skip if:</strong> you only need an AI SEO specialist, or see our <a href="https://www.nakama.in/journal/nogood-alternatives">NoGood alternatives</a>.</p>
+<p><strong>Skip if:</strong> you only need an AI SEO specialist (see our <a href="https://www.nakama.in/journal/nogood-alternatives">NoGood alternatives</a>).</p>
 <h3 id="10-victorious">10. Victorious</h3>
 <p><strong>Best for:</strong> Mid-market and enterprise brands that want AI visibility layered on an established SEO program.</p>
 <p><strong>Services:</strong> SEO, AEO for ChatGPT, Perplexity, AI Overviews, Gemini, Copilot and Claude, content and web services, with a quarterly search report.</p>
@@ -692,7 +692,7 @@ export const bestAiSeoAgenciesArticle: Article = {
    "Pricing: Its FAQ says the average retainer is above USD 20,000 a month across all services.",
    "Weakness: Premium pricing, and AI SEO is one practice in a broad growth agency.",
    "Choose if: you want one squad across paid and organic.",
-   "Skip if: you only need an AI SEO specialist, or see our NoGood alternatives."
+   "Skip if: you only need an AI SEO specialist (see our NoGood alternatives)."
   ]
  },
  {
