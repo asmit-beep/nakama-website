@@ -11,7 +11,7 @@ import {IpAtmos} from '../../inner/kit';
 type Props={params:Promise<{slug:string}>};
 /** Topical clusters for the Keep reading card. Pillar first, then members. A post sits in one cluster only. */
 const CLUSTERS:string[][]=[
- ['best-generative-engine-optimization-agencies','best-geo-agencies-for-saas','best-geo-agencies-india','geo-agency-vs-in-house','best-ai-seo-agencies','best-enterprise-ai-seo-agencies'],
+ ['best-generative-engine-optimization-agencies','best-geo-agencies-for-saas','best-geo-agencies-india','pepper-vs-tripledart','geo-agency-vs-in-house','best-ai-seo-agencies','best-enterprise-ai-seo-agencies'],
  ['best-aeo-agencies','how-to-hire-an-aeo-agency','best-aeo-consultants','best-aeo-agencies-india','chatgpt-seo-agency','minuttia-alternatives','geo-aeo-pricing'],
  ['best-ai-visibility-tools','peec-ai-alternatives','profound-alternatives','ai-visibility-report-template'],
  ['aeo-vs-seo-vs-geo','answer-engine-optimization','how-to-rank-in-chatgpt','how-to-rank-in-google-ai-overviews','topics-vs-keywords','geo-audit'],
@@ -65,10 +65,8 @@ export async function generateMetadata({params}:Props):Promise<Metadata>{
   modifiedTime:article.modifiedAt??article.publishedAt??article.date,
   image:article.ogImage,
   author:article.authorName,
-  locale:article.ogLocale,
-  articleAuthor:article.articleAuthor,
  });
- if(article.robotsNoindex??article.noindex)return {...meta,robots:{index:false,follow:true,googleBot:{index:false,follow:true}}};
+ if(article.noindex)return {...meta,robots:{index:false,follow:true,googleBot:{index:false,follow:true}}};
  return meta;
 }
 export default async function ArticlePage({params}:Props){

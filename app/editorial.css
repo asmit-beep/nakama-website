@@ -3146,6 +3146,8 @@ html{overflow-x:clip;scroll-padding-top:110px}body{font-family:var(--sans);font-
 .ip-article-page .article-rich{max-width:1040px;margin:0 auto;padding-bottom:28px}
 .ip-article-page .article-rich .back-link{margin-bottom:28px}
 .ip-article-page .article-rich h1{font-family:'Manrope',Arial,sans-serif;font-weight:700;font-size:clamp(40px,5vw,64px);line-height:1.08;letter-spacing:-.04em;color:#f6f3ee;max-width:18ch;margin:0 0 18px}
+/* Long journal H1s: full width with balanced wrapping (replaces the inline max-width:none;text-wrap:balance style). */
+.ip-article-page .article-rich h1.article-h1-wide{max-width:none;text-wrap:balance}
 .ip-article-page .article-rich h2{font-family:'Manrope',Arial,sans-serif;font-weight:700;font-size:clamp(28px,3vw,36px);line-height:1.2;letter-spacing:-.03em;color:#f6f3ee;margin:56px 0 16px;scroll-margin-top:120px}
 .ip-article-page .article-rich h3{font-family:'Manrope',Arial,sans-serif;font-weight:700;font-size:24px;line-height:1.3;letter-spacing:-.03em;color:#f6f3ee;margin:36px 0 8px;scroll-margin-top:120px}
 .ip-article-page .article-rich h4{font-family:'Manrope',Arial,sans-serif;font-weight:600;font-size:12px;line-height:1.4;letter-spacing:.12em;text-transform:uppercase;color:#7fd1c3;margin:22px 0 6px}

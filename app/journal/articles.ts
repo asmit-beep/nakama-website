@@ -38,10 +38,6 @@ export type Article={
  modifiedAt?:string,
  authorName?:string,
  ogImage?:{url:string,width:number,height:number,alt:string,type?:string},
- /** Open Graph locale for this note. Omitted uses the site default, en_IN. */
- ogLocale?:string,
- /** Profile URL emitted as article:author. */
- articleAuthor?:string,
  /** Replaces the generic Article schema (and the shared breadcrumb schema) when set. */
  jsonLd?:object,
  /** When set, the note renders this HTML instead of the paragraph sections. */
@@ -50,10 +46,8 @@ export type Article={
  canonical?:string,
  /** HTML lead rendered under the dek on section-based notes. */
  pointerHtml?:string,
- /** Preview gate. Omitted from the sitemap, llms files, RSS, the resources index and the author index. Also sets the robots meta unless `robotsNoindex` is false. */
+ /** Preview gate. noindex,follow, and omitted from the sitemap, llms files, RSS and the author index. */
  noindex?:boolean,
- /** Page robots noindex. Omitted means the same as `noindex`. False keeps the listing gate and inherits the site robots default. */
- robotsNoindex?:boolean,
  /** When set, the Keep reading card links to this slug instead of the next indexable note. A noindex preview can still show that one card. */
  nextSlug?:string,
  /** Optional. When set, this article's cover shows on the "Keep reading" card of the article that links to it. Decorative: the title beside it names the article, so the image has an empty alt. */
