@@ -2,18 +2,16 @@ import type {Article} from './articles';
 import {journalCta, stripJournalCta} from './cta';
 
 /**
- * PUBLISH TIME for this preview. ISO 8601 with +05:30.
- * PUBLISHED_AT and MODIFIED_AT are the check day (25 Nov 2026, IST), the same
- * way an unpublished note sets both until go-live. They feed datePublished and
- * dateModified. The visible line is "Updated 25 Nov 2026".
+ * PUBLISH TIME for this article. ISO 8601 with +05:30.
+ * PUBLISHED_AT and MODIFIED_AT are 25 Nov 2026 IST. They feed datePublished
+ * and dateModified. The visible line is "Updated 25 Nov 2026".
  *
- * PREVIEW stays true. That flag, with nofollow, keeps robots noindex,nofollow
- * and leaves this note out of the sitemap, llms.txt, llms-full.txt, RSS,
- * the resources index and the author index. Set PREVIEW to false only on a merge GO.
+ * PREVIEW is false: index,follow, and this note is listed in the sitemap,
+ * llms.txt, llms-full.txt, RSS, the resources index and the author index.
  */
 const PUBLISHED_AT = '2026-11-25T09:00:00+05:30';
 const MODIFIED_AT = '2026-11-25T09:00:00+05:30';
-const PREVIEW = true;
+const PREVIEW = false;
 
 const MONTHS = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
 const dayOf = (iso: string) => iso.slice(0, 10);
@@ -116,6 +114,7 @@ const articleLd = {
     caption: 'Asmit Choudhary, AI & GEO Strategist at Nakama Growth',
    },
    worksFor: {'@id': 'https://www.nakama.in/#organization'},
+   sameAs: ['https://www.linkedin.com/in/asmit-c/'],
   },
   {
    '@type': 'WebPage',
@@ -186,7 +185,7 @@ const articleLd = {
 };
 
 const fig = (file: string, alt: string, eager = false) =>
- `<figure><img src="/journal/${SLUG}/${file}.webp" alt="${alt}" width="1600" height="900" ${eager ? 'fetchpriority="high"' : 'loading="lazy"'} decoding="async"></figure>`;
+ `<figure><picture><source srcset="/journal/${SLUG}/${file}.webp" type="image/webp"><img src="/journal/${SLUG}/${file}.png" alt="${alt}" width="1600" height="900" ${eager ? 'fetchpriority="high"' : 'loading="lazy"'} decoding="async"></picture></figure>`;
 
 const faqBlock = FAQS.map(f => `<h3 id="${slugId(f.q)}">${f.q}</h3>\n<p>${faqHtml(f.a)}</p>`).join('\n');
 
@@ -197,7 +196,7 @@ const authorBox = `<div class="author-box" id="asmit-choudhary">
 </div>
 </div>`;
 
-const toc = `<nav aria-labelledby="toc-h" class="toc"><p class="toc-head" id="toc-h">On this page <span>11 sections</span></p><ol><li><a href="#what-are-the-best-nogood-alternatives-for-ai-search">What are the best NoGood alternatives for AI search?</a></li><li><a href="#how-we-chose-these-nogood-competitors">How we chose these NoGood competitors</a></li><li><a href="#nogood-at-a-glance-services-pricing-and-reviews">NoGood at a glance: services, pricing and reviews</a></li><li><a href="#nogood-vs-nakama-growth-how-do-they-differ">NoGood vs Nakama Growth: how do they differ?</a></li><li><a href="#alternatives-to-nogood-for-ai-search-optimization">Alternatives to NoGood for AI search optimization</a></li><li><a href="#which-nogood-alternative-fits-an-early-stage-saas-team">Which NoGood alternative fits an early-stage SaaS team?</a></li><li><a href="#which-agencies-like-nogood-include-digital-pr">Which agencies like NoGood include digital PR?</a></li><li><a href="#when-should-you-stay-with-nogood">When should you stay with NoGood?</a></li><li><a href="#how-do-you-choose-a-nogood-alternative">How do you choose a NoGood alternative?</a></li><li><a href="#faqs">FAQs</a></li><li><a href="#ready-to-decide">Ready to decide?</a></li></ol></nav>`;
+const toc = `<nav aria-labelledby="toc-h" class="toc"><p class="toc-head" id="toc-h">On this page <span>11 sections</span></p><ol><li><a href="#what-are-the-best-nogood-alternatives-for-ai-search">What are the best NoGood alternatives for AI search?</a></li><li><a href="#how-we-chose-these-nogood-competitors">How we chose these NoGood competitors</a></li><li><a href="#nogood-at-a-glance-services-pricing-and-reviews">NoGood at a glance: services, pricing and reviews</a></li><li><a href="#nogood-vs-nakama-growth-how-do-they-differ">NoGood vs Nakama Growth: how do they differ?</a></li><li><a href="#alternatives-to-nogood-for-ai-search-optimization">Alternatives to NoGood for AI search optimization</a></li><li><a href="#which-nogood-alternative-fits-an-early-stage-saas-team">Which NoGood alternative fits an early-stage SaaS team?</a></li><li><a href="#which-agencies-like-nogood-include-digital-pr">Which agencies like NoGood include digital PR?</a></li><li><a href="#when-should-you-stay-with-nogood">When should you stay with NoGood?</a></li><li><a href="#how-do-you-choose-a-nogood-alternative">How do you choose a NoGood alternative?</a></li><li><a href="#faqs">FAQ</a></li><li><a href="#ready-to-decide">Ready to decide?</a></li></ol></nav>`;
 
 const ctaInline = journalCta({
  variant: 'inline',
@@ -211,7 +210,7 @@ const ctaBand = journalCta({
  variant: 'band',
  id: 'nogood-alternatives-2',
  headline: 'Compare Nakama Growth with NoGood on your own brief',
- sub: "Tell us where you stand and we'll come back with a plan and a price.",
+ sub: "Tell us where you stand and we’ll come back with a plan and a price.",
  buttonHref: 'https://www.nakama.in/pricing#quote',
  secondaryLabel: null,
 });
@@ -363,7 +362,7 @@ ${ctaInline}
 <p>Get price and minimum term in writing, and compare them against NoGood's stated average. Our guide to ${a('https://www.nakama.in/journal/geo-aeo-pricing', 'what GEO and AEO agencies cost')} covers what agencies charge and why.</p>
 <p>Ask what ships in month one. NoGood's own benchmark is three to six months for organic channels, so hold any alternative to a written plan.</p>
 <p>For wider shortlists, see our ${a('https://www.nakama.in/journal/best-aeo-agencies', 'AEO agencies compared')}, ${a('https://www.nakama.in/journal/best-ai-seo-agencies', 'AI SEO agencies compared on visibility proof')}, ${a('https://www.nakama.in/journal/best-enterprise-ai-seo-agencies', 'enterprise AI SEO agencies for tech brands')} and ${a('https://www.nakama.in/journal/best-generative-engine-optimization-agencies', 'generative engine optimization agencies compared')}.</p>
-<h2 id="faqs">FAQs</h2>
+<h2 id="faqs">FAQ</h2>
 ${faqBlock}
 <h2 id="ready-to-decide">Ready to decide?</h2>
 ${ctaBand}
@@ -423,9 +422,8 @@ export const nogoodAlternativesArticle: Article = {
  publishedAt: PUBLISHED_AT,
  modifiedAt: MODIFIED_AT,
  authorName: 'Asmit Choudhary',
- /** PREVIEW true with nofollow: noindex,nofollow, and off the sitemap, llms files, RSS, resources and the author index. */
+ /** PREVIEW false: index,follow, and this note is listed in the sitemap, llms files, RSS, resources and the author index. */
  noindex: PREVIEW,
- nofollow: PREVIEW,
  /** Live next-article card. A noindex preview can still show this one card. It does not list this note on other pages. */
  nextSlug: 'best-aeo-agencies',
  ogImage: {

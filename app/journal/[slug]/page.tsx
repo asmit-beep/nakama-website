@@ -66,10 +66,7 @@ export async function generateMetadata({params}:Props):Promise<Metadata>{
   image:article.ogImage,
   author:article.authorName,
  });
- if(article.noindex){
-  const follow=!article.nofollow;
-  return {...meta,robots:{index:false,follow,googleBot:{index:false,follow}}};
- }
+ if(article.noindex)return {...meta,robots:{index:false,follow:true,googleBot:{index:false,follow:true}}};
  return meta;
 }
 export default async function ArticlePage({params}:Props){
