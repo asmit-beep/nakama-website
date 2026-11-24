@@ -74,7 +74,7 @@ const FAQS: {q: string; a: string}[] = [
  },
  {
   q: 'What are the alternatives to Pepper and TripleDart?',
-  a: 'Nakama Growth is one alternative, a GEO and AEO specialist for SaaS, tech and AI teams. The other route is an in-house team. Compare any option on engines tracked, channels in scope, dated evidence, pricing and minimum term. For a wider shortlist, see our <a href="https://www.nakama.in/journal/best-generative-engine-optimization-agencies">best GEO agencies</a> list, and for more India-based options, see our <a href="https://www.nakama.in/journal/best-geo-agencies-india">GEO agencies in India</a> list.',
+  a: 'Nakama Growth is one alternative, a GEO and AEO specialist for SaaS, tech and AI teams. The other route is an in-house team. Compare any option on engines tracked, channels in scope, dated evidence, pricing and minimum term. For a wider shortlist, see our <a href="https://www.nakama.in/journal/best-generative-engine-optimization-agencies">best GEO agencies</a> list, and for more India-based options, see <a href="https://www.nakama.in/journal/best-geo-agencies-india">GEO agencies in India</a>.',
  },
 ];
 
