@@ -179,16 +179,17 @@ main.sa-page{background:#0a090b!important;color:#f3f1ed;padding:0!important;over
 .sa .ac.cs{display:block;position:relative;max-width:100%;font-family:Manrope,system-ui,sans-serif}
 .sa .v3-band-r,.sa .v3-band-card,.sa .acw{min-width:0;max-width:100%}
 .sa .ac.cs .answer{border:1px solid #ed955b80;border-radius:18px;box-shadow:inset 0 1px 0 #ffffff1a;background:linear-gradient(140deg,#272b2b,#1d2021);padding:0 12px;display:block;color:#f3f1ed;text-align:left}
-.sa .ac.cs .a-top{display:flex;align-items:center;height:48px;gap:8px;padding:0}
-.sa .ac.cs .tabs{display:flex;align-items:center;gap:4px;height:100%;flex:1;min-width:0}
-.sa .ac.cs .tab{display:inline-flex;align-items:center;justify-content:center;height:48px;min-width:48px;padding:0 10px;border:0;border-radius:10px;background:none;color:#a8a7a5;font:600 13px/1.2 Manrope,system-ui,sans-serif;cursor:pointer}
-.sa .ac.cs .tab[aria-selected=true]{color:#f3f1ed;box-shadow:inset 0 -2px 0 var(--k-ember)}
-.sa .ac.cs .pp{display:grid;place-items:center;width:48px;height:48px;margin-left:auto;border:0;border-radius:12px;background:none;color:#a8a7a5;cursor:pointer}
-.sa .ac.cs .pp .pp-ring{display:grid;place-items:center;width:28px;height:28px;border:1px solid #ffffff38;border-radius:99px}
-.sa .ac.cs .pp svg{width:12px;height:12px}
-.sa .ac.cs .pp .i-play{display:none}
-.sa .ac.cs .pp[aria-pressed=true] .i-play{display:block}
-.sa .ac.cs .pp[aria-pressed=true] .i-pause{display:none}
+/* Engine tabs follow the homepage switcher: brand mark, greyscale until selected. Labels stay visible because AI Overview and AI Mode share the Google mark. */
+.sa .ac.cs .a-top{display:flex;align-items:center;height:auto;min-height:48px;gap:8px;padding:6px 0 4px}
+.sa .ac.cs .tabs{display:flex;flex-wrap:wrap;align-items:center;gap:8px;height:auto;flex:1;min-width:0}
+.sa .ac.cs .tab{display:inline-flex;align-items:center;justify-content:center;gap:6px;height:40px;min-width:44px;padding:0 8px;border:0;border-radius:8px;background:none;color:#878c8b;font:500 12px/1.2 Manrope,system-ui,sans-serif;cursor:pointer;white-space:nowrap}
+.sa .ac.cs .tab .mark{display:grid;place-items:center;width:30px;height:26px;border-radius:8px;opacity:.42;filter:grayscale(1);transition:background .3s,opacity .3s,filter .3s}
+.sa .ac.cs .tab .mark svg{width:17px;height:17px;display:block}
+.sa .ac.cs .tab:hover{color:#d8d3ca}
+.sa .ac.cs .tab:hover .mark{opacity:.8;filter:none}
+.sa .ac.cs .tab[aria-selected=true]{color:#ece6db;font-weight:600}
+.sa .ac.cs .tab[aria-selected=true] .mark{opacity:1;filter:none;background:#ffffff14;box-shadow:inset 0 0 0 1px #ffffff1f}
+.sa .ac.cs .tab:focus-visible{outline:2px solid var(--k-ember);outline-offset:2px}
 .sa .ac.cs .screen{margin-top:0;height:var(--ac-panel-h);border-radius:12px;overflow:hidden;background:#151617;box-shadow:inset 0 0 0 1px #ffffff12}
 .sa .ac.cs .states{height:100%;display:grid}
 .sa .ac.cs .state{grid-area:1/1;position:relative;overflow:hidden;opacity:0;visibility:hidden;display:flex;flex-direction:column;min-height:0}
@@ -241,7 +242,6 @@ main.sa-page{background:#0a090b!important;color:#f3f1ed;padding:0!important;over
 .sa .ac.cs .x-stack b{display:block;font-weight:600;color:#444746}
 .sa .ac.cs .x-note{margin:10px 0 0;font-size:12px;line-height:1.4;font-weight:500;color:#444746}
 .sa .ac.cs .ac-foot{display:flex;align-items:center;gap:12px;min-height:48px;padding:0 2px}
-.sa .ac.cs .ac-foot .pp{display:none}
 .sa .ac.cs .tag{display:inline-flex;align-items:center;gap:8px;font:700 12px/1 Manrope,system-ui,sans-serif;letter-spacing:.14em;text-transform:uppercase;color:var(--k-ember);background:none;border:0;padding:0}
 .sa .ac.cs .tag i{width:8px;height:8px;border-radius:50%;background:var(--k-ember)}
 .sa .ac.cs .tag.grey{color:#a8a7a5}
@@ -345,11 +345,11 @@ main.sa-page{background:#0a090b!important;color:#f3f1ed;padding:0!important;over
  .sa .ba{grid-template-columns:1fr;gap:28px}
  .sa .ac.cs .answer{padding:0 10px}
  .sa .ac.cs .a-top{display:block;height:auto}
- .sa .ac.cs .tabs{display:grid;grid-template-columns:repeat(4,1fr);gap:2px}
- .sa .ac.cs .tab{height:48px;min-width:0;padding:0 2px;font-size:12px}
- .sa .ac.cs .a-top .pp{display:none}
- .sa .ac.cs .ac-foot{justify-content:space-between}
- .sa .ac.cs .ac-foot .pp{display:grid;margin-right:-10px}
+ .sa .ac.cs .tabs{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:4px}
+ .sa .ac.cs .tab{flex-direction:column;height:56px;min-width:0;padding:4px 2px;gap:2px;white-space:normal}
+ .sa .ac.cs .tab .lb{font-size:12px;line-height:1.15;text-align:center}
+ .sa .ac.cs .tab .mark{width:26px;height:22px}
+ .sa .ac.cs .tab .mark svg{width:16px;height:16px}
  .sa .ac.cs .g-tabs{display:none}
  .sa .ac.cs .g-search+.g-aio,.sa .ac.cs .g-search+.g-tabs+.g-aio{margin-top:12px}
  .sa .ac-cap{display:block}
@@ -374,6 +374,5 @@ main.sa-page{background:#0a090b!important;color:#f3f1ed;padding:0!important;over
 }
 @media (max-width:380px){.sa{--qw-col:42px}}
 @media (prefers-reduced-motion:reduce){
- .sa .ac.cs .state,.sa .qw .chev{transition:none}
- .sa .ac.cs .pp{display:none!important}
+ .sa .ac.cs .state,.sa .qw .chev,.sa .ac.cs .tab .mark{transition:none}
 }

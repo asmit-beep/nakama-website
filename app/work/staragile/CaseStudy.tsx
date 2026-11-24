@@ -1,8 +1,14 @@
 import Link from 'next/link';
-import type {ReactNode} from 'react';
+import {cloneElement, isValidElement, type ReactNode} from 'react';
+import {engineMarks} from '@/app/hero-marks';
 import {FAQ} from './copy';
-import {Cap, Pause, Tag, shot} from './bits';
+import {Cap, Tag, shot} from './bits';
 import {QueryWall} from './Wall';
+
+function EngineMark({node}: {node: ReactNode}) {
+  const icon = isValidElement(node) ? cloneElement(node) : node;
+  return <span className="mark" aria-hidden="true">{icon}</span>;
+}
 
 const HERO = {
   aio: shot('asset01', 'Google AI Overview: “Best Certified Scrum Master Training Providers”', 'captured 21 to 31 Aug 2026 · Named first', 'Screenshot as captured. Red boxes as marked in the dated report. 1 price and 1 location hidden.', 1200, 678),
@@ -103,12 +109,11 @@ export function CaseStudy() {
                   <article className="answer" aria-label="StarAgile in four AI answers, recreated from dated captures">
                     <div className="a-top">
                       <div className="tabs" role="tablist" aria-label="AI engine">
-                        <button type="button" role="tab" id="hero-t-aio" aria-controls="hero-p-aio" aria-selected="true" tabIndex={0} data-k="aio"><span className="lb">AI Overview</span></button>
-                        <button type="button" role="tab" id="hero-t-aim" aria-controls="hero-p-aim" aria-selected="false" tabIndex={-1} data-k="aim"><span className="lb">AI Mode</span></button>
-                        <button type="button" role="tab" id="hero-t-cgpt" aria-controls="hero-p-cgpt" aria-selected="false" tabIndex={-1} data-k="cgpt"><span className="lb">ChatGPT</span></button>
-                        <button type="button" role="tab" id="hero-t-pplx" aria-controls="hero-p-pplx" aria-selected="false" tabIndex={-1} data-k="pplx"><span className="lb">Perplexity</span></button>
+                        <button type="button" role="tab" className="tab" id="hero-t-aio" aria-controls="hero-p-aio" aria-selected="true" tabIndex={0} data-k="aio"><EngineMark node={engineMarks.google}/><span className="lb">AI Overview</span></button>
+                        <button type="button" role="tab" className="tab" id="hero-t-aim" aria-controls="hero-p-aim" aria-selected="false" tabIndex={-1} data-k="aim"><EngineMark node={engineMarks.google}/><span className="lb">AI Mode</span></button>
+                        <button type="button" role="tab" className="tab" id="hero-t-cgpt" aria-controls="hero-p-cgpt" aria-selected="false" tabIndex={-1} data-k="cgpt"><EngineMark node={engineMarks.chatgpt}/><span className="lb">ChatGPT</span></button>
+                        <button type="button" role="tab" className="tab" id="hero-t-pplx" aria-controls="hero-p-pplx" aria-selected="false" tabIndex={-1} data-k="pplx"><EngineMark node={engineMarks.perplexity}/><span className="lb">Perplexity</span></button>
                       </div>
-                      <Pause/>
                     </div>
                     <div className="screen">
                       <div className="states">
@@ -153,7 +158,6 @@ export function CaseStudy() {
                       <span className="tagw" data-for="aim" hidden><Tag label="Named first"/></span>
                       <span className="tagw" data-for="cgpt" hidden><Tag label="Named first"/></span>
                       <span className="tagw" data-for="pplx" hidden><Tag label="Named first"/></span>
-                      <Pause/>
                     </div>
                   </article>
                 </div>

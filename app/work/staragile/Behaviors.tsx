@@ -12,12 +12,11 @@ export function Behaviors() {
 
     document.querySelectorAll<HTMLElement>('.sa .acw[data-rotate]').forEach(w => {
       const tabs = [...w.querySelectorAll<HTMLButtonElement>('[role=tab]')];
-      const pps = [...w.querySelectorAll<HTMLButtonElement>('.pp')];
       const ks = tabs.map(b => b.dataset.k || '');
       let timer = 0;
       let stopped = reduce;
       let hover = false;
-      const sync = () => pps.forEach(b => b.setAttribute('aria-pressed', String(stopped)));
+      let focused = false;
       const show = (k: string) => {
         tabs.forEach(b => {
           const on = b.dataset.k === k;
@@ -35,35 +34,34 @@ export function Behaviors() {
         });
         w.dataset.active = k;
       };
+      const inside = () => w.contains(document.activeElement);
+      const held = () => stopped || hover || focused || inside() || document.hidden;
       const arm = () => {
         window.clearTimeout(timer);
-        if (stopped || hover || document.hidden) return;
+        if (held()) return;
         timer = window.setTimeout(() => {
+          if (held()) {
+            focused = focused || inside();
+            return;
+          }
           const i = ks.indexOf(w.dataset.active || ks[0]);
           show(ks[(i + 1) % ks.length]);
           arm();
         }, 6000);
       };
-      const stop = () => {
+      const halt = () => {
         stopped = true;
         window.clearTimeout(timer);
-        sync();
       };
       const onClick = (e: Event) => {
         const t = e.target as HTMLElement;
         const tab = t.closest<HTMLButtonElement>('[role=tab]');
         if (tab && w.contains(tab)) {
-          stop();
+          halt();
           show(tab.dataset.k || ks[0]);
           return;
         }
-        if (t.closest('.pp')) {
-          stopped = !stopped;
-          sync();
-          arm();
-          return;
-        }
-        if (t.closest('.lbo')) stop();
+        if (t.closest('.lbo')) halt();
       };
       const onKey = (e: KeyboardEvent) => {
         const i = tabs.indexOf(document.activeElement as HTMLButtonElement);
@@ -71,48 +69,49 @@ export function Behaviors() {
         if (!(e.key in map) || i < 0) return;
         e.preventDefault();
         const n = (map[e.key] + tabs.length) % tabs.length;
-        stop();
         show(ks[n]);
         tabs[n].focus();
       };
-      const art = w.querySelector<HTMLElement>('.ac');
-      const onFocus = (e: FocusEvent) => {
-        if (!(e.target as HTMLElement).closest('.pp')) stop();
+      const onFocus = () => {
+        focused = true;
+        window.clearTimeout(timer);
       };
-      const onDown = (e: PointerEvent) => {
-        if (!(e.target as HTMLElement).closest('.pp')) stop();
+      const onBlur = (e: FocusEvent) => {
+        const next = e.relatedTarget as Node | null;
+        if (next && w.contains(next)) return;
+        focused = false;
+        arm();
       };
+      const onDown = () => halt();
       const onEnter = (e: PointerEvent) => {
-        if (e.pointerType === 'mouse') {
-          hover = true;
-          window.clearTimeout(timer);
-        }
+        if (e.pointerType !== 'mouse') return;
+        hover = true;
+        window.clearTimeout(timer);
       };
       const onLeave = () => {
-        if (hover) {
-          hover = false;
-          arm();
-        }
+        if (!hover) return;
+        hover = false;
+        arm();
       };
       const onVis = () => arm();
       w.addEventListener('click', onClick);
       w.addEventListener('keydown', onKey);
-      art?.addEventListener('focusin', onFocus);
-      art?.addEventListener('pointerdown', onDown);
-      art?.addEventListener('pointerenter', onEnter);
-      art?.addEventListener('pointerleave', onLeave);
+      w.addEventListener('focusin', onFocus);
+      w.addEventListener('focusout', onBlur);
+      w.addEventListener('pointerdown', onDown);
+      w.addEventListener('pointerenter', onEnter);
+      w.addEventListener('pointerleave', onLeave);
       document.addEventListener('visibilitychange', onVis);
-      if (reduce) pps.forEach(b => b.remove());
-      sync();
       arm();
       cleanups.push(() => {
         window.clearTimeout(timer);
         w.removeEventListener('click', onClick);
         w.removeEventListener('keydown', onKey);
-        art?.removeEventListener('focusin', onFocus);
-        art?.removeEventListener('pointerdown', onDown);
-        art?.removeEventListener('pointerenter', onEnter);
-        art?.removeEventListener('pointerleave', onLeave);
+        w.removeEventListener('focusin', onFocus);
+        w.removeEventListener('focusout', onBlur);
+        w.removeEventListener('pointerdown', onDown);
+        w.removeEventListener('pointerenter', onEnter);
+        w.removeEventListener('pointerleave', onLeave);
         document.removeEventListener('visibilitychange', onVis);
       });
     });

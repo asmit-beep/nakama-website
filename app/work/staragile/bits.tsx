@@ -1,16 +1,5 @@
 import type {ReactNode} from 'react';
 
-export function Pause({className = 'pp'}: {className?: string}) {
-  return (
-    <button type="button" className={className} aria-label="Pause auto-rotate" aria-pressed="false">
-      <span className="pp-ring">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true" className="i-pause"><rect x="14" y="3" width="5" height="18" rx="1"/><rect x="5" y="3" width="5" height="18" rx="1"/></svg>
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true" className="i-play"><polygon points="6 3 20 12 6 21 6 3"/></svg>
-      </span>
-    </button>
-  );
-}
-
 export type Shot = {
   id: string;
   title: string;
