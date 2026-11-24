@@ -42,7 +42,7 @@ const AUTHOR_URL = 'https://www.nakama.in/authors/snehil-srivastava';
 const FAQS: {q: string; a: string}[] = [
  {
   q: 'Is Pepper better than TripleDart for GEO?',
-  a: 'Neither is better for every team. Nakama Growth is a third option for SaaS, tech and AI teams focused on off-site AI visibility. Pepper suits enterprises that want its Atlas platform, strategists and contracted KPIs. TripleDart suits funded B2B SaaS teams that want SEO and AEO alongside paid media and GTM engineering.',
+  a: 'Neither Pepper nor TripleDart is better for every team. Nakama Growth is a third option for SaaS, tech and AI teams focused on off-site AI visibility. Pepper suits enterprises that want its Atlas platform, strategists and contracted KPIs. TripleDart suits funded B2B SaaS teams that want SEO and AEO alongside paid media and GTM engineering.',
  },
  {
   q: 'How does Pepper compare to TripleDart?',
@@ -50,7 +50,7 @@ const FAQS: {q: string; a: string}[] = [
  },
  {
   q: 'Pepper or TripleDart for AI search visibility?',
-  a: 'Both track AI answers, at different cadences. Nakama Growth tracks ChatGPT, Perplexity, Gemini and Google AI Overviews weekly, per question and per engine. Pepper says it measures ChatGPT, Perplexity, Gemini, Claude, Microsoft Copilot and AI Overviews daily. TripleDart names ChatGPT, Perplexity, Claude, Gemini and Google AI, with daily monitoring.',
+  a: 'Nakama Growth, Pepper and TripleDart all track AI answers, at different cadences. Nakama Growth tracks ChatGPT, Perplexity, Gemini and Google AI Overviews weekly, per question and per engine. Pepper says it measures ChatGPT, Perplexity, Gemini, Claude, Microsoft Copilot and AI Overviews daily. TripleDart names ChatGPT, Perplexity, Claude, Gemini and Google AI, with daily monitoring.',
  },
  {
   q: 'Does Pepper offer AEO services?',
@@ -66,7 +66,7 @@ const FAQS: {q: string; a: string}[] = [
  },
  {
   q: 'Which fits an early-stage SaaS company: Pepper, TripleDart or Nakama Growth?',
-  a: 'It depends on budget and scope. TripleDart\'s homepage targets Series A to growth-stage B2B SaaS, and its FAQ page says it typically works with companies at $3M+ in annual recurring revenue. Pepper\'s site targets enterprises. Nakama Growth works with SaaS, tech and AI teams on a three-month minimum. For more SaaS-focused options, see the <a href="https://www.nakama.in/journal/best-geo-agencies-for-saas">best GEO agencies for SaaS</a>.',
+  a: 'Pepper, TripleDart and Nakama Growth each aim at a different stage, so budget and scope decide the fit. TripleDart\'s homepage targets Series A to growth-stage B2B SaaS, and its FAQ page says it typically works with companies at $3M+ in annual recurring revenue. Pepper\'s site targets enterprises. Nakama Growth works with SaaS, tech and AI teams on a three-month minimum. For more SaaS-focused options, see the <a href="https://www.nakama.in/journal/best-geo-agencies-for-saas">best GEO agencies for SaaS</a>.',
  },
  {
   q: 'Can any GEO agency guarantee AI citations?',
@@ -523,7 +523,7 @@ ${toc}
 <h3 id="tripledart-a-full-funnel-b2b-saas-growth-agency">TripleDart: a full-funnel B2B SaaS growth agency</h3>
 <p>TripleDart describes itself as an "AI-Native B2B SaaS Marketing Agency", founded in 2020, with offices in Plano, Texas, and Bengaluru (<a href="https://www.tripledart.com/">tripledart.com</a>). It runs Organic Growth, Performance Marketing and GTM Engineering. Its organic service covers SEO, GEO and AEO, content, digital PR, Reddit and YouTube. Its own platform, Slate by TripleDart, handles AI visibility tracking and reporting.</p>
 <h2 id="how-does-pepper-compare-to-tripledart-for-geo-and-ai-search-visibility">How does Pepper compare to TripleDart for GEO and AI search visibility?</h2>
-<p>Neither is better for every buyer. Pepper tracks six AI engines daily and puts KPIs in the contract. TripleDart runs GEO and AEO inside a wider SaaS growth offer with Slate. Nakama Growth tracks four engines weekly and works mainly on the off-site sources AI answers cite.</p>
+<p>For GEO, neither Pepper nor TripleDart is better for every buyer. Pepper says it tracks six AI engines daily, and it puts KPIs in the contract. TripleDart runs GEO and AEO inside a wider SaaS growth offer with Slate. Nakama Growth tracks four engines weekly and works mainly on the off-site sources AI answers cite.</p>
 <p>How does Pepper compare to TripleDart in practice? The split shows in engines, channels and delivery.</p>
 <h3 id="ai-engines-each-one-names">AI engines each one names</h3>
 <ul>
