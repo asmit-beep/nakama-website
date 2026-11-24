@@ -367,6 +367,7 @@ const bodyHtml = `<nav aria-label="Breadcrumb" class="article-breadcrumb"><ol st
 </ul>
 <h2 id="pepper">7. Who should choose Pepper?</h2>
 <p>Choose Pepper (Pepper Content Inc.) if you are an enterprise that wants an AI-agent platform run by its own strategists, covering SEO and GEO. Its blog cites "250+ enterprises", and its site describes YouTube, Reddit and community work alongside weekly baseline reviews.</p>
+<p>Deciding between Pepper and TripleDart? See our <a href="https://www.nakama.in/journal/pepper-vs-tripledart">Pepper vs TripleDart comparison</a>.</p>
 <ul>
 <li><strong>Based in:</strong> India. Its blog says "founded in Mumbai in 2017"; current HQ not stated.</li>
 <li><strong>Services:</strong> "SEO + GEO", YouTube and Reddit marketing (<a href="https://www.pepper.inc/">homepage</a>).</li>
@@ -587,6 +588,7 @@ export const bestGeoAgenciesIndiaArticle: Article = {
   "heading": "7. Who should choose Pepper?",
   "paragraphs": [
    "Choose Pepper (Pepper Content Inc.) if you are an enterprise that wants an AI-agent platform run by its own strategists, covering SEO and GEO. Its blog cites \"250+ enterprises\", and its site describes YouTube, Reddit and community work alongside weekly baseline reviews.",
+   "Deciding between Pepper and TripleDart? See our Pepper vs TripleDart comparison.",
    "Based in: India. Its blog says \"founded in Mumbai in 2017\"; current HQ not stated.",
    "Services: \"SEO + GEO\", YouTube and Reddit marketing ( homepage ).",
    "Evidence: the agency reports a \"200% increase in organic traffic\" for Apollo 24/7 .",

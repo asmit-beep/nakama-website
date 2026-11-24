@@ -18,6 +18,8 @@ export function articleDate(slug:string){return posts.find(p=>p.slug===slug)?.da
 export const publishedDay=(a:{slug:string;publishedAt?:string})=>dayOf(a.publishedAt)??articleDate(a.slug);
 /** Preview notes (`noindex`) stay on their URL only. They are left out of the sitemap, llms files and RSS. */
 export const feedArticles=articles.filter(a=>!a.noindex).map(a=>({...a,date:articleDate(a.slug)}));
+/** Build guard: a live note with a placeholder or malformed date fails the build instead of shipping a bad sitemap lastmod or an Invalid Date RSS item. */
+for(const a of feedArticles){if(!/^\d{4}-\d{2}-\d{2}$/.test(a.date)||(a.publishedAt&&!dayOf(a.publishedAt))||(a.modifiedAt&&!dayOf(a.modifiedAt)))throw new Error(`journal ${a.slug}: invalid date/publishedAt/modifiedAt`);}
 
 export const corePages:{path:string;title:string;summary:string;priority:number;freq:'weekly'|'monthly'|'yearly';modified:string}[]=[
  {path:'/',title:'Home',summary:'What Nakama does: gets brands named in AI answers through earned, off-site sources.',priority:1,freq:'weekly',modified:registeredDate('/')},
