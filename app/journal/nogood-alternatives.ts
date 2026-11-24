@@ -1,4 +1,5 @@
 import type {Article} from './articles';
+import {journalCta, stripJournalCta} from './cta';
 
 /**
  * PUBLISH TIME for this preview. ISO 8601 with +05:30.
@@ -44,7 +45,7 @@ const FAQS: {q: string; a: string}[] = [
  },
  {
   q: 'How much does NoGood cost?',
-  a: 'NoGood says its average retainer is above $20,000 a month and that it does not offer standardized packages (nogood.io, checked 25 Nov 2026). It does not publish a minimum term.',
+  a: 'Its homepage states that the average retainer is above $20,000 a month and that it does not offer standardized packages (nogood.io). It does not publish a minimum term.',
  },
  {
   q: 'Is there a NoGood alternative for AEO?',
@@ -52,11 +53,11 @@ const FAQS: {q: string; a: string}[] = [
  },
  {
   q: 'Which NoGood alternatives publish a price?',
-  a: 'On 25 Nov 2026, LoudFace (from $5,000 a month), Rock The Rankings (from $5,500 a month), Grow and Convert (from $10,000 a month) and Omniscient Digital (from $120,000 a year) published starting prices. Nakama Growth gives a custom quote.',
+  a: 'LoudFace (from $5,000 a month), Rock The Rankings (from $5,500 a month), Grow and Convert (from $10,000 a month) and Omniscient Digital (from $120,000 a year) publish starting prices. Nakama Growth gives a custom quote.',
  },
  {
   q: 'Does NoGood work with SaaS companies?',
-  a: 'Yes. NoGood lists SaaS, B2B and AI among the industries it works in, and names AWS and MongoDB among its clients (nogood.io, checked 25 Nov 2026).',
+  a: 'Yes. NoGood lists SaaS, B2B and AI among the industries it works in, and names AWS and MongoDB among its clients.',
  },
  {
   q: 'Can I keep NoGood and hire an AI search agency too?',
@@ -64,7 +65,7 @@ const FAQS: {q: string; a: string}[] = [
  },
 ];
 
-const faqHtml = (text: string) => text.replace(/\(nogood\.io, checked 25 Nov 2026\)/g, `(${a('https://nogood.io/', 'nogood.io')}, checked 25 Nov 2026)`);
+const faqHtml = (text: string) => text.replace('(nogood.io)', `(${a('https://nogood.io/', 'nogood.io')})`);
 
 const AGENCIES: {name: string; anchor: string; site: string}[] = [
  {name: 'Nakama Growth', anchor: '1-nakama-growth', site: 'https://www.nakama.in/'},
@@ -196,17 +197,37 @@ const authorBox = `<div class="author-box" id="asmit-choudhary">
 </div>
 </div>`;
 
+const toc = `<nav aria-labelledby="toc-h" class="toc"><p class="toc-head" id="toc-h">On this page <span>11 sections</span></p><ol><li><a href="#what-are-the-best-nogood-alternatives-for-ai-search">What are the best NoGood alternatives for AI search?</a></li><li><a href="#how-we-chose-these-nogood-competitors">How we chose these NoGood competitors</a></li><li><a href="#nogood-at-a-glance-services-pricing-and-reviews">NoGood at a glance: services, pricing and reviews</a></li><li><a href="#nogood-vs-nakama-growth-how-do-they-differ">NoGood vs Nakama Growth: how do they differ?</a></li><li><a href="#alternatives-to-nogood-for-ai-search-optimization">Alternatives to NoGood for AI search optimization</a></li><li><a href="#which-nogood-alternative-fits-an-early-stage-saas-team">Which NoGood alternative fits an early-stage SaaS team?</a></li><li><a href="#which-agencies-like-nogood-include-digital-pr">Which agencies like NoGood include digital PR?</a></li><li><a href="#when-should-you-stay-with-nogood">When should you stay with NoGood?</a></li><li><a href="#how-do-you-choose-a-nogood-alternative">How do you choose a NoGood alternative?</a></li><li><a href="#faqs">FAQs</a></li><li><a href="#ready-to-decide">Ready to decide?</a></li></ol></nav>`;
+
+const ctaInline = journalCta({
+ variant: 'inline',
+ id: 'nogood-alternatives-1',
+ headline: 'Want a NoGood alternative scoped to your brand?',
+ sub: 'Tell us your category and the questions your buyers ask. We confirm scope on a pricing call, then send a written proposal.',
+ buttonHref: 'https://www.nakama.in/pricing#quote',
+});
+
+const ctaBand = journalCta({
+ variant: 'band',
+ id: 'nogood-alternatives-2',
+ headline: 'Compare Nakama Growth with NoGood on your own brief',
+ sub: "Tell us where you stand and we'll come back with a plan and a price.",
+ buttonHref: 'https://www.nakama.in/pricing#quote',
+ secondaryLabel: null,
+});
+
 const bodyHtml = `<nav aria-label="Breadcrumb" class="article-breadcrumb"><ol style="list-style:none;display:flex;flex-wrap:wrap;gap:.5rem;padding:0;margin:0 0 1.25rem;font-size:.9rem"><li><a href="https://www.nakama.in/">Home</a></li><li aria-hidden="true">/</li><li><a href="https://www.nakama.in/resources">Resources</a></li><li aria-hidden="true">/</li><li aria-current="page">${H1}</li></ol></nav>
 <h1 id="${slugId(H1)}" class="article-h1-wide">${H1}</h1>
-<p>Updated ${modifiedDate} · Every agency fact checked on its own site on 25 Nov 2026</p>
+<p>Updated ${modifiedDate}</p>
 <p>By <a href="${AUTHOR_URL}" rel="author">Asmit Choudhary</a>, AI &amp; GEO Strategist, Nakama Growth</p>
 ${fig('nogood-alternatives-hero', HERO_ALT, true)}
 <p>The best competitors to NoGood for AI search are Nakama Growth, Omniscient Digital, Graphite, LoudFace and Rock The Rankings. NoGood is a full-stack growth agency with an average retainer above $20,000 a month. We checked 10 NoGood alternatives on price and proof, and each sells AI search (AEO and GEO) as a named service.</p>
+${toc}
 <h2 id="${slugId('What are the best NoGood alternatives for AI search?')}">What are the best NoGood alternatives for AI search?</h2>
-<p>The table below covers the AI search part of NoGood's work only. Prices and terms are what each agency publishes on its own site, read on 25 Nov 2026.</p>
+<p>The table below covers the AI search part of NoGood's work only. Prices and terms are what each agency publishes on its own site.</p>
 <div class="article-table"><table>
 <thead>
-<tr><th scope="col">Agency</th><th scope="col">Best for</th><th scope="col">Price and minimum term (checked 25 Nov 2026)</th><th scope="col">Main weakness</th></tr>
+<tr><th scope="col">Agency</th><th scope="col">Best for</th><th scope="col">Price and minimum term</th><th scope="col">Main weakness</th></tr>
 </thead>
 <tbody>
 <tr><th scope="row">Nakama Growth</th><td>SaaS, tech and AI teams moving only their AI search work, who want results they can re-run themselves</td><td>Custom quote; 3-month minimum</td><td>No published price; no paid, social or creative work</td></tr>
@@ -238,21 +259,21 @@ ${fig('nogood-alternatives-how-we-chose', CHOSE_ALT)}
 <li>Price and minimum term, stated as published or "not published". Not scored.</li>
 </ol>
 <p style="margin-top:14px"><strong>Sources:</strong> agency websites only. We used no third-party price estimates. NoGood facts come from nogood.io.</p>
-<p style="margin-top:14px"><strong>Starting list:</strong> agencies that ChatGPT and Google's AI answers named for "NoGood alternatives" style prompts in our 25 Nov 2026 checks, plus SaaS-focused AI search agencies that passed checks 1 and 2.</p>
+<p style="margin-top:14px"><strong>Starting list:</strong> agencies that ChatGPT and Google's AI answers named for "NoGood alternatives" style prompts, plus SaaS-focused AI search agencies that passed checks 1 and 2.</p>
 </blockquote>
-<p>We left some agencies out on purpose. Kalungi is a strong outsourced SaaS marketing team, but its homepage did not list AEO or GEO as a service when we checked.</p>
-<p>Onely sells GEO, but its ${a('https://www.onely.com/services/generative-engine-optimization/', 'GEO page')} positions it for "enterprises looking for international AI search" and does not state a SaaS focus (checked 25 Nov 2026).</p>
-<p>Directive runs GEO under "Content &amp; GEO" next to paid media, paid social and revenue operations, which makes it a full-stack option (${a('https://directiveconsulting.com/', 'directiveconsulting.com')}, checked 25 Nov 2026). Its site publishes no price; the only minimum we found is on Clutch, not on its own pages.</p>
+<p>We left some agencies out on purpose. Kalungi is a strong outsourced SaaS marketing team, but its homepage did not list AEO or GEO as a service.</p>
+<p>Onely sells GEO, but its ${a('https://www.onely.com/services/generative-engine-optimization/', 'GEO page')} positions it for "enterprises looking for international AI search" and does not state a SaaS focus.</p>
+<p>Directive runs GEO under "Content &amp; GEO" next to paid media, paid social and revenue operations, which makes it a full-stack option (${a('https://directiveconsulting.com/', 'directiveconsulting.com')}). Its site publishes no price; the only minimum we found is on Clutch, not on its own pages.</p>
 <p>Full-stack paid agencies are out of scope here.</p>
 <h2 id="${slugId('NoGood at a glance: services, pricing and reviews')}">NoGood at a glance: services, pricing and reviews</h2>
-<p>NoGood describes itself as "your AI native growth squad" (${a('https://nogood.io/', 'nogood.io')}, checked 25 Nov 2026). It is headquartered in Soho, New York, with hubs in Miami and Dubai.</p>
-<p>Its homepage lists six service lines run by one squad: AEO and SEO, paid growth across Google, Meta, TikTok and LinkedIn, organic social, performance creative, earned media and digital PR, and analytics and CRO (${a('https://nogood.io/', 'nogood.io')}, checked 25 Nov 2026).</p>
-<p>On pricing, NoGood is direct: "Our average retainer is above $20,000/month," and "We don't offer standardized packages" (${a('https://nogood.io/', 'nogood.io')}, checked 25 Nov 2026). It does not state a minimum term.</p>
-<p>NoGood says it works "exclusively" in SaaS, B2B, healthcare, fintech, consumer and eCommerce, and AI. It names AWS, MongoDB, Oura, L'Oréal, Nike, TikTok, Johnson &amp; Johnson and SteelSeries as clients (${a('https://nogood.io/', 'nogood.io')}, checked 25 Nov 2026).</p>
-<p>For AEO, it lists 16 services, from prompt research and monitoring to schema and agentic commerce optimization. It tracks visibility with Goodie AI, which it calls "an external, third-party tool" (${a('https://nogood.io/answer-engine-optimization-aeo/', 'NoGood AEO page')}, checked 25 Nov 2026).</p>
-<p>On reviews and track record, NoGood's own site points to awards (The Shorty Awards, The Drum and The Webby Awards) and an "84% client retention rate" (${a('https://nogood.io/answer-engine-optimization-aeo/', 'AEO page')} and ${a('https://nogood.io/', 'homepage')}, checked 25 Nov 2026). For independent reviews, read its profiles on review sites directly.</p>
-<p>Its headline AEO result is for SteelSeries, a gaming accessories brand. The case study headline says "23x" more AI search traffic and "27x" more conversions from AI platforms year over year. The body of the same page reports AI traffic growing 6.7X and conversions 7.1X from January to October 2025 (${a('https://nogood.io/case-study/steelseries-aeo/', 'SteelSeries case study')}, checked 25 Nov 2026). The two sets of figures differ, so ask which baseline applies.</p>
-<p>NoGood also sets expectations on timing: most clients "see meaningful performance improvements within 90 days," while organic channels, including AEO, "typically require three to six months" (${a('https://nogood.io/', 'nogood.io')}, checked 25 Nov 2026).</p>
+<p>NoGood describes itself as "your AI native growth squad" (${a('https://nogood.io/', 'nogood.io')}). It is headquartered in Soho, New York, with hubs in Miami and Dubai.</p>
+<p>Its homepage lists six service lines run by one squad: AEO and SEO, paid growth across Google, Meta, TikTok and LinkedIn, organic social, performance creative, earned media and digital PR, and analytics and CRO.</p>
+<p>On pricing, it is direct: "Our average retainer is above $20,000/month," and "We don't offer standardized packages." It does not state a minimum term.</p>
+<p>It works "exclusively" in SaaS, B2B, healthcare, fintech, consumer and eCommerce, and AI, and names AWS, MongoDB, Oura, L'Oréal, Nike, TikTok, Johnson &amp; Johnson and SteelSeries as clients.</p>
+<p>For AEO, it lists 16 services, from prompt research and monitoring to schema and agentic commerce optimization. It tracks visibility with Goodie AI, which it calls "an external, third-party tool" (${a('https://nogood.io/answer-engine-optimization-aeo/', 'NoGood AEO page')}).</p>
+<p>On reviews and track record, its own site points to awards (The Shorty Awards, The Drum and The Webby Awards) and an "84% client retention rate." For independent reviews, read its profiles on review sites directly.</p>
+<p>Its headline AEO result is for SteelSeries, a gaming accessories brand. The case study headline says "23x" more AI search traffic and "27x" more conversions from AI platforms year over year. The body of the same page reports AI traffic growing 6.7X and conversions 7.1X from January to October 2025 (${a('https://nogood.io/case-study/steelseries-aeo/', 'SteelSeries case study')}). The two sets of figures differ, so ask which baseline applies.</p>
+<p>It also sets expectations on timing: most clients "see meaningful performance improvements within 90 days," while organic channels, including AEO, "typically require three to six months."</p>
 <h2 id="${slugId('NoGood vs Nakama Growth: how do they differ?')}">NoGood vs Nakama Growth: how do they differ?</h2>
 <p>NoGood runs growth across paid and organic channels with one squad. Nakama Growth runs one AI search plan for SaaS, tech and AI teams, built around the sources AI answers draw on.</p>
 <div class="article-table"><table>
@@ -280,56 +301,57 @@ ${fig('nogood-alternatives-vs-nakama-growth', VS_ALT)}
 <p><strong>Weakness:</strong> no published price, a 3-month minimum, and no paid media, paid social or performance creative, so it cannot replace a full NoGood squad. It also takes on a small number of partners at a time.</p>
 <h3 id="2-omniscient-digital">2. Omniscient Digital</h3>
 <p><strong>Best for:</strong> funded B2B software teams that want AI search inside a full content and SEO program.</p>
-<p>Omniscient calls itself "an organic growth agency that helps B2B software businesses turn SEO, GEO, and content into growth channels" (${a('https://beomniscient.com/', 'beomniscient.com')}, checked 25 Nov 2026). Its ${a('https://beomniscient.com/services/answer-engine-optimization/', 'AEO service')} includes original research, digital PR and third-party mentions.</p>
-<p><strong>Price:</strong> "Full-service engagements start at $120,000/year" (checked 25 Nov 2026). A minimum term is not published.</p>
+<p>Omniscient calls itself "an organic growth agency that helps B2B software businesses turn SEO, GEO, and content into growth channels" (${a('https://beomniscient.com/', 'beomniscient.com')}). Its AEO service includes original research, digital PR and third-party mentions.</p>
+<p><strong>Price:</strong> "Full-service engagements start at $120,000/year." A minimum term is not published.</p>
 <p><strong>Weakness:</strong> the highest published floor on this list, and the work is organic only.</p>
 <h3 id="3-graphite">3. Graphite</h3>
 <p><strong>Best for:</strong> product-led tech teams that want research-led AEO measured on sign-ups.</p>
-<p>Graphite's ${a('https://graphite.io/aeo', 'AEO page')} says "Great SEO is free AEO. Offsite is the real difference" (checked 25 Nov 2026). Its ${a('https://graphite.io/case-studies/webflow-llm-signups', 'Webflow case study')} reports "2x the amount of sign-ups coming from LLMs" and "94% share of voice growth from LLMs" in 2025.</p>
+<p>Graphite's ${a('https://graphite.io/aeo', 'AEO page')} says "Great SEO is free AEO. Offsite is the real difference." Its Webflow case study reports "2x the amount of sign-ups coming from LLMs" and "94% share of voice growth from LLMs" in 2025.</p>
 <p><strong>Weakness:</strong> no published price, and AEO sits beside SEO and performance marketing rather than as the whole offer.</p>
 <h3 id="4-loudface">4. LoudFace</h3>
 <p><strong>Best for:</strong> B2B SaaS and fintech teams that also want their site rebuilt.</p>
-<p>LoudFace describes its work as "websites, search and AI answers for B2B SaaS and fintech teams" (${a('https://www.loudface.co/services/geo-agency', 'GEO page')}, checked 25 Nov 2026).</p>
-<p><strong>Price:</strong> "from $5,000 per month" on "a three-month initial engagement, with no setup fee" (checked 25 Nov 2026).</p>
+<p>LoudFace describes its work as "websites, search and AI answers for B2B SaaS and fintech teams" (${a('https://www.loudface.co/services/geo-agency', 'GEO page')}).</p>
+<p><strong>Price:</strong> "from $5,000 per month" on "a three-month initial engagement, with no setup fee."</p>
 <p><strong>Weakness:</strong> one retainer bundles design, build, SEO and GEO, so AI search is not sold on its own.</p>
 <h3 id="5-rock-the-rankings">5. Rock The Rankings</h3>
 <p><strong>Best for:</strong> SaaS teams with in-house writers who need GEO strategy and senior QA.</p>
-<p>Rock The Rankings runs a ${a('https://www.rocktherankings.com/services/saas-geo-agency', 'SaaS GEO program')} covering prompt mapping, AI visibility audits and citations (checked 25 Nov 2026).</p>
-<p><strong>Price:</strong> Strategy and Consulting from $5,500 a month and Done-for-You from $8,650 a month, both at the 90-day rate; month to month costs more (${a('https://www.rocktherankings.com/pricing', 'pricing')}, checked 25 Nov 2026).</p>
+<p>Rock The Rankings runs a ${a('https://www.rocktherankings.com/services/saas-geo-agency', 'SaaS GEO program')} covering prompt mapping, AI visibility audits and citations.</p>
+<p><strong>Price:</strong> Strategy and Consulting from $5,500 a month and Done-for-You from $8,650 a month, both at the 90-day rate; month to month costs more.</p>
 <p><strong>Weakness:</strong> the entry tier is strategy only, and the page notes "most engagements land at $10K+."</p>
 <h3 id="6-grow-and-convert">6. Grow and Convert</h3>
 <p><strong>Best for:</strong> B2B SaaS teams that judge AI search on trials and pipeline.</p>
-<p>Grow and Convert sells a ${a('https://www.growandconvert.com/b2b-saas-geo-agency/', 'B2B SaaS GEO service')} built on bottom-funnel content, and works with "CMOs and VPs of Marketing at B2B SaaS companies" (checked 25 Nov 2026).</p>
-<p><strong>Price:</strong> "Starting at $10,000 per month" (checked 25 Nov 2026). A minimum term is not published.</p>
+<p>Grow and Convert sells a ${a('https://www.growandconvert.com/b2b-saas-geo-agency/', 'B2B SaaS GEO service')} built on bottom-funnel content, and works with "CMOs and VPs of Marketing at B2B SaaS companies."</p>
+<p><strong>Price:</strong> "Starting at $10,000 per month." A minimum term is not published.</p>
 <p><strong>Weakness:</strong> a higher entry point than most AI search specialists, and the work is content-led.</p>
 <h3 id="7-ipullrank">7. iPullRank</h3>
 <p><strong>Best for:</strong> mid-market and enterprise brands that need a structured, measured AI search program.</p>
-<p>iPullRank calls itself an "Enterprise and Mid-Market AI Search Agency" (${a('https://ipullrank.com/', 'ipullrank.com')}, checked 25 Nov 2026). Its ${a('https://ipullrank.com/ai-search-strategy-program', 'AI Search Strategy Program')} runs as a 3-month Emerging engagement or 12-month Growth and Elite programs.</p>
+<p>iPullRank calls itself an "Enterprise and Mid-Market AI Search Agency" (${a('https://ipullrank.com/', 'ipullrank.com')}). Its AI Search Strategy Program runs as a 3-month Emerging engagement or 12-month Growth and Elite programs.</p>
 <p><strong>Weakness:</strong> no published price, and the program design suits larger teams more than an early-stage SaaS company.</p>
 <h3 id="8-siege-media">8. Siege Media</h3>
 <p><strong>Best for:</strong> SaaS teams that want AI visibility through content, research reports and digital PR.</p>
-<p>Siege Media runs a ${a('https://www.siegemedia.com/services/saas-geo-agency', 'SaaS GEO service')} that includes "research reports &amp; digital PR" (checked 25 Nov 2026).</p>
-<p><strong>Price and term:</strong> not published on the pages we could read; its pricing page did not load for us on 25 Nov 2026.</p>
+<p>Siege Media runs a ${a('https://www.siegemedia.com/services/saas-geo-agency', 'SaaS GEO service')} that includes "research reports &amp; digital PR."</p>
+<p><strong>Price and term:</strong> not published on the pages we could read; its pricing page did not load for us.</p>
 <p><strong>Weakness:</strong> it also runs GEO for fintech, healthcare, ecommerce, travel and other industries, so SaaS is one of many verticals.</p>
 <h3 id="9-tripledart">9. TripleDart</h3>
 <p><strong>Best for:</strong> SaaS teams that want AEO and paid media from one SaaS-only agency.</p>
-<p>TripleDart calls itself an "AI-Native B2B SaaS Marketing Agency" (${a('https://www.tripledart.com/', 'tripledart.com')}, checked 25 Nov 2026). Its ${a('https://www.tripledart.com/aeo-agency', 'AEO page')} covers AEO audits, answer-first content, AI Overview work and structured data.</p>
-<p><strong>Price:</strong> the only price on its AEO page is Paid Performance "starting at $6,500/month" (checked 25 Nov 2026). An AEO price and term are not published.</p>
+<p>TripleDart calls itself an "AI-Native B2B SaaS Marketing Agency." Its ${a('https://www.tripledart.com/aeo-agency', 'AEO page')} covers AEO audits, answer-first content, AI Overview work and structured data.</p>
+<p><strong>Price:</strong> the only price on its AEO page is Paid Performance "starting at $6,500/month." An AEO price and term are not published.</p>
 <p><strong>Weakness:</strong> AEO is one line in a broad agency offer, which is closer to NoGood's model than a specialist.</p>
 <h3 id="10-single-grain">10. Single Grain</h3>
 <p><strong>Best for:</strong> teams that want the closest NoGood-style channel mix at a smaller scale.</p>
-<p>Single Grain's ${a('https://www.singlegrain.com/agency/aeo-services/', 'AEO services')} build "an AEO playbook that earns citations from AI assistants" alongside SEO and content, and it also sells paid media and CRO (checked 25 Nov 2026).</p>
+<p>Single Grain's ${a('https://www.singlegrain.com/agency/aeo-services/', 'AEO services')} build "an AEO playbook that earns citations from AI assistants" alongside SEO and content, and it also sells paid media and CRO.</p>
 <p><strong>Weakness:</strong> no published price on its site, and AI search is one of many channels.</p>
 <h2 id="${slugId('Which NoGood alternative fits an early-stage SaaS team?')}">Which NoGood alternative fits an early-stage SaaS team?</h2>
-<p><strong>Best for an early-stage SaaS team with a tight budget: LoudFace, from $5,000 a month.</strong> It is the lowest entry price among the agencies here that publish one (checked 25 Nov 2026).</p>
+<p><strong>Best for an early-stage SaaS team with a tight budget: LoudFace, from $5,000 a month.</strong> It is the lowest entry price among the agencies here that publish one.</p>
 <p>Rock The Rankings is the better NoGood alternative if you already have writers and only need the strategy layer, from $5,500 a month at the 90-day rate.</p>
 <p>Nakama Growth fits a SaaS team that wants off-site work (community, YouTube, PR and reviews) in one plan. Ask for a quote, since it publishes no price.</p>
 <p>If you need a whole outsourced marketing team rather than AI search, look at fractional SaaS marketing firms instead of anyone on this list.</p>
 <h2 id="${slugId('Which agencies like NoGood include digital PR?')}">Which agencies like NoGood include digital PR?</h2>
-<p><strong>Best for AI visibility through digital PR: Siege Media.</strong> Its SaaS GEO service includes research reports and digital PR (checked 25 Nov 2026).</p>
+<p><strong>Best for AI visibility through digital PR: Siege Media.</strong> Its SaaS GEO service includes research reports and digital PR.</p>
 <p>Among companies like NoGood that bundle PR, Omniscient Digital lists original research, digital PR and third-party mentions inside its AEO service.</p>
 <p>Nakama Growth includes digital PR and listicle outreach "to the sources AI engines cite" in its single plan (${a('https://www.nakama.in/pricing', 'pricing')}).</p>
-<p>NoGood itself sells earned media and digital PR, which it describes as "building the citation infrastructure AI models rely on" (${a('https://nogood.io/', 'nogood.io')}, checked 25 Nov 2026).</p>
+<p>NoGood itself sells earned media and digital PR, which it describes as "building the citation infrastructure AI models rely on" (${a('https://nogood.io/', 'nogood.io')}).</p>
+${ctaInline}
 <h2 id="${slugId('When should you stay with NoGood?')}">When should you stay with NoGood?</h2>
 <p><strong>Best for a team that needs paid, social, creative and AI search in one place: NoGood.</strong> That breadth is the reason to stay.</p>
 <p>Stay if your budget fits its average retainer above $20,000 a month and you value having one squad accountable across channels.</p>
@@ -343,7 +365,9 @@ ${fig('nogood-alternatives-vs-nakama-growth', VS_ALT)}
 <p>For wider shortlists, see our ${a('https://www.nakama.in/journal/best-aeo-agencies', 'AEO agencies compared')}, ${a('https://www.nakama.in/journal/best-ai-seo-agencies', 'AI SEO agencies compared on visibility proof')}, ${a('https://www.nakama.in/journal/best-enterprise-ai-seo-agencies', 'enterprise AI SEO agencies for tech brands')} and ${a('https://www.nakama.in/journal/best-generative-engine-optimization-agencies', 'generative engine optimization agencies compared')}.</p>
 <h2 id="faqs">FAQs</h2>
 ${faqBlock}
-<p>Want to see where your brand shows up in AI answers today? ${a('https://www.nakama.in/pricing', 'Get a custom quote')} or see ${a('https://www.nakama.in/work', 'named client results you can re-run')}.</p>
+<h2 id="ready-to-decide">Ready to decide?</h2>
+${ctaBand}
+<p>Not sure yet? Start with an ${a('https://www.nakama.in/services/ai-visibility-audit', 'AI visibility audit')}.</p>
 <h2 id="about-the-author">About the author</h2>
 ${authorBox}`;
 
@@ -358,7 +382,7 @@ const decode = (s: string) => s
  .trim();
 
 function blocks(html: string): string[] {
- const cleaned = html.replace(/<figure[\s\S]*?<\/figure>/g, '').replace(/<nav[\s\S]*?<\/nav>/g, '');
+ const cleaned = stripJournalCta(html).replace(/<figure[\s\S]*?<\/figure>/g, '').replace(/<nav[\s\S]*?<\/nav>/g, '');
  const out: string[] = [];
  for (const m of cleaned.matchAll(/<(h1|h3|p|li|caption|tr)\b[^>]*>([\s\S]*?)<\/\1>/g)) {
   const tag = m[1];
@@ -402,6 +426,8 @@ export const nogoodAlternativesArticle: Article = {
  /** PREVIEW true with nofollow: noindex,nofollow, and off the sitemap, llms files, RSS, resources and the author index. */
  noindex: PREVIEW,
  nofollow: PREVIEW,
+ /** Live next-article card. A noindex preview can still show this one card. It does not list this note on other pages. */
+ nextSlug: 'best-aeo-agencies',
  ogImage: {
   url: OG_URL,
   width: 1200,
