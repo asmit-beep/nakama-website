@@ -60,7 +60,7 @@ const articleLd = {
    "@type": "ItemList",
    "@id": `${CANONICAL}#itemlist`,
    "name": TITLE,
-   "itemListOrder": "https://schema.org/ItemListOrderAscending",
+   "itemListOrder": "https://schema.org/ItemListUnordered",
    "numberOfItems": 9,
    "isPartOf": {
     "@id": `${CANONICAL}#webpage`
@@ -334,7 +334,7 @@ const bodyHtml = `<nav aria-label="Breadcrumb" class="article-breadcrumb"><ol st
 <p>An AEO consultant (answer engine optimization consultant) is a senior individual who diagnoses why AI answer engines do or do not mention and cite your brand, then gives your team a prioritised plan. An agency usually does the execution as well.</p>
 <p>Published independent rates in this guide start at £450 a day for hands-on work, $500 for a diagnostic report, and from $4,000 a month for a retainer.</p>
 <p><strong>How we picked:</strong> we checked each person's own website between 20 and 29 Oct 2026 (Austin Heaton on 18 Nov 2026, Aggée Kimpiab on 24 Nov 2026), plus at least one independent source during research (not every source is linked in the entry). We kept only people with a public consulting, advisory or fractional offer. Founders who lead a firm are moved to a separate box and labelled &quot;Firm principal&quot;.</p>
-<p>Nakama Growth is an AEO agency; we are not ranked as an independent consultant in this list.</p>
+<p>Nakama Growth is an AEO agency; we are not listed as an independent consultant in this list.</p>
 <nav class="toc" aria-labelledby="toc-h"><p class="toc-head" id="toc-h">On this page <span>14 sections</span></p><ol><li><a href="#quick-answer-who-are-the-best-aeo-consultants-in-2026">Quick answer: who are the best AEO consultants in 2026?</a></li><li><a href="#what-is-an-aeo-consultant">What is an AEO consultant?</a></li><li><a href="#how-do-the-best-aeo-consultants-compare">How do the best AEO consultants compare?</a></li><li><a href="#how-did-we-pick-these-aeo-consultants">How did we pick these AEO consultants?</a></li><li><a href="#the-9-best-independent-aeo-consultants-in-2026">The 9 best independent AEO consultants in 2026</a></li><li><a href="#what-does-an-aeo-consultant-actually-do">What does an AEO consultant actually do?</a></li><li><a href="#aeo-consultant-vs-agency-which-should-you-hire">AEO consultant vs agency: which should you hire?</a></li><li><a href="#when-does-a-firm-beat-an-independent-consultant">When does a firm beat an independent consultant?</a></li><li><a href="#how-much-do-aeo-consultants-cost-in-2026">How much do AEO consultants cost in 2026?</a></li><li><a href="#which-aeo-consultant-is-best-for-your-situation">Which AEO consultant is best for your situation?</a></li><li><a href="#how-do-you-vet-an-aeo-consultant">How do you vet an AEO consultant?</a></li><li><a href="#what-are-the-red-flags-when-hiring-an-aeo-consultant">What are the red flags when hiring an AEO consultant?</a></li><li><a href="#frequently-asked-questions">Frequently asked questions</a></li><li><a href="#final-take">Final take</a></li></ol></nav>
 <h2 id="what-is-an-aeo-consultant">What is an AEO consultant?</h2>
 <p>An AEO (answer engine optimization) consultant is a specialist who helps a brand get mentioned, recommended and cited in AI-generated answers from ChatGPT, Perplexity, Gemini, Claude and Google AI Overviews. They audit how engines describe you, find the sources those engines trust, and turn that into a roadmap your team or agency can ship.</p>
@@ -351,6 +351,7 @@ const bodyHtml = `<nav aria-label="Breadcrumb" class="article-breadcrumb"><ol st
 <p>We dropped anyone we could not verify on their own site plus one independent source. We also moved firm founders out of the independent list, even when they are excellent, so the word &quot;independent&quot; stays honest.</p>
 <p>Limits: we did not hire these consultants. Prices change, and anything we could not confirm on the seller's own site is marked &quot;not public&quot; or left out.</p>
 <h2 id="the-9-best-independent-aeo-consultants-in-2026">The 9 best independent AEO consultants in 2026</h2>
+<p>Listed in no particular order; the numbers are for navigation.</p>
 <p>Each AEO consultant below passed the public-offer gate and is listed with best fit, proof we could verify on 29 October 2026 (18 November 2026 for Austin Heaton, 24 November 2026 for Aggée Kimpiab), and pricing where published.</p>
 <h3 id="1-kevin-indig-best-for-growth-stage-b2b-and-ai-companies">1. Kevin Indig: best for growth-stage B2B and AI companies</h3>
 <p>Kevin Indig is an independent organic growth advisor who writes a weekly research newsletter on search and AI visibility.</p>
@@ -382,10 +383,10 @@ const bodyHtml = `<nav aria-label="Breadcrumb" class="article-breadcrumb"><ol st
 <p><strong>Price:</strong> not public.</p>
 <p><strong>Source:</strong> <a href="https://marketingadvice.io/about-me/">marketingadvice.io</a></p>
 <h3 id="5-aggee-kimpiab-best-for-hands-on-seo-and-aeo-in-ecommerce-b2b-and-manufacturing">5. Aggée Kimpiab: best for hands-on SEO and AEO in ecommerce, B2B and manufacturing</h3>
-<p>Aggée Kimpiab is an independent SEO and AEO consultant based in the UK, working under the name Aggée Writes. He says he has worked in SEO since 2019, including four years agency-side running SEO for 12 retainer clients.</p>
+<p>Aggée Kimpiab is an independent SEO and AEO consultant based in the UK, working under the name Aggée Writes. He says he has 6+ years in SEO, including 12 agency retainer clients, before working directly with clients.</p>
 <p>He does the audits, technical fixes, on-page work and content himself, with no agency layer. His AI search work makes sure the pages that already earn search traffic are also the ones AI assistants find and cite.</p>
 <p>He reports results for an unnamed UK outdoor ecommerce brand, January to November 2026 against the same period in 2025: organic search revenue up 28.6%, orders up 39.3%, and sales from Bing-powered search (Bing and Yahoo) up 130%. AI assistants grew from 1 order to 14, with 12 from ChatGPT.</p>
-<p>His site also publishes a named manufacturing case: Lawton Tubes, organic users up 64% year on year.</p>
+<p>His site also publishes a named manufacturing case: Lawton Tubes, organic users up 64% year on year, in <a href="https://aggeewrites.com/dtc-ecommerce-seo-case-study/">his DTC ecommerce SEO case study</a>.</p>
 <p><strong>Best for:</strong> UK ecommerce, B2B and manufacturing brands that want senior, hands-on SEO and AI search work from one person.</p>
 <p><strong>Weakness:</strong> one person means limited capacity, and his pricing is in pounds for a UK-based practice. The AI search result he shares is for an unnamed client, so ask for a reference before you sign.</p>
 <p><strong>Price (published, &quot;from&quot;):</strong> SEO Audit &amp; Roadmap from £595 one-off, SEO Retainer from £750/month, and Growth SEO Retainer from £1,600/month.</p>
@@ -435,7 +436,7 @@ const bodyHtml = `<nav aria-label="Breadcrumb" class="article-breadcrumb"><ol st
 <p>A firm beats an independent consultant when the bottleneck is capacity, not knowledge. If you already know what to fix but nobody has time to rewrite 50 pages, earn mentions on third-party sites and track prompts every month, a team will usually move faster.</p>
 <p>Three signals point to a firm:</p>
 <ul><li>You need ongoing off-site work such as digital PR, community and review site coverage.</li><li>You need monthly prompt tracking and reporting across several engines.</li><li>You have no in-house writer, developer or SEO to own the roadmap.</li></ul>
-<h3 id="firms-you-might-also-hire-not-ranked-as-independent-consultants">Firms you might also hire (not ranked as independent consultants)</h3>
+<h3 id="firms-you-might-also-hire-not-ranked-as-independent-consultants">Firms you might also hire (not listed as independent consultants)</h3>
 <p>These are well-known leaders who run firms. They are labelled &quot;Firm principal&quot; because you are hiring a company, not one person.</p>
 <div class="article-table"><table><thead><tr><th scope="col">Name</th><th scope="col">Type</th><th scope="col">Best for</th><th scope="col">Engagement</th><th scope="col">Notable proof</th><th scope="col">Price band</th></tr></thead><tbody><tr><td>Mike King (iPullRank)</td><td>Firm principal</td><td>Enterprise, research-grade technical AEO</td><td>Agency retainer</td><td>Author of the AI Search Manual; &quot;Relevance Engineering&quot; framework</td><td>Published engagement ranges: $30K to $150K, $150K to $500K, $500K+ (not monthly)</td></tr><tr><td>Dan Petrovic (DEJAN)</td><td>Firm principal</td><td>Teams wanting experiment-led AI visibility</td><td>Audits and retainers</td><td>Published model-perception research</td><td>From AUD 5,000 (audit or monthly) per DEJAN</td></tr><tr><td>Evan Bailyn (First Page Sage)</td><td>Firm principal</td><td>Healthcare, finance, professional services</td><td>Agency team</td><td>Long-running GEO service and published rankings</td><td>Not public</td></tr><tr><td>Ross Simmonds (Foundation)</td><td>Firm principal</td><td>Content distribution for B2B brands</td><td>Agency retainer</td><td>Distribution-first content methodology</td><td>Not public</td></tr><tr><td>Olaf Kopp (Aufgesang)</td><td>Firm principal</td><td>German-speaking markets, LLM readability</td><td>Agency services</td><td>Developed the LLM-Readability concept</td><td>Not public</td></tr><tr><td>Brendan Hufford (Growth Sprints)</td><td>Firm principal</td><td>SaaS at $10M to $100M ARR</td><td>90-day sprints</td><td>Brendan works on client accounts directly</td><td>Not public</td></tr><tr><td>Nakama Growth</td><td>Agency</td><td>SaaS, tech and AI brands, India and global</td><td>Retainer</td><td>Process: prompt baseline, citation gaps, answer-first content</td><td>See <a href="https://www.nakama.in/pricing">/pricing</a></td></tr></tbody></table></div>
 <p>If you want a team to run the work end to end, see <a href="https://www.nakama.in/services/aeo">Nakama Growth's AEO services</a>. We do not promise placements in any AI engine.</p>
@@ -531,7 +532,7 @@ export const bestAeoConsultantsArticle: Article = {
   "An AEO consultant (answer engine optimization consultant) is a senior individual who diagnoses why AI answer engines do or do not mention and cite your brand, then gives your team a prioritised plan. An agency usually does the execution as well.",
   "Published independent rates in this guide start at £450 a day for hands-on work, $500 for a diagnostic report, and from $4,000 a month for a retainer.",
   "How we picked: we checked each person's own website between 20 and 29 Oct 2026 (Austin Heaton on 18 Nov 2026, Aggée Kimpiab on 24 Nov 2026), plus at least one independent source during research (not every source is linked in the entry). We kept only people with a public consulting, advisory or fractional offer. Founders who lead a firm are moved to a separate box and labelled \"Firm principal\".",
-  "Nakama Growth is an AEO agency; we are not ranked as an independent consultant in this list."
+  "Nakama Growth is an AEO agency; we are not listed as an independent consultant in this list."
  ]
 },
  {
@@ -576,6 +577,7 @@ export const bestAeoConsultantsArticle: Article = {
  {
  "heading": "The 9 best independent AEO consultants in 2026",
  "paragraphs": [
+  "Listed in no particular order; the numbers are for navigation.",
   "Each AEO consultant below passed the public-offer gate and is listed with best fit, proof we could verify on 29 October 2026 (18 November 2026 for Austin Heaton, 24 November 2026 for Aggée Kimpiab), and pricing where published."
  ]
 },
@@ -627,10 +629,10 @@ export const bestAeoConsultantsArticle: Article = {
  {
  "heading": "5. Aggée Kimpiab: best for hands-on SEO and AEO in ecommerce, B2B and manufacturing",
  "paragraphs": [
-  "Aggée Kimpiab is an independent SEO and AEO consultant based in the UK, working under the name Aggée Writes. He says he has worked in SEO since 2019, including four years agency-side running SEO for 12 retainer clients.",
+  "Aggée Kimpiab is an independent SEO and AEO consultant based in the UK, working under the name Aggée Writes. He says he has 6+ years in SEO, including 12 agency retainer clients, before working directly with clients.",
   "He does the audits, technical fixes, on-page work and content himself, with no agency layer. His AI search work makes sure the pages that already earn search traffic are also the ones AI assistants find and cite.",
   "He reports results for an unnamed UK outdoor ecommerce brand, January to November 2026 against the same period in 2025: organic search revenue up 28.6%, orders up 39.3%, and sales from Bing-powered search (Bing and Yahoo) up 130%. AI assistants grew from 1 order to 14, with 12 from ChatGPT.",
-  "His site also publishes a named manufacturing case: Lawton Tubes, organic users up 64% year on year.",
+  "His site also publishes a named manufacturing case: Lawton Tubes, organic users up 64% year on year, in his DTC ecommerce SEO case study.",
   "Best for: UK ecommerce, B2B and manufacturing brands that want senior, hands-on SEO and AI search work from one person.",
   "Weakness: one person means limited capacity, and his pricing is in pounds for a UK-based practice. The AI search result he shares is for an unnamed client, so ask for a reference before you sign.",
   "Price (published, \"from\"): SEO Audit & Roadmap from £595 one-off, SEO Retainer from £750/month, and Growth SEO Retainer from £1,600/month.",
@@ -720,7 +722,7 @@ export const bestAeoConsultantsArticle: Article = {
  ]
 },
  {
- "heading": "Firms you might also hire (not ranked as independent consultants)",
+ "heading": "Firms you might also hire (not listed as independent consultants)",
  "paragraphs": [
   "These are well-known leaders who run firms. They are labelled \"Firm principal\" because you are hiring a company, not one person.",
   "Name | Type | Best for | Engagement | Notable proof | Price band",
