@@ -385,8 +385,8 @@ const bodyHtml = `<nav aria-label="Breadcrumb" class="article-breadcrumb"><ol st
 <h3 id="5-aggee-kimpiab-best-for-hands-on-seo-and-aeo-in-ecommerce-b2b-and-manufacturing">5. Aggée Kimpiab: best for hands-on SEO and AEO in ecommerce, B2B and manufacturing</h3>
 <p>Aggée Kimpiab is an independent SEO and AEO consultant based in the UK, working under the name Aggée Writes. He says he has 6+ years in SEO, including 12 agency retainer clients, before working directly with clients.</p>
 <p>He does the audits, technical fixes, on-page work and content himself, with no agency layer. His AI search work makes sure the pages that already earn search traffic are also the ones AI assistants find and cite.</p>
-<p>He reports results for an unnamed UK outdoor ecommerce brand, January to November 2026 against the same period in 2025: organic search revenue up 28.6%, orders up 39.3%, and sales from Bing-powered search (Bing and Yahoo) up 130%. AI assistants grew from 1 order to 14, with 12 from ChatGPT.</p>
-<p>His site also publishes a named manufacturing case: Lawton Tubes, organic users up 64% year on year, in <a href="https://aggeewrites.com/dtc-ecommerce-seo-case-study/">his DTC ecommerce SEO case study</a>.</p>
+<p>He reports results for an unnamed UK outdoor ecommerce brand, January to November 2026 against the same period in 2025: organic search revenue up 28.6%, orders up 39.3%, and sales from Bing-powered search (Bing and Yahoo) up 130%. AI assistants grew from 1 order to 14, with 12 from ChatGPT (<a href="https://aggeewrites.com/dtc-ecommerce-seo-case-study/">case study</a>).</p>
+<p>His site also publishes a named manufacturing case: Lawton Tubes, organic users up 64% year on year, in <a href="https://aggeewrites.com/manufacturing-seo-case-study/">his manufacturing SEO case study</a>.</p>
 <p><strong>Best for:</strong> UK ecommerce, B2B and manufacturing brands that want senior, hands-on SEO and AI search work from one person.</p>
 <p><strong>Weakness:</strong> one person means limited capacity, and his pricing is in pounds for a UK-based practice. The AI search result he shares is for an unnamed client, so ask for a reference before you sign.</p>
 <p><strong>Price (published, &quot;from&quot;):</strong> SEO Audit &amp; Roadmap from £595 one-off, SEO Retainer from £750/month, and Growth SEO Retainer from £1,600/month.</p>
@@ -631,8 +631,8 @@ export const bestAeoConsultantsArticle: Article = {
  "paragraphs": [
   "Aggée Kimpiab is an independent SEO and AEO consultant based in the UK, working under the name Aggée Writes. He says he has 6+ years in SEO, including 12 agency retainer clients, before working directly with clients.",
   "He does the audits, technical fixes, on-page work and content himself, with no agency layer. His AI search work makes sure the pages that already earn search traffic are also the ones AI assistants find and cite.",
-  "He reports results for an unnamed UK outdoor ecommerce brand, January to November 2026 against the same period in 2025: organic search revenue up 28.6%, orders up 39.3%, and sales from Bing-powered search (Bing and Yahoo) up 130%. AI assistants grew from 1 order to 14, with 12 from ChatGPT.",
-  "His site also publishes a named manufacturing case: Lawton Tubes, organic users up 64% year on year, in his DTC ecommerce SEO case study.",
+  "He reports results for an unnamed UK outdoor ecommerce brand, January to November 2026 against the same period in 2025: organic search revenue up 28.6%, orders up 39.3%, and sales from Bing-powered search (Bing and Yahoo) up 130%. AI assistants grew from 1 order to 14, with 12 from ChatGPT (case study).",
+  "His site also publishes a named manufacturing case: Lawton Tubes, organic users up 64% year on year, in his manufacturing SEO case study.",
   "Best for: UK ecommerce, B2B and manufacturing brands that want senior, hands-on SEO and AI search work from one person.",
   "Weakness: one person means limited capacity, and his pricing is in pounds for a UK-based practice. The AI search result he shares is for an unnamed client, so ask for a reference before you sign.",
   "Price (published, \"from\"): SEO Audit & Roadmap from £595 one-off, SEO Retainer from £750/month, and Growth SEO Retainer from £1,600/month.",
