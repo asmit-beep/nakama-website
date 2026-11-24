@@ -14,9 +14,9 @@ import {journalCta, stripJournalCta, QUOTE_URL} from './cta';
  * While PREVIEW is true the page stays noindex,follow and off those surfaces.
  * lib/feed.ts fails the build if a live note still carries a placeholder date.
  */
-const PUBLISHED_AT = 'REPLACE_WITH_PUBLISH_DATETIME';
-const MODIFIED_AT = 'REPLACE_WITH_MODIFIED_DATETIME';
-const PREVIEW = true;
+const PUBLISHED_AT = '2026-11-24T18:16:00+05:30';
+const MODIFIED_AT = '2026-11-24T18:16:00+05:30';
+const PREVIEW = false;
 /** Day the competitor details were checked on each company's own site. */
 const CHECKED = '23 Nov 2026';
 
