@@ -526,9 +526,17 @@ export function CaseStudy() {
       </div>
 
       <section className="sa-cta" aria-labelledby="h-cta">
-        <h2 id="h-cta">Is AI recommending your competitors instead of you?</h2>
-        <p>We&apos;ll show you where ChatGPT, Perplexity and Google&apos;s AI features name your brand today, where they leave you out, and which sources they trust.</p>
-        <Link href="/services/ai-visibility-audit">Get your AI visibility check</Link>
+        <div className="sa-cta-card">
+          <ul className="sa-cta-eng" aria-hidden="true">
+            <li><img src={ENGINE.google} alt="" width={16} height={16}/>AI Overviews</li>
+            <li><img src={ENGINE.google} alt="" width={16} height={16}/>AI Mode</li>
+            <li><img className="mono" src={ENGINE.openai} alt="" width={16} height={16}/>ChatGPT</li>
+            <li><img className="mono" src={ENGINE.perplexity} alt="" width={16} height={16}/>Perplexity</li>
+          </ul>
+          <h2 id="h-cta">Is AI recommending your competitors instead of you?</h2>
+          <p>We&apos;ll show you where ChatGPT, Perplexity and Google&apos;s AI features name your brand today, where they leave you out, and which sources they trust.</p>
+          <Link href="/services/ai-visibility-audit">Get your AI visibility check</Link>
+        </div>
       </section>
 
       <dialog className="lb" id="sa-lb" aria-labelledby="sa-lb-t">

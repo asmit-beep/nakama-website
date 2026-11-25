@@ -114,7 +114,7 @@ export function QueryWall() {
                   </Aio>
                 </Mini>
               </Row>
-              <Row n={5} query="Best CSPO Courses Compared" states={['n', 'f', 'f', 'b']} open also="Also named first on: ChatGPT">
+              <Row n={5} query="Best CSPO Courses Compared" states={['n', 'f', 'f', 'b']} also="Also named first on: ChatGPT">
                 <Mini engine="Google AI Mode" tag="Named first" captionEngine="Google AI Mode" when="21 Sep to 25 Oct 2026" label="Google AI Mode answer, recreated from a dated capture" shot={shot('craft088', 'Google AI Mode: “Best CSPO Courses Compared”', 'captured 21 Sep to 25 Oct 2026 · Named first', 'Screenshot as captured. Red boxes as marked in the dated report. 1 source hidden.', 1700, 861)}>
                   <div className="state ui-aim on">
                     <div className="aim-q">Best CSPO Courses Compared</div>

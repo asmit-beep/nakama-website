@@ -203,6 +203,14 @@ export function Behaviors() {
     });
     cleanups.push(() => obs.disconnect());
 
+    const head = document.querySelector<HTMLElement>('.sa .qw thead');
+    if (head) {
+      const stick = () => head.classList.toggle('is-stuck', head.getBoundingClientRect().top <= 97);
+      stick();
+      document.addEventListener('scroll', stick, {passive: true});
+      cleanups.push(() => document.removeEventListener('scroll', stick));
+    }
+
     return () => cleanups.forEach(fn => fn());
   }, []);
   return null;
