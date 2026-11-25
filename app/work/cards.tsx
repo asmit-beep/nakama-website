@@ -128,12 +128,6 @@ export function WorkGrid(){
                 </div>
               </div>
             </div>
-            <blockquote className="wk-desc wk-quote">
-              {"\"It's good to see StarAgile getting visibility on generic prompts now. Let's maintain this pace.\""}
-              <cite>
-                {"Rishav Kumar, StarAgile"}
-              </cite>
-            </blockquote>
             <p className="cover-cap">
               <strong>
                 {"Google · AI Overview"}
