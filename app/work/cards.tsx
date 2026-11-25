@@ -158,7 +158,7 @@ export function WorkGrid(){
               </span>
             </div>
             <p className="wk-sub">
-              {"23 buyer queries · 4 of 4 AI engines"}
+              {"First on 23 of 48 buyer queries · all 4 AI engines"}
             </p>
             <blockquote className="wk-desc wk-quote">
               {"\"It's good to see StarAgile getting visibility on generic prompts now. Let's maintain this pace.\""}
