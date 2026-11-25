@@ -4,6 +4,7 @@ import {FAQ} from './copy';
 import {Cap, Tag, shot} from './bits';
 import {QueryWall} from './Wall';
 import {CountUp, PageMotion} from './motion';
+import {saFont400, saFont500, saFont600, saHeroFont} from './font';
 
 const ENGINE = {
   google: '/work/staragile/engines/google-g.svg',
@@ -92,7 +93,7 @@ const WINS: Array<[string, string, string]> = [
 
 export function CaseStudy() {
   return (
-    <article className="sa">
+    <article className={`sa ${saHeroFont.variable} ${saFont400.variable} ${saFont500.variable} ${saFont600.variable}`}>
       <PageMotion/>
       <div className="sa-glow" aria-hidden="true"><i className="a1"/><i className="a2"/><i className="a3"/></div>
       <p className="sa-back"><Link href="/work">All work</Link></p>
