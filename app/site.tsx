@@ -105,9 +105,9 @@ export function Footer(){return <footer className="site-footer nk-foot">
    <div className="nkf-cta">
     <BookCallButton className="nkf-btn">Book a call<ArrowUpRight size={16}/></BookCallButton>
     <div className="nkf-social">
-     <a href="https://www.linkedin.com/company/nakama-growth/" target="_blank" rel="noopener noreferrer" aria-label="Nakama on LinkedIn"><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d={LI_PATH}/></svg></a>
-     <a href="https://www.instagram.com/nakama.growth/" target="_blank" rel="noopener noreferrer" aria-label="Nakama on Instagram"><svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" strokeWidth="2"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4.2"/><circle cx="17.4" cy="6.6" r="1" fill="currentColor" stroke="none"/></svg></a>
-     <a href="https://www.youtube.com/@nakamagrowth" target="_blank" rel="noopener noreferrer" aria-label="Nakama on YouTube"><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d={YT_PATH}/></svg></a>
+     <a href="https://www.linkedin.com/company/nakama-growth/" target="_blank" rel="noopener noreferrer" aria-label="Nakama Growth on LinkedIn"><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d={LI_PATH}/></svg></a>
+     <a href="https://www.instagram.com/nakama.growth/" target="_blank" rel="noopener noreferrer" aria-label="Nakama Growth on Instagram"><svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" strokeWidth="2"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4.2"/><circle cx="17.4" cy="6.6" r="1" fill="currentColor" stroke="none"/></svg></a>
+     <a href="https://www.youtube.com/@nakamagrowth" target="_blank" rel="noopener noreferrer" aria-label="Nakama Growth on YouTube"><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d={YT_PATH}/></svg></a>
     </div>
    </div>
   </div>
