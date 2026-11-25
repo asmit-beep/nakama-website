@@ -142,6 +142,8 @@
   background:rgba(10,10,16,.74);backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);border:1px solid rgba(255,255,255,.12);z-index:20}
 .work-hub .wk-card.sa .cover-cap{position:relative;left:auto;right:auto;bottom:auto;align-self:flex-start;margin:16px 16px 12px}
 .work-hub .reel{position:absolute;inset:0;overflow:hidden;--u:calc(100cqw / 800);--dur:8s}
+.work-hub .wk-card.sa .reel,.work-hub .wk-card.sa .stage,.work-hub .wk-card.sa .cam{overflow:hidden}
+.work-hub .wk-card.sa .reel{position:relative;inset:auto;flex:1 1 auto;min-height:0;width:100%;height:auto;container-type:size;--u:min(100cqw / 800,100cqh / 700)}
 .work-hub .stage{position:absolute;left:50%;top:50%;width:calc(800*var(--u));height:calc(500*var(--u));transform:translate(-50%,-50%);overflow:hidden;
   font-family:system-ui,-apple-system,"Segoe UI",Roboto,Arial,sans-serif;perspective:calc(1400*var(--u))}
 .work-hub .stage *{box-sizing:border-box}

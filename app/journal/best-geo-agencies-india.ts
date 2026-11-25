@@ -310,7 +310,7 @@ const bodyHtml = `<nav aria-label="Breadcrumb" class="article-breadcrumb"><ol st
 <ul>
 <li><strong>Based in:</strong> Delhi, India. Founded 2026.</li>
 <li><strong>Services:</strong> prompt map, four-engine tracking, disclosed Reddit and Quora work, YouTube, digital PR, G2, white-label (<a href="https://www.nakama.in/services/geo">GEO services</a>, <a href="https://www.nakama.in/pricing">pricing</a>).</li>
-<li><strong>Evidence:</strong> the <a href="https://www.nakama.in/work">Work page</a> names clients such as Synup, Inventive AI, HubEngage and StarAgile, with queries like "Top Internal Communication Platforms in 2026" and "Best KnowledgeHut Alternatives".</li>
+<li><strong>Evidence:</strong> the <a href="https://www.nakama.in/work">case studies</a> name clients such as Synup, Inventive AI, HubEngage and StarAgile, with queries like "Top Internal Communication Platforms in 2026" and "Best KnowledgeHut Alternatives".</li>
 <li><strong>Pricing:</strong> "One plan. Everything included." Proposal in two business days.</li>
 <li><strong>Weakness:</strong> no public price, and Nakama does not work on your website itself, so on-page SEO stays with you. It takes "a small number of partners at a time". The Work page shows no metrics or dates.</li>
 <li><strong>Choose it if:</strong> you want off-site AI visibility and have on-page SEO covered.</li>
