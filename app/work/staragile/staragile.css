@@ -62,7 +62,7 @@ main.sa-page{background:#0d0d13!important;color:#f6f3ee;padding:0!important;over
 .sa .v3-eyebrow{display:inline-flex;align-items:center;gap:10px;margin:0 0 20px;font:600 12px/1 Manrope,system-ui,sans-serif;letter-spacing:.16em;text-transform:uppercase;color:#ffb27a}
 .sa .v3-eyebrow::before{content:"";width:6px;height:6px;border-radius:50%;background:#f07c32;box-shadow:0 0 0 4px rgba(240,124,50,.16),0 0 18px rgba(240,124,50,.7)}
 .sa .v3-band h1{margin:0;font-size:clamp(36px,4.15vw,64px);line-height:1.04;font-weight:700;letter-spacing:-.035em;color:#f6f3ee;max-width:18em}
-.sa .sa-grad{font-style:normal;background:linear-gradient(100deg,#ffd2ad 0%,#f59a5c 38%,#e8a3c4 70%,#a9b4ff 100%);-webkit-background-clip:text;background-clip:text;color:transparent;-webkit-text-fill-color:transparent}
+.sa .sa-grad{font-style:normal;background:none;-webkit-text-fill-color:#f07c32;color:#f07c32}
 .sa .v3-sub{margin:24px 0 0;font-size:clamp(17px,1.45vw,20px);line-height:1.6;font-weight:500;color:#c9c8cf}
 .sa .v3-sub b{font-weight:800}
 .sa .v3-meta{margin:36px 0 0;display:grid;grid-template-columns:1fr 1fr;gap:18px 32px;border-top:1px solid var(--k-line);padding-top:24px}
@@ -170,11 +170,35 @@ main.sa-page{background:#0d0d13!important;color:#f6f3ee;padding:0!important;over
 .sa .sa-faq{margin-top:8px}
 .sa .sa-faq details{border-top:1px solid var(--k-line)}
 .sa .sa-faq details:last-child{border-bottom:1px solid var(--k-line)}
-.sa .sa-faq summary{cursor:pointer;display:flex;justify-content:space-between;align-items:center;gap:20px;min-height:48px;padding:20px 0;font-size:20px;font-weight:700;line-height:1.35;list-style:none}
+.sa .sa-faq summary{cursor:pointer;display:flex;justify-content:space-between;align-items:center;gap:16px;min-height:56px;padding:16px 0;font-size:20px;font-weight:700;line-height:1.35;list-style:none}
 .sa .sa-faq summary::-webkit-details-marker{display:none}
-.sa .sa-faq summary::after{content:"+";color:var(--k-ember);font-size:26px;line-height:1;flex:none}
+.sa .sa-faq summary::after{content:"+";color:var(--k-ember);font-size:24px;line-height:1;width:28px;text-align:center;flex:none}
 .sa .sa-faq details[open] summary::after{content:"\00d7"}
-.sa .sa-faq p{color:var(--k-mute);max-width:62ch;padding-bottom:22px;margin-top:0;font-size:17px;line-height:1.6}
+.sa .sa-faq p{color:var(--k-mute);max-width:62ch;padding:0 44px 20px 0;margin-top:0;font-size:17px;line-height:1.6}
+.sa a.sa-in{color:#f6f3ee;text-decoration:underline;text-underline-offset:3px;text-decoration-color:rgba(240,124,50,.75)}
+.sa a.sa-in:hover{color:#f07c32}
+.sa .is-cream a.sa-in{color:#0d0d13;text-decoration-color:rgba(13,13,19,.45)}
+.sa .is-cream a.sa-in:hover{color:#9a3412}
+.sa .sa-count{display:inline-block;font-variant-numeric:tabular-nums;text-align:right}
+.sa .sa-progress{position:fixed;top:0;left:0;right:0;height:3px;background:#f07c32;transform:scaleX(0);transform-origin:0 50%;z-index:80;pointer-events:none}
+.sa .sa-prep{opacity:0;transform:translateY(14px)}
+.sa .sa-prep.sa-in{opacity:1;transform:none;transition:opacity .55s ease,transform .55s ease}
+.sa .ba-c.sa-prep{transform:translateX(0) translateY(16px)}
+.sa .ba-c:first-child.sa-prep{transform:translateX(-18px)}
+.sa .ba-c:last-child.sa-prep{transform:translateX(18px)}
+.sa .ba-c.sa-prep.sa-in{transform:none}
+.sa .sa-time .run{position:relative}
+.sa .sa-time .run tbody{position:relative}
+.sa .sa-time .run tbody::before{content:"";position:absolute;left:5px;top:10px;bottom:10px;width:2px;background:rgba(240,124,50,.45)}
+.sa .sa-time .run tbody th{position:relative;padding-left:28px}
+.sa .sa-time .run tbody th::before{content:"";position:absolute;left:0;top:.45em;width:12px;height:12px;border-radius:50%;background:#f07c32;box-shadow:0 0 0 4px rgba(240,124,50,.16)}
+.sa .v3-how,.sa .v3-co,.sa .v3-sec{margin-bottom:72px}
+.sa .v3-hl{margin-top:32px}
+.sa .v3-frame,.sa .v3-text,.sa .v3-quote{margin-top:48px}
+.sa .v3-meta{align-items:start}
+@media (prefers-reduced-motion:reduce){
+ .sa .sa-prep{opacity:1;transform:none}
+}
 
 .sa .sa-cta{margin:72px auto 0;max-width:1440px;padding:96px 40px 120px;text-align:center;border-top:1px solid var(--k-line)}
 .sa .sa-cta h2{margin:0 auto;max-width:18ch;font-size:clamp(36px,4vw,56px);line-height:1.12;font-weight:800}
@@ -190,12 +214,13 @@ main.sa-page{background:#0d0d13!important;color:#f6f3ee;padding:0!important;over
 /* Engine tabs follow the homepage switcher: brand mark, greyscale until selected. Labels stay visible because AI Overview and AI Mode share the Google mark. */
 .sa .ac.cs .a-top{display:flex;align-items:center;height:auto;min-height:48px;gap:8px;padding:6px 0 4px}
 .sa .ac.cs .tabs{display:flex;flex-wrap:wrap;align-items:center;gap:8px;height:auto;flex:1;min-width:0}
-.sa .ac.cs .tab{display:inline-flex;align-items:center;justify-content:center;gap:6px;height:40px;min-width:44px;padding:0 8px;border:0;border-radius:8px;background:none;color:#878c8b;font:500 12px/1.2 Manrope,system-ui,sans-serif;cursor:pointer;white-space:nowrap}
-.sa .ac.cs .tab .mark{display:grid;place-items:center;width:30px;height:26px;border-radius:8px;opacity:.42;filter:grayscale(1);transition:background .3s,opacity .3s,filter .3s}
+.sa .ac.cs .tab{display:inline-flex;align-items:center;justify-content:center;gap:6px;height:40px;min-width:44px;padding:0 8px;border:0;border-radius:8px;background:none;color:#b8b7b4;font:500 12px/1.2 Manrope,system-ui,sans-serif;cursor:pointer;white-space:nowrap}
+.sa .ac.cs .tab .mark{display:grid;place-items:center;width:30px;height:26px;border-radius:8px;opacity:.7;filter:none;transition:background .3s,opacity .3s}
 .sa .ac.cs .tab .mark svg,.sa .ac.cs .tab .mark img{width:17px;height:17px;display:block}
-.sa .ac.cs .tab:hover{color:#d8d3ca}
-.sa .ac.cs .tab:hover .mark{opacity:.8;filter:none}
-.sa .ac.cs .tab[aria-selected=true]{color:#ece6db;font-weight:600}
+.sa .ac.cs .tab .mark img.mono{filter:brightness(0) invert(1)}
+.sa .ac.cs .tab:hover{color:#e4e2de}
+.sa .ac.cs .tab:hover .mark{opacity:.9}
+.sa .ac.cs .tab[aria-selected=true]{color:#f6f3ee;font-weight:600}
 .sa .ac.cs .tab[aria-selected=true] .mark{opacity:1;filter:none;background:#ffffff14;box-shadow:inset 0 0 0 1px #ffffff1f}
 .sa .ac.cs .tab:focus-visible{outline:2px solid var(--k-ember);outline-offset:2px}
 .sa .ac.cs .screen{margin-top:0;height:var(--ac-panel-h);border-radius:12px;overflow:hidden;background:#151617;box-shadow:inset 0 0 0 1px #ffffff12}
@@ -377,6 +402,8 @@ main.sa-page{background:#0d0d13!important;color:#f6f3ee;padding:0!important;over
  .sa .wins,.sa .wins tbody,.sa .wins tr,.sa .wins th,.sa .wins td,.sa .run,.sa .run tbody,.sa .run tr,.sa .run th,.sa .run td{display:block;width:auto}
  .sa .wins tr,.sa .run tr{padding:14px 0;border-bottom:1px solid var(--k-line)}
  .sa .wins td,.sa .wins th,.sa .run td,.sa .run th{border:0;padding:0 0 8px}
+ .sa .sa-time .run tbody::before,.sa .sa-time .run tbody th::before{display:none}
+ .sa .sa-time .run tbody th{padding-left:0}
  .sa .sa-cta{padding:72px 20px 88px}
  .sa .sa-cta a{min-height:48px}
 }

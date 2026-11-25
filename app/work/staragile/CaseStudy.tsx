@@ -3,6 +3,7 @@ import type {ReactNode} from 'react';
 import {FAQ} from './copy';
 import {Cap, Tag, shot} from './bits';
 import {QueryWall} from './Wall';
+import {CountUp, PageMotion} from './motion';
 
 const ENGINE = {
   google: '/work/staragile/engines/google-g.svg',
@@ -10,8 +11,8 @@ const ENGINE = {
   perplexity: '/work/staragile/engines/perplexity.svg',
 } as const;
 
-function EngineLogo({src}: {src: string}) {
-  return <span className="mark" aria-hidden="true"><img src={src} alt="" width={17} height={17}/></span>;
+function EngineLogo({src, mono = false}: {src: string; mono?: boolean}) {
+  return <span className="mark" aria-hidden="true"><img className={mono ? 'mono' : undefined} src={src} alt="" width={17} height={17}/></span>;
 }
 
 const HERO = {
@@ -40,7 +41,7 @@ function Open({n, id, title, children}: {n: string; id: string; title: string; c
     <section className="v3-sec" id={id} aria-labelledby={hid}>
       <div className="v3-open v3-blk is-dark">
         <span className="v3-badge" aria-hidden="true">{n}</span>
-        <h2 id={hid}><span className="vh">{n} </span>{title}</h2>
+        <h2 id={hid}>{title}</h2>
         <i className="v3-bar" aria-hidden="true"/>
       </div>
       {children}
@@ -92,6 +93,7 @@ const WINS: Array<[string, string, string]> = [
 export function CaseStudy() {
   return (
     <article className="sa">
+      <PageMotion/>
       <div className="sa-glow" aria-hidden="true"><i className="a1"/><i className="a2"/><i className="a3"/></div>
       <p className="sa-back"><Link href="/work">All work</Link></p>
       <section className="v3-hero" aria-labelledby="h-hero">
@@ -99,7 +101,7 @@ export function CaseStudy() {
           <div className="v3-band-l">
             <p className="v3-eyebrow">CASE STUDY · EDTECH · GENERATIVE ENGINE OPTIMIZATION</p>
             <h1 id="h-hero">How StarAgile Became <span className="sa-grad">AI Search&apos;s First Pick for Scrum Training</span></h1>
-            <p className="v3-sub">StarAgile was named first in <b>45 AI answers</b> across Google AI Overviews, AI Mode, ChatGPT and Perplexity. That covered <b>12 of 13</b> Certified ScrumMaster queries we tracked and <b>all 5</b> CSPO queries.</p>
+            <p className="v3-sub">StarAgile was named first in <b><CountUp to={45} /> AI answers</b> across Google AI Overviews, AI Mode, ChatGPT and Perplexity. That covered <b><CountUp to={12} /> of <CountUp to={13} /></b> Certified ScrumMaster queries we tracked and <b>all <CountUp to={5} /></b> CSPO queries.</p>
             <dl className="v3-meta">
               <div><dt>Client</dt><dd>StarAgile (staragile.com)</dd></div>
               <div><dt>Industry</dt><dd>Edtech: professional certification training</dd></div>
@@ -116,8 +118,8 @@ export function CaseStudy() {
                       <div className="tabs" role="tablist" aria-label="AI engine">
                         <button type="button" role="tab" className="tab" id="hero-t-aio" aria-controls="hero-p-aio" aria-selected="true" tabIndex={0} data-k="aio"><EngineLogo src={ENGINE.google}/><span className="lb">AI Overview</span></button>
                         <button type="button" role="tab" className="tab" id="hero-t-aim" aria-controls="hero-p-aim" aria-selected="false" tabIndex={-1} data-k="aim"><EngineLogo src={ENGINE.google}/><span className="lb">AI Mode</span></button>
-                        <button type="button" role="tab" className="tab" id="hero-t-cgpt" aria-controls="hero-p-cgpt" aria-selected="false" tabIndex={-1} data-k="cgpt"><EngineLogo src={ENGINE.openai}/><span className="lb">ChatGPT</span></button>
-                        <button type="button" role="tab" className="tab" id="hero-t-pplx" aria-controls="hero-p-pplx" aria-selected="false" tabIndex={-1} data-k="pplx"><EngineLogo src={ENGINE.perplexity}/><span className="lb">Perplexity</span></button>
+                        <button type="button" role="tab" className="tab" id="hero-t-cgpt" aria-controls="hero-p-cgpt" aria-selected="false" tabIndex={-1} data-k="cgpt"><EngineLogo src={ENGINE.openai} mono/><span className="lb">ChatGPT</span></button>
+                        <button type="button" role="tab" className="tab" id="hero-t-pplx" aria-controls="hero-p-pplx" aria-selected="false" tabIndex={-1} data-k="pplx"><EngineLogo src={ENGINE.perplexity} mono/><span className="lb">Perplexity</span></button>
                       </div>
                     </div>
                     <div className="screen">
@@ -180,7 +182,7 @@ export function CaseStudy() {
           </div>
         </div>
         <ul className="v3-tiles">
-          <li className="v3-blk is-cream"><span className="n">45</span><span className="l">AI answers named first, of 89 captured</span></li>
+          <li className="v3-blk is-cream"><span className="n"><CountUp to={45} /></span><span className="l">AI answers named first, of 89 captured</span></li>
           <li className="v3-blk is-cream"><span className="n">23</span><span className="l">buyer queries where StarAgile was the first pick on at least one engine</span></li>
           <li className="v3-blk is-cream"><span className="n">260</span><span className="l">live placements</span></li>
         </ul>
@@ -205,7 +207,7 @@ export function CaseStudy() {
           <div className="v3-stack">
             <aside className="v3-how v3-blk is-dark" id="counting" aria-label="How we counted">
               <p className="v3-lbl">How we counted</p>
-              <p>Every result comes from dated screenshots of real AI answers, all typed without a year, in Incognito. An answer counts once, however many screenshots it took. &quot;Named first&quot; means StarAgile is ranked #1 or named first. If an answer cites a StarAgile page without naming it, it shows as &quot;StarAgile page cited&quot;. Answers that cite only our own guides count as not present. None of this is a traffic estimate. The window runs from 19 August to 9 November 2026.</p>
+              <p>Every result comes from dated screenshots of real AI answers, all typed without a year, in Incognito. An answer counts once, however many screenshots it took. &quot;Named first&quot; means StarAgile is ranked or named first. If an answer cites a StarAgile page without naming it, it shows as &quot;StarAgile page cited&quot;. Answers that cite only our own guides count as not present. None of this is a traffic estimate. The window runs from 19 August to 9 November 2026.</p>
             </aside>
 
             <Open n="02" id="tldr" title="TL;DR">
@@ -219,7 +221,7 @@ export function CaseStudy() {
             </Open>
 
             <section className="v3-co v3-blk is-cream" id="company" aria-labelledby="h-company">
-              <p className="v3-lbl">03</p>
+              <p className="v3-lbl" aria-hidden="true">03</p>
               <h2 id="h-company">The Company</h2>
               <i className="v3-bar" aria-hidden="true"/>
               <p>StarAgile is a Bengaluru-based training company for Agile, Scrum, SAFe, PMP and DevOps certifications. Between 19 August and 9 November 2026, AI engines named it first for 23 different buyer questions. The best example is Google&apos;s AI Overview calling it &quot;the top overall choice for Certified ScrumMaster (CSM) training in India.&quot;</p>
@@ -232,7 +234,7 @@ export function CaseStudy() {
               <p>It is a Scrum Alliance training partner.</p>
               <dl className="v3-meta v3-co-meta">
                 <div><dt>Location</dt><dd>Bengaluru, India</dd></div>
-                <div><dt>Services</dt><dd>GEO, AEO, answer-first content, community answers, weekly AI visibility tracking</dd></div>
+                <div><dt>Services</dt><dd><Link className="sa-in" href="/services/geo">GEO</Link>, <Link className="sa-in" href="/services/aeo">AEO</Link>, <Link className="sa-in" href="/services/content">answer-first content</Link>, community answers, weekly AI visibility tracking</dd></div>
                 <div><dt>Engines</dt><dd>Google AI Overviews, Google AI Mode, ChatGPT, Perplexity</dd></div>
               </dl>
             </section>
@@ -368,13 +370,6 @@ export function CaseStudy() {
                 </ul>
               </div>
 
-              <figure className="v3-quote v3-blk is-cream">
-                <span className="v3-qg" aria-hidden="true">&ldquo;</span>
-                <p className="v3-ql">Client baseline · 3 August 2026</p>
-                <blockquote><p>&quot;While it is good to see consistent results across Google AI Overview and AI Mode, the overall AI visibility is not yet where it needs to be. ... we currently have little to no visibility on ChatGPT, which is one of the most widely used platforms for all type of queries.&quot;</p></blockquote>
-                <figcaption>Rishav Kumar, StarAgile · 3 August 2026</figcaption>
-              </figure>
-
               <section className="v3-frame v3-blk is-dark" id="chatgpt-ba">
                 <header className="v3-fh">
                   <h3>Best Certified Scrum Master Training Providers</h3>
@@ -447,7 +442,7 @@ export function CaseStudy() {
                 <p>The first report (21 to 31 August) already showed StarAgile first for &quot;Best Certified Scrum Master Training Providers&quot; on Google AI Overviews and AI Mode. Google&apos;s AI Overview said: &quot;StarAgile is the top overall choice for Certified ScrumMaster (CSM) training in India.&quot; From there the work spread to CSPO, competitor alternatives, city searches, formats and placement support.</p>
               </div>
 
-              <section className="v3-frame v3-blk is-dark" id="chart-b">
+              <section className="v3-frame v3-blk is-dark sa-time" id="chart-b">
                 <header className="v3-fh">
                   <h3>First-named answers by report, running total</h3>
                   <p>By report, in the order sent. Two of the six are monthly roll-ups whose dates overlap the weekly reports.</p>
@@ -518,7 +513,9 @@ export function CaseStudy() {
                 {FAQ.map(item => (
                   <details key={item.q}>
                     <summary>{item.q}</summary>
-                    <p>{item.a}</p>
+                    {item.a.startsWith('GEO is the work of getting a')
+                      ? <p><Link className="sa-in" href="/services/geo">GEO</Link>{item.a.slice(3)}</p>
+                      : <p>{item.a}</p>}
                   </details>
                 ))}
               </div>

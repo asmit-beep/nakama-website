@@ -9,14 +9,14 @@ export const PREVIEW = true;
 
 export const SLUG = '/work/staragile';
 
-/** Document title stays blank until Yash picks it. */
-export const TITLE = '';
+/** Absolute title. The root template must not append a second brand suffix. */
+export const TITLE = "How StarAgile Became AI Search's First Pick | Nakama Growth";
 
 /**
- * Draft meta uses the shorter brand. This page uses Nakama Growth.
+ * DevOps is one of the 45 named-first answers (Best DevOps Course With Placement Support).
  */
 export const META =
-  'How Nakama Growth got StarAgile named first in 45 AI answers on Google AI Overviews, AI Mode, ChatGPT and Perplexity for Scrum, CSPO, DevOps and testing searches.';
+  'How Nakama Growth got StarAgile named first in 45 AI answers on Google AI Overviews, AI Mode, ChatGPT and Perplexity for Scrum, CSPO and DevOps searches.';
 
 export const H1 = "How StarAgile Became AI Search's First Pick for Scrum Training";
 
