@@ -9,6 +9,7 @@ import {META as FT_META, TITLE as FT_TITLE} from '@/app/industries/fintech/copy'
 import {META as LF_META, TITLE as LF_TITLE} from '@/app/industries/law-firms/copy';
 import {META as AIA_META, PREVIEW as AIA_PREVIEW, SLUG as AIA_SLUG} from '@/app/services/ai-visibility-audit/copy';
 import {META as DPR_META, PREVIEW as DPR_PREVIEW, SLUG as DPR_SLUG} from '@/app/services/digital-pr/copy';
+import {META as WORK_META, PREVIEW as WORK_PREVIEW, SLUG as WORK_SLUG, TITLE as WORK_TITLE} from '@/app/work/copy';
 
 /** The original article library shipped on 28 Sep 2026; admin posts carry their own date. */
 export const LIBRARY_DATE='2026-09-28';
@@ -38,7 +39,7 @@ export const corePages:{path:string;title:string;summary:string;priority:number;
  {path:'/industries/fintech',title:FT_TITLE,summary:FT_META,priority:.8,freq:'monthly',modified:registeredDate('/industries/fintech')},
  {path:'/industries/law-firms',title:LF_TITLE,summary:LF_META,priority:.8,freq:'monthly',modified:registeredDate('/industries/law-firms')},
  {path:'/white-label',title:'White label',summary:'White label YouTube production plus AEO, GEO, Reddit and Quora, content, digital PR and link building for agencies, delivered under the agency brand.',priority:.8,freq:'monthly',modified:registeredDate('/white-label')},
- {path:'/work',title:'Work',summary:'Documented client placements in Google AI Overviews, AI Mode, Perplexity, ChatGPT, YouTube and search, with queries you can run.',priority:.9,freq:'weekly',modified:newest(registeredDate('/work'),...caseStudies.map(c=>dayOf(c.date)))},
+ ...(WORK_PREVIEW?[]:[{path:WORK_SLUG,title:WORK_TITLE,summary:WORK_META,priority:.9,freq:'weekly' as const,modified:newest(registeredDate(WORK_SLUG),...caseStudies.map(c=>dayOf(c.date)))}]),
  {path:'/process',title:'Process',summary:'Understand, create, place, prove: the monthly cycle and working cadence.',priority:.8,freq:'monthly',modified:registeredDate('/process')},
  {path:'/pricing',title:'Pricing',summary:'One all-inclusive Nakama plan, enterprise and custom pricing, and a quote form.',priority:.8,freq:'monthly',modified:registeredDate('/pricing')},
  {path:'/about',title:'About',summary:'Who Nakama is and the principles behind the work.',priority:.7,freq:'monthly',modified:registeredDate('/about')},
