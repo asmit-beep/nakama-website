@@ -204,12 +204,33 @@ export function Behaviors() {
     cleanups.push(() => obs.disconnect());
 
     const head = document.querySelector<HTMLElement>('.sa .qw thead');
-    if (head) {
-      const stick = () => head.classList.toggle('is-stuck', head.getBoundingClientRect().top <= 97);
-      stick();
-      document.addEventListener('scroll', stick, {passive: true});
-      cleanups.push(() => document.removeEventListener('scroll', stick));
-    }
+    const sideNav = document.querySelector<HTMLElement>('.sa .v3-side');
+    const side = sideNav?.querySelector<HTMLElement>('ul') ?? null;
+    const tabs = document.querySelector<HTMLElement>('.sa .v3-tabs');
+    const place = () => {
+      if (head) {
+        const top = head.getBoundingClientRect().top;
+        head.classList.toggle('is-stuck', top <= 97);
+        head.classList.toggle('is-under', top < 88);
+      }
+      if (side && sideNav) {
+        const top = side.getBoundingClientRect().top;
+        side.classList.toggle('is-under', top < 88);
+        sideNav.classList.toggle('is-cover', top <= 97);
+      }
+      if (tabs && getComputedStyle(tabs).display !== 'none') {
+        const top = tabs.getBoundingClientRect().top;
+        tabs.classList.toggle('is-stuck', top <= 86);
+        tabs.classList.toggle('is-under', top < 76);
+      }
+    };
+    place();
+    document.addEventListener('scroll', place, {passive: true});
+    window.addEventListener('resize', place);
+    cleanups.push(() => {
+      document.removeEventListener('scroll', place);
+      window.removeEventListener('resize', place);
+    });
 
     return () => cleanups.forEach(fn => fn());
   }, []);
