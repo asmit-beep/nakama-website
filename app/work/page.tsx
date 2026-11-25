@@ -29,7 +29,7 @@ export default function Work() {
         <IpHero
           tone="ember"
           eyebrow="Case studies"
-          title="Case studies."
+          title={<>Case studies.{" "}</>}
           accent="How we got brands into AI answers."
           lead="One published case study and four more clients with live, verifiable placements across Google AI Overviews, AI Mode, ChatGPT, Perplexity and YouTube."
         >
