@@ -42,7 +42,7 @@ export default function Work() {
           <IpHead
             eyebrow="Verify it yourself"
             title={<>Live placements you can <em>run today.</em></>}
-            lead="Copy a tracked query and open it on the engine that recorded the placement. Live answers vary by account and date."
+            lead="Copy a tracked query and open it on the engine that recorded the placement. Live answers vary by account, location and date."
           />
           <ProofBoard/>
         </IpSection>
