@@ -1,12 +1,12 @@
 import type {Metadata} from 'next';
 import {pageMeta, Crumbs, JsonLd, abs, SITE_URL} from '@/lib/seo';
 import {Shell} from '../../site';
-import {FAQ, H1, HERO_IMAGES, META, PREVIEW, SLUG, TITLE} from './copy';
+import {FAQ, H1, HERO_IMAGES, META, MODIFIED_AT, PREVIEW, PUBLISHED_AT, SLUG, TITLE} from './copy';
 import {CaseStudy} from './CaseStudy';
 import {Behaviors} from './Behaviors';
 import './staragile.css';
 
-/** Preview only. PREVIEW true keeps robots noindex,nofollow and this URL off the sitemap, llms files, RSS and nav. */
+/** PREVIEW false keeps robots index,follow and lists this URL. */
 const robots: Metadata['robots'] = PREVIEW
   ? {index: false, follow: false, googleBot: {index: false, follow: false}}
   : {index: true, follow: true, googleBot: {index: true, follow: true, 'max-image-preview': 'large', 'max-snippet': -1, 'max-video-preview': -1}};
@@ -22,6 +22,8 @@ const articleLd = {
   '@id': abs(`${SLUG}#article`),
   headline: H1,
   description: META,
+  datePublished: PUBLISHED_AT,
+  dateModified: MODIFIED_AT,
   articleSection: 'Case study',
   url: abs(SLUG),
   mainEntityOfPage: abs(SLUG),

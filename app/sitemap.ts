@@ -1,6 +1,6 @@
 import type {MetadataRoute} from 'next';
 import {abs} from '@/lib/seo';
-import {corePages,feedArticles,caseStudies,openings} from '@/lib/feed';
+import {corePages,feedArticles,caseStudies,openings,shippedCasePages} from '@/lib/feed';
 
 export default function sitemap():MetadataRoute.Sitemap{
  return [
@@ -9,6 +9,7 @@ export default function sitemap():MetadataRoute.Sitemap{
    .filter(a=>!a.canonical||a.canonical===`/journal/${a.slug}`)
    .map(a=>({url:abs(`/journal/${a.slug}`),lastModified:a.date,changeFrequency:'monthly' as const,priority:.6})),
   ...caseStudies.map(c=>({url:abs(`/work/${c.slug}`),lastModified:c.date,changeFrequency:'monthly' as const,priority:.7})),
+  ...shippedCasePages.map(c=>({url:abs(c.path),lastModified:c.date,changeFrequency:'monthly' as const,priority:.7})),
   ...openings.map(o=>({url:abs(`/careers/${o.slug}`),lastModified:o.date,changeFrequency:'weekly' as const,priority:.5})),
  ];
 }

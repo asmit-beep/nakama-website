@@ -1,9 +1,8 @@
 /**
- * Case studies hub, preview only.
- * PREVIEW true: noindex,follow, and /work stays out of the sitemap and llms files.
- * GO-LIVE TODO: set PREVIEW to false. Bump content/lastmod.json in that ship commit, not before.
+ * Case studies hub.
+ * PREVIEW false: index,follow, and /work is listed in the sitemap and llms files.
  */
-export const PREVIEW = true;
+export const PREVIEW = false;
 
 export const SLUG = '/work';
 export const TITLE = 'Case Studies: Client Work & AI Search Results | Nakama Growth';

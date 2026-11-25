@@ -16,7 +16,7 @@
   "/industries/fintech": {"modified": "2026-11-16", "src": ["app/industries/fintech"]},
   "/industries/law-firms": {"modified": "2026-11-16", "src": ["app/industries/law-firms"]},
   "/white-label": {"modified": "2026-11-11", "src": ["app/white-label"]},
-  "/work": {"modified": "2026-11-11", "src": ["app/work/page.tsx", "app/work/CaseCards.tsx", "app/work/WorkBoard.tsx", "app/proof-data.ts"]},
+  "/work": {"modified": "2026-11-26", "src": ["app/work/page.tsx", "app/work/CaseCards.tsx", "app/work/WorkBoard.tsx", "app/proof-data.ts"]},
   "/process": {"modified": "2026-11-11", "src": ["app/process"]},
   "/pricing": {"modified": "2026-11-26", "src": ["app/pricing"]},
   "/about": {"modified": "2026-11-11", "src": ["app/about"]},

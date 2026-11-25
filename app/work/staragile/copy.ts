@@ -1,11 +1,12 @@
 /**
- * StarAgile case study, preview only.
- * PREVIEW true: robots noindex,nofollow. This route is not in caseStudies, so it
- * stays off the sitemap, llms.txt, llms-full.txt, RSS, the resources index and nav.
- * Go-live would set PREVIEW false and add the URL to those lists in the same change.
- * Do not touch content/lastmod.json for this preview.
+ * StarAgile case study.
+ * PREVIEW false: robots index,follow. The URL is listed in the sitemap, llms.txt and RSS.
  */
-export const PREVIEW = true;
+export const PREVIEW = false;
+
+/** Page went live 26 Nov 2026 IST. Capture dates in the study are measurement dates, not this publish date. */
+export const PUBLISHED_AT = '2026-11-26T09:00:00+05:30';
+export const MODIFIED_AT = '2026-11-26T09:00:00+05:30';
 
 export const SLUG = '/work/staragile';
 

@@ -10,6 +10,7 @@ import {META as LF_META, TITLE as LF_TITLE} from '@/app/industries/law-firms/cop
 import {META as AIA_META, PREVIEW as AIA_PREVIEW, SLUG as AIA_SLUG} from '@/app/services/ai-visibility-audit/copy';
 import {META as DPR_META, PREVIEW as DPR_PREVIEW, SLUG as DPR_SLUG} from '@/app/services/digital-pr/copy';
 import {META as WORK_META, PREVIEW as WORK_PREVIEW, SLUG as WORK_SLUG, TITLE as WORK_TITLE} from '@/app/work/copy';
+import {H1 as SA_H1, META as SA_META, MODIFIED_AT as SA_MODIFIED, PREVIEW as SA_PREVIEW, PUBLISHED_AT as SA_PUBLISHED, SLUG as SA_SLUG, TITLE as SA_TITLE} from '@/app/work/staragile/copy';
 
 /** The original article library shipped on 28 Sep 2026; admin posts carry their own date. */
 export const LIBRARY_DATE='2026-09-28';
@@ -50,6 +51,9 @@ export const corePages:{path:string;title:string;summary:string;priority:number;
  {path:'/privacy',title:'Privacy',summary:'Privacy policy.',priority:.2,freq:'yearly',modified:registeredDate('/privacy')},
  {path:'/terms',title:'Terms',summary:'Terms of service.',priority:.2,freq:'yearly',modified:registeredDate('/terms')},
 ];
+/** Shipped case-study pages that are not rows in content/case-studies.json. */
+export const shippedCasePages=SA_PREVIEW?[]:[{path:SA_SLUG,title:SA_TITLE,headline:SA_H1,summary:SA_META,date:dayOf(SA_PUBLISHED)!,publishedAt:SA_PUBLISHED,modifiedAt:SA_MODIFIED}];
+
 export {caseStudies,openings};
 
 /** Shared parts every page renders (header, footer, global styles). */
