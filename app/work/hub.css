@@ -116,6 +116,13 @@
 .work-hub .wk-desc{margin:0;font-size:16px!important;line-height:1.5!important;color:var(--ip-body);max-width:52ch}
 .work-hub .wk-quote{border-top:0!important;padding:0!important}
 .work-hub .wk-quote cite{margin-top:6px}
+/* Quote sits on the lavender reel, just above the capture pill. */
+.work-hub .wk-card.sa .wk-quote{position:absolute;left:16px;right:16px;top:0;width:auto;height:calc(var(--sa-w) * 7 / 8 - 78px);margin:0;display:flex;flex-direction:column;justify-content:flex-end;z-index:6;pointer-events:none;color:#1C1D22;font-size:18px!important;line-height:1.45}
+.work-hub .wk-card.sa .wk-quote cite{color:#3A3D46;font-size:14px;line-height:1.35;margin-top:8px}
+@media (max-width:768px){
+.work-hub .wk-card.sa .wk-quote{position:static;height:auto;display:block;color:var(--ip-body);font-size:16px!important}
+.work-hub .wk-card.sa .wk-quote cite{color:#C8C9CF;font-size:13px}
+}
 .work-hub .wk-metric{margin-top:2px}
 .work-hub .wk-metric b{font-size:46px!important}
 .work-hub .wk-sub{margin-top:-6px!important}
@@ -124,7 +131,6 @@
 .work-hub .wk-card.sa .wk-go{order:0!important}
 @media (min-width:769px){
 .work-hub .wk-card.place .wk-desc{position:absolute;left:14px;right:14px;top:calc(var(--side-w) * 5 / 8 - 92px);z-index:6;margin:0;pointer-events:none}
-.work-hub .wk-card.sa .wk-desc{position:absolute;left:14px;right:auto;width:min(46ch,calc(var(--sa-w) - 28px));top:calc(var(--sa-w) * 7 / 8 - 118px);z-index:6;margin:0;pointer-events:none}
 .work-hub .wk-pair{container-type:inline-size}
 .work-hub .wk-card.hubengage .wk-desc,.work-hub .wk-card.backlinkos .wk-desc{top:calc((100cqi - var(--gcol)) / 2 * 5 / 8 - 92px)}
 }
@@ -318,7 +324,21 @@ html.work-hub-js .work-hub .wk-card.rv.in{transform:none!important}
 @media (max-width:620px){.work-hub .wk-media .cover-cap{left:8px;bottom:8px;padding:5px 9px;font-size:9px}
 .work-hub .wk-media .cover-cap strong{font-size:8.5px}
 .work-hub .wk-metric b{font-size:40px!important}}
+/* Final CTA. Ghost pill matches the primary quote button, scoped to this band. */
+.work-hub .ip-cta{grid-template-columns:minmax(0,1fr);align-items:start}
+.work-hub .ip-cta-actions{display:flex;flex-direction:row;align-items:center;justify-content:flex-start;gap:12px}
+.work-hub .ip-cta .ip-ghost{display:inline-flex;align-items:center;justify-content:center;height:54px;padding:0 24px;border-radius:999px;border:1px solid rgba(255,255,255,.18);background:transparent;box-shadow:none;color:#EDEAE4;font:700 15px/1 var(--ip-font);letter-spacing:-.01em;text-decoration:none;transition:border-color 150ms ease,color 150ms ease}
+.work-hub .ip-cta .ip-ghost:hover,.work-hub .ip-cta .ip-ghost:focus-visible{border-color:rgba(240,124,50,.6);color:#EDEAE4;background:transparent;box-shadow:none}
+.work-hub .ip-cta .ip-ghost:focus-visible{outline:2px solid #ffd2ad;outline-offset:3px}
+@media (max-width:767px){
+.work-hub .ip-cta-actions{flex-direction:column;align-items:stretch;width:100%}
+.work-hub .ip-cta-actions .ip-btn,.work-hub .ip-cta-actions .ip-ghost{width:100%}
+}
+@media (max-width:620px){
+.work-hub .ip-cta .ip-ghost{height:52px}
+}
 @media (prefers-reduced-motion:reduce){.work-hub .reel *,.work-hub .reel{animation:none!important}
+.work-hub .ip-cta .ip-ghost{transition:none}
 html.work-hub-js .work-hub .rv{opacity:1!important;transform:none!important}
 .work-hub .bl-graph *{animation:none!important}
 .work-hub .wk-desc{transition:none!important}}
