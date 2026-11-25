@@ -3,7 +3,7 @@ import Link from 'next/link';
 import {ArrowUpRight} from 'lucide-react';
 import {pageMeta, Crumbs} from '@/lib/seo';
 import {Shell} from '../site';
-import {IpAtmos, IpHero, IpSection, IpHead} from '../inner/kit';
+import {IpAtmos, IpHero, IpSection, IpHead, LinkBtn} from '../inner/kit';
 import {META, PREVIEW, SLUG, TITLE} from './copy';
 import {WorkGrid} from './cards';
 import {ProofBoard} from './proof';
@@ -32,7 +32,9 @@ export default function Work() {
           title="Built together."
           accent="Found in AI answers."
           lead="One published case study and four more clients with live, verifiable placements across Google AI Overviews, AI Mode, ChatGPT, Perplexity and YouTube."
-        />
+        >
+          <LinkBtn href="/resources#articles" ghost>Read the field notes</LinkBtn>
+        </IpHero>
         <section className="wk-section" aria-label="Client work">
           <WorkGrid/>
         </section>

@@ -48,8 +48,8 @@
 .work-hub .wk-top{display:flex;align-items:center!important;gap:12px;flex-wrap:wrap}
 .work-hub .wk-logo{width:34px!important;height:34px!important;border-radius:10px!important}
 .work-hub .wk-logo img{width:22px!important;height:22px!important}
-.work-hub .wk-top h3{margin:0;font:700 32px/1.2 var(--ip-font);letter-spacing:-.035em;color:var(--ip-ink)}
-.work-hub .wk-card.sa .wk-top h3{font-size:36px}
+.work-hub .wk-top h2{margin:0;font:700 32px/1.2 var(--ip-font);letter-spacing:-.035em;color:var(--ip-ink)}
+.work-hub .wk-card.sa .wk-top h2{font-size:36px}
 .work-hub .wk-pill{margin:0!important}
 .work-hub .wk-desc{margin:0;font-size:16px!important;line-height:1.5!important;color:var(--ip-body);max-width:52ch}
 .work-hub .wk-quote{border-top:0!important;padding:0!important}
@@ -218,7 +218,7 @@ html.work-hub-js .work-hub .wk-card.rv.in{transform:none!important}
 .work-hub .wk-card.sa,.work-hub .wk-card.synup,.work-hub .wk-card.inventive,.work-hub .wk-card.hubengage,.work-hub .wk-card.backlinkos{grid-column:1;grid-row:auto}
 .work-hub .wk-card.sa .wk-media{aspect-ratio:4/3;flex:none;min-height:0}
 .work-hub .wk-media{margin-bottom:18px;border-radius:12px}
-.work-hub .wk-top h3{font-size:26px!important}
+.work-hub .wk-top h2{font-size:26px!important}
 .work-hub .wk-desc{font-size:14px!important}}
 @media (max-width:620px){.work-hub .wk-media .cover-cap{left:8px;bottom:8px;padding:5px 9px;font-size:9px}
 .work-hub .wk-media .cover-cap strong{font-size:8.5px}

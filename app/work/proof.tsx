@@ -1,5 +1,5 @@
 import {proofClients} from '../proof-data';
-import {CLIENT_LOGO, SECTOR, clientSlug} from './copy';
+import {CLIENT_DIM, CLIENT_LOGO, SECTOR, clientSlug} from './copy';
 
 /** Queries and row copy come from app/proof-data.ts, the live work board source. */
 function engineOf(platform: string) {
@@ -41,7 +41,7 @@ export function ProofBoard() {
               className={i === 0 ? 'on' : undefined}
               data-i={i}
             >
-              <img src={CLIENT_LOGO[c.name]} alt=""/>
+              <img src={CLIENT_LOGO[c.name]} alt="" width={CLIENT_DIM[c.name].w} height={CLIENT_DIM[c.name].h}/>
               <span>{c.name}</span>
             </button>
           ))}
@@ -57,7 +57,7 @@ export function ProofBoard() {
           hidden={i === 0 ? undefined : true}
         >
           <aside className="wb-client">
-            <span className="wb-logo"><img src={CLIENT_LOGO[c.name]} alt=""/></span>
+            <span className="wb-logo"><img src={CLIENT_LOGO[c.name]} alt="" width={CLIENT_DIM[c.name].w} height={CLIENT_DIM[c.name].h}/></span>
             <span className="wb-sector">{SECTOR[c.name]}</span>
             <h3>{c.name}</h3>
             <p>{c.description}</p>
@@ -90,7 +90,7 @@ export function ProofBoard() {
           </ol>
         </div>
       ))}
-      <p className="wb-note">Captured when each placement went live. Live answers vary by account and date.</p>
+      <p className="wb-note">Captured when each placement went live. Live answers vary by account, location and date.</p>
     </div>
   );
 }

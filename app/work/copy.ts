@@ -6,7 +6,7 @@
 export const PREVIEW = true;
 
 export const SLUG = '/work';
-export const TITLE = 'Work | Nakama Growth';
+export const TITLE = 'Client Work & AI Search Results | Nakama Growth';
 export const META =
   'One published case study and four more clients with live, verifiable placements across Google AI Overviews, AI Mode, ChatGPT, Perplexity and YouTube.';
 
@@ -25,6 +25,15 @@ export const CLIENT_LOGO: Record<string, string> = {
   HubEngage: '/work/clients/hubengage.png',
   StarAgile: '/work/clients/staragile.png',
   BacklinkOS: '/work/clients/backlinkos.png',
+};
+
+/** Intrinsic pixel size of each client mark. CSS still sets the rendered box. */
+export const CLIENT_DIM: Record<string, {w: number; h: number}> = {
+  Synup: {w: 623, h: 180},
+  'Inventive AI': {w: 158, h: 158},
+  HubEngage: {w: 162, h: 162},
+  StarAgile: {w: 236, h: 150},
+  BacklinkOS: {w: 84, h: 80},
 };
 
 export function clientSlug(name: string) {

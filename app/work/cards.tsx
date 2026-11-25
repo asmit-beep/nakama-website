@@ -100,7 +100,7 @@ export function WorkGrid(){
                           {"Sources"}
                         </span>
                         <span className="chip">
-                          <img src="/work/clients/staragile.png" alt=""/>
+                          <img src="/work/clients/staragile.png" alt="" width={236} height={150}/>
                           <span className="c1 sm">
                             {"1"}
                           </span>
@@ -118,7 +118,7 @@ export function WorkGrid(){
                   {/* End card */}
                   <div className="wipe sa-endwipe"/>
                   <div className="endcard sa-end">
-                    <img src="/work/brandlogos/staragile.png" alt=""/>
+                    <img src="/work/brandlogos/staragile.png" alt="" width={298} height={102}/>
                   </div>
                   <svg className="ptr sa-ptr">
                     <use href="#ptr"/>
@@ -139,11 +139,11 @@ export function WorkGrid(){
           <div className="wk-body">
             <div className="wk-top">
               <span className="wk-logo">
-                <img src="/work/clients/staragile.png" alt=""/>
+                <img src="/work/clients/staragile.png" alt="" width={236} height={150}/>
               </span>
-              <h3>
+              <h2>
                 {"StarAgile"}
-              </h3>
+              </h2>
               <span className="wk-pill study">
                 {"Case study"}
               </span>
@@ -350,7 +350,7 @@ export function WorkGrid(){
                     </ul>
                   </div>
                   <div className="endcard sy-end">
-                    <img src="/work/brandlogos/synup.svg" alt=""/>
+                    <img src="/work/brandlogos/synup.svg" alt="" width={623} height={180}/>
                   </div>
                   <svg className="ptr sy-ptr">
                     <use href="#ptr"/>
@@ -370,11 +370,11 @@ export function WorkGrid(){
           <div className="wk-body">
             <div className="wk-top">
               <span className="wk-logo">
-                <img src="/work/clients/synup.svg" alt=""/>
+                <img src="/work/clients/synup.svg" alt="" width={623} height={180}/>
               </span>
-              <h3>
+              <h2>
                 {"Synup"}
-              </h3>
+              </h2>
               <span className="wk-pill live">
                 {"Live placements"}
               </span>
@@ -401,7 +401,7 @@ export function WorkGrid(){
                   {/* Scene A: RFP being drafted */}
                   <div className="iv-doc">
                     <div className="iv-doc-h">
-                      <img src="/work/clients/inventive.png" alt=""/>
+                      <img src="/work/clients/inventive.png" alt="" width={158} height={158}/>
                       <b>
                         {"RFP Agent"}
                       </b>
@@ -499,7 +499,7 @@ export function WorkGrid(){
                     </div>
                   </div>
                   <div className="endcard iv-end">
-                    <img src="/work/brandlogos/inventive.svg" alt=""/>
+                    <img src="/work/brandlogos/inventive.svg" alt="" width={531} height={95}/>
                   </div>
                   <svg className="ptr iv-ptr">
                     <use href="#ptr"/>
@@ -519,11 +519,11 @@ export function WorkGrid(){
           <div className="wk-body">
             <div className="wk-top">
               <span className="wk-logo">
-                <img src="/work/clients/inventive.png" alt=""/>
+                <img src="/work/clients/inventive.png" alt="" width={158} height={158}/>
               </span>
-              <h3>
+              <h2>
                 {"Inventive AI"}
-              </h3>
+              </h2>
               <span className="wk-pill live">
                 {"Live placements"}
               </span>
@@ -557,7 +557,7 @@ export function WorkGrid(){
                       <path className="l5" d="M400 250L400 60"/>
                     </svg>
                     <span className="he-core">
-                      <img src="/work/clients/white/hubengage.png" alt=""/>
+                      <img src="/work/clients/white/hubengage.png" alt="" width={160} height={160}/>
                     </span>
                     <span className="he-n n1">
                       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
@@ -655,7 +655,7 @@ export function WorkGrid(){
                     </div>
                   </div>
                   <div className="endcard he-end">
-                    <img src="/work/brandlogos/hubengage.png" alt=""/>
+                    <img src="/work/brandlogos/hubengage.png" alt="" width={806} height={134}/>
                   </div>
                   <svg className="ptr he-ptr">
                     <use href="#ptr"/>
@@ -675,11 +675,11 @@ export function WorkGrid(){
           <div className="wk-body">
             <div className="wk-top">
               <span className="wk-logo">
-                <img src="/work/clients/hubengage.png" alt=""/>
+                <img src="/work/clients/hubengage.png" alt="" width={162} height={162}/>
               </span>
-              <h3>
+              <h2>
                 {"HubEngage"}
-              </h3>
+              </h2>
               <span className="wk-pill live">
                 {"Live placements"}
               </span>
@@ -705,7 +705,7 @@ export function WorkGrid(){
                   <div className="bl-bg"/>
                   <div className="bl-win">
                     <div className="bl-bar">
-                      <img src="/work/brandlogos/backlinkos.png" alt=""/>
+                      <img src="/work/brandlogos/backlinkos.png" alt="" width={1006} height={294}/>
                       <span className="bl-tabs">
                         <b className="t-ex">
                           {"Exchanges"}
@@ -868,7 +868,7 @@ export function WorkGrid(){
                     <span className="sk w5 lt"/>
                   </div>
                   <div className="endcard bl-end">
-                    <img src="/work/brandlogos/backlinkos.png" alt=""/>
+                    <img src="/work/brandlogos/backlinkos.png" alt="" width={1006} height={294}/>
                   </div>
                   <svg className="ptr bl-ptr">
                     <use href="#ptr"/>
@@ -888,11 +888,11 @@ export function WorkGrid(){
           <div className="wk-body">
             <div className="wk-top">
               <span className="wk-logo">
-                <img src="/work/clients/backlinkos.png" alt=""/>
+                <img src="/work/clients/backlinkos.png" alt="" width={84} height={80}/>
               </span>
-              <h3>
+              <h2>
                 {"BacklinkOS"}
-              </h3>
+              </h2>
               <span className="wk-pill live">
                 {"Live placements"}
               </span>
