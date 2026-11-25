@@ -365,7 +365,7 @@ export function HomeProof(){
      <span className="eyebrow">Client work</span>
      <h2 id="proof-title">Real queries.<br/><span>Real placements.</span></h2>
     </div>
-    <p>Pick a client, copy a query and check it yourself. Captured when each piece went live; answers shift over time.</p>
+    <p>Pick a client, copy a query and check it yourself. Captured when each piece went live; answers shift over time. Read the <Link href="/work/staragile">StarAgile case study</Link>.</p>
    </Reveal>
    <div className="evidence-shell">
     <div className="evidence-rail" role="tablist" aria-label="Select a client">

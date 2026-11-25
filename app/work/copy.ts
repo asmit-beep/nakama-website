@@ -6,7 +6,7 @@
 export const PREVIEW = true;
 
 export const SLUG = '/work';
-export const TITLE = 'Client Work & AI Search Results | Nakama Growth';
+export const TITLE = 'Case Studies: Client Work & AI Search Results | Nakama Growth';
 export const META =
   'One published case study and four more clients with live, verifiable placements across Google AI Overviews, AI Mode, ChatGPT, Perplexity and YouTube.';
 

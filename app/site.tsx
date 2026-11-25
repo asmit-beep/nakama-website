@@ -8,7 +8,7 @@ import {Sheet,SheetTrigger,SheetContent,SheetTitle,SheetDescription,SheetClose} 
 import {goToContactOptions,trackNavCtaClick} from '@/app/nav-cta';
 export const BOOKING='https://app.cal.com/snehil-srivastava-4jm7sq';
 export const navigationLinks=[['Pricing','/pricing'],['Resources','/resources'],['About','/about']] as const;
-export const companyLinks=[['Services','/services','What we do, channel by channel'],['Industries','/industries','Sectors we serve'],['White label','/white-label','Resell our work under your brand'],['Work','/work','Where our clients show up'],['Process','/process','How an engagement runs'],['Careers','/careers','Join the team']] as const;
+export const companyLinks=[['Services','/services','What we do, channel by channel'],['Industries','/industries','Sectors we serve'],['White label','/white-label','Resell our work under your brand'],['Case studies','/work','How we got brands into AI answers'],['Process','/process','How an engagement runs'],['Careers','/careers','Join the team']] as const;
 export const industryLinks=[['All industries','/industries','Every sector we serve'],['Healthcare','/industries/healthcare','GEO for clinics, hospitals and health brands'],['Ecommerce','/industries/ecommerce','GEO for DTC, Shopify and online store brands'],['Real estate','/industries/real-estate','AEO for residential brokerages and agent teams'],['Fintech','/industries/fintech','GEO for fintech brands'],['Law firms','/industries/law-firms','GEO for law firms']] as const;
 export function Logo({className=''}:{className?:string}){return <svg className={className} viewBox="0 0 64 64" aria-hidden="true"><path d="M9 57V30A23 23 0 0 1 55 30V57H42V30A10 10 0 0 0 22 30V57Z" fill="#f3f1ed"/><circle cx="32" cy="30" r="5.6" fill="#f07c32"/></svg>}
 export function Booking({children='Book a conversation',className=''}:{children?:ReactNode,className?:string}){return <BookCallButton className={`button ${className}`}>{children}<ArrowUpRight size={17}/></BookCallButton>}
@@ -89,7 +89,7 @@ export function NextChapter({title='Let’s build your next chapter.',text='A sh
 }
 export const serviceLinks=[['GEO services','/services/geo'],['AEO services','/services/aeo'],['AI Visibility Audit','/services/ai-visibility-audit'],['Reddit & community','/services/reddit'],['Content & editorial','/services/content'],['YouTube Marketing','/services/youtube'],['Digital PR services','/services/digital-pr']] as const;
 const FOOT_COLS:[string,[string,string][]][]=[
- ['Company',[['About','/about'],['Services','/services'],['Industries','/industries'],['Work','/work'],['Process','/process'],['Careers','/careers']]],
+ ['Company',[['About','/about'],['Services','/services'],['Industries','/industries'],['Case studies','/work'],['Process','/process'],['Careers','/careers']]],
  ['Services',serviceLinks.map(([l,h])=>[l,h])],
  ['Resources',[['Articles','/resources#articles'],['Pricing','/pricing'],['Get a quote','/pricing#quote']]],
  ['Contact',[['Contact us','/contact'],['contact@nakama.in','mailto:contact@nakama.in']]],

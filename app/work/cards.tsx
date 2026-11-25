@@ -128,6 +128,12 @@ export function WorkGrid(){
                 </div>
               </div>
             </div>
+            <blockquote className="wk-desc wk-quote">
+              {"\"It's good to see StarAgile getting visibility on generic prompts now. Let's maintain this pace.\""}
+              <cite>
+                {"Rishav Kumar, StarAgile"}
+              </cite>
+            </blockquote>
             <p className="cover-cap">
               <strong>
                 {"Google · AI Overview"}
@@ -160,12 +166,6 @@ export function WorkGrid(){
             <p className="wk-sub">
               {"First on 23 of 48 buyer queries · all 4 AI engines"}
             </p>
-            <blockquote className="wk-desc wk-quote">
-              {"\"It's good to see StarAgile getting visibility on generic prompts now. Let's maintain this pace.\""}
-              <cite>
-                {"Rishav Kumar, StarAgile"}
-              </cite>
-            </blockquote>
             <span className="wk-go">
               {"Read the case study "}
               <svg className="arrow-go" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.4" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">

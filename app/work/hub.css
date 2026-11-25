@@ -116,13 +116,12 @@
 .work-hub .wk-desc{margin:0;font-size:16px!important;line-height:1.5!important;color:var(--ip-body);max-width:52ch}
 .work-hub .wk-quote{border-top:0!important;padding:0!important}
 .work-hub .wk-quote cite{margin-top:6px}
-/* Quote sits on the lavender reel, just above the capture pill. */
-.work-hub .wk-card.sa .wk-quote{position:absolute;left:16px;right:16px;top:0;width:auto;height:calc(var(--sa-w) * 7 / 8 - 78px);margin:0;display:flex;flex-direction:column;justify-content:flex-end;z-index:6;pointer-events:none;color:#1C1D22;font-size:18px!important;line-height:1.45}
+/* Quote has its own band under the scaled reel, inside the 800/700 frame. */
+.work-hub .wk-card.sa .wk-media{display:flex;flex-direction:column;background:radial-gradient(60% 50% at 85% 20%,rgba(149,64,255,.22),transparent 70%),radial-gradient(50% 45% at 10% 95%,rgba(34,170,96,.18),transparent 70%),linear-gradient(165deg,#faf7ff,#efe6ff 60%,#ecf7f0)}
+.work-hub .wk-card.sa .reel{position:relative;inset:auto;flex:1 1 auto;min-height:0;width:100%;height:auto;container-type:size;--u:min(100cqw / 800,100cqh / 700)}
+.work-hub .wk-card.sa .wk-quote{position:relative;left:auto;right:auto;top:auto;width:auto;height:auto;margin:0 16px;display:block;z-index:6;pointer-events:none;color:#1C1D22!important;opacity:1!important;visibility:visible!important;transform:none!important;font-size:18px!important;line-height:1.45;transition:none!important}
 .work-hub .wk-card.sa .wk-quote cite{color:#3A3D46;font-size:14px;line-height:1.35;margin-top:8px}
-@media (max-width:768px){
-.work-hub .wk-card.sa .wk-quote{position:static;height:auto;display:block;color:var(--ip-body);font-size:16px!important}
-.work-hub .wk-card.sa .wk-quote cite{color:#C8C9CF;font-size:13px}
-}
+.work-hub .wk-card.sa .cover-cap{position:relative;left:auto;right:auto;bottom:auto;align-self:flex-start;margin:16px 16px 12px}
 .work-hub .wk-metric{margin-top:2px}
 .work-hub .wk-metric b{font-size:46px!important}
 .work-hub .wk-sub{margin-top:-6px!important}
@@ -135,12 +134,13 @@
 .work-hub .wk-card.hubengage .wk-desc,.work-hub .wk-card.backlinkos .wk-desc{top:calc((100cqi - var(--gcol)) / 2 * 5 / 8 - 92px)}
 }
 @media (hover:hover) and (pointer:fine) and (min-width:1025px){
-.work-hub .wk-card .wk-desc{visibility:hidden;opacity:0;transform:translateY(20px);transition:opacity .3s ease,transform .3s ease,visibility .3s ease}
+.work-hub .wk-card .wk-desc:not(.wk-quote){visibility:hidden;opacity:0;transform:translateY(20px);transition:opacity .3s ease,transform .3s ease,visibility .3s ease}
 .work-hub .wk-card:hover .wk-desc,.work-hub .wk-card:focus-within .wk-desc,.work-hub .wk-card.is-hover .wk-desc{visibility:visible;opacity:1;transform:translateY(0)}
 .work-hub .wk-card.sa .arrow-go{transition:transform .3s ease}
 .work-hub .wk-card.sa:hover .arrow-go{transform:rotate(45deg)}}
 .work-hub .wk-media .cover-cap{left:12px;right:auto;bottom:12px;padding:7px 11px;border-radius:999px;gap:8px;
   background:rgba(10,10,16,.74);backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);border:1px solid rgba(255,255,255,.12);z-index:20}
+.work-hub .wk-card.sa .cover-cap{position:relative;left:auto;right:auto;bottom:auto;align-self:flex-start;margin:16px 16px 12px}
 .work-hub .reel{position:absolute;inset:0;overflow:hidden;--u:calc(100cqw / 800);--dur:8s}
 .work-hub .stage{position:absolute;left:50%;top:50%;width:calc(800*var(--u));height:calc(500*var(--u));transform:translate(-50%,-50%);overflow:hidden;
   font-family:system-ui,-apple-system,"Segoe UI",Roboto,Arial,sans-serif;perspective:calc(1400*var(--u))}
@@ -322,6 +322,7 @@ html.work-hub-js .work-hub .wk-card.rv.in{transform:none!important}
 .work-hub #proof-board .wb-q-ico,
 .work-hub #how-we-count .ip-factor p{color:#AEB0B6}
 @media (max-width:620px){.work-hub .wk-media .cover-cap{left:8px;bottom:8px;padding:5px 9px;font-size:9px}
+.work-hub .wk-card.sa .cover-cap{left:auto;bottom:auto;margin:16px 12px 10px}
 .work-hub .wk-media .cover-cap strong{font-size:8.5px}
 .work-hub .wk-metric b{font-size:40px!important}}
 /* Final CTA. Ghost pill matches the primary quote button, scoped to this band. */

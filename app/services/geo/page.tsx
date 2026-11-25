@@ -249,6 +249,7 @@ export default function GeoServices() {
        </li>
       ))}
      </ul>
+     <p>Read <Link href="/work/staragile">how StarAgile became AI search's first pick</Link>.</p>
      <p className="geo-scents">
       <Link className="geo-scent" href="/work">See our work →</Link>
       <Link className="geo-scent" href="/journal/best-generative-engine-optimization-agencies">Compare agencies →</Link>
