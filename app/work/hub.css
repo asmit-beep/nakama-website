@@ -22,24 +22,70 @@
 .work-hub .cover-cap span{color:rgba(246,243,238,.68);white-space:nowrap}
 .work-hub .ip-factor .num{display:block;font:700 12px/1 var(--ip-font);letter-spacing:.14em;color:var(--ip-ember-2)}
 .work-hub .ip-hero{padding-bottom:56px}
-.work-hub .ip-hero h1{max-width:900px}
+.work-hub .ip-hero h1{max-width:22em;font-size:clamp(36px,4.15vw,64px)}
 .work-hub .ip-eyebrow{gap:10px;color:var(--ip-ember-2);letter-spacing:.16em}
 .work-hub .ip-eyebrow i{display:inline-block;width:6px;height:6px;border-radius:50%;background:var(--ip-ember);box-shadow:0 0 0 4px rgba(240,124,50,.16),0 0 18px rgba(240,124,50,.7)}
 .work-hub #proof-board{scroll-margin-top:108px}
 .work-hub .wb-actions a .ext{opacity:.85}
 
+/* Hero wash. The blue/purple/orange mesh is the shared .ip-atmos orbs plus the
+   .site-frame.ip-page page wash in app/inner/inner.css. Override only .work-hub
+   so other inner pages keep that treatment. Dark base stays #0d0d13. */
+.site-frame.work-hub.ip-page{
+  background:#0d0d13!important;
+}
+.work-hub .ip-atmos{
+  height:920px;
+  -webkit-mask-image:linear-gradient(#000 42%,transparent);
+  mask-image:linear-gradient(#000 42%,transparent);
+}
+.work-hub .ip-atmos.ip-tone-ember i{
+  animation:none;
+  opacity:1;
+  filter:blur(28px);
+  border-radius:50%;
+}
+.work-hub .ip-atmos.ip-tone-ember .a1{
+  width:min(980px,92vw);
+  height:680px;
+  max-width:none;
+  max-height:none;
+  left:6%;
+  right:auto;
+  top:-120px;
+  background:radial-gradient(ellipse at 46% 42%,rgba(240,124,50,.16) 0%,rgba(240,124,50,.07) 36%,transparent 72%);
+}
+.work-hub .ip-atmos.ip-tone-ember .a2{
+  width:min(520px,48vw);
+  height:640px;
+  max-width:none;
+  max-height:none;
+  left:auto;
+  right:-8vw;
+  top:-80px;
+  background:radial-gradient(ellipse at 78% 18%,rgba(127,209,195,.05),transparent 70%);
+}
+.work-hub .ip-atmos.ip-tone-ember .a3{
+  width:0;
+  height:0;
+  background:none;
+}
+@media (prefers-reduced-motion:reduce){
+  .work-hub .ip-atmos.ip-tone-ember i{animation:none}
+}
+
 @property --n{syntax:'<integer>';inherits:false;initial-value:45}
 .work-hub .wk-wrap{width:min(1312px,calc(100% - 48px))}
 .work-hub .wk-section{padding:8px 0 96px}
-.work-hub .wk-grid{grid-template-columns:repeat(8,minmax(0,1fr));gap:60px;align-items:stretch}
+.work-hub .wk-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:60px;align-items:stretch}
 .work-hub .wk-card{background:none!important;border:0!important;padding:0!important;box-shadow:none!important;border-radius:0;transform:none!important;cursor:pointer}
 .work-hub .wk-card:focus-visible{outline:none}
 .work-hub .wk-card:focus-visible .wk-media{outline:2px solid #f2a06a;outline-offset:4px}
-.work-hub .wk-card.sa{grid-column:1 / span 5;grid-row:1 / span 2}
-.work-hub .wk-card.synup{grid-column:6 / span 3;grid-row:1}
-.work-hub .wk-card.inventive{grid-column:6 / span 3;grid-row:2}
-.work-hub .wk-card.hubengage{grid-column:1 / span 4;grid-row:3}
-.work-hub .wk-card.backlinkos{grid-column:5 / span 4;grid-row:3;min-height:0}
+.work-hub .wk-card.sa{grid-column:1 / -1}
+.work-hub .wk-card.synup,
+.work-hub .wk-card.inventive,
+.work-hub .wk-card.hubengage,
+.work-hub .wk-card.backlinkos{grid-column:auto;min-height:0}
 .work-hub .wk-media{position:relative;aspect-ratio:16/10;border-radius:16px;overflow:hidden;container-type:inline-size;
   border:1px solid var(--ip-line-2);background:#0b0b10;transform:none!important;
   box-shadow:inset 0 1px 0 rgba(255,255,255,.06),0 40px 80px -48px rgba(0,0,0,.9);margin-bottom:24px;flex:none}
@@ -214,12 +260,17 @@
 html.work-hub-js .work-hub .rv{opacity:0;transform:translateY(40px)}
 html.work-hub-js .work-hub .rv.in{opacity:1;transform:none;transition:opacity .7s cubic-bezier(.2,.8,.2,1),transform .9s cubic-bezier(.2,.8,.2,1)}
 html.work-hub-js .work-hub .wk-card.rv.in{transform:none!important}
-@media (max-width:1024px){.work-hub .wk-grid{grid-template-columns:1fr;gap:56px 0}
-.work-hub .wk-card.sa,.work-hub .wk-card.synup,.work-hub .wk-card.inventive,.work-hub .wk-card.hubengage,.work-hub .wk-card.backlinkos{grid-column:1;grid-row:auto}
+@media (max-width:1024px){
+.work-hub .wk-grid{gap:48px}
 .work-hub .wk-card.sa .wk-media{aspect-ratio:4/3;flex:none;min-height:0}
 .work-hub .wk-media{margin-bottom:18px;border-radius:12px}
 .work-hub .wk-top h2{font-size:26px!important}
-.work-hub .wk-desc{font-size:14px!important}}
+.work-hub .wk-desc{font-size:14px!important}
+}
+@media (max-width:768px){
+.work-hub .wk-grid{grid-template-columns:1fr;gap:56px 0}
+.work-hub .wk-card.sa,.work-hub .wk-card.synup,.work-hub .wk-card.inventive,.work-hub .wk-card.hubengage,.work-hub .wk-card.backlinkos{grid-column:1 / -1}
+}
 @media (max-width:620px){.work-hub .wk-media .cover-cap{left:8px;bottom:8px;padding:5px 9px;font-size:9px}
 .work-hub .wk-media .cover-cap strong{font-size:8.5px}
 .work-hub .wk-metric b{font-size:40px!important}}

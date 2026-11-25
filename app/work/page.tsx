@@ -28,9 +28,9 @@ export default function Work() {
         <Crumbs trail={[{name: 'Work', path: '/work'}]}/>
         <IpHero
           tone="ember"
-          eyebrow="Work"
-          title="Built together."
-          accent="Found in AI answers."
+          eyebrow="Case studies"
+          title="Case studies."
+          accent="How we got brands into AI answers."
           lead="One published case study and four more clients with live, verifiable placements across Google AI Overviews, AI Mode, ChatGPT, Perplexity and YouTube."
         >
           <LinkBtn href="/resources#articles" ghost>Read the field notes</LinkBtn>
