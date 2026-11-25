@@ -1,9 +1,25 @@
 /* Case studies hub. Reel timing is the approved prototype (stage units expanded to calc(N * var(--u))). Scoped to .work-hub so other pages keep their own rules. */
 .work-hub .wk-section{position:relative;padding:0 0 72px}
-.work-hub .wk-wrap{width:min(1312px,calc(100% - 48px))}
-.work-hub{--sa-w:705px;--side-w:420px;--wk-gap:32px;--lead-h:897px}
-.work-hub .wk-wrap{container-type:inline-size}
-.work-hub .wk-grid{display:flex;flex-direction:column;align-items:stretch;gap:var(--wk-gap);width:calc(var(--sa-w) + var(--wk-gap) + var(--side-w));zoom:min(1,calc(100cqw / (var(--sa-w) + var(--wk-gap) + var(--side-w))),calc(100svh / var(--lead-h)))}
+/* Page container tracks the header: logo left edge to the Contact button's right edge.
+   Nav is left/right 4% with 12px padding and a 1px border; the lockup is pulled left 6px. */
+.work-hub .ip-wrap{
+  --wk-gutter-l:calc(4% + 6px);
+  --wk-gutter-r:calc(4% + 13px);
+  width:auto;max-width:none;
+  margin-left:var(--wk-gutter-l);margin-right:calc(var(--wk-gutter-r) - 1px);
+}
+.work-hub .wk-wrap{
+  container-type:inline-size;
+  --gcol:32px;--grow:28px;--L:200px;--Ssum:221px;
+  /* Lead height at container width W is 0.5147*(W - gcol) + 220.18px with these extras.
+     When that exceeds the screen, lay the columns out wider and zoom back so the
+     visual width still meets the header and the visual height fits the screen. */
+  --lead-h:calc(0.5147 * (100cqw - var(--gcol)) + 220.18px);
+  --wu:max(100cqw, calc(203.71px / (100svh / 100cqw - 0.5147)));
+  --side-w:calc((0.875 * (var(--wu) - var(--gcol)) + var(--L) - var(--Ssum) - var(--grow)) / 2.125);
+  --sa-w:calc(var(--wu) - var(--gcol) - var(--side-w));
+}
+.work-hub .wk-grid{display:flex;flex-direction:column;align-items:stretch;gap:var(--gcol);width:var(--wu);zoom:calc(100cqw / var(--wu))}
 .work-hub .wk-card{position:relative;display:flex;flex-direction:column;min-width:0;text-decoration:none;color:inherit}
 .work-hub .wk-body{display:flex;flex-direction:column;flex:1;min-width:0}
 .work-hub .wk-logo{display:grid;place-items:center;background:#fff;box-shadow:0 8px 24px -10px rgba(0,0,0,.6);flex:none;overflow:hidden}
@@ -77,15 +93,14 @@
 }
 
 @property --n{syntax:'<integer>';inherits:false;initial-value:45}
-.work-hub .wk-wrap{width:min(1312px,calc(100% - 48px))}
 .work-hub .wk-section{padding:8px 0 96px}
-.work-hub .wk-lead{display:grid;grid-template-columns:var(--sa-w) var(--side-w);grid-template-rows:auto auto;gap:28px var(--wk-gap);align-items:start}
-.work-hub .wk-pair{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:var(--wk-gap);width:100%}
+.work-hub .wk-lead{display:grid;grid-template-columns:var(--sa-w) var(--side-w);grid-template-rows:auto auto;gap:var(--grow) var(--gcol);align-items:start}
+.work-hub .wk-pair{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:var(--gcol);width:100%}
 .work-hub .wk-card{background:none!important;border:0!important;padding:0!important;box-shadow:none!important;border-radius:0;transform:none!important;cursor:pointer;min-width:0}
 .work-hub .wk-card:focus-visible{outline:none}
 .work-hub .wk-card:focus-visible .wk-media{outline:2px solid #f2a06a;outline-offset:4px}
 .work-hub .wk-card.sa{grid-column:1;grid-row:1 / span 2;width:var(--sa-w);align-self:start;height:auto}
-.work-hub .wk-card.synup,.work-hub .wk-card.inventive{width:var(--side-w);height:auto;align-self:stretch}
+.work-hub .wk-card.synup,.work-hub .wk-card.inventive{width:var(--side-w);height:auto;align-self:start}
 .work-hub .wk-media{position:relative;aspect-ratio:800/500;border-radius:16px;overflow:hidden;container-type:size;
   border:1px solid var(--ip-line-2);background:#0b0b10;transform:none!important;
   box-shadow:inset 0 1px 0 rgba(255,255,255,.06),0 40px 80px -48px rgba(0,0,0,.9);margin-bottom:16px;flex:none;width:100%;height:auto}
@@ -105,8 +120,16 @@
 .work-hub .wk-metric b{font-size:46px!important}
 .work-hub .wk-sub{margin-top:-6px!important}
 .work-hub .wk-go{margin-top:6px!important}
+.work-hub .wk-card.place .wk-go{margin-top:2px!important}
 .work-hub .wk-card.sa .wk-go{order:0!important}
-@media (hover:hover) and (pointer:fine) and (min-width:1025px){.work-hub .wk-card .wk-desc{visibility:hidden;opacity:0;transform:translateY(20px);transition:all .3s ease}
+@media (min-width:769px){
+.work-hub .wk-card.place .wk-desc{position:absolute;left:14px;right:14px;top:calc(var(--side-w) * 5 / 8 - 92px);z-index:6;margin:0;pointer-events:none}
+.work-hub .wk-card.sa .wk-desc{position:absolute;left:14px;right:auto;width:min(46ch,calc(var(--sa-w) - 28px));top:calc(var(--sa-w) * 7 / 8 - 118px);z-index:6;margin:0;pointer-events:none}
+.work-hub .wk-pair{container-type:inline-size}
+.work-hub .wk-card.hubengage .wk-desc,.work-hub .wk-card.backlinkos .wk-desc{top:calc((100cqi - var(--gcol)) / 2 * 5 / 8 - 92px)}
+}
+@media (hover:hover) and (pointer:fine) and (min-width:1025px){
+.work-hub .wk-card .wk-desc{visibility:hidden;opacity:0;transform:translateY(20px);transition:opacity .3s ease,transform .3s ease,visibility .3s ease}
 .work-hub .wk-card:hover .wk-desc,.work-hub .wk-card:focus-within .wk-desc,.work-hub .wk-card.is-hover .wk-desc{visibility:visible;opacity:1;transform:translateY(0)}
 .work-hub .wk-card.sa .arrow-go{transition:transform .3s ease}
 .work-hub .wk-card.sa:hover .arrow-go{transform:rotate(45deg)}}
@@ -261,10 +284,21 @@
 html.work-hub-js .work-hub .rv{opacity:0;transform:translateY(40px)}
 html.work-hub-js .work-hub .rv.in{opacity:1;transform:none;transition:opacity .7s cubic-bezier(.2,.8,.2,1),transform .9s cubic-bezier(.2,.8,.2,1)}
 html.work-hub-js .work-hub .wk-card.rv.in{transform:none!important}
+@media (max-width:1100px){
+.work-hub .wk-wrap{--Ssum:214px}
+.work-hub .wk-card.synup .wk-top h2,.work-hub .wk-card.inventive .wk-top h2{font-size:26px;white-space:nowrap}
+}
+@media (max-width:960px){
+.work-hub .ip-wrap{--wk-gutter-l:30px;--wk-gutter-r:37px}
+}
+@media (max-width:800px){
+.work-hub .ip-wrap{--wk-gutter-l:16px;--wk-gutter-r:23px}
+}
+@media (max-width:420px){
+.work-hub .ip-wrap{--wk-gutter-l:20px;--wk-gutter-r:15px}
+}
 @media (max-width:768px){
-.work-hub .wk-grid{zoom:1}
-.work-hub{--sa-w:100%;--side-w:100%}
-.work-hub .wk-grid,.work-hub .wk-lead,.work-hub .wk-pair{display:flex;flex-direction:column;width:100%;gap:56px}
+.work-hub .wk-grid,.work-hub .wk-lead,.work-hub .wk-pair{display:flex;flex-direction:column;width:100%;zoom:1;gap:56px}
 .work-hub .wk-card.sa,.work-hub .wk-card.synup,.work-hub .wk-card.inventive,.work-hub .wk-card.hubengage,.work-hub .wk-card.backlinkos{grid-column:auto;grid-row:auto;width:100%}
 .work-hub .wk-media,.work-hub .wk-card.sa .wk-media,.work-hub .wk-card.synup .wk-media,.work-hub .wk-card.inventive .wk-media{width:100%;height:auto;flex:none}
 .work-hub .wk-media{aspect-ratio:800/500}
