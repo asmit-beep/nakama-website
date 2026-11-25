@@ -9,8 +9,8 @@ export const PREVIEW = true;
 
 export const SLUG = '/work/staragile';
 
-/** Draft title uses a shorter brand suffix. This page uses Nakama Growth. */
-export const TITLE = 'StarAgile GEO Case Study: First in AI Answers | Nakama Growth';
+/** Document title stays blank until Yash picks it. */
+export const TITLE = '';
 
 /**
  * Draft meta uses the shorter brand. This page uses Nakama Growth.

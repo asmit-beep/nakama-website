@@ -1,13 +1,17 @@
 import Link from 'next/link';
-import {cloneElement, isValidElement, type ReactNode} from 'react';
-import {engineMarks} from '@/app/hero-marks';
+import type {ReactNode} from 'react';
 import {FAQ} from './copy';
 import {Cap, Tag, shot} from './bits';
 import {QueryWall} from './Wall';
 
-function EngineMark({node}: {node: ReactNode}) {
-  const icon = isValidElement(node) ? cloneElement(node) : node;
-  return <span className="mark" aria-hidden="true">{icon}</span>;
+const ENGINE = {
+  google: '/work/staragile/engines/google-g.svg',
+  openai: '/work/staragile/engines/openai.svg',
+  perplexity: '/work/staragile/engines/perplexity.svg',
+} as const;
+
+function EngineLogo({src}: {src: string}) {
+  return <span className="mark" aria-hidden="true"><img src={src} alt="" width={17} height={17}/></span>;
 }
 
 const HERO = {
@@ -88,12 +92,13 @@ const WINS: Array<[string, string, string]> = [
 export function CaseStudy() {
   return (
     <article className="sa">
+      <div className="sa-glow" aria-hidden="true"><i className="a1"/><i className="a2"/><i className="a3"/></div>
       <p className="sa-back"><Link href="/work">All work</Link></p>
       <section className="v3-hero" aria-labelledby="h-hero">
         <div className="v3-band">
           <div className="v3-band-l">
             <p className="v3-eyebrow">CASE STUDY · EDTECH · GENERATIVE ENGINE OPTIMIZATION</p>
-            <h1 id="h-hero">How StarAgile Became AI Search&apos;s First Pick for Scrum Training</h1>
+            <h1 id="h-hero">How StarAgile Became <span className="sa-grad">AI Search&apos;s First Pick for Scrum Training</span></h1>
             <p className="v3-sub">StarAgile was named first in <b>45 AI answers</b> across Google AI Overviews, AI Mode, ChatGPT and Perplexity. That covered <b>12 of 13</b> Certified ScrumMaster queries we tracked and <b>all 5</b> CSPO queries.</p>
             <dl className="v3-meta">
               <div><dt>Client</dt><dd>StarAgile (staragile.com)</dd></div>
@@ -109,10 +114,10 @@ export function CaseStudy() {
                   <article className="answer" aria-label="StarAgile in four AI answers, recreated from dated captures">
                     <div className="a-top">
                       <div className="tabs" role="tablist" aria-label="AI engine">
-                        <button type="button" role="tab" className="tab" id="hero-t-aio" aria-controls="hero-p-aio" aria-selected="true" tabIndex={0} data-k="aio"><EngineMark node={engineMarks.google}/><span className="lb">AI Overview</span></button>
-                        <button type="button" role="tab" className="tab" id="hero-t-aim" aria-controls="hero-p-aim" aria-selected="false" tabIndex={-1} data-k="aim"><EngineMark node={engineMarks.google}/><span className="lb">AI Mode</span></button>
-                        <button type="button" role="tab" className="tab" id="hero-t-cgpt" aria-controls="hero-p-cgpt" aria-selected="false" tabIndex={-1} data-k="cgpt"><EngineMark node={engineMarks.chatgpt}/><span className="lb">ChatGPT</span></button>
-                        <button type="button" role="tab" className="tab" id="hero-t-pplx" aria-controls="hero-p-pplx" aria-selected="false" tabIndex={-1} data-k="pplx"><EngineMark node={engineMarks.perplexity}/><span className="lb">Perplexity</span></button>
+                        <button type="button" role="tab" className="tab" id="hero-t-aio" aria-controls="hero-p-aio" aria-selected="true" tabIndex={0} data-k="aio"><EngineLogo src={ENGINE.google}/><span className="lb">AI Overview</span></button>
+                        <button type="button" role="tab" className="tab" id="hero-t-aim" aria-controls="hero-p-aim" aria-selected="false" tabIndex={-1} data-k="aim"><EngineLogo src={ENGINE.google}/><span className="lb">AI Mode</span></button>
+                        <button type="button" role="tab" className="tab" id="hero-t-cgpt" aria-controls="hero-p-cgpt" aria-selected="false" tabIndex={-1} data-k="cgpt"><EngineLogo src={ENGINE.openai}/><span className="lb">ChatGPT</span></button>
+                        <button type="button" role="tab" className="tab" id="hero-t-pplx" aria-controls="hero-p-pplx" aria-selected="false" tabIndex={-1} data-k="pplx"><EngineLogo src={ENGINE.perplexity}/><span className="lb">Perplexity</span></button>
                       </div>
                     </div>
                     <div className="screen">
@@ -175,7 +180,7 @@ export function CaseStudy() {
           </div>
         </div>
         <ul className="v3-tiles">
-          <li className="v3-blk is-cream"><span className="n">45</span><span className="l">AI answers that named StarAgile first (of 89 captured)</span></li>
+          <li className="v3-blk is-cream"><span className="n">45</span><span className="l">AI answers named first, of 89 captured</span></li>
           <li className="v3-blk is-cream"><span className="n">23</span><span className="l">buyer queries where StarAgile was the first pick on at least one engine</span></li>
           <li className="v3-blk is-cream"><span className="n">260</span><span className="l">live placements</span></li>
         </ul>
