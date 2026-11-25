@@ -295,7 +295,7 @@ ${fig('nogood-alternatives-vs-nakama-growth', VS_ALT)}
 <h3 id="1-nakama-growth">1. Nakama Growth</h3>
 <p><strong>Best for:</strong> SaaS, tech and AI teams that want AI search handled as one plan, with proof they can re-run.</p>
 <p>Nakama Growth sells one plan with no tiers. It covers a buyer prompt map, AI visibility tracking, a competitor and source audit, answer-first editorial content, community participation on Reddit, Quora and forums, YouTube, digital PR and review site presence (${a('https://www.nakama.in/pricing', 'pricing')}). See its ${a('https://www.nakama.in/services/geo', 'GEO services for SaaS')}.</p>
-<p>Its proof is public on its ${a('https://www.nakama.in/work', 'Work page')}. Four of its clients there, Synup, Inventive AI, HubEngage and StarAgile, are each listed with the exact search and engine where the content surfaced, so a buyer can run the query again.</p>
+<p>Its proof is public on its ${a('https://www.nakama.in/work', 'case studies')}. Four of its clients there, Synup, Inventive AI, HubEngage and StarAgile, are each listed with the exact search and engine where the content surfaced, so a buyer can run the query again.</p>
 <p>Clients review every piece before it goes live, and reporting is a monthly evidence report of citations, mentions and next moves.</p>
 <p><strong>Weakness:</strong> no published price, a 3-month minimum, and no paid media, paid social or performance creative, so it cannot replace a full NoGood squad. It also takes on a small number of partners at a time.</p>
 <h3 id="2-omniscient-digital">2. Omniscient Digital</h3>

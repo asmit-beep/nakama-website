@@ -1,5 +1,5 @@
 import {abs,SITE_NAME,SITE_DESCRIPTION,CONTACT_EMAIL} from '@/lib/seo';
-import {corePages,feedArticles,caseStudies,openings} from '@/lib/feed';
+import {corePages,feedArticles,caseStudies,openings,shippedCasePages} from '@/lib/feed';
 import {proofClients} from '@/app/proof-data';
 import {authors,authorUrl,articlesBy,jobTitleText} from '@/lib/authors';
 
@@ -37,7 +37,7 @@ ${corePages.filter(p=>!['/privacy','/terms'].includes(p.path)).map(p=>`- [${p.ti
 ## Field notes
 
 ${feedArticles.map(a=>`- [${liveTitle(a)}](${abs(`/journal/${a.slug}`)}): ${a.description}`).join('\n')}
-${caseStudies.length?`\n## Case studies\n\n${caseStudies.map(c=>`- [${c.client}: ${c.title}](${abs(`/work/${c.slug}`)}): ${c.summary}`).join('\n')}\n`:''}${openings.length?`\n## Open roles\n\n${openings.map(o=>`- [${o.title}](${abs(`/careers/${o.slug}`)}): ${o.summary}`).join('\n')}\n`:''}
+${(()=>{const lines=[...caseStudies.map(c=>`- [${c.client}: ${c.title}](${abs(`/work/${c.slug}`)}): ${c.summary}`),...shippedCasePages.map(c=>`- [StarAgile: ${c.headline}](${abs(c.path)}): ${c.summary}`)];return lines.length?`\n## Case studies\n\n${lines.join('\n')}\n`:'';})()}${openings.length?`\n## Open roles\n\n${openings.map(o=>`- [${o.title}](${abs(`/careers/${o.slug}`)}): ${o.summary}`).join('\n')}\n`:''}
 ## Optional
 
 - [Full text for LLMs](${abs('/llms-full.txt')}): services, documented client placements and every article in one file.

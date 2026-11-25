@@ -13,7 +13,7 @@ import type {Article} from './articles';
  */
 export const BEST_ENTERPRISE_AI_SEO_AGENCIES_PUBLISHED_AT = '2026-11-03T09:00:00+05:30';
 const PUBLISHED_AT = BEST_ENTERPRISE_AI_SEO_AGENCIES_PUBLISHED_AT;
-const MODIFIED_AT = '2026-11-19T05:38:00+05:30';
+const MODIFIED_AT = '2026-11-26T09:00:00+05:30';
 const PREVIEW = false;
 
 const MONTHS = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
@@ -267,7 +267,7 @@ ${figure(`${SLUG}-matrix`, MATRIX_ALT, 1920, 1500)}
 <p><strong>Best for:</strong> tech and AI brands that want a repeatable, dated read of where they appear in AI answers before committing to a large program.</p>
 <p><strong>What they do:</strong> one plan covering AI visibility, editorial content, disclosed community participation, YouTube and video, digital PR and review site presence (<a href="/services/geo">GEO services</a>, <a href="/pricing">pricing page</a>).</p>
 <p><strong>Enterprise signals:</strong> the pricing page offers a tailored plan "for large teams, multiple brands or markets" with dedicated support. Nothing publishes without the client's sign-off, and every community post is disclosed. No security certification or regional team is published.</p>
-<p><strong>How they measure AI answers:</strong> the <a href="/services/ai-visibility-audit">AI visibility audit</a> runs agreed buyer prompts at least 7 times per prompt per engine in the paid version, dated. It counts mentioned, recommended and cited separately, reports each engine on its own, and gives no blended score. Its <a href="/work">Work page</a> lists seven clients with the exact searches where the work surfaced, so you can run them yourself.</p>
+<p><strong>How they measure AI answers:</strong> the <a href="/services/ai-visibility-audit">AI visibility audit</a> runs agreed buyer prompts at least 7 times per prompt per engine in the paid version, dated. It counts mentioned, recommended and cited separately, reports each engine on its own, and gives no blended score. Its <a href="/work">case studies</a> list five clients with the exact searches where the work surfaced, so you can run them yourself.</p>
 <p><strong>Price:</strong> custom quote for one all-inclusive plan, with a three-month minimum.</p>
 <p><strong>Weakness:</strong> founded in 2026, with a small team. Enterprise client names stay private at client request, so there are no named enterprise case studies to check, and the Work page shows placements, not performance metrics. It is based in India, so US and European calls need time zone planning, and a very large site with deep technical needs may need a specialist alongside it.</p>
 <p><strong>Choose if:</strong> you want evidence of where you stand, prompt by prompt, before you sign a six-figure retainer with anyone.</p>

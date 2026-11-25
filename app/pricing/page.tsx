@@ -58,6 +58,7 @@ export default function Pricing(){
      <ul className="pr-feats">
       {features.map(([t,d])=><li key={t}><span className="pr-tick"><Check size={14}/></span><span><b>{t}</b>: {d}</span></li>)}
      </ul>
+     <p>For a worked example, <Link href="/work/staragile">see how we did it for StarAgile</Link>.</p>
     </Reveal>
 
     <Reveal className="pr-ent">

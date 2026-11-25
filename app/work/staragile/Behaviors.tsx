@@ -1,0 +1,238 @@
+'use client';
+
+import {useEffect} from 'react';
+
+const SECTIONS = ['tldr', 'company', 'growth', 'challenges', 'solution', 'results', 'open', 'takeaways', 'faq'];
+
+/** Tabs, pause, wall rows, lightbox and the section nav. Markup stays in the server tree. */
+export function Behaviors() {
+  useEffect(() => {
+    const reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
+    const cleanups: Array<() => void> = [];
+
+    document.querySelectorAll<HTMLElement>('.sa .acw[data-rotate]').forEach(w => {
+      const tabs = [...w.querySelectorAll<HTMLButtonElement>('[role=tab]')];
+      const ks = tabs.map(b => b.dataset.k || '');
+      let timer = 0;
+      let stopped = reduce;
+      let hover = false;
+      let focused = false;
+      const show = (k: string) => {
+        tabs.forEach(b => {
+          const on = b.dataset.k === k;
+          b.setAttribute('aria-selected', String(on));
+          b.tabIndex = on ? 0 : -1;
+        });
+        w.querySelectorAll<HTMLElement>('.state').forEach(s => {
+          const on = s.dataset.for === k;
+          s.classList.toggle('on', on);
+          if (on) s.removeAttribute('aria-hidden');
+          else s.setAttribute('aria-hidden', 'true');
+        });
+        w.querySelectorAll<HTMLElement>('.tagw,.ac-cap').forEach(f => {
+          f.hidden = f.dataset.for !== k;
+        });
+        w.dataset.active = k;
+      };
+      const inside = () => w.contains(document.activeElement);
+      const held = () => stopped || hover || focused || inside() || document.hidden;
+      const arm = () => {
+        window.clearTimeout(timer);
+        if (held()) return;
+        timer = window.setTimeout(() => {
+          if (held()) {
+            focused = focused || inside();
+            return;
+          }
+          const i = ks.indexOf(w.dataset.active || ks[0]);
+          show(ks[(i + 1) % ks.length]);
+          arm();
+        }, 6000);
+      };
+      const halt = () => {
+        stopped = true;
+        window.clearTimeout(timer);
+      };
+      const onClick = (e: Event) => {
+        const t = e.target as HTMLElement;
+        const tab = t.closest<HTMLButtonElement>('[role=tab]');
+        if (tab && w.contains(tab)) {
+          halt();
+          show(tab.dataset.k || ks[0]);
+          return;
+        }
+        if (t.closest('.lbo')) halt();
+      };
+      const onKey = (e: KeyboardEvent) => {
+        const i = tabs.indexOf(document.activeElement as HTMLButtonElement);
+        const map: Record<string, number> = {ArrowRight: i + 1, ArrowLeft: i - 1, Home: 0, End: tabs.length - 1};
+        if (!(e.key in map) || i < 0) return;
+        e.preventDefault();
+        const n = (map[e.key] + tabs.length) % tabs.length;
+        show(ks[n]);
+        tabs[n].focus();
+      };
+      const onFocus = () => {
+        focused = true;
+        window.clearTimeout(timer);
+      };
+      const onBlur = (e: FocusEvent) => {
+        const next = e.relatedTarget as Node | null;
+        if (next && w.contains(next)) return;
+        focused = false;
+        arm();
+      };
+      const onDown = () => halt();
+      const onEnter = (e: PointerEvent) => {
+        if (e.pointerType !== 'mouse') return;
+        hover = true;
+        window.clearTimeout(timer);
+      };
+      const onLeave = () => {
+        if (!hover) return;
+        hover = false;
+        arm();
+      };
+      const onVis = () => arm();
+      w.addEventListener('click', onClick);
+      w.addEventListener('keydown', onKey);
+      w.addEventListener('focusin', onFocus);
+      w.addEventListener('focusout', onBlur);
+      w.addEventListener('pointerdown', onDown);
+      w.addEventListener('pointerenter', onEnter);
+      w.addEventListener('pointerleave', onLeave);
+      document.addEventListener('visibilitychange', onVis);
+      arm();
+      cleanups.push(() => {
+        window.clearTimeout(timer);
+        w.removeEventListener('click', onClick);
+        w.removeEventListener('keydown', onKey);
+        w.removeEventListener('focusin', onFocus);
+        w.removeEventListener('focusout', onBlur);
+        w.removeEventListener('pointerdown', onDown);
+        w.removeEventListener('pointerenter', onEnter);
+        w.removeEventListener('pointerleave', onLeave);
+        document.removeEventListener('visibilitychange', onVis);
+      });
+    });
+
+    document.querySelectorAll<HTMLButtonElement>('.sa .qw .xb').forEach(b => {
+      const fn = () => {
+        const open = b.getAttribute('aria-expanded') !== 'true';
+        b.setAttribute('aria-expanded', String(open));
+        const row = document.getElementById(b.getAttribute('aria-controls') || '');
+        if (row) row.hidden = !open;
+      };
+      b.addEventListener('click', fn);
+      cleanups.push(() => b.removeEventListener('click', fn));
+    });
+
+    const more = document.querySelector<HTMLButtonElement>('.sa .qw-more');
+    const wrap = document.querySelector('.sa .qw-wrap');
+    if (more && wrap) {
+      const fn = () => {
+        const open = wrap.classList.toggle('collapsed') === false;
+        more.setAttribute('aria-expanded', String(open));
+        more.textContent = open ? 'Show fewer' : 'Show all 23';
+      };
+      more.addEventListener('click', fn);
+      cleanups.push(() => more.removeEventListener('click', fn));
+    }
+
+    const lb = document.getElementById('sa-lb') as HTMLDialogElement | null;
+    let opener: HTMLElement | null = null;
+    const openLb = (b: HTMLElement) => {
+      if (!lb) return;
+      opener = b;
+      const img = document.getElementById('sa-lbi') as HTMLImageElement | null;
+      if (img) {
+        img.src = b.dataset.src || '';
+        img.width = Number(b.dataset.w || 0);
+        img.height = Number(b.dataset.h || 0);
+        img.alt = b.dataset.alt || '';
+      }
+      const title = document.getElementById('sa-lb-t');
+      const meta = document.getElementById('sa-lb-m');
+      const foot = document.getElementById('sa-lb-f');
+      if (title) title.textContent = b.dataset.title || '';
+      if (meta) meta.textContent = b.dataset.meta || '';
+      if (foot) foot.textContent = b.dataset.foot || '';
+      lb.style.setProperty('--lbw', `${Number(b.dataset.w || 0) + 40}px`);
+      lb.showModal();
+      document.getElementById('sa-lbx')?.focus();
+    };
+    const onDoc = (e: MouseEvent) => {
+      const b = (e.target as HTMLElement).closest<HTMLElement>('.sa .lbo');
+      if (b) openLb(b);
+    };
+    const onX = () => lb?.close();
+    const onBackdrop = (e: MouseEvent) => {
+      if (e.target === lb) lb?.close();
+    };
+    const onClose = () => opener?.focus();
+    document.addEventListener('click', onDoc);
+    document.getElementById('sa-lbx')?.addEventListener('click', onX);
+    lb?.addEventListener('click', onBackdrop);
+    lb?.addEventListener('close', onClose);
+    cleanups.push(() => {
+      document.removeEventListener('click', onDoc);
+      document.getElementById('sa-lbx')?.removeEventListener('click', onX);
+      lb?.removeEventListener('click', onBackdrop);
+      lb?.removeEventListener('close', onClose);
+    });
+
+    const links = [...document.querySelectorAll<HTMLAnchorElement>('.sa .v3-side a, .sa .v3-tabs a')];
+    const mark = (id: string) => {
+      links.forEach(a => {
+        const on = a.getAttribute('href') === `#${id}`;
+        a.classList.toggle('on', on);
+        if (on) a.setAttribute('aria-current', 'true');
+        else a.removeAttribute('aria-current');
+      });
+    };
+    const obs = new IntersectionObserver(
+      entries => {
+        const hit = entries.filter(e => e.isIntersecting).sort((a, b) => b.intersectionRatio - a.intersectionRatio)[0];
+        if (hit?.target.id) mark(hit.target.id);
+      },
+      {rootMargin: '-25% 0px -55% 0px', threshold: [0.1, 0.25, 0.5]},
+    );
+    SECTIONS.forEach(id => {
+      const el = document.getElementById(id);
+      if (el) obs.observe(el);
+    });
+    cleanups.push(() => obs.disconnect());
+
+    const head = document.querySelector<HTMLElement>('.sa .qw thead');
+    const sideNav = document.querySelector<HTMLElement>('.sa .v3-side');
+    const side = sideNav?.querySelector<HTMLElement>('ul') ?? null;
+    const tabs = document.querySelector<HTMLElement>('.sa .v3-tabs');
+    const place = () => {
+      if (head) {
+        const top = head.getBoundingClientRect().top;
+        head.classList.toggle('is-stuck', top <= 97);
+        head.classList.toggle('is-under', top < 88);
+      }
+      if (side && sideNav) {
+        const top = side.getBoundingClientRect().top;
+        side.classList.toggle('is-under', top < 88);
+        sideNav.classList.toggle('is-cover', top <= 97);
+      }
+      if (tabs && getComputedStyle(tabs).display !== 'none') {
+        const top = tabs.getBoundingClientRect().top;
+        tabs.classList.toggle('is-stuck', top <= 86);
+        tabs.classList.toggle('is-under', top < 76);
+      }
+    };
+    place();
+    document.addEventListener('scroll', place, {passive: true});
+    window.addEventListener('resize', place);
+    cleanups.push(() => {
+      document.removeEventListener('scroll', place);
+      window.removeEventListener('resize', place);
+    });
+
+    return () => cleanups.forEach(fn => fn());
+  }, []);
+  return null;
+}
