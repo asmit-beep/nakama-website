@@ -1,3 +1,4 @@
+import {nogoodAlternativesArticle} from './nogood-alternatives';
 import {minuttiaAlternativesArticle} from './minuttia-alternatives';
 import {geoAgenciesArticle} from './geo-agencies';
 import {aeoAgenciesArticle} from './aeo-agencies';
@@ -54,6 +55,7 @@ export type Article={
  coverImage?:{src:string,width:number,height:number,alt?:string},
 };
 export const articles:Article[]=[
+ nogoodAlternativesArticle,
  pepperVsTripledartArticle,
  perplexitySeoArticle,
  chatgptBusinessHubArticle,
