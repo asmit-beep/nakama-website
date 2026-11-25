@@ -32,7 +32,7 @@ export const organizationLd={
  url:SITE_URL,
  logo:abs('/brand/icon-512.png'),
  image:abs('/opengraph-image.png'),
- sameAs:['https://www.linkedin.com/company/nakama-growth/','https://www.instagram.com/nakama.growth/','https://www.youtube.com/@nakamagrowth'],
+ sameAs:['https://www.linkedin.com/company/nakama-growth/','https://www.instagram.com/nakama.growth/','https://www.youtube.com/@nakamagrowth','https://x.com/Nakamagrowth'],
  email:CONTACT_EMAIL,
  description:SITE_DESCRIPTION,
 hasOfferCatalog:{'@type':'OfferCatalog',name:'Nakama Growth plan',itemListElement:[
