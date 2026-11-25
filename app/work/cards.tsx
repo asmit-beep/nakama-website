@@ -21,6 +21,7 @@ export function WorkGrid(){
     </svg>
     <div className="ip-wrap wk-wrap">
       <div className="wk-grid">
+      <div className="wk-lead">
         {/* 1. StarAgile, lead card (published case study) */}
         <Link className="wk-card sa rv" href="/work/staragile" id="tile-staragile" data-reel="staragile" prefetch={false}>
           <div className="wk-media" aria-hidden="true">
@@ -540,6 +541,8 @@ export function WorkGrid(){
             </span>
           </div>
         </Link>
+      </div>
+      <div className="wk-pair">
         {/* 4. HubEngage */}
         <Link className="wk-card place hubengage rv" href="/work?client=hubengage#proof-hubengage" id="tile-hubengage" data-client="hubengage" data-reel="hubengage">
           <div className="wk-media" aria-hidden="true">
@@ -909,6 +912,7 @@ export function WorkGrid(){
             </span>
           </div>
         </Link>
+      </div>
       </div>
     </div>
   </>

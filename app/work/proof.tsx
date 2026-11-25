@@ -56,7 +56,7 @@ export function ProofBoard() {
           aria-labelledby={`wb-tab-${i}`}
           hidden={i === 0 ? undefined : true}
         >
-          <aside className="wb-client">
+          <div className="wb-client">
             <span className="wb-logo"><img src={CLIENT_LOGO[c.name]} alt="" width={CLIENT_DIM[c.name].w} height={CLIENT_DIM[c.name].h}/></span>
             <span className="wb-sector">{SECTOR[c.name]}</span>
             <h3>{c.name}</h3>
@@ -65,7 +65,7 @@ export function ProofBoard() {
               <div><dt>{c.name === 'StarAgile' ? 'Documented here' : 'Documented'}</dt><dd>{c.entries.length} placements</dd></div>
               <div><dt>Surfaces</dt><dd>{surfaces(c.entries)}</dd></div>
             </dl>
-          </aside>
+          </div>
           <ol className="wb-list">
             {c.entries.map(e => {
               const eng = engineOf(e.platform);
