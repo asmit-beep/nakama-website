@@ -2,7 +2,7 @@ import registry from '@/content/lastmod.json';
 
 /** Sitemap lastmod for core (non-journal) URLs, from the committed registry in content/lastmod.json.
  *  Deterministic: no git, no clock. The same commit always yields the same sitemap, on any clone depth. */
-type Entry={modified:string;src:string[]};
+type Entry={modified:string;reviewedThrough?:string;src:string[]};
 const ISO=/^\d{4}-\d{2}-\d{2}$/;
 const REG=registry as unknown as Record<string,Entry|string>;
 

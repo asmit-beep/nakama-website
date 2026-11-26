@@ -282,6 +282,7 @@ export default function DigitalPrServices() {
      <section className="final noborder" id={C_HREF.slice(1)}>
       <p className="cta-h">{CTA_H2}</p>
       <p className="lead">{CTA_SUB}</p>
+      <p className="lead"><Link href="/work">See our case studies</Link></p>
       <Ctas />
       <p className="wl">{WL}</p>
      </section>

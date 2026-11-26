@@ -37,11 +37,10 @@ export function ProofBoard() {
               role="tab"
               id={`wb-tab-${i}`}
               aria-controls={`proof-${clientSlug(c.name)}`}
-              aria-selected={i === 0}
-              className={i === 0 ? 'on' : undefined}
+              aria-selected={false}
               data-i={i}
             >
-              <img src={CLIENT_LOGO[c.name]} alt="" width={CLIENT_DIM[c.name].w} height={CLIENT_DIM[c.name].h}/>
+              <img src={CLIENT_LOGO[c.name]} alt="" width={CLIENT_DIM[c.name].w} height={CLIENT_DIM[c.name].h} loading="lazy" decoding="async"/>
               <span>{c.name}</span>
             </button>
           ))}
@@ -54,12 +53,11 @@ export function ProofBoard() {
           role="tabpanel"
           id={`proof-${clientSlug(c.name)}`}
           aria-labelledby={`wb-tab-${i}`}
-          hidden={i === 0 ? undefined : true}
         >
           <div className="wb-client">
-            <span className="wb-logo"><img src={CLIENT_LOGO[c.name]} alt="" width={CLIENT_DIM[c.name].w} height={CLIENT_DIM[c.name].h}/></span>
+            <span className="wb-logo"><img src={CLIENT_LOGO[c.name]} alt="" width={CLIENT_DIM[c.name].w} height={CLIENT_DIM[c.name].h} loading="lazy" decoding="async"/></span>
             <span className="wb-sector">{SECTOR[c.name]}</span>
-            <h3>{c.name}</h3>
+            <h3>{c.name}<span className="wb-sr"> live queries</span></h3>
             <p>{c.description}</p>
             <dl className="wb-meta">
               <div><dt>{c.name === 'StarAgile' ? 'Documented here' : 'Documented'}</dt><dd>{c.entries.length} placements</dd></div>
@@ -73,7 +71,7 @@ export function ProofBoard() {
               return (
                 <li key={e.platform + e.query} className="wb-row">
                   <span className={`wb-engine e-${eng.k}`} aria-hidden="true">
-                    <img src={eng.src} alt="" width={eng.w} height={eng.h}/>
+                    <img src={eng.src} alt="" width={eng.w} height={eng.h} loading="lazy" decoding="async"/>
                   </span>
                   <div className="wb-body">
                     <span className="wb-platform">{e.platform}</span>
@@ -81,7 +79,7 @@ export function ProofBoard() {
                     <p>{e.description}</p>
                     <div className="wb-actions">
                       <button type="button" data-copy={e.query}>Copy query</button>
-                      <a href={run.href} target="_blank" rel="noreferrer">{run.label}<span className="ext" aria-hidden="true"> ↗</span><span className="wb-sr"> (opens in a new tab)</span></a>
+                      <a href={run.href} target="_blank" rel="nofollow noopener noreferrer">{run.label}<span className="ext" aria-hidden="true"> ↗</span><span className="wb-sr"> (opens in a new tab)</span></a>
                     </div>
                   </div>
                 </li>

@@ -241,7 +241,7 @@ const bodyHtml = `<nav aria-label="Breadcrumb" class="article-breadcrumb"><ol st
 <li><strong>Based in:</strong> Delhi (founded in 2026).</li>
 <li><strong>SaaS focus:</strong> its pricing page lists "SaaS and software companies" first under good fit.</li>
 <li><strong>Services:</strong> buyer prompt map, tracking across four engines, YouTube, disclosed Reddit and Quora answers, Medium, Substack and LinkedIn articles, digital PR, G2, all published off your website (<a href="https://www.nakama.in/services/geo">GEO services</a>).</li>
-<li><strong>SaaS proof:</strong> named clients include Synup, Inventive AI, HubEngage and StarAgile (<a href="https://www.nakama.in/work">work</a>).</li>
+<li><strong>SaaS proof:</strong> named clients include Synup, Inventive AI, HubEngage and StarAgile (see the <a href="https://www.nakama.in/work">case studies</a>).</li>
 <li><strong>Pricing:</strong> one plan, quoted after a 15-minute call (<a href="https://www.nakama.in/pricing">get a GEO quote</a>).</li>
 <li><strong>Weakness:</strong> Nakama does no on-page work on your own website, publishes no prices and shows no metrics on its Work page.</li>
 <li><strong>Choose it if:</strong> your site is solid and AI names rivals from Reddit threads, videos and articles.</li>
@@ -457,7 +457,7 @@ export const bestGeoAgenciesForSaasArticle: Article = {
    "Based in: Delhi (founded in 2026).",
    "SaaS focus: its pricing page lists \"SaaS and software companies\" first under good fit.",
    "Services: buyer prompt map, tracking across four engines, YouTube, disclosed Reddit and Quora answers, Medium, Substack and LinkedIn articles, digital PR, G2, all published off your website ( GEO services ).",
-   "SaaS proof: named clients include Synup, Inventive AI, HubEngage and StarAgile ( work ).",
+   "SaaS proof: named clients include Synup, Inventive AI, HubEngage and StarAgile (see the case studies).",
    "Pricing: one plan, quoted after a 15-minute call ( get a GEO quote ).",
    "Weakness: Nakama does no on-page work on your own website, publishes no prices and shows no metrics on its Work page.",
    "Choose it if: your site is solid and AI names rivals from Reddit threads, videos and articles."

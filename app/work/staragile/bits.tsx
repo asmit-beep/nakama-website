@@ -27,7 +27,7 @@ export function Cap({engine, when, shot: s, forKey, hidden}: {engine: string; wh
     <p className="ac-cap" data-for={forKey} hidden={hidden}>
       <span>Recreated from {engine} · captured {when}</span>
       <span className="sep" aria-hidden="true">·</span>
-      <button type="button" className="lbo" data-shot={s.id} data-title={s.title} data-meta={s.meta} data-foot={s.foot} data-alt={s.alt} data-src={`/work/staragile/${s.id}.webp`} data-w={s.w} data-h={s.h} aria-haspopup="dialog">See original capture</button>
+      <button type="button" className="lbo" data-shot={s.id} data-title={s.title} data-meta={s.meta} data-foot={s.foot} data-alt={`Recreated from ${engine}, captured ${when}`} data-src={`/work/staragile/${s.id}.webp`} data-w={s.w} data-h={s.h} aria-haspopup="dialog">See original capture</button>
     </p>
   );
 }

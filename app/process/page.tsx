@@ -40,6 +40,11 @@ export default function Process(){
     </div>
    </IpSection>
 
+   <IpSection>
+    <IpHead eyebrow="Case studies" title={<>See the placements.</>} lead="Nakama Growth publishes case studies and the queries behind each live placement."/>
+    <LinkBtn href="/work">See our case studies</LinkBtn>
+   </IpSection>
+
    <IpCta/>
   </Shell>
  );

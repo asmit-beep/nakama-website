@@ -5,11 +5,11 @@
 export const PREVIEW = false;
 
 export const SLUG = '/work';
-export const TITLE = 'Case Studies: Client Work & AI Search Results | Nakama Growth';
+export const TITLE = 'Case Studies: AI Search Results for Clients | Nakama Growth';
 export const META =
   'One published case study and four more clients with live, verifiable placements across Google AI Overviews, AI Mode, ChatGPT, Perplexity and YouTube.';
 
-/** Same sector labels as the live work board in app/work/WorkBoard.tsx. */
+/** Sector labels shown on the live proof board. */
 export const SECTOR: Record<string, string> = {
   Synup: 'Local listings software',
   'Inventive AI': 'AI RFP software',

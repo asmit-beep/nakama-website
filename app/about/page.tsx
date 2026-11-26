@@ -70,6 +70,11 @@ export default function About(){
     </div>
    </IpSection>
 
+   <IpSection>
+    <IpHead eyebrow="Case studies" title={<>The work, with the queries.</>} lead="Nakama Growth publishes case studies and live placements you can run yourself."/>
+    <LinkBtn href="/work">See our case studies</LinkBtn>
+   </IpSection>
+
    <IpCta/>
   </Shell>
  );

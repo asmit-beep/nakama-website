@@ -6,6 +6,7 @@ import {Reveal,Logo} from './site';
 import {BookCallButton} from '@/components/booking/BookCall';
 import './presence-polish.css';
 import {proofClients} from './proof-data';
+import {clientSlug} from './work/copy';
 import {engineMarks,sourceMarks} from './hero-marks';
 
 const clients=[
@@ -37,7 +38,7 @@ export function ClientStrip(){
          const mark=<><span className="client-mark"><img src={`/clients/${c.src}`} width={42} height={42} alt="" loading="lazy"/></span><span className="client-name">{c.name}</span></>;
          return c.name==='Brandenburg'
           ? <span className="client-signature" key={`${copy}-${c.name}`}>{mark}</span>
-          : <Link className="client-signature" href={`/work?client=${encodeURIComponent(c.name)}`} tabIndex={copy?-1:0} key={`${copy}-${c.name}`} aria-label={`Explore work for ${c.name}`}>{mark}</Link>;
+          : <Link className="client-signature" href={`/work?client=${clientSlug(c.name)}#proof-${clientSlug(c.name)}`} tabIndex={copy?-1:0} key={`${copy}-${c.name}`} aria-label={`Explore work for ${c.name}`}>{mark}</Link>;
         })}
        </div>
       ))}
@@ -310,10 +311,14 @@ const sourceLogo=(platform:string)=>{
 function useTyped(text:string){
  const [n,setN]=useState(text.length);
  useEffect(()=>{
-  if(matchMedia('(prefers-reduced-motion: reduce)').matches){setN(text.length);return;}
-  setN(0);let i=0;
+  if(matchMedia('(prefers-reduced-motion: reduce)').matches){
+   const id=window.setTimeout(()=>setN(text.length),0);
+   return()=>clearTimeout(id);
+  }
+  let i=0;
+  const kick=window.setTimeout(()=>setN(0),0);
   const t=window.setInterval(()=>{i+=1;setN(i);if(i>=text.length)clearInterval(t);},28);
-  return()=>clearInterval(t);
+  return()=>{clearTimeout(kick);clearInterval(t);};
  },[text]);
  return text.slice(0,n);
 }
@@ -384,7 +389,7 @@ export function HomeProof(){
      </div>
      <header className="evidence-case">
       <div><span className="evidence-case-label">Casefile {String(proofClients.indexOf(active)+1).padStart(2,'0')} · {entry.platform}</span><h3>{active.name}</h3><p>{active.description}</p></div>
-      <Link className="evidence-case-link" href={`/work?client=${encodeURIComponent(active.name)}`}>Full client record<ArrowUpRight size={17}/></Link>
+      <Link className="evidence-case-link" href={`/work?client=${clientSlug(active.name)}#proof-${clientSlug(active.name)}`}>Full client record<ArrowUpRight size={17}/></Link>
      </header>
      <div className="evidence-grid" key={active.name}>
       {active.entries.map((e,i)=><EvidenceCard key={`${active.name}-${i}`} entry={e} index={i} brand={active.name} active={i===pick} onPick={()=>setPick(i)}/>)}

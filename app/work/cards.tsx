@@ -23,7 +23,38 @@ export function WorkGrid(){
       <div className="wk-grid">
       <div className="wk-lead">
         {/* 1. StarAgile, lead card (published case study) */}
-        <Link className="wk-card sa rv" href="/work/staragile" id="tile-staragile" data-reel="staragile" prefetch={false}>
+        <article className="wk-card sa rv" id="tile-staragile" data-reel="staragile">
+          <div className="wk-body">
+            <div className="wk-top">
+              <span className="wk-logo">
+                <img src="/work/clients/staragile.png" alt="StarAgile logo" width={236} height={150}/>
+              </span>
+              <h3>
+                {"StarAgile"}
+              </h3>
+              <span className="wk-pill study">
+                {"Case study"}
+              </span>
+            </div>
+            <div className="wk-metric">
+              <b>
+                {"45"}
+              </b>
+              <span>
+                {"AI answers named first, of 89 captured"}
+              </span>
+            </div>
+            <p className="wk-sub">
+              {"First on 23 of 48 buyer queries · all 4 AI engines"}
+            </p>
+            <Link className="wk-go" href="/work/staragile">
+              {"Read the case study "}
+              <svg className="arrow-go" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.4" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+                <path d="M7 7h10v10"/>
+                <path d="M7 17 17 7"/>
+              </svg>
+            </Link>
+          </div>
           <div className="wk-media" aria-hidden="true">
             <div className="reel reel-sa">
               <div className="stage">
@@ -137,40 +168,32 @@ export function WorkGrid(){
               </span>
             </p>
           </div>
+        </article>
+        {/* 2. Synup */}
+        <article className="wk-card place synup rv" id="tile-synup" data-client="synup" data-reel="synup">
           <div className="wk-body">
             <div className="wk-top">
               <span className="wk-logo">
-                <img src="/work/clients/staragile.png" alt="" width={236} height={150}/>
+                <img loading="lazy" decoding="async" src="/work/clients/synup.svg" alt="Synup logo" width={623} height={180}/>
               </span>
-              <h2>
-                {"StarAgile"}
-              </h2>
-              <span className="wk-pill study">
-                {"Case study"}
-              </span>
-            </div>
-            <div className="wk-metric">
-              <b>
-                {"45"}
-              </b>
-              <span>
-                {"AI answers named first, of 89 captured"}
+              <h3>
+                {"Synup"}
+              </h3>
+              <span className="wk-pill live">
+                {"Live placements"}
               </span>
             </div>
-            <p className="wk-sub">
-              {"First on 23 of 48 buyer queries · all 4 AI engines"}
+            <p className="wk-desc">
+              {"Comparisons and videos placed where agencies and franchisors research local marketing platforms. Local listings software, on Google AI Overviews, Google AI Mode, ChatGPT and YouTube."}
             </p>
-            <span className="wk-go">
-              {"Read the case study "}
-              <svg className="arrow-go" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.4" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
-                <path d="M7 7h10v10"/>
-                <path d="M7 17 17 7"/>
+            <Link className="wk-go" href="/work?client=synup#proof-synup">
+              {"See 4 live queries "}
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.4" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+                <path d="M12 5v14"/>
+                <path d="m6 13 6 6 6-6"/>
               </svg>
-            </span>
+            </Link>
           </div>
-        </Link>
-        {/* 2. Synup */}
-        <Link className="wk-card place synup rv" href="/work?client=synup#proof-synup" id="tile-synup" data-client="synup" data-reel="synup">
           <div className="wk-media" aria-hidden="true">
             <div className="reel reel-sy">
               <div className="stage">
@@ -345,7 +368,7 @@ export function WorkGrid(){
                     </ul>
                   </div>
                   <div className="endcard sy-end">
-                    <img src="/work/brandlogos/synup.svg" alt="" width={623} height={180}/>
+                    <img loading="lazy" decoding="async" src="/work/brandlogos/synup.svg" alt="" width={623} height={180}/>
                   </div>
                   <svg className="ptr sy-ptr">
                     <use href="#ptr"/>
@@ -362,32 +385,32 @@ export function WorkGrid(){
               </span>
             </p>
           </div>
+        </article>
+        {/* 3. Inventive AI */}
+        <article className="wk-card place inventive rv" id="tile-inventive" data-client="inventive-ai" data-reel="inventive">
           <div className="wk-body">
             <div className="wk-top">
               <span className="wk-logo">
-                <img src="/work/clients/synup.svg" alt="" width={623} height={180}/>
+                <img loading="lazy" decoding="async" src="/work/clients/inventive.png" alt="Inventive AI logo" width={158} height={158}/>
               </span>
-              <h2>
-                {"Synup"}
-              </h2>
+              <h3>
+                {"Inventive AI"}
+              </h3>
               <span className="wk-pill live">
                 {"Live placements"}
               </span>
             </div>
             <p className="wk-desc">
-              {"Comparisons and videos placed where agencies and franchisors research local marketing platforms."}
+              {"Comparisons and videos placed along the path a buyer takes to choose RFP software. AI RFP software, on Google AI Overviews, Google AI Mode, ChatGPT and YouTube."}
             </p>
-            <span className="wk-go">
+            <Link className="wk-go" href="/work?client=inventive-ai#proof-inventive-ai">
               {"See 4 live queries "}
               <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.4" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
                 <path d="M12 5v14"/>
                 <path d="m6 13 6 6 6-6"/>
               </svg>
-            </span>
+            </Link>
           </div>
-        </Link>
-        {/* 3. Inventive AI */}
-        <Link className="wk-card place inventive rv" href="/work?client=inventive-ai#proof-inventive-ai" id="tile-inventive" data-client="inventive-ai" data-reel="inventive">
           <div className="wk-media" aria-hidden="true">
             <div className="reel reel-iv">
               <div className="stage">
@@ -396,7 +419,7 @@ export function WorkGrid(){
                   {/* Scene A: RFP being drafted */}
                   <div className="iv-doc">
                     <div className="iv-doc-h">
-                      <img src="/work/clients/inventive.png" alt="" width={158} height={158}/>
+                      <img loading="lazy" decoding="async" src="/work/clients/inventive.png" alt="" width={158} height={158}/>
                       <b>
                         {"RFP Agent"}
                       </b>
@@ -494,7 +517,7 @@ export function WorkGrid(){
                     </div>
                   </div>
                   <div className="endcard iv-end">
-                    <img src="/work/brandlogos/inventive.svg" alt="" width={531} height={95}/>
+                    <img loading="lazy" decoding="async" src="/work/brandlogos/inventive.svg" alt="" width={531} height={95}/>
                   </div>
                   <svg className="ptr iv-ptr">
                     <use href="#ptr"/>
@@ -511,34 +534,34 @@ export function WorkGrid(){
               </span>
             </p>
           </div>
+        </article>
+      </div>
+      <div className="wk-pair">
+        {/* 4. HubEngage */}
+        <article className="wk-card place hubengage rv" id="tile-hubengage" data-client="hubengage" data-reel="hubengage">
           <div className="wk-body">
             <div className="wk-top">
               <span className="wk-logo">
-                <img src="/work/clients/inventive.png" alt="" width={158} height={158}/>
+                <img loading="lazy" decoding="async" src="/work/clients/hubengage.png" alt="HubEngage logo" width={162} height={162}/>
               </span>
-              <h2>
-                {"Inventive AI"}
-              </h2>
+              <h3>
+                {"HubEngage"}
+              </h3>
               <span className="wk-pill live">
                 {"Live placements"}
               </span>
             </div>
             <p className="wk-desc">
-              {"Comparisons and videos placed along the path a buyer takes to choose RFP software."}
+              {"Comparisons that put an internal comms platform in front of buyers researching with AI. Internal communications, on Google AI Overviews, Perplexity, Google AI Mode and ChatGPT."}
             </p>
-            <span className="wk-go">
+            <Link className="wk-go" href="/work?client=hubengage#proof-hubengage">
               {"See 4 live queries "}
               <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.4" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
                 <path d="M12 5v14"/>
                 <path d="m6 13 6 6 6-6"/>
               </svg>
-            </span>
+            </Link>
           </div>
-        </Link>
-      </div>
-      <div className="wk-pair">
-        {/* 4. HubEngage */}
-        <Link className="wk-card place hubengage rv" href="/work?client=hubengage#proof-hubengage" id="tile-hubengage" data-client="hubengage" data-reel="hubengage">
           <div className="wk-media" aria-hidden="true">
             <div className="reel reel-he">
               <div className="stage">
@@ -554,7 +577,7 @@ export function WorkGrid(){
                       <path className="l5" d="M400 250L400 60"/>
                     </svg>
                     <span className="he-core">
-                      <img src="/work/clients/white/hubengage.png" alt="" width={160} height={160}/>
+                      <img loading="lazy" decoding="async" src="/work/clients/white/hubengage.png" alt="" width={160} height={160}/>
                     </span>
                     <span className="he-n n1">
                       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
@@ -652,7 +675,7 @@ export function WorkGrid(){
                     </div>
                   </div>
                   <div className="endcard he-end">
-                    <img src="/work/brandlogos/hubengage.png" alt="" width={806} height={134}/>
+                    <img loading="lazy" decoding="async" src="/work/brandlogos/hubengage.png" alt="" width={403} height={67}/>
                   </div>
                   <svg className="ptr he-ptr">
                     <use href="#ptr"/>
@@ -669,32 +692,32 @@ export function WorkGrid(){
               </span>
             </p>
           </div>
+        </article>
+        {/* 5. BacklinkOS. No AI capture on file, so the cover shows their product UI motif (from backlinkos.io), not a citation. */}
+        <article className="wk-card place backlinkos rv" id="tile-backlinkos" data-client="backlinkos" data-reel="backlinkos">
           <div className="wk-body">
             <div className="wk-top">
               <span className="wk-logo">
-                <img src="/work/clients/hubengage.png" alt="" width={162} height={162}/>
+                <img loading="lazy" decoding="async" src="/work/clients/backlinkos.png" alt="BacklinkOS logo" width={84} height={80}/>
               </span>
-              <h2>
-                {"HubEngage"}
-              </h2>
+              <h3>
+                {"BacklinkOS"}
+              </h3>
               <span className="wk-pill live">
                 {"Live placements"}
               </span>
             </div>
             <p className="wk-desc">
-              {"Comparisons that put an internal comms platform in front of buyers researching with AI."}
+              {"Category content tying link-building workflows to the tool built for them. Backlink management, on Google AI Overviews and Perplexity."}
             </p>
-            <span className="wk-go">
-              {"See 4 live queries "}
+            <Link className="wk-go" href="/work?client=backlinkos#proof-backlinkos">
+              {"See 3 live queries "}
               <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.4" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
                 <path d="M12 5v14"/>
                 <path d="m6 13 6 6 6-6"/>
               </svg>
-            </span>
+            </Link>
           </div>
-        </Link>
-        {/* 5. BacklinkOS. No AI capture on file, so the cover shows their product UI motif (from backlinkos.io), not a citation. */}
-        <Link className="wk-card place backlinkos rv" href="/work?client=backlinkos#proof-backlinkos" id="tile-backlinkos" data-client="backlinkos" data-reel="backlinkos">
           <div className="wk-media" aria-hidden="true">
             <div className="reel reel-bl">
               <div className="stage">
@@ -702,7 +725,7 @@ export function WorkGrid(){
                   <div className="bl-bg"/>
                   <div className="bl-win">
                     <div className="bl-bar">
-                      <img src="/work/brandlogos/backlinkos.png" alt="" width={1006} height={294}/>
+                      <img loading="lazy" decoding="async" src="/work/brandlogos/backlinkos.png" alt="" width={480} height={140}/>
                       <span className="bl-tabs">
                         <b className="t-ex">
                           {"Exchanges"}
@@ -865,7 +888,7 @@ export function WorkGrid(){
                     <span className="sk w5 lt"/>
                   </div>
                   <div className="endcard bl-end">
-                    <img src="/work/brandlogos/backlinkos.png" alt="" width={1006} height={294}/>
+                    <img loading="lazy" decoding="async" src="/work/brandlogos/backlinkos.png" alt="" width={480} height={140}/>
                   </div>
                   <svg className="ptr bl-ptr">
                     <use href="#ptr"/>
@@ -882,30 +905,7 @@ export function WorkGrid(){
               </span>
             </p>
           </div>
-          <div className="wk-body">
-            <div className="wk-top">
-              <span className="wk-logo">
-                <img src="/work/clients/backlinkos.png" alt="" width={84} height={80}/>
-              </span>
-              <h2>
-                {"BacklinkOS"}
-              </h2>
-              <span className="wk-pill live">
-                {"Live placements"}
-              </span>
-            </div>
-            <p className="wk-desc">
-              {"Category content tying link-building workflows to the tool built for them."}
-            </p>
-            <span className="wk-go">
-              {"See 3 live queries "}
-              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.4" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
-                <path d="M12 5v14"/>
-                <path d="m6 13 6 6 6-6"/>
-              </svg>
-            </span>
-          </div>
-        </Link>
+        </article>
       </div>
       </div>
     </div>

@@ -279,7 +279,9 @@ export function HubMotion() {
       cleanups.push(() => t.removeEventListener('click', onClick));
     });
 
-    root.querySelectorAll<HTMLAnchorElement>('a.wk-card.place').forEach(card => {
+    root.querySelectorAll<HTMLElement>('.wk-card.place').forEach(card => {
+      const link = card.querySelector<HTMLAnchorElement>('a.wk-go');
+      if (!link) return;
       const onClick = (e: MouseEvent) => {
         if (e.defaultPrevented) return;
         if (e.button !== 0 || e.metaKey || e.ctrlKey || e.shiftKey || e.altKey) return;
@@ -288,14 +290,14 @@ export function HubMotion() {
         e.preventDefault();
         activate(i, false);
         try {
-          history.pushState(null, '', card.getAttribute('href') || urlForIndex(i));
+          history.pushState(null, '', link.getAttribute('href') || urlForIndex(i));
         } catch {
           /* ignore */
         }
         scrollToBoard(i);
       };
-      card.addEventListener('click', onClick);
-      cleanups.push(() => card.removeEventListener('click', onClick));
+      link.addEventListener('click', onClick);
+      cleanups.push(() => link.removeEventListener('click', onClick));
     });
 
     const onPop = () => {
@@ -328,9 +330,9 @@ export function HubMotion() {
     cleanups.push(() => window.removeEventListener('resize', onPillResize));
 
     const start = clientIndex();
-    activate(start, false);
     const hash = (location.hash || '').replace(/^#/, '');
     const hasClient = /[?&]client=/.test(location.search);
+    // Panels stay visible until a person picks a client. Crawlers that do not click still read every placement.
     if (hash === 'proof-board' || hash.indexOf('proof-') === 0 || hasClient) scrollToBoard(start);
 
     const rv = Array.from(root.querySelectorAll<HTMLElement>('.rv'));

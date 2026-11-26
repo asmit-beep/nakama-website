@@ -558,7 +558,7 @@ ${toc}
 <h2 id="proof-what-each-company-shows-publicly">Proof: what each company shows publicly</h2>
 <p>Each company publishes its own evidence, as of Nov 2026, and none of it is independently verified. Nakama Growth shows named clients with the exact queries where its work surfaced. Pepper and TripleDart publish case studies with their own reported figures. Treat every number below as that company's own claim, and check it on a call.</p>
 <ul>
-<li><strong>Nakama Growth</strong> shows <a href="https://www.nakama.in/work">named client placements on its Work page</a> for five clients: Synup, Inventive AI, HubEngage, StarAgile and BacklinkOS, each with the queries where the work surfaced.</li>
+<li><strong>Nakama Growth</strong> publishes <a href="https://www.nakama.in/work">case studies</a> for five clients: Synup, Inventive AI, HubEngage, StarAgile and BacklinkOS, each with the queries where the work surfaced.</li>
 <li>A Google AI Overview for "Best yext alternative" drew on Nakama Growth content for Synup, as shown on its Work page. The page notes that placements were captured when they went live and that live answers vary.</li>
 <li><strong>Pepper</strong> publishes case studies, including Acceldata and Talkspace, where Pepper reports it helped Talkspace "increase AI Citations by 123%" (<a href="https://www.pepper.inc/case-study/talkspace">Pepper Talkspace case study</a>).</li>
 <li><strong>TripleDart</strong> publishes AI search case studies, including Signeasy and Meegle, where TripleDart reports Signeasy "Grew Monthly LLM Sessions 3,650% in Six Months" (<a href="https://www.tripledart.com/customers">TripleDart customers</a>).</li>

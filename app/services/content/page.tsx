@@ -180,7 +180,10 @@ export default function ContentServices() {
       ))}
      </ul>
      <p className="content-scents">
-      <Link className="content-scent" href="/work">See our work →</Link>
+      See the <Link className="content-scent" href="/work/staragile">StarAgile case study</Link> for how the content fit into the program.
+     </p>
+     <p className="content-scents">
+      <Link className="content-scent" href="/work">See our case studies →</Link>
      </p>
     </div>
    </section>
