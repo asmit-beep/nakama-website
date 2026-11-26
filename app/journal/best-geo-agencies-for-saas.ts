@@ -154,7 +154,7 @@ const faqLd = {
    "name": "Should a SaaS startup hire a GEO agency or do it in-house?",
    "acceptedAnswer": {
     "@type": "Answer",
-    "text": "A seed-stage team with a writer can start in-house with a tracking tool and a short prompt list. An agency makes more sense once you need placements, PR and community work at a steady pace. Published entry retainers on our list start at $2,500 a month, as of Oct 2026."
+    "text": "A seed-stage team with a writer can start in-house with a tracking tool and a short prompt list. An agency makes more sense once you need placements, PR and community work at a steady pace. Published entry retainers on our list start at $2,500 a month, as of Oct 2026. Not sure GEO is worth funding yet? Start with is GEO worth it for a B2B SaaS company."
    }
   },
   {
@@ -338,7 +338,7 @@ const bodyHtml = `<nav aria-label="Breadcrumb" class="article-breadcrumb"><ol st
 <h3 id="does-a-saas-geo-agency-need-access-to-our-website">Does a SaaS GEO agency need access to our website?</h3>
 <p>It depends on scope. Arobis AI and DerivateX include on-site work such as schema and llms.txt, and Rock The Rankings expects your team to make technical and on-page edits. Nakama works only off-site, so your team or another agency keeps the website. Settle who publishes changes before you sign.</p>
 <h3 id="should-a-saas-startup-hire-a-geo-agency-or-do-it-in-house">Should a SaaS startup hire a GEO agency or do it in-house?</h3>
-<p>A seed-stage team with a writer can start in-house with a tracking tool and a short prompt list. An agency makes more sense once you need placements, PR and community work at a steady pace. Published entry retainers on our list start at $2,500 a month, as of Oct 2026.</p>
+<p>A seed-stage team with a writer can start in-house with a tracking tool and a short prompt list. An agency makes more sense once you need placements, PR and community work at a steady pace. Published entry retainers on our list start at $2,500 a month, as of Oct 2026. Not sure GEO is worth funding yet? Start with <a href="https://www.nakama.in/journal/is-geo-worth-it">is GEO worth it for a B2B SaaS company</a>.</p>
 <h3 id="can-a-geo-agency-for-saas-guarantee-chatgpt-citations">Can a GEO agency for SaaS guarantee ChatGPT citations?</h3>
 <p>No. AI answers change from run to run and depend on sources no agency controls. A credible agency will show a baseline, report movement over repeated runs and explain which changes it believes caused the shift, with dates attached to each change.</p>
 <h3 id="which-ai-engines-matter-most-for-b2b-software-buyers">Which AI engines matter most for B2B software buyers?</h3>
@@ -599,7 +599,7 @@ export const bestGeoAgenciesForSaasArticle: Article = {
  {
   "heading": "Should a SaaS startup hire a GEO agency or do it in-house?",
   "paragraphs": [
-   "A seed-stage team with a writer can start in-house with a tracking tool and a short prompt list. An agency makes more sense once you need placements, PR and community work at a steady pace. Published entry retainers on our list start at $2,500 a month, as of Oct 2026."
+   "A seed-stage team with a writer can start in-house with a tracking tool and a short prompt list. An agency makes more sense once you need placements, PR and community work at a steady pace. Published entry retainers on our list start at $2,500 a month, as of Oct 2026. Not sure GEO is worth funding yet? Start with is GEO worth it for a B2B SaaS company."
   ]
  },
  {
