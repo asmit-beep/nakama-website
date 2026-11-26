@@ -10,14 +10,16 @@ export function CountUp({to}: {to: number}) {
     const start = performance.now();
     const dur = 900;
     let raf = 0;
-    setN(0);
     const tick = (now: number) => {
       const t = Math.min(1, (now - start) / dur);
       const eased = 1 - (1 - t) ** 3;
       setN(Math.round(to * eased));
       if (t < 1) raf = requestAnimationFrame(tick);
     };
-    raf = requestAnimationFrame(tick);
+    raf = requestAnimationFrame(() => {
+      setN(0);
+      raf = requestAnimationFrame(tick);
+    });
     return () => cancelAnimationFrame(raf);
   }, [to]);
   return <span className="sa-count" style={{width: `${String(to).length}ch`}}>{n}</span>;
@@ -27,7 +29,6 @@ const REVEALS: Array<[string, number]> = [
   ['.sa .v3-tiles li', 70],
   ['.sa .v3-quote', 0],
   ['.sa .v3-hl', 0],
-  ['.sa .v3-frame', 40],
   ['.sa .ba-c', 80],
   ['.sa .sa-time .run tbody tr', 50],
 ];
@@ -47,19 +48,22 @@ export function PageMotion() {
     addEventListener('scroll', onScroll, {passive: true});
     addEventListener('resize', onScroll);
 
-    const observed: Array<{el: HTMLElement; io: IntersectionObserver}> = [];
-    if (!reduce) {
+    const observed: HTMLElement[] = [];
+    let io: IntersectionObserver | undefined;
+    if (!reduce && 'IntersectionObserver' in window) {
+      io = new IntersectionObserver(entries => {
+        entries.forEach(entry => {
+          if (!entry.isIntersecting) return;
+          entry.target.classList.add('sa-in');
+          io?.unobserve(entry.target);
+        });
+      }, {threshold: 0, rootMargin: '0px 0px -10% 0px'});
       for (const [sel, step] of REVEALS) {
         document.querySelectorAll<HTMLElement>(sel).forEach((el, i) => {
           el.classList.add('sa-prep');
           el.style.transitionDelay = `${i * step}ms`;
-          const io = new IntersectionObserver(([entry]) => {
-            if (!entry?.isIntersecting) return;
-            el.classList.add('sa-in');
-            io.disconnect();
-          }, {threshold: 0.16});
-          io.observe(el);
-          observed.push({el, io});
+          io?.observe(el);
+          observed.push(el);
         });
       }
     }
@@ -67,8 +71,8 @@ export function PageMotion() {
     return () => {
       removeEventListener('scroll', onScroll);
       removeEventListener('resize', onScroll);
-      observed.forEach(({el, io}) => {
-        io.disconnect();
+      io?.disconnect();
+      observed.forEach(el => {
         el.classList.remove('sa-prep', 'sa-in');
         el.style.transitionDelay = '';
       });

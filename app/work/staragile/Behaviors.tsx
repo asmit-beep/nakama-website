@@ -198,18 +198,28 @@ export function Behaviors() {
         else a.removeAttribute('aria-current');
       });
     };
-    const obs = new IntersectionObserver(
-      entries => {
-        const hit = entries.filter(e => e.isIntersecting).sort((a, b) => b.intersectionRatio - a.intersectionRatio)[0];
-        if (hit?.target.id) mark(hit.target.id);
-      },
-      {rootMargin: '-25% 0px -55% 0px', threshold: [0.1, 0.25, 0.5]},
-    );
-    SECTIONS.forEach(id => {
-      const el = document.getElementById(id);
-      if (el) obs.observe(el);
-    });
-    cleanups.push(() => obs.disconnect());
+    const activationLine = () => {
+      const nav = document.querySelector('.site-nav');
+      const tabs = document.querySelector<HTMLElement>('.sa .v3-tabs');
+      const navH = nav ? nav.getBoundingClientRect().height : 96;
+      const tabsH = tabs && getComputedStyle(tabs).display !== 'none' ? tabs.getBoundingClientRect().height : 0;
+      return navH + tabsH + 16;
+    };
+    const spy = () => {
+      const y = activationLine();
+      const doc = document.documentElement;
+      const atEnd = window.innerHeight + window.scrollY >= doc.scrollHeight - 2;
+      let current = SECTIONS[0];
+      if (atEnd) current = SECTIONS[SECTIONS.length - 1];
+      else {
+        for (const id of SECTIONS) {
+          const el = document.getElementById(id);
+          if (el && el.getBoundingClientRect().top <= y) current = id;
+        }
+      }
+      mark(current);
+    };
+    spy();
 
     const head = document.querySelector<HTMLElement>('.sa .qw thead');
     const sideNav = document.querySelector<HTMLElement>('.sa .v3-side');
@@ -232,12 +242,23 @@ export function Behaviors() {
         tabs.classList.toggle('is-under', top < 76);
       }
     };
+    let frame = 0;
+    const onScroll = () => {
+      if (frame) return;
+      frame = window.requestAnimationFrame(() => {
+        frame = 0;
+        place();
+        spy();
+      });
+    };
     place();
-    document.addEventListener('scroll', place, {passive: true});
-    window.addEventListener('resize', place);
+    spy();
+    document.addEventListener('scroll', onScroll, {passive: true});
+    window.addEventListener('resize', onScroll);
     cleanups.push(() => {
-      document.removeEventListener('scroll', place);
-      window.removeEventListener('resize', place);
+      if (frame) window.cancelAnimationFrame(frame);
+      document.removeEventListener('scroll', onScroll);
+      window.removeEventListener('resize', onScroll);
     });
 
     return () => cleanups.forEach(fn => fn());

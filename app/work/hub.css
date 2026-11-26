@@ -116,7 +116,7 @@
 .work-hub .wk-top h3{margin:0;font:700 32px/1.2 var(--ip-font);letter-spacing:-.035em;color:var(--ip-ink)}
 .work-hub .wk-card.sa .wk-top h3{font-size:36px}
 .work-hub .wk-pill{margin:0!important}
-.work-hub .wk-desc{margin:0;font-size:16px!important;line-height:1.5!important;color:var(--ip-body);max-width:52ch}
+.work-hub .wk-desc{margin:0;flex:none;height:auto;overflow:visible;font-size:16px!important;line-height:1.5!important;color:var(--ip-body);max-width:52ch}
 .work-hub .wk-quote{border-top:0!important;padding:0!important}
 .work-hub .wk-quote cite{margin-top:6px}
 .work-hub .wk-metric{margin-top:2px}
@@ -126,13 +126,9 @@
 .work-hub .wk-card.place .wk-go{margin-top:2px!important}
 .work-hub .wk-card.sa .wk-go{order:0!important}
 @media (min-width:769px){
-.work-hub .wk-card.place .wk-desc{position:absolute;left:14px;right:14px;top:calc(var(--side-w) * 5 / 8 - 92px);z-index:6;margin:0;pointer-events:none}
 .work-hub .wk-pair{container-type:inline-size}
-.work-hub .wk-card.hubengage .wk-desc,.work-hub .wk-card.backlinkos .wk-desc{top:calc((100cqi - var(--gcol)) / 2 * 5 / 8 - 92px)}
 }
 @media (hover:hover) and (pointer:fine) and (min-width:1025px){
-.work-hub .wk-card .wk-desc{visibility:hidden;opacity:0;transform:translateY(20px);transition:opacity .3s ease,transform .3s ease,visibility .3s ease}
-.work-hub .wk-card:hover .wk-desc,.work-hub .wk-card:focus-within .wk-desc,.work-hub .wk-card.is-hover .wk-desc{visibility:visible;opacity:1;transform:translateY(0)}
 .work-hub .wk-card.sa .arrow-go{transition:transform .3s ease}
 .work-hub .wk-card.sa:hover .arrow-go{transform:rotate(45deg)}}
 .work-hub .wk-media .cover-cap{left:12px;right:auto;bottom:12px;padding:7px 11px;border-radius:999px;gap:8px;
@@ -617,11 +613,30 @@ html.work-hub-js .work-hub .rv{opacity:1!important;transform:none!important}
 @keyframes bl-ps{0%{--ps:1}29.6%{--ps:1}30.6%{--ps:.82}32.2%{--ps:1}100%{--ps:1}}
 .work-hub .bl-ptr{--px:calc(860*var(--u));--py:calc(560*var(--u))}
 .work-hub .is-playing .bl-ptr{animation-name:bl-px,bl-py,bl-ps;animation-timing-function:cubic-bezier(.55,.05,.25,1),cubic-bezier(.3,.1,.2,1),ease-in-out}
-/* Hero and section heads paint at full opacity. Reveal would hold the LCP text and fail contrast until JS. */
-.work-hub .ip-hero-copy.reveal,
-.work-hub .ip-hero-copy.reveal-ready,
+/* Hero copy paints at full opacity on first paint. .reveal-ready is 0.55 and ip-rise holds the lead at 0 until its delay ends. */
+.work-hub .ip-hero .reveal,
+.work-hub .ip-hero .reveal.reveal-ready,
+.work-hub .ip-hero .reveal.reveal-in,
 .work-hub .ip-head.reveal,
-.work-hub .ip-head.reveal-ready{opacity:1!important;transform:none!important;filter:none!important;transition:none!important}
+.work-hub .ip-head.reveal.reveal-ready,
+.work-hub .ip-head.reveal.reveal-in,
+.work-hub .ip-hero .ip-eyebrow,
+.work-hub .ip-hero h1,
+.work-hub .ip-hero .ip-lead,
+.work-hub .ip-hero .ip-lead .ip-meta,
+.work-hub .ip-hero .ip-actions{
+  opacity:1!important;
+  transform:none!important;
+  filter:none!important;
+  animation:none!important;
+  transition:none!important;
+}
+@media (prefers-reduced-motion:reduce){
+.work-hub .ip-hero .reveal,
+.work-hub .ip-hero h1,
+.work-hub .ip-hero .ip-lead,
+.work-hub .ip-hero .ip-actions{animation:none!important;opacity:1!important;transform:none!important;filter:none!important}
+}
 .work-hub .ip-lead .ip-meta{display:block;margin-top:14px;font-size:14px;font-weight:600;letter-spacing:.02em;color:#AEB0B6}
 .work-hub .wk-sec-h{margin:0 0 28px;font:700 clamp(28px,3vw,40px)/1.15 var(--ip-font);color:#f6f3ee}
 .work-hub #client-summary{padding-top:8px}
@@ -635,4 +650,5 @@ html.work-hub-js .work-hub .rv{opacity:1!important;transform:none!important}
 .work-hub .wk-count-note{max-width:68ch;margin:22px 0 0;color:#AEB0B6;font-size:17px;line-height:1.6}
 .work-hub .wk-count-note a{color:#F2A06A;text-decoration:underline;text-underline-offset:3px}
 .work-hub .wb-stage+.wb-stage{margin-top:28px;padding-top:28px;border-top:1px solid rgba(255,255,255,.08)}
+.work-hub :is(#proof-board,#how-we-count,#client-summary,#h-client-results,#h-client-summary,.wb-stage){scroll-margin-top:128px}
 .work-hub .wb-tabs:not(:has(.on)) .wb-pill{opacity:0}
