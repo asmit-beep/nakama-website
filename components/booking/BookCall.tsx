@@ -100,7 +100,7 @@ export function BookCallModal() {
           {!loaded && <div className="bc-loading"><i /><span>Loading available times…</span></div>}
           {opened && (
             <iframe
-              title="Book a call with Nakama"
+              title="Book a call with Nakama Growth"
               key={len}
               src={`${CAL}/${len}?embed=true&theme=dark&layout=month_view${prefill.name ? `&name=${encodeURIComponent(prefill.name)}` : ""}${prefill.email ? `&email=${encodeURIComponent(prefill.email)}` : ""}${prefill.notes ? `&notes=${encodeURIComponent(prefill.notes)}` : ""}`}
               onLoad={() => setLoaded(true)}

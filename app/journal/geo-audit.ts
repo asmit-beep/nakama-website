@@ -240,7 +240,7 @@ export const geoAuditArticle: Article = {
  publishedAt: PUBLISHED_AT,
  modifiedAt: MODIFIED_AT,
  authorName: 'Yash Kumar',
- coverImage: {src: '/journal/geo-audit/geo-audit-hero.png', width: 1200, height: 630},
+ coverImage: {src: '/journal/geo-audit/geo-audit-hero.png', width: 1200, height: 630, alt: "Nakama Growth journal cover: GEO audit, how to check your SaaS brand's AI visibility in 2026"},
  ogImage: {
   url: 'https://www.nakama.in/journal/geo-audit/geo-audit-og.png',
   width: 1200,

@@ -12,7 +12,7 @@ import styles from './is-geo-worth-it.module.css';
  */
 const PUBLISHED_AT = '2026-11-26T09:00:00+05:30';
 const MODIFIED_AT = PUBLISHED_AT;
-const PREVIEW = true;
+const PREVIEW = false;
 
 const dayOf = (iso: string) => iso.slice(0, 10);
 
@@ -211,6 +211,15 @@ const cta1 = journalCta({
  headline: 'Series A or later, with competitors already named in AI answers?',
  sub: 'Share your website and goals, and we will tell you on a 15-minute pricing call whether a 90-day test makes sense.',
  buttonHref: QUOTE_URL,
+});
+const cta2 = journalCta({
+ variant: 'inline',
+ id: 'is-geo-worth-it-2',
+ headline: 'Not sure which list you match?',
+ sub: 'Get a free AI visibility check: we run 1 to 3 buyer prompts (yours, plus up to 2 we write) on 2 engines, 3 runs each, against up to 3 competitors you name, and email you the results. It is a check, not a full measurement.',
+ subLink: {text: 'free AI visibility check', href: CHECK_URL},
+ buttonLabel: 'free AI visibility check',
+ buttonHref: CHECK_URL,
 });
 const cta3 = journalCta({
  variant: 'inline',
@@ -452,7 +461,7 @@ ${h2('When is GEO worth it for B2B SaaS, and when is it not?')}
 <li>You need revenue proof within 30 days. The test takes a quarter, and pipeline lags further.</li>
 </ul>
 <p>Our own case study shows the limits. In the StarAgile results window, StarAgile was not named first on any of 9 PMP or 6 SAFe queries, and was first on 1 of 6 DevOps queries. Visibility came where the work went and where the brand had proof. It did not spread to other topics by default.</p>
-<blockquote><p>Not sure which list you match? Get a ${link(CHECK_URL, 'free AI visibility check')}: we run 1 to 3 buyer prompts (yours, plus up to 2 we write) on 2 engines, 3 runs each, against up to 3 competitors you name, and email you the results. It is a check, not a full measurement.</p></blockquote>
+${cta2}
 ${h2('What does GEO cost compared with what one deal is worth?')}
 <p>Compare GEO's cost with one deal by working out break-even: the number of AI-sourced opportunities a 90-day test must produce to pay for itself. Do this before you try to model GEO ROI. Retainers vary with scope and the engines covered, so price your own scope against our guide to ${link('https://www.nakama.in/journal/geo-aeo-pricing', 'what GEO costs in 2026')}.</p>
 <p><strong>Break-even formula (fill in your own numbers)</strong></p>
