@@ -203,7 +203,8 @@ export function Behaviors() {
       const tabs = document.querySelector<HTMLElement>('.sa .v3-tabs');
       const navH = nav ? nav.getBoundingClientRect().height : 96;
       const tabsH = tabs && getComputedStyle(tabs).display !== 'none' ? tabs.getBoundingClientRect().height : 0;
-      return navH + tabsH + 16;
+      const mobile = window.matchMedia('(max-width: 1023px)').matches;
+      return Math.max(navH + tabsH + 16, mobile ? 192 : 152);
     };
     const spy = () => {
       const y = activationLine();
