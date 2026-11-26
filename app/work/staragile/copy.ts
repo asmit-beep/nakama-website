@@ -4,9 +4,9 @@
  */
 export const PREVIEW = false;
 
-/** Page went live 26 Nov 2026 IST. Capture dates in the study are measurement dates, not this publish date. */
-export const PUBLISHED_AT = '2026-11-26T09:00:00+05:30';
-export const MODIFIED_AT = '2026-11-26T09:00:00+05:30';
+/** Real ship time, 26 Nov 2026 04:55 IST (dpl_gH1HMkrFwnvGBGmU6ZKdgXp83zzd). dateModified matches that instant because this correction is the ship itself. Capture dates in the study are measurement dates, not this publish date. */
+export const PUBLISHED_AT = '2026-11-26T04:55:00+05:30';
+export const MODIFIED_AT = '2026-11-26T04:55:00+05:30';
 
 export const SLUG = '/work/staragile';
 
@@ -24,23 +24,23 @@ export const H1 = "How StarAgile Became AI Search's First Pick for Scrum Trainin
 export const FAQ: {q: string; a: string}[] = [
   {
     q: 'What is generative engine optimization (GEO) for edtech?',
-    a: 'GEO is the work of getting a brand named inside AI answers on ChatGPT, Perplexity, Google AI Overviews and AI Mode. In certification training, that means being in the shortlist an AI gives when someone asks for "the best CSM training" or "alternatives to" a competitor.',
+    a: 'Generative engine optimization (GEO) for edtech is the work of getting a training brand named inside AI answers on ChatGPT, Perplexity, Google AI Overviews and Google AI Mode. For certification providers like StarAgile, that means earning top placement when buyers ask for "the best CSM training" or competitor alternatives.',
   },
   {
-    q: 'What results did StarAgile get?',
-    a: 'Between 19 August and 9 November 2026, AI engines named StarAgile first in 45 of the 89 AI answers we captured. That covered 23 of the 48 buyer queries we tracked, including 12 of the 13 Certified ScrumMaster queries and all 5 CSPO queries we tracked.',
+    q: 'What AI visibility results did StarAgile get with Nakama Growth?',
+    a: 'Between 19 August and 9 November 2026, Nakama Growth helped StarAgile earn the first-named spot in 45 of 89 captured AI answers across Google AI Overviews, Google AI Mode, ChatGPT and Perplexity. Those wins covered 23 of 48 tracked buyer queries, including 12 of 13 CSM queries and all 5 CSPO queries.',
   },
   {
     q: 'How long did it take StarAgile to appear first in ChatGPT?',
-    a: 'StarAgile flagged ChatGPT as the gap on 3 August 2026. ChatGPT listed StarAgile in a comparison table by 31 August and put it in the first row in the week of 1 to 7 September.',
+    a: "StarAgile flagged ChatGPT as its primary visibility gap on 3 August 2026. Following Nakama Growth's answer-first guides and off-site placements, ChatGPT listed StarAgile inside a comparison table by 31 August 2026 and placed StarAgile in the first table row during the week of 1 to 7 September 2026.",
   },
   {
-    q: 'How did you measure the results?',
-    a: 'We ran each query without a year, in Incognito, on all four engines, and screenshotted the answer. Each answer counts once. "Named first", "named" and "StarAgile page cited" are reported separately. Answers that cited only our own guides count as not present.',
+    q: 'How does Nakama Growth measure AI visibility results?',
+    a: 'Nakama Growth runs each tracked query without a year, in Incognito mode, across all four AI engines and screenshots every answer. Each answer counts once. "Named first", "named" and "StarAgile page cited" are reported separately, while answers citing only Nakama Growth\'s own guides are counted as not present.',
   },
   {
     q: 'Does GEO work for certification training companies?',
-    a: 'Yes, when the category is standardised. Buyers compare the same credential on trust, trainer quality, schedule and support, and AI engines summarise exactly those differences. Clear, consistent proof points across many sources help an engine label you.',
+    a: 'Yes, generative engine optimization works well for certification training companies because the credential itself is standardised across providers. Learners ask AI engines to compare trust, trainer quality, schedules and guarantees. Consistent proof points repeated across comparison guides, community threads and articles help engines award a clear category label.',
   },
 ];
 

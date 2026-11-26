@@ -197,6 +197,7 @@ export default function AiVisibilityAuditPage() {
     <section className="s s-alt rscene" id="report">
      <div className="wrap">
       <h2>{REPORT_H2}</h2>
+      <p className="sublead">See what this looks like in practice in Nakama Growth&apos;s <Link href="/work/staragile">StarAgile case study</Link>.</p>
       <ReportScene>
        <ol className="anns">
         {ANNS.map(([key, title, body], i) => (

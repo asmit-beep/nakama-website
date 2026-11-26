@@ -4,7 +4,6 @@ import {FAQ} from './copy';
 import {Cap, Tag, shot} from './bits';
 import {QueryWall} from './Wall';
 import {CountUp, PageMotion} from './motion';
-import {saFont400, saFont500, saFont600, saHeroFont} from './font';
 
 const ENGINE = {
   google: '/work/staragile/engines/google-g.svg',
@@ -93,21 +92,23 @@ const WINS: Array<[string, string, string]> = [
 
 export function CaseStudy() {
   return (
-    <article className={`sa ${saHeroFont.variable} ${saFont400.variable} ${saFont500.variable} ${saFont600.variable}`}>
+    <article className="sa">
       <PageMotion/>
       <div className="sa-glow" aria-hidden="true"><i className="a1"/><i className="a2"/><i className="a3"/></div>
-      <p className="sa-back"><Link href="/work">All work</Link></p>
+      <p className="sa-back"><Link href="/work">All case studies</Link></p>
       <section className="v3-hero" aria-labelledby="h-hero">
         <div className="v3-band">
           <div className="v3-band-l">
             <p className="v3-eyebrow">CASE STUDY · EDTECH · GENERATIVE ENGINE OPTIMIZATION</p>
             <h1 id="h-hero">How StarAgile Became <span className="sa-grad">AI Search&apos;s First Pick for Scrum Training</span></h1>
-            <p className="v3-sub">StarAgile was named first in <b><CountUp to={45} /> AI answers</b> across Google AI Overviews, AI Mode, ChatGPT and Perplexity. That covered <b><CountUp to={12} /> of <CountUp to={13} /></b> Certified ScrumMaster queries we tracked and <b>all <CountUp to={5} /></b> CSPO queries.</p>
+            <p className="v3-sub">Between 19 August and 9 November 2026, Nakama Growth got StarAgile named first in <b>45 of 89 AI answers</b> across Google AI Overviews, Google AI Mode, ChatGPT and Perplexity. That covered <b>23 of 48</b> tracked buyer queries, including <b>12 of 13</b> Certified ScrumMaster queries and <b>all 5</b> CSPO queries.</p>
             <dl className="v3-meta">
+              <div><dt>Agency</dt><dd>Nakama Growth</dd></div>
               <div><dt>Client</dt><dd>StarAgile (staragile.com)</dd></div>
               <div><dt>Industry</dt><dd>Edtech: professional certification training</dd></div>
               <div><dt>Engagement</dt><dd>12 June 2026 to ongoing</dd></div>
               <div><dt>Results window</dt><dd>19 August to 9 November 2026 (six reports, 115 screenshots)</dd></div>
+              <div><dt>Published and updated</dt><dd><time dateTime="2026-11-26">26 November 2026</time></dd></div>
             </dl>
           </div>
           <div className="v3-band-r">
@@ -175,9 +176,15 @@ export function CaseStudy() {
                 <Cap engine="Perplexity" when="1 to 7 Sep 2026" shot={HERO.pplx} forKey="pplx" hidden/>
               </div>
             </div>
+            <ul className="sa-engine-list">
+              <li><b>Google AI Overviews:</b> StarAgile is the top overall choice for Certified ScrumMaster (CSM) training in India.</li>
+              <li><b>Google AI Mode:</b> StarAgile is the best overall pick for professionals in India.</li>
+              <li><b>ChatGPT:</b> StarAgile is in the first row, for working professionals and weekend batches.</li>
+              <li><b>Perplexity:</b> StarAgile currently offers the strongest overall package.</li>
+            </ul>
             <figure className="v3-quote v3-blk is-cream">
               <span className="v3-qg" aria-hidden="true">&ldquo;</span>
-              <blockquote><p>&quot;It&apos;s good to see StarAgile getting visibility on generic prompts now. Let&apos;s maintain this pace.&quot;</p></blockquote>
+              <blockquote><p>It&apos;s good to see StarAgile getting visibility on generic prompts now. Let&apos;s maintain this pace.</p></blockquote>
               <figcaption>Rishav Kumar, StarAgile · 1 September 2026</figcaption>
             </figure>
           </div>
@@ -198,7 +205,7 @@ export function CaseStudy() {
           </ul>
         </nav>
         <div className="v3-col">
-          <nav className="v3-tabs" aria-label="On this page">
+          <nav className="v3-tabs" aria-label="Page sections">
             <ul>
               {NAV.map(([, id, label]) => (
                 <li key={id}><a href={`#${id}`}>{label}</a></li>
@@ -208,14 +215,14 @@ export function CaseStudy() {
           <div className="v3-stack">
             <aside className="v3-how v3-blk is-dark" id="counting" aria-label="How we counted">
               <p className="v3-lbl">How we counted</p>
-              <p>Every result comes from dated screenshots of real AI answers, all typed without a year, in Incognito. An answer counts once, however many screenshots it took. &quot;Named first&quot; means StarAgile is ranked or named first. If an answer cites a StarAgile page without naming it, it shows as &quot;StarAgile page cited&quot;. Answers that cite only our own guides count as not present. None of this is a traffic estimate. The window runs from 19 August to 9 November 2026.</p>
+              <p>Nakama Growth counts every result from dated screenshots of real AI answers, all typed without a year, in Incognito. An answer counts once, however many screenshots it took. &quot;Named first&quot; means StarAgile is ranked or named first. If an answer cites a StarAgile page without naming it, it shows as &quot;StarAgile page cited&quot;. Answers that cite only Nakama Growth&apos;s own guides count as not present. None of this is a traffic estimate. The window runs from 19 August to 9 November 2026.</p>
             </aside>
 
             <Open n="02" id="tldr" title="TL;DR">
               <div className="v3-body">
                 <ul>
                   <li><b>The problem:</b> Indian professionals now ask ChatGPT, Perplexity and Google&apos;s AI features for &quot;the best CSM training.&quot; On 3 August, StarAgile told us it had &quot;little to no visibility on ChatGPT.&quot;</li>
-                  <li><b>What we did:</b> We mapped the questions buyers ask, by intent. Then we wrote an answer-first guide for each one and published it where AI engines already look: comparison guides, community answers and expert articles. We kept StarAgile&apos;s proof points identical everywhere and checked every engine each week.</li>
+                  <li><b>What Nakama Growth did:</b> Nakama Growth mapped the questions certification buyers ask, by intent. The team wrote an answer-first guide for each query and published placements where AI engines already look: comparison guides, community answers and expert articles, keeping StarAgile&apos;s proof points identical across every source and checking all four engines weekly.</li>
                   <li><b>The result:</b> Over 19 August to 9 November, AI engines named StarAgile first in 45 answers. That included 26 of 31 answers to Scrum Master queries. Google AI Overviews called it &quot;the best overall alternative to Simpliaxis.&quot; ChatGPT went from &quot;little to no visibility&quot; to listing StarAgile first within five weeks.</li>
                 </ul>
               </div>
@@ -223,9 +230,9 @@ export function CaseStudy() {
 
             <section className="v3-co v3-blk is-cream" id="company" aria-labelledby="h-company">
               <p className="v3-lbl" aria-hidden="true">03</p>
-              <h2 id="h-company">The Company</h2>
+              <h2 id="h-company">The company</h2>
               <i className="v3-bar" aria-hidden="true"/>
-              <p>StarAgile is a Bengaluru-based training company for Agile, Scrum, SAFe, PMP and DevOps certifications. Between 19 August and 9 November 2026, AI engines named it first for 23 different buyer questions. The best example is Google&apos;s AI Overview calling it &quot;the top overall choice for Certified ScrumMaster (CSM) training in India.&quot;</p>
+              <p><a href="https://staragile.com">StarAgile</a> is a Bengaluru-based training company for Agile, Scrum, SAFe, PMP and DevOps certifications that partnered with Nakama Growth in June 2026. Between 19 August and 9 November 2026, AI engines named StarAgile first for 23 different buyer questions, including Google&apos;s AI Overview calling it &quot;the top overall choice for Certified ScrumMaster (CSM) training in India.&quot;</p>
               <p>StarAgile was founded in 2016. Its founder and CEO, Narasimha Reddy Bommaka, is a Certified Scrum Trainer (CST). StarAgile trains working professionals in Agile and Scrum, SAFe, PMP, DevOps and software testing.</p>
               <p>StarAgile reports:</p>
               <ul>
@@ -240,9 +247,9 @@ export function CaseStudy() {
               </dl>
             </section>
 
-            <Open n="04" id="growth" title="Growth Summary: results at a glance">
+            <Open n="04" id="growth" title="What AI search results did StarAgile achieve?">
               <div className="v3-body">
-                <p>StarAgile already had the scale, the credentials and the course formats Indian professionals want. What it lacked was a consistent place inside the AI answer, where buyers now build their shortlist.</p>
+                <p>Between 19 August and 9 November 2026, Nakama Growth got StarAgile named first in 45 of 89 captured AI answers across Google AI Overviews, Google AI Mode, ChatGPT and Perplexity. StarAgile appeared in 30 of 48 tracked queries and ranked first on 23 queries across at least one engine.</p>
                 <p><b>Across 89 AI answers captured between 19 August and 9 November 2026:</b></p>
                 <ul>
                   <li><b>45</b> named StarAgile first: 24 on Google AI Overviews, 11 on ChatGPT, 5 on Google AI Mode and 5 on Perplexity.</li>
@@ -257,9 +264,9 @@ export function CaseStudy() {
               </div>
             </Open>
 
-            <Open n="05" id="challenges" title="The Challenges">
+            <Open n="05" id="challenges" title="The challenges">
               <aside className="v3-hl v3-blk is-cream" aria-labelledby="hl-c">
-                <h3 id="hl-c">Highlights</h3>
+                <h3 id="hl-c">Why StarAgile struggled to appear in AI answers</h3>
                 <ul>
                   <li>A commodity category: every provider sells the same Scrum Alliance, PMI and Scaled Agile credentials.</li>
                   <li>Strong incumbents that AI engines had already learned to recommend.</li>
@@ -277,7 +284,7 @@ export function CaseStudy() {
               </div>
               <figure className="v3-quote v3-blk is-cream">
                 <span className="v3-qg" aria-hidden="true">&ldquo;</span>
-                <blockquote><p>&quot;While it is good to see consistent results across Google AI Overview and AI Mode, the overall AI visibility is not yet where it needs to be. ... we currently have little to no visibility on ChatGPT, which is one of the most widely used platforms for all type of queries.&quot;</p></blockquote>
+                <blockquote><p>While it is good to see consistent results across Google AI Overview and AI Mode, the overall AI visibility is not yet where it needs to be. ... we currently have little to no visibility on ChatGPT, which is one of the most widely used platforms for all type of queries.</p></blockquote>
                 <figcaption>Rishav Kumar, StarAgile · 3 August 2026</figcaption>
               </figure>
               <div className="v3-body">
@@ -286,9 +293,9 @@ export function CaseStudy() {
               </div>
             </Open>
 
-            <Open n="06" id="solution" title="The Solution: a GEO playbook for edtech">
+            <Open n="06" id="solution" title="The solution: a GEO playbook for edtech">
               <aside className="v3-hl v3-blk is-cream" aria-labelledby="hl-s">
-                <h3 id="hl-s">Highlights</h3>
+                <h3 id="hl-s">How Nakama Growth structured the edtech GEO campaign</h3>
                 <ul>
                   <li>Map the questions buyers actually ask, by intent.</li>
                   <li>Write answer-first content that AI can quote, with a verdict in the first lines.</li>
@@ -313,7 +320,7 @@ export function CaseStudy() {
                 <h3>2. Answer-first content that AI can quote</h3>
                 <p>AI engines lift sentences, not pages. So every guide opens with a direct verdict, then backs it up with a comparison table. Each table uses the same columns: best for, format, inclusions and support. Tables are what Google AI Overviews, ChatGPT and Perplexity turn into their own shortlists. Each guide answers one buyer question, and its title is that question.</p>
                 <h3>3. Publish where AI engines already look</h3>
-                <p>For each cluster of questions, we checked which kinds of sources the engines were already citing: expert articles, comparison guides, community answers and official Scrum Alliance help pages. Then we made sure StarAgile was well represented on those kinds of sources. Of the 323 unique placements we published from June to November, 260 are live today. That count covers posts, answers and comments, checked on 19 November 2026.</p>
+                <p>For each cluster of questions, Nakama Growth audited which source types AI engines already cited: expert articles, comparison guides, community answers and official Scrum Alliance help pages. Nakama Growth then built StarAgile&apos;s presence across those exact source types. Of 323 unique placements published from June to November 2026, 260 remained live as of 19 November 2026.</p>
                 <h3>4. One position, repeated everywhere</h3>
                 <p>AI engines trust claims they see repeated across sources. Every asset used the same StarAgile proof points:</p>
                 <ul>
@@ -328,9 +335,9 @@ export function CaseStudy() {
               </div>
             </Open>
 
-            <Open n="07" id="results" title="The Results: AI search visibility across four engines">
+            <Open n="07" id="results" title="The results: AI search visibility across four engines">
               <aside className="v3-hl v3-blk is-cream" aria-labelledby="hl-r">
-                <h3 id="hl-r">Highlights</h3>
+                <h3 id="hl-r">StarAgile AI visibility results summary</h3>
                 <ul>
                   <li><b>45</b> AI answers named StarAgile first, out of 89 captured.</li>
                   <li><b>23</b> of the 48 buyer queries we tracked in AI answers had StarAgile first on at least one engine, including 12 of 13 CSM queries and all 5 CSPO queries.</li>
@@ -341,8 +348,8 @@ export function CaseStudy() {
 
               <section className="v3-frame v3-blk is-dark" id="chart-a">
                 <header className="v3-fh">
-                  <h3>Outcome by engine</h3>
-                  <p>Across 89 AI answers captured between 19 August and 9 November 2026</p>
+                  <h3>How did StarAgile perform across each AI engine?</h3>
+                  <p>Across 89 AI answers captured by Nakama Growth between 19 August and 9 November 2026, StarAgile was named first 24 times on Google AI Overviews (of 39 answers), 11 times on ChatGPT (of 31), 5 times on Google AI Mode (of 11) and 5 times on Perplexity (of 8).</p>
                 </header>
                 <div className="v3-plot">
                   <ul className="key ca-key" aria-label="Chart key">
@@ -356,8 +363,29 @@ export function CaseStudy() {
                   <ChartRow name="Google AI Mode" width="28.21%" of="11" label="Google AI Mode: 5 Named first, 2 named, 0 staragile page cited, 4 not present, of 11 answers" parts={[{k: 'nf', n: 5}, {k: 'nm', n: 2}, {k: 'np', n: 4}]} vals={[{k: 'nf', n: 5}, {k: 'nm', n: 2}, {k: 'ct', n: 0}, {k: 'np', n: 4}]}/>
                   <ChartRow name="Perplexity" width="20.51%" of="8" label="Perplexity: 5 Named first, 1 named, 1 staragile page cited, 1 not present, of 8 answers" parts={[{k: 'nf', n: 5}, {k: 'nm', n: 1}, {k: 'ct', n: 1}, {k: 'np', n: 1}]} vals={[{k: 'nf', n: 5}, {k: 'nm', n: 1}, {k: 'ct', n: 1}, {k: 'np', n: 1}]}/>
                 </div>
+                <div className="eng-scroll" tabIndex={0} aria-label="Outcome by engine, scrollable">
+                <table className="eng-table">
+                  <caption>Outcome by engine, 19 August to 9 November 2026</caption>
+                  <thead>
+                    <tr>
+                      <th scope="col">AI engine</th>
+                      <th scope="col">Named first</th>
+                      <th scope="col">Named in shortlist</th>
+                      <th scope="col">StarAgile page cited only</th>
+                      <th scope="col">Not present</th>
+                      <th scope="col">Total captured answers</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr><td>Google AI Overviews</td><td>24</td><td>4</td><td>2</td><td>9</td><td>39</td></tr>
+                    <tr><td>ChatGPT</td><td>11</td><td>4</td><td>0</td><td>16</td><td>31</td></tr>
+                    <tr><td>Google AI Mode</td><td>5</td><td>2</td><td>0</td><td>4</td><td>11</td></tr>
+                    <tr><td>Perplexity</td><td>5</td><td>1</td><td>1</td><td>1</td><td>8</td></tr>
+                  </tbody>
+                </table>
+                </div>
                 <footer className="v3-ff">
-                  <p>Not present includes 17 answers that cited only guides we published.</p>
+                  <p>Not present includes 17 answers that cited only guides Nakama Growth published.</p>
                   <p>Source: StarAgile Weekly Wins, 115 screenshots, 19 Aug to 9 Nov 2026. One answer counted once.</p>
                 </footer>
               </section>
@@ -373,8 +401,8 @@ export function CaseStudy() {
 
               <section className="v3-frame v3-blk is-dark" id="chatgpt-ba">
                 <header className="v3-fh">
-                  <h3>Best Certified Scrum Master Training Providers</h3>
-                  <p>ChatGPT</p>
+                  <h3>How did ChatGPT rank StarAgile before and after Nakama Growth&apos;s work?</h3>
+                  <p>On 21 to 31 August 2026, ChatGPT listed Scrum Alliance and KnowledgeHut for &quot;Best Certified Scrum Master Training Providers&quot; and left StarAgile out of its first six picks. By 1 to 7 September 2026, ChatGPT placed StarAgile in the first row of its comparison table.</p>
                 </header>
                 <div className="v3-plot">
                   <div className="ba">
@@ -446,7 +474,7 @@ export function CaseStudy() {
               <section className="v3-frame v3-blk is-dark sa-time" id="chart-b">
                 <header className="v3-fh">
                   <h3>First-named answers by report, running total</h3>
-                  <p>By report, in the order sent. Two of the six are monthly roll-ups whose dates overlap the weekly reports.</p>
+                  <p>By report, in the order sent from 21 August through 25 October 2026, with the running total holding at 45 through the 9 November 2026 close of the reporting window. Two of the six are monthly roll-ups whose dates overlap the weekly reports.</p>
                 </header>
                 <div className="v3-plot">
                   <table className="run">
@@ -486,9 +514,9 @@ export function CaseStudy() {
               </section>
             </Open>
 
-            <Open n="08" id="open" title="What's still open">
+            <Open n="08" id="open" title="Where did StarAgile still miss AI placements?">
               <div className="v3-body">
-                <p>We report the gaps as plainly as the wins.</p>
+                <p>Nakama Growth reports visibility gaps alongside wins across the 48 tracked queries from 19 August to 9 November 2026. StarAgile had zero first-named placements across 9 PMP and 6 SAFe queries, won 1 of 6 DevOps queries, and saw ChatGPT answers fluctuate week to week.</p>
                 <ul>
                   <li><b>PMP and SAFe:</b> on these questions AI engines often cited only our own guides and rarely named StarAgile. Across 9 PMP queries and 6 SAFe queries, StarAgile wasn&apos;t named first in any answer. These are the next priority.</li>
                   <li><b>DevOps:</b> StarAgile was first for 1 of 6 DevOps queries tracked in AI answers. On ChatGPT, for the same placement-support query, it was the fifth row, not the first.</li>
@@ -497,8 +525,9 @@ export function CaseStudy() {
               </div>
             </Open>
 
-            <Open n="09" id="takeaways" title="Key takeaways for edtech brands">
+            <Open n="09" id="takeaways" title="What can edtech brands learn from StarAgile's GEO campaign?">
               <div className="v3-body">
+                <p>Edtech certification brands earn consistent AI shortlist placements by pairing a single differentiated label with identical proof points across third-party sources. Based on Nakama Growth&apos;s StarAgile engagement, five practices drive repeatable visibility across Google AI Overviews, Google AI Mode, ChatGPT and Perplexity.</p>
                 <ol>
                   <li><b>Win the label, not just the list.</b> AI answers give each provider one line. Make yours specific and repeat it everywhere.</li>
                   <li><b>Answer the question in the first sentence.</b> Engines lift verdicts and tables, not introductions.</li>
@@ -506,18 +535,19 @@ export function CaseStudy() {
                   <li><b>Keep your facts identical across every source.</b> The same inclusions, credentials and guarantees, word for word.</li>
                   <li><b>Count honestly.</b> Report &quot;named first&quot;, &quot;named&quot; and &quot;cited&quot; separately, never count a citation of your own guide as a brand win, test without the year, and show the gaps.</li>
                 </ol>
+                <p>See more client results in <Link href="/work">Nakama Growth&apos;s case studies</Link>.</p>
               </div>
             </Open>
 
             <Open n="10" id="faq" title="FAQ">
               <div className="sa-faq">
                 {FAQ.map(item => (
-                  <details key={item.q}>
-                    <summary>{item.q}</summary>
-                    {item.a.startsWith('GEO is the work of getting a')
-                      ? <p><Link className="sa-in" href="/services/geo">GEO</Link>{item.a.slice(3)}</p>
+                  <article key={item.q}>
+                    <h3>{item.q}</h3>
+                    {item.a.startsWith('Generative engine optimization (GEO)')
+                      ? <p><Link className="sa-in" href="/services/geo">Generative engine optimization (GEO)</Link>{item.a.slice('Generative engine optimization (GEO)'.length)}</p>
                       : <p>{item.a}</p>}
-                  </details>
+                  </article>
                 ))}
               </div>
             </Open>
@@ -542,14 +572,14 @@ export function CaseStudy() {
       <dialog className="lb" id="sa-lb" aria-labelledby="sa-lb-t">
         <div className="lb-h">
           <div>
-            <h2 id="sa-lb-t">Original capture</h2>
+            <p className="lb-title" id="sa-lb-t">Original capture</p>
             <p id="sa-lb-m"/>
           </div>
           <button type="button" className="lb-x" id="sa-lbx" aria-label="Close">
             <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" aria-hidden="true"><path d="M18 6 6 18M6 6l12 12"/></svg>
           </button>
         </div>
-        <div className="lb-img"><img id="sa-lbi" alt="" width={1} height={1} loading="lazy"/></div>
+        <div className="lb-img" id="sa-lb-slot"/>
         <p className="lb-f" id="sa-lb-f">Screenshot as captured. Red boxes as marked in the dated report.</p>
       </dialog>
     </article>

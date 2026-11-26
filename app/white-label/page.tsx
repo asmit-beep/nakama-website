@@ -108,7 +108,7 @@ export default function WhiteLabel(){
       <span className="tag">{v.c}</span><h3>{v.t}</h3><p>{v.p}</p>
      </Reveal>)}
     </div>
-    <div className="wl-cta-row"><BookBtn>Book a call</BookBtn></div>
+    <div className="wl-cta-row"><BookBtn>Book a call</BookBtn><LinkBtn href="/work" ghost>See our case studies</LinkBtn></div>
    </IpSection>
 
    <IpSection id="how">

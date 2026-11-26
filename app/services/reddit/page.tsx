@@ -304,7 +304,7 @@ export default function RedditServices() {
       ))}
      </ul>
      <p className="reddit-scents">
-      <Link className="reddit-scent" href="/work">See our work →</Link>
+      <Link className="reddit-scent" href="/work">See our case studies →</Link>
      </p>
     </div>
    </section>

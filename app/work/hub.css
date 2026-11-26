@@ -21,6 +21,8 @@
 }
 .work-hub .wk-grid{display:flex;flex-direction:column;align-items:stretch;gap:var(--gcol);width:var(--wu);zoom:calc(100cqw / var(--wu))}
 .work-hub .wk-card{position:relative;display:flex;flex-direction:column;min-width:0;text-decoration:none;color:inherit}
+.work-hub .wk-card .wk-media{order:-1}
+.work-hub .wk-card .wk-body{order:0}
 .work-hub .wk-body{display:flex;flex-direction:column;flex:1;min-width:0}
 .work-hub .wk-logo{display:grid;place-items:center;background:#fff;box-shadow:0 8px 24px -10px rgba(0,0,0,.6);flex:none;overflow:hidden}
 .work-hub .wk-logo img{object-fit:contain;display:block}
@@ -32,7 +34,8 @@
 .work-hub .wk-metric span{font:600 14px/1.35 var(--ip-font);color:var(--ip-mute)}
 .work-hub .wk-sub{font-size:13px;line-height:1.45;color:var(--ip-mute)}
 .work-hub .wk-quote cite{display:block;font:600 12px/1.3 var(--ip-font);font-style:normal;letter-spacing:.04em;color:var(--ip-mute)}
-.work-hub .wk-go{display:inline-flex;align-items:center;gap:8px;margin-top:auto;padding-top:8px;font:600 15px/1 var(--ip-font);color:#ffd2ad;min-height:44px}
+.work-hub .wk-go{display:inline-flex;align-items:center;gap:8px;margin-top:auto;padding-top:8px;font:600 15px/1 var(--ip-font);color:#ffd2ad;min-height:44px;text-decoration:none}
+.work-hub .wk-card .wk-go::after{content:"";position:absolute;inset:0;z-index:2}
 .work-hub .wk-card.place .wk-go{color:var(--ip-ink)}
 .work-hub .wk-card.place .wk-go svg{color:var(--ip-ember-2)}
 .work-hub .cover-cap{position:absolute;z-index:4;display:flex;align-items:center;font:600 10px/1.3 var(--ip-font);letter-spacing:.04em;color:rgba(246,243,238,.74)}
@@ -97,8 +100,8 @@
 .work-hub .wk-lead{display:grid;grid-template-columns:var(--sa-w) var(--side-w);grid-template-rows:auto auto;gap:var(--grow) var(--gcol);align-items:start}
 .work-hub .wk-pair{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:var(--gcol);width:100%}
 .work-hub .wk-card{background:none!important;border:0!important;padding:0!important;box-shadow:none!important;border-radius:0;transform:none!important;cursor:pointer;min-width:0}
-.work-hub .wk-card:focus-visible{outline:none}
-.work-hub .wk-card:focus-visible .wk-media{outline:2px solid #f2a06a;outline-offset:4px}
+.work-hub .wk-card:focus-within{outline:none}
+.work-hub .wk-card:focus-within .wk-media{outline:2px solid #f2a06a;outline-offset:4px}
 .work-hub .wk-card.sa{grid-column:1;grid-row:1 / span 2;width:var(--sa-w);align-self:start;height:auto}
 .work-hub .wk-card.synup,.work-hub .wk-card.inventive{width:var(--side-w);height:auto;align-self:start}
 .work-hub .wk-media{position:relative;aspect-ratio:800/500;border-radius:16px;overflow:hidden;container-type:size;
@@ -110,8 +113,8 @@
 .work-hub .wk-top{display:flex;align-items:center!important;gap:12px;flex-wrap:wrap}
 .work-hub .wk-logo{width:34px!important;height:34px!important;border-radius:10px!important}
 .work-hub .wk-logo img{width:22px!important;height:22px!important}
-.work-hub .wk-top h2{margin:0;font:700 32px/1.2 var(--ip-font);letter-spacing:-.035em;color:var(--ip-ink)}
-.work-hub .wk-card.sa .wk-top h2{font-size:36px}
+.work-hub .wk-top h3{margin:0;font:700 32px/1.2 var(--ip-font);letter-spacing:-.035em;color:var(--ip-ink)}
+.work-hub .wk-card.sa .wk-top h3{font-size:36px}
 .work-hub .wk-pill{margin:0!important}
 .work-hub .wk-desc{margin:0;font-size:16px!important;line-height:1.5!important;color:var(--ip-body);max-width:52ch}
 .work-hub .wk-quote{border-top:0!important;padding:0!important}
@@ -285,7 +288,7 @@ html.work-hub-js .work-hub .rv.in{opacity:1;transform:none;transition:opacity .7
 html.work-hub-js .work-hub .wk-card.rv.in{transform:none!important}
 @media (max-width:1100px){
 .work-hub .wk-wrap{--Ssum:214px}
-.work-hub .wk-card.synup .wk-top h2,.work-hub .wk-card.inventive .wk-top h2{font-size:26px;white-space:nowrap}
+.work-hub .wk-card.synup .wk-top h3,.work-hub .wk-card.inventive .wk-top h3{font-size:26px;white-space:nowrap}
 }
 @media (max-width:960px){
 .work-hub .ip-wrap{--wk-gutter-l:30px;--wk-gutter-r:37px}
@@ -303,7 +306,7 @@ html.work-hub-js .work-hub .wk-card.rv.in{transform:none!important}
 .work-hub .wk-media{aspect-ratio:800/500}
 .work-hub .wk-card.sa .wk-media{aspect-ratio:800/700}
 .work-hub .wk-media{margin-bottom:14px;border-radius:12px}
-.work-hub .wk-top h2{font-size:26px!important}
+.work-hub .wk-top h3{font-size:26px!important}
 .work-hub .wk-desc{font-size:14px!important}
 }
 .work-hub #proof-board .ip-head p,
@@ -614,3 +617,22 @@ html.work-hub-js .work-hub .rv{opacity:1!important;transform:none!important}
 @keyframes bl-ps{0%{--ps:1}29.6%{--ps:1}30.6%{--ps:.82}32.2%{--ps:1}100%{--ps:1}}
 .work-hub .bl-ptr{--px:calc(860*var(--u));--py:calc(560*var(--u))}
 .work-hub .is-playing .bl-ptr{animation-name:bl-px,bl-py,bl-ps;animation-timing-function:cubic-bezier(.55,.05,.25,1),cubic-bezier(.3,.1,.2,1),ease-in-out}
+/* Hero and section heads paint at full opacity. Reveal would hold the LCP text and fail contrast until JS. */
+.work-hub .ip-hero-copy.reveal,
+.work-hub .ip-hero-copy.reveal-ready,
+.work-hub .ip-head.reveal,
+.work-hub .ip-head.reveal-ready{opacity:1!important;transform:none!important;filter:none!important;transition:none!important}
+.work-hub .ip-lead .ip-meta{display:block;margin-top:14px;font-size:14px;font-weight:600;letter-spacing:.02em;color:#AEB0B6}
+.work-hub .wk-sec-h{margin:0 0 28px;font:700 clamp(28px,3vw,40px)/1.15 var(--ip-font);color:#f6f3ee}
+.work-hub #client-summary{padding-top:8px}
+.work-hub .wk-sum-lead{max-width:68ch;margin:12px 0 22px;color:#AEB0B6;font-size:17px;line-height:1.6}
+.work-hub .wk-table-scroll{overflow-x:auto}
+.work-hub .wk-sum{width:100%;border-collapse:collapse;min-width:720px;font-size:15px;line-height:1.45}
+.work-hub .wk-sum caption{caption-side:bottom;text-align:left;padding:12px 0 0;color:#AEB0B6;font-size:13px}
+.work-hub .wk-sum th,.work-hub .wk-sum td{text-align:left;vertical-align:top;padding:12px 14px;border-bottom:1px solid rgba(255,255,255,.12);color:#EDEAE4}
+.work-hub .wk-sum th{font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:#F2A06A}
+.work-hub .wk-sum a{color:#F2A06A;text-decoration:underline;text-underline-offset:3px}
+.work-hub .wk-count-note{max-width:68ch;margin:22px 0 0;color:#AEB0B6;font-size:17px;line-height:1.6}
+.work-hub .wk-count-note a{color:#F2A06A;text-decoration:underline;text-underline-offset:3px}
+.work-hub .wb-stage+.wb-stage{margin-top:28px;padding-top:28px;border-top:1px solid rgba(255,255,255,.08)}
+.work-hub .wb-tabs:not(:has(.on)) .wb-pill{opacity:0}

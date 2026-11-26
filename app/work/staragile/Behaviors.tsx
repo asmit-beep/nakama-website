@@ -144,12 +144,17 @@ export function Behaviors() {
     const openLb = (b: HTMLElement) => {
       if (!lb) return;
       opener = b;
-      const img = document.getElementById('sa-lbi') as HTMLImageElement | null;
-      if (img) {
+      const slot = document.getElementById('sa-lb-slot');
+      if (slot) {
+        slot.replaceChildren();
+        const img = document.createElement('img');
+        img.id = 'sa-lbi';
+        img.alt = (b.dataset.alt || '').replace(/\u00b7/g, ',');
         img.src = b.dataset.src || '';
         img.width = Number(b.dataset.w || 0);
         img.height = Number(b.dataset.h || 0);
-        img.alt = b.dataset.alt || '';
+        img.decoding = 'async';
+        slot.appendChild(img);
       }
       const title = document.getElementById('sa-lb-t');
       const meta = document.getElementById('sa-lb-m');
@@ -169,7 +174,10 @@ export function Behaviors() {
     const onBackdrop = (e: MouseEvent) => {
       if (e.target === lb) lb?.close();
     };
-    const onClose = () => opener?.focus();
+    const onClose = () => {
+      document.getElementById('sa-lb-slot')?.replaceChildren();
+      opener?.focus();
+    };
     document.addEventListener('click', onDoc);
     document.getElementById('sa-lbx')?.addEventListener('click', onX);
     lb?.addEventListener('click', onBackdrop);

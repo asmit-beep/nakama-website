@@ -2,6 +2,7 @@ import type {ReactNode} from 'react';
 import {Cells, Chevron, Mini, Tag, shot} from './bits';
 
 const NAMES = ['Google AI Overviews', 'Google AI Mode', 'ChatGPT', 'Perplexity'];
+const GLYPH = {f: 'Named first', n: 'Named', x: 'Not present', b: 'not run on this engine'} as const;
 
 function Row({
   n, query, states, open, extra, also, children,
@@ -18,10 +19,14 @@ function Row({
     <>
       <tr className={extra ? 'r qx' : 'r'}>
         <th scope="row">
-          <button type="button" className="xb" id={`qb${n}`} aria-expanded={open ? 'true' : 'false'} aria-controls={`qd${n}`}>
-            <Chevron/>
+          <div className="qn">
             <span className="qt">{query}</span>
-          </button>
+            <span className="qw-out">{NAMES.map((name, i) => `${name}: ${GLYPH[states[i]]}`).join('. ')}</span>
+            <button type="button" className="xb" id={`qb${n}`} aria-expanded={open ? 'true' : 'false'} aria-controls={`qd${n}`}>
+              <Chevron/>
+              <span>View capture</span>
+            </button>
+          </div>
         </th>
         <Cells states={states} names={NAMES}/>
       </tr>
@@ -63,7 +68,7 @@ export function QueryWall() {
         <p>19 August to 9 November 2026. Best result per engine. Select a query to see the answer.</p>
       </header>
       <div className="v3-plot">
-        <div className="qw-wrap collapsed" id="wall">
+        <div className="qw-wrap" id="wall">
           <ul className="qw-lg" aria-label="Key">
             <li><span className="gw"><span className="gl f"/></span>Named first</li>
             <li><span className="gw"><span className="gl n"/></span>Named</li>
@@ -292,7 +297,7 @@ export function QueryWall() {
             </tbody>
           </table>
           <p className="qw-note">23 of the 48 queries we tracked in AI answers. The other 25 never had StarAgile first.</p>
-          <button type="button" className="qw-more" aria-expanded="false" aria-controls="qw-body">Show all 23</button>
+          <button type="button" className="qw-more" aria-expanded="true" aria-controls="qw-body">Show fewer</button>
         </div>
       </div>
     </section>

@@ -212,7 +212,10 @@ export default function AeoServices() {
       ))}
      </ul>
      <p className="aeo-scents">
-      <Link className="aeo-scent" href="/work">See our work →</Link>
+      See <Link className="aeo-scent" href="/work/staragile">how StarAgile was named first in 45 AI answers</Link> across ChatGPT, Perplexity and Google.
+     </p>
+     <p className="aeo-scents">
+      <Link className="aeo-scent" href="/work">See our case studies →</Link>
      </p>
     </div>
    </section>

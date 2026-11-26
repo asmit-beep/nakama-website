@@ -354,6 +354,7 @@ export function YouTubeStage() {
      <QuoteLink className="btn ember" />
      <BookLink className="btn ghost" id="book-a-call" />
      <Link className="btn ghost" href={WL_HREF}>{WL_LABEL}</Link>
+     <Link className="btn ghost" href="/work">See our case studies</Link>
     </div>
    </section>
 
