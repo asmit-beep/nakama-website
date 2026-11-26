@@ -63,7 +63,7 @@ export default function Work() {
         <IpHero
           tone="ember"
           eyebrow="Nakama Growth case studies"
-          title={<>How Nakama Growth Gets Brands Named </>}
+          title={<>Case Studies: How Nakama Growth Gets Brands Named </>}
           accent="in AI Answers"
           lead={<>Nakama Growth helps B2B SaaS and edtech brands earn citations and first-row placements across Google AI Overviews, Google AI Mode, ChatGPT, Perplexity and YouTube. This portfolio covers one full case study for StarAgile (45 first-named AI answers of 89 captured) and live placements for Synup, Inventive AI, HubEngage and BacklinkOS. <span className="ip-meta">Updated <time dateTime="2026-11-26">26 November 2026</time></span></>}
         >
