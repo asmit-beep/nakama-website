@@ -47,9 +47,12 @@ export function BookCallModal() {
     };
     window.addEventListener(EVENT, open);
     // Any leftover link to the booking page also opens the sheet instead of leaving the site.
+    // Journal body HTML cannot mount BookCallButton. A button.nkf-btn inside the article uses the same dialog.
     const intercept = (e: MouseEvent) => {
-      const a = (e.target as HTMLElement | null)?.closest?.("a[href]") as HTMLAnchorElement | null;
+      const target = e.target as HTMLElement | null;
+      const a = target?.closest?.("a[href]") as HTMLAnchorElement | null;
       if (a && /cal\.com\/snehil-srivastava/.test(a.href)) {e.preventDefault(); open();}
+      if (target?.closest?.(".article-rich button.nkf-btn")) {e.preventDefault(); open();}
     };
     document.addEventListener("click", intercept, true);
     if (location.hash === "#book") open();
@@ -97,7 +100,7 @@ export function BookCallModal() {
           {!loaded && <div className="bc-loading"><i /><span>Loading available times…</span></div>}
           {opened && (
             <iframe
-              title="Book a call with Nakama"
+              title="Book a call with Nakama Growth"
               key={len}
               src={`${CAL}/${len}?embed=true&theme=dark&layout=month_view${prefill.name ? `&name=${encodeURIComponent(prefill.name)}` : ""}${prefill.email ? `&email=${encodeURIComponent(prefill.email)}` : ""}${prefill.notes ? `&notes=${encodeURIComponent(prefill.notes)}` : ""}`}
               onLoad={() => setLoaded(true)}

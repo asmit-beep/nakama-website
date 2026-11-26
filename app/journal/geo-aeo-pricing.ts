@@ -287,6 +287,7 @@ ${figure('geo-aeo-pricing-tier-cards', TIERS_ALT, 1600, 900)}
 ${figure('geo-aeo-pricing-90-day', TIMELINE_ALT, 1600, 700)}
 <p>If day 90 arrives with only a dashboard and no published work, you paid retainer prices for a tracking tool.</p>
 <p>For context on cost: at the $6,850 median, the same quarter is about $20,550. At Indian mid-market list prices (₹35,000 to ₹90,000 a month), it is about ₹1,05,000 to ₹2,70,000.</p>
+<p>Not sure GEO deserves a budget line at all? See <a href="https://www.nakama.in/journal/is-geo-worth-it">is GEO worth it for B2B SaaS</a>.</p>
 <h2 id="what-changes-the-price-you-are-quoted">What changes the price you are quoted?</h2>
 <p>Scope moves price more than any market rate. The biggest factors are off-site work, how many engines and prompts are tracked, content volume and how competitive your category is. Our <a href="https://www.nakama.in/journal/how-to-hire-an-aeo-agency">guide to hiring an AEO agency</a> covers these cost drivers and the red flags to watch for.</p>
 <p>The simplest fix is to send every agency the same brief, then compare scope line by line instead of headline price.</p>
@@ -458,6 +459,7 @@ export const geoAeoPricingArticle: Article = {
     '61 to 90 | More content and mentions, re-run of the same prompts | Per-engine change against the day-1 baseline',
     'If day 90 arrives with only a dashboard and no published work, you paid retainer prices for a tracking tool.',
     'For context on cost: at the $6,850 median, the same quarter is about $20,550. At Indian mid-market list prices (₹35,000 to ₹90,000 a month), it is about ₹1,05,000 to ₹2,70,000.',
+    'Not sure GEO deserves a budget line at all? See is GEO worth it for B2B SaaS.',
    ],
   },
   {

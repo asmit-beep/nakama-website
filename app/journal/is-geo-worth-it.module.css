@@ -1,0 +1,76 @@
+/* Scoped to this article. Does not restyle the shared journal template. */
+
+.page :global(a.ip-btn),
+.page :global(a.ip-btn:hover),
+.page :global(a.ip-btn:focus-visible) {
+  color: #1a120c;
+  text-decoration: none;
+  min-height: 44px;
+}
+
+/* Beat the shared 18ch H1 cap so this headline can sit on two lines. */
+:global(.ip-article-page .article-rich) .page :global(h1) {
+  text-wrap: balance;
+  max-width: none;
+}
+
+.page :global(blockquote) :global(p) + :global(p) {
+  margin-top: 10px;
+}
+
+/* The band's Book a call control is a real button.nkf-btn inside HTML, so it needs the same click target as the quote link. */
+.page :global(button.nkf-btn) {
+  cursor: pointer;
+  font-family: inherit;
+}
+
+/* Desktop: TOC stays open and is not sticky. Narrow: native details starts closed. */
+@media (min-width: 768px) {
+  .page :global(details.toc) {
+    position: static;
+  }
+  .page :global(details.toc) > :global(summary) {
+    list-style: none;
+  }
+  .page :global(details.toc) > :global(summary)::-webkit-details-marker {
+    display: none;
+  }
+  .page :global(details.toc) > :global(summary)::marker {
+    content: none;
+  }
+  .page :global(details.toc)::details-content {
+    content-visibility: visible;
+    display: block;
+    height: auto;
+  }
+  .page :global(details.toc) > :global(ol) {
+    display: block;
+  }
+}
+
+@media (max-width: 767px) {
+  .page :global(details.toc:not([open]))::details-content {
+    content-visibility: hidden;
+    display: none;
+  }
+}
+
+@media (max-width: 720px) {
+  .page :global(.j-cta-actions) :global(button.nkf-btn) {
+    width: 100%;
+    justify-content: center;
+  }
+}
+
+@media (max-width: 480px) {
+  .page :global(a.ip-btn),
+  .page :global(button.nkf-btn) {
+    width: 100%;
+    justify-content: center;
+    box-sizing: border-box;
+  }
+  /* Clear the fixed menu button (44px) so body text and figures are not covered. */
+  .page {
+    padding-right: 44px;
+  }
+}

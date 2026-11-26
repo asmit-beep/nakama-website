@@ -1,3 +1,4 @@
+import {isGeoWorthItArticle} from './is-geo-worth-it';
 import {nogoodAlternativesArticle} from './nogood-alternatives';
 import {minuttiaAlternativesArticle} from './minuttia-alternatives';
 import {geoAgenciesArticle} from './geo-agencies';
@@ -49,12 +50,15 @@ export type Article={
  pointerHtml?:string,
  /** Preview gate. noindex,follow, and omitted from the sitemap, llms files, RSS and the author index. */
  noindex?:boolean,
+ /** With noindex, robots are noindex,nofollow. Omitted keeps the preview default of noindex,follow. */
+ nofollow?:boolean,
  /** When set, the Keep reading card links to this slug instead of the next indexable note. A noindex preview can still show that one card. */
  nextSlug?:string,
  /** Optional. When set, this article's cover shows on the "Keep reading" card of the article that links to it. Decorative: the title beside it names the article, so the image has an empty alt. */
  coverImage?:{src:string,width:number,height:number,alt?:string},
 };
 export const articles:Article[]=[
+ isGeoWorthItArticle,
  nogoodAlternativesArticle,
  pepperVsTripledartArticle,
  perplexitySeoArticle,
