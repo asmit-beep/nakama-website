@@ -49,7 +49,7 @@ const FAQS: {q: string; a: string; html?: string}[] = [
  },
  {
   q: 'Does GEO actually work?',
-  a: 'For visibility, it can, and you can check it. StarAgile, an edtech company, was named first in 45 of 89 captured AI answers between 19 August and 9 November 2026. We found no published study that proves this kind of visibility causes pipeline, which is why the 90-day test pairs answer data with self-reported source.',
+  a: 'For visibility, it can, and you can check it. StarAgile, an edtech client of ours, was named first in 45 of 89 captured AI answers from 19 August to 9 November 2026. Other agencies publish similar self-reported gains. No published study we found proves this visibility causes pipeline, so the 90-day test also tracks self-reported source.',
  },
  {
   q: 'Is a GEO agency worth it?',
@@ -275,7 +275,7 @@ ${h2('Key takeaways')}
 <li>${b('Test before you sign.')} Run 90 days with a dated baseline, a holdout prompt group, pass and fail lines, and a break-even number built from your own deal size.</li>
 </ul>
 ${toc}
-<blockquote><p><strong>How we checked</strong></p><p>We opened every outside figure in this guide at its original source on 26 Nov 2026 and put them in one table, with who was measured and when. Figures we could not confirm at the source are left out. Client results come from Nakama Growth's published case study and case studies page. They count AI answers, not traffic, pipeline or revenue. The stage table, checklists and 90-day test are our view from client work.</p></blockquote>
+<blockquote><p><strong>How we checked</strong></p><p>Every outside figure here comes from published research, such as G2, Pew Research Center, Google and published SEO studies, opened at its source on 26 Nov 2026. Results from other agencies' clients are quoted as published and marked as self-reported. Where we use our own client work, it is labeled as ours and counts AI answers only, not traffic or revenue.</p></blockquote>
 ${h2('Is GEO worth it for a B2B SaaS company?')}
 <p>GEO is worth it for a B2B SaaS company when three things are true: buyers in your category ask AI tools to compare vendors, competitors get named in those answers, and you can tell within a quarter whether you are named more often. Whether GEO is worth the investment depends more on stage and sales motion than on budget.</p>
 <p><strong>Table 1. Is GEO worth it, by stage and sales motion (our view)</strong></p>
@@ -404,7 +404,7 @@ ${stackTable('Type', ['Finding', 'Who was measured', 'Source', 'Date'], [
  ]},
  {label: 'Recommendation', cells: [
   'A specialized B2B software company was cited in 98% of observed AI responses but recommended in 17% of decision scenarios, and 8% where supporting evidence was absent.',
-  'One client engagement',
+  'One client engagement, self-reported by Bill Hunt (Bisan Digital)',
   link('https://www.searchenginejournal.com/is-geo-visibility-delivering-business-value-or-are-we-measuring-the-wrong-outcome/594064/', 'Bill Hunt, Search Engine Journal'),
   '25 Nov 2026',
  ]},
@@ -422,6 +422,14 @@ ${stackTable('Type', ['Finding', 'Who was measured', 'Source', 'Date'], [
 <li>${b('Conversion is unsettled.')} Octane11's 2.5 times is vendor data and correlation, and an account can sit in both groups. The SEO Works found the opposite for B2B product sites, from only ten of them. The peer-reviewed Kaiser and Schulze study points toward complex purchases doing better, which is closer to how SaaS is bought, but it studied e-commerce, not SaaS.</li>
 </ol>
 <p>Google's position matters for budgeting: it treats optimizing for its AI features as SEO. GEO spend should build on the SEO you already have, not replace it.</p>
+${h3('What other agencies\' clients report')}
+<p>Other GEO and AI search agencies also publish client results. The three below report changes in AI answers, not revenue. These results are self-reported by the agencies or their clients, have not been independently verified, and none of them describes a controlled test.</p>
+<ul>
+<li>Omniscient Digital for Convert (A/B testing software), reported by the agency in a <a href="https://beomniscient.com/case-studies/convert/" rel="nofollow">case study</a>, 20 Jan 2026: "Over the course of 60 days, Omniscient grew Convert\u2019s LLM prompt visibility from 31% to 55% across tracked queries." The case study does not say how the tracked queries were chosen.</li>
+<li>DerivateX for Truein (time and attendance software), reported by the agency in a <a href="https://derivatex.agency/case-studies/truein/" rel="nofollow">case study</a>, 25 Oct 2026: "ChatGPT calls Truein its first choice for contract workers in the UAE and cites truein.com (checked logged out on 20 Oct 2026)." That is one check in one market.</li>
+<li>Skale for Cookiebot (consent management software), reported by a verified client in a <a href="https://clutch.co/profile/skale-0" rel="nofollow">Clutch review</a>, 16 Oct 2026: "Over the first quarter of the engagement\u2019s LLM-focused roadmap, our brand mentions in AI assistant answers grew, and our citation share across those answers rose." The review gives no figures.</li>
+</ul>
+<p>Our own client results, in the proof section below, are self-reported too: dated counts of AI answers, not revenue.</p>
 ${h2('When is GEO worth it for B2B SaaS, and when is it not?')}
 <p>GEO is worth it for B2B SaaS when buyers shortlist through AI and you can act on what a baseline shows. It is not worth it when the basics are missing or nobody will measure the result. Score yourself on both lists below before you talk to anyone about budget.</p>
 <p><strong>Likely worth it if most of these are true:</strong></p>
