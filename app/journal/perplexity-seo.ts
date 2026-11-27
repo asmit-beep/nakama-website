@@ -13,7 +13,7 @@ import {journalCta, stripJournalCta} from './cta';
  */
 export const PERPLEXITY_SEO_PUBLISHED_AT = '2026-11-18T03:27:00+05:30';
 const PUBLISHED_AT = PERPLEXITY_SEO_PUBLISHED_AT;
-const MODIFIED_AT = PUBLISHED_AT;
+const MODIFIED_AT = '2026-11-28T02:40:00+05:30';
 const PREVIEW = false;
 
 const MONTHS = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];

@@ -5,16 +5,14 @@ import {journalCta, QUOTE_URL, stripJournalCta} from './cta';
  * Preview placeholder. ISO 8601 with +05:30.
  * PUBLISHED_AT and MODIFIED_AT feed the visible freshness line, JSON-LD,
  * og/article times and, once PREVIEW is false, the sitemap lastmod via `date`.
- * At ship, set both to the actual merge day and time. The "27 Nov 2026" lines
- * in the How we checked box and the spot check bullet are fact-check dates.
+ * Ship time on Yash's GO. The "27 Nov 2026" line in the How we checked box is a fact-check date.
  *
- * PREVIEW true: robots noindex,nofollow, and this note stays off the sitemap,
+ * PREVIEW false: robots index,follow, and this note is listed in the sitemap,
  * llms.txt, llms-full.txt, RSS, the resources index and the author index.
- * Set PREVIEW to false only on Yash's merge GO.
  */
-const PUBLISHED_AT = '2026-11-27T09:00:00+05:30';
-const MODIFIED_AT = '2026-11-27T09:00:00+05:30';
-const PREVIEW = true;
+const PUBLISHED_AT = '2026-11-28T02:40:00+05:30';
+const MODIFIED_AT = '2026-11-28T02:40:00+05:30';
+const PREVIEW = false;
 
 const MONTHS = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
 const dayOf = (iso: string) => iso.slice(0, 10);
@@ -253,7 +251,7 @@ const bodyHtml = `<nav aria-label="Breadcrumb" class="article-breadcrumb"><ol st
 <p>By <a href="${AUTHOR_URL}" rel="author">Sandeep Kumar</a>, SEO and GEO Specialist, Nakama Growth</p>
 ${coverHtml}
 <p>How to get cited by Claude comes down to three things Anthropic documents: let Claude-SearchBot and Claude-User reach your site, stay indexable by Anthropic's search partners, and publish short, current facts Claude can quote. Anthropic says every response that uses web search includes citations, so a cited page appears as a linked source in the answer.</p>
-<p>Claude SEO, in this sense, means getting cited by Claude, not using Claude to do SEO. Some teams call it Claude search optimization. If you want to know how to optimize for Claude visibility, the work is to become a source Claude picks when buyers ask about your category.</p>
+<p>Claude SEO, in this sense, means getting cited by Claude, not using Claude to do SEO. Some teams call it Claude search optimization. Learning how to optimize for Claude visibility means becoming a source Claude picks when buyers ask about your category.</p>
 <p>This guide is for SaaS, tech and AI companies. Everything below comes from Anthropic's own documentation, one Brave help page, or outside studies we name. Anthropic documents its crawlers, its search providers and how citations work. It does not publish how Claude chooses which result to cite, so no one outside Anthropic can promise a citation.</p>
 <blockquote><p><strong>Quick answer</strong></p><ul><li>Allow Claude-SearchBot and Claude-User. Anthropic says blocking either may reduce your visibility in Claude's search results.</li><li>Don't put noindex on pages you want cited. Anthropic says noindex tells its search partners not to send your content to Claude.</li><li>Claude's web search draws on three providers named in Anthropic's Trust Center: Brave Search, TurboPuffer and Parallel Web Systems. Anthropic doesn't say which one answers which question.</li><li>Anthropic's web search docs say Claude searches when a request depends on current or changing facts, such as prices or products that might have changed. For a SaaS company, that means pricing, integration, security and changelog pages.</li><li>Write facts that survive as a short quote. In the Claude API's web search tool, each citation's cited_text field holds "Up to 150 characters of the cited content." We found no quote length published for the Claude app.</li><li>On Claude Team and Enterprise plans, an Owner or Primary Owner must first turn on web search for the workspace.</li></ul></blockquote>
 <p>Short on time? Jump to <a href="#which-claude-settings-should-a-saas-site-verify">the 7-point Claude check for SaaS sites</a>.</p>
@@ -270,7 +268,8 @@ ${h3("When does Claude search the web?")}
 <p>Anthropic's docs say comparative research can use 10 or more searches, against 1 to 3 for a single fact, so comparison prompts can pull more sources into the answer: review sites, competitors and your own pages.</p>
 ${cta1}
 ${h3("Where do Claude's search results come from?")}
-<p>Anthropic's <a href="https://trust.anthropic.com/subprocessors">Trust Center subprocessor list</a> names three companies with the purpose "Web Search": Brave Search, listed for all products, and TurboPuffer and Parallel Web Systems, each listed for all products except Claude for Government. Brave Search is one of three listed providers, not the whole story. Anthropic doesn't say which provider answers which question or how results are combined. Google appears on the same list only as Google Cloud Platform, with the purpose "Cloud infrastructure", not web search.</p>
+<p>Anthropic's <a href="https://trust.anthropic.com/subprocessors">Trust Center subprocessor list</a> names three companies with the purpose "Web Search": Brave Search, listed for all products, and TurboPuffer and Parallel Web Systems, each listed for all products except Claude for Government. Brave Search is one of three listed providers, not the whole story. Anthropic doesn't say which provider answers which question or how results are combined.</p>
+<p>Google appears on the same list only as Google Cloud Platform, with the purpose "Cloud infrastructure", not web search.</p>
 <p>Two controls follow from Anthropic's own wording. Its <a href="https://support.claude.com/en/articles/7996906-report-block-and-remove-content-from-claude">report, block and remove page</a> says the noindex tag "tells our partners not to index your content so that they don't send it to us in response to your web search query." A stray noindex on a pricing or docs page can therefore keep it out of Claude's search answers. Its web search help page also says "Image search is powered by Bing."</p>
 <p>Brave's <a href="https://search.brave.com/help/brave-search-crawler">crawler help page</a> adds one detail for that provider: "if a domain or page is not crawlable by Googlebot, then Brave Search's bot will not crawl it either." Brave says its crawler does not advertise a separate user agent, so you can't write a robots.txt rule just for it. In practice, it follows what your rules allow Googlebot to crawl.</p>
 ${forkFig}
@@ -376,12 +375,11 @@ export const howToGetCitedByClaudeArticle: Article = {
  publishedAt: PUBLISHED_AT,
  modifiedAt: MODIFIED_AT,
  authorName: 'Sandeep Kumar',
- /** PREVIEW true: noindex,nofollow, and off the sitemap, llms files, RSS, resources and the author index. */
+ /** PREVIEW false: index,follow, and this note is listed in the sitemap, llms files, RSS, resources and the author index. */
  noindex: PREVIEW,
  nofollow: PREVIEW,
- /** Keep reading goes to the GEO audit guide. A noindex preview can still show that one card. */
+ /** Keep reading goes to the GEO audit guide. */
  nextSlug: 'geo-audit',
- canonical: CANONICAL,
  coverImage: {src: `/journal/${SLUG}/${SLUG}-hero.webp`, width: 1600, height: 900, alt: HERO_ALT},
  ogImage: {
   url: OG_URL,

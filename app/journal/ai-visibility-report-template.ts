@@ -11,7 +11,7 @@ import type {Article} from './articles';
  */
 export const PUBLISHED_AT = '2026-10-26T17:10:00+05:30';
 export const AI_VISIBILITY_REPORT_TEMPLATE_PUBLISHED_AT = PUBLISHED_AT;
-const MODIFIED_AT = '2026-11-12T23:42:00+05:30';
+const MODIFIED_AT = '2026-11-28T02:40:00+05:30';
 
 const MONTHS = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
 const dayOf = (iso: string) => iso.slice(0, 10);
