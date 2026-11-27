@@ -13,7 +13,7 @@ import {journalCta, stripJournalCta} from './cta';
  */
 export const PERPLEXITY_SEO_PUBLISHED_AT = '2026-11-18T03:27:00+05:30';
 const PUBLISHED_AT = PERPLEXITY_SEO_PUBLISHED_AT;
-const MODIFIED_AT = PUBLISHED_AT;
+const MODIFIED_AT = '2026-11-28T02:40:00+05:30';
 const PREVIEW = false;
 
 const MONTHS = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
@@ -309,7 +309,7 @@ ${h2("How do you optimize crawler access, page structure and freshness for Perpl
 <p>Perplexity optimization starts with crawler access, because Perplexity's documentation names PerplexityBot as the agent that surfaces and links sites in its search. Then make each page easy to quote: one question, a paragraph that answers it plainly, facts in plain text. We found nothing from Perplexity on freshness.</p>
 <p>For the short multi-engine crawler checklist, see <a href="https://www.nakama.in/journal/geo-audit#step-3-which-ai-crawlers-should-i-allow">Step 3 of our GEO audit</a>. The detail below is Perplexity only.</p>
 <h3 id="which-perplexity-user-agent-does-robots-txt-control">Which Perplexity user agent does robots.txt control?</h3>
-<p>robots.txt controls PerplexityBot. Perplexity's crawler docs say Perplexity-User "generally ignores robots.txt rules" because a user requested the fetch, so one combined "Perplexity" rule does not do what most teams expect. Set PerplexityBot in robots.txt, and handle Perplexity-User at the firewall if you need to restrict it.</p>
+<p>robots.txt controls PerplexityBot. Perplexity's crawler docs say Perplexity-User "generally ignores robots.txt rules" because a user requested the fetch, so one combined "Perplexity" rule does not do what most teams expect. Set PerplexityBot in robots.txt, and handle Perplexity-User at the firewall if you need to restrict it. Claude works differently, as our guide on <a href="https://www.nakama.in/journal/how-to-get-cited-by-claude">optimizing for Claude visibility</a> explains: Anthropic says its bots honor robots.txt, and that Claude-User lets site owners control which sites user-initiated requests can reach.</p>
 <p>Perplexity's help center separately says an older feature that let users summarize a robots-blocked URL was disabled, so check your logs rather than assume either way.</p>
 <div class="article-table"><table>
 <thead><tr><th scope="col"></th><th scope="col">PerplexityBot</th><th scope="col">Perplexity-User</th></tr></thead>

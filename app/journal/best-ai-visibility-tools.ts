@@ -251,7 +251,7 @@ const bodyHtml = `<nav aria-label="Breadcrumb" class="article-breadcrumb"><ol st
 <p>Wellows starts at $29/month on Basic for 1,800 AI answers a month, and Standard costs $97/month for 6,500, tracked daily across ChatGPT, Gemini, Perplexity, Google AI Overviews and Google AI Mode.</p>
 <h2 id="which-ai-visibility-tool-should-a-saas-company-choose">Which AI visibility tool should a SaaS company choose?</h2>
 <p>Pick the tool that fits your current SEO stack and prompt count. Semrush or Ahrefs users should start with the add-on they already pay for. Teams that want a standalone tracker should compare Peec AI, OtterlyAI, SE Visible and LLMrefs. Enterprise teams with compliance needs should talk to Profound.</p>
-<p>Once you are tracking, our guides on <a href="https://www.nakama.in/journal/how-to-rank-in-chatgpt">how to rank in ChatGPT</a> and <a href="https://www.nakama.in/journal/how-to-rank-in-google-ai-overviews">how to rank in Google AI Overviews</a> cover what to fix first.</p>
+<p>Once you are tracking, our guides on <a href="https://www.nakama.in/journal/how-to-rank-in-chatgpt">how to rank in ChatGPT</a>, <a href="https://www.nakama.in/journal/how-to-rank-in-google-ai-overviews">how to rank in Google AI Overviews</a> and <a href="https://www.nakama.in/journal/how-to-get-cited-by-claude">getting your brand into Claude answers</a> cover what to fix first.</p>
 <p>Early-stage startups can start with OtterlyAI Lite or Ahrefs Brand Radar custom prompts at $50/month and grow from there.</p>
 <p>Larger SaaS companies with several products, integrations and competitors will often need 100 or more prompts to cover them.</p>
 <h2 id="what-can-t-ai-visibility-tools-fix">What can't AI visibility tools fix?</h2>
@@ -438,7 +438,7 @@ export const bestAiVisibilityToolsArticle: Article = {
   "heading": "Which AI visibility tool should a SaaS company choose?",
   "paragraphs": [
    "Pick the tool that fits your current SEO stack and prompt count. Semrush or Ahrefs users should start with the add-on they already pay for. Teams that want a standalone tracker should compare Peec AI, OtterlyAI, SE Visible and LLMrefs. Enterprise teams with compliance needs should talk to Profound.",
-   "Once you are tracking, our guides on how to rank in ChatGPT and how to rank in Google AI Overviews cover what to fix first.",
+   "Once you are tracking, our guides on how to rank in ChatGPT, how to rank in Google AI Overviews and getting your brand into Claude answers cover what to fix first.",
    "Early-stage startups can start with OtterlyAI Lite or Ahrefs Brand Radar custom prompts at $50/month and grow from there.",
    "Larger SaaS companies with several products, integrations and competitors will often need 100 or more prompts to cover them."
   ]

@@ -4,7 +4,7 @@ import type {Article} from './articles';
  * PUBLISH TIME for this article. ISO 8601 with +05:30.
  * It feeds datePublished. MODIFIED_AT feeds dateModified, `date` and `modifiedAt` (bumped for the
  * inbound link to /journal/perplexity-seo). The visible freshness line reads
- * "Checked 12 November 2026. Updated 18 November 2026."
+ * "Checked 12 November 2026. Updated 28 November 2026."
  *
  * PREVIEW is false: noindex is off, so this note is listed in the sitemap, llms.txt,
  * llms-full.txt, RSS, the resources index and the author index (feedArticles, articlesBy
@@ -14,7 +14,7 @@ import type {Article} from './articles';
  */
 export const TRACK_BRAND_MENTIONS_PUBLISHED_AT = '2026-11-12T09:00:00+05:30';
 const PUBLISHED_AT = TRACK_BRAND_MENTIONS_PUBLISHED_AT;
-const MODIFIED_AT = '2026-11-18T02:57:00+05:30';
+const MODIFIED_AT = '2026-11-28T02:40:00+05:30';
 const PREVIEW = false;
 
 const dayOf = (iso: string) => iso.slice(0, 10);
@@ -23,7 +23,7 @@ const SLUG = 'track-brand-mentions-in-ai-search';
 const TITLE = 'Best Ways to Track Brand Mentions in AI Search (2026)';
 const H1 = 'How to track brand mentions in AI search, engine by engine';
 const DESCRIPTION = 'Four ways to track brand mentions in AI search, from prompt sampling to logs, and what each one can show you on ChatGPT, Gemini and Copilot.';
-const FRESHNESS = 'Checked 12 November 2026. Updated 18 November 2026.';
+const FRESHNESS = 'Checked 12 November 2026. Updated 28 November 2026.';
 const CANONICAL = `https://www.nakama.in/journal/${SLUG}`;
 const COVER_ALT = 'Four ways to track brand mentions in AI search, mapped against six AI engines.';
 const OG_ALT = 'Track Brand Mentions in AI Search: four methods across six AI engines, a Nakama Growth journal guide.';
@@ -271,7 +271,7 @@ ${h2('Method 3: What do first-party reports and analytics show?')}
 <p><strong>What it can't tell you:</strong> anything about answers that mention you without a click or a link. Analytics counts visits, and the platform reports count citations of your pages.</p>
 ${h2('Method 4: What can log and citation checks reveal?')}
 <p>Server logs show which AI systems fetched your pages, and citation checks show which sources an engine relied on. Neither one is a mention count, but both explain why mentions move.</p>
-<p><strong>Logs.</strong> OpenAI documents <a href="https://platform.openai.com/docs/bots">two agents worth separating</a>: OAI-SearchBot crawls to surface sites in ChatGPT search, and ChatGPT-User visits a page when someone asks ChatGPT a question. Perplexity's <a href="https://docs.perplexity.ai/guides/bots">crawler documentation</a> makes the same split: PerplexityBot indexes for search, and Perplexity-User fetches a page in response to a user's question and may link it in the answer. A rise in the user-triggered agents on a page is a hint that the page is being used in live answers.</p>
+<p><strong>Logs.</strong> OpenAI documents <a href="https://platform.openai.com/docs/bots">two agents worth separating</a>: OAI-SearchBot crawls to surface sites in ChatGPT search, and ChatGPT-User visits a page when someone asks ChatGPT a question. Perplexity's <a href="https://docs.perplexity.ai/guides/bots">crawler documentation</a> makes the same split: PerplexityBot indexes for search, and Perplexity-User fetches a page in response to a user's question and may link it in the answer. Anthropic does the same for Claude with Claude-SearchBot and Claude-User; our guide explains <a href="https://www.nakama.in/journal/how-to-get-cited-by-claude#which-anthropic-bots-need-access-before-claude-can-cite-you">which Anthropic bots need access</a>. A rise in the user-triggered agents on a page is a hint that the page is being used in live answers.</p>
 <p>For Google, logs cannot separate AI features from search. Google's AI features page says robots.txt rules for Googlebot are the control for how sites are crawled for Search, AI included, so there is no separate AI Overviews crawler to watch.</p>
 <p><strong>Citation checks.</strong> Open the URLs each engine cites for your priority prompts. Note which third-party pages name you, which name only competitors, and whether the cited page actually supports what the answer says. This turns a mention rate into a list of pages to earn or fix.</p>
 <p><strong>What it can't tell you:</strong> whether a fetch led to a mention. A page can be fetched and not used, and your brand can be named from a page you do not own.</p>

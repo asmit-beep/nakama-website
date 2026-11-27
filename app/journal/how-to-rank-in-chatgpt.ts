@@ -8,7 +8,7 @@ import type {Article} from './articles';
  */
 export const HOW_TO_RANK_IN_CHATGPT_PUBLISHED_AT = '2026-10-17T18:12:57+05:30';
 const PUBLISHED_AT = HOW_TO_RANK_IN_CHATGPT_PUBLISHED_AT;
-const MODIFIED_AT = '2026-11-18T02:57:00+05:30';
+const MODIFIED_AT = '2026-11-28T02:40:00+05:30';
 
 const MONTHS = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
 const dayOf = (iso: string) => iso.slice(0, 10);
@@ -258,7 +258,7 @@ const bodyHtml = `<nav aria-label="Breadcrumb" class="article-breadcrumb"><ol st
 <h2 id="how-do-you-make-a-page-eligible-for-chatgpt-search">How do you make a page eligible for ChatGPT search?</h2>
 <p>You make a page eligible for ChatGPT search, the first step to optimize for ChatGPT, by letting OpenAI's search crawler reach it. <a href="https://help.openai.com/en/articles/9237897-chatgpt-search">OpenAI's Help Center</a> says to allow OAI-SearchBot and to confirm your host or CDN accepts traffic from OpenAI's published search IP addresses.</p>
 <p>Check robots.txt and your CDN's bot protection, since robots.txt never shows CDN rules. OpenAI says it can take about 24 hours for robots.txt changes to take effect in search (<a href="https://developers.openai.com/api/docs/bots">OpenAI crawler docs</a>).</p>
-<p>Blocking GPTBot is a separate choice. OpenAI says GPTBot crawls content that may be used for training, and a site can disallow it while allowing OAI-SearchBot.</p>
+<p>Blocking GPTBot is a separate choice. OpenAI says GPTBot crawls content that may be used for training, and a site can disallow it while allowing OAI-SearchBot. Anthropic draws the same line for Claude: ClaudeBot is for training, while Claude-SearchBot and Claude-User affect search, as our guide to <a href="https://www.nakama.in/journal/how-to-get-cited-by-claude">getting cited by Claude</a> explains.</p>
 <p>Then rewrite the opening paragraph and title of key pages so they answer the buyer's question in the first sentence. In the preprint, title match helped Gemini and Perplexity and showed no effect for ChatGPT.</p>
 <h2 id="how-do-you-get-your-brand-to-appear-in-chatgpt-answers">How do you get your brand to appear in ChatGPT answers?</h2>
 <p>Your brand appears in ChatGPT answers when the model already knows it or when the pages ChatGPT reads name it. For small brands the second route matters more. In the Toronto study's small B2B software niche, the models barely knew the vendors, and answers named them mainly when a cited third-party page named them.</p>
@@ -356,7 +356,7 @@ export const howToRankInChatgptArticle: Article = {
   "heading": "Introduction",
   "paragraphs": [
    "How to rank in ChatGPT (and get cited): what works in 2026",
-   "Published 17 Oct 2026. Last updated 18 Nov 2026.",
+   "Published 17 Oct 2026. Last updated 28 Nov 2026.",
    "By Snehil Srivastava , CEO & Creative Director, Nakama Growth",
    "How to rank in ChatGPT starts with one fact: ChatGPT cites pages its own search retrieves, and a top Google position predicts little about which ones. Let OpenAI's search crawler in, answer the buyer's exact question in plain words, and earn other sites that name you.",
    "TL;DR",
@@ -404,7 +404,7 @@ export const howToRankInChatgptArticle: Article = {
   "paragraphs": [
    "You make a page eligible for ChatGPT search, the first step to optimize for ChatGPT, by letting OpenAI's search crawler reach it. OpenAI's Help Center says to allow OAI-SearchBot and to confirm your host or CDN accepts traffic from OpenAI's published search IP addresses.",
    "Check robots.txt and your CDN's bot protection, since robots.txt never shows CDN rules. OpenAI says it can take about 24 hours for robots.txt changes to take effect in search ( OpenAI crawler docs ).",
-   "Blocking GPTBot is a separate choice. OpenAI says GPTBot crawls content that may be used for training, and a site can disallow it while allowing OAI-SearchBot.",
+   "Blocking GPTBot is a separate choice. OpenAI says GPTBot crawls content that may be used for training, and a site can disallow it while allowing OAI-SearchBot. Anthropic draws the same line for Claude: ClaudeBot is for training, while Claude-SearchBot and Claude-User affect search, as our guide to getting cited by Claude explains.",
    "Then rewrite the opening paragraph and title of key pages so they answer the buyer's question in the first sentence. In the preprint, title match helped Gemini and Perplexity and showed no effect for ChatGPT."
   ]
  },

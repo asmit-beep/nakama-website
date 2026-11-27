@@ -26,6 +26,7 @@ import {chatgptSeoAgencyArticle} from './chatgpt-seo-agency';
 import {geoAgencyVsInHouseArticle} from './geo-agency-vs-in-house';
 import {trackBrandMentionsInAiSearchArticle} from './track-brand-mentions-in-ai-search';
 import {chatgptBusinessHubArticle} from './chatgpt-business-hub';
+import {howToGetCitedByClaudeArticle} from './how-to-get-cited-by-claude';
 import {perplexitySeoArticle} from './perplexity-seo';
 import {pepperVsTripledartArticle} from './pepper-vs-tripledart';
 export type Article={
@@ -48,6 +49,8 @@ export type Article={
  canonical?:string,
  /** HTML lead rendered under the dek on section-based notes. */
  pointerHtml?:string,
+ /** llms.txt field-notes blurb when it should differ from the meta description. */
+ llmsDescription?:string,
  /** Preview gate. noindex,follow, and omitted from the sitemap, llms files, RSS and the author index. */
  noindex?:boolean,
  /** With noindex, robots are noindex,nofollow. Omitted keeps the preview default of noindex,follow. */
@@ -58,6 +61,7 @@ export type Article={
  coverImage?:{src:string,width:number,height:number,alt?:string},
 };
 export const articles:Article[]=[
+ howToGetCitedByClaudeArticle,
  isGeoWorthItArticle,
  nogoodAlternativesArticle,
  pepperVsTripledartArticle,

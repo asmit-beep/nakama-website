@@ -36,7 +36,7 @@ ${corePages.filter(p=>!['/privacy','/terms'].includes(p.path)).map(p=>`- [${p.ti
 
 ## Field notes
 
-${feedArticles.map(a=>`- [${liveTitle(a)}](${abs(`/journal/${a.slug}`)}): ${a.description}`).join('\n')}
+${feedArticles.map(a=>`- [${liveTitle(a)}](${abs(`/journal/${a.slug}`)}): ${a.llmsDescription??a.description}`).join('\n')}
 ${(()=>{const lines=[...caseStudies.map(c=>`- [${c.client}: ${c.title}](${abs(`/work/${c.slug}`)}): ${c.summary}`),...shippedCasePages.map(c=>`- [StarAgile: ${c.headline}](${abs(c.path)}): ${c.summary}`)];return lines.length?`\n## Case studies\n\n${lines.join('\n')}\n`:'';})()}${openings.length?`\n## Open roles\n\n${openings.map(o=>`- [${o.title}](${abs(`/careers/${o.slug}`)}): ${o.summary}`).join('\n')}\n`:''}
 ## Optional
 
